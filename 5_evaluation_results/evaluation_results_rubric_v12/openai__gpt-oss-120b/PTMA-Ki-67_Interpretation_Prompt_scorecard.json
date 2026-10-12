@@ -1,0 +1,16 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "prompt_file": "PTMA-Ki-67_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 3,
+    "Biological Plausibility_reason": "The broad interpretation of HNRNPA2B1, TUBB4B, RPLP0, PTMA, and Ki-67 as a proliferation-associated state is plausible, but the principal mechanism relies on unsupported direct PTMA\u2013HNRNPA2B1 splice regulation, PTMA\u2013ATAT1 control, and PTMA\u2013EP300/rDNA activation. These constitute multiple central material hallucinations, so the score is capped at 3.",
+    "Specificity_zone1": 9,
+    "Grounded Mechanistic Synthesis_zone1": 3,
+    "Grounded Mechanistic Synthesis_reason": "The response successfully combines HNRNPA2B1-mediated RNA processing, RPLP0-associated translation, and TUBB4B-associated mitosis into a shared proliferative state connected to Ki-67. The direct bridges from PTMA to these processes are largely unsupported, especially the asserted splice-regulatory complex, ATAT1 recruitment, and rDNA-directed EP300 recruitment. The material-hallucination ceiling of 3 was applied because the principal focus-feature\u2013target mechanism depends on those asserted interactions.",
+    "Literature Grounding_zone1": 2
+  },
+  "final_score_zone1": 46.0
+}

@@ -1,0 +1,16 @@
+{
+  "prompt_file": "IL2RA-target_CCR5_Interpretation_Prompt_80_4.txt",
+  "model_a": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "model_b": "zai-org/GLM-5.3",
+  "model_a_slug": "deepseek-ai__DeepSeek-V4.1-Flash",
+  "model_b_slug": "zai-org__GLM-5.3",
+  "scores": {
+    "Zone & Feature Selection Similarity": 3,
+    "Feature Interpretation & Coverage Similarity": 5,
+    "Mechanistic Hypothesis Similarity": 7,
+    "Functional/Causal-Role Similarity": 6,
+    "Supporting Reasoning & Experimental Implication Similarity": 7,
+    "Response Scope & Elaboration Similarity": 8
+  },
+  "overall_similarity": 6.0
+}

@@ -1,0 +1,16 @@
+{
+  "model": "Nemotron3-Nano-30B-A3B",
+  "prompt_file": "EGR1-target_pRPS6_Interpretation_Prompt_80_4.txt",
+  "scores": {
+    "Zone Identification score_zone1": 5,
+    "Logic Rigor_zone1": 6,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 6,
+    "Biological Plausibility_reason": "The proposed ERK\u2013EGR1 and AKT\u2013mTORC1\u2013pRPS6 relationships are broadly coherent, but the interpretation repeatedly equates RNA abundance with pathway activity, including nuclear YAP1 and active AKT, and misidentifies FOS as EGR2. The direct EGR1-to-RPS6KB1 mechanism remains a defensible hypothesis but is presented with unsupported evidence.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 8,
+    "Grounded Mechanistic Synthesis_reason": "FOS and DUSP6 are integrated as an ERK-pulse context, while YAP1 and AKT1 are proposed to converge on translation signaling alongside an EGR1\u2013RPS6KB1\u2013pRPS6 route. The links from expression thresholds to YAP1 localization, AKT activity, and direct EGR1 regulation of RPS6KB1 remain insufficiently established, and the GRB2 extension is outside the Node 21 rule. No mechanistic-synthesis ceiling was applied because all four primary contextual features materially contribute to an explicit, connected hypothesis.",
+    "Literature Grounding_zone1": 4
+  },
+  "final_score_zone1": 45.0
+}

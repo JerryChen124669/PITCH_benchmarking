@@ -1,0 +1,16 @@
+{
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "model_a": "gemma-4-12B-it",
+  "model_b": "zai-org/GLM-5.3-Flash",
+  "model_a_slug": "gemma-4-12B-it",
+  "model_b_slug": "zai-org__GLM-5.3-Flash",
+  "scores": {
+    "Zone & Feature Selection Similarity": 10,
+    "Feature Interpretation & Coverage Similarity": 6,
+    "Mechanistic Hypothesis Similarity": 4,
+    "Functional/Causal-Role Similarity": 5,
+    "Supporting Reasoning & Experimental Implication Similarity": 4,
+    "Response Scope & Elaboration Similarity": 3
+  },
+  "overall_similarity": 5.333333333333333
+}

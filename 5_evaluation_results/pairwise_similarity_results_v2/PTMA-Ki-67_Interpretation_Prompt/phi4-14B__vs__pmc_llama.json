@@ -1,0 +1,16 @@
+{
+  "prompt_file": "PTMA-Ki-67_Interpretation_Prompt.txt",
+  "model_a": "phi4-14B",
+  "model_b": "pmc_llama",
+  "model_a_slug": "phi4-14B",
+  "model_b_slug": "pmc_llama",
+  "scores": {
+    "Zone & Feature Selection Similarity": 3,
+    "Feature Interpretation & Coverage Similarity": 7,
+    "Mechanistic Hypothesis Similarity": 6,
+    "Functional/Causal-Role Similarity": 6,
+    "Supporting Reasoning & Experimental Implication Similarity": 5,
+    "Response Scope & Elaboration Similarity": 6
+  },
+  "overall_similarity": 5.5
+}

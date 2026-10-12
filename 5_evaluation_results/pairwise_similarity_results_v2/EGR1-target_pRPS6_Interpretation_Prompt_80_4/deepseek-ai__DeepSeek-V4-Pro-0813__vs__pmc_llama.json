@@ -1,0 +1,16 @@
+{
+  "prompt_file": "EGR1-target_pRPS6_Interpretation_Prompt_80_4.txt",
+  "model_a": "deepseek-ai/DeepSeek-V4-Pro-0813",
+  "model_b": "pmc_llama",
+  "model_a_slug": "deepseek-ai__DeepSeek-V4-Pro-0813",
+  "model_b_slug": "pmc_llama",
+  "scores": {
+    "Zone & Feature Selection Similarity": 1,
+    "Feature Interpretation & Coverage Similarity": 1,
+    "Mechanistic Hypothesis Similarity": 1,
+    "Functional/Causal-Role Similarity": 1,
+    "Supporting Reasoning & Experimental Implication Similarity": 1,
+    "Response Scope & Elaboration Similarity": 1
+  },
+  "overall_similarity": 1.0
+}

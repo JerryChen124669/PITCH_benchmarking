@@ -1,0 +1,16 @@
+{
+  "model": "deepseek-ai/DeepSeek-V4-Pro-0813",
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 8,
+    "Biological Plausibility_reason": "The cytotoxic NK-cell interpretation is biologically defensible: NKG7, GZMB, and KLRD1 support NK identity and effector state, while low CST3 helps distinguish the zone from myeloid populations. The claim of a shared GNLY\u2013CD45RA maturation program is plausible but remains broad and partly conflates high GNLY attribution with GNLY expression.",
+    "Specificity_zone1": 6,
+    "Grounded Mechanistic Synthesis_zone1": 6,
+    "Grounded Mechanistic Synthesis_reason": "NKG7, GZMB, KLRD1, and low CST3 are coherently used to define a cytotoxic NK-cell context in which GNLY can associate with CD45RA. However, the proposed co-regulation or maturation link between GNLY and CD45RA lacks a specified regulator, intermediate pathway, or detailed biological transition. No formal ceiling was applied because an explicit, biologically reasonable common-cell-state mechanism connects the focus feature to the target.",
+    "Literature Grounding_zone1": 6
+  },
+  "final_score_zone1": 53.0
+}

@@ -1,0 +1,16 @@
+{
+  "model": "gemma-4-12B-it",
+  "prompt_file": "IL2RA-target_CCR5_Interpretation_Prompt_80_4.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 8,
+    "Biological Plausibility_reason": "The FOXP3\u2013IL2RA Treg context and CCR5 trafficking role are well grounded, while the proposed OX40-high/RUNX3-low regulatory gate is biologically conceivable but substantially more speculative and context-dependent.",
+    "Specificity_zone1": 7,
+    "Grounded Mechanistic Synthesis_zone1": 6,
+    "Grounded Mechanistic Synthesis_reason": "FOXP3, high TNFRSF4, and restricted RUNX3 are all explicitly integrated as the Treg context proposed to strengthen the IL2RA\u2013CCR5 association. The response does not explain the signaling or transcriptional transitions by which OX40 and RUNX3 would connect IL2RA activity to CCR5 expression. A ceiling of 6 was applied because multiple central transitions are asserted through permissive-gate and brake language without an intermediate biological bridge.",
+    "Literature Grounding_zone1": 6
+  },
+  "final_score_zone1": 54.0
+}

@@ -1,0 +1,16 @@
+{
+  "prompt_file": "PTMA-Ki-67_Interpretation_Prompt.txt",
+  "model_a": "moonshotai/Kimi-K3",
+  "model_b": "pmc_llama",
+  "model_a_slug": "moonshotai__Kimi-K3",
+  "model_b_slug": "pmc_llama",
+  "scores": {
+    "Zone & Feature Selection Similarity": 4,
+    "Feature Interpretation & Coverage Similarity": 4,
+    "Mechanistic Hypothesis Similarity": 2,
+    "Functional/Causal-Role Similarity": 2,
+    "Supporting Reasoning & Experimental Implication Similarity": 3,
+    "Response Scope & Elaboration Similarity": 1
+  },
+  "overall_similarity": 2.6666666666666665
+}

@@ -1,0 +1,16 @@
+{
+  "model": "Mistral-Small-3.1-24B",
+  "prompt_file": "Fxyd6-input resistance_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 8,
+    "Biological Plausibility_zone1": 4,
+    "Biological Plausibility_reason": "The CNR1 and HTR3A premises are broadly relevant to neuronal signaling, but the neuronal-development claims for CORO6 and especially FLT3 are weak or misapplied; the cited FLT3 study concerns hematopoietic progenitors. The submission also provides no biological role for Fxyd6 or coherent explanation of its association with input resistance.",
+    "Specificity_zone1": 2,
+    "Grounded Mechanistic Synthesis_zone1": 2,
+    "Grounded Mechanistic Synthesis_reason": "Coro6, Cnr1, Htr3a, and Flt3 were each linked individually to morphology, signaling, excitability, or maturation and then to input resistance. Fxyd6 was not assigned any role, and the contextual features were not connected to one another or to a shared developmental or electrophysiological process. The no-explicit-focus-feature-to-target-mechanism ceiling of 3 applied, and the largely pairwise account merits 2.",
+    "Literature Grounding_zone1": 3
+  },
+  "final_score_zone1": 37.5
+}

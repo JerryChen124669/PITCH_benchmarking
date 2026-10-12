@@ -1,0 +1,16 @@
+{
+  "prompt_file": "PTMA-Ki-67_Interpretation_Prompt.txt",
+  "model_a": "deepseek-ai/DeepSeek-V4-Flash-0731",
+  "model_b": "pmc_llama",
+  "model_a_slug": "deepseek-ai__DeepSeek-V4-Flash-0731",
+  "model_b_slug": "pmc_llama",
+  "scores": {
+    "Zone & Feature Selection Similarity": 8,
+    "Feature Interpretation & Coverage Similarity": 6,
+    "Mechanistic Hypothesis Similarity": 4,
+    "Functional/Causal-Role Similarity": 3,
+    "Supporting Reasoning & Experimental Implication Similarity": 2,
+    "Response Scope & Elaboration Similarity": 2
+  },
+  "overall_similarity": 4.166666666666667
+}

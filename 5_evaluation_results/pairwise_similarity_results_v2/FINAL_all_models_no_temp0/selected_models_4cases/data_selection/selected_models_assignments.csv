@@ -1,0 +1,11 @@
+model,cluster
+MiniMaxAI__MiniMax-M3,1
+Qwen__Qwen3.8-2.4T-A95B,1
+deepseek-ai__DeepSeek-V4-Flash-0731,1
+deepseek-ai__DeepSeek-V4-Pro-0813,1
+deepseek-ai__DeepSeek-V4.1-Flash,1
+gemini-3.1-pro-preview,1
+moonshotai__Kimi-K3,1
+thinkingmachines__Inkling,1
+zai-org__GLM-5.3,1
+zai-org__GLM-5.3-Flash,1

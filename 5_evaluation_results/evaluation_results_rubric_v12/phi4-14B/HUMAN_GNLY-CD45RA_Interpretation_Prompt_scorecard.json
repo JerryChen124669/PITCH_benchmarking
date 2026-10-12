@@ -1,0 +1,16 @@
+{
+  "model": "phi4-14B",
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 8,
+    "Biological Plausibility_zone1": 6,
+    "Biological Plausibility_reason": "The cytotoxic roles assigned to NKG7, GZMB, and KLRD1 are broadly accurate, but the proposed low-CST3 enhancement of cytotoxicity and maintenance of CD45RA are weakly supported and biologically underconnected. The hypothesis also omits a biological role for the central focus feature GNLY.",
+    "Specificity_zone1": 3,
+    "Grounded Mechanistic Synthesis_zone1": 3,
+    "Grounded Mechanistic Synthesis_reason": "NKG7, GZMB, KLRD1, and low CST3 were combined into a general cytotoxic NK-cell-state explanation linked to CD45RA. GNLY was not mechanistically connected to CD45RA, and the transition from reduced CST3 or cytotoxic readiness to maintenance of CD45RA was not explained. The no-explicit-focus-feature-to-target-mechanism ceiling of 3 was applied.",
+    "Literature Grounding_zone1": 5
+  },
+  "final_score_zone1": 42.5
+}

@@ -1,0 +1,16 @@
+{
+  "prompt_file": "IL2RA-target_CCR5_Interpretation_Prompt_80_4.txt",
+  "model_a": "Qwen3.8-9B-think-temp1",
+  "model_b": "thinkingmachines/Inkling",
+  "model_a_slug": "Qwen3.8-9B-think-temp1",
+  "model_b_slug": "thinkingmachines__Inkling",
+  "scores": {
+    "Zone & Feature Selection Similarity": 0,
+    "Feature Interpretation & Coverage Similarity": 3,
+    "Mechanistic Hypothesis Similarity": 3,
+    "Functional/Causal-Role Similarity": 4,
+    "Supporting Reasoning & Experimental Implication Similarity": 6,
+    "Response Scope & Elaboration Similarity": 7
+  },
+  "overall_similarity": 3.8333333333333335
+}

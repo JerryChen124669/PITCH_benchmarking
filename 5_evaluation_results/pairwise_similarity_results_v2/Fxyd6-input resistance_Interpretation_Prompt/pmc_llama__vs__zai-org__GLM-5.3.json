@@ -1,0 +1,16 @@
+{
+  "prompt_file": "Fxyd6-input resistance_Interpretation_Prompt.txt",
+  "model_a": "pmc_llama",
+  "model_b": "zai-org/GLM-5.3",
+  "model_a_slug": "pmc_llama",
+  "model_b_slug": "zai-org__GLM-5.3",
+  "scores": {
+    "Zone & Feature Selection Similarity": 5,
+    "Feature Interpretation & Coverage Similarity": 2,
+    "Mechanistic Hypothesis Similarity": 1,
+    "Functional/Causal-Role Similarity": 1,
+    "Supporting Reasoning & Experimental Implication Similarity": 1,
+    "Response Scope & Elaboration Similarity": 1
+  },
+  "overall_similarity": 1.8333333333333333
+}

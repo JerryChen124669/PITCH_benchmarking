@@ -1,0 +1,16 @@
+{
+  "prompt_file": "PTMA-Ki-67_Interpretation_Prompt.txt",
+  "model_a": "gemma-4-12B-it",
+  "model_b": "pmc_llama",
+  "model_a_slug": "gemma-4-12B-it",
+  "model_b_slug": "pmc_llama",
+  "scores": {
+    "Zone & Feature Selection Similarity": 7,
+    "Feature Interpretation & Coverage Similarity": 6,
+    "Mechanistic Hypothesis Similarity": 5,
+    "Functional/Causal-Role Similarity": 5,
+    "Supporting Reasoning & Experimental Implication Similarity": 4,
+    "Response Scope & Elaboration Similarity": 5
+  },
+  "overall_similarity": 5.333333333333333
+}

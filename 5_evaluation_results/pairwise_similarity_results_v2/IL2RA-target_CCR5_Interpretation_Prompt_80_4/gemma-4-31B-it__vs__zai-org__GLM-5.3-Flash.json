@@ -1,0 +1,16 @@
+{
+  "prompt_file": "IL2RA-target_CCR5_Interpretation_Prompt_80_4.txt",
+  "model_a": "gemma-4-31B-it",
+  "model_b": "zai-org/GLM-5.3-Flash",
+  "model_a_slug": "gemma-4-31B-it",
+  "model_b_slug": "zai-org__GLM-5.3-Flash",
+  "scores": {
+    "Zone & Feature Selection Similarity": 4,
+    "Feature Interpretation & Coverage Similarity": 5,
+    "Mechanistic Hypothesis Similarity": 6,
+    "Functional/Causal-Role Similarity": 6,
+    "Supporting Reasoning & Experimental Implication Similarity": 7,
+    "Response Scope & Elaboration Similarity": 3
+  },
+  "overall_similarity": 5.166666666666667
+}

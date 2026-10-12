@@ -1,0 +1,16 @@
+{
+  "model": "biomistral",
+  "prompt_file": "pERK_EGF10_DT_prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 0,
+    "Logic Rigor_zone1": 0,
+    "Feature Comprehensiveness_zone1": 4,
+    "Biological Plausibility_zone1": 5,
+    "Biological Plausibility_reason": "The actin-dynamics\u2013ERK association and the general relationship between ERK2 activity and pERK are defensible. However, the ROCK model reverses established biology\u2014ROCK generally promotes myosin contractility and stress fibers\u2014and its predicted pERK direction contradicts the submission\u2019s own zone interpretation.",
+    "Specificity_zone1": 4,
+    "Grounded Mechanistic Synthesis_zone1": 4,
+    "Grounded Mechanistic Synthesis_reason": "Actin dynamics and ERK2 were individually connected to ERK phosphorylation through cytoskeletal support and proliferative signaling. ROCK1 remained incorrectly and inconsistently connected, while the actual Paxillin and YAP contextual features were entirely absent. A ceiling of 5 applied because the response primarily presented separate feature-to-pERK accounts rather than explaining how the features work together.",
+    "Literature Grounding_zone1": 4
+  },
+  "final_score_zone1": 19.0
+}

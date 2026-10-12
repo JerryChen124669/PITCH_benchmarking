@@ -1,0 +1,16 @@
+{
+  "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+  "prompt_file": "Fxyd6-input resistance_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 8,
+    "Biological Plausibility_zone1": 5,
+    "Biological Plausibility_reason": "The CNR1 and HTR3A excitability premises and the cytoskeletal role proposed for CORO6 provide a plausible foundation, but the neuronal FLT3 assignment is questionable and no biological function is supplied for FXYD6. Consequently, the proposed 'interplay' remains defensible only as a broad association rather than a supported mechanism for input resistance.",
+    "Specificity_zone1": 3,
+    "Grounded Mechanistic Synthesis_zone1": 3,
+    "Grounded Mechanistic Synthesis_reason": "CNR1 and HTR3A were related to neuronal excitability, while CORO6 and FLT3 were assigned possible morphological and developmental context. These functions remain largely isolated, and the response does not explain how FXYD6 or the directions of the contextual conditions produce an input-resistance association. The no-explicit-focus-feature\u2013target-mechanism ceiling of 3 was applied.",
+    "Literature Grounding_zone1": 5
+  },
+  "final_score_zone1": 41.5
+}

@@ -1,0 +1,16 @@
+{
+  "model": "pmc_llama",
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 0,
+    "Logic Rigor_zone1": 0,
+    "Feature Comprehensiveness_zone1": 2,
+    "Biological Plausibility_zone1": 1,
+    "Biological Plausibility_reason": "The primary zone is built on the unsupported central claim that GNLY and CD107 distinguish immature and mature dendritic cells; GNLY is principally a cytotoxic lymphocyte effector, while high CD40 generally indicates APC activation or maturation rather than immaturity. Because the proposed mechanism depends primarily on this hallucinated dendritic-cell biology, the score is capped at 1.",
+    "Specificity_zone1": 1,
+    "Grounded Mechanistic Synthesis_zone1": 1,
+    "Grounded Mechanistic Synthesis_reason": "No defensible GNLY\u2013CD45RA relationship was integrated; the response only grouped GNLY and CD40 under a claimed dendritic maturation state. CD45RA and all four contextual features of the reference zone\u2014NKG7, GZMB, CST3, and KLRD1\u2014were absent from the primary explanation. The material-hallucination ceiling of 3 applies because the principal mechanism relies on invented GNLY/CD107 dendritic maturation roles, although the near-absence of relevant synthesis warrants a score of 1.",
+    "Literature Grounding_zone1": 2
+  },
+  "final_score_zone1": 6.0
+}

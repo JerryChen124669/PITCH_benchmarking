@@ -1,0 +1,16 @@
+{
+  "model": "zai-org/GLM-5.3-Flash",
+  "prompt_file": "IL2RA-target_CCR5_Interpretation_Prompt_80_4.txt",
+  "scores": {
+    "Zone Identification score_zone1": 5,
+    "Logic Rigor_zone1": 6,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 9,
+    "Biological Plausibility_reason": "The Treg dependence on IL2RA, ICOS\u2013PI3K signaling, and CCR5-associated inflammatory trafficking provide a strong and coherent foundation, while direct IL-2/STAT5 induction of CCR5 is appropriately presented as an untested hypothesis. The characterization of OX40-low and CCR4-low states is somewhat simplified but remains biologically defensible.",
+    "Specificity_zone1": 6,
+    "Grounded Mechanistic Synthesis_zone1": 6,
+    "Grounded Mechanistic Synthesis_reason": "FOXP3-defined Treg identity, IL2RA signaling, ICOS\u2013PI3K synergy, and possible direct or niche-mediated CCR5 regulation were connected meaningfully. Low TNFRSF4 and low CCR4 were treated mainly as activation and homing-state labels rather than being mechanistically linked to the IL2RA\u2013CCR5 association. No formal ceiling was applied, although the use of several alternative mechanisms and incomplete integration of two contextual features limited synthesis.",
+    "Literature Grounding_zone1": 8
+  },
+  "final_score_zone1": 46.0
+}

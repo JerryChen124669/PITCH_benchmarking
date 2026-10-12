@@ -1,0 +1,16 @@
+{
+  "prompt_file": "PTMA-Ki-67_Interpretation_Prompt.txt",
+  "model_a": "Qwen3.8-9B-think-temp1",
+  "model_b": "thinkingmachines/Inkling",
+  "model_a_slug": "Qwen3.8-9B-think-temp1",
+  "model_b_slug": "thinkingmachines__Inkling",
+  "scores": {
+    "Zone & Feature Selection Similarity": 10,
+    "Feature Interpretation & Coverage Similarity": 7,
+    "Mechanistic Hypothesis Similarity": 7,
+    "Functional/Causal-Role Similarity": 8,
+    "Supporting Reasoning & Experimental Implication Similarity": 7,
+    "Response Scope & Elaboration Similarity": 7
+  },
+  "overall_similarity": 7.666666666666667
+}

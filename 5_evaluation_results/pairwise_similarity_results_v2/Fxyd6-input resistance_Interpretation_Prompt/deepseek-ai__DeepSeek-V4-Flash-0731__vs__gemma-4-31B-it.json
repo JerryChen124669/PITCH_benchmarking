@@ -1,0 +1,16 @@
+{
+  "prompt_file": "Fxyd6-input resistance_Interpretation_Prompt.txt",
+  "model_a": "deepseek-ai/DeepSeek-V4-Flash-0731",
+  "model_b": "gemma-4-31B-it",
+  "model_a_slug": "deepseek-ai__DeepSeek-V4-Flash-0731",
+  "model_b_slug": "gemma-4-31B-it",
+  "scores": {
+    "Zone & Feature Selection Similarity": 10,
+    "Feature Interpretation & Coverage Similarity": 8,
+    "Mechanistic Hypothesis Similarity": 9,
+    "Functional/Causal-Role Similarity": 9,
+    "Supporting Reasoning & Experimental Implication Similarity": 8,
+    "Response Scope & Elaboration Similarity": 8
+  },
+  "overall_similarity": 8.666666666666666
+}

@@ -1,0 +1,16 @@
+{
+  "model": "gemma-4-31B-it",
+  "prompt_file": "PTMA-Ki-67_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 7,
+    "Biological Plausibility_reason": "The proliferation-state interpretation linking RNA processing, ribosomal capacity, tubulin expression, PTMA, and Ki-67 is broadly defensible. However, describing PTMA as a mitochondrial chaperone or final metabolic switch and treating TUBB4B as a direct indicator of spindle assembly are insufficiently supported simplifications.",
+    "Specificity_zone1": 7,
+    "Grounded Mechanistic Synthesis_zone1": 7,
+    "Grounded Mechanistic Synthesis_reason": "HNRNPA2B1-mediated RNA handling, RPLP0-associated translation, and TUBB4B-associated mitotic structure are integrated into a proliferative context in which PTMA supports survival and cell-cycle progression toward Ki-67 positivity. The direct transitions from PTMA to selective Ki-67 translation and from the contextual expression markers to a coordinated causal program remain asserted more than mechanistically resolved. No formal ceiling was applied because an explicit, biologically reasonable PTMA-to-proliferation-to-Ki-67 mechanism is present and all contextual features contribute.",
+    "Literature Grounding_zone1": 5
+  },
+  "final_score_zone1": 53.5
+}

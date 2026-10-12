@@ -1,0 +1,16 @@
+{
+  "prompt_file": "PTMA-Ki-67_Interpretation_Prompt.txt",
+  "model_a": "Qwen3-Next-80B-A3B-Instruct",
+  "model_b": "pmc_llama",
+  "model_a_slug": "Qwen3-Next-80B-A3B-Instruct",
+  "model_b_slug": "pmc_llama",
+  "scores": {
+    "Zone & Feature Selection Similarity": 7,
+    "Feature Interpretation & Coverage Similarity": 7,
+    "Mechanistic Hypothesis Similarity": 5,
+    "Functional/Causal-Role Similarity": 5,
+    "Supporting Reasoning & Experimental Implication Similarity": 3,
+    "Response Scope & Elaboration Similarity": 2
+  },
+  "overall_similarity": 4.833333333333333
+}

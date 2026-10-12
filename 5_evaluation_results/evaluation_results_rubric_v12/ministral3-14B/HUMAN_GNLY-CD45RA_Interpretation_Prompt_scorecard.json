@@ -1,0 +1,16 @@
+{
+  "model": "ministral3-14B",
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 4,
+    "Biological Plausibility_reason": "The cytotoxic NK-cell-state interpretation of NKG7, GZMB, KLRD1, and GNLY is broadly defensible, but the proposed causal connection to CD45RA is weakly established. The central CST3 mechanism rests on misidentifying cystatin C as a cysteine-rich adhesion regulator/FREP1, so the material-hallucination ceiling applies.",
+    "Specificity_zone1": 6,
+    "Grounded Mechanistic Synthesis_zone1": 5,
+    "Grounded Mechanistic Synthesis_reason": "NKG7 and GZMB were integrated as indicators of cytotoxic state, KLRD1 as an NK activation or maturation marker, and CST3 as a proposed modifier of the GNLY\u2013CD45RA association. The transitions from cytotoxic activation to CD45RA retention and from low CST3 to motility, GNLY induction, or CD45RA stability were asserted rather than mechanistically connected. No synthesis ceiling below 5 was applied because all contextual features were addressed, although the response remains primarily a cellular-state model with weakly resolved transitions.",
+    "Literature Grounding_zone1": 3
+  },
+  "final_score_zone1": 46.5
+}

@@ -1,0 +1,16 @@
+{
+  "prompt_file": "pERK_EGF10_DT_prompt.txt",
+  "model_a": "Qwen/Qwen3.8-2.4T-A95B",
+  "model_b": "moonshotai/Kimi-K3",
+  "model_a_slug": "Qwen__Qwen3.8-2.4T-A95B",
+  "model_b_slug": "moonshotai__Kimi-K3",
+  "scores": {
+    "Zone & Feature Selection Similarity": 10,
+    "Feature Interpretation & Coverage Similarity": 8,
+    "Mechanistic Hypothesis Similarity": 8,
+    "Functional/Causal-Role Similarity": 7,
+    "Supporting Reasoning & Experimental Implication Similarity": 8,
+    "Response Scope & Elaboration Similarity": 7
+  },
+  "overall_similarity": 8.0
+}

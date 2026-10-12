@@ -1,0 +1,16 @@
+{
+  "model": "Qwen3.6-35B-A3B-think",
+  "prompt_file": "PTMA-Ki-67_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 7,
+    "Biological Plausibility_reason": "The core model linking PTMA-associated chromatin activity, HNRNPA2B1-mediated RNA processing, ribosomal capacity, and microtubule-dependent proliferation is biologically defensible. However, several isotype-specific and direct regulatory claims\u2014particularly for TUBB4B, RPLP0, and selected HNRNPA2B1 targets\u2014are stronger than established evidence supports.",
+    "Specificity_zone1": 9,
+    "Grounded Mechanistic Synthesis_zone1": 8,
+    "Grounded Mechanistic Synthesis_reason": "PTMA, HNRNPA2B1, RPLP0, and TUBB4B are integrated through chromatin accessibility, transcript processing, translation, and spindle assembly into a coherent explanation of Ki-67-associated proliferation. Some transitions, especially the direct dependence of translation on RPLP0 abundance and the specific spindle role assigned to TUBB4B, are asserted more strongly than they are mechanistically resolved. No synthesis ceiling was applied because all contextual features contribute explicitly to the central mechanism.",
+    "Literature Grounding_zone1": 4
+  },
+  "final_score_zone1": 56.0
+}

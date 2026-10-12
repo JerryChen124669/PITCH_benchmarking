@@ -1,0 +1,16 @@
+{
+  "model": "phi4-14B",
+  "prompt_file": "pERK_EGF10_DT_prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 0,
+    "Logic Rigor_zone1": 6,
+    "Feature Comprehensiveness_zone1": 8,
+    "Biological Plausibility_zone1": 5,
+    "Biological Plausibility_reason": "The paxillin\u2013focal adhesion\u2013FAK/ERK premise is defensible, but the submission incorrectly equates low nuclear YAP with reduced Hippo activity and uses a weakly supported YAP\u2013ERK antagonism as a central explanation.",
+    "Specificity_zone1": 4,
+    "Grounded Mechanistic Synthesis_zone1": 4,
+    "Grounded Mechanistic Synthesis_reason": "Paxillin was connected to focal-adhesion and FAK signaling, while nuclear YAP was presented as a modifier of ERK activity. Actin itself was not explicitly connected to paxillin or the proposed FAK-to-ERK transition, and the YAP bridge remained vague. No formal ceiling was applied because a broad focus-feature\u2013target mechanism was stated, although its mechanistic resolution was weak.",
+    "Literature Grounding_zone1": 5
+  },
+  "final_score_zone1": 29.5
+}

@@ -1,0 +1,16 @@
+{
+  "model": "Qwen3.8-9B-think-temp1",
+  "prompt_file": "PTMA-Ki-67_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 8,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 5,
+    "Biological Plausibility_reason": "The RNA-processing, translation, microtubule, and proliferation-state associations are broadly plausible, but the principal mechanism depends on portraying PTMA as a direct RNA-binding or promoter/UTR-regulatory coordinator without a defensible established basis. This central material hallucination limits plausibility, alongside secondary inaccuracies such as identifying RPLP0 as ribosomal protein L32.",
+    "Specificity_zone1": 7,
+    "Grounded Mechanistic Synthesis_zone1": 3,
+    "Grounded Mechanistic Synthesis_reason": "HNRNPA2B1, RPLP0, and TUBB4B are meaningfully combined into an RNA-processing, translational-capacity, and microtubule-associated proliferative state linked to Ki-67. The crucial bridge from PTMA to those processes and ultimately Ki-67 is asserted through direct RNA, promoter, or transcript regulation rather than explained with a grounded intermediate mechanism. The material-hallucination ceiling of 3 was applied because the principal PTMA\u2013target mechanism depends on the unsupported assignment of PTMA as a direct RNA-binding or promoter/UTR regulator.",
+    "Literature Grounding_zone1": 3
+  },
+  "final_score_zone1": 44.5
+}

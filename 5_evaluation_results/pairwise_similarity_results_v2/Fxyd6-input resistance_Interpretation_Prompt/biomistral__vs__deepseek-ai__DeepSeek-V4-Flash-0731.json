@@ -1,0 +1,16 @@
+{
+  "prompt_file": "Fxyd6-input resistance_Interpretation_Prompt.txt",
+  "model_a": "biomistral",
+  "model_b": "deepseek-ai/DeepSeek-V4-Flash-0731",
+  "model_a_slug": "biomistral",
+  "model_b_slug": "deepseek-ai__DeepSeek-V4-Flash-0731",
+  "scores": {
+    "Zone & Feature Selection Similarity": 4,
+    "Feature Interpretation & Coverage Similarity": 3,
+    "Mechanistic Hypothesis Similarity": 2,
+    "Functional/Causal-Role Similarity": 2,
+    "Supporting Reasoning & Experimental Implication Similarity": 1,
+    "Response Scope & Elaboration Similarity": 1
+  },
+  "overall_similarity": 2.1666666666666665
+}

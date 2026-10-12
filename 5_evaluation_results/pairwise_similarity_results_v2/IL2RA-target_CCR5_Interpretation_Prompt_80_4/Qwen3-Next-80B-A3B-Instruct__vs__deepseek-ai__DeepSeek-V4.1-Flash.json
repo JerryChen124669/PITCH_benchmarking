@@ -1,0 +1,16 @@
+{
+  "prompt_file": "IL2RA-target_CCR5_Interpretation_Prompt_80_4.txt",
+  "model_a": "Qwen3-Next-80B-A3B-Instruct",
+  "model_b": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "model_a_slug": "Qwen3-Next-80B-A3B-Instruct",
+  "model_b_slug": "deepseek-ai__DeepSeek-V4.1-Flash",
+  "scores": {
+    "Zone & Feature Selection Similarity": 4,
+    "Feature Interpretation & Coverage Similarity": 4,
+    "Mechanistic Hypothesis Similarity": 5,
+    "Functional/Causal-Role Similarity": 5,
+    "Supporting Reasoning & Experimental Implication Similarity": 5,
+    "Response Scope & Elaboration Similarity": 7
+  },
+  "overall_similarity": 5.0
+}

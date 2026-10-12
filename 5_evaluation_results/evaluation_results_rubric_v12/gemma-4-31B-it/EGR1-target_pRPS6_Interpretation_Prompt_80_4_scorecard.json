@@ -1,0 +1,16 @@
+{
+  "model": "gemma-4-31B-it",
+  "prompt_file": "EGR1-target_pRPS6_Interpretation_Prompt_80_4.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 8,
+    "Biological Plausibility_reason": "The ERK\u2013DUSP5, FOS/EGR1, GRB2/AKT, and S6K\u2013RPS6 premises are broadly defensible. However, transcript abundance is somewhat overinterpreted as signaling activity, pRPS6 is not exclusive to mTORC1, and the proposed EGR1-to-mTOR/TSC2 bridge remains speculative.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 8,
+    "Grounded Mechanistic Synthesis_reason": "Low DUSP5 and high FOS are connected to sustained ERK/IEG signaling, while low GRB2 and AKT1 define a bypass context in which EGR1 is proposed to feed S6K\u2013RPS6. The central EGR1-to-mTORC1/S6K transition remains underspecified, with unspecified mTOR-component induction or TSC2 inhibition offered as alternatives rather than a resolved bridge. No mechanistic-synthesis ceiling was applied because all four contextual features are explicitly tied to the central model.",
+    "Literature Grounding_zone1": 6
+  },
+  "final_score_zone1": 57.0
+}

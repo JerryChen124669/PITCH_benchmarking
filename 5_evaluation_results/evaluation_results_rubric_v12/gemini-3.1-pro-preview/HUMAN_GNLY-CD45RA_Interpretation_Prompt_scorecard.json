@@ -1,0 +1,16 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 9,
+    "Biological Plausibility_reason": "The mature cytotoxic NK-cell interpretation is well supported by high NKG7, GZMB, and KLRD1 with low myeloid-associated CST3, providing a defensible shared-cell-state explanation for GNLY and CD45RA. The proposed CD94-dependent maintenance of CD45RA and especially an isoform switch after KLRD1 blockade are speculative but are framed as testable hypotheses rather than established facts.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 8,
+    "Grounded Mechanistic Synthesis_reason": "NKG7 and GZMB were integrated into a cytotoxic-granule program, KLRD1 into NK identity and signaling, and low CST3 into exclusion of a myeloid state, collectively explaining the GNLY\u2013CD45RA association. The transition from CD94\u2013HLA-E signaling to maintenance of CD45RA expression was asserted more broadly than the shared mature-NK-state mechanism and lacked a defined molecular bridge. No ceiling was applied because all four contextual features contributed explicitly to a coherent focus-feature\u2013target model.",
+    "Literature Grounding_zone1": 6
+  },
+  "final_score_zone1": 58.0
+}

@@ -1,0 +1,16 @@
+{
+  "prompt_file": "IL2RA-target_CCR5_Interpretation_Prompt_80_4.txt",
+  "model_a": "biomistral",
+  "model_b": "zai-org/GLM-5.3",
+  "model_a_slug": "biomistral",
+  "model_b_slug": "zai-org__GLM-5.3",
+  "scores": {
+    "Zone & Feature Selection Similarity": 1,
+    "Feature Interpretation & Coverage Similarity": 2,
+    "Mechanistic Hypothesis Similarity": 2,
+    "Functional/Causal-Role Similarity": 2,
+    "Supporting Reasoning & Experimental Implication Similarity": 1,
+    "Response Scope & Elaboration Similarity": 1
+  },
+  "overall_similarity": 1.5
+}

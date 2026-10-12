@@ -1,0 +1,16 @@
+{
+  "model": "MiniMaxAI/MiniMax-M3",
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 7,
+    "Biological Plausibility_reason": "The lineage-contingent surrogate hypothesis is biologically coherent, and the cytotoxic-lymphocyte roles of GNLY, NKG7, and GZMB are well grounded. However, KLRD1 as a specific marker of mature CD56dim NK cells and the characterization of cord-blood NK cells as uniformly mature and CD45RA-positive are overstated.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 8,
+    "Grounded Mechanistic Synthesis_reason": "NKG7, GZMB, and GNLY were integrated as a cytotoxic-granule program, while high KLRD1 and low CST3 were used as positive and negative lineage-context gates linking that program to CD45RA-positive NK cells. The transition from NK-cell identity to CD45RA expression remained largely a phenotypic assertion rather than a resolved regulatory mechanism. No mechanistic-synthesis ceiling was applied because all four contextual features contributed explicitly to the central surrogate-marker model.",
+    "Literature Grounding_zone1": 6
+  },
+  "final_score_zone1": 56.0
+}

@@ -1,0 +1,12 @@
+# Evaluation results
+
+All six prompts are included for the judged data (the figures that use four prompts drop IL2RA and pRPS6 inside the scripts).
+
+| Folder | Content |
+|---|---|
+| `evaluation_results_rubric_v12/` | `all_scores.csv` (one row per model and prompt: seven rubric scores for the primary zone, with the judge's short reasons for plausibility and synthesis), one `*_scorecard.json` per model and prompt, and `1_pillar_plots_4cases_excl_pRPS6_IL2RA/` (figure C and the per-criterion charts). The `final_score_zone1` field in the scorecards is an older total that includes zone identification and counts literature grounding at half weight; it is not used in the figures. |
+| `pairwise_similarity_results_v2/<prompt>/` | One judged record per unordered model pair and prompt: six similarity scores (P1-P6) and their mean. Input to both similarity analyses. |
+| `pairwise_similarity_results_v2/FINAL_3categories_similarity_and_performance/` | Total similarity (figures A, B): `cluster_assignments.csv`, similarity and distance matrices, dendrogram heat map, cluster map, category profile tables and figures. |
+| `pairwise_similarity_results_v2/FINAL_all_models_no_temp0/selected_models_4cases/` | Mechanistic similarity (figures D, E): `data_selection/` (model table, selected models), `data_diversity/` (correlation tests and tables) and `plots/` (PNG, SVG, PDF). `model_table.csv` regenerated with the final code has four extra columns (lowest plausibility, specificity and synthesis per model and the number of prompts that pass a gate). |
+
+24 models are included; the temperature-0 Qwen run is not one of them.

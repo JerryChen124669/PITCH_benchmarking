@@ -1,0 +1,31 @@
+{
+  "_comment": "Single source of truth for model sizes (billions of parameters) used to order plots. slug = trial_results subfolder name. Add new models here; plot scripts read this via model_registry.py. Sizes were supplied by the user (table dated 2026-09-23) unless 'size_source' says otherwise. Ordering is computed from the numbers, not from the rank columns of the user's original table (those had duplicate/inconsistent ranks).",
+  "anchor_slug": "gemini-3.1-pro-preview",
+  "models": [
+    {"slug": "biomistral", "display": "BioMistral", "total_b": 7, "active_b": 7, "status": "evaluated", "access": "local"},
+    {"slug": "Qwen3.8-9B-think-temp1", "display": "Qwen3.8-9B (temp1)", "total_b": 9, "active_b": 9, "status": "evaluated", "access": "local"},
+    {"slug": "Qwen3.8-9B-think-temp0", "display": "Qwen3.8-9B (temp0)", "total_b": 9, "active_b": 9, "status": "evaluated", "access": "local", "note": "Same model as temp1; excluded from the size-ordered heatmaps by request"},
+    {"slug": "gemma-4-12B-it", "display": "Gemma 4 12B", "total_b": 12, "active_b": 12, "status": "evaluated", "access": "local"},
+    {"slug": "pmc_llama", "display": "PMC-LLaMA", "total_b": 13, "active_b": 13, "status": "evaluated", "access": "local"},
+    {"slug": "phi4-14B", "display": "Phi-4 14B", "total_b": 14, "active_b": 14, "status": "evaluated", "access": "local", "size_source": "NOT in the user's table; taken from the '14B' in the folder name, assumed dense (active = total). Confirm."},
+    {"slug": "ministral3-14B", "display": "Ministral 3 14B", "total_b": 14, "active_b": 14, "status": "evaluated", "access": "local", "size_source": "NOT in the user's table; taken from the '14B' in the folder name, assumed dense (active = total). Confirm."},
+    {"slug": "Mistral-Small-3.1-24B", "display": "Mistral Small 3.1", "total_b": 24, "active_b": 24, "status": "evaluated", "access": "local", "note": "No thinking mode"},
+    {"slug": "Qwen3.8-27B-think", "display": "Qwen3.8 27B", "total_b": 27, "active_b": 27, "status": "evaluated", "access": "local", "note": "~27B; thinking mode"},
+    {"slug": "gemma-4-31B-it", "display": "Gemma 4 31B", "total_b": 30.7, "active_b": 30.7, "status": "evaluated", "access": "local", "size_source": "NOT in the user's table; verified from Google's Gemma 4 model card (30.7B dense, all parameters active)."},
+    {"slug": "Nemotron3-Nano-30B-A3B", "display": "Nemotron 3 Nano 30B-A3B", "total_b": 31.6, "active_b": 3.2, "status": "evaluated", "access": "local", "size_source": "NOT in the user's table; verified from NVIDIA/HF model card (31.6B total, 3.2B active per forward pass, 3.6B including embeddings)."},
+    {"slug": "Qwen3.6-35B-A3B-think", "display": "Qwen3.6 35B-A3B", "total_b": 35, "active_b": 3, "status": "evaluated", "access": "local", "note": "thinking mode"},
+    {"slug": "meta-llama__Llama-3.3-70B-Instruct-Turbo", "display": "Llama 3.3 70B", "total_b": 70, "active_b": 70, "status": "evaluated", "access": "Together serverless"},
+    {"slug": "Qwen3-Next-80B-A3B-Instruct", "display": "Qwen3-Next-80B-A3B", "total_b": 80, "active_b": 3, "status": "evaluated", "access": "local", "note": "Instruct, no thinking mode"},
+    {"slug": "openai__gpt-oss-120b", "display": "GPT-OSS-120B", "total_b": 117, "active_b": 5.1, "status": "evaluated", "access": "Together serverless"},
+    {"slug": "Qwen__Qwen3.8-Flash", "display": "Qwen3.8 Flash", "total_b": 125, "active_b": 6, "status": "planned", "access": "Together serverless", "note": "Blocked: requires third-party data sharing enabled on the Together org. 125B is a backbone size."},
+    {"slug": "deepseek-ai__DeepSeek-V4-Flash-0731", "display": "DeepSeek V4 Flash 0731", "total_b": 284, "active_b": 13, "status": "evaluated", "access": "Together serverless"},
+    {"slug": "zai-org__GLM-5.3-Flash", "display": "GLM-5.3-Flash", "total_b": 320, "active_b": 18, "status": "evaluated", "access": "Together serverless"},
+    {"slug": "MiniMaxAI__MiniMax-M3", "display": "MiniMax M3", "total_b": 428, "active_b": 23, "status": "evaluated", "access": "Together serverless"},
+    {"slug": "deepseek-ai__DeepSeek-V4.1-Flash", "display": "DeepSeek V4.1 Flash", "total_b": 552, "active_b": 16, "status": "evaluated", "access": "Together serverless", "note": "552B is a backbone size. Active = 8B prefill / 16B decode; 16B (decode) is used for ordering, which matches the user's rank placement (between 13B and 18B)."},
+    {"slug": "zai-org__GLM-5.3", "display": "GLM-5.3", "total_b": 753, "active_b": 40, "status": "evaluated", "access": "Together serverless", "note": "~40B active"},
+    {"slug": "thinkingmachines__Inkling", "display": "Inkling", "total_b": 975, "active_b": 41, "status": "evaluated", "access": "Together serverless"},
+    {"slug": "deepseek-ai__DeepSeek-V4-Pro-0813", "display": "DeepSeek V4 Pro 0813", "total_b": 1600, "active_b": 49, "status": "evaluated", "access": "Together serverless"},
+    {"slug": "Qwen__Qwen3.8-2.4T-A95B", "display": "Qwen3.8-2.4T-A95B", "total_b": 2400, "active_b": 95, "status": "evaluated", "access": "Together serverless"},
+    {"slug": "moonshotai__Kimi-K3", "display": "Kimi K3", "total_b": 2800, "active_b": 104, "status": "evaluated", "access": "Together serverless"}
+  ]
+}

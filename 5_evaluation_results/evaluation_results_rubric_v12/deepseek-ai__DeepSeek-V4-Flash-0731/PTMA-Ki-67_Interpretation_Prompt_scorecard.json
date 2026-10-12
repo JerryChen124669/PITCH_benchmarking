@@ -1,0 +1,16 @@
+{
+  "model": "deepseek-ai/DeepSeek-V4-Flash-0731",
+  "prompt_file": "PTMA-Ki-67_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 9,
+    "Biological Plausibility_reason": "The interpretation uses generally accurate roles for PTMA, HNRNPA2B1, RPLP0, TUBB4B, and Ki-67 to build a defensible proliferation-state model. The proposed PTMA-specific RNA regulation and selective RPLP0-dependent translation are speculative but are clearly presented as testable hypotheses rather than established facts.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 8,
+    "Grounded Mechanistic Synthesis_reason": "HNRNPA2B1-mediated PTMA RNA regulation, RPLP0-supported translation, and TUBB4B-dependent mitotic execution are integrated into a coherent route toward Ki-67 positivity. The exact bridge from PTMA to TUBB4B expression and the proposed selectivity of RPLP0-containing ribosomes remain incompletely resolved. No mechanistic-synthesis ceiling was applied because all contextual features contribute explicitly to a compatible central model.",
+    "Literature Grounding_zone1": 8
+  },
+  "final_score_zone1": 59.0
+}

@@ -1,0 +1,16 @@
+{
+  "model": "Mistral-Small-3.1-24B",
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 9,
+    "Biological Plausibility_zone1": 6,
+    "Biological Plausibility_reason": "The NKG7/GZMB/KLRD1 pattern reasonably identifies a cytotoxic NK/T-cell state compatible with CD45RA positivity. However, GNLY itself is not mechanistically discussed, while low CST3 enhancing cytotoxicity and cytotoxic activation driving CD45RA expression are weakly supported claims.",
+    "Specificity_zone1": 4,
+    "Grounded Mechanistic Synthesis_zone1": 3,
+    "Grounded Mechanistic Synthesis_reason": "NKG7 and GZMB were combined as indicators of cytotoxic activity, KLRD1 as an NK-cell indicator, and low CST3 as a proposed modifier of that state. These features were connected to CD45RA mainly through shared cell identity, while the required GNLY-to-CD45RA relationship and relevant biological transitions were not explained. The no-explicit-focus-feature-to-target-mechanism ceiling of 3 was applied.",
+    "Literature Grounding_zone1": 4
+  },
+  "final_score_zone1": 44.0
+}

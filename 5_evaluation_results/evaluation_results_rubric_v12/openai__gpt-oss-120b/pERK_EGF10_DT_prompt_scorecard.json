@@ -1,0 +1,16 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "prompt_file": "pERK_EGF10_DT_prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 8,
+    "Feature Comprehensiveness_zone1": 8,
+    "Biological Plausibility_zone1": 6,
+    "Biological Plausibility_reason": "The adhesion\u2013actin\u2013FAK/Src\u2013ERK framework and tension-associated nuclear YAP are broadly defensible. However, the central feedback claim incorrectly assigns paxillin Ser178 phosphorylation to ERK rather than JNK, triggering the one-central-hallucination ceiling.",
+    "Specificity_zone1": 7,
+    "Grounded Mechanistic Synthesis_zone1": 7,
+    "Grounded Mechanistic Synthesis_reason": "The response connects actin organization, cytoplasmic paxillin, FAK/Src signaling, nuclear YAP, and ERK through a coherent adhesion and mechanotransduction model. The distinct Cytobody Paxillin condition is misidentified as cytoplasmic paxillin, and the proposed YAP-to-pERK amplification remains insufficiently resolved. No synthesis ceiling was applied because a substantive focus-feature\u2013target mechanism and most contextual contributions remain explicit.",
+    "Literature Grounding_zone1": 4
+  },
+  "final_score_zone1": 48.0
+}

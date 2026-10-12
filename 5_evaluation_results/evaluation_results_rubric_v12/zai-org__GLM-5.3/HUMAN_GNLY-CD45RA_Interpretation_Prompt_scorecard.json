@@ -1,0 +1,16 @@
+{
+  "model": "zai-org/GLM-5.3",
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 8,
+    "Biological Plausibility_reason": "The lineage-surrogate hypothesis is biologically coherent: NKG7, GZMB, and KLRD1 support an NK/cytotoxic state, while low CST3 helps exclude myeloid identity. However, claims that NK cells never switch to CD45RO and that GNLY-positive cytotoxic lymphocytes are consistently CD45RA-positive are overgeneralized.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 8,
+    "Grounded Mechanistic Synthesis_reason": "The response integrates NKG7 and GZMB as a granule program, KLRD1 as NK-lineage evidence, and low CST3 as myeloid exclusion, connecting these features to a GNLY-marked state associated with CD45RA. The transition from NK identity to constitutive CD45RA retention is less securely resolved and is stated too categorically. No mechanistic-synthesis ceiling was applied because an explicit, coherent lineage-surrogate mechanism connects GNLY to the target and includes all contextual features.",
+    "Literature Grounding_zone1": 6
+  },
+  "final_score_zone1": 57.0
+}

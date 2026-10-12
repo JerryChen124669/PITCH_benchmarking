@@ -1,0 +1,16 @@
+{
+  "model": "deepseek-ai/DeepSeek-V4-Flash-0731",
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 9,
+    "Biological Plausibility_reason": "The NK-like cytotoxic-state interpretation is well supported by the coordinated GNLY, NKG7, GZMB, and KLRD1 program and low CST3. The main weakness is some overextension from high GNLY attribution to definite CD45RA positivity, along with speculative CST3 and CD45RA-splicing mechanisms.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 8,
+    "Grounded Mechanistic Synthesis_reason": "The response successfully integrates GNLY, NKG7, and GZMB as a cytotoxic-granule program, KLRD1 as an NK-like receptor context, and low CST3 as a discriminator from myeloid states associated with the CD45RA response. The proposed CST3-permissive mechanism and the transcriptional bridge from T-bet, Eomes, or Hobit to CD45RA isoform regulation remain insufficiently resolved. No mechanistic-synthesis ceiling was applied because all contextual features were explicitly connected to the central cell-state hypothesis.",
+    "Literature Grounding_zone1": 8
+  },
+  "final_score_zone1": 59.0
+}

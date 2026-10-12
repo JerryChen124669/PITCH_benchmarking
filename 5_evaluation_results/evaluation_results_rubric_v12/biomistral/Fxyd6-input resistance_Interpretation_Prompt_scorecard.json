@@ -1,0 +1,16 @@
+{
+  "model": "biomistral",
+  "prompt_file": "Fxyd6-input resistance_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 0,
+    "Logic Rigor_zone1": 3,
+    "Feature Comprehensiveness_zone1": 8,
+    "Biological Plausibility_zone1": 1,
+    "Biological Plausibility_reason": "The correct general principle that increased potassium conductance can lower input resistance is overwhelmed by unsupported central claims that FLT3 controls potassium-channel activity and that FXYD6 regulates potassium-channel phosphorylation or cAMP sensitivity. The principal mechanism therefore relies predominantly on biologically ungrounded premises, triggering the hallucination ceiling.",
+    "Specificity_zone1": 4,
+    "Grounded Mechanistic Synthesis_zone1": 3,
+    "Grounded Mechanistic Synthesis_reason": "The response connects CNR1 and HTR3A signaling to excitability and proposes an explicit FXYD6-to-potassium-conductance-to-input-resistance sequence. Coro6 is only weakly connected, Rell1 is omitted, and the contextual features are not integrated with the proposed FXYD6 mechanism. A ceiling of 3 was applied because the principal focus-feature\u2013target mechanism depends on unsupported claims about FXYD6 controlling potassium-channel phosphorylation and cAMP sensitivity.",
+    "Literature Grounding_zone1": 3
+  },
+  "final_score_zone1": 20.5
+}

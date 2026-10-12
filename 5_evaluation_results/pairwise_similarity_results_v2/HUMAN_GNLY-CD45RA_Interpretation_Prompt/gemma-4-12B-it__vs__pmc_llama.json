@@ -1,0 +1,16 @@
+{
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "model_a": "gemma-4-12B-it",
+  "model_b": "pmc_llama",
+  "model_a_slug": "gemma-4-12B-it",
+  "model_b_slug": "pmc_llama",
+  "scores": {
+    "Zone & Feature Selection Similarity": 0,
+    "Feature Interpretation & Coverage Similarity": 0,
+    "Mechanistic Hypothesis Similarity": 0,
+    "Functional/Causal-Role Similarity": 0,
+    "Supporting Reasoning & Experimental Implication Similarity": 0,
+    "Response Scope & Elaboration Similarity": 1
+  },
+  "overall_similarity": 0.16666666666666666
+}

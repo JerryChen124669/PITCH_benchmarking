@@ -1,0 +1,16 @@
+{
+  "prompt_file": "pERK_EGF10_DT_prompt.txt",
+  "model_a": "Nemotron3-Nano-30B-A3B",
+  "model_b": "moonshotai/Kimi-K3",
+  "model_a_slug": "Nemotron3-Nano-30B-A3B",
+  "model_b_slug": "moonshotai__Kimi-K3",
+  "scores": {
+    "Zone & Feature Selection Similarity": 4,
+    "Feature Interpretation & Coverage Similarity": 4,
+    "Mechanistic Hypothesis Similarity": 4,
+    "Functional/Causal-Role Similarity": 4,
+    "Supporting Reasoning & Experimental Implication Similarity": 3,
+    "Response Scope & Elaboration Similarity": 7
+  },
+  "overall_similarity": 4.333333333333333
+}

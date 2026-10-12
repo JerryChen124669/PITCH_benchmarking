@@ -1,0 +1,16 @@
+{
+  "model": "Qwen3.8-27B-think",
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 5,
+    "Biological Plausibility_reason": "The cytotoxic-state interpretation of GNLY, GZMB, NKG7, and CD45RA is broadly defensible, but the central identification of KLRD1/CD94 as NKp30 and as a MICA/B-recognizing activating receptor is false; NKp30 is NCR3, while MICA/B primarily engages NKG2D. NKG7 is also inaccurately described as a perforin-like pore-forming molecule, and the proposed CST3 regulatory role is substantially more speculative than stated.",
+    "Specificity_zone1": 7,
+    "Grounded Mechanistic Synthesis_zone1": 6,
+    "Grounded Mechanistic Synthesis_reason": "The response integrates GNLY, GZMB, and NKG7 into a common cytotoxic-granule state and assigns low CST3 a proposed permissive role in the CD45RA-associated context. The connection from this program to CD45RA remains largely a cell-state assertion, and the proposed KLRD1 signaling bridge is based on an incorrect receptor identity and ligand assignment. A ceiling of 6 was applied because multiple important transitions, especially cytotoxic-program induction and acquisition or maintenance of CD45RA, lack a sufficiently grounded biological bridge.",
+    "Literature Grounding_zone1": 3
+  },
+  "final_score_zone1": 49.5
+}

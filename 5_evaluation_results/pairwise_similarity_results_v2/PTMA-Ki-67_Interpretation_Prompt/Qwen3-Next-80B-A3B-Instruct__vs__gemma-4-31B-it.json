@@ -1,0 +1,16 @@
+{
+  "prompt_file": "PTMA-Ki-67_Interpretation_Prompt.txt",
+  "model_a": "Qwen3-Next-80B-A3B-Instruct",
+  "model_b": "gemma-4-31B-it",
+  "model_a_slug": "Qwen3-Next-80B-A3B-Instruct",
+  "model_b_slug": "gemma-4-31B-it",
+  "scores": {
+    "Zone & Feature Selection Similarity": 10,
+    "Feature Interpretation & Coverage Similarity": 7,
+    "Mechanistic Hypothesis Similarity": 5,
+    "Functional/Causal-Role Similarity": 5,
+    "Supporting Reasoning & Experimental Implication Similarity": 5,
+    "Response Scope & Elaboration Similarity": 7
+  },
+  "overall_similarity": 6.5
+}

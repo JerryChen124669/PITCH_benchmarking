@@ -1,0 +1,16 @@
+{
+  "model": "ministral3-14B",
+  "prompt_file": "Fxyd6-input resistance_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 9,
+    "Biological Plausibility_zone1": 3,
+    "Biological Plausibility_reason": "The CNR1/GABAergic-state and cytoskeletal context is broadly relevant, but the principal mechanism incorrectly treats the cation-conducting 5-HT3A receptor as hyperpolarizing and increasing input resistance. The claims that reduced CORO6 stabilizes actin and that FLT3 is a stem-cell-factor receptor marking neuronal differentiation are also poorly grounded, triggering the hallucination ceiling.",
+    "Specificity_zone1": 4,
+    "Grounded Mechanistic Synthesis_zone1": 3,
+    "Grounded Mechanistic Synthesis_reason": "Coro6, Cnr1, and Htr3a are combined into a proposed cytoskeletal and neurotransmitter-signaling context, while low Flt3 is interpreted as a differentiation indicator. Fxyd6 itself is not assigned a molecular role or connected through an intermediate process to input resistance, and Flt3 remains largely a separate state-marker explanation. The no-explicit-Fxyd6-to-target-mechanism ceiling of 3 was applied.",
+    "Literature Grounding_zone1": 3
+  },
+  "final_score_zone1": 40.5
+}

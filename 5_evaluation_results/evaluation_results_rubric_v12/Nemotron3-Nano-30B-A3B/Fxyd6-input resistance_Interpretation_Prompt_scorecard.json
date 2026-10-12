@@ -1,0 +1,16 @@
+{
+  "model": "Nemotron3-Nano-30B-A3B",
+  "prompt_file": "Fxyd6-input resistance_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 1,
+    "Biological Plausibility_reason": "The principal mechanism rests on the false identification of FXYD6 as a mitochondrial F-type ATP-synthase subunit; FXYD6 is instead an FXYD-family regulator associated with Na+/K+-ATPase. Additional central claims\u2014such as HTR3A conductance increasing input resistance and the Node 23 signature representing MGE-derived PV fast-spiking cells\u2014are biologically reversed or incompatible with established interneuron biology, so the mechanism-primary hallucination ceiling of 1 applies.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 3,
+    "Grounded Mechanistic Synthesis_reason": "The response explicitly attempts to connect Fxyd6, CNR1, HTR3A, CORO6, and FLT3 through transcriptional regulation, membrane conductance, and metabolic state. CORO6 and FLT3 remain weakly bridged to electrophysiology, while the asserted Fxyd6-to-ATP/CREB pathway and HTR3A-to-increased-resistance transition are not biologically grounded. The material-hallucination ceiling of 3 was applied because the principal focus-feature\u2013target mechanism depends on the false ATP-synthase assignment of FXYD6.",
+    "Literature Grounding_zone1": 1
+  },
+  "final_score_zone1": 42.5
+}

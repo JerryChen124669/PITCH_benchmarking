@@ -1,0 +1,16 @@
+{
+  "model": "deepseek-ai/DeepSeek-V4-Pro-0813",
+  "prompt_file": "PTMA-Ki-67_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 8,
+    "Biological Plausibility_reason": "The proliferation, RNA-processing, translational, and mitotic-state foundation is broadly defensible in breast cancer. The proposed HNRNPA2B1\u2013PTMA and RPLP0\u2013PTMA relationships and PTMA-driven Ki-67 expression remain speculative but are presented as testable hypotheses rather than established facts.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 8,
+    "Grounded Mechanistic Synthesis_reason": "PTMA was connected to Ki-67 through a c-MYC/proliferation and chromatin model, with HNRNPA2B1 assigned PTMA RNA-processing, RPLP0 translational-support, and TUBB4B mitotic-state roles. The weakest bridge is from PTMA\u2019s broad chromatin and cell-cycle functions to Ki-67 expression, while the proposed direct handling of PTMA mRNA remains incompletely resolved. No synthesis ceiling was applied because all three contextual features were explicitly tied to the central association.",
+    "Literature Grounding_zone1": 7
+  },
+  "final_score_zone1": 57.5
+}

@@ -1,0 +1,16 @@
+{
+  "prompt_file": "IL2RA-target_CCR5_Interpretation_Prompt_80_4.txt",
+  "model_a": "Qwen3.8-27B-think",
+  "model_b": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+  "model_a_slug": "Qwen3.8-27B-think",
+  "model_b_slug": "meta-llama__Llama-3.3-70B-Instruct-Turbo",
+  "scores": {
+    "Zone & Feature Selection Similarity": 5,
+    "Feature Interpretation & Coverage Similarity": 4,
+    "Mechanistic Hypothesis Similarity": 2,
+    "Functional/Causal-Role Similarity": 3,
+    "Supporting Reasoning & Experimental Implication Similarity": 2,
+    "Response Scope & Elaboration Similarity": 1
+  },
+  "overall_similarity": 2.8333333333333335
+}

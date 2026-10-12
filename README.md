@@ -42,13 +42,13 @@ Code, prompts and generated answers for the 24-model benchmark of hypotheses gen
   at the top of `official_trial.py`; `LLMinterpret_gemini.py` reads prompts from `data/` and writes `results/`.
 - `local_models_vllm/README.md` documents the local vLLM runs (vLLM 0.22.1, bfloat16, seed 0, 4 x RTX A6000).
 
-## Repository layout and planned additions
-The folders are numbered in workflow order so later stages can be added without moving anything:
-
-| Folder | Status |
+## Repository layout
+| Folder | Content |
 |---|---|
-| `1_generation_code/` | included |
-| `2_prompts/` | included |
-| `3_answers/` | included (four cases) |
-| `4_evaluation_code/` | to be added: quality judging, pairwise similarity, clustering and selection analyses |
-| `5_evaluation_results/` | to be added: scores, similarity matrices, cluster assignments, figures |
+| `1_generation_code/` | scripts and settings used to generate the hypotheses (24 models) |
+| `2_prompts/` | the six prompt files |
+| `3_answers/` | raw and selected answers for four of the six prompts (Fxyd6, HUMAN, PTMA, pERK) |
+| `4_evaluation_code/` | rubric judging, pairwise similarity, clustering and selection scripts; `reproduce_figures.sh` regenerates the five evaluation figures |
+| `5_evaluation_results/` | judged scores and pairwise similarity records for all six prompts, and the result tables and figures |
+
+See `4_evaluation_code/README.md` for how each figure is produced.

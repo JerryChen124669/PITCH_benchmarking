@@ -1,0 +1,16 @@
+{
+  "model": "Nemotron3-Nano-30B-A3B",
+  "prompt_file": "pERK_EGF10_DT_prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 3,
+    "Feature Comprehensiveness_zone1": 9,
+    "Biological Plausibility_zone1": 3,
+    "Biological Plausibility_reason": "The general actin\u2013focal-adhesion\u2013FAK\u2013ERK and YAP mechanotransduction framework is defensible, but the central YAP-induced PTPN12 feedback mechanism and several specific ligand relationships are unsupported or materially misstated. The interpretation also conflates high actin attribution with a directly observed pERK-high state.",
+    "Specificity_zone1": 7,
+    "Grounded Mechanistic Synthesis_zone1": 6,
+    "Grounded Mechanistic Synthesis_reason": "Cytoplasmic actin/Paxillin was connected to FAK\u2013MAPK signaling, while nuclear YAP was linked to an autocrine ERBB\u2013ERK reinforcement state. Cytobody Paxillin was conflated with cytoplasmic Paxillin, and its actual greater-than-1.597 condition was repeatedly interpreted as an intermediate upper-bounded cytoplasmic-Paxillin state. No formal synthesis ceiling was applied because the general FAK\u2013ERK mechanism remains explicit without the speculative PTPN12 loop.",
+    "Literature Grounding_zone1": 3
+  },
+  "final_score_zone1": 39.5
+}

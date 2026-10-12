@@ -1,0 +1,181 @@
+case,model_a,model_b,sim,quality_a,quality_b,min_quality,tier
+Fxyd6-input resistance_Interpretation_Prompt,MiniMax-M3,Qwen3.8-2.4T-A95B,7.0,5.333333333333333,7.666666666666667,5.333333333333333,weaker member < 7
+Fxyd6-input resistance_Interpretation_Prompt,MiniMax-M3,DeepSeek-V4-Flash-0731,7.5,5.333333333333333,8.0,5.333333333333333,weaker member < 7
+Fxyd6-input resistance_Interpretation_Prompt,MiniMax-M3,DeepSeek-V4-Pro-0813,7.0,5.333333333333333,7.666666666666667,5.333333333333333,weaker member < 7
+Fxyd6-input resistance_Interpretation_Prompt,MiniMax-M3,DeepSeek-V4.1-Flash,7.0,5.333333333333333,8.333333333333334,5.333333333333333,weaker member < 7
+Fxyd6-input resistance_Interpretation_Prompt,MiniMax-M3,gemini-3.1-pro-preview,8.0,5.333333333333333,6.666666666666667,5.333333333333333,weaker member < 7
+Fxyd6-input resistance_Interpretation_Prompt,MiniMax-M3,Kimi-K3,8.5,5.333333333333333,7.666666666666667,5.333333333333333,weaker member < 7
+Fxyd6-input resistance_Interpretation_Prompt,MiniMax-M3,Inkling,8.0,5.333333333333333,7.333333333333333,5.333333333333333,weaker member < 7
+Fxyd6-input resistance_Interpretation_Prompt,MiniMax-M3,GLM-5.3,8.5,5.333333333333333,8.0,5.333333333333333,weaker member < 7
+Fxyd6-input resistance_Interpretation_Prompt,MiniMax-M3,GLM-5.3-Flash,8.0,5.333333333333333,6.666666666666667,5.333333333333333,weaker member < 7
+Fxyd6-input resistance_Interpretation_Prompt,Qwen3.8-2.4T-A95B,DeepSeek-V4-Flash-0731,9.0,7.666666666666667,8.0,7.666666666666667,weaker member 7-8
+Fxyd6-input resistance_Interpretation_Prompt,Qwen3.8-2.4T-A95B,DeepSeek-V4-Pro-0813,7.5,7.666666666666667,7.666666666666667,7.666666666666667,weaker member 7-8
+Fxyd6-input resistance_Interpretation_Prompt,Qwen3.8-2.4T-A95B,DeepSeek-V4.1-Flash,8.0,7.666666666666667,8.333333333333334,7.666666666666667,weaker member 7-8
+Fxyd6-input resistance_Interpretation_Prompt,Qwen3.8-2.4T-A95B,gemini-3.1-pro-preview,7.5,7.666666666666667,6.666666666666667,6.666666666666667,weaker member < 7
+Fxyd6-input resistance_Interpretation_Prompt,Qwen3.8-2.4T-A95B,Kimi-K3,8.0,7.666666666666667,7.666666666666667,7.666666666666667,weaker member 7-8
+Fxyd6-input resistance_Interpretation_Prompt,Qwen3.8-2.4T-A95B,Inkling,6.5,7.666666666666667,7.333333333333333,7.333333333333333,weaker member 7-8
+Fxyd6-input resistance_Interpretation_Prompt,Qwen3.8-2.4T-A95B,GLM-5.3,8.0,7.666666666666667,8.0,7.666666666666667,weaker member 7-8
+Fxyd6-input resistance_Interpretation_Prompt,Qwen3.8-2.4T-A95B,GLM-5.3-Flash,6.5,7.666666666666667,6.666666666666667,6.666666666666667,weaker member < 7
+Fxyd6-input resistance_Interpretation_Prompt,DeepSeek-V4-Flash-0731,DeepSeek-V4-Pro-0813,7.5,8.0,7.666666666666667,7.666666666666667,weaker member 7-8
+Fxyd6-input resistance_Interpretation_Prompt,DeepSeek-V4-Flash-0731,DeepSeek-V4.1-Flash,8.0,8.0,8.333333333333334,8.0,both members >= 8
+Fxyd6-input resistance_Interpretation_Prompt,DeepSeek-V4-Flash-0731,gemini-3.1-pro-preview,6.0,8.0,6.666666666666667,6.666666666666667,weaker member < 7
+Fxyd6-input resistance_Interpretation_Prompt,DeepSeek-V4-Flash-0731,Kimi-K3,8.0,8.0,7.666666666666667,7.666666666666667,weaker member 7-8
+Fxyd6-input resistance_Interpretation_Prompt,DeepSeek-V4-Flash-0731,Inkling,7.0,8.0,7.333333333333333,7.333333333333333,weaker member 7-8
+Fxyd6-input resistance_Interpretation_Prompt,DeepSeek-V4-Flash-0731,GLM-5.3,8.0,8.0,8.0,8.0,both members >= 8
+Fxyd6-input resistance_Interpretation_Prompt,DeepSeek-V4-Flash-0731,GLM-5.3-Flash,6.0,8.0,6.666666666666667,6.666666666666667,weaker member < 7
+Fxyd6-input resistance_Interpretation_Prompt,DeepSeek-V4-Pro-0813,DeepSeek-V4.1-Flash,8.0,7.666666666666667,8.333333333333334,7.666666666666667,weaker member 7-8
+Fxyd6-input resistance_Interpretation_Prompt,DeepSeek-V4-Pro-0813,gemini-3.1-pro-preview,7.0,7.666666666666667,6.666666666666667,6.666666666666667,weaker member < 7
+Fxyd6-input resistance_Interpretation_Prompt,DeepSeek-V4-Pro-0813,Kimi-K3,6.5,7.666666666666667,7.666666666666667,7.666666666666667,weaker member 7-8
+Fxyd6-input resistance_Interpretation_Prompt,DeepSeek-V4-Pro-0813,Inkling,6.0,7.666666666666667,7.333333333333333,7.333333333333333,weaker member 7-8
+Fxyd6-input resistance_Interpretation_Prompt,DeepSeek-V4-Pro-0813,GLM-5.3,8.5,7.666666666666667,8.0,7.666666666666667,weaker member 7-8
+Fxyd6-input resistance_Interpretation_Prompt,DeepSeek-V4-Pro-0813,GLM-5.3-Flash,8.0,7.666666666666667,6.666666666666667,6.666666666666667,weaker member < 7
+Fxyd6-input resistance_Interpretation_Prompt,DeepSeek-V4.1-Flash,gemini-3.1-pro-preview,7.5,8.333333333333334,6.666666666666667,6.666666666666667,weaker member < 7
+Fxyd6-input resistance_Interpretation_Prompt,DeepSeek-V4.1-Flash,Kimi-K3,8.5,8.333333333333334,7.666666666666667,7.666666666666667,weaker member 7-8
+Fxyd6-input resistance_Interpretation_Prompt,DeepSeek-V4.1-Flash,Inkling,8.5,8.333333333333334,7.333333333333333,7.333333333333333,weaker member 7-8
+Fxyd6-input resistance_Interpretation_Prompt,DeepSeek-V4.1-Flash,GLM-5.3,8.0,8.333333333333334,8.0,8.0,both members >= 8
+Fxyd6-input resistance_Interpretation_Prompt,DeepSeek-V4.1-Flash,GLM-5.3-Flash,8.0,8.333333333333334,6.666666666666667,6.666666666666667,weaker member < 7
+Fxyd6-input resistance_Interpretation_Prompt,gemini-3.1-pro-preview,Kimi-K3,8.5,6.666666666666667,7.666666666666667,6.666666666666667,weaker member < 7
+Fxyd6-input resistance_Interpretation_Prompt,gemini-3.1-pro-preview,Inkling,8.0,6.666666666666667,7.333333333333333,6.666666666666667,weaker member < 7
+Fxyd6-input resistance_Interpretation_Prompt,gemini-3.1-pro-preview,GLM-5.3,7.5,6.666666666666667,8.0,6.666666666666667,weaker member < 7
+Fxyd6-input resistance_Interpretation_Prompt,gemini-3.1-pro-preview,GLM-5.3-Flash,8.0,6.666666666666667,6.666666666666667,6.666666666666667,weaker member < 7
+Fxyd6-input resistance_Interpretation_Prompt,Kimi-K3,Inkling,8.0,7.666666666666667,7.333333333333333,7.333333333333333,weaker member 7-8
+Fxyd6-input resistance_Interpretation_Prompt,Kimi-K3,GLM-5.3,10.0,7.666666666666667,8.0,7.666666666666667,weaker member 7-8
+Fxyd6-input resistance_Interpretation_Prompt,Kimi-K3,GLM-5.3-Flash,8.0,7.666666666666667,6.666666666666667,6.666666666666667,weaker member < 7
+Fxyd6-input resistance_Interpretation_Prompt,Inkling,GLM-5.3,8.0,7.333333333333333,8.0,7.333333333333333,weaker member 7-8
+Fxyd6-input resistance_Interpretation_Prompt,Inkling,GLM-5.3-Flash,6.5,7.333333333333333,6.666666666666667,6.666666666666667,weaker member < 7
+Fxyd6-input resistance_Interpretation_Prompt,GLM-5.3,GLM-5.3-Flash,7.0,8.0,6.666666666666667,6.666666666666667,weaker member < 7
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,MiniMax-M3,Qwen3.8-2.4T-A95B,8.0,7.666666666666667,7.666666666666667,7.666666666666667,weaker member 7-8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,MiniMax-M3,DeepSeek-V4-Flash-0731,8.0,7.666666666666667,8.333333333333334,7.666666666666667,weaker member 7-8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,MiniMax-M3,DeepSeek-V4-Pro-0813,8.5,7.666666666666667,6.666666666666667,6.666666666666667,weaker member < 7
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,MiniMax-M3,DeepSeek-V4.1-Flash,8.0,7.666666666666667,8.333333333333334,7.666666666666667,weaker member 7-8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,MiniMax-M3,gemini-3.1-pro-preview,6.0,7.666666666666667,8.333333333333334,7.666666666666667,weaker member 7-8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,MiniMax-M3,Kimi-K3,7.5,7.666666666666667,8.0,7.666666666666667,weaker member 7-8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,MiniMax-M3,Inkling,4.5,7.666666666666667,8.0,7.666666666666667,weaker member 7-8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,MiniMax-M3,GLM-5.3,9.0,7.666666666666667,8.0,7.666666666666667,weaker member 7-8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,MiniMax-M3,GLM-5.3-Flash,8.0,7.666666666666667,8.333333333333334,7.666666666666667,weaker member 7-8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,Qwen3.8-2.4T-A95B,DeepSeek-V4-Flash-0731,8.0,7.666666666666667,8.333333333333334,7.666666666666667,weaker member 7-8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,Qwen3.8-2.4T-A95B,DeepSeek-V4-Pro-0813,7.0,7.666666666666667,6.666666666666667,6.666666666666667,weaker member < 7
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,Qwen3.8-2.4T-A95B,DeepSeek-V4.1-Flash,9.0,7.666666666666667,8.333333333333334,7.666666666666667,weaker member 7-8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,Qwen3.8-2.4T-A95B,gemini-3.1-pro-preview,7.0,7.666666666666667,8.333333333333334,7.666666666666667,weaker member 7-8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,Qwen3.8-2.4T-A95B,Kimi-K3,7.0,7.666666666666667,8.0,7.666666666666667,weaker member 7-8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,Qwen3.8-2.4T-A95B,Inkling,6.5,7.666666666666667,8.0,7.666666666666667,weaker member 7-8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,Qwen3.8-2.4T-A95B,GLM-5.3,8.0,7.666666666666667,8.0,7.666666666666667,weaker member 7-8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,Qwen3.8-2.4T-A95B,GLM-5.3-Flash,7.5,7.666666666666667,8.333333333333334,7.666666666666667,weaker member 7-8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,DeepSeek-V4-Flash-0731,DeepSeek-V4-Pro-0813,8.0,8.333333333333334,6.666666666666667,6.666666666666667,weaker member < 7
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,DeepSeek-V4-Flash-0731,DeepSeek-V4.1-Flash,9.0,8.333333333333334,8.333333333333334,8.333333333333334,both members >= 8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,DeepSeek-V4-Flash-0731,gemini-3.1-pro-preview,5.0,8.333333333333334,8.333333333333334,8.333333333333334,both members >= 8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,DeepSeek-V4-Flash-0731,Kimi-K3,8.0,8.333333333333334,8.0,8.0,both members >= 8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,DeepSeek-V4-Flash-0731,Inkling,5.5,8.333333333333334,8.0,8.0,both members >= 8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,DeepSeek-V4-Flash-0731,GLM-5.3,6.0,8.333333333333334,8.0,8.0,both members >= 8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,DeepSeek-V4-Flash-0731,GLM-5.3-Flash,7.0,8.333333333333334,8.333333333333334,8.333333333333334,both members >= 8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,DeepSeek-V4-Pro-0813,DeepSeek-V4.1-Flash,8.0,6.666666666666667,8.333333333333334,6.666666666666667,weaker member < 7
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,DeepSeek-V4-Pro-0813,gemini-3.1-pro-preview,7.0,6.666666666666667,8.333333333333334,6.666666666666667,weaker member < 7
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,DeepSeek-V4-Pro-0813,Kimi-K3,7.5,6.666666666666667,8.0,6.666666666666667,weaker member < 7
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,DeepSeek-V4-Pro-0813,Inkling,4.0,6.666666666666667,8.0,6.666666666666667,weaker member < 7
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,DeepSeek-V4-Pro-0813,GLM-5.3,8.0,6.666666666666667,8.0,6.666666666666667,weaker member < 7
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,DeepSeek-V4-Pro-0813,GLM-5.3-Flash,7.5,6.666666666666667,8.333333333333334,6.666666666666667,weaker member < 7
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,DeepSeek-V4.1-Flash,gemini-3.1-pro-preview,6.5,8.333333333333334,8.333333333333334,8.333333333333334,both members >= 8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,DeepSeek-V4.1-Flash,Kimi-K3,7.5,8.333333333333334,8.0,8.0,both members >= 8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,DeepSeek-V4.1-Flash,Inkling,4.5,8.333333333333334,8.0,8.0,both members >= 8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,DeepSeek-V4.1-Flash,GLM-5.3,7.0,8.333333333333334,8.0,8.0,both members >= 8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,DeepSeek-V4.1-Flash,GLM-5.3-Flash,8.0,8.333333333333334,8.333333333333334,8.333333333333334,both members >= 8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,gemini-3.1-pro-preview,Kimi-K3,7.5,8.333333333333334,8.0,8.0,both members >= 8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,gemini-3.1-pro-preview,Inkling,6.0,8.333333333333334,8.0,8.0,both members >= 8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,gemini-3.1-pro-preview,GLM-5.3,7.5,8.333333333333334,8.0,8.0,both members >= 8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,gemini-3.1-pro-preview,GLM-5.3-Flash,5.0,8.333333333333334,8.333333333333334,8.333333333333334,both members >= 8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,Kimi-K3,Inkling,5.0,8.0,8.0,8.0,both members >= 8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,Kimi-K3,GLM-5.3,8.0,8.0,8.0,8.0,both members >= 8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,Kimi-K3,GLM-5.3-Flash,7.5,8.0,8.333333333333334,8.0,both members >= 8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,Inkling,GLM-5.3,6.0,8.0,8.0,8.0,both members >= 8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,Inkling,GLM-5.3-Flash,6.5,8.0,8.333333333333334,8.0,both members >= 8
+HUMAN_GNLY-CD45RA_Interpretation_Prompt,GLM-5.3,GLM-5.3-Flash,9.0,8.0,8.333333333333334,8.0,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,MiniMax-M3,Qwen3.8-2.4T-A95B,6.5,8.0,8.666666666666666,8.0,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,MiniMax-M3,DeepSeek-V4-Flash-0731,5.5,8.0,8.333333333333334,8.0,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,MiniMax-M3,DeepSeek-V4-Pro-0813,8.0,8.0,8.0,8.0,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,MiniMax-M3,DeepSeek-V4.1-Flash,8.0,8.0,7.666666666666667,7.666666666666667,weaker member 7-8
+PTMA-Ki-67_Interpretation_Prompt,MiniMax-M3,gemini-3.1-pro-preview,5.0,8.0,8.333333333333334,8.0,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,MiniMax-M3,Kimi-K3,7.5,8.0,8.333333333333334,8.0,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,MiniMax-M3,Inkling,6.5,8.0,7.666666666666667,7.666666666666667,weaker member 7-8
+PTMA-Ki-67_Interpretation_Prompt,MiniMax-M3,GLM-5.3,7.0,8.0,9.0,8.0,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,MiniMax-M3,GLM-5.3-Flash,6.5,8.0,8.333333333333334,8.0,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,Qwen3.8-2.4T-A95B,DeepSeek-V4-Flash-0731,5.0,8.666666666666666,8.333333333333334,8.333333333333334,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,Qwen3.8-2.4T-A95B,DeepSeek-V4-Pro-0813,6.0,8.666666666666666,8.0,8.0,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,Qwen3.8-2.4T-A95B,DeepSeek-V4.1-Flash,6.0,8.666666666666666,7.666666666666667,7.666666666666667,weaker member 7-8
+PTMA-Ki-67_Interpretation_Prompt,Qwen3.8-2.4T-A95B,gemini-3.1-pro-preview,9.0,8.666666666666666,8.333333333333334,8.333333333333334,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,Qwen3.8-2.4T-A95B,Kimi-K3,8.0,8.666666666666666,8.333333333333334,8.333333333333334,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,Qwen3.8-2.4T-A95B,Inkling,8.0,8.666666666666666,7.666666666666667,7.666666666666667,weaker member 7-8
+PTMA-Ki-67_Interpretation_Prompt,Qwen3.8-2.4T-A95B,GLM-5.3,7.5,8.666666666666666,9.0,8.666666666666666,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,Qwen3.8-2.4T-A95B,GLM-5.3-Flash,8.0,8.666666666666666,8.333333333333334,8.333333333333334,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,DeepSeek-V4-Flash-0731,DeepSeek-V4-Pro-0813,7.0,8.333333333333334,8.0,8.0,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,DeepSeek-V4-Flash-0731,DeepSeek-V4.1-Flash,6.0,8.333333333333334,7.666666666666667,7.666666666666667,weaker member 7-8
+PTMA-Ki-67_Interpretation_Prompt,DeepSeek-V4-Flash-0731,gemini-3.1-pro-preview,5.5,8.333333333333334,8.333333333333334,8.333333333333334,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,DeepSeek-V4-Flash-0731,Kimi-K3,4.0,8.333333333333334,8.333333333333334,8.333333333333334,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,DeepSeek-V4-Flash-0731,Inkling,4.5,8.333333333333334,7.666666666666667,7.666666666666667,weaker member 7-8
+PTMA-Ki-67_Interpretation_Prompt,DeepSeek-V4-Flash-0731,GLM-5.3,3.5,8.333333333333334,9.0,8.333333333333334,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,DeepSeek-V4-Flash-0731,GLM-5.3-Flash,4.5,8.333333333333334,8.333333333333334,8.333333333333334,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,DeepSeek-V4-Pro-0813,DeepSeek-V4.1-Flash,9.0,8.0,7.666666666666667,7.666666666666667,weaker member 7-8
+PTMA-Ki-67_Interpretation_Prompt,DeepSeek-V4-Pro-0813,gemini-3.1-pro-preview,5.0,8.0,8.333333333333334,8.0,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,DeepSeek-V4-Pro-0813,Kimi-K3,7.0,8.0,8.333333333333334,8.0,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,DeepSeek-V4-Pro-0813,Inkling,4.5,8.0,7.666666666666667,7.666666666666667,weaker member 7-8
+PTMA-Ki-67_Interpretation_Prompt,DeepSeek-V4-Pro-0813,GLM-5.3,7.0,8.0,9.0,8.0,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,DeepSeek-V4-Pro-0813,GLM-5.3-Flash,6.0,8.0,8.333333333333334,8.0,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,DeepSeek-V4.1-Flash,gemini-3.1-pro-preview,5.5,7.666666666666667,8.333333333333334,7.666666666666667,weaker member 7-8
+PTMA-Ki-67_Interpretation_Prompt,DeepSeek-V4.1-Flash,Kimi-K3,8.5,7.666666666666667,8.333333333333334,7.666666666666667,weaker member 7-8
+PTMA-Ki-67_Interpretation_Prompt,DeepSeek-V4.1-Flash,Inkling,6.0,7.666666666666667,7.666666666666667,7.666666666666667,weaker member 7-8
+PTMA-Ki-67_Interpretation_Prompt,DeepSeek-V4.1-Flash,GLM-5.3,8.5,7.666666666666667,9.0,7.666666666666667,weaker member 7-8
+PTMA-Ki-67_Interpretation_Prompt,DeepSeek-V4.1-Flash,GLM-5.3-Flash,6.5,7.666666666666667,8.333333333333334,7.666666666666667,weaker member 7-8
+PTMA-Ki-67_Interpretation_Prompt,gemini-3.1-pro-preview,Kimi-K3,6.5,8.333333333333334,8.333333333333334,8.333333333333334,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,gemini-3.1-pro-preview,Inkling,8.0,8.333333333333334,7.666666666666667,7.666666666666667,weaker member 7-8
+PTMA-Ki-67_Interpretation_Prompt,gemini-3.1-pro-preview,GLM-5.3,6.0,8.333333333333334,9.0,8.333333333333334,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,gemini-3.1-pro-preview,GLM-5.3-Flash,8.0,8.333333333333334,8.333333333333334,8.333333333333334,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,Kimi-K3,Inkling,7.5,8.333333333333334,7.666666666666667,7.666666666666667,weaker member 7-8
+PTMA-Ki-67_Interpretation_Prompt,Kimi-K3,GLM-5.3,8.5,8.333333333333334,9.0,8.333333333333334,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,Kimi-K3,GLM-5.3-Flash,7.5,8.333333333333334,8.333333333333334,8.333333333333334,both members >= 8
+PTMA-Ki-67_Interpretation_Prompt,Inkling,GLM-5.3,6.5,7.666666666666667,9.0,7.666666666666667,weaker member 7-8
+PTMA-Ki-67_Interpretation_Prompt,Inkling,GLM-5.3-Flash,8.0,7.666666666666667,8.333333333333334,7.666666666666667,weaker member 7-8
+PTMA-Ki-67_Interpretation_Prompt,GLM-5.3,GLM-5.3-Flash,6.5,9.0,8.333333333333334,8.333333333333334,both members >= 8
+pERK_EGF10_DT_prompt,MiniMax-M3,Qwen3.8-2.4T-A95B,8.5,8.0,9.0,8.0,both members >= 8
+pERK_EGF10_DT_prompt,MiniMax-M3,DeepSeek-V4-Flash-0731,8.0,8.0,8.666666666666666,8.0,both members >= 8
+pERK_EGF10_DT_prompt,MiniMax-M3,DeepSeek-V4-Pro-0813,6.5,8.0,9.0,8.0,both members >= 8
+pERK_EGF10_DT_prompt,MiniMax-M3,DeepSeek-V4.1-Flash,8.5,8.0,8.333333333333334,8.0,both members >= 8
+pERK_EGF10_DT_prompt,MiniMax-M3,gemini-3.1-pro-preview,7.5,8.0,8.0,8.0,both members >= 8
+pERK_EGF10_DT_prompt,MiniMax-M3,Kimi-K3,7.0,8.0,8.666666666666666,8.0,both members >= 8
+pERK_EGF10_DT_prompt,MiniMax-M3,Inkling,9.0,8.0,8.0,8.0,both members >= 8
+pERK_EGF10_DT_prompt,MiniMax-M3,GLM-5.3,8.5,8.0,9.0,8.0,both members >= 8
+pERK_EGF10_DT_prompt,MiniMax-M3,GLM-5.3-Flash,8.0,8.0,8.333333333333334,8.0,both members >= 8
+pERK_EGF10_DT_prompt,Qwen3.8-2.4T-A95B,DeepSeek-V4-Flash-0731,7.5,9.0,8.666666666666666,8.666666666666666,both members >= 8
+pERK_EGF10_DT_prompt,Qwen3.8-2.4T-A95B,DeepSeek-V4-Pro-0813,8.0,9.0,9.0,9.0,both members >= 8
+pERK_EGF10_DT_prompt,Qwen3.8-2.4T-A95B,DeepSeek-V4.1-Flash,8.0,9.0,8.333333333333334,8.333333333333334,both members >= 8
+pERK_EGF10_DT_prompt,Qwen3.8-2.4T-A95B,gemini-3.1-pro-preview,7.5,9.0,8.0,8.0,both members >= 8
+pERK_EGF10_DT_prompt,Qwen3.8-2.4T-A95B,Kimi-K3,7.5,9.0,8.666666666666666,8.666666666666666,both members >= 8
+pERK_EGF10_DT_prompt,Qwen3.8-2.4T-A95B,Inkling,8.0,9.0,8.0,8.0,both members >= 8
+pERK_EGF10_DT_prompt,Qwen3.8-2.4T-A95B,GLM-5.3,8.5,9.0,9.0,9.0,both members >= 8
+pERK_EGF10_DT_prompt,Qwen3.8-2.4T-A95B,GLM-5.3-Flash,7.5,9.0,8.333333333333334,8.333333333333334,both members >= 8
+pERK_EGF10_DT_prompt,DeepSeek-V4-Flash-0731,DeepSeek-V4-Pro-0813,8.5,8.666666666666666,9.0,8.666666666666666,both members >= 8
+pERK_EGF10_DT_prompt,DeepSeek-V4-Flash-0731,DeepSeek-V4.1-Flash,8.0,8.666666666666666,8.333333333333334,8.333333333333334,both members >= 8
+pERK_EGF10_DT_prompt,DeepSeek-V4-Flash-0731,gemini-3.1-pro-preview,6.5,8.666666666666666,8.0,8.0,both members >= 8
+pERK_EGF10_DT_prompt,DeepSeek-V4-Flash-0731,Kimi-K3,8.0,8.666666666666666,8.666666666666666,8.666666666666666,both members >= 8
+pERK_EGF10_DT_prompt,DeepSeek-V4-Flash-0731,Inkling,9.0,8.666666666666666,8.0,8.0,both members >= 8
+pERK_EGF10_DT_prompt,DeepSeek-V4-Flash-0731,GLM-5.3,7.0,8.666666666666666,9.0,8.666666666666666,both members >= 8
+pERK_EGF10_DT_prompt,DeepSeek-V4-Flash-0731,GLM-5.3-Flash,7.5,8.666666666666666,8.333333333333334,8.333333333333334,both members >= 8
+pERK_EGF10_DT_prompt,DeepSeek-V4-Pro-0813,DeepSeek-V4.1-Flash,8.5,9.0,8.333333333333334,8.333333333333334,both members >= 8
+pERK_EGF10_DT_prompt,DeepSeek-V4-Pro-0813,gemini-3.1-pro-preview,7.0,9.0,8.0,8.0,both members >= 8
+pERK_EGF10_DT_prompt,DeepSeek-V4-Pro-0813,Kimi-K3,8.5,9.0,8.666666666666666,8.666666666666666,both members >= 8
+pERK_EGF10_DT_prompt,DeepSeek-V4-Pro-0813,Inkling,8.0,9.0,8.0,8.0,both members >= 8
+pERK_EGF10_DT_prompt,DeepSeek-V4-Pro-0813,GLM-5.3,8.0,9.0,9.0,9.0,both members >= 8
+pERK_EGF10_DT_prompt,DeepSeek-V4-Pro-0813,GLM-5.3-Flash,8.0,9.0,8.333333333333334,8.333333333333334,both members >= 8
+pERK_EGF10_DT_prompt,DeepSeek-V4.1-Flash,gemini-3.1-pro-preview,7.0,8.333333333333334,8.0,8.0,both members >= 8
+pERK_EGF10_DT_prompt,DeepSeek-V4.1-Flash,Kimi-K3,8.0,8.333333333333334,8.666666666666666,8.333333333333334,both members >= 8
+pERK_EGF10_DT_prompt,DeepSeek-V4.1-Flash,Inkling,9.0,8.333333333333334,8.0,8.0,both members >= 8
+pERK_EGF10_DT_prompt,DeepSeek-V4.1-Flash,GLM-5.3,9.0,8.333333333333334,9.0,8.333333333333334,both members >= 8
+pERK_EGF10_DT_prompt,DeepSeek-V4.1-Flash,GLM-5.3-Flash,8.5,8.333333333333334,8.333333333333334,8.333333333333334,both members >= 8
+pERK_EGF10_DT_prompt,gemini-3.1-pro-preview,Kimi-K3,7.0,8.0,8.666666666666666,8.0,both members >= 8
+pERK_EGF10_DT_prompt,gemini-3.1-pro-preview,Inkling,8.0,8.0,8.0,8.0,both members >= 8
+pERK_EGF10_DT_prompt,gemini-3.1-pro-preview,GLM-5.3,7.5,8.0,9.0,8.0,both members >= 8
+pERK_EGF10_DT_prompt,gemini-3.1-pro-preview,GLM-5.3-Flash,7.0,8.0,8.333333333333334,8.0,both members >= 8
+pERK_EGF10_DT_prompt,Kimi-K3,Inkling,8.5,8.666666666666666,8.0,8.0,both members >= 8
+pERK_EGF10_DT_prompt,Kimi-K3,GLM-5.3,10.0,8.666666666666666,9.0,8.666666666666666,both members >= 8
+pERK_EGF10_DT_prompt,Kimi-K3,GLM-5.3-Flash,8.5,8.666666666666666,8.333333333333334,8.333333333333334,both members >= 8
+pERK_EGF10_DT_prompt,Inkling,GLM-5.3,8.5,8.0,9.0,8.0,both members >= 8
+pERK_EGF10_DT_prompt,Inkling,GLM-5.3-Flash,7.0,8.0,8.333333333333334,8.0,both members >= 8
+pERK_EGF10_DT_prompt,GLM-5.3,GLM-5.3-Flash,9.0,9.0,8.333333333333334,8.333333333333334,both members >= 8

@@ -1,0 +1,16 @@
+{
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "prompt_file": "IL2RA-target_CCR5_Interpretation_Prompt_80_4.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 9,
+    "Biological Plausibility_reason": "The Treg-centered interpretation, IL2RA\u2013STAT5 maintenance program, CCR4-associated trafficking, and CCR5-dependent migration are biologically defensible. Calling the CD69-low state definitively recirculating and proposing IL2RA licensing of CCR5 are reasonable but incompletely established extrapolations.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 7,
+    "Grounded Mechanistic Synthesis_reason": "FOXP3, low TNFRSF4, high CCR4, and low CD69 are integrated as a Treg trafficking state in which IL2RA\u2013STAT5 activity is proposed to support CCR5 competence. The molecular transition from STAT5 signaling to CCR5 regulation remains broad, and low TNFRSF4 functions mainly as a state discriminator rather than a developed mechanistic contributor. No formal ceiling was applied because all contextual features were explicitly connected and the focus-feature\u2013target mechanism was biologically defensible.",
+    "Literature Grounding_zone1": 8
+  },
+  "final_score_zone1": 58.0
+}

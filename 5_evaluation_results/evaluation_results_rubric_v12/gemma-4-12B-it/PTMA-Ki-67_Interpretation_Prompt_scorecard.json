@@ -1,0 +1,16 @@
+{
+  "model": "gemma-4-12B-it",
+  "prompt_file": "PTMA-Ki-67_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 7,
+    "Biological Plausibility_reason": "The RNA-processing, microtubule, and translational-growth context is broadly compatible with a proliferative Ki-67-positive breast cancer state. However, PTMA-mediated protein synthesis and HNRNPA2B1 stabilization of PTMA-related transcripts are speculative and weakly grounded rather than established mechanisms.",
+    "Specificity_zone1": 6,
+    "Grounded Mechanistic Synthesis_zone1": 5,
+    "Grounded Mechanistic Synthesis_reason": "HNRNPA2B1-mediated RNA processing, TUBB4B-associated microtubule dynamics, and RPLP0-associated translation were all connected to a permissive proliferative state in which PTMA attribution tracks Ki-67. TUBB4B remains mainly a proliferation marker, while the transitions from PTMA to enhanced translation and from HNRNPA2B1 to PTMA-related transcript stability are not mechanistically resolved. The feature-listing ceiling of 5 was applied because the response mostly juxtaposes feature functions and a broad growth state rather than explaining how the components act together through explicit biological transitions.",
+    "Literature Grounding_zone1": 4
+  },
+  "final_score_zone1": 50.0
+}

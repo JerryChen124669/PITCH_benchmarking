@@ -1,0 +1,16 @@
+{
+  "prompt_file": "EGR1-target_pRPS6_Interpretation_Prompt_80_4.txt",
+  "model_a": "Qwen3-Next-80B-A3B-Instruct",
+  "model_b": "pmc_llama",
+  "model_a_slug": "Qwen3-Next-80B-A3B-Instruct",
+  "model_b_slug": "pmc_llama",
+  "scores": {
+    "Zone & Feature Selection Similarity": 3,
+    "Feature Interpretation & Coverage Similarity": 2,
+    "Mechanistic Hypothesis Similarity": 2,
+    "Functional/Causal-Role Similarity": 1,
+    "Supporting Reasoning & Experimental Implication Similarity": 1,
+    "Response Scope & Elaboration Similarity": 1
+  },
+  "overall_similarity": 1.6666666666666667
+}

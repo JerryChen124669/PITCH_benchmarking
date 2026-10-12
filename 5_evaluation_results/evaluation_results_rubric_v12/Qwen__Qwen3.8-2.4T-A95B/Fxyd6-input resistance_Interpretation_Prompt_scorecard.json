@@ -1,0 +1,16 @@
+{
+  "model": "Qwen/Qwen3.8-2.4T-A95B",
+  "prompt_file": "Fxyd6-input resistance_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 8,
+    "Biological Plausibility_reason": "The Htr3a/Cnr1 interneuron context and FXYD-associated Na+/K+-ATPase biology support a coherent hypothesis. However, the direction of the pump-to-input-resistance effect and the developmental interpretations of Coro6 and Flt3 remain speculative.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 7,
+    "Grounded Mechanistic Synthesis_reason": "The response connects Htr3a-associated cation influx, Cnr1-associated neuromodulation, and Fxyd6-dependent pump homeostasis to input resistance while using low Coro6 and Flt3 as developmental-state selectors. The pump-to-membrane-conductance transition remains broad, and the Coro6 and Flt3 contributions are chiefly contextual rather than mechanistically resolved. No formal ceiling was applied because all contextual features were explicitly integrated and a substantive focus-feature\u2013target mechanism was provided.",
+    "Literature Grounding_zone1": 8
+  },
+  "final_score_zone1": 57.0
+}

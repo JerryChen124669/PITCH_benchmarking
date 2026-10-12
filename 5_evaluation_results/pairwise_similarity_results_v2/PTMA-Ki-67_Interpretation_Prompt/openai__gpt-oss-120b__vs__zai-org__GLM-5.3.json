@@ -1,0 +1,16 @@
+{
+  "prompt_file": "PTMA-Ki-67_Interpretation_Prompt.txt",
+  "model_a": "openai/gpt-oss-120b",
+  "model_b": "zai-org/GLM-5.3",
+  "model_a_slug": "openai__gpt-oss-120b",
+  "model_b_slug": "zai-org__GLM-5.3",
+  "scores": {
+    "Zone & Feature Selection Similarity": 10,
+    "Feature Interpretation & Coverage Similarity": 7,
+    "Mechanistic Hypothesis Similarity": 4,
+    "Functional/Causal-Role Similarity": 4,
+    "Supporting Reasoning & Experimental Implication Similarity": 5,
+    "Response Scope & Elaboration Similarity": 8
+  },
+  "overall_similarity": 6.333333333333333
+}

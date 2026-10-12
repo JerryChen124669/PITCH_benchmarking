@@ -1,0 +1,16 @@
+{
+  "prompt_file": "pERK_EGF10_DT_prompt.txt",
+  "model_a": "openai/gpt-oss-120b",
+  "model_b": "thinkingmachines/Inkling",
+  "model_a_slug": "openai__gpt-oss-120b",
+  "model_b_slug": "thinkingmachines__Inkling",
+  "scores": {
+    "Zone & Feature Selection Similarity": 8,
+    "Feature Interpretation & Coverage Similarity": 8,
+    "Mechanistic Hypothesis Similarity": 8,
+    "Functional/Causal-Role Similarity": 8,
+    "Supporting Reasoning & Experimental Implication Similarity": 8,
+    "Response Scope & Elaboration Similarity": 9
+  },
+  "overall_similarity": 8.166666666666666
+}

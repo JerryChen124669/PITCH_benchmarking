@@ -1,0 +1,16 @@
+{
+  "model": "gemma-4-31B-it",
+  "prompt_file": "Fxyd6-input resistance_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 5,
+    "Biological Plausibility_reason": "FXYD6 modulation of Na+/K+-ATPase and HTR3A-mediated cation conductance provide a partially plausible foundation. However, the central claim that increased pump activity can prevent HTR3A conductance from lowering input resistance is electrophysiologically unsupported, and high HTR3A expression does not imply constitutive channel opening; this central misconception triggers the material-hallucination ceiling.",
+    "Specificity_zone1": 5,
+    "Grounded Mechanistic Synthesis_zone1": 3,
+    "Grounded Mechanistic Synthesis_reason": "The response connects FXYD6-mediated pump regulation to HTR3A conductance and uses low Coro6, high Cnr1, and low Flt3 to define a maturation or subtype context. Coro6 and Flt3 remain mostly descriptive, while CNR1 is incorrectly grouped with HTR3A as a source of membrane leak and is not mechanistically connected. A ceiling of 3 was applied because the principal FXYD6\u2013input-resistance mechanism depends on the materially unsupported premise that greater pump activity counteracts channel conductance to preserve input resistance.",
+    "Literature Grounding_zone1": 5
+  },
+  "final_score_zone1": 45.5
+}

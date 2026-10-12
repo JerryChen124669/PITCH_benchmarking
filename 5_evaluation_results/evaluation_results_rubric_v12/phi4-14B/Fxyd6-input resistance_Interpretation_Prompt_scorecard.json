@@ -1,0 +1,16 @@
+{
+  "model": "phi4-14B",
+  "prompt_file": "Fxyd6-input resistance_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 8,
+    "Biological Plausibility_zone1": 5,
+    "Biological Plausibility_reason": "The general roles assigned to CNR1 and HTR3A are defensible, but the Coro6 and Flt3 interpretations are weakly supported and the claim that elevated HTR3A contributes to increased input resistance is physiologically questionable. Most importantly, the response never explains how Fxyd6 participates in the proposed association.",
+    "Specificity_zone1": 4,
+    "Grounded Mechanistic Synthesis_zone1": 3,
+    "Grounded Mechanistic Synthesis_reason": "Coro6, Cnr1, Htr3a, and Flt3 were each connected individually to excitability or input resistance through cytoskeletal, receptor-signaling, or developmental concepts. Fxyd6 was not mechanistically connected to input resistance, and the contextual features remained isolated rather than forming a unified mechanism. The no-explicit-focus-feature-to-target-mechanism ceiling of 3 was applied.",
+    "Literature Grounding_zone1": 5
+  },
+  "final_score_zone1": 42.5
+}

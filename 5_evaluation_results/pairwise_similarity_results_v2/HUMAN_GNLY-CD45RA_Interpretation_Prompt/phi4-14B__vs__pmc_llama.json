@@ -1,0 +1,16 @@
+{
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "model_a": "phi4-14B",
+  "model_b": "pmc_llama",
+  "model_a_slug": "phi4-14B",
+  "model_b_slug": "pmc_llama",
+  "scores": {
+    "Zone & Feature Selection Similarity": 0,
+    "Feature Interpretation & Coverage Similarity": 0,
+    "Mechanistic Hypothesis Similarity": 0,
+    "Functional/Causal-Role Similarity": 0,
+    "Supporting Reasoning & Experimental Implication Similarity": 1,
+    "Response Scope & Elaboration Similarity": 2
+  },
+  "overall_similarity": 0.5
+}

@@ -1,0 +1,16 @@
+{
+  "prompt_file": "Fxyd6-input resistance_Interpretation_Prompt.txt",
+  "model_a": "Qwen3.8-27B-think",
+  "model_b": "zai-org/GLM-5.3-Flash",
+  "model_a_slug": "Qwen3.8-27B-think",
+  "model_b_slug": "zai-org__GLM-5.3-Flash",
+  "scores": {
+    "Zone & Feature Selection Similarity": 10,
+    "Feature Interpretation & Coverage Similarity": 4,
+    "Mechanistic Hypothesis Similarity": 2,
+    "Functional/Causal-Role Similarity": 2,
+    "Supporting Reasoning & Experimental Implication Similarity": 4,
+    "Response Scope & Elaboration Similarity": 8
+  },
+  "overall_similarity": 5.0
+}

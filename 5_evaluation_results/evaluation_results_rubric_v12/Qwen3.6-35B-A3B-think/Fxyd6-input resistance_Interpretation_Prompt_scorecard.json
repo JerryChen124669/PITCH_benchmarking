@@ -1,0 +1,16 @@
+{
+  "model": "Qwen3.6-35B-A3B-think",
+  "prompt_file": "Fxyd6-input resistance_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 3,
+    "Biological Plausibility_reason": "The response correctly invokes FXYD6 association with Na+/K+-ATPase and HTR3A as a relevant interneuron marker, but the principal mechanism relies on two central false or unsupported claims: that FXYD6 shifts pump K+ affinity into a micromolar, K+-scavenging regime and that high CNR1 creates receptor-mediated cation influx alongside HTR3A. These independent central hallucinations impose the maximum score of 3.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 3,
+    "Grounded Mechanistic Synthesis_reason": "CNR1 and HTR3A were integrated as a receptor-load context, while CORO6 and FLT3 were assigned trafficking and developmental-state roles around an FXYD6\u2013pump model. The proposed CORO6 endocytic role, FLT3 maturation interpretation, and bridge from receptor expression to input resistance remain unsupported or insufficiently resolved. The principal mechanism depends on materially false FXYD6 kinetic and CNR1 cation-flux claims, so the hallucination ceiling of 3 was applied.",
+    "Literature Grounding_zone1": 3
+  },
+  "final_score_zone1": 45.5
+}

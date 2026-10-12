@@ -1,0 +1,16 @@
+{
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "model_a": "phi4-14B",
+  "model_b": "thinkingmachines/Inkling",
+  "model_a_slug": "phi4-14B",
+  "model_b_slug": "thinkingmachines__Inkling",
+  "scores": {
+    "Zone & Feature Selection Similarity": 10,
+    "Feature Interpretation & Coverage Similarity": 7,
+    "Mechanistic Hypothesis Similarity": 6,
+    "Functional/Causal-Role Similarity": 6,
+    "Supporting Reasoning & Experimental Implication Similarity": 4,
+    "Response Scope & Elaboration Similarity": 2
+  },
+  "overall_similarity": 5.833333333333333
+}

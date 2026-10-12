@@ -1,0 +1,16 @@
+{
+  "model": "zai-org/GLM-5.3-Flash",
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 8,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 9,
+    "Biological Plausibility_reason": "The central interpretation\u2014that GNLY gains predictive value as a marker of a cytotoxic NK state that is typically CD45RA-positive\u2014is biologically strong and contextually appropriate. The CD56-bright characterization and proposed CST3\u2013cathepsin C relationship are more speculative but are not essential to the principal mechanism.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 8,
+    "Grounded Mechanistic Synthesis_reason": "The response integrates NKG7 and GZMB as a cytotoxic context, KLRD1 as an NK-identity discriminator, and low CST3 as a myeloid-exclusion signal linking GNLY-defined NK identity to CD45RA. The precise transition from this neonatal NK state to CD45RA expression remains a broad cell-identity association, and the added S100A12 discussion is not part of Node 20's path. No mechanistic-synthesis ceiling was applied because all four actual contextual features contribute explicitly to a coherent proxy-based mechanism.",
+    "Literature Grounding_zone1": 7
+  },
+  "final_score_zone1": 56.5
+}

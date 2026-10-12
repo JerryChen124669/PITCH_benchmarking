@@ -1,0 +1,16 @@
+{
+  "model": "moonshotai/Kimi-K3",
+  "prompt_file": "IL2RA-target_CCR5_Interpretation_Prompt_80_4.txt",
+  "scores": {
+    "Zone Identification score_zone1": 5,
+    "Logic Rigor_zone1": 6,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 8,
+    "Biological Plausibility_reason": "The proposed FOXP3\u2013IL2RA/STAT5, OX40 activation, and RUNX3/Th1-state framework is biologically defensible in tumor Tregs. However, direct OX40/STAT5 control of CCR5 and the claim that RUNX3 switches CCR5 ownership between Th1 and IL-2 programs remain speculative and somewhat oversimplified.",
+    "Specificity_zone1": 9,
+    "Grounded Mechanistic Synthesis_zone1": 9,
+    "Grounded Mechanistic Synthesis_reason": "FOXP3, OX40, and low RUNX3 are explicitly integrated with IL2RA-mediated IL-2 capture, STAT5 activity, and CCR5 expression in a coherent activated-Treg model. The direct transition from combined OX40/STAT5 signaling to CCR5 transcription and the proposed RUNX3-dependent attribution switch are asserted more strongly than they are mechanistically resolved. No mechanistic-synthesis ceiling was applied because all primary contextual features contribute explicitly to the focus-feature\u2013target explanation.",
+    "Literature Grounding_zone1": 8
+  },
+  "final_score_zone1": 51.0
+}

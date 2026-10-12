@@ -1,0 +1,19 @@
+CLUSTER SUMMARY (blind pairwise biological-content similarity)
+======================================================================
+5 cluster(s) forced (--k) via average-linkage hierarchical clustering on the content-similarity distance matrix (P1-P6).
+Post-hoc merge of hierarchical clusters {2+3+5} (ids from the k=5 cut) into 3 categories. This is NOT a single dendrogram cut: a merged category is a residual grouping, not a discovered cluster. Silhouette of the merged partition: 0.219.
+
+Cluster 1 -- Rule-faithful descriptive annotators (3 model(s)): Mistral-Small-3.1-24B, Llama-3.3-70B-Instruct-Turbo, phi4-14B
+  Within-cluster domain means: Tree Interpretation=8.78, Feature Semantics=6.81, Mechanistic Reasoning=6.08, Explanatory Style=6.94
+  Within this cluster, agreement is highest on Tree Interpretation (8.78) and lowest on Mechanistic Reasoning (6.08).
+  Its domain profile is close to the other clusters' average.
+
+Cluster 2 -- Integrative, weakly grounded hypothesis generators (6 model(s)): Nemotron3-Nano-30B-A3B, Qwen3-Next-80B-A3B-Instruct, Qwen3.8-9B-think-temp1, gemma-4-12B-it, gemma-4-31B-it, ministral3-14B
+  Within-cluster domain means: Tree Interpretation=8.07, Feature Semantics=5.66, Mechanistic Reasoning=5.06, Explanatory Style=6.12
+  Within this cluster, agreement is highest on Tree Interpretation (8.07) and lowest on Mechanistic Reasoning (5.06).
+  Relative to the other clusters' average, this cluster shows relatively lower Mechanistic Reasoning, Feature Semantics, Explanatory Style, and Tree Interpretation.
+
+Cluster 3 -- Mechanistic, literature-grounded integrators (13 model(s)): MiniMax-M3, Qwen3.6-35B-A3B-think, Qwen3.8-27B-think, Qwen3.8-2.4T-A95B, DeepSeek-V4-Flash-0731, DeepSeek-V4-Pro-0813, DeepSeek-V4.1-Flash, gemini-3.1-pro-preview, Kimi-K3, gpt-oss-120b, Inkling, GLM-5.3, GLM-5.3-Flash
+  Within-cluster domain means: Tree Interpretation=8.75, Feature Semantics=6.90, Mechanistic Reasoning=6.54, Explanatory Style=7.30
+  Within this cluster, agreement is highest on Tree Interpretation (8.75) and lowest on Mechanistic Reasoning (6.54).
+  Relative to the other clusters' average, this cluster shows relatively higher Mechanistic Reasoning, Explanatory Style, and Feature Semantics.

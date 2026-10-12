@@ -1,0 +1,16 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "prompt_file": "Fxyd6-input resistance_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 9,
+    "Biological Plausibility_zone1": 8,
+    "Biological Plausibility_reason": "The FXYD6\u2013Na+/K+-ATPase premise and the Htr3a/Cnr1 interneuron context are biologically defensible, although the direct receptor-to-FXYD6 coupling is speculative and the interpretation of low Flt3 as a neural maturation marker is weakly supported.",
+    "Specificity_zone1": 7,
+    "Grounded Mechanistic Synthesis_zone1": 5,
+    "Grounded Mechanistic Synthesis_reason": "The response connects Htr3a and Cnr1 to a CGE/CCK-like state and links FXYD6-regulated Na+/K+-ATPase activity to input resistance, while using low Flt3 as a proposed maturation context. Coro6 is not biologically integrated, and the signaling bridge from 5-HT3R or CB1R to FXYD6/pump regulation is asserted rather than explained. A ceiling of 5 was applied because the receptor-pump coupling and developmental-switch mechanisms are presented as separate hypotheses without explaining how they relate.",
+    "Literature Grounding_zone1": 7
+  },
+  "final_score_zone1": 52.5
+}

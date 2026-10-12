@@ -1,0 +1,16 @@
+{
+  "prompt_file": "IL2RA-target_CCR5_Interpretation_Prompt_80_4.txt",
+  "model_a": "biomistral",
+  "model_b": "gemini-3.1-pro-preview",
+  "model_a_slug": "biomistral",
+  "model_b_slug": "gemini-3.1-pro-preview",
+  "scores": {
+    "Zone & Feature Selection Similarity": 0,
+    "Feature Interpretation & Coverage Similarity": 1,
+    "Mechanistic Hypothesis Similarity": 0,
+    "Functional/Causal-Role Similarity": 0,
+    "Supporting Reasoning & Experimental Implication Similarity": 0,
+    "Response Scope & Elaboration Similarity": 1
+  },
+  "overall_similarity": 0.3333333333333333
+}

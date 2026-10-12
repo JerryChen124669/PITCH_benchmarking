@@ -1,0 +1,16 @@
+{
+  "prompt_file": "EGR1-target_pRPS6_Interpretation_Prompt_80_4.txt",
+  "model_a": "gemini-3.1-pro-preview",
+  "model_b": "ministral3-14B",
+  "model_a_slug": "gemini-3.1-pro-preview",
+  "model_b_slug": "ministral3-14B",
+  "scores": {
+    "Zone & Feature Selection Similarity": 0,
+    "Feature Interpretation & Coverage Similarity": 1,
+    "Mechanistic Hypothesis Similarity": 1,
+    "Functional/Causal-Role Similarity": 2,
+    "Supporting Reasoning & Experimental Implication Similarity": 1,
+    "Response Scope & Elaboration Similarity": 8
+  },
+  "overall_similarity": 2.1666666666666665
+}

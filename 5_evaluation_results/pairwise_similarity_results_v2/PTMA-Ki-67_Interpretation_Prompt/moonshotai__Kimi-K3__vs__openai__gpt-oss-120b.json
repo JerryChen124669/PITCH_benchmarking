@@ -1,0 +1,16 @@
+{
+  "prompt_file": "PTMA-Ki-67_Interpretation_Prompt.txt",
+  "model_a": "moonshotai/Kimi-K3",
+  "model_b": "openai/gpt-oss-120b",
+  "model_a_slug": "moonshotai__Kimi-K3",
+  "model_b_slug": "openai__gpt-oss-120b",
+  "scores": {
+    "Zone & Feature Selection Similarity": 10,
+    "Feature Interpretation & Coverage Similarity": 7,
+    "Mechanistic Hypothesis Similarity": 5,
+    "Functional/Causal-Role Similarity": 5,
+    "Supporting Reasoning & Experimental Implication Similarity": 5,
+    "Response Scope & Elaboration Similarity": 8
+  },
+  "overall_similarity": 6.666666666666667
+}

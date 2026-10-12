@@ -1,0 +1,16 @@
+{
+  "prompt_file": "PTMA-Ki-67_Interpretation_Prompt.txt",
+  "model_a": "openai/gpt-oss-120b",
+  "model_b": "pmc_llama",
+  "model_a_slug": "openai__gpt-oss-120b",
+  "model_b_slug": "pmc_llama",
+  "scores": {
+    "Zone & Feature Selection Similarity": 6,
+    "Feature Interpretation & Coverage Similarity": 6,
+    "Mechanistic Hypothesis Similarity": 4,
+    "Functional/Causal-Role Similarity": 3,
+    "Supporting Reasoning & Experimental Implication Similarity": 3,
+    "Response Scope & Elaboration Similarity": 2
+  },
+  "overall_similarity": 4.0
+}

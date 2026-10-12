@@ -1,0 +1,16 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "prompt_file": "IL2RA-target_CCR5_Interpretation_Prompt_80_4.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 8,
+    "Biological Plausibility_reason": "The FOXP3/IL2RA Treg identity, CCR4-associated trafficking, and a plausible IL-2\u2013STAT5 contribution to CCR5 form a defensible biological foundation. However, low CD69 does not uniquely establish recent migration, and the proposed competition between OX40\u2013NF-\u03baB and STAT5 at CCR5 regulatory elements is speculative.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 8,
+    "Grounded Mechanistic Synthesis_reason": "The response connects IL2RA\u2013STAT5 signaling to CCR5 and integrates FOXP3 identity, CCR4-mediated trafficking, low CD69, and limited OX40 signaling into one contextual model. The transitions from low CD69 to recent tumor entry and from low TNFRSF4 expression to STAT5 dominance are asserted more strongly than they are mechanistically explained. No synthesis ceiling was applied because an explicit focus-feature\u2013target mechanism and contributions from all four contextual features were provided.",
+    "Literature Grounding_zone1": 4
+  },
+  "final_score_zone1": 56.0
+}

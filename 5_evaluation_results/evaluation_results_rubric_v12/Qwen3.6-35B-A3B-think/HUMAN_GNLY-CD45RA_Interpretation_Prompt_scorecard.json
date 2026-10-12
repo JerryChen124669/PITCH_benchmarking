@@ -1,0 +1,16 @@
+{
+  "model": "Qwen3.6-35B-A3B-think",
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 1,
+    "Biological Plausibility_reason": "The general identification of a GNLY/NKG7/GZMB/KLRD1 cytotoxic lymphocyte state is plausible, but the principal mechanism relies on material hallucinations: these genes do not occupy a single enhancer domain, and the proposed CST3-controlled granulysin processing and NKG7/KLRD1-driven CD45 splicing lock lack a defensible basis.",
+    "Specificity_zone1": 9,
+    "Grounded Mechanistic Synthesis_zone1": 3,
+    "Grounded Mechanistic Synthesis_reason": "NKG7 and GZMB were successfully connected to a GNLY-associated cytotoxic program, while KLRD1 was integrated as an NK-like lineage marker associated with the CD45RA state. The CST3 proteostatic mechanism and the proposed cytotoxic-locus-to-CD45-splicing pathway are biologically unsupported, leaving the focus-feature\u2013target bridge ungrounded. A ceiling of 3 was applied because the principal GNLY-to-CD45RA mechanism depends on material hallucinations.",
+    "Literature Grounding_zone1": 3
+  },
+  "final_score_zone1": 44.5
+}

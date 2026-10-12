@@ -1,0 +1,16 @@
+{
+  "model": "Qwen3-Next-80B-A3B-Instruct",
+  "prompt_file": "Fxyd6-input resistance_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 1,
+    "Biological Plausibility_reason": "The Htr3a/CGE and Cnr1/CCK cell-identity associations are reasonable, but the principal conductance mechanism relies on multiple central errors: opening HTR3A channels would increase rather than reduce membrane conductance, CB1 is not established to increase resistance by suppressing GIRK, and Fxyd6-mediated pump regulation is unsupportedly equated with reduced K+ leak. The Coro6 and Flt3 developmental assignments are also poorly grounded, so the mechanism is primarily based on hallucinated biology and receives the corresponding ceiling.",
+    "Specificity_zone1": 9,
+    "Grounded Mechanistic Synthesis_zone1": 3,
+    "Grounded Mechanistic Synthesis_reason": "The response explicitly combines Fxyd6, Htr3a, Cnr1, Coro6, and Flt3 into a morphology- and conductance-based account of input resistance. Flt3 is largely a state label, while the Coro6-to-morphology and Fxyd6-to-K+-leak transitions are asserted without adequate biological bridges. The score is capped at 3 because the principal focus-feature\u2013target mechanism depends on material hallucinations about HTR3A, CB1/GIRK, and Fxyd6 conductance effects.",
+    "Literature Grounding_zone1": 3
+  },
+  "final_score_zone1": 44.5
+}

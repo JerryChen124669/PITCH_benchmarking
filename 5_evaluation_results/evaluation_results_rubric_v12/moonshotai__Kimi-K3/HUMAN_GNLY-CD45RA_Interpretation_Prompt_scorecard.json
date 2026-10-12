@@ -1,0 +1,16 @@
+{
+  "model": "moonshotai/Kimi-K3",
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 8,
+    "Biological Plausibility_reason": "The cytotoxic-granule program, CST3-low lymphoid context, and KLRD1-associated neonatal NK identity provide a defensible basis for GNLY\u2013CD45RA association. However, KLRD1 alone does not establish a CD56dim/NKG2A-high transitional phenotype, and the claims that virtually all cord-blood lymphocytes are CD45RA-positive and that the CD45RA-negative compartment is essentially myeloid are overgeneralized.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 8,
+    "Grounded Mechanistic Synthesis_reason": "NKG7 and GZMB were integrated with GNLY as a cytotoxic-granule module, while low CST3 and high KLRD1 were used to define a non-myeloid neonatal NK context associated with CD45RA. The KLRD1-to-NKG2A maturation assignment and the proposed direct coordination of granule genes with CD45 isoform regulation remained incompletely established. No mechanistic-synthesis ceiling was applied because all four contextual features contributed explicitly to a coherent focus-feature\u2013target model.",
+    "Literature Grounding_zone1": 7
+  },
+  "final_score_zone1": 57.5
+}

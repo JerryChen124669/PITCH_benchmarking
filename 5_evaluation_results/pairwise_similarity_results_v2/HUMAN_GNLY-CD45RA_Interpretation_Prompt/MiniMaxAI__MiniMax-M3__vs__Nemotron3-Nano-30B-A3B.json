@@ -1,0 +1,16 @@
+{
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "model_a": "MiniMaxAI/MiniMax-M3",
+  "model_b": "Nemotron3-Nano-30B-A3B",
+  "model_a_slug": "MiniMaxAI__MiniMax-M3",
+  "model_b_slug": "Nemotron3-Nano-30B-A3B",
+  "scores": {
+    "Zone & Feature Selection Similarity": 10,
+    "Feature Interpretation & Coverage Similarity": 7,
+    "Mechanistic Hypothesis Similarity": 7,
+    "Functional/Causal-Role Similarity": 6,
+    "Supporting Reasoning & Experimental Implication Similarity": 5,
+    "Response Scope & Elaboration Similarity": 7
+  },
+  "overall_similarity": 7.0
+}

@@ -1,0 +1,16 @@
+{
+  "model": "Qwen3-Next-80B-A3B-Instruct",
+  "prompt_file": "PTMA-Ki-67_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 1,
+    "Biological Plausibility_reason": "The contextual genes are assigned several broadly plausible proliferation-related roles, but the principal mechanism rests on the false identification of PTMA (prothymosin alpha) as PTPN11/SHP2. Because the proposed PTMA-to-Ki-67 pathway is primarily built on this material hallucination, the score is capped at 1.",
+    "Specificity_zone1": 9,
+    "Grounded Mechanistic Synthesis_zone1": 3,
+    "Grounded Mechanistic Synthesis_reason": "The response structurally integrates HNRNPA2B1-mediated RNA processing, RPLP0-associated translation, and TUBB4B-associated mitosis with Ki-67 expression. However, the essential bridge from PTMA to these processes is invalid because PTMA is not SHP2, and several asserted direct links to MKI67 are insufficiently established. The principal mechanism therefore receives the maximum-3 ceiling for dependence on a material hallucination.",
+    "Literature Grounding_zone1": 3
+  },
+  "final_score_zone1": 44.5
+}

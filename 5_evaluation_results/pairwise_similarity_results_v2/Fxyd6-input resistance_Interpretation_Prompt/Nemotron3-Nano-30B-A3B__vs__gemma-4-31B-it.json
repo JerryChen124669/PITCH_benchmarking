@@ -1,0 +1,16 @@
+{
+  "prompt_file": "Fxyd6-input resistance_Interpretation_Prompt.txt",
+  "model_a": "Nemotron3-Nano-30B-A3B",
+  "model_b": "gemma-4-31B-it",
+  "model_a_slug": "Nemotron3-Nano-30B-A3B",
+  "model_b_slug": "gemma-4-31B-it",
+  "scores": {
+    "Zone & Feature Selection Similarity": 10,
+    "Feature Interpretation & Coverage Similarity": 4,
+    "Mechanistic Hypothesis Similarity": 3,
+    "Functional/Causal-Role Similarity": 3,
+    "Supporting Reasoning & Experimental Implication Similarity": 5,
+    "Response Scope & Elaboration Similarity": 4
+  },
+  "overall_similarity": 4.833333333333333
+}

@@ -1,0 +1,16 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 6,
+    "Biological Plausibility_reason": "The cytotoxic-cell-state interpretation of GNLY, NKG7, GZMB, KLRD1, and CD45RA is broadly defensible. However, the central claim that CST3 directly inhibits granzymes or GNLY-mediated killing is biologically incorrect\u2014cystatin C primarily inhibits cysteine cathepsins\u2014so the one-central-hallucination ceiling applies.",
+    "Specificity_zone1": 7,
+    "Grounded Mechanistic Synthesis_zone1": 6,
+    "Grounded Mechanistic Synthesis_reason": "NKG7 and GZMB were integrated with GNLY as a cytotoxic program, while KLRD1 was used to define a mature NK/TEMRA-like context associated with CD45RA retention. The CST3-to-granzyme/GNLY brake relationship is invalid, and the transitions from cytotoxic state or CD94 signaling to maintenance of CD45RA remain largely asserted rather than mechanistically explained. A ceiling of 6 was applied because multiple central transitions to the target are expressed through broad cell-state language without a resolved biological bridge.",
+    "Literature Grounding_zone1": 3
+  },
+  "final_score_zone1": 50.5
+}

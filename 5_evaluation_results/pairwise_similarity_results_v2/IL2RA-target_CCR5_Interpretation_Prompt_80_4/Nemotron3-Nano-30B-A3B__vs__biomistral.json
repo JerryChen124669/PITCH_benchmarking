@@ -1,0 +1,16 @@
+{
+  "prompt_file": "IL2RA-target_CCR5_Interpretation_Prompt_80_4.txt",
+  "model_a": "Nemotron3-Nano-30B-A3B",
+  "model_b": "biomistral",
+  "model_a_slug": "Nemotron3-Nano-30B-A3B",
+  "model_b_slug": "biomistral",
+  "scores": {
+    "Zone & Feature Selection Similarity": 1,
+    "Feature Interpretation & Coverage Similarity": 1,
+    "Mechanistic Hypothesis Similarity": 0,
+    "Functional/Causal-Role Similarity": 1,
+    "Supporting Reasoning & Experimental Implication Similarity": 0,
+    "Response Scope & Elaboration Similarity": 1
+  },
+  "overall_similarity": 0.6666666666666666
+}

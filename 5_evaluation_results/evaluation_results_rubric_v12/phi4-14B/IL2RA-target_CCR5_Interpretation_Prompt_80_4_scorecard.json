@@ -1,0 +1,16 @@
+{
+  "model": "phi4-14B",
+  "prompt_file": "IL2RA-target_CCR5_Interpretation_Prompt_80_4.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 8,
+    "Feature Comprehensiveness_zone1": 8,
+    "Biological Plausibility_zone1": 7,
+    "Biological Plausibility_reason": "The established roles of FOXP3, IL2RA, OX40, CCR4, and CD69 in Treg identity, activation, and trafficking are broadly defensible. However, the proposed CD69\u2013IL2RA relationship is speculative, and the response provides little biological explanation for how this state relates specifically to CCR5.",
+    "Specificity_zone1": 4,
+    "Grounded Mechanistic Synthesis_zone1": 3,
+    "Grounded Mechanistic Synthesis_reason": "FOXP3-defined Treg identity, OX40-associated activation, CCR4-associated trafficking, and low CD69 were each connected to an IL2RA-supportive state. These relationships remained largely separate, and no biological transition explicitly connected IL2RA to CCR5. The no-explicit-focus-to-target-mechanism ceiling of 3 was applied.",
+    "Literature Grounding_zone1": 6
+  },
+  "final_score_zone1": 43.0
+}

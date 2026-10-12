@@ -1,0 +1,16 @@
+{
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "model_a": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+  "model_b": "phi4-14B",
+  "model_a_slug": "meta-llama__Llama-3.3-70B-Instruct-Turbo",
+  "model_b_slug": "phi4-14B",
+  "scores": {
+    "Zone & Feature Selection Similarity": 10,
+    "Feature Interpretation & Coverage Similarity": 8,
+    "Mechanistic Hypothesis Similarity": 6,
+    "Functional/Causal-Role Similarity": 7,
+    "Supporting Reasoning & Experimental Implication Similarity": 6,
+    "Response Scope & Elaboration Similarity": 8
+  },
+  "overall_similarity": 7.5
+}

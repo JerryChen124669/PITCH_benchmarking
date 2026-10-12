@@ -1,0 +1,16 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "prompt_file": "Fxyd6-input resistance_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 3,
+    "Biological Plausibility_reason": "The basic FXYD6\u2013Na+/K+-ATPase, CB1 signaling, and HTR3A channel premises are plausible, but the central Coro6-to-pump-trafficking and FLT3-to-Kv-channel maturation claims appear invented or unsupported. These two independent central hallucinations impose the maximum score of 3.",
+    "Specificity_zone1": 9,
+    "Grounded Mechanistic Synthesis_zone1": 6,
+    "Grounded Mechanistic Synthesis_reason": "FXYD6 was connected to input resistance through Na+/K+-pump activity, while CNR1-mediated HCN suppression and HTR3A-dependent cation loading were explicitly incorporated into a pump-sensitive state. Coro6 trafficking and FLT3/Kv maturation were also woven into the narrative, but these unsupported relationships cannot contribute to grounded synthesis. No synthesis ceiling was applied because an explicit focus\u2013target mechanism remained and half of the contextual features were defensibly integrated.",
+    "Literature Grounding_zone1": 3
+  },
+  "final_score_zone1": 49.5
+}

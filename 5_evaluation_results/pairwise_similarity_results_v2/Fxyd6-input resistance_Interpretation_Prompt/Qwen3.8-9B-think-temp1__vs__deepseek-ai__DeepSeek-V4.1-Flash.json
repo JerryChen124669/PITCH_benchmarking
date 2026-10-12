@@ -1,0 +1,16 @@
+{
+  "prompt_file": "Fxyd6-input resistance_Interpretation_Prompt.txt",
+  "model_a": "Qwen3.8-9B-think-temp1",
+  "model_b": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "model_a_slug": "Qwen3.8-9B-think-temp1",
+  "model_b_slug": "deepseek-ai__DeepSeek-V4.1-Flash",
+  "scores": {
+    "Zone & Feature Selection Similarity": 10,
+    "Feature Interpretation & Coverage Similarity": 6,
+    "Mechanistic Hypothesis Similarity": 4,
+    "Functional/Causal-Role Similarity": 5,
+    "Supporting Reasoning & Experimental Implication Similarity": 6,
+    "Response Scope & Elaboration Similarity": 7
+  },
+  "overall_similarity": 6.333333333333333
+}

@@ -1,0 +1,16 @@
+{
+  "model": "gemma-4-31B-it",
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 9,
+    "Biological Plausibility_reason": "The cytotoxic NK-state interpretation is well supported by GNLY, NKG7, GZMB, KLRD1, low CST3, and the common expression of CD45RA on NK cells. Treating high KLRD1 as a specific maturation gate is somewhat simplified, but it remains defensible as a state-marker hypothesis rather than an established causal mechanism.",
+    "Specificity_zone1": 7,
+    "Grounded Mechanistic Synthesis_zone1": 7,
+    "Grounded Mechanistic Synthesis_reason": "The response integrates GNLY, NKG7, and GZMB as cytotoxic machinery, KLRD1 as an NK-state anchor, and low CST3 as exclusion of a myeloid-like context associated with CD45RA prediction. The transition from KLRD1 expression to a mature CD45RA-positive state is asserted more than mechanistically explained, and NKG7 and GZMB function mainly as signature markers rather than connected intermediates. No formal ceiling was applied because all four contextual features contribute to a coherent common-cell-state mechanism.",
+    "Literature Grounding_zone1": 7
+  },
+  "final_score_zone1": 56.5
+}

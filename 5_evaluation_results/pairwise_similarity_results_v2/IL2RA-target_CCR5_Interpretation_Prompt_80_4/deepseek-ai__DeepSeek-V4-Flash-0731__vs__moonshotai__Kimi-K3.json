@@ -1,0 +1,16 @@
+{
+  "prompt_file": "IL2RA-target_CCR5_Interpretation_Prompt_80_4.txt",
+  "model_a": "deepseek-ai/DeepSeek-V4-Flash-0731",
+  "model_b": "moonshotai/Kimi-K3",
+  "model_a_slug": "deepseek-ai__DeepSeek-V4-Flash-0731",
+  "model_b_slug": "moonshotai__Kimi-K3",
+  "scores": {
+    "Zone & Feature Selection Similarity": 4,
+    "Feature Interpretation & Coverage Similarity": 4,
+    "Mechanistic Hypothesis Similarity": 4,
+    "Functional/Causal-Role Similarity": 4,
+    "Supporting Reasoning & Experimental Implication Similarity": 4,
+    "Response Scope & Elaboration Similarity": 6
+  },
+  "overall_similarity": 4.333333333333333
+}

@@ -1,0 +1,16 @@
+{
+  "prompt_file": "IL2RA-target_CCR5_Interpretation_Prompt_80_4.txt",
+  "model_a": "phi4-14B",
+  "model_b": "zai-org/GLM-5.3",
+  "model_a_slug": "phi4-14B",
+  "model_b_slug": "zai-org__GLM-5.3",
+  "scores": {
+    "Zone & Feature Selection Similarity": 2,
+    "Feature Interpretation & Coverage Similarity": 3,
+    "Mechanistic Hypothesis Similarity": 2,
+    "Functional/Causal-Role Similarity": 3,
+    "Supporting Reasoning & Experimental Implication Similarity": 2,
+    "Response Scope & Elaboration Similarity": 2
+  },
+  "overall_similarity": 2.3333333333333335
+}

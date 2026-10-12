@@ -1,0 +1,66 @@
+CATEGORY PERFORMANCE PROFILE (judge rubric, primary zone, 0-10)
+==============================================================================
+22 models, 6 cases
+Model score = mean over 6 cases; category value = mean of its models' means.
+
+Category 1 (n=3) Rule-faithful descriptive annotators
+  Mistral-Small-3.1-24B, Llama-3.3-70B-Instruct-Turbo, phi4-14B
+    Zone identification                      mean 8.61  (SD 0.96; range 7.50-9.17)
+    Rule extraction (logic rigor)            mean 9.00  (SD 0.58; range 8.33-9.33)
+    Feature comprehensiveness                mean 8.61  (SD 0.25; range 8.33-8.83)
+    Biological plausibility                  mean 6.61  (SD 0.92; range 6.00-7.67)
+    Hypothesis integration & specificity     mean 3.89  (SD 0.25; range 3.67-4.17)
+    Mechanistic synthesis                    mean 3.44  (SD 0.38; range 3.00-3.67)
+    Literature grounding (bonus, half weight) mean 4.83  (SD 0.83; range 4.00-5.67)
+
+Category 2 (n=6) Integrative, weakly grounded hypothesis generators
+  Qwen3.8-9B-think-temp1, ministral3-14B, Nemotron3-Nano-30B-A3B, Qwen3-Next-80B-A3B-Instruct, gemma-4-12B-it, gemma-4-31B-it
+    Zone identification                      mean 9.44  (SD 0.43; range 9.17-10.00)
+    Rule extraction (logic rigor)            mean 8.86  (SD 0.93; range 7.00-9.33)
+    Feature comprehensiveness                mean 9.92  (SD 0.09; range 9.83-10.00)
+    Biological plausibility                  mean 5.22  (SD 1.51; range 3.83-7.67)
+    Hypothesis integration & specificity     mean 7.42  (SD 0.71; range 6.67-8.50)
+    Mechanistic synthesis                    mean 5.28  (SD 0.76; range 4.33-6.50)
+    Literature grounding (bonus, half weight) mean 3.81  (SD 1.13; range 2.67-5.83)
+
+Category 3 (n=13) Mechanistic, literature-grounded integrators
+  Qwen3.8-27B-think, DeepSeek-V4.1-Flash, gpt-oss-120b, DeepSeek-V4-Flash-0731, DeepSeek-V4-Pro-0813, MiniMax-M3, Qwen3.8-2.4T-A95B, GLM-5.3-Flash, Kimi-K3, GLM-5.3, gemini-3.1-pro-preview, Qwen3.6-35B-A3B-think, Inkling
+    Zone identification                      mean 9.55  (SD 0.43; range 9.17-10.00)
+    Rule extraction (logic rigor)            mean 9.59  (SD 0.36; range 9.00-10.00)
+    Feature comprehensiveness                mean 9.96  (SD 0.10; range 9.67-10.00)
+    Biological plausibility                  mean 7.53  (SD 1.36; range 5.33-8.83)
+    Hypothesis integration & specificity     mean 8.23  (SD 0.36; range 7.83-9.00)
+    Mechanistic synthesis                    mean 7.44  (SD 0.90; range 5.83-8.83)
+    Literature grounding (bonus, half weight) mean 6.38  (SD 1.74; range 3.50-8.17)
+
+Kruskal-Wallis across categories (unit = model; Holm over the six core pillars):
+    Zone identification                      H=3.99  p=0.1361  (Holm p=0.1361)
+    Rule extraction (logic rigor)            H=6.42  p=0.0404  (Holm p=0.0809)
+    Feature comprehensiveness                H=11.21  p=0.0037  (Holm p=0.0147)
+    Biological plausibility                  H=7.98  p=0.0185  (Holm p=0.0555)
+    Hypothesis integration & specificity     H=11.93  p=0.0026  (Holm p=0.0128)
+    Mechanistic synthesis                    H=14.99  p=0.0006  (Holm p=0.0033)
+    Literature grounding (bonus, half weight) H=8.64  p=0.0133  (supplementary, not corrected)
+
+Pairwise contrasts (Cliff's delta for the first-named category; +1 = always higher; 'sep' = model ranges do not overlap; exact Mann-Whitney p is descriptive only):
+    Zone identification                      cat 1 vs cat 2 diff=-0.83  delta=-0.56  p=0.2619  
+    Zone identification                      cat 1 vs cat 3 diff=-0.94  delta=-0.64  p=0.1107  
+    Zone identification                      cat 2 vs cat 3 diff=-0.11  delta=-0.13  p=0.7012  
+    Rule extraction (logic rigor)            cat 1 vs cat 2 diff=+0.14  delta=+0.00  p=1.0000  
+    Rule extraction (logic rigor)            cat 1 vs cat 3 diff=-0.59  delta=-0.59  p=0.1464  
+    Rule extraction (logic rigor)            cat 2 vs cat 3 diff=-0.73  delta=-0.59  p=0.0462  
+    Feature comprehensiveness                cat 1 vs cat 2 diff=-1.31  delta=-1.00  p=0.0238  sep
+    Feature comprehensiveness                cat 1 vs cat 3 diff=-1.35  delta=-1.00  p=0.0036  sep
+    Feature comprehensiveness                cat 2 vs cat 3 diff=-0.04  delta=-0.31  p=0.3229  
+    Biological plausibility                  cat 1 vs cat 2 diff=+1.39  delta=+0.50  p=0.3810  
+    Biological plausibility                  cat 1 vs cat 3 diff=-0.91  delta=-0.44  p=0.2964  
+    Biological plausibility                  cat 2 vs cat 3 diff=-2.30  delta=-0.79  p=0.0047  
+    Hypothesis integration & specificity     cat 1 vs cat 2 diff=-3.53  delta=-1.00  p=0.0238  sep
+    Hypothesis integration & specificity     cat 1 vs cat 3 diff=-4.34  delta=-1.00  p=0.0036  sep
+    Hypothesis integration & specificity     cat 2 vs cat 3 diff=-0.81  delta=-0.71  p=0.0167  
+    Mechanistic synthesis                    cat 1 vs cat 2 diff=-1.83  delta=-1.00  p=0.0238  sep
+    Mechanistic synthesis                    cat 1 vs cat 3 diff=-3.99  delta=-1.00  p=0.0036  sep
+    Mechanistic synthesis                    cat 2 vs cat 3 diff=-2.16  delta=-0.92  p=0.0005  
+    Literature grounding (bonus, half weight) cat 1 vs cat 2 diff=+1.03  delta=+0.56  p=0.2619  
+    Literature grounding (bonus, half weight) cat 1 vs cat 3 diff=-1.55  delta=-0.51  p=0.2393  
+    Literature grounding (bonus, half weight) cat 2 vs cat 3 diff=-2.58  delta=-0.81  p=0.0047  

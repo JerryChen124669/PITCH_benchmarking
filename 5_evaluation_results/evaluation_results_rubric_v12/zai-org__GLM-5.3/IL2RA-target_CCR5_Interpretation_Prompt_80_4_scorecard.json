@@ -1,0 +1,16 @@
+{
+  "model": "zai-org/GLM-5.3",
+  "prompt_file": "IL2RA-target_CCR5_Interpretation_Prompt_80_4.txt",
+  "scores": {
+    "Zone Identification score_zone1": 5,
+    "Logic Rigor_zone1": 6,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 8,
+    "Biological Plausibility_reason": "The OX40-activated, FOXP3-positive Treg model and proposed coupling of IL2RA-dependent fitness to CCR5-mediated positioning are biologically defensible. However, interpreting RUNX3-high cells as an IL-2-independent cytotoxic state and asserting STAT5 maintenance of CCR5 are plausible but insufficiently established extensions.",
+    "Specificity_zone1": 9,
+    "Grounded Mechanistic Synthesis_zone1": 9,
+    "Grounded Mechanistic Synthesis_reason": "FOXP3, OX40, RUNX3, IL2RA, and CCR5 are integrated into a coherent model linking activated Treg fitness, chemokine-guided localization, and cytokine consumption. The proposed direct STAT5-to-CCR5 transition and RUNX3-mediated decoupling remain less resolved than the rest of the mechanism. No synthesis ceiling was applied because all primary-zone contextual features contribute explicitly to the focus-feature\u2013target explanation.",
+    "Literature Grounding_zone1": 8
+  },
+  "final_score_zone1": 51.0
+}

@@ -1,0 +1,16 @@
+{
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "model_a": "Mistral-Small-3.1-24B",
+  "model_b": "gemini-3.1-pro-preview",
+  "model_a_slug": "Mistral-Small-3.1-24B",
+  "model_b_slug": "gemini-3.1-pro-preview",
+  "scores": {
+    "Zone & Feature Selection Similarity": 10,
+    "Feature Interpretation & Coverage Similarity": 6,
+    "Mechanistic Hypothesis Similarity": 5,
+    "Functional/Causal-Role Similarity": 5,
+    "Supporting Reasoning & Experimental Implication Similarity": 4,
+    "Response Scope & Elaboration Similarity": 6
+  },
+  "overall_similarity": 6.0
+}

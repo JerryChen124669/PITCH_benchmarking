@@ -1,0 +1,16 @@
+{
+  "model": "gemma-4-12B-it",
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 5,
+    "Biological Plausibility_reason": "The cytotoxic-state interpretation based on GNLY, NKG7, and GZMB is defensible, but KLRD1 encodes CD94 rather than NKG2A, and CST3 encodes cystatin C rather than chitotriosidase-3. The principal inhibitory-priming mechanism depends on the incorrect KLRD1\u2013NKG2A identification, triggering the one-central-hallucination ceiling.",
+    "Specificity_zone1": 7,
+    "Grounded Mechanistic Synthesis_zone1": 3,
+    "Grounded Mechanistic Synthesis_reason": "The response connects NKG7 and GZMB to a GNLY-positive cytotoxic state and frames CD45RA as marking a neonatal pre-effector context. The low-CST3 contribution and the biological bridge from GNLY to CD45RA remain broad, while the KLRD1 contribution rests on an incorrect gene identity. A ceiling of 3 was applied because the principal inhibitory-priming mechanism depends on treating KLRD1 as NKG2A.",
+    "Literature Grounding_zone1": 3
+  },
+  "final_score_zone1": 46.5
+}

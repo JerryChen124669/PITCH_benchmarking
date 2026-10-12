@@ -1,0 +1,16 @@
+{
+  "model": "pmc_llama",
+  "prompt_file": "Fxyd6-input resistance_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 0,
+    "Logic Rigor_zone1": 6,
+    "Feature Comprehensiveness_zone1": 8,
+    "Biological Plausibility_zone1": 1,
+    "Biological Plausibility_reason": "The response replaces electrophysiological input resistance with seizure resistance and bases its explanation on major misassignments, including treating Cnr1 as a neurite count, Coro6 as a transcription factor, and Rell1 as Reelin/Reln. Because the principal account depends primarily on these errors and omits Fxyd6, the hallucination ceiling of 1 applies.",
+    "Specificity_zone1": 2,
+    "Grounded Mechanistic Synthesis_zone1": 2,
+    "Grounded Mechanistic Synthesis_reason": "The response loosely connects Coro6, Cnr1, Htr3a, and Rell1 to neuronal morphology, connectivity, and excitability. Fxyd6 is not incorporated, the association with input resistance is not explained, and the contextual features are mostly presented as separate functional claims. The no-explicit-focus-feature-to-target-mechanism ceiling of 3 applies, with the largely feature-by-feature treatment warranting a score below that ceiling.",
+    "Literature Grounding_zone1": 1
+  },
+  "final_score_zone1": 19.5
+}

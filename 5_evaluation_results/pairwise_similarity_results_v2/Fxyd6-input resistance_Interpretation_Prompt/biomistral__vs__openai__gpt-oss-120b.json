@@ -1,0 +1,16 @@
+{
+  "prompt_file": "Fxyd6-input resistance_Interpretation_Prompt.txt",
+  "model_a": "biomistral",
+  "model_b": "openai/gpt-oss-120b",
+  "model_a_slug": "biomistral",
+  "model_b_slug": "openai__gpt-oss-120b",
+  "scores": {
+    "Zone & Feature Selection Similarity": 4,
+    "Feature Interpretation & Coverage Similarity": 2,
+    "Mechanistic Hypothesis Similarity": 1,
+    "Functional/Causal-Role Similarity": 1,
+    "Supporting Reasoning & Experimental Implication Similarity": 1,
+    "Response Scope & Elaboration Similarity": 1
+  },
+  "overall_similarity": 1.6666666666666667
+}

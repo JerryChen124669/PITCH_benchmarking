@@ -1,0 +1,16 @@
+{
+  "model": "Nemotron3-Nano-30B-A3B",
+  "prompt_file": "IL2RA-target_CCR5_Interpretation_Prompt_80_4.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 3,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 3,
+    "Biological Plausibility_reason": "The IL-2\u2013JAK\u2013STAT5\u2013IL2RA activation framework is plausible, but the interpretation reverses FOXP3 > 0.215 into a low-FOXP3/non-Treg state and relies centrally on an unsupported low-RUNX3-to-CCR5 migratory program. These independent central errors trigger the two-hallucination ceiling of 3.",
+    "Specificity_zone1": 9,
+    "Grounded Mechanistic Synthesis_zone1": 5,
+    "Grounded Mechanistic Synthesis_reason": "The response explicitly connects IL-2/STAT5, IL2RA, CCR5, and OX40-mediated costimulation in a multistep activation model. Its FOXP3 state assignment is opposite to the rule, while the proposed RUNX3-low migratory/CCR5 relationship is insufficiently grounded, leaving those contextual contributions unusable. A ceiling of 5 was applied because, after excluding those indefensible links, fewer than half of the contextual features remain meaningfully integrated.",
+    "Literature Grounding_zone1": 2
+  },
+  "final_score_zone1": 41.0
+}

@@ -1,0 +1,16 @@
+{
+  "prompt_file": "EGR1-target_pRPS6_Interpretation_Prompt_80_4.txt",
+  "model_a": "Qwen3.6-35B-A3B-think",
+  "model_b": "zai-org/GLM-5.3",
+  "model_a_slug": "Qwen3.6-35B-A3B-think",
+  "model_b_slug": "zai-org__GLM-5.3",
+  "scores": {
+    "Zone & Feature Selection Similarity": 10,
+    "Feature Interpretation & Coverage Similarity": 8,
+    "Mechanistic Hypothesis Similarity": 7,
+    "Functional/Causal-Role Similarity": 6,
+    "Supporting Reasoning & Experimental Implication Similarity": 6,
+    "Response Scope & Elaboration Similarity": 7
+  },
+  "overall_similarity": 7.333333333333333
+}

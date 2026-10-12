@@ -1,0 +1,16 @@
+{
+  "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+  "prompt_file": "PTMA-Ki-67_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 9,
+    "Biological Plausibility_zone1": 8,
+    "Biological Plausibility_reason": "The assigned RNA-processing, microtubule, ribosomal, and proliferation roles are broadly accurate and support a defensible proliferative-state hypothesis. However, the specific PTMA-to-Ki-67 regulatory relationship remains largely asserted rather than biologically developed.",
+    "Specificity_zone1": 4,
+    "Grounded Mechanistic Synthesis_zone1": 3,
+    "Grounded Mechanistic Synthesis_reason": "HNRNPA2B1, TUBB4B, and RPLP0 were each connected to RNA processing, cell division, or translation and then individually related to the Ki-67-associated proliferative state. These contextual features remained largely isolated from one another, and the submission did not explain how PTMA mechanistically connects them to Ki-67. The no-explicit-focus-to-target-mechanism ceiling of 3 was applied.",
+    "Literature Grounding_zone1": 7
+  },
+  "final_score_zone1": 47.5
+}

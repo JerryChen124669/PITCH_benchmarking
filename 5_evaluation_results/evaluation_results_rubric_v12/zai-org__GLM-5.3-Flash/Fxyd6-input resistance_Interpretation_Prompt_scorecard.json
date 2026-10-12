@@ -1,0 +1,16 @@
+{
+  "model": "zai-org/GLM-5.3-Flash",
+  "prompt_file": "Fxyd6-input resistance_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 7,
+    "Biological Plausibility_reason": "The FXYD6\u2013Na+/K+-ATPase foundation and the CNR1/HTR3A-associated CGE context are broadly defensible. However, the proposed FXYD6 polarity, pump-dominated conductance state, direct cyclic-nucleotide control of Kv7, and developmental interpretation of low Flt3 are substantially more speculative than presented.",
+    "Specificity_zone1": 7,
+    "Grounded Mechanistic Synthesis_zone1": 6,
+    "Grounded Mechanistic Synthesis_reason": "The response connects FXYD6 to Na+/K+-ATPase behavior and input resistance, while using CNR1 signaling and the HTR3A-positive immature CGE state to define a potentially low-leak context. Coro6 and Flt3 remain mainly compartment or exclusion labels, and the transitions from CB1/cAMP signaling to FXYD6-dependent pump conductance are asserted more strongly than they are mechanistically resolved. No formal ceiling was applied because an explicit, biologically defensible focus-feature\u2013target mechanism is present and at least half of the contextual features are integrated.",
+    "Literature Grounding_zone1": 5
+  },
+  "final_score_zone1": 52.5
+}

@@ -1,0 +1,16 @@
+{
+  "model": "Qwen3.8-27B-think",
+  "prompt_file": "Fxyd6-input resistance_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 1,
+    "Biological Plausibility_reason": "The principal mechanism rests on the false identification of FXYD6 as a FYVE-domain RhoGAP/endosomal regulator; FXYD6 is instead an FXYD-family transmembrane regulator associated with Na+/K+-ATPase function. Because the proposed trafficking mechanism depends primarily on this material hallucination, the score is capped at 1.",
+    "Specificity_zone1": 9,
+    "Grounded Mechanistic Synthesis_zone1": 3,
+    "Grounded Mechanistic Synthesis_reason": "The response explicitly links low CORO6, high CNR1, and very high HTR3A to an actin/endosomal trafficking state and uses non-high FLT3 as a developmental boundary for the proposed FXYD6\u2013input-resistance association. FLT3 remains comparatively broad, and CNR1 is connected mainly through speculative cargo trafficking rather than a resolved transition. The material-hallucination ceiling of 3 was applied because the principal mechanism depends on the false identification of FXYD6 as a FYVE-domain RhoGAP/endosomal trafficking protein.",
+    "Literature Grounding_zone1": 3
+  },
+  "final_score_zone1": 44.5
+}

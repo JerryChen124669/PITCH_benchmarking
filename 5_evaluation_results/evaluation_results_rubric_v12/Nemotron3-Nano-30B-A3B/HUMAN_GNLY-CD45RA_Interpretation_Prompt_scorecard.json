@@ -1,0 +1,16 @@
+{
+  "model": "Nemotron3-Nano-30B-A3B",
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 5,
+    "Biological Plausibility_reason": "The shared cytotoxic-lymphocyte-state explanation is defensible and uses largely accurate roles for GNLY, NKG7, GZMB, and KLRD1. However, the central claim that granulysin controls endosomal pH or protects PTPRC RA-exon splicing is biologically unsupported and compartmentally implausible, constituting a material hallucination.",
+    "Specificity_zone1": 6,
+    "Grounded Mechanistic Synthesis_zone1": 3,
+    "Grounded Mechanistic Synthesis_reason": "NKG7 and GZMB were connected to cytotoxic granules, while low CST3 and high KLRD1 were used to define a permissive proteolytic NK-cell context for the GNLY\u2013CD45RA association. The transition from this cytotoxic state to CD45RA retention was not resolved, and CST3, vesicle trafficking, endosomal pH, and PTPRC splicing were connected mainly through assertions rather than supported biological bridges. A ceiling of 3 was applied because the principal causal mechanism depends on the materially unsupported claim that granulysin regulates CD45RA trafficking or RA-exon splicing through endosomal pH.",
+    "Literature Grounding_zone1": 4
+  },
+  "final_score_zone1": 46.0
+}

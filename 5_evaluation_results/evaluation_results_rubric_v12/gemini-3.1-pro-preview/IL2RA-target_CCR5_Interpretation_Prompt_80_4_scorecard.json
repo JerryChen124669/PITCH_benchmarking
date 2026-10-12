@@ -1,0 +1,16 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "prompt_file": "IL2RA-target_CCR5_Interpretation_Prompt_80_4.txt",
+  "scores": {
+    "Zone Identification score_zone1": 5,
+    "Logic Rigor_zone1": 6,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 6,
+    "Biological Plausibility_reason": "FOXP3, IL2RA/STAT5, OX40, and CCR5 are relevant to activated tumor Tregs, making a conditional IL-2/chemokine-receptor program defensible. However, the central claim that RUNX3 must be repressed for stable FOXP3 expression conflicts with evidence that RUNX complexes can support FOXP3 and Treg programs, triggering the one-hallucination ceiling of 6.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 3,
+    "Grounded Mechanistic Synthesis_reason": "FOXP3 was used to define the Treg state, OX40 to supply activation or costimulation, and low RUNX3 to gate an IL2RA\u2013STAT5-to-CCR5 program. The OX40-to-STAT5/CCR5 bridge is asserted rather than mechanistically resolved, and FOXP3 functions largely as a lineage label rather than an active step. A ceiling of 3 was applied because the principal gating mechanism relies on the materially incorrect claim that RUNX3 must be repressed to stabilize FOXP3 and permit CCR5 responsiveness.",
+    "Literature Grounding_zone1": 3
+  },
+  "final_score_zone1": 39.5
+}

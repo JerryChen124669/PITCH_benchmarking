@@ -1,0 +1,16 @@
+{
+  "model": "ministral3-14B",
+  "prompt_file": "PTMA-Ki-67_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 7,
+    "Biological Plausibility_reason": "The proposed RNA-processing, translation, and mitotic context is broadly compatible with proliferating breast cancer cells, but direct HNRNPA2B1\u2013PTMA, PTMA\u2013TUBB4B, and PTMA\u2013RPLP0 regulatory relationships are insufficiently established, and RPLP0 is incorrectly identified as ribosomal protein L19.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 7,
+    "Grounded Mechanistic Synthesis_reason": "HNRNPA2B1-mediated PTMA transcript stabilization, TUBB4B-associated spindle function, and RPLP0-associated translational capacity are all connected to the PTMA\u2013Ki-67 hypothesis. The direct transitions from PTMA to TUBB4B-dependent microtubule stabilization and RPLP0-mediated ribosome biogenesis remain mechanistically broad and treat RPLP0 partly as an effector rather than a state marker. No synthesis ceiling was applied because every contextual feature was explicitly integrated and a recognizable focus-feature\u2013target mechanism was provided.",
+    "Literature Grounding_zone1": 4
+  },
+  "final_score_zone1": 54.0
+}

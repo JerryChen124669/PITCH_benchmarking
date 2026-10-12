@@ -1,0 +1,16 @@
+{
+  "model": "Qwen/Qwen3.8-2.4T-A95B",
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 9,
+    "Biological Plausibility_reason": "The central interpretation of GNLY as a marker of a CD45RA-associated cytotoxic lymphocyte state is biologically coherent, and the roles assigned to NKG7, GZMB, KLRD1, and low CST3 are mostly defensible. The proposed CD94-mediated maintenance of CD45RA and functional role for low CST3 are speculative and somewhat simplified, but they are presented as testable hypotheses rather than established facts.",
+    "Specificity_zone1": 7,
+    "Grounded Mechanistic Synthesis_zone1": 7,
+    "Grounded Mechanistic Synthesis_reason": "The response integrates NKG7 and GZMB as a cytotoxic program, KLRD1 as a CD94-positive subset context, and low CST3 as a lymphoid-enrichment or potentially permissive granule context for the GNLY\u2013CD45RA association. The functional bridges from CD94 signaling or CST3 activity to CD45RA retention remain speculative and are not fully unified with the primary cell-state explanation. No ceiling was applied because the principal surrogate-state mechanism is explicit, coherent, and incorporates all contextual features, although its causal resolution is incomplete.",
+    "Literature Grounding_zone1": 8
+  },
+  "final_score_zone1": 57.0
+}

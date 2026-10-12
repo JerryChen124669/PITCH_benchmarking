@@ -1,0 +1,16 @@
+{
+  "model": "thinkingmachines/Inkling",
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 6,
+    "Biological Plausibility_reason": "The cytotoxic-lineage interpretation of GNLY, NKG7, and GZMB is sound, and an immature or activation-limited state could plausibly associate with CD45RA retention. However, KLRD1 alone does not establish inhibitory NKG2A signaling, and the proposed CST3-dependent processing of granulysin and granzyme B and direct CD94-mediated control of CD45 splicing are weakly supported, with granzyme B maturation principally involving cathepsin C rather than cathepsins B/L.",
+    "Specificity_zone1": 9,
+    "Grounded Mechanistic Synthesis_zone1": 9,
+    "Grounded Mechanistic Synthesis_reason": "NKG7 and GZMB establish the cytotoxic state, low CST3 is proposed to alter granule processing, and high KLRD1 is connected to an inhibitory state that preserves CD45RA while GNLY accumulates. The exact bridges from CST3 to GNLY maturation and from CD94 signaling to CD45 isoform regulation remain incompletely resolved. No mechanistic-synthesis ceiling was applied because all four contextual features were explicitly incorporated into one coherent, testable model.",
+    "Literature Grounding_zone1": 6
+  },
+  "final_score_zone1": 57.0
+}

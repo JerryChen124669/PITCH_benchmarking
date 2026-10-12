@@ -1,0 +1,16 @@
+{
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 9,
+    "Biological Plausibility_reason": "The cytotoxic NK/T-cell interpretation is well supported by the GNLY, NKG7, GZMB, and KLRD1 program, while low CST3 reasonably distinguishes it from myeloid-rich states. The proposed CST3 licensing effect and specific NKG2A assignment are more speculative but are not essential to the principal hypothesis.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 8,
+    "Grounded Mechanistic Synthesis_reason": "NKG7 and GZMB are integrated with GNLY as a cytotoxic-granule program, KLRD1 identifies an NK-like context, and low CST3 supplies a myeloid-exclusion or permissive-state contribution to the CD45RA association. The transition from cytotoxic cell identity to CD45RA expression and the proposed CST3-mediated licensing mechanism remain only broadly resolved. No synthesis ceiling was applied because the focus\u2013target association and all four contextual features were explicitly connected in a defensible cell-state model.",
+    "Literature Grounding_zone1": 8
+  },
+  "final_score_zone1": 59.0
+}

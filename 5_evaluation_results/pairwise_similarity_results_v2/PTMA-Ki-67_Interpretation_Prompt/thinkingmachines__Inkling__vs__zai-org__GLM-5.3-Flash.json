@@ -1,0 +1,16 @@
+{
+  "prompt_file": "PTMA-Ki-67_Interpretation_Prompt.txt",
+  "model_a": "thinkingmachines/Inkling",
+  "model_b": "zai-org/GLM-5.3-Flash",
+  "model_a_slug": "thinkingmachines__Inkling",
+  "model_b_slug": "zai-org__GLM-5.3-Flash",
+  "scores": {
+    "Zone & Feature Selection Similarity": 10,
+    "Feature Interpretation & Coverage Similarity": 9,
+    "Mechanistic Hypothesis Similarity": 8,
+    "Functional/Causal-Role Similarity": 8,
+    "Supporting Reasoning & Experimental Implication Similarity": 8,
+    "Response Scope & Elaboration Similarity": 9
+  },
+  "overall_similarity": 8.666666666666666
+}

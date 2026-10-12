@@ -1,0 +1,16 @@
+{
+  "model": "biomistral",
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "scores": {
+    "Zone Identification score_zone1": 5,
+    "Logic Rigor_zone1": 0,
+    "Feature Comprehensiveness_zone1": 2,
+    "Biological Plausibility_zone1": 4,
+    "Biological Plausibility_reason": "The cytotoxic-granule roles of granulysin, perforin, and granzymes are broadly accurate, but the tumor-killing narrative is poorly matched to neonatal cord-blood cells and never explains CD45RA. The assertion that target-cell death produces increased CD48 and reduced CD38 is unsupported and concerns markers absent from the selected rule.",
+    "Specificity_zone1": 2,
+    "Grounded Mechanistic Synthesis_zone1": 2,
+    "Grounded Mechanistic Synthesis_reason": "The response connects GNLY with perforin and granzymes in a general cytotoxic-lysis program. It does not integrate the actual Node 12 features NKG7, GZMB, and S100A12 or connect that program to CD45RA. The no-explicit-focus-to-target-mechanism ceiling of 3 was applied.",
+    "Literature Grounding_zone1": 4
+  },
+  "final_score_zone1": 17.0
+}
