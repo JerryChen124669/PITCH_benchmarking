@@ -1,0 +1,85 @@
+--- SYSTEM PROMPT ---
+Data Domain Context: Oncology breast cancer
+Cell Type / Study Tissue: Breast tissue
+
+You are an expert computational biologist tasked with interpreting decision tree classification rules that predict specific biomarkers based on RNA gene expression and gene attributes. Your objective is to translate the mathematical logic of the tree, including feature hierarchy, split thresholds, and conditional dependencies, into a cohesive biological narrative that explains the underlying regulatory mechanisms. Using the specific biological context provided, you must synthesize these findings into concrete, experimentally testable hypotheses. CRITICAL INSTRUCTION: Primarily analyze the FOCUSED ZONES section, prioritizing nodes with high Precision and True Positives (TP) to form your hypothesis based on the logic. Use the full raw decision tree only as supplementary context; do not attempt to parse every individual branch.
+
+--- EXPERIMENT CONTEXT & DATA PIPELINE ---
+1. Goal: Forming biological rationale and hypothesis based on the decision tree results to explain why PTMA heavily attributes to the prediction of the present of Ki-67. Focused feature: 'PTMA'. Target response: 'Ki-67'.
+2. Upstream Model: A PyTorch nonlinear Multi-layer Perception model was trained on the raw dataset.
+3. Feature Selection: Integrated Gradients (IG) was applied. The top 29 features with the highest Mean Absolute IG Attribution were selected.
+4. Target response and Focus feature Correlation: Direct correlation between PTMA and Ki-67.
+5. Label Generation: Samples were labeled as Class 1 ('High focused Attribution') if their IG score for PTMA fell in the extreme 10% according to the analysis type. All other samples are Class 0. Analysis type: the Positive Attribution Analysis focusing on conditions of PTMA's Positive attribution effect.
+6. Tree Parameters and classification: max_depth=4, min_samples_leaf=5., class_weight= {0: 1, 1: 4}. The decision tree aims to find the conditions that contain most Class 1 data points and mininal Class 0 data points.
+
+--- Focused ZONES (CLASS 1 LEAF NODES) ---
+These are the specific logic zones that successfully isolated 'High Attribution' samples. Prioritize analyzing nodes has high Precision with large cell numbers. True Positive: the numbers of the data points labeled with Class 1. False Positive: the number of the data points labeled with Class 0.
+
+Node 13:
+  - Logic: HNRNPA2B1 > 0.333 AND TUBB4B > 0.489 AND RPLP0 <= 0.169
+  - True Positives (TP): 239 (High Attribution)
+  - False Positives (FP): 765 (Noise/Other)
+  - Precision: 23.8%  - Gini Impurity: 0.4938
+
+Node 14:
+  - Logic: HNRNPA2B1 > 0.333 AND TUBB4B > 0.489 AND RPLP0 > 0.169
+  - True Positives (TP): 1147 (High Attribution)
+  - False Positives (FP): 1086 (Noise/Other)
+  - Precision: 51.4%  - Gini Impurity: 0.3095
+
+Node 16:
+  - Logic: HNRNPA2B1 <= 0.333 AND RPLP0 > 0.444 AND TUBB4B > -0.194 AND TUBA1C > 0.588
+  - True Positives (TP): 189 (High Attribution)
+  - False Positives (FP): 352 (Noise/Other)
+  - Precision: 34.9%  - Gini Impurity: 0.4335
+
+Node 22:
+  - Logic: HNRNPA2B1 > 0.333 AND TUBB4B <= 0.489 AND PABPC1 > 0.645 AND TUBA1C > 0.588
+  - True Positives (TP): 268 (High Attribution)
+  - False Positives (FP): 423 (Noise/Other)
+  - Precision: 38.8%  - Gini Impurity: 0.4058
+
+--- FULL DECISION TREE RAW RULES ---
+|--- HNRNPA2B1 <= 0.33
+|   |--- RPLP0 <= 0.44
+|   |   |--- PABPC1 <= 0.08
+|   |   |   |--- RPL21 <= 0.67
+|   |   |   |   |--- class: 0
+|   |   |   |--- RPL21 >  0.67
+|   |   |   |   |--- class: 0
+|   |   |--- PABPC1 >  0.08
+|   |   |   |--- TUBB4B <= 0.49
+|   |   |   |   |--- class: 0
+|   |   |   |--- TUBB4B >  0.49
+|   |   |   |   |--- class: 0
+|   |--- RPLP0 >  0.44
+|   |   |--- TUBB4B <= -0.19
+|   |   |   |--- PABPC1 <= 0.50
+|   |   |   |   |--- class: 0
+|   |   |   |--- PABPC1 >  0.50
+|   |   |   |   |--- class: 0
+|   |   |--- TUBB4B >  -0.19
+|   |   |   |--- TUBA1C <= 0.59
+|   |   |   |   |--- class: 0
+|   |   |   |--- TUBA1C >  0.59
+|   |   |   |   |--- class: 1
+|--- HNRNPA2B1 >  0.33
+|   |--- TUBB4B <= 0.49
+|   |   |--- PABPC1 <= 0.64
+|   |   |   |--- RPS27 <= 0.14
+|   |   |   |   |--- class: 0
+|   |   |   |--- RPS27 >  0.14
+|   |   |   |   |--- class: 0
+|   |   |--- PABPC1 >  0.64
+|   |   |   |--- TUBA1C <= 0.59
+|   |   |   |   |--- class: 0
+|   |   |   |--- TUBA1C >  0.59
+|   |   |   |   |--- class: 1
+|   |--- TUBB4B >  0.49
+|   |   |--- RPLP0 <= 0.17
+|   |   |   |--- class: 1
+|   |   |--- RPLP0 >  0.17
+|   |   |   |--- class: 1
+
+--- TASK ---
+Based on the TARGET ZONES above, forming rationale and hypothesis of the feature relationship (pathways) to explain HOW features integratively regulate Ki-67 with PTMA. Highlight which zones are the most biologically robust based on the highest number of True Positives and Precision. Identify the findings into two categories: 1. the findings directly confirm the literature knowledge. 2. suggesting new testable mechanisms supported by literature. List the publications supporting the conclusions. Next, look into the second good zone and repeat the analysis (the conclusions for two highlight zones will be presented separately).

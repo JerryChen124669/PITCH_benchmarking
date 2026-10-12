@@ -1,0 +1,109 @@
+--- SYSTEM PROMPT ---
+Data Domain Context: Human hepatocellular carcinoma immune microenvironment. CITE-seq dataset.
+Cell Type / Study Tissue: CD4+ T-cell/ Treg-enriched cells
+
+You are an expert computational biologist tasked with interpreting decision tree classification rules that predict specific biomarkers based on RNA gene expression and gene attributes. Your objective is to translate the mathematical logic of the tree, including feature hierarchy, split thresholds, and conditional dependencies, into a cohesive biological narrative that explains the underlying regulatory mechanisms. Using the specific biological context provided, you must synthesize these findings into concrete, experimentally testable hypotheses. CRITICAL INSTRUCTION: Primarily analyze the FOCUSED ZONES section, prioritizing nodes with high Precision and True Positives (TP) to form your hypothesis based on the logic. Use the full raw decision tree only as supplementary context; do not attempt to parse every individual branch. If finding multiple zones, select a most plausible zone as the primary zone; a highly plausible while biological distinct zone as the secondary zone.
+
+--- EXPERIMENT CONTEXT & DATA PIPELINE ---
+1. Goal: Forming biological rationale and hypothesis based on the decision tree results to explain why IL2RA heavily attributes to the prediction of the present of target_CCR5. Focused feature: 'IL2RA'. Target response: 'target_CCR5'.
+2. Upstream Model: A PyTorch nonlinear Multi-layer Perception model was trained on the raw dataset.
+3. Feature Selection: Integrated Gradients (IG) was applied. The top 25 features with the highest Mean Absolute IG Attribution were selected.
+4. Target response and Focus feature Correlation: Direct correlation between IL2RA and target_CCR5.
+5. Label Generation: Samples were labeled as Class 1 ('High focused Attribution') if their IG score for IL2RA fell in the extreme 10% according to the analysis type. All other samples are Class 0. Analysis type: the Positive Attribution Analysis focusing on conditions of IL2RA's Positive attribution effect.
+6. Tree Parameters and classification: max_depth=4, min_samples_leaf=5., class_weight= {0: 1, 1: 4}. The decision tree aims to find the conditions that contain most Class 1 data points and mininal Class 0 data points.
+
+--- Focused ZONES (CLASS 1 LEAF NODES) ---
+These are the specific logic zones that successfully isolated 'High Attribution' samples. Prioritize analyzing nodes has high Precision with large cell numbers. True Positive: the numbers of the data points labeled with Class 1. False Positive: the number of the data points labeled with Class 0.
+
+Node 8:
+  - Logic: FOXP3 <= 0.215 AND CXCR4 > -0.550 AND TIGIT > 0.280 AND CCR8 > 1.397
+  - True Positives (TP): 49 (High Attribution)
+  - False Positives (FP): 121 (Noise/Other)
+  - Precision: 28.8%  - Gini Impurity: 0.4720
+
+Node 12:
+  - Logic: FOXP3 <= 0.215 AND CXCR4 <= -0.550 AND CCL5 <= 1.911 AND PRDM1 > 0.135
+  - True Positives (TP): 101 (High Attribution)
+  - False Positives (FP): 393 (Noise/Other)
+  - Precision: 20.4%  - Gini Impurity: 0.4999
+
+Node 13:
+  - Logic: FOXP3 <= 0.215 AND CXCR4 > -0.550 AND TIGIT <= 0.280 AND TNFRSF4 <= 1.517
+  - True Positives (TP): 901 (High Attribution)
+  - False Positives (FP): 3361 (Noise/Other)
+  - Precision: 21.1%  - Gini Impurity: 0.4994
+
+Node 19:
+  - Logic: FOXP3 > 0.215 AND TNFRSF4 <= 2.590 AND CCR4 <= 1.483 AND ICOS <= 0.696
+  - True Positives (TP): 394 (High Attribution)
+  - False Positives (FP): 1112 (Noise/Other)
+  - Precision: 26.2%  - Gini Impurity: 0.4851
+
+Node 20:
+  - Logic: FOXP3 > 0.215 AND TNFRSF4 <= 2.590 AND CCR4 <= 1.483 AND ICOS > 0.696
+  - True Positives (TP): 259 (High Attribution)
+  - False Positives (FP): 515 (Noise/Other)
+  - Precision: 33.5%  - Gini Impurity: 0.4436
+
+Node 21:
+  - Logic: FOXP3 > 0.215 AND TNFRSF4 <= 2.590 AND CCR4 > 1.483 AND CD69 <= -0.416
+  - True Positives (TP): 70 (High Attribution)
+  - False Positives (FP): 63 (Noise/Other)
+  - Precision: 52.6%  - Gini Impurity: 0.2999
+
+Node 22:
+  - Logic: FOXP3 > 0.215 AND TNFRSF4 <= 2.590 AND CCR4 > 1.483 AND CD69 > -0.416
+  - True Positives (TP): 72 (High Attribution)
+  - False Positives (FP): 145 (Noise/Other)
+  - Precision: 33.2%  - Gini Impurity: 0.4455
+
+Node 25:
+  - Logic: FOXP3 > 0.215 AND TNFRSF4 > 2.590 AND RUNX3 <= 2.058
+  - True Positives (TP): 36 (High Attribution)
+  - False Positives (FP): 19 (Noise/Other)
+  - Precision: 65.5%  - Gini Impurity: 0.2060
+
+--- FULL DECISION TREE RAW RULES ---
+|--- FOXP3 <= 0.22
+|   |--- CXCR4 <= -0.55
+|   |   |--- CCL5 <= 1.91
+|   |   |   |--- PRDM1 <= 0.14
+|   |   |   |   |--- class: 0
+|   |   |   |--- PRDM1 >  0.14
+|   |   |   |   |--- class: 1
+|   |   |--- CCL5 >  1.91
+|   |   |   |--- CXCR3 <= 0.00
+|   |   |   |   |--- class: 0
+|   |   |   |--- CXCR3 >  0.00
+|   |   |   |   |--- class: 0
+|   |--- CXCR4 >  -0.55
+|   |   |--- TIGIT <= 0.28
+|   |   |   |--- TNFRSF4 <= 1.52
+|   |   |   |   |--- class: 1
+|   |   |   |--- TNFRSF4 >  1.52
+|   |   |   |   |--- class: 0
+|   |   |--- TIGIT >  0.28
+|   |   |   |--- CCR8 <= 1.40
+|   |   |   |   |--- class: 0
+|   |   |   |--- CCR8 >  1.40
+|   |   |   |   |--- class: 1
+|--- FOXP3 >  0.22
+|   |--- TNFRSF4 <= 2.59
+|   |   |--- CCR4 <= 1.48
+|   |   |   |--- ICOS <= 0.70
+|   |   |   |   |--- class: 1
+|   |   |   |--- ICOS >  0.70
+|   |   |   |   |--- class: 1
+|   |   |--- CCR4 >  1.48
+|   |   |   |--- CD69 <= -0.42
+|   |   |   |   |--- class: 1
+|   |   |   |--- CD69 >  -0.42
+|   |   |   |   |--- class: 1
+|   |--- TNFRSF4 >  2.59
+|   |   |--- RUNX3 <= 2.06
+|   |   |   |--- class: 1
+|   |   |--- RUNX3 >  2.06
+|   |   |   |--- class: 0
+
+--- TASK ---
+Based on the TARGET ZONES above, forming rationale and hypothesis of the feature relationship (pathways) to explain HOW features and IL2RA together associtate with target_CCR5. Highlight which zones are the most biologically robust based on the highest number of True Positives and Precision. Identify the findings into two categories: 1. the findings directly confirm the literature knowledge. 2. suggesting new testable mechanisms supported by literature. List the publications supporting the conclusions. Next, look into the second good zone and repeat the analysis (the conclusions for two highlight zones will be presented separately).

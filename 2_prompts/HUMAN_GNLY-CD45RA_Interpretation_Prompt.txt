@@ -1,0 +1,94 @@
+--- SYSTEM PROMPT ---
+Data Domain Context: Single-cell immunology
+Cell Type / Study Tissue: Human cord blood mononuclear cells. Mixed neonatal immune cells.
+
+You are an expert computational biologist tasked with interpreting decision tree classification rules that predict specific biomarkers based on RNA gene expression and gene attributes. Your objective is to translate the mathematical logic of the tree, including feature hierarchy, split thresholds, and conditional dependencies, into a cohesive biological narrative that explains the underlying regulatory mechanisms. Using the specific biological context provided, you must synthesize these findings into concrete, experimentally testable hypotheses. CRITICAL INSTRUCTION: Primarily analyze the FOCUSED ZONES section, prioritizing nodes with high Precision and True Positives (TP) to form your hypothesis based on the logic. Use the full raw decision tree only as supplementary context; do not attempt to parse every individual branch. If finding multiple zones, select a most plausible zone as the primary zone; a highly plausible while biological distinct zone as the secondary zone.
+
+--- EXPERIMENT CONTEXT & DATA PIPELINE ---
+1. Goal: Forming biological rationale and hypothesis based on the decision tree results to explain why HUMAN_GNLY heavily attributes to the prediction of the present of CD45RA. Focused feature: 'HUMAN_GNLY'. Target response: 'CD45RA'.
+2. Upstream Model: A PyTorch nonlinear Multi-layer Perception model was trained on the raw dataset.
+3. Feature Selection: Integrated Gradients (IG) was applied. The top 29 features with the highest Mean Absolute IG Attribution were selected.
+4. Target response and Focus feature Correlation: Direct correlation between HUMAN_GNLY and CD45RA.
+5. Label Generation: Samples were labeled as Class 1 ('High focused Attribution') if their IG score for HUMAN_GNLY fell in the extreme 10% according to the analysis type. All other samples are Class 0. Analysis type: the Positive Attribution Analysis focusing on conditions of HUMAN_GNLY's Positive attribution effect.
+6. Tree Parameters and classification: max_depth=4, min_samples_leaf=5., class_weight= {0: 1, 1: 4}. The decision tree aims to find the conditions that contain most Class 1 data points and mininal Class 0 data points.
+
+--- Focused ZONES (CLASS 1 LEAF NODES) ---
+These are the specific logic zones that successfully isolated 'High Attribution' samples. Prioritize analyzing nodes has high Precision with large cell numbers. True Positive: the numbers of the data points labeled with Class 1. False Positive: the number of the data points labeled with Class 0.
+
+Node 6:
+  - Logic: HUMAN_NKG7 <= 1.220 AND HUMAN_HOPX > 2.609
+  - True Positives (TP): 3 (High Attribution)
+  - False Positives (FP): 4 (Noise/Other)
+  - Precision: 42.9%  - Gini Impurity: 0.3750
+
+Node 10:
+  - Logic: HUMAN_NKG7 <= 1.220 AND HUMAN_HOPX <= 2.609 AND HUMAN_CTSW > 2.440
+  - True Positives (TP): 2 (High Attribution)
+  - False Positives (FP): 3 (Noise/Other)
+  - Precision: 40.0%  - Gini Impurity: 0.3967
+
+Node 11:
+  - Logic: HUMAN_NKG7 > 1.220 AND HUMAN_GZMB <= 1.419 AND HUMAN_S100A12 <= 1.719 AND HUMAN_NKG7 <= 1.498
+  - True Positives (TP): 9 (High Attribution)
+  - False Positives (FP): 31 (Noise/Other)
+  - Precision: 22.5%  - Gini Impurity: 0.4972
+
+Node 12:
+  - Logic: HUMAN_NKG7 > 1.220 AND HUMAN_GZMB <= 1.419 AND HUMAN_S100A12 <= 1.719 AND HUMAN_NKG7 > 1.498
+  - True Positives (TP): 104 (High Attribution)
+  - False Positives (FP): 78 (Noise/Other)
+  - Precision: 57.1%  - Gini Impurity: 0.2659
+
+Node 18:
+  - Logic: HUMAN_NKG7 > 1.220 AND HUMAN_GZMB > 1.419 AND HUMAN_CST3 > 0.784 AND HUMAN_CST3 > 0.824
+  - True Positives (TP): 41 (High Attribution)
+  - False Positives (FP): 21 (Noise/Other)
+  - Precision: 66.1%  - Gini Impurity: 0.2013
+
+Node 19:
+  - Logic: HUMAN_NKG7 > 1.220 AND HUMAN_GZMB > 1.419 AND HUMAN_CST3 <= 0.784 AND HUMAN_KLRD1 <= 2.154
+  - True Positives (TP): 189 (High Attribution)
+  - False Positives (FP): 66 (Noise/Other)
+  - Precision: 74.1%  - Gini Impurity: 0.1477
+
+Node 20:
+  - Logic: HUMAN_NKG7 > 1.220 AND HUMAN_GZMB > 1.419 AND HUMAN_CST3 <= 0.784 AND HUMAN_KLRD1 > 2.154
+  - True Positives (TP): 512 (High Attribution)
+  - False Positives (FP): 86 (Noise/Other)
+  - Precision: 85.6%  - Gini Impurity: 0.0774
+
+--- FULL DECISION TREE RAW RULES ---
+|--- HUMAN_NKG7 <= 1.22
+|   |--- HUMAN_HOPX <= 2.61
+|   |   |--- HUMAN_CTSW <= 2.44
+|   |   |   |--- HUMAN_CST7 <= 2.15
+|   |   |   |   |--- class: 0
+|   |   |   |--- HUMAN_CST7 >  2.15
+|   |   |   |   |--- class: 0
+|   |   |--- HUMAN_CTSW >  2.44
+|   |   |   |--- class: 1
+|   |--- HUMAN_HOPX >  2.61
+|   |   |--- class: 1
+|--- HUMAN_NKG7 >  1.22
+|   |--- HUMAN_GZMB <= 1.42
+|   |   |--- HUMAN_S100A12 <= 1.72
+|   |   |   |--- HUMAN_NKG7 <= 1.50
+|   |   |   |   |--- class: 1
+|   |   |   |--- HUMAN_NKG7 >  1.50
+|   |   |   |   |--- class: 1
+|   |   |--- HUMAN_S100A12 >  1.72
+|   |   |   |--- class: 0
+|   |--- HUMAN_GZMB >  1.42
+|   |   |--- HUMAN_CST3 <= 0.78
+|   |   |   |--- HUMAN_KLRD1 <= 2.15
+|   |   |   |   |--- class: 1
+|   |   |   |--- HUMAN_KLRD1 >  2.15
+|   |   |   |   |--- class: 1
+|   |   |--- HUMAN_CST3 >  0.78
+|   |   |   |--- HUMAN_CST3 <= 0.82
+|   |   |   |   |--- class: 0
+|   |   |   |--- HUMAN_CST3 >  0.82
+|   |   |   |   |--- class: 1
+
+--- TASK ---
+Based on the TARGET ZONES above, forming rationale and hypothesis of the feature relationship (pathways) to explain HOW features and HUMAN_GNLY together associtate with CD45RA. Highlight which zones are the most biologically robust based on the highest number of True Positives and Precision. Identify the findings into two categories: 1. the findings directly confirm the literature knowledge. 2. suggesting new testable mechanisms supported by literature. List the publications supporting the conclusions. Next, look into the second good zone and repeat the analysis (the conclusions for two highlight zones will be presented separately).

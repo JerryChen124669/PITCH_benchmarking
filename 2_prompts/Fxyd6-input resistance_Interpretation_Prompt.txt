@@ -1,0 +1,97 @@
+--- SYSTEM PROMPT ---
+Data Domain Context: Neuron development
+Cell Type / Study Tissue: single cell neuron in development CGE and MGE
+
+You are an expert computational biologist tasked with interpreting decision tree classification rules that predict specific biomarkers based on RNA gene expression and gene attributes. Your objective is to translate the mathematical logic of the tree, including feature hierarchy, split thresholds, and conditional dependencies, into a cohesive biological narrative that explains the underlying regulatory mechanisms. Using the specific biological context provided, you must synthesize these findings into concrete, experimentally testable hypotheses. CRITICAL INSTRUCTION: Primarily analyze the FOCUSED ZONES section, prioritizing nodes with high Precision and True Positives (TP) to form your hypothesis based on the logic. Use the full raw decision tree only as supplementary context; do not attempt to parse every individual branch. If finding multiple zones, select a most plausible zone as the primary zone; a highly plausible while biological distinct zone as the secondary zone.
+
+--- EXPERIMENT CONTEXT & DATA PIPELINE ---
+1. Goal: Forming biological rationale and hypothesis based on the decision tree results to explain why Fxyd6 heavily attributes to the prediction of the present of input resistance. Focused feature: 'Fxyd6'. Target response: 'input resistance'.
+2. Upstream Model: A PyTorch nonlinear Multi-layer Perception model was trained on the raw dataset.
+3. Feature Selection: Integrated Gradients (IG) was applied. The top 29 features with the highest Mean Absolute IG Attribution were selected.
+4. Target response and Focus feature Correlation: Direct correlation between Fxyd6 and input resistance.
+5. Label Generation: Samples were labeled as Class 1 ('High focused Attribution') if their IG score for Fxyd6 fell in the extreme 10% according to the analysis type. All other samples are Class 0. Analysis type: the Positive Attribution Analysis focusing on conditions of Fxyd6's Positive attribution effect.
+6. Tree Parameters and classification: max_depth=4, min_samples_leaf=5., class_weight= {0: 1, 1: 4}. The decision tree aims to find the conditions that contain most Class 1 data points and mininal Class 0 data points.
+
+--- Focused ZONES (CLASS 1 LEAF NODES) ---
+These are the specific logic zones that successfully isolated 'High Attribution' samples. Prioritize analyzing nodes has high Precision with large cell numbers. True Positive: the numbers of the data points labeled with Class 1. False Positive: the number of the data points labeled with Class 0.
+
+Node 11:
+  - Logic: Coro6 <= -0.877 AND Cnr1 <= 1.370 AND Synpr > 0.071 AND Dab1 <= 0.610
+  - True Positives (TP): 116 (High Attribution)
+  - False Positives (FP): 378 (Noise/Other)
+  - Precision: 23.5%  - Gini Impurity: 0.4948
+
+Node 15:
+  - Logic: Coro6 > -0.877 AND Pde1a > 1.599 AND Kcnq5 <= -1.366
+  - True Positives (TP): 39 (High Attribution)
+  - False Positives (FP): 38 (Noise/Other)
+  - Precision: 50.6%  - Gini Impurity: 0.3150
+
+Node 19:
+  - Logic: Coro6 > -0.877 AND Pde1a > 1.599 AND Kcnq5 > -1.366 AND Pcdh8 <= 0.370
+  - True Positives (TP): 4 (High Attribution)
+  - False Positives (FP): 8 (Noise/Other)
+  - Precision: 33.3%  - Gini Impurity: 0.4444
+
+Node 22:
+  - Logic: Coro6 > -0.877 AND Pde1a <= 1.599 AND Cnr1 > 1.392 AND Fam19a2 > 0.479
+  - True Positives (TP): 6 (High Attribution)
+  - False Positives (FP): 5 (Noise/Other)
+  - Precision: 54.5%  - Gini Impurity: 0.2854
+
+Node 23:
+  - Logic: Coro6 <= -0.877 AND Cnr1 > 1.370 AND Htr3a > 2.532 AND Flt3 <= 1.030
+  - True Positives (TP): 75 (High Attribution)
+  - False Positives (FP): 19 (Noise/Other)
+  - Precision: 79.8%  - Gini Impurity: 0.1120
+
+Node 25:
+  - Logic: Coro6 <= -0.877 AND Cnr1 > 1.370 AND Htr3a <= 2.532 AND Rell1 <= 2.252
+  - True Positives (TP): 34 (High Attribution)
+  - False Positives (FP): 47 (Noise/Other)
+  - Precision: 42.0%  - Gini Impurity: 0.3817
+
+--- FULL DECISION TREE RAW RULES ---
+|--- Coro6 <= -0.88
+|   |--- Cnr1 <= 1.37
+|   |   |--- Synpr <= 0.07
+|   |   |   |--- class: 0
+|   |   |--- Synpr >  0.07
+|   |   |   |--- Dab1 <= 0.61
+|   |   |   |   |--- class: 1
+|   |   |   |--- Dab1 >  0.61
+|   |   |   |   |--- class: 0
+|   |--- Cnr1 >  1.37
+|   |   |--- Htr3a <= 2.53
+|   |   |   |--- Rell1 <= 2.25
+|   |   |   |   |--- class: 1
+|   |   |   |--- Rell1 >  2.25
+|   |   |   |   |--- class: 0
+|   |   |--- Htr3a >  2.53
+|   |   |   |--- Flt3 <= 1.03
+|   |   |   |   |--- class: 1
+|   |   |   |--- Flt3 >  1.03
+|   |   |   |   |--- class: 0
+|--- Coro6 >  -0.88
+|   |--- Pde1a <= 1.60
+|   |   |--- Cnr1 <= 1.39
+|   |   |   |--- Cpne7 <= 0.32
+|   |   |   |   |--- class: 0
+|   |   |   |--- Cpne7 >  0.32
+|   |   |   |   |--- class: 0
+|   |   |--- Cnr1 >  1.39
+|   |   |   |--- Fam19a2 <= 0.48
+|   |   |   |   |--- class: 0
+|   |   |   |--- Fam19a2 >  0.48
+|   |   |   |   |--- class: 1
+|   |--- Pde1a >  1.60
+|   |   |--- Kcnq5 <= -1.37
+|   |   |   |--- class: 1
+|   |   |--- Kcnq5 >  -1.37
+|   |   |   |--- Pcdh8 <= 0.37
+|   |   |   |   |--- class: 1
+|   |   |   |--- Pcdh8 >  0.37
+|   |   |   |   |--- class: 0
+
+--- TASK ---
+Based on the TARGET ZONES above, forming rationale and hypothesis of the feature relationship (pathways) to explain HOW features and Fxyd6 together associtate with input resistance. Highlight which zones are the most biologically robust based on the highest number of True Positives and Precision. Identify the findings into two categories: 1. the findings directly confirm the literature knowledge. 2. suggesting new testable mechanisms supported by literature. List the publications supporting the conclusions. Next, look into the second good zone and repeat the analysis (the conclusions for two highlight zones will be presented separately).

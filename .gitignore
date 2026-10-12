@@ -1,0 +1,15 @@
+﻿# secrets: never commit keys or env files
+.env
+.env.*
+*.key
+*.pem
+secrets*
+# python / editor noise
+__pycache__/
+*.pyc
+.venv/
+venv/
+.vscode/
+.idea/
+# local run output (large, regenerated)
+runs/

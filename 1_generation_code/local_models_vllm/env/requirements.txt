@@ -1,0 +1,5 @@
+vllm==0.22.1
+torch==2.11.0+cu130
+transformers==4.57.1
+flashinfer==0.6.11
+huggingface_hub

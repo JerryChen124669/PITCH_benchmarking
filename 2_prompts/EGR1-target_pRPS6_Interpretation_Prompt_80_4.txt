@@ -1,0 +1,91 @@
+--- SYSTEM PROMPT ---
+Data Domain Context: Single-cell multiomics; phosphoprotein signaling; developmental neurobiology; intracellular signaling pathway inference
+Cell Type / Study Tissue: Human brain organoid cells / neural lineage cells profiled by Phospho-seq
+
+You are an expert computational biologist tasked with interpreting decision tree classification rules that predict specific biomarkers based on RNA gene expression and gene attributes. Your objective is to translate the mathematical logic of the tree, including feature hierarchy, split thresholds, and conditional dependencies, into a cohesive biological narrative that explains the underlying regulatory mechanisms. Using the specific biological context provided, you must synthesize these findings into concrete, experimentally testable hypotheses. CRITICAL INSTRUCTION: Primarily analyze the FOCUSED ZONES section, prioritizing nodes with high Precision and True Positives (TP) to form your hypothesis based on the logic. Use the full raw decision tree only as supplementary context; do not attempt to parse every individual branch. If finding multiple zones, select a most plausible zone as the primary zone; a highly plausible while biological distinct zone as the secondary zone.
+
+--- EXPERIMENT CONTEXT & DATA PIPELINE ---
+1. Goal: Forming biological rationale and hypothesis based on the decision tree results to explain why EGR1 heavily attributes to the prediction of the present of target_pRPS6. Focused feature: 'EGR1'. Target response: 'target_pRPS6'.
+2. Upstream Model: A PyTorch nonlinear Multi-layer Perception model was trained on the raw dataset.
+3. Feature Selection: Integrated Gradients (IG) was applied. The top 24 features with the highest Mean Absolute IG Attribution were selected.
+4. Target response and Focus feature Correlation: Direct correlation between EGR1 and target_pRPS6.
+5. Label Generation: Samples were labeled as Class 1 ('High focused Attribution') if their IG score for EGR1 fell in the extreme 10% according to the analysis type. All other samples are Class 0. Analysis type: the Positive Attribution Analysis focusing on conditions of EGR1's Positive attribution effect.
+6. Tree Parameters and classification: max_depth=4, min_samples_leaf=5., class_weight= {0: 1, 1: 4}. The decision tree aims to find the conditions that contain most Class 1 data points and mininal Class 0 data points.
+
+--- Focused ZONES (CLASS 1 LEAF NODES) ---
+These are the specific logic zones that successfully isolated 'High Attribution' samples. Prioritize analyzing nodes has high Precision with large cell numbers. True Positive: the numbers of the data points labeled with Class 1. False Positive: the number of the data points labeled with Class 0.
+
+Node 10:
+  - Logic: FOS <= 1.185 AND DUSP6 <= 1.252 AND GRB2 <= -0.558 AND RPS6KB1 > 2.498
+  - True Positives (TP): 56 (High Attribution)
+  - False Positives (FP): 119 (Noise/Other)
+  - Precision: 32.0%  - Gini Impurity: 0.4531
+
+Node 13:
+  - Logic: FOS <= 1.185 AND DUSP6 > 1.252 AND YAP1 <= 1.697 AND DUSP5 <= 2.000
+  - True Positives (TP): 202 (High Attribution)
+  - False Positives (FP): 650 (Noise/Other)
+  - Precision: 23.7%  - Gini Impurity: 0.4941
+
+Node 14:
+  - Logic: FOS <= 1.185 AND DUSP6 > 1.252 AND YAP1 <= 1.697 AND DUSP5 > 2.000
+  - True Positives (TP): 33 (High Attribution)
+  - False Positives (FP): 34 (Noise/Other)
+  - Precision: 49.3%  - Gini Impurity: 0.3257
+
+Node 19:
+  - Logic: FOS > 1.185 AND AKT1 <= 3.634 AND DUSP5 <= 3.204 AND GRB2 <= -0.161
+  - True Positives (TP): 258 (High Attribution)
+  - False Positives (FP): 563 (Noise/Other)
+  - Precision: 31.4%  - Gini Impurity: 0.4568
+
+Node 20:
+  - Logic: FOS > 1.185 AND AKT1 <= 3.634 AND DUSP5 <= 3.204 AND GRB2 > -0.161
+  - True Positives (TP): 106 (High Attribution)
+  - False Positives (FP): 329 (Noise/Other)
+  - Precision: 24.4%  - Gini Impurity: 0.4920
+
+Node 21:
+  - Logic: FOS <= 1.185 AND DUSP6 > 1.252 AND YAP1 > 1.697 AND AKT1 <= 2.641
+  - True Positives (TP): 41 (High Attribution)
+  - False Positives (FP): 42 (Noise/Other)
+  - Precision: 49.4%  - Gini Impurity: 0.3246
+
+--- FULL DECISION TREE RAW RULES ---
+|--- FOS <= 1.18
+|   |--- DUSP6 <= 1.25
+|   |   |--- GRB2 <= -0.56
+|   |   |   |--- RPS6KB1 <= 2.50
+|   |   |   |   |--- class: 0
+|   |   |   |--- RPS6KB1 >  2.50
+|   |   |   |   |--- class: 1
+|   |   |--- GRB2 >  -0.56
+|   |   |   |--- GRB2 <= 0.33
+|   |   |   |   |--- class: 0
+|   |   |   |--- GRB2 >  0.33
+|   |   |   |   |--- class: 0
+|   |--- DUSP6 >  1.25
+|   |   |--- YAP1 <= 1.70
+|   |   |   |--- DUSP5 <= 2.00
+|   |   |   |   |--- class: 1
+|   |   |   |--- DUSP5 >  2.00
+|   |   |   |   |--- class: 1
+|   |   |--- YAP1 >  1.70
+|   |   |   |--- AKT1 <= 2.64
+|   |   |   |   |--- class: 1
+|   |   |   |--- AKT1 >  2.64
+|   |   |   |   |--- class: 0
+|--- FOS >  1.18
+|   |--- AKT1 <= 3.63
+|   |   |--- DUSP5 <= 3.20
+|   |   |   |--- GRB2 <= -0.16
+|   |   |   |   |--- class: 1
+|   |   |   |--- GRB2 >  -0.16
+|   |   |   |   |--- class: 1
+|   |   |--- DUSP5 >  3.20
+|   |   |   |--- class: 0
+|   |--- AKT1 >  3.63
+|   |   |--- class: 0
+
+--- TASK ---
+Based on the TARGET ZONES above, forming rationale and hypothesis of the feature relationship (pathways) to explain HOW features and EGR1 together associtate with target_pRPS6. Highlight which zones are the most biologically robust based on the highest number of True Positives and Precision. Identify the findings into two categories: 1. the findings directly confirm the literature knowledge. 2. suggesting new testable mechanisms supported by literature. List the publications supporting the conclusions. Next, look into the second good zone and repeat the analysis (the conclusions for two highlight zones will be presented separately).

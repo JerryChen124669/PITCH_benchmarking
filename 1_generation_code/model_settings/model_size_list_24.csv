@@ -1,0 +1,25 @@
+total_rank,model_slug,total_params,active_params,note
+1,biomistral,7B,7B,
+2,Qwen3.8-9B-think-temp1,9B,9B,
+3,gemma-4-12B-it,12B,12B,
+4,pmc_llama,13B,13B,
+5,phi4-14B,14B,14B,"NOT in the user's table; taken from the '14B' in the folder name, assumed dense (active = total). Confirm."
+6,ministral3-14B,14B,14B,"NOT in the user's table; taken from the '14B' in the folder name, assumed dense (active = total). Confirm."
+7,Mistral-Small-3.1-24B,24B,24B,No thinking mode
+8,Qwen3.8-27B-think,27B,27B,~27B; thinking mode
+9,gemma-4-31B-it,30.7B,30.7B,"NOT in the user's table; verified from Google's Gemma 4 model card (30.7B dense, all parameters active)."
+10,Nemotron3-Nano-30B-A3B,31.6B,3.2B,"NOT in the user's table; verified from NVIDIA/HF model card (31.6B total, 3.2B active per forward pass, 3.6B including embeddings)."
+11,Qwen3.6-35B-A3B-think,35B,3B,thinking mode
+12,meta-llama__Llama-3.3-70B-Instruct-Turbo,70B,70B,
+13,Qwen3-Next-80B-A3B-Instruct,80B,3B,"Instruct, no thinking mode"
+14,openai__gpt-oss-120b,117B,5.1B,
+15,deepseek-ai__DeepSeek-V4-Flash-0731,284B,13B,
+16,zai-org__GLM-5.3-Flash,320B,18B,
+17,MiniMaxAI__MiniMax-M3,428B,23B,
+18,deepseek-ai__DeepSeek-V4.1-Flash,552B,16B,"552B is a backbone size. Active = 8B prefill / 16B decode; 16B (decode) is used for ordering, which matches the user's rank placement (between 13B and 18B)."
+19,zai-org__GLM-5.3,753B,40B,~40B active
+20,thinkingmachines__Inkling,975B,41B,
+21,deepseek-ai__DeepSeek-V4-Pro-0813,1.6T,49B,
+22,Qwen__Qwen3.8-2.4T-A95B,2.4T,95B,
+23,moonshotai__Kimi-K3,2.8T,104B,
+24,gemini-3.1-pro-preview,n/a (undisclosed),n/a (undisclosed),reference anchor; always last
