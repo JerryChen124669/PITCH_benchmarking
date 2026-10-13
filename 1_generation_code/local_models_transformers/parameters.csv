@@ -1,0 +1,6 @@
+model,hf_repo,precision,prompt_format,do_sample,temperature,top_p,top_k,max_new_tokens,min_new_tokens,repetition_penalty,no_repeat_ngram_size,runs_per_prompt,seeds,script
+PMC-LLaMA 13B,axiong/PMC_LLaMA_13B,float32,plain_concat + completion directive (RoPE linear x2; ctx 4096),True,0.7,0.9,,1024,50,1.05,3,5,1234-1238,bioLLM/scripts/run_experiment.py --model pmc_llama
+BioMistral 7B,BioMistral/BioMistral-7B,bfloat16,chat template (system folded into user) + chat directive,True,0.7,0.9,,1024,400,1.15,4,5,1234-1238,bioLLM/scripts/run_experiment.py --model biomistral
+Gemma 4 12B,google/gemma-4-12B-it,bfloat16,chat template (system + user),True,1.0,0.95,64,1024,,,,5,1234-1238,gemma12B/scripts/run_experiment.py
+Phi-4 14B,microsoft/phi-4,bfloat16,chat template (system + user),True,0.7,0.9,,1536,,,,1,1234,phi4_14B/run_inference.py
+Ministral 3 14B Base,mistralai/Ministral-3-14B-Base-2512,bfloat16,plain_concat (system + user),True,1.0,0.9,,1536,,1.05,3,1,1234,ministral3_14B/run_inference.py

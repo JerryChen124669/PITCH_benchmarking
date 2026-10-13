@@ -10,6 +10,8 @@ Code, prompts and generated answers for the 24-model benchmark of hypotheses gen
   local_models_vllm/          vLLM runner, run scripts and run configs for Qwen3.8-27B, Qwen3.6-35B-A3B,
                               Nemotron 3 Nano 30B-A3B, Gemma 4 31B-it, Mistral Small 3.1 24B,
                               Qwen3-Next-80B-A3B-Instruct and the 9B Qwen run
+  local_models_transformers/  Hugging Face transformers scripts for Gemma 4 12B-it, Phi-4 14B, Ministral 3 14B,
+                              BioMistral-7B and PMC-LLaMA-13B, with their parameters (README.md, parameters.csv)
   answer_selection_and_conversion/   self-consistency selection and the converters that put externally
                               generated answers into the common layout
   model_settings/             llm_generation_settings.xlsx (one row per model: identifier, sizes, serving route,
@@ -27,10 +29,12 @@ Code, prompts and generated answers for the 24-model benchmark of hypotheses gen
   EGR1-pRPS6 cases are left out of `3_answers`; their prompts are in `2_prompts`.
 - 24 models are included. A temperature-0 variant of the 9B Qwen run is not part of the 24 and is not included.
 - Models with several raw generations (7 Together models, Gemini, BioMistral, PMC-LLaMA) have one selected answer per
-  prompt, chosen by an LLM self-consistency check (`select_best_answer.py`); the other models have one generation.
-  Replicates are not averaged anywhere.
-- Generation scripts for Gemma 4 12B-it, Phi-4 14B, Ministral 3 14B, BioMistral-7B and PMC-LLaMA-13B are not included;
-  their sampling arguments, where stored, are in `3_answers/_generation_logs/` and in `model_settings`.
+  prompt, chosen by an LLM self-consistency check (`select_best_answer.py`). Gemma 4 12B-it was sampled five times and the
+  answer closest to the others in embedding space (`select_consistent.py`) is the one stored. The other models have one
+  generation. Replicates are not averaged anywhere.
+- Ministral 3 14B: the stored answers were generated with `unsloth/Ministral-3-14B-Reasoning-2512-bnb-4bit` (4-bit,
+  temperature 0.3); the script in `local_models_transformers/ministral3_14B` runs the base model
+  `Ministral-3-14B-Base-2512` (bf16, temperature 1.0) and did not produce them. See that folder's README.
 - Settings that were not set explicitly (for example temperature on the Together models) are listed as such in the
   workbook; nothing there is inferred.
 
@@ -41,6 +45,7 @@ Code, prompts and generated answers for the 24-model benchmark of hypotheses gen
   `trial_results/`. To rerun from this repository, copy `2_prompts` to `../prompt` or edit `PROMPT_DIR` / `RESULTS_DIR`
   at the top of `official_trial.py`; `LLMinterpret_gemini.py` reads prompts from `data/` and writes `results/`.
 - `local_models_vllm/README.md` documents the local vLLM runs (vLLM 0.22.1, bfloat16, seed 0, 4 x RTX A6000).
+- `local_models_transformers/README.md` documents the transformers runs (one RTX PRO 6000 Blackwell, 96 GB).
 
 ## Repository layout
 | Folder | Content |

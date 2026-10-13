@@ -1,0 +1,134 @@
+# Local transformers runs (RTX PRO 6000 workstation)
+
+Notes for this repository:
+- The prompt files these scripts read from `exp_prompts/` are the six files in `../../2_prompts/` (checked byte for byte), so that
+  folder is not repeated here. Copy `2_prompts` to `exp_prompts/` next to these folders to run the scripts.
+- Results the scripts write (`results/`) are not included; the answers that were evaluated are in `../../3_answers/`, and the
+  sampling arguments stored with the BioMistral, PMC-LLaMA and Phi-4 answers are in `../../3_answers/_generation_logs/`.
+- **Ministral 3 14B:** the answers in `3_answers/ministral3-14B` and their stored sampling arguments
+  (`3_answers/_generation_logs/ministral3-14B`) come from `unsloth/Ministral-3-14B-Reasoning-2512-bnb-4bit` (4-bit, temperature 0.3,
+  top_p 0.9, max_new_tokens 4096, seed 1234). The script in `ministral3_14B/` runs the base model `mistralai/Ministral-3-14B-Base-2512`
+  in bf16 (temperature 1.0) and did not produce those answers.
+- **Gemma 4 12B:** five answers were generated per prompt; only the one selected by `gemma12B/scripts/select_consistent.py`
+  (the embedding medoid, not an LLM judge) is stored in `3_answers`.
+- Workstation account names in paths were generalized in the text of the READMEs and one docstring; no code or parameter was changed.
+
+---
+
+# LLM Biological-Hypothesis Generation — Code & Parameters
+
+Local (HF `transformers`, inference only) runs of five open LLMs that interpret
+decision-tree prompts and generate biological hypotheses for **6 cases**.
+No fine-tuning, RAG, or agents.
+
+## Folder layout
+
+```
+LLM_hypothesis_code/
+├── README.md               this file (overview + all parameters)
+├── parameters.csv          same parameters as a flat table
+├── exp_prompts/            the 6 case prompts, shared by every model (one copy)
+├── bioLLM/                 PMC-LLaMA 13B + BioMistral 7B
+│   ├── scripts/{model_config.py, inference.py, run_experiment.py}
+│   └── README_original.md
+├── gemma12B/               Gemma 4 12B-it
+│   ├── scripts/{model_config.py, inference.py, run_experiment.py, select_consistent.py}
+│   └── README_original.md
+├── phi4_14B/run_inference.py
+└── ministral3_14B/
+    ├── run_inference.py                 Base-2512 model (bf16)
+    └── export_clean_results.py
+```
+
+## The 6 cases (`exp_prompts/`)
+
+| # | Prompt file |
+|---|---|
+| 1 | `EGR1-target_pRPS6_Interpretation_Prompt_80_4.txt` |
+| 2 | `Fxyd6-input resistance_Interpretation_Prompt.txt` |
+| 3 | `HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt` |
+| 4 | `IL2RA-target_CCR5_Interpretation_Prompt_80_4.txt` |
+| 5 | `PTMA-Ki-67_Interpretation_Prompt.txt` |
+| 6 | `pERK_EGF10_DT_prompt.txt` |
+
+All projects used byte-identical prompt files (checked by md5). Each file is split
+on its `--- SECTION ---` headers: section 1 is the **system prompt**, and everything
+from the 2nd header onward (headers included) is the **user prompt**.
+
+## Models
+
+| Model | HF repo | Precision | Prompt formatting |
+|---|---|---|---|
+| PMC-LLaMA 13B | `axiong/PMC_LLaMA_13B` | float32 (native) | Plain concatenation `system\n\nuser\n\n<completion directive>`, no chat template, `add_special_tokens=False`; slow `LlamaTokenizer`; RoPE linear scaling ×2 → 4096 ctx |
+| BioMistral 7B | `BioMistral/BioMistral-7B` | bfloat16 | Chat template, user role only (system folded into user turn) + chat output directive |
+| Gemma 4 12B | `google/gemma-4-12B-it` | bfloat16 | Chat template, separate system + user messages |
+| Phi-4 14B | `microsoft/phi-4` | bfloat16 | Chat template, separate system + user messages |
+| Ministral 3 14B Base | `mistralai/Ministral-3-14B-Base-2512` | bfloat16 | Plain concatenation `system\n\nuser` (no chat template), `add_special_tokens=True` |
+
+## Generation parameters (verified against the saved result files)
+
+All runs use sampling (`do_sample=True`) and `torch.manual_seed` + `torch.cuda.manual_seed_all` before each generation.
+
+| Model | temperature | top_p | top_k | max_new_tokens | min_new_tokens | repetition_penalty | no_repeat_ngram_size | Runs per prompt (seeds) |
+|---|---|---|---|---|---|---|---|---|
+| PMC-LLaMA 13B | 0.7 | 0.9 | – | 1024* | 50 | 1.05 | 3 | 5 (1234–1238) |
+| BioMistral 7B | 0.7 | 0.9 | – | 1024 | 400 | 1.15 | 4 | 5 (1234–1238) |
+| Gemma 4 12B | 1.0 | 0.95 | 64 | 1024 | – | – | – | 5 (1234–1238) |
+| Phi-4 14B | 0.7 | 0.9 | – | 1536 | – | – | – | 1 (1234) |
+| Ministral 3 14B Base | 1.0 | 0.9 | – | 1536 | – | 1.05 | 3 | 1 (1234) |
+
+\* bioLLM and gemma12B cap the budget at `effective_context − prompt_len − 16`
+(4096 for PMC-LLaMA, 32768 for BioMistral and Gemma). With these prompt lengths
+(about 1.7k–3k tokens) PMC-LLaMA's cap is roughly 1.2k–2k, so the 1024 limit was
+never reduced in practice.
+
+Notes:
+- **Gemma**: temperature/top_p/top_k come from the checkpoint's own `generation_config.json`.
+- **BioMistral / PMC-LLaMA**: the repetition settings are set per model (see comments in
+  `bioLLM/scripts/model_config.py`). A response-format directive is added to the end of
+  the user prompt at runtime only. The prompt files themselves are not changed. PMC-LLaMA's directive
+  ends with `PRIMARY ZONE:`, and that prefix is added back to the start of the saved response.
+- **Ministral Base**: earlier trial settings were kept as backups on the workstation
+  (`temp 0.7, no rep. penalty` and `temp 1.0, rep. penalty 1.15, no_repeat_ngram 3`).
+  The final results use `temp 1.0, rep. penalty 1.05, no_repeat_ngram 3`.
+- **Gemma post-processing**: `select_consistent.py` embeds the 5 responses with
+  `all-MiniLM-L6-v2`. It then picks the medoid, the response with the highest mean cosine
+  similarity to the other 4, and writes it to `results/most_consistent/`.
+
+## Software environment
+
+| Project | transformers | torch | Env |
+|---|---|---|---|
+| bioLLM | 5.2.0 | 2.10.0+cu128 | `bioLLM/.venv` (`--system-site-packages` on miniconda base) |
+| gemma12B | 5.17.0 (needs ≥ 5.10) | 2.10.0+cu128 | `gemma12B/.venv` (local transformers override) |
+| phi4 / ministral3 | not recorded in the scripts. `Mistral3ForConditionalGeneration` needs a recent transformers 5.x | | |
+
+Hardware: one NVIDIA RTX PRO 6000 Blackwell (96 GB). Model weights are read from
+absolute paths under `/mnt/data/models/<name>`. Edit `MODEL_PATH` / `MODELS_DIR` if
+you run the code on another machine.
+
+## How to run
+
+```bash
+# bioLLM (5 runs/prompt)  -> bioLLM/results/<model>/<case>.jsonl
+cd bioLLM/scripts && python run_experiment.py --model pmc_llama
+python run_experiment.py --model biomistral
+
+# Gemma (5 runs/prompt) -> gemma12B/results/<case>.json, then pick consensus answer
+cd gemma12B/scripts && python run_experiment.py && python select_consistent.py
+
+# Phi-4 (1 run/prompt) -> phi4_14B/results/<case>.json
+python phi4_14B/run_inference.py
+
+# Ministral 3 14B Base, bf16 -> ministral3_14B/results/<case>.json (+ results_clean/)
+python ministral3_14B/run_inference.py && python ministral3_14B/export_clean_results.py
+```
+
+## Changes from the original workstation copies
+
+Only path constants were changed so this folder works on its own. No logic or parameters
+were changed:
+- Every script now reads prompts from the shared top-level `exp_prompts/`. The originals read
+  from `bioLLM/exp_prompts`, `gemma12B/exp_prompts`, and another workstation folder, which are identical copies.
+- phi4 and ministral now write results inside their own folder (`results/`, `results_clean/`). The originals wrote to sibling dirs such as `~/phi4_14B_results`.
+- The per-project READMEs are kept as `README_original.md`. Paths in them refer to the original layout.
