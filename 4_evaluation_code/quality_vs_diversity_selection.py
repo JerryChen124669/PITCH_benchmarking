@@ -11,8 +11,10 @@ y  diversity = 10 - mean (P3+P4)/2 similarity (mechanistic hypothesis + function
 Regions (all fixed by rubric anchors, not tuned to the data)
   eligibility   robust quality >= --quality-min (default 7.0: lower bound of the rubric's 'strong or mostly
                 reliable' band) -> shaded.
-  redundant     diversity < --redundant-below (default 1.0 = mean similarity >= 9, the judge's 'nearly
-                equivalent' anchor): adds nothing the others do not already say.
+  redundant     diversity < --redundant-below (default 2.0 = mean P3+P4 similarity to the other eligible models of 8
+                or more, the 'strongly similar' band of the judge's anchors): adds little the others do not already say.
+                (Earlier versions of this script used 1.0 = mean similarity >= 9, 'nearly equivalent'; with the data in
+                this repository both thresholds select the same models.)
 Selected subset = eligible AND not redundant.
 Low-quality but highly divergent = NOT eligible and more distinct than every eligible model: diversity that is
 more likely to reflect errors than creativity (a caution, not a proof).
@@ -51,7 +53,8 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--assignments", type=str, default=None, help=f"Default: {DEFAULT_ASSIGNMENTS}")
     ap.add_argument("--quality-min", type=float, default=7.0)
-    ap.add_argument("--redundant-below", type=float, default=1.0)
+    ap.add_argument("--redundant-below", type=float, default=2.0,
+                    help="A model whose distinctiveness is below this value is dropped as redundant (default 2.0).")
     ap.add_argument("--floor-case", choices=["second", "lowest"], default="second",
                     help="Quality floor = the 2nd-lowest case quality (default; tolerates one bad case) or the lowest case (every case counts).")
     ap.add_argument("--gate", nargs=3, type=int, metavar=("BP", "SP", "MS"), default=None,
@@ -112,7 +115,7 @@ def main() -> None:
     ax.axvspan(args.quality_min, xmax, color="#c6dbef", alpha=0.45, lw=0, zorder=0)
     ax.axvline(args.quality_min, color=BLUE, ls="--", lw=1.2, zorder=1)
     ax.axhspan(0, args.redundant_below, color="#e6e6e6", alpha=0.8, lw=0, zorder=0)
-    ax.text(xmax - 0.05, 0.5 * args.redundant_below, "redundant: nearly equivalent to the other eligible models", ha="right", va="center", fontsize=8.5, color=MUTED)
+    ax.text(xmin + 0.1, 0.12, f"redundant: distinctiveness < {args.redundant_below:g} (mean P3+P4 similarity to the other eligible models >= {10 - args.redundant_below:g})", ha="left", va="bottom", fontsize=8.5, color=MUTED)
     if args.gate:
         ax.text(args.quality_min + 0.06, ymax - 0.12,
                 f"QUALITY-ELIGIBLE: in EVERY case\nBio. plausibility >= {args.gate[0]}, Specificity >= {args.gate[1]},\nMech. synthesis >= {args.gate[2]}\n"
@@ -149,7 +152,7 @@ def main() -> None:
     ], loc="lower left", bbox_to_anchor=(0.0, 0.17), fontsize=8.8, frameon=False)
     fig.canvas.draw()
     _place_labels(fig, ax, np.column_stack([robust, div]), names)
-    fig.text(0.07, 0.005, f"Cases used ({k}): {', '.join(c.split('_')[0] for c in cases)}. Eligibility line and redundancy band come from the rubric/judge anchors, not tuned to the data. "
+    fig.text(0.07, 0.005, f"Cases used ({k}): {', '.join(c.split('_')[0] for c in cases)}. Eligibility line comes from the rubric/judge anchors, not tuned to the data; redundancy band: distinctiveness < {args.redundant_below:g}. "
              "Diversity of low-quality models is measured against the eligible pool. Distinct is not creative: no check yet that a distinct hypothesis is new to the literature or true.",
              fontsize=7.8, color=MUTED, wrap=True)
     fig.tight_layout(rect=(0, 0.03, 1, 1))

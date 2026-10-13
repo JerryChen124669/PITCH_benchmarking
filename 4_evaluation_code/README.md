@@ -39,8 +39,8 @@ judgement, not a dendrogram cut. Category names are provisional. Figure B profil
 
 **Mechanistic similarity.** Case quality = mean(biological plausibility, specificity, mechanistic synthesis). A model's quality
 floor is its second-lowest case quality (so reached in at least 3 of 4 prompts); models with a floor above 7.0 are eligible.
-A model whose distinctiveness is below 1 (mean similarity >= 9, the rubric's "nearly equivalent" anchor) would be dropped as
-redundant; none is. Ten models are selected. `diversity_vs_quality.py` then tests, among them, whether distinctiveness relates
+A model whose distinctiveness is below 2 (mean P3+P4 similarity to the other eligible models of 8 or more) is dropped as
+redundant; none is (the selected models range from 2.25 to 3.14). Ten models are selected. `diversity_vs_quality.py` then tests, among them, whether distinctiveness relates
 to quality (Spearman with permutation tests: per model rho = -0.38, p = 0.27, n = 10; per model pair rho = +0.07, p = 0.78, n = 45).
 The scripts also contain other options explored during analysis (`--gate`, `--floor-case lowest`, `--quality-stat lowest`);
 none of them is part of the reported figures.

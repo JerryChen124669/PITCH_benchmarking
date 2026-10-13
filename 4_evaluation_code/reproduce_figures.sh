@@ -21,7 +21,7 @@ python plot_evaluation_pillars.py --eval-dir evaluation_results_rubric_v12 --exc
     --out-dir evaluation_results_rubric_v12/1_pillar_plots_4cases_excl_pRPS6_IL2RA   # -> .../overall_rank_excl_specificity.pdf
 
 # Figure D  (quality eligibility vs mechanistic diversity): four prompts
-python quality_vs_diversity_selection.py --assignments "$FINAL/cluster_assignments.csv" --exclude-cases IL2RA pRPS6 --strict \
+python quality_vs_diversity_selection.py --assignments "$FINAL/cluster_assignments.csv" --exclude-cases IL2RA pRPS6 --strict --redundant-below 2 \
     --out-dir "$SEL/data_selection"                      # -> $SEL/data_selection/quality_vs_diversity_selection.svg  (= plots/1_...)
 
 # Figure E  (mean quality vs mean distinctiveness of the selected models): four prompts
