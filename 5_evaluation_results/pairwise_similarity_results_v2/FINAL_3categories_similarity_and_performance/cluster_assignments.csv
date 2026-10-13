@@ -2,7 +2,7 @@ model,cluster,cluster_before_merge,dendrogram_order
 Mistral-Small-3.1-24B,1,1,0
 meta-llama__Llama-3.3-70B-Instruct-Turbo,1,1,1
 phi4-14B,1,1,2
-Qwen3.8-9B-think-temp1,2,5,3
+Qwen3.5-9B-think-temp1,2,5,3
 ministral3-14B,2,2,4
 Nemotron3-Nano-30B-A3B,2,2,5
 Qwen3-Next-80B-A3B-Instruct,2,2,6

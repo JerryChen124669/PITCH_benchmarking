@@ -14,7 +14,7 @@ Category 1 (n=3) Rule-faithful descriptive annotators
     Literature grounding (bonus, half weight) mean 4.83  (SD 0.83; range 4.00-5.67)
 
 Category 2 (n=6) Integrative, weakly grounded hypothesis generators
-  Qwen3.8-9B-think-temp1, ministral3-14B, Nemotron3-Nano-30B-A3B, Qwen3-Next-80B-A3B-Instruct, gemma-4-12B-it, gemma-4-31B-it
+  Qwen3.5-9B-think-temp1, ministral3-14B, Nemotron3-Nano-30B-A3B, Qwen3-Next-80B-A3B-Instruct, gemma-4-12B-it, gemma-4-31B-it
     Zone identification                      mean 9.44  (SD 0.43; range 9.17-10.00)
     Rule extraction (logic rigor)            mean 8.86  (SD 0.93; range 7.00-9.33)
     Feature comprehensiveness                mean 9.92  (SD 0.09; range 9.83-10.00)

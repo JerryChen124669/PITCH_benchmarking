@@ -25,6 +25,7 @@ Code, prompts and generated answers for the 24-model benchmark of hypotheses gen
 ## What is and is not included
 - One selected answer per model and case, for all six cases: Fxyd6, HUMAN (GNLY-CD45RA), PTMA (Ki-67), pERK (EGF 10 ng/mL),
   IL2RA-CCR5 and EGR1-pRPS6.
+- The 9B Qwen model is `Qwen/Qwen3.5-9B`, as recorded in its run configuration (`1_generation_code/local_models_vllm/configs/case_studies_think_t1.json`); its folders and files are named `Qwen3.5-9B-think-temp1`.
 - 24 models are included. A temperature-0 variant of the 9B Qwen run is not part of the 24 and is not included.
 - Models with several raw generations (7 Together models, Gemini, BioMistral, PMC-LLaMA) have one selected answer per
   prompt, chosen by an LLM self-consistency check (`select_best_answer.py`). Gemma 4 12B-it was sampled five times and the

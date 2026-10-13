@@ -46,7 +46,7 @@ Outputs, all under --out-dir (default: pairwise_similarity_results_v2/clustering
 Each figure is its own file. By default only cluster_map is written.
 Models are filtered first: total parameters >= --min-total-b (default 20B,
 from model_registry.json; the gemini anchor is exempt) and --exclude-models
-(default Qwen3.8-9B-think-temp0).
+(default Qwen3.5-9B-think-temp0).
 
 Usage:
     python analyze_pairwise_clustering.py
@@ -874,8 +874,8 @@ def main() -> None:
     )
     parser.add_argument("--min-total-b", type=float, default=20.0,
                         help="Drop models with total parameters below this many billions (default 20; 0 disables). Anchor exempt.")
-    parser.add_argument("--exclude-models", nargs="+", default=["Qwen3.8-9B-think-temp0"],
-                        help="Model slugs to drop regardless of size (default: Qwen3.8-9B-think-temp0).")
+    parser.add_argument("--exclude-models", nargs="+", default=["Qwen3.5-9B-think-temp0"],
+                        help="Model slugs to drop regardless of size (default: Qwen3.5-9B-think-temp0).")
     parser.add_argument(
         "--performance-csv", type=str, default=None,
         help=f"Only used with --plots performance. Default: {DEFAULT_PERFORMANCE_CSV}",

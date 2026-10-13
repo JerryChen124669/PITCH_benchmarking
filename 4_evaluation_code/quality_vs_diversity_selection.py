@@ -69,7 +69,7 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     pool = set(pd.read_csv(Path(args.assignments) if args.assignments else DEFAULT_ASSIGNMENTS)["model"])
-    temp0 = ["Qwen3.8-9B-think-temp0"]  # excluded everywhere; its pair data is incomplete
+    temp0 = ["Qwen3.5-9B-think-temp0"]  # excluded everywhere; its pair data is incomplete
     all_models = sorted(set(load_data(temp0, DEFAULT_SCORES)[0]))
     models, cases, S3, S34, Q = load_data(temp0 + [m for m in all_models if m not in pool], DEFAULT_SCORES)
     if args.exclude_cases:  # drop whole cases from BOTH axes (quality and similarity)

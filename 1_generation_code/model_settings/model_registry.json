@@ -3,8 +3,8 @@
   "anchor_slug": "gemini-3.1-pro-preview",
   "models": [
     {"slug": "biomistral", "display": "BioMistral", "total_b": 7, "active_b": 7, "status": "evaluated", "access": "local"},
-    {"slug": "Qwen3.8-9B-think-temp1", "display": "Qwen3.8-9B (temp1)", "total_b": 9, "active_b": 9, "status": "evaluated", "access": "local"},
-    {"slug": "Qwen3.8-9B-think-temp0", "display": "Qwen3.8-9B (temp0)", "total_b": 9, "active_b": 9, "status": "evaluated", "access": "local", "note": "Same model as temp1; excluded from the size-ordered heatmaps by request"},
+    {"slug": "Qwen3.5-9B-think-temp1", "display": "Qwen3.5-9B (temp1)", "total_b": 9, "active_b": 9, "status": "evaluated", "access": "local"},
+    {"slug": "Qwen3.5-9B-think-temp0", "display": "Qwen3.5-9B (temp0)", "total_b": 9, "active_b": 9, "status": "evaluated", "access": "local", "note": "Same model as temp1; excluded from the size-ordered heatmaps by request"},
     {"slug": "gemma-4-12B-it", "display": "Gemma 4 12B", "total_b": 12, "active_b": 12, "status": "evaluated", "access": "local"},
     {"slug": "pmc_llama", "display": "PMC-LLaMA", "total_b": 13, "active_b": 13, "status": "evaluated", "access": "local"},
     {"slug": "phi4-14B", "display": "Phi-4 14B", "total_b": 14, "active_b": 14, "status": "evaluated", "access": "local", "size_source": "NOT in the user's table; taken from the '14B' in the folder name, assumed dense (active = total). Confirm."},

@@ -1,0 +1,16 @@
+{
+  "prompt_file": "HUMAN_GNLY-CD45RA_Interpretation_Prompt.txt",
+  "model_a": "Qwen3.5-9B-think-temp1",
+  "model_b": "biomistral",
+  "model_a_slug": "Qwen3.5-9B-think-temp1",
+  "model_b_slug": "biomistral",
+  "scores": {
+    "Zone & Feature Selection Similarity": 1,
+    "Feature Interpretation & Coverage Similarity": 3,
+    "Mechanistic Hypothesis Similarity": 1,
+    "Functional/Causal-Role Similarity": 2,
+    "Supporting Reasoning & Experimental Implication Similarity": 1,
+    "Response Scope & Elaboration Similarity": 2
+  },
+  "overall_similarity": 1.6666666666666667
+}

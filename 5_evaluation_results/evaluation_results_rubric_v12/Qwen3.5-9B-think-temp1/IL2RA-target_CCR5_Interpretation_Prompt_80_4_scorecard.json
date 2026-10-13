@@ -1,0 +1,16 @@
+{
+  "model": "Qwen3.5-9B-think-temp1",
+  "prompt_file": "IL2RA-target_CCR5_Interpretation_Prompt_80_4.txt",
+  "scores": {
+    "Zone Identification score_zone1": 10,
+    "Logic Rigor_zone1": 10,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 7,
+    "Biological Plausibility_reason": "The activated CD4 effector-cell interpretation and proposed IL-2/IL2RA association with a CCR5-dependent migratory phenotype are defensible. However, interpreting low TIGIT and low OX40 as evidence of functional activation rather than exhaustion, and the CXCR4 threshold as proof of migratory readiness, is biologically oversimplified.",
+    "Specificity_zone1": 7,
+    "Grounded Mechanistic Synthesis_zone1": 7,
+    "Grounded Mechanistic Synthesis_reason": "FOXP3, TIGIT, and TNFRSF4 were integrated as state-defining markers, while CXCR4 and CCR5 were connected to migration and IL2RA to activation-dependent IL-2 signaling. The transition from IL2RA signaling to CCR5 induction or stabilization remained broad, and CXCR4 was mainly a parallel migratory marker rather than a mechanistic bridge. No formal ceiling was applied because an explicit, biologically reasonable focus-feature\u2013target mechanism and roles for all contextual features were provided.",
+    "Literature Grounding_zone1": 4
+  },
+  "final_score_zone1": 53.0
+}

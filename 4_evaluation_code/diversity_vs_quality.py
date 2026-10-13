@@ -397,7 +397,7 @@ def make_figure(D, Q, S, pool, cases, stats, pair_cases: pd.DataFrame, out_stem:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--min-total-b", type=float, default=200.0, help="Pool = models with total parameters >= this (billions) + the anchor.")
-    parser.add_argument("--exclude-models", nargs="+", default=["Qwen3.8-9B-think-temp0"])
+    parser.add_argument("--exclude-models", nargs="+", default=["Qwen3.5-9B-think-temp0"])
     parser.add_argument("--assignments", type=str, default=None,
                         help="Use the models of this cluster_assignments.csv as the pool (overrides --min-total-b).")
     parser.add_argument("--group", type=int, default=None,

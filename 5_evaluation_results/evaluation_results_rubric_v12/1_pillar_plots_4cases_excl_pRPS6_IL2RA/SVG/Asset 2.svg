@@ -161,7 +161,7 @@
       <line class="cls-4" x1="127.98" y1="127.09" x2="127.98" y2="128.5"/>
       <text class="cls-9" transform="translate(103.28 151.47) rotate(-30)"><tspan x="0" y="0">Phi4-14B</tspan></text>
       <line class="cls-4" x1="149.22" y1="127.09" x2="149.22" y2="128.5"/>
-      <text class="cls-9" transform="translate(114.07 157.25) rotate(-30)"><tspan x="0" y="0">Qwen3.8-9B</tspan></text>
+      <text class="cls-9" transform="translate(114.07 157.25) rotate(-30)"><tspan x="0" y="0">Qwen3.5-9B</tspan></text>
       <line class="cls-4" x1="170.46" y1="127.09" x2="170.46" y2="128.5"/>
       <text class="cls-9" transform="translate(108.11 173.47) rotate(-30)"><tspan x="0" y="0">Mistral-Small-3.1-24B</tspan></text>
       <line class="cls-4" x1="191.7" y1="127.09" x2="191.7" y2="128.5"/>

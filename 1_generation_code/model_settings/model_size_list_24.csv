@@ -1,6 +1,6 @@
 total_rank,model_slug,total_params,active_params,note
 1,biomistral,7B,7B,
-2,Qwen3.8-9B-think-temp1,9B,9B,
+2,Qwen3.5-9B-think-temp1,9B,9B,
 3,gemma-4-12B-it,12B,12B,
 4,pmc_llama,13B,13B,
 5,phi4-14B,14B,14B,"NOT in the user's table; taken from the '14B' in the folder name, assumed dense (active = total). Confirm."

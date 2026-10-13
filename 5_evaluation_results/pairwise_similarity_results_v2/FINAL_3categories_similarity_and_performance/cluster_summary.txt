@@ -8,7 +8,7 @@ Cluster 1 -- Rule-faithful descriptive annotators (3 model(s)): Mistral-Small-3.
   Within this cluster, agreement is highest on Tree Interpretation (8.78) and lowest on Mechanistic Reasoning (6.08).
   Its domain profile is close to the other clusters' average.
 
-Cluster 2 -- Integrative, weakly grounded hypothesis generators (6 model(s)): Nemotron3-Nano-30B-A3B, Qwen3-Next-80B-A3B-Instruct, Qwen3.8-9B-think-temp1, gemma-4-12B-it, gemma-4-31B-it, ministral3-14B
+Cluster 2 -- Integrative, weakly grounded hypothesis generators (6 model(s)): Nemotron3-Nano-30B-A3B, Qwen3-Next-80B-A3B-Instruct, Qwen3.5-9B-think-temp1, gemma-4-12B-it, gemma-4-31B-it, ministral3-14B
   Within-cluster domain means: Tree Interpretation=8.07, Feature Semantics=5.66, Mechanistic Reasoning=5.06, Explanatory Style=6.12
   Within this cluster, agreement is highest on Tree Interpretation (8.07) and lowest on Mechanistic Reasoning (5.06).
   Relative to the other clusters' average, this cluster shows relatively lower Mechanistic Reasoning, Feature Semantics, Explanatory Style, and Tree Interpretation.

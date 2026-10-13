@@ -1,5 +1,5 @@
 """
-One-off conversion: qwen3.8_9B/real_qwen9b_think_temp{0,1}.jsonl (externally
+One-off conversion: qwen3.5_9B/real_qwen9b_think_temp{0,1}.jsonl (externally
 generated, one line per prompt, keys: key/id/thinking/answer) into the
 standard trial_results/ layout, treating each temperature as its own model
 since there's exactly one generation per prompt -- no 3 repeats to run
@@ -26,12 +26,12 @@ import json
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-SRC_DIR = SCRIPT_DIR / "qwen3.8_9B"
+SRC_DIR = SCRIPT_DIR / "qwen3.5_9B"
 TRIAL_RESULTS_DIR = SCRIPT_DIR / "trial_results"
 
 FILES = {
-    "real_qwen9b_think_temp0.jsonl": "Qwen3.8-9B-think-temp0",
-    "real_qwen9b_think_temp1.jsonl": "Qwen3.8-9B-think-temp1",
+    "real_qwen9b_think_temp0.jsonl": "Qwen3.5-9B-think-temp0",
+    "real_qwen9b_think_temp1.jsonl": "Qwen3.5-9B-think-temp1",
 }
 
 

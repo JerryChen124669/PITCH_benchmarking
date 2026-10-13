@@ -8,7 +8,7 @@ FINAL=pairwise_similarity_results_v2/FINAL_3categories_similarity_and_performanc
 SEL=pairwise_similarity_results_v2/FINAL_all_models_no_temp0/selected_models_4cases
 
 # Figure A  (similarity dendrogram + heat map): total similarity, all six criteria, six prompts, 22 models
-python analyze_pairwise_clustering.py --min-total-b 0 --exclude-models Qwen3.8-9B-think-temp0 biomistral pmc_llama \
+python analyze_pairwise_clustering.py --min-total-b 0 --exclude-models Qwen3.5-9B-think-temp0 biomistral pmc_llama \
     --add-pillars P6 --k 5 --merge-clusters 2,3,5 --plots cluster_map dendrogram_heatmap \
     --category-names "Rule-faithful descriptive annotators" "Integrative, weakly grounded hypothesis generators" "Mechanistic, literature-grounded integrators" \
     --out-dir "$FINAL"                                   # -> $FINAL/dendrogram_heatmap.svg

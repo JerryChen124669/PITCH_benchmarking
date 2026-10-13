@@ -259,7 +259,7 @@ def make_figure(models, cases, S34, base, rand_mean, rand_lo, rand_hi, qfirst_cu
 
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--exclude-models", nargs="+", default=["Qwen3.8-9B-think-temp0"])
+    p.add_argument("--exclude-models", nargs="+", default=["Qwen3.5-9B-think-temp0"])
     p.add_argument("--scores", type=str, default=None)
     p.add_argument("--out-dir", type=str, default=None)
     p.add_argument("--bp-min", type=float, default=7)
