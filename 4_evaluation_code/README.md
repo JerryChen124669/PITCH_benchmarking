@@ -15,7 +15,7 @@ bars, PDF/JPG pixels) from the data in `../5_evaluation_results/`.
 ## Working directory
 The scripts import each other and read their inputs from sibling folders. Put in one directory: all files from this
 folder, and `evaluation_results_rubric_v12/` and `pairwise_similarity_results_v2/` from `../5_evaluation_results/`.
-To rerun the judges (not needed for the figures) the answers from `../3_answers/` are also needed, renamed `trial_results/`.
+To rerun the judges (not needed for the figures) the selected answers from `../3_answers/` are also needed, as `trial_results/`.
 
 ## Judging scripts (already run; their outputs are in the results folder)
 | Script | Purpose |

@@ -3,10 +3,9 @@
 Notes for this repository:
 - The prompt files these scripts read from `exp_prompts/` are the six files in `../../2_prompts/` (checked byte for byte), so that
   folder is not repeated here. Copy `2_prompts` to `exp_prompts/` next to these folders to run the scripts.
-- Results the scripts write (`results/`) are not included; the answers that were evaluated are in `../../3_answers/`, and the
-  sampling arguments stored with the BioMistral, PMC-LLaMA and Phi-4 answers are in `../../3_answers/_generation_logs/`.
-- **Ministral 3 14B:** the answers in `3_answers/ministral3-14B` and their stored sampling arguments
-  (`3_answers/_generation_logs/ministral3-14B`) come from `unsloth/Ministral-3-14B-Reasoning-2512-bnb-4bit` (4-bit, temperature 0.3,
+- Results the scripts write (`results/`) are not included; the selected answers that were evaluated are in `../../3_answers/`,
+  and the settings of every model are in `../model_settings/llm_generation_settings.xlsx`.
+- **Ministral 3 14B:** the answers in `3_answers/ministral3-14B` come from `unsloth/Ministral-3-14B-Reasoning-2512-bnb-4bit` (4-bit, temperature 0.3,
   top_p 0.9, max_new_tokens 4096, seed 1234). The script in `ministral3_14B/` runs the base model `mistralai/Ministral-3-14B-Base-2512`
   in bf16 (temperature 1.0) and did not produce those answers.
 - **Gemma 4 12B:** five answers were generated per prompt; only the one selected by `gemma12B/scripts/select_consistent.py`

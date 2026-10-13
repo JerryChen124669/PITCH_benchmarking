@@ -18,15 +18,13 @@ Code, prompts and generated answers for the 24-model benchmark of hypotheses gen
                               samples per prompt, sampling and reasoning settings, precision, seed, dates, source file),
                               model registry and size list
 2_prompts/                    the six prompt files (system prompt + experiment context + target zones + task)
-3_answers/<model>/            <case>_result.json  = all raw generations for that prompt
-                              <case>_selected_answer.json = the single answer passed on to evaluation
-3_answers/_generation_logs/   source files holding the sampling arguments of the externally run models
-                              (BioMistral, PMC-LLaMA, Phi-4, Ministral 3)
+3_answers/<model>/            <case>_selected_answer.json = the single answer per case that was passed on to evaluation
+                              (24 models x 6 cases = 144 files; raw repeated generations are not included)
 ```
 
 ## What is and is not included
-- Answers cover four cases: Fxyd6, HUMAN (GNLY-CD45RA), PTMA (Ki-67) and pERK (EGF 10 ng/mL). The IL2RA-CCR5 and
-  EGR1-pRPS6 cases are left out of `3_answers`; their prompts are in `2_prompts`.
+- One selected answer per model and case, for all six cases: Fxyd6, HUMAN (GNLY-CD45RA), PTMA (Ki-67), pERK (EGF 10 ng/mL),
+  IL2RA-CCR5 and EGR1-pRPS6.
 - 24 models are included. A temperature-0 variant of the 9B Qwen run is not part of the 24 and is not included.
 - Models with several raw generations (7 Together models, Gemini, BioMistral, PMC-LLaMA) have one selected answer per
   prompt, chosen by an LLM self-consistency check (`select_best_answer.py`). Gemma 4 12B-it was sampled five times and the
@@ -52,7 +50,7 @@ Code, prompts and generated answers for the 24-model benchmark of hypotheses gen
 |---|---|
 | `1_generation_code/` | scripts and settings used to generate the hypotheses (24 models) |
 | `2_prompts/` | the six prompt files |
-| `3_answers/` | raw and selected answers for four of the six prompts (Fxyd6, HUMAN, PTMA, pERK) |
+| `3_answers/` | the selected answer of each of the 24 models for each of the six prompts |
 | `4_evaluation_code/` | rubric judging, pairwise similarity, clustering and selection scripts; `reproduce_figures.sh` regenerates the five evaluation figures |
 | `5_evaluation_results/` | judged scores and pairwise similarity records for all six prompts, and the result tables and figures |
 
