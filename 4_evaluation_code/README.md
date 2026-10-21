@@ -8,7 +8,7 @@ bars, PDF/JPG pixels) from the data in `../5_evaluation_results/`.
 |---|---|---|
 | A. Total-similarity dendrogram and heat map | `.../FINAL_3categories_similarity_and_performance/dendrogram_heatmap.svg` | `analyze_pairwise_clustering.py` |
 | B. Category profile heat map | `.../FINAL_3categories_similarity_and_performance/category_profile_heatmap.svg` | `characterize_categories.py` |
-| C. Overall rank, excluding specificity | `evaluation_results_rubric_v12/1_pillar_plots_4cases_excl_pRPS6_IL2RA/overall_rank_excl_specificity.pdf` | `plot_evaluation_pillars.py` |
+| C. Total hypothesis-generation score, 24 models | `evaluation_results_rubric_v12/total_score_6cases_excl_zone_identification/total_score_barplot_6cases_excl_zone.pdf` | `total_score_6cases_excl_zone_identification/plot_total_score_barplot.py` (in the results folder, with its data) |
 | D. Quality eligibility vs mechanistic diversity | `.../selected_models_4cases/plots/1_quality_vs_diversity_selection.svg` | `quality_vs_diversity_selection.py` |
 | E. Mean quality vs mean distinctiveness | `.../selected_models_4cases/plots/2_mean_quality_vs_mean_distinctiveness.svg` | `diversity_vs_quality.py` |
 
@@ -45,10 +45,10 @@ to quality (Spearman with permutation tests: per model rho = -0.38, p = 0.27, n 
 The scripts also contain other options explored during analysis (`--gate`, `--floor-case lowest`, `--quality-stat lowest`);
 none of them is part of the reported figures.
 
-## Overall rank in figure C
-Sum of six criteria, each 0-10, at full weight: zone identification, logic rigor, feature comprehensiveness, biological
-plausibility, mechanistic synthesis and literature grounding (specificity is not included), maximum 60, computed per answer
-and averaged over the four prompts. A companion figure with all seven criteria (`overall_rank_all_7_pillars`) and one chart per
-criterion are in the same folder.
+## Total score in figure C
+Sum of six criteria, each 0-10 at full weight: logic rigor, feature comprehensiveness, hypothesis specificity, biological plausibility, mechanistic synthesis and literature
+grounding (zone identification is not used), maximum 60, computed per answer and averaged over **all six prompts**. Bars are coloured by similarity group (grey: the two
+biomedical models). Script, data and plot are together in `5_evaluation_results/evaluation_results_rubric_v12/total_score_6cases_excl_zone_identification/`.
+The folder `1_pillar_plots_4cases_excl_pRPS6_IL2RA` holds the individual criterion charts (four prompts).
 
 Rubric scoring and pairwise similarity need `OPENAI_API_KEY` in the environment; no key is stored in the code.

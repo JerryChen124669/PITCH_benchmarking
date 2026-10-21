@@ -16,9 +16,11 @@ python analyze_pairwise_clustering.py --min-total-b 0 --exclude-models Qwen3.5-9
 # Figure B  (category profile heat map): rubric scores of the three categories, six prompts
 python characterize_categories.py                        # -> $FINAL/category_profile_heatmap.svg
 
-# Figure C  (overall rank, excluding specificity): four prompts
+# Figure C  (total hypothesis-generation score, 24 models: six criteria without zone identification, six prompts)
+python evaluation_results_rubric_v12/total_score_6cases_excl_zone_identification/plot_total_score_barplot.py
+# per-criterion charts (four prompts), optional:
 python plot_evaluation_pillars.py --eval-dir evaluation_results_rubric_v12 --exclude-prompts pRPS6 IL2RA \
-    --out-dir evaluation_results_rubric_v12/1_pillar_plots_4cases_excl_pRPS6_IL2RA   # -> .../overall_rank_excl_specificity.pdf
+    --out-dir evaluation_results_rubric_v12/1_pillar_plots_4cases_excl_pRPS6_IL2RA
 
 # Figure D  (quality eligibility vs mechanistic diversity): four prompts
 python quality_vs_diversity_selection.py --assignments "$FINAL/cluster_assignments.csv" --exclude-cases IL2RA pRPS6 --strict --redundant-below 2 \

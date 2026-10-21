@@ -253,26 +253,8 @@ def main() -> None:
         file_stem = pillar.lower().replace(" ", "_")
         plot_pillar(pillar, scores_by_model, color_by_model, out_dir / file_stem, subtitle_suffix)
 
-    overall_max = sum(w * 10 for w in OVERALL_EXCL_SPECIFICITY_WEIGHTS.values())
-    overall_scores = pillar_data.get(OVERALL_EXCL_SPECIFICITY_LABEL, {})
-    if not overall_scores:
-        print(f"SKIP (no data): {OVERALL_EXCL_SPECIFICITY_LABEL}")
-    else:
-        file_stem = "overall_rank_excl_specificity"
-        plot_pillar(
-            OVERALL_EXCL_SPECIFICITY_LABEL, overall_scores, color_by_model, out_dir / file_stem,
-            subtitle_suffix, ylim_max=overall_max,
-        )
-
-    all7_max = sum(w * 10 for w in OVERALL_ALL7_WEIGHTS.values())
-    all7_scores = pillar_data.get(OVERALL_ALL7_LABEL, {})
-    if not all7_scores:
-        print(f"SKIP (no data): {OVERALL_ALL7_LABEL}")
-    else:
-        plot_pillar(
-            OVERALL_ALL7_LABEL, all7_scores, color_by_model, out_dir / "overall_rank_all_7_pillars",
-            subtitle_suffix, ylim_max=all7_max,
-        )
+    # The total-score bar plot (six criteria without zone identification, six prompts) is made by
+    # 5_evaluation_results/evaluation_results_rubric_v12/total_score_6cases_excl_zone_identification/plot_total_score_barplot.py
 
     print(f"\nDone. Plots saved under: {out_dir}")
 
