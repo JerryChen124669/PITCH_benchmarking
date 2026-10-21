@@ -20,7 +20,7 @@ To rerun the judges (not needed for the figures) the selected answers from `../3
 ## Judging scripts (already run; their outputs are in the results folder)
 | Script | Purpose |
 |---|---|
-| `judge_evaluation.py` | Blind rubric judging of each selected answer. Judge `gpt-5.6-sol` (OpenAI chat completions; no temperature, reasoning effort, token limit or seed set; 300 s timeout), one call per answer, primary zone only, integer scores 0-10 per criterion. The rubric and all scoring anchors are `JUDGE_SYSTEM_PROMPT` (line 50). Key from `OPENAI_API_KEY`. |
+| `judge_evaluation.py` | Blind rubric judging of each selected answer. Judge `gpt-5.6-sol` (OpenAI chat completions; no temperature, reasoning effort, token limit or seed set; 300 s timeout), one call per answer, primary zone only, integer scores 0-10 per criterion. The zone-identification criterion is commented out in this version of the script (kept as comments); the released scores were produced with it enabled. The rubric and all scoring anchors are `JUDGE_SYSTEM_PROMPT` (line 50). Key from `OPENAI_API_KEY`. |
 | `pairwise_similarity_v2.py` | Blind pairwise similarity of two models' selected answers on one prompt, six criteria P1-P6, integer 0-10. `gpt-5.6-sol`; one call per unordered pair and prompt, answers shown as Response A / B in a random order (one order only). Criteria and anchors: `PAIRWISE_SYSTEM_PROMPT` (line 70). |
 
 ## Two similarity analyses

@@ -1,4 +1,10 @@
 ﻿"""
+NOTE: the ZONE IDENTIFICATION criterion is commented out in this version (rubric section, JSON output key, CSV column and the zone term of the
+final score; everything is kept as comments). The scores in 5_evaluation_results/evaluation_results_rubric_v12 were produced with the earlier
+version in which the judge also returned a zone-identification score, so that column exists in the released data, but this script no longer
+requests or stores it. The other criteria and their wording are unchanged. The "final score" no longer includes the zone term
+(it was the sum of seven terms with literature grounding at half weight; it is now the sum of six terms, maximum 55).
+
 Blind seven-pillar rubric judging via OpenAI, adapted from judge_prompt_thinking.py
 (originally written for Gemini) to run over the multi-model trial in
 trial_results/.
@@ -47,7 +53,8 @@ USER_START_HEADER = "--- EXPERIMENT CONTEXT & DATA PIPELINE ---"
 
 # Identical rubric to judge_prompt_thinking.py (originally written for Gemini),
 # just ported to a plain chat-completions call.
-JUDGE_SYSTEM_PROMPT = """You are an expert computational biology reviewer grading a model's interpretation of decision-tree rules. You will receive the exact prompt given to the model, followed by its complete submission. The model's identity is hidden.
+JUDGE_SYSTEM_PROMPT = (
+    """You are an expert computational biology reviewer grading a model's interpretation of decision-tree rules. You will receive the exact prompt given to the model, followed by its complete submission. The model's identity is hidden.
 
 Grade carefully and consistently. Do not reward confident tone, polished formatting, length, citations, jargon, or molecular detail by themselves.
 
@@ -55,7 +62,10 @@ Use integer scores from 0 to 10. Only evaluate the response's primary zone -- th
 
 GENERAL BOUNDARIES
 
-Construct an independent structural reference for Zone Identification and Logic Rigor. For the remaining criteria, evaluate the submitted interpretation on its own terms rather than requiring agreement with a preferred mechanism.
+"""
+    # Zone identification scoring is commented out. The sentence below originally read:
+    # Construct an independent structural reference for Zone Identification and Logic Rigor. For the remaining criteria, evaluate the submitted interpretation on its own terms rather than requiring agreement with a preferred mechanism.
+    """Construct an independent structural reference for Logic Rigor. For the remaining criteria, evaluate the submitted interpretation on its own terms rather than requiring agreement with a preferred mechanism.
 
 A decision tree establishes conditional associations, not a unique causal mechanism. A novel hypothesis may receive high scores when it reasonably extends accurate biological knowledge.
 
@@ -72,19 +82,21 @@ BEFORE GRADING
 
 This normally produces six items: one target, one focus feature, and four contextual features. Count repeated thresholds on the same feature only once.
 
-SEVEN-CRITERION RUBRIC
+SIX-CRITERION RUBRIC
 
-1. ZONE IDENTIFICATION
-
-Evaluate whether the submission selected the appropriate decision-tree zone. Score condition extraction under Logic Rigor.
-
-- 10: Selects the reference node or terminal leaf and assigns the correct predicted state.
-- 5: Selects a different but reasonable zone because it has unusually high Precision or unusually high True Positives.
-- 0: Selects an unsupported zone, assigns the wrong predicted state, or does not identify a zone.
-
-Use only 10, 5, or 0.
-
-2. LOGIC RIGOR
+"""
+    # The criterion below is commented out ('SEVEN-CRITERION RUBRIC' was the heading above):
+    # 1. ZONE IDENTIFICATION
+    #
+    # Evaluate whether the submission selected the appropriate decision-tree zone. Score condition extraction under Logic Rigor.
+    #
+    # - 10: Selects the reference node or terminal leaf and assigns the correct predicted state.
+    # - 5: Selects a different but reasonable zone because it has unusually high Precision or unusually high True Positives.
+    # - 0: Selects an unsupported zone, assigns the wrong predicted state, or does not identify a zone.
+    #
+    # Use only 10, 5, or 0.
+    #
+    """2. LOGIC RIGOR
 
 Evaluate whether the response correctly extracts and consistently preserves the mathematical rule for the selected node.
 
@@ -289,8 +301,10 @@ Return the final grades in a markdown JSON block using exactly these keys. Score
 
 ~~~json
 {
-  "Zone Identification score_zone1": 0,
-  "Logic Rigor_zone1": 0,
+"""
+    # The original first JSON key is commented out:
+    #   "Zone Identification score_zone1": 0,
+    """  "Logic Rigor_zone1": 0,
   "Feature Comprehensiveness_zone1": 0,
   "Biological Plausibility_zone1": 0,
   "Biological Plausibility_reason": "",
@@ -300,13 +314,14 @@ Return the final grades in a markdown JSON block using exactly these keys. Score
   "Literature Grounding_zone1": 0
 }
 ~~~
-""".replace('~~~', '```')
+"""
+).replace('~~~', '```')
 
 
 CSV_HEADERS = [
     "model",
     "prompt_file",
-    "Zone Identification score_zone1",
+    # "Zone Identification score_zone1",   # commented out: zone identification is no longer scored
     "Logic Rigor_zone1",
     "Feature Comprehensiveness_zone1",
     "Biological Plausibility_zone1",
@@ -348,12 +363,14 @@ def load_client(env_var: str = "OPENAI_API_KEY"):
 
 
 def compute_final_score(scores: dict) -> float | None:
-    if scores.get("Zone Identification score_zone1") is None:
+    # if scores.get("Zone Identification score_zone1") is None:   # commented out: zone identification is no longer scored
+    #     return None
+    if scores.get("Logic Rigor_zone1") is None:
         return None
     lit = scores.get("Literature Grounding_zone1") or 0
     return (
-        (scores.get("Zone Identification score_zone1") or 0)
-        + (scores.get("Logic Rigor_zone1") or 0)
+        # (scores.get("Zone Identification score_zone1") or 0)    # commented out
+        (scores.get("Logic Rigor_zone1") or 0)
         + (scores.get("Feature Comprehensiveness_zone1") or 0)
         + (scores.get("Biological Plausibility_zone1") or 0)
         + (scores.get("Specificity_zone1") or 0)
@@ -463,7 +480,7 @@ def process_file(client, selected_path: Path, overwrite: bool) -> bool:
     row = {
         "model": model,
         "prompt_file": prompt_file,
-        "Zone Identification score_zone1": scores.get("Zone Identification score_zone1"),
+        # "Zone Identification score_zone1": scores.get("Zone Identification score_zone1"),   # commented out
         "Logic Rigor_zone1": scores.get("Logic Rigor_zone1"),
         "Feature Comprehensiveness_zone1": scores.get("Feature Comprehensiveness_zone1"),
         "Biological Plausibility_zone1": scores.get("Biological Plausibility_zone1"),
