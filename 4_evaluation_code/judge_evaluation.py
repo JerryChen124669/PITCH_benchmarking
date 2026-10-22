@@ -1,8 +1,8 @@
 ﻿"""
 NOTE: the ZONE IDENTIFICATION criterion is commented out in this version (rubric section, JSON output key, CSV column and the zone term of the
 final score; everything is kept as comments). The scores in 5_evaluation_results/evaluation_results_rubric_v12 were produced with the earlier
-version in which the judge also returned a zone-identification score, so that column exists in the released data, but this script no longer
-requests or stores it. The other criteria and their wording are unchanged. The "final score" no longer includes the zone term
+version in which the judge also returned a zone-identification score, so that column exists in the released data as a legacy field that is excluded from all
+reported analyses; this script no longer requests or stores it. The other criteria and their wording are unchanged. The "final score" no longer includes the zone term
 (it was the sum of seven terms with literature grounding at half weight; it is now the sum of six terms, maximum 55).
 
 Blind seven-pillar rubric judging via OpenAI, adapted from judge_prompt_thinking.py

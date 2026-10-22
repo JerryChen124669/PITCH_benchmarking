@@ -1,0 +1,279 @@
+--- SYSTEM PROMPT ---
+Data Domain Context: Signal Transduction, perturbation experiment with 10 ng/mL EGF
+Cell Type / Study Tissue: Human Breast Epithelial
+Model Type Under Evaluation: Decision Tree
+
+You are an expert computational biologist tasked with interpreting a Decision Tree classifier's predictions of specific biomarkers based on cellular feature/gene expression data. Your objective is to translate the model's logic, including feature hierarchy, split thresholds, and conditional dependencies, into a cohesive biological narrative that explains the underlying regulatory mechanisms. Using the specific biological context provided, you must synthesize these findings into concrete, experimentally testable hypotheses.
+CRITICAL INSTRUCTION: Primarily analyze the CANDIDATE NODES section below. Prioritize nodes that combine substantial population support, strong IG enrichment, high target-cell enrichment, meaningful Gini impurity reduction, and relatively low tree depth -- do NOT select a node solely because it has the lowest Gini impurity or highest precision if it is only supported by a handful of cells. Nodes flagged as low support are listed separately and should be treated as overfitting risks, not primary evidence.
+ADDITIONAL INSTRUCTION: Explicitly identify (a) the single BEST node for hypothesis generation, stating why it beats the alternatives on the criteria above, and (b) the 4 most important contexts (i.e. the most decision-relevant split conditions/features) that should anchor your hypothesis. When a node's rule has more than 4 conditions, use that node's own 'Feature confidence ranking' to select the top ~4 conditions -- do not just take the first 4 in path order. State this explicitly before building the narrative.
+
+--- EXPERIMENT CONTEXT & DATA PIPELINE ---
+1. Goal: Forming biological rationale and hypothesis based on the Decision Tree results to explain why Cytoplasm Intensity mean Actin heavily attributes to the prediction of pERK. Focused feature: 'Cytoplasm Intensity mean Actin'. Target response: 'pERK'.
+2. Upstream Model: A PyTorch nonlinear Multi-layer Perceptron model was trained on the raw dataset (for the pERK/EGF dataset, this MLP was trained upstream on the multi-concentration signaling panel; for all other datasets, it was trained directly on this dataset's raw features).
+3. Feature Selection: Integrated Gradients (IG) attribution scores were computed from that upstream model. 23 attributing candidate features (a manually curated feature panel, not IG-ranked) were selected (the focused feature itself is excluded from this attributing set), yielding 22 attributing features actually used by the model.
+4. Target response and Focus feature Correlation: Direct correlation between Cytoplasm Intensity mean Actin and pERK.
+5. Label Generation: Samples were labeled as Class 1 ('High focused Attribution') if their IG score for Cytoplasm Intensity mean Actin fell in the extreme 10% according to the analysis type. All other samples are Class 0. Analysis type: the Positive Attribution Analysis focusing on conditions of Cytoplasm Intensity mean Actin's Positive attribution effect.
+6. Classifier: A single Decision Tree Classifier (max_depth=4, min_samples_leaf=5, no max_leaf_nodes cap, class_weight={0: 1, 1: 4}). 5-fold CV F1 (macro): 74.9%. The classifier aims to find the conditions/features that best separate Class 1 from Class 0 data points.
+
+--- CANDIDATE NODES: QUANTITATIVE EVIDENCE (all leaf nodes, sorted by target-cell lift) ---
+Node 30 (depth 4)
+  (1) Split conditions: Cytoplasm Intensity mean Paxillin > 0.778 AND Cytoplasm Intensity mean Paxillin > 1.109 AND Cytoplasm Intensity mean Paxillin > 1.342 AND Nucleus Intensity mean YAP > -0.236
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Cytoplasm Intensity mean Paxillin > 0.778  (local Gini-reduction contribution: 0.1625)
+      2. Cytoplasm Intensity mean Paxillin > 1.109  (local Gini-reduction contribution: 0.0151)
+      3. Cytoplasm Intensity mean Paxillin > 1.342  (local Gini-reduction contribution: 0.0018)
+      4. Nucleus Intensity mean YAP > -0.236  (local Gini-reduction contribution: 0.0006)
+  (2) Node depth: 4
+  (3) Support: 537 cells (2.69% of total population)
+  (4) Node Gini impurity: 0.1012
+  (5) Gini reduction from originating split: 0.0047
+  (6) Target-cell fraction: 81.6% (population rate 10.0%, enrichment/lift = 8.16x)
+  (7) Mean IG score of 'Cytoplasm Intensity mean Actin' in node: 0.4153 (population mean 0.0092, SD 0.2008; enrichment = +2.02 population-SD units above/below the population mean)
+
+Node 29 (depth 4)
+  (1) Split conditions: Cytoplasm Intensity mean Paxillin > 0.778 AND Cytoplasm Intensity mean Paxillin > 1.109 AND Cytoplasm Intensity mean Paxillin > 1.342 AND Nucleus Intensity mean YAP <= -0.236
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Cytoplasm Intensity mean Paxillin > 0.778  (local Gini-reduction contribution: 0.1625)
+      2. Cytoplasm Intensity mean Paxillin > 1.109  (local Gini-reduction contribution: 0.0151)
+      3. Cytoplasm Intensity mean Paxillin > 1.342  (local Gini-reduction contribution: 0.0018)
+      4. Nucleus Intensity mean YAP <= -0.236  (local Gini-reduction contribution: 0.0006)
+  (2) Node depth: 4
+  (3) Support: 480 cells (2.40% of total population)
+  (4) Node Gini impurity: 0.2571
+  (5) Gini reduction from originating split: 0.0047
+  (6) Target-cell fraction: 58.3% (population rate 10.0%, enrichment/lift = 5.83x)
+  (7) Mean IG score of 'Cytoplasm Intensity mean Actin' in node: 0.2747 (population mean 0.0092, SD 0.2008; enrichment = +1.32 population-SD units above/below the population mean)
+
+Node 23 (depth 4)
+  (1) Split conditions: Cytoplasm Intensity mean Paxillin > 0.778 AND Cytoplasm Intensity mean Paxillin <= 1.109 AND Nucleus Intensity mean YAP > 0.267 AND Nucleus Intensity mean YAP > 0.939
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Cytoplasm Intensity mean Paxillin > 0.778  (local Gini-reduction contribution: 0.1625)
+      2. Cytoplasm Intensity mean Paxillin <= 1.109  (local Gini-reduction contribution: 0.0151)
+      3. Nucleus Intensity mean YAP > 0.267  (local Gini-reduction contribution: 0.0040)
+      4. Nucleus Intensity mean YAP > 0.939  (local Gini-reduction contribution: 0.0007)
+  (2) Node depth: 4
+  (3) Support: 189 cells (0.95% of total population)
+  (4) Node Gini impurity: 0.3139
+  (5) Gini reduction from originating split: 0.0153
+  (6) Target-cell fraction: 50.8% (population rate 10.0%, enrichment/lift = 5.08x)
+  (7) Mean IG score of 'Cytoplasm Intensity mean Actin' in node: 0.2373 (population mean 0.0092, SD 0.2008; enrichment = +1.14 population-SD units above/below the population mean)
+
+Node 27 (depth 4)
+  (1) Split conditions: Cytoplasm Intensity mean Paxillin > 0.778 AND Cytoplasm Intensity mean Paxillin > 1.109 AND Cytoplasm Intensity mean Paxillin <= 1.342 AND Nucleus Intensity mean YAP > -1.405
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Cytoplasm Intensity mean Paxillin > 0.778  (local Gini-reduction contribution: 0.1625)
+      2. Cytoplasm Intensity mean Paxillin > 1.109  (local Gini-reduction contribution: 0.0151)
+      3. Nucleus Intensity mean YAP > -1.405  (local Gini-reduction contribution: 0.0019)
+      4. Cytoplasm Intensity mean Paxillin <= 1.342  (local Gini-reduction contribution: 0.0018)
+  (2) Node depth: 4
+  (3) Support: 690 cells (3.45% of total population)
+  (4) Node Gini impurity: 0.3267
+  (5) Gini reduction from originating split: 0.0264
+  (6) Target-cell fraction: 49.1% (population rate 10.0%, enrichment/lift = 4.91x)
+  (7) Mean IG score of 'Cytoplasm Intensity mean Actin' in node: 0.2157 (population mean 0.0092, SD 0.2008; enrichment = +1.03 population-SD units above/below the population mean)
+
+Node 22 (depth 4)
+  (1) Split conditions: Cytoplasm Intensity mean Paxillin > 0.778 AND Cytoplasm Intensity mean Paxillin <= 1.109 AND Nucleus Intensity mean YAP > 0.267 AND Nucleus Intensity mean YAP <= 0.939
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Cytoplasm Intensity mean Paxillin > 0.778  (local Gini-reduction contribution: 0.1625)
+      2. Cytoplasm Intensity mean Paxillin <= 1.109  (local Gini-reduction contribution: 0.0151)
+      3. Nucleus Intensity mean YAP > 0.267  (local Gini-reduction contribution: 0.0040)
+      4. Nucleus Intensity mean YAP <= 0.939  (local Gini-reduction contribution: 0.0007)
+  (2) Node depth: 4
+  (3) Support: 386 cells (1.93% of total population)
+  (4) Node Gini impurity: 0.4681
+  (5) Gini reduction from originating split: 0.0153
+  (6) Target-cell fraction: 29.5% (population rate 10.0%, enrichment/lift = 2.95x)
+  (7) Mean IG score of 'Cytoplasm Intensity mean Actin' in node: 0.1567 (population mean 0.0092, SD 0.2008; enrichment = +0.73 population-SD units above/below the population mean)
+
+Node 4 (depth 4)
+  (1) Split conditions: Cytoplasm Intensity mean Paxillin <= 0.778 AND Cytoplasm Intensity mean Paxillin <= 0.273 AND Nucleus Intensity mean PCNA <= -1.528 AND Nucleus Morphology Perimeter <= 0.805
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Cytoplasm Intensity mean Paxillin <= 0.778  (local Gini-reduction contribution: 0.1625)
+      2. Cytoplasm Intensity mean Paxillin <= 0.273  (local Gini-reduction contribution: 0.0125)
+      3. Nucleus Intensity mean PCNA <= -1.528  (local Gini-reduction contribution: 0.0027)
+      4. Nucleus Morphology Perimeter <= 0.805  (local Gini-reduction contribution: 0.0013)
+  (2) Node depth: 4
+  (3) Support: 120 cells (0.60% of total population)
+  (4) Node Gini impurity: 0.4952
+  (5) Gini reduction from originating split: 0.0935
+  (6) Target-cell fraction: 23.3% (population rate 10.0%, enrichment/lift = 2.33x)
+  (7) Mean IG score of 'Cytoplasm Intensity mean Actin' in node: 0.0233 (population mean 0.0092, SD 0.2008; enrichment = +0.07 population-SD units above/below the population mean)
+
+Node 19 (depth 4)
+  (1) Split conditions: Cytoplasm Intensity mean Paxillin > 0.778 AND Cytoplasm Intensity mean Paxillin <= 1.109 AND Nucleus Intensity mean YAP <= 0.267 AND Nucleus Morphology Perimeter <= 0.509
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Cytoplasm Intensity mean Paxillin > 0.778  (local Gini-reduction contribution: 0.1625)
+      2. Cytoplasm Intensity mean Paxillin <= 1.109  (local Gini-reduction contribution: 0.0151)
+      3. Nucleus Intensity mean YAP <= 0.267  (local Gini-reduction contribution: 0.0040)
+      4. Nucleus Morphology Perimeter <= 0.509  (local Gini-reduction contribution: 0.0008)
+  (2) Node depth: 4
+  (3) Support: 916 cells (4.58% of total population)
+  (4) Node Gini impurity: 0.4986
+  (5) Gini reduction from originating split: 0.0111
+  (6) Target-cell fraction: 18.3% (population rate 10.0%, enrichment/lift = 1.83x)
+  (7) Mean IG score of 'Cytoplasm Intensity mean Actin' in node: 0.1087 (population mean 0.0092, SD 0.2008; enrichment = +0.50 population-SD units above/below the population mean)
+
+Node 15 (depth 4)
+  (1) Split conditions: Cytoplasm Intensity mean Paxillin <= 0.778 AND Cytoplasm Intensity mean Paxillin > 0.273 AND Nucleus Intensity mean YAP > -0.463 AND Cytoplasm Intensity mean Paxillin > 0.583
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Cytoplasm Intensity mean Paxillin <= 0.778  (local Gini-reduction contribution: 0.1625)
+      2. Cytoplasm Intensity mean Paxillin > 0.273  (local Gini-reduction contribution: 0.0125)
+      3. Nucleus Intensity mean YAP > -0.463  (local Gini-reduction contribution: 0.0042)
+      4. Cytoplasm Intensity mean Paxillin > 0.583  (local Gini-reduction contribution: 0.0022)
+  (2) Node depth: 4
+  (3) Support: 847 cells (4.23% of total population)
+  (4) Node Gini impurity: 0.4962
+  (5) Gini reduction from originating split: 0.0171
+  (6) Target-cell fraction: 17.4% (population rate 10.0%, enrichment/lift = 1.74x)
+  (7) Mean IG score of 'Cytoplasm Intensity mean Actin' in node: 0.1149 (population mean 0.0092, SD 0.2008; enrichment = +0.53 population-SD units above/below the population mean)
+
+Node 20 (depth 4)
+  (1) Split conditions: Cytoplasm Intensity mean Paxillin > 0.778 AND Cytoplasm Intensity mean Paxillin <= 1.109 AND Nucleus Intensity mean YAP <= 0.267 AND Nucleus Morphology Perimeter > 0.509
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Cytoplasm Intensity mean Paxillin > 0.778  (local Gini-reduction contribution: 0.1625)
+      2. Cytoplasm Intensity mean Paxillin <= 1.109  (local Gini-reduction contribution: 0.0151)
+      3. Nucleus Intensity mean YAP <= 0.267  (local Gini-reduction contribution: 0.0040)
+      4. Nucleus Morphology Perimeter > 0.509  (local Gini-reduction contribution: 0.0008)
+  (2) Node depth: 4
+  (3) Support: 370 cells (1.85% of total population)
+  (4) Node Gini impurity: 0.4210
+  (5) Gini reduction from originating split: 0.0111
+  (6) Target-cell fraction: 9.7% (population rate 10.0%, enrichment/lift = 0.97x)
+  (7) Mean IG score of 'Cytoplasm Intensity mean Actin' in node: 0.0874 (population mean 0.0092, SD 0.2008; enrichment = +0.39 population-SD units above/below the population mean)
+
+Node 14 (depth 4)
+  (1) Split conditions: Cytoplasm Intensity mean Paxillin <= 0.778 AND Cytoplasm Intensity mean Paxillin > 0.273 AND Nucleus Intensity mean YAP > -0.463 AND Cytoplasm Intensity mean Paxillin <= 0.583
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Cytoplasm Intensity mean Paxillin <= 0.778  (local Gini-reduction contribution: 0.1625)
+      2. Cytoplasm Intensity mean Paxillin > 0.273  (local Gini-reduction contribution: 0.0125)
+      3. Nucleus Intensity mean YAP > -0.463  (local Gini-reduction contribution: 0.0042)
+      4. Cytoplasm Intensity mean Paxillin <= 0.583  (local Gini-reduction contribution: 0.0022)
+  (2) Node depth: 4
+  (3) Support: 1686 cells (8.43% of total population)
+  (4) Node Gini impurity: 0.3904
+  (5) Gini reduction from originating split: 0.0171
+  (6) Target-cell fraction: 8.3% (population rate 10.0%, enrichment/lift = 0.83x)
+  (7) Mean IG score of 'Cytoplasm Intensity mean Actin' in node: 0.0704 (population mean 0.0092, SD 0.2008; enrichment = +0.30 population-SD units above/below the population mean)
+
+Node 5 (depth 4)
+  (1) Split conditions: Cytoplasm Intensity mean Paxillin <= 0.778 AND Cytoplasm Intensity mean Paxillin <= 0.273 AND Nucleus Intensity mean PCNA <= -1.528 AND Nucleus Morphology Perimeter > 0.805
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Cytoplasm Intensity mean Paxillin <= 0.778  (local Gini-reduction contribution: 0.1625)
+      2. Cytoplasm Intensity mean Paxillin <= 0.273  (local Gini-reduction contribution: 0.0125)
+      3. Nucleus Intensity mean PCNA <= -1.528  (local Gini-reduction contribution: 0.0027)
+      4. Nucleus Morphology Perimeter > 0.805  (local Gini-reduction contribution: 0.0013)
+  (2) Node depth: 4
+  (3) Support: 133 cells (0.66% of total population)
+  (4) Node Gini impurity: 0.1963
+  (5) Gini reduction from originating split: 0.0935
+  (6) Target-cell fraction: 3.0% (population rate 10.0%, enrichment/lift = 0.30x)
+  (7) Mean IG score of 'Cytoplasm Intensity mean Actin' in node: -0.2010 (population mean 0.0092, SD 0.2008; enrichment = -1.05 population-SD units above/below the population mean)
+
+Node 8 (depth 4)
+  (1) Split conditions: Cytoplasm Intensity mean Paxillin <= 0.778 AND Cytoplasm Intensity mean Paxillin <= 0.273 AND Nucleus Intensity mean PCNA > -1.528 AND Cytoplasm Intensity mean Paxillin > -0.023
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Cytoplasm Intensity mean Paxillin <= 0.778  (local Gini-reduction contribution: 0.1625)
+      2. Cytoplasm Intensity mean Paxillin <= 0.273  (local Gini-reduction contribution: 0.0125)
+      3. Nucleus Intensity mean PCNA > -1.528  (local Gini-reduction contribution: 0.0027)
+      4. Cytoplasm Intensity mean Paxillin > -0.023  (local Gini-reduction contribution: 0.0009)
+  (2) Node depth: 4
+  (3) Support: 2609 cells (13.05% of total population)
+  (4) Node Gini impurity: 0.1810
+  (5) Gini reduction from originating split: 0.0019
+  (6) Target-cell fraction: 2.7% (population rate 10.0%, enrichment/lift = 0.27x)
+  (7) Mean IG score of 'Cytoplasm Intensity mean Actin' in node: -0.0014 (population mean 0.0092, SD 0.2008; enrichment = -0.05 population-SD units above/below the population mean)
+
+Node 12 (depth 4)
+  (1) Split conditions: Cytoplasm Intensity mean Paxillin <= 0.778 AND Cytoplasm Intensity mean Paxillin > 0.273 AND Nucleus Intensity mean YAP <= -0.463 AND Nucleus Intensity mean PCNA > -1.623
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Cytoplasm Intensity mean Paxillin <= 0.778  (local Gini-reduction contribution: 0.1625)
+      2. Cytoplasm Intensity mean Paxillin > 0.273  (local Gini-reduction contribution: 0.0125)
+      3. Nucleus Intensity mean YAP <= -0.463  (local Gini-reduction contribution: 0.0042)
+      4. Nucleus Intensity mean PCNA > -1.623  (local Gini-reduction contribution: 0.0023)
+  (2) Node depth: 4
+  (3) Support: 1732 cells (8.66% of total population)
+  (4) Node Gini impurity: 0.1774
+  (5) Gini reduction from originating split: 0.0308
+  (6) Target-cell fraction: 2.7% (population rate 10.0%, enrichment/lift = 0.27x)
+  (7) Mean IG score of 'Cytoplasm Intensity mean Actin' in node: 0.0081 (population mean 0.0092, SD 0.2008; enrichment = -0.01 population-SD units above/below the population mean)
+
+Node 7 (depth 4)
+  (1) Split conditions: Cytoplasm Intensity mean Paxillin <= 0.778 AND Cytoplasm Intensity mean Paxillin <= 0.273 AND Nucleus Intensity mean PCNA > -1.528 AND Cytoplasm Intensity mean Paxillin <= -0.023
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Cytoplasm Intensity mean Paxillin <= 0.778  (local Gini-reduction contribution: 0.1625)
+      2. Cytoplasm Intensity mean Paxillin <= 0.273  (local Gini-reduction contribution: 0.0125)
+      3. Nucleus Intensity mean PCNA > -1.528  (local Gini-reduction contribution: 0.0027)
+      4. Cytoplasm Intensity mean Paxillin <= -0.023  (local Gini-reduction contribution: 0.0009)
+  (2) Node depth: 4
+  (3) Support: 9150 cells (45.75% of total population)
+  (4) Node Gini impurity: 0.0533
+  (5) Gini reduction from originating split: 0.0019
+  (6) Target-cell fraction: 0.7% (population rate 10.0%, enrichment/lift = 0.07x)
+  (7) Mean IG score of 'Cytoplasm Intensity mean Actin' in node: -0.0842 (population mean 0.0092, SD 0.2008; enrichment = -0.46 population-SD units above/below the population mean)
+
+
+--- LOW-SUPPORT / FLAGGED NODES (for reference only, not primary evidence) ---
+Node 11 (depth 4): Cytoplasm Intensity mean Paxillin <= 0.778 AND Cytoplasm Intensity mean Paxillin > 0.273 AND Nucleus Intensity mean YAP <= -0.463 AND Nucleus Intensity mean PCNA <= -1.623 [60 cells, target lift 3.00x] -- below min support (100 cells)
+Node 26 (depth 4): Cytoplasm Intensity mean Paxillin > 0.778 AND Cytoplasm Intensity mean Paxillin > 1.109 AND Cytoplasm Intensity mean Paxillin <= 1.342 AND Nucleus Intensity mean YAP <= -1.405 [95 cells, target lift 1.16x] -- below min support (100 cells)
+
+--- FULL DECISION TREE RAW RULES ---
+|--- Cytoplasm Intensity mean Paxillin <= 0.78
+|   |--- Cytoplasm Intensity mean Paxillin <= 0.27
+|   |   |--- Nucleus Intensity mean PCNA <= -1.53
+|   |   |   |--- Nucleus Morphology Perimeter <= 0.80
+|   |   |   |   |--- class: 1
+|   |   |   |--- Nucleus Morphology Perimeter >  0.80
+|   |   |   |   |--- class: 0
+|   |   |--- Nucleus Intensity mean PCNA >  -1.53
+|   |   |   |--- Cytoplasm Intensity mean Paxillin <= -0.02
+|   |   |   |   |--- class: 0
+|   |   |   |--- Cytoplasm Intensity mean Paxillin >  -0.02
+|   |   |   |   |--- class: 0
+|   |--- Cytoplasm Intensity mean Paxillin >  0.27
+|   |   |--- Nucleus Intensity mean YAP <= -0.46
+|   |   |   |--- Nucleus Intensity mean PCNA <= -1.62
+|   |   |   |   |--- class: 1
+|   |   |   |--- Nucleus Intensity mean PCNA >  -1.62
+|   |   |   |   |--- class: 0
+|   |   |--- Nucleus Intensity mean YAP >  -0.46
+|   |   |   |--- Cytoplasm Intensity mean Paxillin <= 0.58
+|   |   |   |   |--- class: 0
+|   |   |   |--- Cytoplasm Intensity mean Paxillin >  0.58
+|   |   |   |   |--- class: 0
+|--- Cytoplasm Intensity mean Paxillin >  0.78
+|   |--- Cytoplasm Intensity mean Paxillin <= 1.11
+|   |   |--- Nucleus Intensity mean YAP <= 0.27
+|   |   |   |--- Nucleus Morphology Perimeter <= 0.51
+|   |   |   |   |--- class: 0
+|   |   |   |--- Nucleus Morphology Perimeter >  0.51
+|   |   |   |   |--- class: 0
+|   |   |--- Nucleus Intensity mean YAP >  0.27
+|   |   |   |--- Nucleus Intensity mean YAP <= 0.94
+|   |   |   |   |--- class: 1
+|   |   |   |--- Nucleus Intensity mean YAP >  0.94
+|   |   |   |   |--- class: 1
+|   |--- Cytoplasm Intensity mean Paxillin >  1.11
+|   |   |--- Cytoplasm Intensity mean Paxillin <= 1.34
+|   |   |   |--- Nucleus Intensity mean YAP <= -1.41
+|   |   |   |   |--- class: 0
+|   |   |   |--- Nucleus Intensity mean YAP >  -1.41
+|   |   |   |   |--- class: 1
+|   |   |--- Cytoplasm Intensity mean Paxillin >  1.34
+|   |   |   |--- Nucleus Intensity mean YAP <= -0.24
+|   |   |   |   |--- class: 1
+|   |   |   |--- Nucleus Intensity mean YAP >  -0.24
+|   |   |   |   |--- class: 1
+
+
+--- TASK ---
+Based on the evidence above, first explicitly state (a) the single BEST node for hypothesis generation and why, and (b) the 4 most important contexts (features/conditions) driving that conclusion. Then form rationale and a hypothesis of the feature relationships (pathways) to explain HOW features and Cytoplasm Intensity mean Actin together associate with pERK. Base this on the evidence above (not any single metric alone). Identify findings into two categories: 1. findings that directly confirm literature knowledge; 2. findings suggesting new testable mechanisms supported by literature. List the publications supporting the conclusions.
+
+FINAL OUTPUT REQUIREMENT: After the narrative, append exactly one fenced json code block with this structure, so your selections can be checked against the quantitative evidence above:
+```json
+{
+  "primary_zone_node_id": <integer node id from the evidence section above, or null if this model type has no nodes (Random Forest and Logistic Regression both have none)>,
+  "top_4_contexts": ["<feature name>", "<feature name>", "<feature name>", "<feature name>"]
+}
+```
+Feature names in top_4_contexts must be copied verbatim from the evidence section above (e.g. "Nucleus Morphology Area"), not the focused feature 'Cytoplasm Intensity mean Actin' itself.

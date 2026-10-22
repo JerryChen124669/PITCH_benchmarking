@@ -1,0 +1,51 @@
+Found 12 (dataset, model_type) prompt files. 1 run(s) each = 12 API calls.
+
+[1/12] CITEseq_CD45RA_naive / logreg
+  -> run 1/1 via gemini-3.1-pro-preview... tokens: 2400 in / 1713 out
+  Saved -> C:\Users\twjer\nonlinear-multimodal\ClassifierEvaluation\results\CITEseq_CD45RA_naive\CITEseq_CD45RA_naive_logreg_hypothesis.jsonl
+
+[2/12] CITEseq_CD45RA_naive / dt
+  -> run 1/1 via gemini-3.1-pro-preview... tokens: 4026 in / 1670 out
+  Saved -> C:\Users\twjer\nonlinear-multimodal\ClassifierEvaluation\results\CITEseq_CD45RA_naive\CITEseq_CD45RA_naive_dt_hypothesis.jsonl
+
+[3/12] CITEseq_CD45RA_naive / rf
+  -> run 1/1 via gemini-3.1-pro-preview... tokens: 5093 in / 1440 out
+  Saved -> C:\Users\twjer\nonlinear-multimodal\ClassifierEvaluation\results\CITEseq_CD45RA_naive\CITEseq_CD45RA_naive_rf_hypothesis.jsonl
+
+[4/12] CosMx_CancerKi67 / logreg
+  -> run 1/1 via gemini-3.1-pro-preview... tokens: 2211 in / 1502 out
+  Saved -> C:\Users\twjer\nonlinear-multimodal\ClassifierEvaluation\results\CosMx_CancerKi67\CosMx_CancerKi67_logreg_hypothesis.jsonl
+
+[5/12] CosMx_CancerKi67 / dt
+  -> run 1/1 via gemini-3.1-pro-preview... tokens: 7976 in / 1671 out
+  Saved -> C:\Users\twjer\nonlinear-multimodal\ClassifierEvaluation\results\CosMx_CancerKi67\CosMx_CancerKi67_dt_hypothesis.jsonl
+
+[6/12] CosMx_CancerKi67 / rf
+  -> run 1/1 via gemini-3.1-pro-preview... tokens: 8965 in / 1501 out
+  Saved -> C:\Users\twjer\nonlinear-multimodal\ClassifierEvaluation\results\CosMx_CancerKi67\CosMx_CancerKi67_rf_hypothesis.jsonl
+
+[7/12] Gouwens_GABAergic / logreg
+  -> run 1/1 via gemini-3.1-pro-preview... tokens: 2260 in / 1632 out
+  Saved -> C:\Users\twjer\nonlinear-multimodal\ClassifierEvaluation\results\Gouwens_GABAergic\Gouwens_GABAergic_logreg_hypothesis.jsonl
+
+[8/12] Gouwens_GABAergic / dt
+  -> run 1/1 via gemini-3.1-pro-preview... tokens: 7475 in / 1454 out
+  Saved -> C:\Users\twjer\nonlinear-multimodal\ClassifierEvaluation\results\Gouwens_GABAergic\Gouwens_GABAergic_dt_hypothesis.jsonl
+
+[9/12] Gouwens_GABAergic / rf
+  -> run 1/1 via gemini-3.1-pro-preview... tokens: 8482 in / 1656 out
+  Saved -> C:\Users\twjer\nonlinear-multimodal\ClassifierEvaluation\results\Gouwens_GABAergic\Gouwens_GABAergic_rf_hypothesis.jsonl
+
+[10/12] pERK_EGF10 / logreg
+  -> run 1/1 via gemini-3.1-pro-preview... tokens: 2062 in / 1519 out
+  Saved -> C:\Users\twjer\nonlinear-multimodal\ClassifierEvaluation\results\pERK_EGF10\pERK_EGF10_logreg_hypothesis.jsonl
+
+[11/12] pERK_EGF10 / dt
+  -> run 1/1 via gemini-3.1-pro-preview... tokens: 7592 in / 1516 out
+  Saved -> C:\Users\twjer\nonlinear-multimodal\ClassifierEvaluation\results\pERK_EGF10\pERK_EGF10_dt_hypothesis.jsonl
+
+[12/12] pERK_EGF10 / rf
+  -> run 1/1 via gemini-3.1-pro-preview... tokens: 8400 in / 1520 out
+  Saved -> C:\Users\twjer\nonlinear-multimodal\ClassifierEvaluation\results\pERK_EGF10\pERK_EGF10_rf_hypothesis.jsonl
+
+All hypotheses generated.

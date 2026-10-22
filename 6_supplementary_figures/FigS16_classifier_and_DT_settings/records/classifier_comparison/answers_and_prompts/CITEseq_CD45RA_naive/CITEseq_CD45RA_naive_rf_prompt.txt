@@ -1,0 +1,61 @@
+--- SYSTEM PROMPT ---
+Data Domain Context: Immunology / CITE-seq (surface protein + RNA)
+Cell Type / Study Tissue: Human PBMC-derived CD45RA+ naive T cells
+Model Type Under Evaluation: Random Forest
+
+You are an expert computational biologist tasked with interpreting a Random Forest classifier's predictions of specific biomarkers based on cellular feature/gene expression data. Your objective is to translate the model's logic, including the direction and relative magnitude of each feature effect, into a cohesive biological narrative that explains the underlying regulatory mechanisms. Using the specific biological context provided, you must synthesize these findings into concrete, experimentally testable hypotheses.
+CRITICAL INSTRUCTION: Anchor your hypothesis on the FOREST-WIDE FEATURE IMPORTANCE ranking below -- this is the entire evidence available for this model. There are no tree nodes/zones for this model -- describe the relationship as a global, additive association between the top-ranked features and the outcome, not as conditional/branching logic. Do not describe or imply specific split thresholds, since none were given to you.
+ADDITIONAL INSTRUCTION: Explicitly identify the 4 most important contexts (the top-4 features by forest-wide importance) that should anchor your hypothesis. State this explicitly before building the narrative.
+
+--- EXPERIMENT CONTEXT & DATA PIPELINE ---
+1. Goal: Forming biological rationale and hypothesis based on the Random Forest results to explain why HUMAN_GNLY heavily attributes to the prediction of CD45RA. Focused feature: 'HUMAN_GNLY'. Target response: 'CD45RA'.
+2. Upstream Model: A PyTorch nonlinear Multi-layer Perceptron model was trained on the raw dataset (for the pERK/EGF dataset, this MLP was trained upstream on the multi-concentration signaling panel; for all other datasets, it was trained directly on this dataset's raw features).
+3. Feature Selection: Integrated Gradients (IG) attribution scores were computed from that upstream model. 30 attributing candidate features (the top-ranked by Mean Absolute IG Attribution) were selected (the focused feature itself is excluded from this attributing set), yielding 29 attributing features actually used by the model.
+4. Target response and Focus feature Correlation: Direct correlation between HUMAN_GNLY and CD45RA.
+5. Label Generation: Samples were labeled as Class 1 ('High focused Attribution') if their IG score for HUMAN_GNLY fell in the extreme 10% according to the analysis type. All other samples are Class 0. Analysis type: the Positive Attribution Analysis focusing on conditions of HUMAN_GNLY's Positive attribution effect.
+6. Classifier: A Random Forest Classifier (200 trees, max_depth=4 per tree, min_samples_leaf=5, class_weight={0: 1, 1: 4}). 5-fold CV F1 (macro): 92.3%. The classifier aims to find the conditions/features that best separate Class 1 from Class 0 data points.
+
+--- FOREST-WIDE FEATURE IMPORTANCE (AUTHORITATIVE -- averaged across all 200 trees) ---
+  1. HUMAN_NKG7  (mean decrease in impurity, averaged over 200 trees: 0.1841)
+  2. HUMAN_KLRB1  (mean decrease in impurity, averaged over 200 trees: 0.1496)
+  3. HUMAN_CTSW  (mean decrease in impurity, averaged over 200 trees: 0.1407)
+  4. HUMAN_GZMB  (mean decrease in impurity, averaged over 200 trees: 0.1173)
+  5. HUMAN_KLRF1  (mean decrease in impurity, averaged over 200 trees: 0.1168)
+  6. HUMAN_CST7  (mean decrease in impurity, averaged over 200 trees: 0.0970)
+  7. HUMAN_CMC1  (mean decrease in impurity, averaged over 200 trees: 0.0776)
+  8. HUMAN_GZMA  (mean decrease in impurity, averaged over 200 trees: 0.0482)
+  9. HUMAN_CLIC3  (mean decrease in impurity, averaged over 200 trees: 0.0301)
+  10. HUMAN_TRDC  (mean decrease in impurity, averaged over 200 trees: 0.0198)
+  11. HUMAN_STAT4  (mean decrease in impurity, averaged over 200 trees: 0.0038)
+  12. HUMAN_FCN1  (mean decrease in impurity, averaged over 200 trees: 0.0027)
+  13. HUMAN_LYZ  (mean decrease in impurity, averaged over 200 trees: 0.0027)
+  14. HUMAN_IFI30  (mean decrease in impurity, averaged over 200 trees: 0.0019)
+  15. HUMAN_HLA-DRB1  (mean decrease in impurity, averaged over 200 trees: 0.0017)
+  16. HUMAN_CST3  (mean decrease in impurity, averaged over 200 trees: 0.0016)
+  17. HUMAN_MNDA  (mean decrease in impurity, averaged over 200 trees: 0.0010)
+  18. HUMAN_S100A12  (mean decrease in impurity, averaged over 200 trees: 0.0009)
+  19. HUMAN_LGALS2  (mean decrease in impurity, averaged over 200 trees: 0.0007)
+  20. HUMAN_RP11-1143G9.4  (mean decrease in impurity, averaged over 200 trees: 0.0007)
+  21. HUMAN_LGALS1  (mean decrease in impurity, averaged over 200 trees: 0.0006)
+  22. HUMAN_CD14  (mean decrease in impurity, averaged over 200 trees: 0.0002)
+  23. HUMAN_S100B  (mean decrease in impurity, averaged over 200 trees: 0.0002)
+  24. MOUSE_Rpl8  (mean decrease in impurity, averaged over 200 trees: 0.0001)
+  25. HUMAN_IGHV1OR15-1  (mean decrease in impurity, averaged over 200 trees: 0.0001)
+  26. HUMAN_CD8B  (mean decrease in impurity, averaged over 200 trees: 0.0001)
+  27. MOUSE_Gnb2  (mean decrease in impurity, averaged over 200 trees: 0.0000)
+  28. MOUSE_Cald1  (mean decrease in impurity, averaged over 200 trees: 0.0000)
+  29. MOUSE_Neat1  (mean decrease in impurity, averaged over 200 trees: 0.0000)
+
+NOTE: This is the ENTIRE evidence for this model. A Random Forest is 200 independently-trained trees voting together; there is no single unified 'if condition A and B then Y' rule for the ensemble the way there is for one tree. Do not invent conditional/branching logic that was not given to you -- this ranking is a global, aggregate measure (mean impurity decrease per feature, averaged over all trees), structurally similar to Logistic Regression's coefficient ranking, not to a Decision Tree's leaf-node zones.
+
+--- TASK ---
+Based on the evidence above, first explicitly state (a) the single BEST set of features for hypothesis generation and why, and (b) the 4 most important contexts (features/conditions) driving that conclusion. Then form rationale and a hypothesis of the feature relationships (pathways) to explain HOW features and HUMAN_GNLY together associate with CD45RA. Base this on the evidence above (not any single metric alone). Identify findings into two categories: 1. findings that directly confirm literature knowledge; 2. findings suggesting new testable mechanisms supported by literature. List the publications supporting the conclusions.
+
+FINAL OUTPUT REQUIREMENT: After the narrative, append exactly one fenced json code block with this structure, so your selections can be checked against the quantitative evidence above:
+```json
+{
+  "primary_zone_node_id": <integer node id from the evidence section above, or null if this model type has no nodes (Random Forest and Logistic Regression both have none)>,
+  "top_4_contexts": ["<feature name>", "<feature name>", "<feature name>", "<feature name>"]
+}
+```
+Feature names in top_4_contexts must be copied verbatim from the evidence section above (e.g. "HUMAN_NKG7"), not the focused feature 'HUMAN_GNLY' itself.

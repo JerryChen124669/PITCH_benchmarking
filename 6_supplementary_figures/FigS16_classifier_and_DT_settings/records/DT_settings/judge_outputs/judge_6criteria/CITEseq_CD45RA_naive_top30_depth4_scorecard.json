@@ -1,0 +1,15 @@
+{
+  "dataset": "CITEseq_CD45RA_naive",
+  "setting": "top30_depth4",
+  "judge_model": "gpt-5.6-sol",
+  "scores": {
+    "Feature Comprehensiveness": 10,
+    "Logic Rigor": 10,
+    "Biological Plausibility": 9,
+    "Biological Plausibility_reason": "The TEMRA-like common-state explanation coherently links CD45RA re-expression with GNLY/NKG7/GZMB cytotoxic programming, while low LYZ reasonably marks exclusion of myeloid contamination. The claimed strict stoichiometric threshold and specific NKG7-dependent trafficking of GNLY/GZMB are somewhat stronger than the tree and cited biology establish, but remain defensible hypotheses.",
+    "Specificity": 8,
+    "Mechanistic Synthesis": 8,
+    "Mechanistic Synthesis_reason": "The response integrates GNLY, high NKG7, high GZMB, and low LYZ through a cytotoxic TEMRA-like state, granule exocytosis, apoptotic effector function, and lymphoid-lineage filtering. The molecular transition responsible for CD45RA re-expression and the proposed threshold-based co-regulation remain broad rather than mechanistically resolved. No synthesis ceiling was applied because all distinct contextual features contribute explicitly to the focus-feature\u2013target explanation.",
+    "Literature Grounding": 8
+  }
+}

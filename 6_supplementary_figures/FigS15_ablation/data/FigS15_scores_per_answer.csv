@@ -1,0 +1,63 @@
+Model,Prompt,Condition,Selected answer (run),Judge pass,Feature Comprehensiveness,Biological Plausibility,Hypothesis Specificity,Mechanistic Synthesis,Literature Grounding
+DeepSeek V4.1 Flash,CITE-seq CD45RA,MLP + IG,3,1,10,9,7,7,9
+DeepSeek V4.1 Flash,CITE-seq CD45RA,MLP + IG,3,2,10,8,8,8,9
+DeepSeek V4.1 Flash,CosMx Ki-67,MLP + IG,1,1,10,8,7,7,8
+DeepSeek V4.1 Flash,CosMx Ki-67,MLP + IG,1,2,8,8,7,6,7
+DeepSeek V4.1 Flash,Gouwens input resistance,MLP + IG,3,1,6,7,7,7,8
+DeepSeek V4.1 Flash,Gouwens input resistance,MLP + IG,3,2,8,7,6,6,8
+GLM-5.3,CITE-seq CD45RA,MLP + IG,3,1,9,7,7,7,8
+GLM-5.3,CITE-seq CD45RA,MLP + IG,3,2,6,6,4,4,8
+GLM-5.3,CosMx Ki-67,MLP + IG,2,1,8,9,6,6,8
+GLM-5.3,CosMx Ki-67,MLP + IG,2,2,8,8,6,6,8
+GLM-5.3,Gouwens input resistance,MLP + IG,3,1,10,9,6,6,8
+GLM-5.3,Gouwens input resistance,MLP + IG,3,2,10,8,8,7,7
+Gemini-3.1-pro-preview,CITE-seq CD45RA,MLP + IG,5,1,5,8,4,4,8
+Gemini-3.1-pro-preview,CITE-seq CD45RA,MLP + IG,5,2,10,8,4,4,7
+Gemini-3.1-pro-preview,CosMx Ki-67,MLP + IG,7,1,9,9,4,4,8
+Gemini-3.1-pro-preview,CosMx Ki-67,MLP + IG,7,2,9,9,3,4,7
+Gemini-3.1-pro-preview,Gouwens input resistance,MLP + IG,3,1,9,7,4,5,7
+Gemini-3.1-pro-preview,Gouwens input resistance,MLP + IG,3,2,9,8,4,5,7
+Qwen3.8-2.4T-A95B,CITE-seq CD45RA,MLP + IG,3,1,5,9,5,4,8
+Qwen3.8-2.4T-A95B,CITE-seq CD45RA,MLP + IG,3,2,10,10,7,5,10
+Qwen3.8-2.4T-A95B,CosMx Ki-67,MLP + IG,1,1,10,9,5,5,9
+Qwen3.8-2.4T-A95B,CosMx Ki-67,MLP + IG,1,2,9,9,7,7,9
+Qwen3.8-2.4T-A95B,Gouwens input resistance,MLP + IG,1,1,10,9,7,7,8
+Qwen3.8-2.4T-A95B,Gouwens input resistance,MLP + IG,1,2,6,8,7,7,7
+DeepSeek V4.1 Flash,CosMx Ki-67,Measurement-only,2,1,8,9,2,3,9
+DeepSeek V4.1 Flash,CosMx Ki-67,Measurement-only,2,2,8,8,2,3,8
+GLM-5.3,CITE-seq CD45RA,Measurement-only,2,1,8,8,3,3,7
+GLM-5.3,CITE-seq CD45RA,Measurement-only,2,2,7,9,4,3,8
+GLM-5.3,CosMx Ki-67,Measurement-only,2,1,9,8,7,7,6
+GLM-5.3,CosMx Ki-67,Measurement-only,2,2,9,8,8,7,7
+GLM-5.3,Gouwens input resistance,Measurement-only,3,1,10,8,7,7,6
+GLM-5.3,Gouwens input resistance,Measurement-only,3,2,10,8,7,6,7
+Gemini-3.1-pro-preview,Gouwens input resistance,Measurement-only,3,1,10,7,5,5,6
+Gemini-3.1-pro-preview,Gouwens input resistance,Measurement-only,3,2,10,5,5,5,6
+Qwen3.8-2.4T-A95B,CITE-seq CD45RA,Measurement-only,1,1,6,8,4,4,9
+Qwen3.8-2.4T-A95B,CITE-seq CD45RA,Measurement-only,1,2,7,7,4,4,9
+Qwen3.8-2.4T-A95B,CosMx Ki-67,Measurement-only,2,1,9,9,4,4,9
+Qwen3.8-2.4T-A95B,CosMx Ki-67,Measurement-only,2,2,9,9,6,6,10
+DeepSeek V4.1 Flash,CITE-seq CD45RA,PITCH,1,1,10,9,7,7,8
+DeepSeek V4.1 Flash,CITE-seq CD45RA,PITCH,1,2,10,9,8,7,8
+DeepSeek V4.1 Flash,CosMx Ki-67,PITCH,3,1,10,9,7,7,8
+DeepSeek V4.1 Flash,CosMx Ki-67,PITCH,3,2,10,9,8,7,8
+DeepSeek V4.1 Flash,Gouwens input resistance,PITCH,3,1,9,8,8,7,8
+DeepSeek V4.1 Flash,Gouwens input resistance,PITCH,3,2,9,9,7,7,9
+GLM-5.3,CITE-seq CD45RA,PITCH,1,1,10,8,8,8,8
+GLM-5.3,CITE-seq CD45RA,PITCH,1,2,10,8,8,8,8
+GLM-5.3,CosMx Ki-67,PITCH,1,1,10,8,7,7,7
+GLM-5.3,CosMx Ki-67,PITCH,1,2,10,9,8,8,8
+GLM-5.3,Gouwens input resistance,PITCH,2,1,9,8,8,7,8
+GLM-5.3,Gouwens input resistance,PITCH,2,2,9,7,8,8,8
+Gemini-3.1-pro-preview,CITE-seq CD45RA,PITCH,1,1,10,9,7,7,7
+Gemini-3.1-pro-preview,CITE-seq CD45RA,PITCH,1,2,10,9,5,5,7
+Gemini-3.1-pro-preview,CosMx Ki-67,PITCH,1,1,10,8,8,8,5
+Gemini-3.1-pro-preview,CosMx Ki-67,PITCH,1,2,10,8,8,8,5
+Gemini-3.1-pro-preview,Gouwens input resistance,PITCH,3,1,8,6,5,5,6
+Gemini-3.1-pro-preview,Gouwens input resistance,PITCH,3,2,6,7,5,5,6
+Qwen3.8-2.4T-A95B,CITE-seq CD45RA,PITCH,1,1,10,8,8,8,8
+Qwen3.8-2.4T-A95B,CITE-seq CD45RA,PITCH,1,2,10,9,8,8,8
+Qwen3.8-2.4T-A95B,CosMx Ki-67,PITCH,2,1,10,9,8,8,8
+Qwen3.8-2.4T-A95B,CosMx Ki-67,PITCH,2,2,10,9,7,7,8
+Qwen3.8-2.4T-A95B,Gouwens input resistance,PITCH,2,1,10,8,7,7,7
+Qwen3.8-2.4T-A95B,Gouwens input resistance,PITCH,2,2,10,8,8,8,7

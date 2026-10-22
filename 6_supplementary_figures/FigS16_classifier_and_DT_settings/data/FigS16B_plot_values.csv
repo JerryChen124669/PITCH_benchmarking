@@ -1,0 +1,4 @@
+Classifier,Feature Comprehensiveness,Biological Plausibility,Mechanistic Synthesis,Hypothesis Specificity,Literature Grounding
+LR,10.0,7.333,7.0,7.667,6.667
+DT,9.667,8.333,7.333,7.667,7.0
+RF,10.0,8.333,7.667,8.0,6.667

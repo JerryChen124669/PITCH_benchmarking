@@ -1,0 +1,1961 @@
+{
+  "dataset_key": "Gouwens_GABAergic",
+  "setting_name": "top60_depth6",
+  "target_prot": "Fxyd6",
+  "target_name": "input resistance",
+  "attr_features": [
+    "Pcdh8",
+    "Coro6",
+    "Kcnq5",
+    "Cpne7",
+    "Fam19a2",
+    "Kcnmb4",
+    "Dab1",
+    "Nrgn",
+    "Tle4",
+    "Rell1",
+    "Lama4",
+    "Tmem145",
+    "Flt3",
+    "Lingo2",
+    "Rerg",
+    "Pld5",
+    "Crtac1",
+    "Ano4",
+    "Ndst3",
+    "9630002D21Rik",
+    "Phactr2",
+    "Tmem158",
+    "Il1rap",
+    "Sema3e",
+    "Zfp831",
+    "Ankrd55",
+    "Elavl2",
+    "Kcna3",
+    "Ptk2b",
+    "Cadps2",
+    "Arhgap24",
+    "Tshz3",
+    "Rspo3",
+    "Cdh12",
+    "Pde7b",
+    "Zbtb18",
+    "Cnr1",
+    "Pacsin3",
+    "Man1a",
+    "Cacna2d3",
+    "Vwc2l",
+    "Dlx5",
+    "Ctxn1",
+    "Atp2b4",
+    "LOC100503338",
+    "3300002P13Rik",
+    "Arpp21",
+    "Ajap1",
+    "Cacna2d1",
+    "Arhgef3",
+    "Sox2ot",
+    "Pcp4l1",
+    "Pxdn",
+    "Bcl11b",
+    "Ltk",
+    "Elmo1",
+    "Moxd1",
+    "Esrrg",
+    "LOC105245487"
+  ],
+  "cv_f1": 0.673610693288236,
+  "min_support": 17,
+  "nodes": [
+    {
+      "node_id": 6,
+      "rule": "Coro6 <= -0.877 AND Cnr1 <= 1.331 AND Esrrg <= 0.505 AND Nrgn <= 0.637 AND Tshz3 <= 0.740 AND Fam19a2 <= 1.301",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg <= 0.505",
+          "local_importance": 0.006203406219055266
+        },
+        {
+          "feature": "Nrgn",
+          "condition": "Nrgn <= 0.637",
+          "local_importance": 0.005182983429567841
+        },
+        {
+          "feature": "Tshz3",
+          "condition": "Tshz3 <= 0.740",
+          "local_importance": 0.004710337387304503
+        },
+        {
+          "feature": "Fam19a2",
+          "condition": "Fam19a2 <= 1.301",
+          "local_importance": 0.004187028522317956
+        }
+      ],
+      "depth": 6,
+      "n_cells": 309,
+      "pop_fraction": 0.0910162002945508,
+      "gini_impurity": 0.45289677482599744,
+      "gini_reduction": 0.028883954571927793,
+      "target_fraction": 0.32038834951456313,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 3.1991719017704168,
+      "mean_ig": 0.03921204432845116,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.9015340327997852,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 7,
+      "rule": "Coro6 <= -0.877 AND Cnr1 <= 1.331 AND Esrrg <= 0.505 AND Nrgn <= 0.637 AND Tshz3 <= 0.740 AND Fam19a2 > 1.301",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg <= 0.505",
+          "local_importance": 0.006203406219055266
+        },
+        {
+          "feature": "Nrgn",
+          "condition": "Nrgn <= 0.637",
+          "local_importance": 0.005182983429567841
+        },
+        {
+          "feature": "Tshz3",
+          "condition": "Tshz3 <= 0.740",
+          "local_importance": 0.004710337387304503
+        },
+        {
+          "feature": "Fam19a2",
+          "condition": "Fam19a2 > 1.301",
+          "local_importance": 0.004187028522317956
+        }
+      ],
+      "depth": 6,
+      "n_cells": 31,
+      "pop_fraction": 0.009131075110456554,
+      "gini_impurity": 0.2076124567474048,
+      "gini_reduction": 0.028883954571927793,
+      "target_fraction": 0.03225806451612903,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.3221062618595825,
+      "mean_ig": 0.03271670639514923,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.7523099585483601,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 9,
+      "rule": "Coro6 <= -0.877 AND Cnr1 <= 1.331 AND Esrrg <= 0.505 AND Nrgn <= 0.637 AND Tshz3 > 0.740 AND Cpne7 <= 1.059",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg <= 0.505",
+          "local_importance": 0.006203406219055266
+        },
+        {
+          "feature": "Nrgn",
+          "condition": "Nrgn <= 0.637",
+          "local_importance": 0.005182983429567841
+        },
+        {
+          "feature": "Tshz3",
+          "condition": "Tshz3 > 0.740",
+          "local_importance": 0.004710337387304503
+        },
+        {
+          "feature": "Cpne7",
+          "condition": "Cpne7 <= 1.059",
+          "local_importance": 0.0027485408201618627
+        }
+      ],
+      "depth": 6,
+      "n_cells": 55,
+      "pop_fraction": 0.016200294550810016,
+      "gini_impurity": 0.1284185493460166,
+      "gini_reduction": 0.13334953539576513,
+      "target_fraction": 0.01818181818181818,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.1815508021390374,
+      "mean_ig": 0.006838453933596611,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.15778226707584497,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 10,
+      "rule": "Coro6 <= -0.877 AND Cnr1 <= 1.331 AND Esrrg <= 0.505 AND Nrgn <= 0.637 AND Tshz3 > 0.740 AND Cpne7 > 1.059",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg <= 0.505",
+          "local_importance": 0.006203406219055266
+        },
+        {
+          "feature": "Nrgn",
+          "condition": "Nrgn <= 0.637",
+          "local_importance": 0.005182983429567841
+        },
+        {
+          "feature": "Tshz3",
+          "condition": "Tshz3 > 0.740",
+          "local_importance": 0.004710337387304503
+        },
+        {
+          "feature": "Cpne7",
+          "condition": "Cpne7 > 1.059",
+          "local_importance": 0.0027485408201618627
+        }
+      ],
+      "depth": 6,
+      "n_cells": 18,
+      "pop_fraction": 0.005301914580265096,
+      "gini_impurity": 0.47750229568411384,
+      "gini_reduction": 0.13334953539576513,
+      "target_fraction": 0.2777777777777778,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 2.7736928104575163,
+      "mean_ig": 0.03920571506023407,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.9013886240158109,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 13,
+      "rule": "Coro6 <= -0.877 AND Cnr1 <= 1.331 AND Esrrg <= 0.505 AND Nrgn > 0.637 AND Tmem145 <= 1.082 AND Tshz3 <= -0.208",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg <= 0.505",
+          "local_importance": 0.006203406219055266
+        },
+        {
+          "feature": "Nrgn",
+          "condition": "Nrgn > 0.637",
+          "local_importance": 0.005182983429567841
+        },
+        {
+          "feature": "Tmem145",
+          "condition": "Tmem145 <= 1.082",
+          "local_importance": 0.0028481672175481067
+        },
+        {
+          "feature": "Tshz3",
+          "condition": "Tshz3 <= -0.208",
+          "local_importance": 0.002225190914629961
+        }
+      ],
+      "depth": 6,
+      "n_cells": 131,
+      "pop_fraction": 0.03858615611192931,
+      "gini_impurity": 0.4754419284149014,
+      "gini_reduction": 0.0366575294331764,
+      "target_fraction": 0.13740458015267176,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 1.3720251459362371,
+      "mean_ig": 0.02419945038855076,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.5566342822712769,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 14,
+      "rule": "Coro6 <= -0.877 AND Cnr1 <= 1.331 AND Esrrg <= 0.505 AND Nrgn > 0.637 AND Tmem145 <= 1.082 AND Tshz3 > -0.208",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg <= 0.505",
+          "local_importance": 0.006203406219055266
+        },
+        {
+          "feature": "Nrgn",
+          "condition": "Nrgn > 0.637",
+          "local_importance": 0.005182983429567841
+        },
+        {
+          "feature": "Tmem145",
+          "condition": "Tmem145 <= 1.082",
+          "local_importance": 0.0028481672175481067
+        },
+        {
+          "feature": "Tshz3",
+          "condition": "Tshz3 > -0.208",
+          "local_importance": 0.002225190914629961
+        }
+      ],
+      "depth": 6,
+      "n_cells": 77,
+      "pop_fraction": 0.02268041237113402,
+      "gini_impurity": 0.17419073885905068,
+      "gini_reduction": 0.0366575294331764,
+      "target_fraction": 0.025974025974025976,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.25935828877005346,
+      "mean_ig": 0.01595819927752018,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.36729955013796395,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 16,
+      "rule": "Coro6 <= -0.877 AND Cnr1 <= 1.331 AND Esrrg <= 0.505 AND Nrgn > 0.637 AND Tmem145 > 1.082 AND Pcdh8 <= -0.091",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg <= 0.505",
+          "local_importance": 0.006203406219055266
+        },
+        {
+          "feature": "Nrgn",
+          "condition": "Nrgn > 0.637",
+          "local_importance": 0.005182983429567841
+        },
+        {
+          "feature": "Tmem145",
+          "condition": "Tmem145 > 1.082",
+          "local_importance": 0.0028481672175481067
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 <= -0.091",
+          "local_importance": 0.0009363415113606909
+        }
+      ],
+      "depth": 6,
+      "n_cells": 6,
+      "pop_fraction": 0.0017673048600883653,
+      "gini_impurity": 0.09070294784580502,
+      "gini_reduction": 0.13335315395669198,
+      "target_fraction": 0.8333333333333334,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 8.321078431372548,
+      "mean_ig": 0.04996727406978607,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.1486249798748391,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 17,
+      "rule": "Coro6 <= -0.877 AND Cnr1 <= 1.331 AND Esrrg <= 0.505 AND Nrgn > 0.637 AND Tmem145 > 1.082 AND Pcdh8 > -0.091",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg <= 0.505",
+          "local_importance": 0.006203406219055266
+        },
+        {
+          "feature": "Nrgn",
+          "condition": "Nrgn > 0.637",
+          "local_importance": 0.005182983429567841
+        },
+        {
+          "feature": "Tmem145",
+          "condition": "Tmem145 > 1.082",
+          "local_importance": 0.0028481672175481067
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 > -0.091",
+          "local_importance": 0.0009363415113606909
+        }
+      ],
+      "depth": 6,
+      "n_cells": 7,
+      "pop_fraction": 0.002061855670103093,
+      "gini_impurity": 0.48,
+      "gini_reduction": 0.13335315395669198,
+      "target_fraction": 0.14285714285714285,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 1.426470588235294,
+      "mean_ig": 0.03316396102309227,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.7625851988044953,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 21,
+      "rule": "Coro6 <= -0.877 AND Cnr1 <= 1.331 AND Esrrg > 0.505 AND Cacna2d3 <= 0.694 AND Cpne7 <= 1.731 AND Dlx5 <= -0.045",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg > 0.505",
+          "local_importance": 0.006203406219055266
+        },
+        {
+          "feature": "Cacna2d3",
+          "condition": "Cacna2d3 <= 0.694",
+          "local_importance": 0.002868920557437101
+        },
+        {
+          "feature": "Cpne7",
+          "condition": "Cpne7 <= 1.731",
+          "local_importance": 0.0019239785741133025
+        },
+        {
+          "feature": "Dlx5",
+          "condition": "Dlx5 <= -0.045",
+          "local_importance": 0.0007581260332461167
+        }
+      ],
+      "depth": 6,
+      "n_cells": 91,
+      "pop_fraction": 0.026804123711340205,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.02308363059849383,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": 0.021080084145069122,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.4849698754744989,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 22,
+      "rule": "Coro6 <= -0.877 AND Cnr1 <= 1.331 AND Esrrg > 0.505 AND Cacna2d3 <= 0.694 AND Cpne7 <= 1.731 AND Dlx5 > -0.045",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg > 0.505",
+          "local_importance": 0.006203406219055266
+        },
+        {
+          "feature": "Cacna2d3",
+          "condition": "Cacna2d3 <= 0.694",
+          "local_importance": 0.002868920557437101
+        },
+        {
+          "feature": "Cpne7",
+          "condition": "Cpne7 <= 1.731",
+          "local_importance": 0.0019239785741133025
+        },
+        {
+          "feature": "Dlx5",
+          "condition": "Dlx5 > -0.045",
+          "local_importance": 0.0007581260332461167
+        }
+      ],
+      "depth": 6,
+      "n_cells": 45,
+      "pop_fraction": 0.013254786450662739,
+      "gini_impurity": 0.345679012345679,
+      "gini_reduction": 0.02308363059849383,
+      "target_fraction": 0.06666666666666667,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.6656862745098039,
+      "mean_ig": 0.018978359177708626,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.43668478764596724,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 23,
+      "rule": "Coro6 <= -0.877 AND Cnr1 <= 1.331 AND Esrrg > 0.505 AND Cacna2d3 <= 0.694 AND Cpne7 > 1.731",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg > 0.505",
+          "local_importance": 0.006203406219055266
+        },
+        {
+          "feature": "Cacna2d3",
+          "condition": "Cacna2d3 <= 0.694",
+          "local_importance": 0.002868920557437101
+        },
+        {
+          "feature": "Cpne7",
+          "condition": "Cpne7 > 1.731",
+          "local_importance": 0.0019239785741133025
+        }
+      ],
+      "depth": 5,
+      "n_cells": 5,
+      "pop_fraction": 0.0014727540500736377,
+      "gini_impurity": 0.39669421487603307,
+      "gini_reduction": 0.05445106028660404,
+      "target_fraction": 0.4,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 3.9941176470588236,
+      "mean_ig": 0.058971382677555084,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.355485621345818,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 26,
+      "rule": "Coro6 <= -0.877 AND Cnr1 <= 1.331 AND Esrrg > 0.505 AND Cacna2d3 > 0.694 AND Pcp4l1 <= -0.215 AND LOC100503338 <= -0.595",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg > 0.505",
+          "local_importance": 0.006203406219055266
+        },
+        {
+          "feature": "Cacna2d3",
+          "condition": "Cacna2d3 > 0.694",
+          "local_importance": 0.002868920557437101
+        },
+        {
+          "feature": "Pcp4l1",
+          "condition": "Pcp4l1 <= -0.215",
+          "local_importance": 0.0025033230343150838
+        },
+        {
+          "feature": "LOC100503338",
+          "condition": "LOC100503338 <= -0.595",
+          "local_importance": 0.0006863653522770168
+        }
+      ],
+      "depth": 6,
+      "n_cells": 5,
+      "pop_fraction": 0.0014727540500736377,
+      "gini_impurity": 0.5,
+      "gini_reduction": 0.09182736455463725,
+      "target_fraction": 0.2,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 1.9970588235294118,
+      "mean_ig": 0.04206812381744385,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.9671496823795076,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 27,
+      "rule": "Coro6 <= -0.877 AND Cnr1 <= 1.331 AND Esrrg > 0.505 AND Cacna2d3 > 0.694 AND Pcp4l1 <= -0.215 AND LOC100503338 > -0.595",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg > 0.505",
+          "local_importance": 0.006203406219055266
+        },
+        {
+          "feature": "Cacna2d3",
+          "condition": "Cacna2d3 > 0.694",
+          "local_importance": 0.002868920557437101
+        },
+        {
+          "feature": "Pcp4l1",
+          "condition": "Pcp4l1 <= -0.215",
+          "local_importance": 0.0025033230343150838
+        },
+        {
+          "feature": "LOC100503338",
+          "condition": "LOC100503338 > -0.595",
+          "local_importance": 0.0006863653522770168
+        }
+      ],
+      "depth": 6,
+      "n_cells": 25,
+      "pop_fraction": 0.007363770250368188,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.09182736455463725,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": 0.01230038981884718,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.2832649339465461,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 29,
+      "rule": "Coro6 <= -0.877 AND Cnr1 <= 1.331 AND Esrrg > 0.505 AND Cacna2d3 > 0.694 AND Pcp4l1 > -0.215 AND Lingo2 <= 0.912",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg > 0.505",
+          "local_importance": 0.006203406219055266
+        },
+        {
+          "feature": "Cacna2d3",
+          "condition": "Cacna2d3 > 0.694",
+          "local_importance": 0.002868920557437101
+        },
+        {
+          "feature": "Pcp4l1",
+          "condition": "Pcp4l1 > -0.215",
+          "local_importance": 0.0025033230343150838
+        },
+        {
+          "feature": "Lingo2",
+          "condition": "Lingo2 <= 0.912",
+          "local_importance": 0.0018531864511479455
+        }
+      ],
+      "depth": 6,
+      "n_cells": 25,
+      "pop_fraction": 0.007363770250368188,
+      "gini_impurity": 0.39669421487603307,
+      "gini_reduction": 0.12784090909090906,
+      "target_fraction": 0.4,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 3.9941176470588236,
+      "mean_ig": 0.041374921798706055,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.951224039929865,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 30,
+      "rule": "Coro6 <= -0.877 AND Cnr1 <= 1.331 AND Esrrg > 0.505 AND Cacna2d3 > 0.694 AND Pcp4l1 > -0.215 AND Lingo2 > 0.912",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg > 0.505",
+          "local_importance": 0.006203406219055266
+        },
+        {
+          "feature": "Cacna2d3",
+          "condition": "Cacna2d3 > 0.694",
+          "local_importance": 0.002868920557437101
+        },
+        {
+          "feature": "Pcp4l1",
+          "condition": "Pcp4l1 > -0.215",
+          "local_importance": 0.0025033230343150838
+        },
+        {
+          "feature": "Lingo2",
+          "condition": "Lingo2 > 0.912",
+          "local_importance": 0.0018531864511479455
+        }
+      ],
+      "depth": 6,
+      "n_cells": 9,
+      "pop_fraction": 0.002650957290132548,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.12784090909090906,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": 0.024947889149188995,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.573828935164933,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 35,
+      "rule": "Coro6 <= -0.877 AND Cnr1 > 1.331 AND Ctxn1 <= 1.581 AND Cnr1 <= 1.526 AND Kcnq5 <= 0.713 AND Tmem158 <= 1.293",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 > 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= 0.713",
+          "local_importance": 0.002304276369590223
+        },
+        {
+          "feature": "Ctxn1",
+          "condition": "Ctxn1 <= 1.581",
+          "local_importance": 0.0022824070481262783
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.526",
+          "local_importance": 0.002036733038922544
+        },
+        {
+          "feature": "Tmem158",
+          "condition": "Tmem158 <= 1.293",
+          "local_importance": 0.00195869859305942
+        }
+      ],
+      "depth": 6,
+      "n_cells": 35,
+      "pop_fraction": 0.010309278350515464,
+      "gini_impurity": 0.44907197827071077,
+      "gini_reduction": 0.12353791840510485,
+      "target_fraction": 0.11428571428571428,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 1.1411764705882352,
+      "mean_ig": 0.03400013968348503,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.7817955905942994,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 36,
+      "rule": "Coro6 <= -0.877 AND Cnr1 > 1.331 AND Ctxn1 <= 1.581 AND Cnr1 <= 1.526 AND Kcnq5 <= 0.713 AND Tmem158 > 1.293",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 > 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= 0.713",
+          "local_importance": 0.002304276369590223
+        },
+        {
+          "feature": "Ctxn1",
+          "condition": "Ctxn1 <= 1.581",
+          "local_importance": 0.0022824070481262783
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.526",
+          "local_importance": 0.002036733038922544
+        },
+        {
+          "feature": "Tmem158",
+          "condition": "Tmem158 > 1.293",
+          "local_importance": 0.00195869859305942
+        }
+      ],
+      "depth": 6,
+      "n_cells": 8,
+      "pop_fraction": 0.00235640648011782,
+      "gini_impurity": 0.22684310018903586,
+      "gini_reduction": 0.12353791840510485,
+      "target_fraction": 0.625,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 6.240808823529411,
+      "mean_ig": 0.0646662712097168,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.4863201488027877,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 38,
+      "rule": "Coro6 <= -0.877 AND Cnr1 > 1.331 AND Ctxn1 <= 1.581 AND Cnr1 <= 1.526 AND Kcnq5 > 0.713 AND Tmem145 <= 0.198",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 > 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 > 0.713",
+          "local_importance": 0.002304276369590223
+        },
+        {
+          "feature": "Ctxn1",
+          "condition": "Ctxn1 <= 1.581",
+          "local_importance": 0.0022824070481262783
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.526",
+          "local_importance": 0.002036733038922544
+        },
+        {
+          "feature": "Tmem145",
+          "condition": "Tmem145 <= 0.198",
+          "local_importance": 0.0008090372095108122
+        }
+      ],
+      "depth": 6,
+      "n_cells": 16,
+      "pop_fraction": 0.00471281296023564,
+      "gini_impurity": 0.4578563995837669,
+      "gini_reduction": 0.02927786295073967,
+      "target_fraction": 0.3125,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 3.1204044117647056,
+      "mean_ig": 0.051411062479019165,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.1817946149261784,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 39,
+      "rule": "Coro6 <= -0.877 AND Cnr1 > 1.331 AND Ctxn1 <= 1.581 AND Cnr1 <= 1.526 AND Kcnq5 > 0.713 AND Tmem145 > 0.198",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 > 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 > 0.713",
+          "local_importance": 0.002304276369590223
+        },
+        {
+          "feature": "Ctxn1",
+          "condition": "Ctxn1 <= 1.581",
+          "local_importance": 0.0022824070481262783
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.526",
+          "local_importance": 0.002036733038922544
+        },
+        {
+          "feature": "Tmem145",
+          "condition": "Tmem145 > 0.198",
+          "local_importance": 0.0008090372095108122
+        }
+      ],
+      "depth": 6,
+      "n_cells": 28,
+      "pop_fraction": 0.008247422680412371,
+      "gini_impurity": 0.14201183431952658,
+      "gini_reduction": 0.02927786295073967,
+      "target_fraction": 0.75,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 7.4889705882352935,
+      "mean_ig": 0.059966545552015305,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.3783485208894022,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 42,
+      "rule": "Coro6 <= -0.877 AND Cnr1 > 1.331 AND Ctxn1 <= 1.581 AND Cnr1 > 1.526 AND Pcdh8 <= 0.827 AND Ano4 <= -0.409",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 > 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Ctxn1",
+          "condition": "Ctxn1 <= 1.581",
+          "local_importance": 0.0022824070481262783
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 > 1.526",
+          "local_importance": 0.002036733038922544
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 <= -0.409",
+          "local_importance": 0.0015627261648051636
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 <= 0.827",
+          "local_importance": 0.0011741969485398996
+        }
+      ],
+      "depth": 6,
+      "n_cells": 37,
+      "pop_fraction": 0.010898379970544918,
+      "gini_impurity": 0.2488453200113111,
+      "gini_reduction": 0.059477896703575846,
+      "target_fraction": 0.5945945945945946,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 5.9372019077901435,
+      "mean_ig": 0.060371000319719315,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.3876404759665608,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 43,
+      "rule": "Coro6 <= -0.877 AND Cnr1 > 1.331 AND Ctxn1 <= 1.581 AND Cnr1 > 1.526 AND Pcdh8 <= 0.827 AND Ano4 > -0.409",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 > 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Ctxn1",
+          "condition": "Ctxn1 <= 1.581",
+          "local_importance": 0.0022824070481262783
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 > 1.526",
+          "local_importance": 0.002036733038922544
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 > -0.409",
+          "local_importance": 0.0015627261648051636
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 <= 0.827",
+          "local_importance": 0.0011741969485398996
+        }
+      ],
+      "depth": 6,
+      "n_cells": 10,
+      "pop_fraction": 0.0029455081001472753,
+      "gini_impurity": 0.42603550295857984,
+      "gini_reduction": 0.059477896703575846,
+      "target_fraction": 0.1,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.9985294117647059,
+      "mean_ig": 0.047478191554546356,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.09144072897271,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 45,
+      "rule": "Coro6 <= -0.877 AND Cnr1 > 1.331 AND Ctxn1 <= 1.581 AND Cnr1 > 1.526 AND Pcdh8 > 0.827 AND Tshz3 <= 0.661",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 > 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Ctxn1",
+          "condition": "Ctxn1 <= 1.581",
+          "local_importance": 0.0022824070481262783
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 > 1.526",
+          "local_importance": 0.002036733038922544
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 > 0.827",
+          "local_importance": 0.0011741969485398996
+        },
+        {
+          "feature": "Tshz3",
+          "condition": "Tshz3 <= 0.661",
+          "local_importance": 0.00021580275483697682
+        }
+      ],
+      "depth": 6,
+      "n_cells": 64,
+      "pop_fraction": 0.01885125184094256,
+      "gini_impurity": 0.03224939532383764,
+      "gini_reduction": 0.003678645415464296,
+      "target_fraction": 0.9375,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 9.361213235294118,
+      "mean_ig": 0.07597257941961288,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.7460715879346622,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 46,
+      "rule": "Coro6 <= -0.877 AND Cnr1 > 1.331 AND Ctxn1 <= 1.581 AND Cnr1 > 1.526 AND Pcdh8 > 0.827 AND Tshz3 > 0.661",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 > 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Ctxn1",
+          "condition": "Ctxn1 <= 1.581",
+          "local_importance": 0.0022824070481262783
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 > 1.526",
+          "local_importance": 0.002036733038922544
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 > 0.827",
+          "local_importance": 0.0011741969485398996
+        },
+        {
+          "feature": "Tshz3",
+          "condition": "Tshz3 > 0.661",
+          "local_importance": 0.00021580275483697682
+        }
+      ],
+      "depth": 6,
+      "n_cells": 6,
+      "pop_fraction": 0.0017673048600883653,
+      "gini_impurity": 0.31999999999999995,
+      "gini_reduction": 0.003678645415464296,
+      "target_fraction": 0.5,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 4.992647058823529,
+      "mean_ig": 0.0713341161608696,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.63950740407805,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 47,
+      "rule": "Coro6 <= -0.877 AND Cnr1 > 1.331 AND Ctxn1 > 1.581",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 > 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Ctxn1",
+          "condition": "Ctxn1 > 1.581",
+          "local_importance": 0.0022824070481262783
+        }
+      ],
+      "depth": 3,
+      "n_cells": 7,
+      "pop_fraction": 0.002061855670103093,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.017555447939856306,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": 0.0481913685798645,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.1078252777788387,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 52,
+      "rule": "Coro6 > -0.877 AND Man1a <= 1.661 AND Coro6 <= -0.020 AND Elavl2 <= -1.816 AND Cpne7 <= 1.371",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a <= 1.661",
+          "local_importance": 0.03972113993673033
+        },
+        {
+          "feature": "Elavl2",
+          "condition": "Elavl2 <= -1.816",
+          "local_importance": 0.004653531068024522
+        },
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.020",
+          "local_importance": 0.0030085909319583918
+        },
+        {
+          "feature": "Cpne7",
+          "condition": "Cpne7 <= 1.371",
+          "local_importance": 0.00047964825794417383
+        }
+      ],
+      "depth": 5,
+      "n_cells": 5,
+      "pop_fraction": 0.0014727540500736377,
+      "gini_impurity": 0.5,
+      "gini_reduction": 0.0847058823529411,
+      "target_fraction": 0.2,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 1.9970588235294118,
+      "mean_ig": 0.027599817141890526,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.6347544025934082,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 53,
+      "rule": "Coro6 > -0.877 AND Man1a <= 1.661 AND Coro6 <= -0.020 AND Elavl2 <= -1.816 AND Cpne7 > 1.371",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a <= 1.661",
+          "local_importance": 0.03972113993673033
+        },
+        {
+          "feature": "Elavl2",
+          "condition": "Elavl2 <= -1.816",
+          "local_importance": 0.004653531068024522
+        },
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.020",
+          "local_importance": 0.0030085909319583918
+        },
+        {
+          "feature": "Cpne7",
+          "condition": "Cpne7 > 1.371",
+          "local_importance": 0.00047964825794417383
+        }
+      ],
+      "depth": 5,
+      "n_cells": 5,
+      "pop_fraction": 0.0014727540500736377,
+      "gini_impurity": 0.11072664359861595,
+      "gini_reduction": 0.0847058823529411,
+      "target_fraction": 0.8,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 7.988235294117647,
+      "mean_ig": 0.06053509563207626,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.3914104062345332,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 56,
+      "rule": "Coro6 > -0.877 AND Man1a <= 1.661 AND Coro6 <= -0.020 AND Elavl2 > -1.816 AND Man1a <= 1.236 AND Pcp4l1 <= 0.914",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a <= 1.661",
+          "local_importance": 0.03972113993673033
+        },
+        {
+          "feature": "Elavl2",
+          "condition": "Elavl2 > -1.816",
+          "local_importance": 0.004653531068024522
+        },
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.020",
+          "local_importance": 0.0030085909319583918
+        },
+        {
+          "feature": "Pcp4l1",
+          "condition": "Pcp4l1 <= 0.914",
+          "local_importance": 0.0022143465960641593
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a <= 1.236",
+          "local_importance": 0.0020090384033901827
+        }
+      ],
+      "depth": 6,
+      "n_cells": 209,
+      "pop_fraction": 0.06156111929307806,
+      "gini_impurity": 0.03702385190459234,
+      "gini_reduction": 0.038795000879457406,
+      "target_fraction": 0.004784688995215311,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.047776526878694055,
+      "mean_ig": -0.004253712948411703,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": -0.0970494832359623,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 57,
+      "rule": "Coro6 > -0.877 AND Man1a <= 1.661 AND Coro6 <= -0.020 AND Elavl2 > -1.816 AND Man1a <= 1.236 AND Pcp4l1 > 0.914",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a <= 1.661",
+          "local_importance": 0.03972113993673033
+        },
+        {
+          "feature": "Elavl2",
+          "condition": "Elavl2 > -1.816",
+          "local_importance": 0.004653531068024522
+        },
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.020",
+          "local_importance": 0.0030085909319583918
+        },
+        {
+          "feature": "Pcp4l1",
+          "condition": "Pcp4l1 > 0.914",
+          "local_importance": 0.0022143465960641593
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a <= 1.236",
+          "local_importance": 0.0020090384033901827
+        }
+      ],
+      "depth": 6,
+      "n_cells": 28,
+      "pop_fraction": 0.008247422680412371,
+      "gini_impurity": 0.48,
+      "gini_reduction": 0.038795000879457406,
+      "target_fraction": 0.14285714285714285,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 1.426470588235294,
+      "mean_ig": 0.002543298527598381,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.059105247372227276,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 59,
+      "rule": "Coro6 > -0.877 AND Man1a <= 1.661 AND Coro6 <= -0.020 AND Elavl2 > -1.816 AND Man1a > 1.236 AND Lama4 <= 0.946",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a <= 1.661",
+          "local_importance": 0.03972113993673033
+        },
+        {
+          "feature": "Elavl2",
+          "condition": "Elavl2 > -1.816",
+          "local_importance": 0.004653531068024522
+        },
+        {
+          "feature": "Lama4",
+          "condition": "Lama4 <= 0.946",
+          "local_importance": 0.003271279763756709
+        },
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.020",
+          "local_importance": 0.0030085909319583918
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a > 1.236",
+          "local_importance": 0.0020090384033901827
+        }
+      ],
+      "depth": 6,
+      "n_cells": 11,
+      "pop_fraction": 0.003240058910162003,
+      "gini_impurity": 0.3550295857988166,
+      "gini_reduction": 0.29474898279563,
+      "target_fraction": 0.45454545454545453,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 4.538770053475935,
+      "mean_ig": 0.028987646102905273,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.666638423725695,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 60,
+      "rule": "Coro6 > -0.877 AND Man1a <= 1.661 AND Coro6 <= -0.020 AND Elavl2 > -1.816 AND Man1a > 1.236 AND Lama4 > 0.946",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a <= 1.661",
+          "local_importance": 0.03972113993673033
+        },
+        {
+          "feature": "Elavl2",
+          "condition": "Elavl2 > -1.816",
+          "local_importance": 0.004653531068024522
+        },
+        {
+          "feature": "Lama4",
+          "condition": "Lama4 > 0.946",
+          "local_importance": 0.003271279763756709
+        },
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.020",
+          "local_importance": 0.0030085909319583918
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a > 1.236",
+          "local_importance": 0.0020090384033901827
+        }
+      ],
+      "depth": 6,
+      "n_cells": 23,
+      "pop_fraction": 0.006774668630338734,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.29474898279563,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": -0.007544052787125111,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": -0.17264184216269654,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 64,
+      "rule": "Coro6 > -0.877 AND Man1a <= 1.661 AND Coro6 > -0.020 AND Cnr1 <= 1.523 AND Esrrg <= -1.259 AND Zfp831 <= 2.409",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a <= 1.661",
+          "local_importance": 0.03972113993673033
+        },
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.020",
+          "local_importance": 0.0030085909319583918
+        },
+        {
+          "feature": "Zfp831",
+          "condition": "Zfp831 <= 2.409",
+          "local_importance": 0.0025991756884170144
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.523",
+          "local_importance": 0.0018716506855442562
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg <= -1.259",
+          "local_importance": 0.0014425856969171387
+        }
+      ],
+      "depth": 6,
+      "n_cells": 196,
+      "pop_fraction": 0.0577319587628866,
+      "gini_impurity": 0.14201183431952658,
+      "gini_reduction": 0.04841924330954059,
+      "target_fraction": 0.02040816326530612,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.203781512605042,
+      "mean_ig": -0.008282729424536228,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": -0.18961221976594386,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 65,
+      "rule": "Coro6 > -0.877 AND Man1a <= 1.661 AND Coro6 > -0.020 AND Cnr1 <= 1.523 AND Esrrg <= -1.259 AND Zfp831 > 2.409",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a <= 1.661",
+          "local_importance": 0.03972113993673033
+        },
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.020",
+          "local_importance": 0.0030085909319583918
+        },
+        {
+          "feature": "Zfp831",
+          "condition": "Zfp831 > 2.409",
+          "local_importance": 0.0025991756884170144
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.523",
+          "local_importance": 0.0018716506855442562
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg <= -1.259",
+          "local_importance": 0.0014425856969171387
+        }
+      ],
+      "depth": 6,
+      "n_cells": 17,
+      "pop_fraction": 0.005007363770250369,
+      "gini_impurity": 0.4946492271105827,
+      "gini_reduction": 0.04841924330954059,
+      "target_fraction": 0.23529411764705882,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 2.3494809688581313,
+      "mean_ig": 0.002103556180372834,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.04900259446213877,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 67,
+      "rule": "Coro6 > -0.877 AND Man1a <= 1.661 AND Coro6 > -0.020 AND Cnr1 <= 1.523 AND Esrrg > -1.259 AND Kcnq5 <= 1.444",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a <= 1.661",
+          "local_importance": 0.03972113993673033
+        },
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.020",
+          "local_importance": 0.0030085909319583918
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.523",
+          "local_importance": 0.0018716506855442562
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg > -1.259",
+          "local_importance": 0.0014425856969171387
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= 1.444",
+          "local_importance": 0.000868883826120393
+        }
+      ],
+      "depth": 6,
+      "n_cells": 1723,
+      "pop_fraction": 0.5075110456553755,
+      "gini_impurity": 0.018273717080949048,
+      "gini_reduction": 0.002200873260081202,
+      "target_fraction": 0.0023215322112594312,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.023181181933016968,
+      "mean_ig": -0.0228749830275774,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": -0.5248550597098994,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 68,
+      "rule": "Coro6 > -0.877 AND Man1a <= 1.661 AND Coro6 > -0.020 AND Cnr1 <= 1.523 AND Esrrg > -1.259 AND Kcnq5 > 1.444",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a <= 1.661",
+          "local_importance": 0.03972113993673033
+        },
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.020",
+          "local_importance": 0.0030085909319583918
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.523",
+          "local_importance": 0.0018716506855442562
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg > -1.259",
+          "local_importance": 0.0014425856969171387
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 > 1.444",
+          "local_importance": 0.000868883826120393
+        }
+      ],
+      "depth": 6,
+      "n_cells": 5,
+      "pop_fraction": 0.0014727540500736377,
+      "gini_impurity": 0.5,
+      "gini_reduction": 0.002200873260081202,
+      "target_fraction": 0.2,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 1.9970588235294118,
+      "mean_ig": 0.013064655475318432,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.300823194385061,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 69,
+      "rule": "Coro6 > -0.877 AND Man1a <= 1.661 AND Coro6 > -0.020 AND Cnr1 > 1.523",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a <= 1.661",
+          "local_importance": 0.03972113993673033
+        },
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.020",
+          "local_importance": 0.0030085909319583918
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 > 1.523",
+          "local_importance": 0.0018716506855442562
+        }
+      ],
+      "depth": 4,
+      "n_cells": 8,
+      "pop_fraction": 0.00235640648011782,
+      "gini_impurity": 0.4897959183673469,
+      "gini_reduction": 0.00414410119191469,
+      "target_fraction": 0.25,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 2.4963235294117645,
+      "mean_ig": 0.05057297274470329,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.1625403180709366,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 74,
+      "rule": "Coro6 > -0.877 AND Man1a > 1.661 AND Moxd1 <= -0.372 AND Pde7b <= -0.172 AND Esrrg <= 0.812 AND Pxdn <= 0.037",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a > 1.661",
+          "local_importance": 0.03972113993673033
+        },
+        {
+          "feature": "Moxd1",
+          "condition": "Moxd1 <= -0.372",
+          "local_importance": 0.0076665747625884115
+        },
+        {
+          "feature": "Pde7b",
+          "condition": "Pde7b <= -0.172",
+          "local_importance": 0.0029877923587621463
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg <= 0.812",
+          "local_importance": 0.0019428471777919291
+        },
+        {
+          "feature": "Pxdn",
+          "condition": "Pxdn <= 0.037",
+          "local_importance": 0.0008158942010805342
+        }
+      ],
+      "depth": 6,
+      "n_cells": 36,
+      "pop_fraction": 0.010603829160530192,
+      "gini_impurity": 0.12444444444444447,
+      "gini_reduction": 0.018859543967385123,
+      "target_fraction": 0.7777777777777778,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 7.766339869281046,
+      "mean_ig": 0.06369152665138245,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.4639263402215128,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 75,
+      "rule": "Coro6 > -0.877 AND Man1a > 1.661 AND Moxd1 <= -0.372 AND Pde7b <= -0.172 AND Esrrg <= 0.812 AND Pxdn > 0.037",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a > 1.661",
+          "local_importance": 0.03972113993673033
+        },
+        {
+          "feature": "Moxd1",
+          "condition": "Moxd1 <= -0.372",
+          "local_importance": 0.0076665747625884115
+        },
+        {
+          "feature": "Pde7b",
+          "condition": "Pde7b <= -0.172",
+          "local_importance": 0.0029877923587621463
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg <= 0.812",
+          "local_importance": 0.0019428471777919291
+        },
+        {
+          "feature": "Pxdn",
+          "condition": "Pxdn > 0.037",
+          "local_importance": 0.0008158942010805342
+        }
+      ],
+      "depth": 6,
+      "n_cells": 32,
+      "pop_fraction": 0.00942562592047128,
+      "gini_impurity": 0.39198571711961916,
+      "gini_reduction": 0.018859543967385123,
+      "target_fraction": 0.40625,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 4.056525735294118,
+      "mean_ig": 0.05592229962348938,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.285435902496569,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 76,
+      "rule": "Coro6 > -0.877 AND Man1a > 1.661 AND Moxd1 <= -0.372 AND Pde7b <= -0.172 AND Esrrg > 0.812",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a > 1.661",
+          "local_importance": 0.03972113993673033
+        },
+        {
+          "feature": "Moxd1",
+          "condition": "Moxd1 <= -0.372",
+          "local_importance": 0.0076665747625884115
+        },
+        {
+          "feature": "Pde7b",
+          "condition": "Pde7b <= -0.172",
+          "local_importance": 0.0029877923587621463
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg > 0.812",
+          "local_importance": 0.0019428471777919291
+        }
+      ],
+      "depth": 5,
+      "n_cells": 6,
+      "pop_fraction": 0.0017673048600883653,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.04354147355305263,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": 0.028556929901242256,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.6567431377346888,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 77,
+      "rule": "Coro6 > -0.877 AND Man1a > 1.661 AND Moxd1 <= -0.372 AND Pde7b > -0.172",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a > 1.661",
+          "local_importance": 0.03972113993673033
+        },
+        {
+          "feature": "Moxd1",
+          "condition": "Moxd1 <= -0.372",
+          "local_importance": 0.0076665747625884115
+        },
+        {
+          "feature": "Pde7b",
+          "condition": "Pde7b > -0.172",
+          "local_importance": 0.0029877923587621463
+        }
+      ],
+      "depth": 4,
+      "n_cells": 10,
+      "pop_fraction": 0.0029455081001472753,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.06372513654074818,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": 0.0022305198945105076,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.05191946236035536,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 78,
+      "rule": "Coro6 > -0.877 AND Man1a > 1.661 AND Moxd1 > -0.372",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a > 1.661",
+          "local_importance": 0.03972113993673033
+        },
+        {
+          "feature": "Moxd1",
+          "condition": "Moxd1 > -0.372",
+          "local_importance": 0.0076665747625884115
+        }
+      ],
+      "depth": 3,
+      "n_cells": 31,
+      "pop_fraction": 0.009131075110456554,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.14221818309591527,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": -0.004682311322540045,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": -0.10689611419831084,
+      "flag_low_support": false
+    }
+  ]
+}

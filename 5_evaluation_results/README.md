@@ -10,3 +10,5 @@ All six prompts are included for the judged data (the figures that use four prom
 | `pairwise_similarity_results_v2/FINAL_all_models_no_temp0/selected_models_4cases/` | Mechanistic similarity (figures D, E): `data_selection/` (model table, selected models), `data_diversity/` (correlation tests and tables) and `plots/` (PNG, SVG, PDF). `model_table.csv` regenerated with the final code has four extra columns (lowest plausibility, specificity and synthesis per model and the number of prompts that pass a gate). |
 
 24 models are included; the temperature-0 Qwen run is not one of them.
+
+**Legacy zone-identification fields.** The scorecards produced by the earlier seven-criterion judge (benchmark scores `evaluation_results_rubric_v12/`, ablation scorecards `ablation_conditions/.../scorecards/`) still contain a `Zone Identification score_zone1` field. Zone identification is not reported: this field is excluded from every analysis, figure and table in the manuscript, and the scripts in this repository no longer request or use it.

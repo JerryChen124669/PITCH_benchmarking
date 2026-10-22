@@ -1,0 +1,7 @@
+Condition,Prompt,Judge passes scored,Hypothesis composition agreement (mean of passes),Scores per pass
+PITCH,CITE-seq CD45RA,3,8.333,"[9, 8, 8]"
+PITCH,CosMx Ki-67,3,8.0,"[8, 8, 8]"
+PITCH,Gouwens input resistance,3,6.667,"[6, 6, 8]"
+MLP + IG,CITE-seq CD45RA,3,4.333,"[6, 4, 3]"
+MLP + IG,CosMx Ki-67,3,4.667,"[6, 4, 4]"
+MLP + IG,Gouwens input resistance,3,4.0,"[4, 4, 4]"

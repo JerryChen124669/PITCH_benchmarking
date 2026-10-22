@@ -1,0 +1,5 @@
+Setting,Feature Comprehensiveness,Biological Plausibility,Hypothesis Specificity,Mechanistic Synthesis,Logic Rigor,Literature Grounding
+"30 genes, depth 4",9.667,8.667,7.333,7.333,10.0,7.333
+"60 genes, depth 4",10.0,7.667,8.0,7.333,10.0,7.0
+"30 genes, depth 6",10.0,8.0,7.0,6.667,10.0,6.333
+"60 genes, depth 6",10.0,8.333,8.0,7.667,10.0,6.0

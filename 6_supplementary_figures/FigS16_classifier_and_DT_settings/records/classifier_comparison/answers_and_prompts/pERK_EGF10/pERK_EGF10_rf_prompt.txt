@@ -1,0 +1,54 @@
+--- SYSTEM PROMPT ---
+Data Domain Context: Signal Transduction, perturbation experiment with 10 ng/mL EGF
+Cell Type / Study Tissue: Human Breast Epithelial
+Model Type Under Evaluation: Random Forest
+
+You are an expert computational biologist tasked with interpreting a Random Forest classifier's predictions of specific biomarkers based on cellular feature/gene expression data. Your objective is to translate the model's logic, including the direction and relative magnitude of each feature effect, into a cohesive biological narrative that explains the underlying regulatory mechanisms. Using the specific biological context provided, you must synthesize these findings into concrete, experimentally testable hypotheses.
+CRITICAL INSTRUCTION: Anchor your hypothesis on the FOREST-WIDE FEATURE IMPORTANCE ranking below -- this is the entire evidence available for this model. There are no tree nodes/zones for this model -- describe the relationship as a global, additive association between the top-ranked features and the outcome, not as conditional/branching logic. Do not describe or imply specific split thresholds, since none were given to you.
+ADDITIONAL INSTRUCTION: Explicitly identify the 4 most important contexts (the top-4 features by forest-wide importance) that should anchor your hypothesis. State this explicitly before building the narrative.
+
+--- EXPERIMENT CONTEXT & DATA PIPELINE ---
+1. Goal: Forming biological rationale and hypothesis based on the Random Forest results to explain why Cytoplasm Intensity mean Actin heavily attributes to the prediction of pERK. Focused feature: 'Cytoplasm Intensity mean Actin'. Target response: 'pERK'.
+2. Upstream Model: A PyTorch nonlinear Multi-layer Perceptron model was trained on the raw dataset (for the pERK/EGF dataset, this MLP was trained upstream on the multi-concentration signaling panel; for all other datasets, it was trained directly on this dataset's raw features).
+3. Feature Selection: Integrated Gradients (IG) attribution scores were computed from that upstream model. 23 attributing candidate features (a manually curated feature panel, not IG-ranked) were selected (the focused feature itself is excluded from this attributing set), yielding 22 attributing features actually used by the model.
+4. Target response and Focus feature Correlation: Direct correlation between Cytoplasm Intensity mean Actin and pERK.
+5. Label Generation: Samples were labeled as Class 1 ('High focused Attribution') if their IG score for Cytoplasm Intensity mean Actin fell in the extreme 10% according to the analysis type. All other samples are Class 0. Analysis type: the Positive Attribution Analysis focusing on conditions of Cytoplasm Intensity mean Actin's Positive attribution effect.
+6. Classifier: A Random Forest Classifier (200 trees, max_depth=4 per tree, min_samples_leaf=5, class_weight={0: 1, 1: 4}). 5-fold CV F1 (macro): 74.8%. The classifier aims to find the conditions/features that best separate Class 1 from Class 0 data points.
+
+--- FOREST-WIDE FEATURE IMPORTANCE (AUTHORITATIVE -- averaged across all 200 trees) ---
+  1. Cytoplasm Intensity mean Paxillin  (mean decrease in impurity, averaged over 200 trees: 0.3884)
+  2. Cytobody Intensity mean Paxillin  (mean decrease in impurity, averaged over 200 trees: 0.3239)
+  3. Membrane Intensity mean YAP  (mean decrease in impurity, averaged over 200 trees: 0.1017)
+  4. Nucleus Intensity mean YAP  (mean decrease in impurity, averaged over 200 trees: 0.0267)
+  5. Nucleus Intensity std DAPI  (mean decrease in impurity, averaged over 200 trees: 0.0253)
+  6. Nucleus Intensity mean PCNA  (mean decrease in impurity, averaged over 200 trees: 0.0252)
+  7. Nucleus Intensity mean DAPI  (mean decrease in impurity, averaged over 200 trees: 0.0185)
+  8. Cytobody Morphology Perimeter  (mean decrease in impurity, averaged over 200 trees: 0.0133)
+  9. Membrane Morphology Perimeter  (mean decrease in impurity, averaged over 200 trees: 0.0120)
+  10. Morphology Area  (mean decrease in impurity, averaged over 200 trees: 0.0109)
+  11. Cytoplasm Morphology Area  (mean decrease in impurity, averaged over 200 trees: 0.0103)
+  12. Cytobody Morphology Area  (mean decrease in impurity, averaged over 200 trees: 0.0090)
+  13. Nucleus Morphology Perimeter  (mean decrease in impurity, averaged over 200 trees: 0.0078)
+  14. Cytoplasm Morphology Perimeter  (mean decrease in impurity, averaged over 200 trees: 0.0070)
+  15. Morphology Perimeter  (mean decrease in impurity, averaged over 200 trees: 0.0062)
+  16. Membrane Morphology Area  (mean decrease in impurity, averaged over 200 trees: 0.0051)
+  17. Nucleus Morphology Area  (mean decrease in impurity, averaged over 200 trees: 0.0050)
+  18. Nucleus Morphology Elongation  (mean decrease in impurity, averaged over 200 trees: 0.0013)
+  19. Cytoplasm Morphology Elongation  (mean decrease in impurity, averaged over 200 trees: 0.0009)
+  20. Morphology Elongation  (mean decrease in impurity, averaged over 200 trees: 0.0006)
+  21. Membrane Morphology Elongation  (mean decrease in impurity, averaged over 200 trees: 0.0004)
+  22. Cytobody Morphology Elongation  (mean decrease in impurity, averaged over 200 trees: 0.0004)
+
+NOTE: This is the ENTIRE evidence for this model. A Random Forest is 200 independently-trained trees voting together; there is no single unified 'if condition A and B then Y' rule for the ensemble the way there is for one tree. Do not invent conditional/branching logic that was not given to you -- this ranking is a global, aggregate measure (mean impurity decrease per feature, averaged over all trees), structurally similar to Logistic Regression's coefficient ranking, not to a Decision Tree's leaf-node zones.
+
+--- TASK ---
+Based on the evidence above, first explicitly state (a) the single BEST set of features for hypothesis generation and why, and (b) the 4 most important contexts (features/conditions) driving that conclusion. Then form rationale and a hypothesis of the feature relationships (pathways) to explain HOW features and Cytoplasm Intensity mean Actin together associate with pERK. Base this on the evidence above (not any single metric alone). Identify findings into two categories: 1. findings that directly confirm literature knowledge; 2. findings suggesting new testable mechanisms supported by literature. List the publications supporting the conclusions.
+
+FINAL OUTPUT REQUIREMENT: After the narrative, append exactly one fenced json code block with this structure, so your selections can be checked against the quantitative evidence above:
+```json
+{
+  "primary_zone_node_id": <integer node id from the evidence section above, or null if this model type has no nodes (Random Forest and Logistic Regression both have none)>,
+  "top_4_contexts": ["<feature name>", "<feature name>", "<feature name>", "<feature name>"]
+}
+```
+Feature names in top_4_contexts must be copied verbatim from the evidence section above (e.g. "Nucleus Morphology Area"), not the focused feature 'Cytoplasm Intensity mean Actin' itself.

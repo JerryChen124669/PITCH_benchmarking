@@ -1,0 +1,228 @@
+--- SYSTEM PROMPT ---
+Data Domain Context: Immunology / CITE-seq (surface protein + RNA)
+Cell Type / Study Tissue: Human PBMC-derived CD45RA+ naive T cells
+
+You are an expert computational biologist tasked with interpreting decision tree classification rules that predict specific biomarkers based on RNA gene expression and gene attributes. Your objective is to translate the mathematical logic of the tree, including feature hierarchy, split thresholds, and conditional dependencies, into a cohesive biological narrative that explains the underlying regulatory mechanisms. Using the specific biological context provided, you must synthesize these findings into concrete, experimentally testable hypotheses.
+CRITICAL INSTRUCTION: Primarily analyze the CANDIDATE NODES section below. Prioritize nodes that combine substantial population support, strong IG enrichment, high target-cell enrichment, meaningful Gini impurity reduction, and relatively low tree depth -- do NOT select a node solely because it has the lowest Gini impurity or highest precision if it is only supported by a handful of cells. Nodes flagged as low support are listed separately and should be treated as overfitting risks, not primary evidence. Use the full raw decision tree only as supplementary context; do not attempt to parse every individual branch.
+ADDITIONAL INSTRUCTION: Explicitly identify (a) the single BEST node overall for hypothesis generation, stating why it beats the alternatives on the criteria above, and (b) the 4 most important contexts (i.e. the most decision-relevant split conditions/features) that should anchor your hypothesis. When a node's rule has more than 4 conditions (e.g. a depth-6 path), use that node's own 'Feature confidence ranking' (its per-condition local Gini-reduction contribution) to select the top ~4 conditions -- do not just take the first 4 in path order. State both (a) and (b) explicitly before building the narrative.
+
+--- EXPERIMENT CONTEXT & DATA PIPELINE ---
+1. Goal: Forming biological rationale and hypothesis based on the decision tree results to explain why HUMAN_GNLY heavily attributes to the prediction of CD45RA. Focused feature: 'HUMAN_GNLY'. Target response: 'CD45RA'.
+2. Upstream Model: A PyTorch nonlinear Multi-layer Perceptron model was trained on the raw dataset.
+3. Feature Selection: Integrated Gradients (IG) was applied. The top 60 features with the highest Mean Absolute IG Attribution were selected as candidate attributing features (the focused feature itself is excluded from this attributing set), yielding 59 attributing features actually used by the tree.
+4. Target response and Focus feature Correlation: Direct correlation between HUMAN_GNLY and CD45RA.
+5. Label Generation: Samples were labeled as Class 1 ('High focused Attribution') if their IG score for HUMAN_GNLY fell in the extreme 10% according to the analysis type. All other samples are Class 0. Analysis type: the Positive Attribution Analysis focusing on conditions of HUMAN_GNLY's Positive attribution effect.
+6. Tree Parameters and classification: max_depth=6, min_samples_leaf=5, no max_leaf_nodes cap (leaf count is bounded only by max_depth and min_samples_leaf, so depth is free to add structure rather than being capped at a shared leaf budget), class_weight={0: 1, 1: 4}. 5-fold CV F1 (macro): 91.8%. The decision tree aims to find the conditions that contain most Class 1 data points and minimal Class 0 data points.
+7. Node exclusion rule: leaf nodes with fewer than 44 cells (max(15 cells, 0.5% of the dataset)) are flagged and excluded from primary consideration, since a highly pure node with very few cells is more likely to reflect overfitting than a reproducible biological context.
+
+--- CANDIDATE NODES: QUANTITATIVE EVIDENCE (all leaf nodes, sorted by target-cell lift) ---
+Node 54 (depth 6)
+  (1) Split conditions: HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 > 1.894 AND HUMAN_GZMB > 1.924 AND HUMAN_LYZ <= 1.013 AND HUMAN_CMC1 > 0.890 AND HUMAN_CD79A <= 1.793
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. HUMAN_NKG7 > 1.276  (local Gini-reduction contribution: 0.3732)
+      2. HUMAN_NKG7 > 1.894  (local Gini-reduction contribution: 0.0034)
+      3. HUMAN_GZMB > 1.924  (local Gini-reduction contribution: 0.0006)
+      4. HUMAN_LYZ <= 1.013  (local Gini-reduction contribution: 0.0001)
+      5. HUMAN_CD79A <= 1.793  (local Gini-reduction contribution: 0.0001)
+      6. HUMAN_CMC1 > 0.890  (local Gini-reduction contribution: 0.0001)
+  (2) Node depth: 6
+  (3) Support: 583 cells (6.77% of total population)
+  (4) Node Gini impurity: 0.0552
+  (5) Gini reduction from originating split: 0.0006
+  (6) Target-cell fraction: 89.5% (population rate 10.0%, enrichment/lift = 8.95x)
+  (7) Mean IG score of 'HUMAN_GNLY' in node: 0.1547 (population mean 0.0020, SD 0.0605; enrichment = +2.52 population-SD units above/below the population mean)
+
+Node 47 (depth 6)
+  (1) Split conditions: HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 > 1.894 AND HUMAN_GZMB <= 1.924 AND HUMAN_KLRB1 > 1.053 AND HUMAN_KLRF1 > 1.627 AND HUMAN_HOPX > 1.866
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. HUMAN_NKG7 > 1.276  (local Gini-reduction contribution: 0.3732)
+      2. HUMAN_NKG7 > 1.894  (local Gini-reduction contribution: 0.0034)
+      3. HUMAN_KLRB1 > 1.053  (local Gini-reduction contribution: 0.0012)
+      4. HUMAN_GZMB <= 1.924  (local Gini-reduction contribution: 0.0006)
+      5. HUMAN_KLRF1 > 1.627  (local Gini-reduction contribution: 0.0005)
+      6. HUMAN_HOPX > 1.866  (local Gini-reduction contribution: 0.0003)
+  (2) Node depth: 6
+  (3) Support: 117 cells (1.36% of total population)
+  (4) Node Gini impurity: 0.0832
+  (5) Gini reduction from originating split: 0.0056
+  (6) Target-cell fraction: 84.6% (population rate 10.0%, enrichment/lift = 8.46x)
+  (7) Mean IG score of 'HUMAN_GNLY' in node: 0.1454 (population mean 0.0020, SD 0.0605; enrichment = +2.37 population-SD units above/below the population mean)
+
+Node 51 (depth 6)
+  (1) Split conditions: HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 > 1.894 AND HUMAN_GZMB > 1.924 AND HUMAN_LYZ <= 1.013 AND HUMAN_CMC1 <= 0.890 AND HUMAN_CD8A <= 6.499
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. HUMAN_NKG7 > 1.276  (local Gini-reduction contribution: 0.3732)
+      2. HUMAN_NKG7 > 1.894  (local Gini-reduction contribution: 0.0034)
+      3. HUMAN_GZMB > 1.924  (local Gini-reduction contribution: 0.0006)
+      4. HUMAN_CD8A <= 6.499  (local Gini-reduction contribution: 0.0003)
+      5. HUMAN_LYZ <= 1.013  (local Gini-reduction contribution: 0.0001)
+      6. HUMAN_CMC1 <= 0.890  (local Gini-reduction contribution: 0.0001)
+  (2) Node depth: 6
+  (3) Support: 133 cells (1.54% of total population)
+  (4) Node Gini impurity: 0.1172
+  (5) Gini reduction from originating split: 0.0066
+  (6) Target-cell fraction: 78.9% (population rate 10.0%, enrichment/lift = 7.89x)
+  (7) Mean IG score of 'HUMAN_GNLY' in node: 0.1419 (population mean 0.0020, SD 0.0605; enrichment = +2.31 population-SD units above/below the population mean)
+
+Node 46 (depth 6)
+  (1) Split conditions: HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 > 1.894 AND HUMAN_GZMB <= 1.924 AND HUMAN_KLRB1 > 1.053 AND HUMAN_KLRF1 > 1.627 AND HUMAN_HOPX <= 1.866
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. HUMAN_NKG7 > 1.276  (local Gini-reduction contribution: 0.3732)
+      2. HUMAN_NKG7 > 1.894  (local Gini-reduction contribution: 0.0034)
+      3. HUMAN_KLRB1 > 1.053  (local Gini-reduction contribution: 0.0012)
+      4. HUMAN_GZMB <= 1.924  (local Gini-reduction contribution: 0.0006)
+      5. HUMAN_KLRF1 > 1.627  (local Gini-reduction contribution: 0.0005)
+      6. HUMAN_HOPX <= 1.866  (local Gini-reduction contribution: 0.0003)
+  (2) Node depth: 6
+  (3) Support: 70 cells (0.81% of total population)
+  (4) Node Gini impurity: 0.2659
+  (5) Gini reduction from originating split: 0.0056
+  (6) Target-cell fraction: 57.1% (population rate 10.0%, enrichment/lift = 5.71x)
+  (7) Mean IG score of 'HUMAN_GNLY' in node: 0.1171 (population mean 0.0020, SD 0.0605; enrichment = +1.90 population-SD units above/below the population mean)
+
+Node 4 (depth 4)
+  (1) Split conditions: HUMAN_NKG7 <= 1.276 AND HUMAN_HOPX <= 2.609 AND HUMAN_CMC1 <= 1.882 AND HUMAN_CST7 <= 2.125
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. HUMAN_NKG7 <= 1.276  (local Gini-reduction contribution: 0.3732)
+      2. HUMAN_HOPX <= 2.609  (local Gini-reduction contribution: 0.0015)
+      3. HUMAN_CMC1 <= 1.882  (local Gini-reduction contribution: 0.0006)
+      4. HUMAN_CST7 <= 2.125  (local Gini-reduction contribution: 0.0004)
+  (2) Node depth: 4
+  (3) Support: 7424 cells (86.16% of total population)
+  (4) Node Gini impurity: 0.0000
+  (5) Gini reduction from originating split: 0.0005
+  (6) Target-cell fraction: 0.0% (population rate 10.0%, enrichment/lift = 0.00x)
+  (7) Mean IG score of 'HUMAN_GNLY' in node: -0.0192 (population mean 0.0020, SD 0.0605; enrichment = -0.35 population-SD units above/below the population mean)
+
+
+--- LOW-SUPPORT / FLAGGED NODES (for reference only, not primary evidence) ---
+Node 5 (depth 4): HUMAN_NKG7 <= 1.276 AND HUMAN_HOPX <= 2.609 AND HUMAN_CMC1 <= 1.882 AND HUMAN_CST7 > 2.125 [5 cells, target lift 2.00x] -- below min support (44 cells)
+Node 7 (depth 4): HUMAN_NKG7 <= 1.276 AND HUMAN_HOPX <= 2.609 AND HUMAN_CMC1 > 1.882 AND HUMAN_KLRB1 <= 1.700 [28 cells, target lift 0.00x] -- below min support (44 cells)
+Node 8 (depth 4): HUMAN_NKG7 <= 1.276 AND HUMAN_HOPX <= 2.609 AND HUMAN_CMC1 > 1.882 AND HUMAN_KLRB1 > 1.700 [6 cells, target lift 5.00x] -- below min support (44 cells)
+Node 9 (depth 2): HUMAN_NKG7 <= 1.276 AND HUMAN_HOPX > 2.609 [8 cells, target lift 3.75x] -- below min support (44 cells)
+Node 15 (depth 6): HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 <= 1.894 AND HUMAN_CLIC3 <= 1.235 AND HUMAN_HOPX <= 2.159 AND HUMAN_KLRF1 <= 1.384 AND HUMAN_GSN <= 0.495 [34 cells, target lift 0.00x] -- below min support (44 cells)
+Node 16 (depth 6): HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 <= 1.894 AND HUMAN_CLIC3 <= 1.235 AND HUMAN_HOPX <= 2.159 AND HUMAN_KLRF1 <= 1.384 AND HUMAN_GSN > 0.495 [5 cells, target lift 2.00x] -- below min support (44 cells)
+Node 18 (depth 6): HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 <= 1.894 AND HUMAN_CLIC3 <= 1.235 AND HUMAN_HOPX <= 2.159 AND HUMAN_KLRF1 > 1.384 AND HUMAN_CST7 <= 1.354 [15 cells, target lift 0.67x] -- below min support (44 cells)
+Node 19 (depth 6): HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 <= 1.894 AND HUMAN_CLIC3 <= 1.235 AND HUMAN_HOPX <= 2.159 AND HUMAN_KLRF1 > 1.384 AND HUMAN_CST7 > 1.354 [18 cells, target lift 4.44x] -- below min support (44 cells)
+Node 22 (depth 6): HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 <= 1.894 AND HUMAN_CLIC3 <= 1.235 AND HUMAN_HOPX > 2.159 AND HUMAN_NKG7 <= 1.717 AND HUMAN_KLRB1 <= 1.422 [5 cells, target lift 4.00x] -- below min support (44 cells)
+Node 23 (depth 6): HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 <= 1.894 AND HUMAN_CLIC3 <= 1.235 AND HUMAN_HOPX > 2.159 AND HUMAN_NKG7 <= 1.717 AND HUMAN_KLRB1 > 1.422 [8 cells, target lift 10.00x] -- below min support (44 cells)
+Node 24 (depth 5): HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 <= 1.894 AND HUMAN_CLIC3 <= 1.235 AND HUMAN_HOPX > 2.159 AND HUMAN_NKG7 > 1.717 [6 cells, target lift 0.00x] -- below min support (44 cells)
+Node 28 (depth 6): HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 <= 1.894 AND HUMAN_CLIC3 > 1.235 AND HUMAN_GZMB <= 1.529 AND HUMAN_S100A12 <= 1.010 AND HUMAN_KLRF1 <= 0.762 [5 cells, target lift 0.00x] -- below min support (44 cells)
+Node 29 (depth 6): HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 <= 1.894 AND HUMAN_CLIC3 > 1.235 AND HUMAN_GZMB <= 1.529 AND HUMAN_S100A12 <= 1.010 AND HUMAN_KLRF1 > 0.762 [23 cells, target lift 5.22x] -- below min support (44 cells)
+Node 30 (depth 5): HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 <= 1.894 AND HUMAN_CLIC3 > 1.235 AND HUMAN_GZMB <= 1.529 AND HUMAN_S100A12 > 1.010 [11 cells, target lift 0.00x] -- below min support (44 cells)
+Node 33 (depth 6): HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 <= 1.894 AND HUMAN_CLIC3 > 1.235 AND HUMAN_GZMB > 1.529 AND HUMAN_CLEC4E <= 0.551 AND HUMAN_GZMB <= 1.876 [8 cells, target lift 6.25x] -- below min support (44 cells)
+Node 34 (depth 6): HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 <= 1.894 AND HUMAN_CLIC3 > 1.235 AND HUMAN_GZMB > 1.529 AND HUMAN_CLEC4E <= 0.551 AND HUMAN_GZMB > 1.876 [21 cells, target lift 10.00x] -- below min support (44 cells)
+Node 35 (depth 5): HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 <= 1.894 AND HUMAN_CLIC3 > 1.235 AND HUMAN_GZMB > 1.529 AND HUMAN_CLEC4E > 0.551 [5 cells, target lift 4.00x] -- below min support (44 cells)
+Node 39 (depth 5): HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 > 1.894 AND HUMAN_GZMB <= 1.924 AND HUMAN_KLRB1 <= 1.053 AND HUMAN_GZMB <= 1.306 [8 cells, target lift 0.00x] -- below min support (44 cells)
+Node 40 (depth 5): HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 > 1.894 AND HUMAN_GZMB <= 1.924 AND HUMAN_KLRB1 <= 1.053 AND HUMAN_GZMB > 1.306 [5 cells, target lift 2.00x] -- below min support (44 cells)
+Node 43 (depth 6): HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 > 1.894 AND HUMAN_GZMB <= 1.924 AND HUMAN_KLRB1 > 1.053 AND HUMAN_KLRF1 <= 1.627 AND HUMAN_GZMB <= 1.785 [36 cells, target lift 5.00x] -- below min support (44 cells)
+Node 44 (depth 6): HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 > 1.894 AND HUMAN_GZMB <= 1.924 AND HUMAN_KLRB1 > 1.053 AND HUMAN_KLRF1 <= 1.627 AND HUMAN_GZMB > 1.785 [7 cells, target lift 0.00x] -- below min support (44 cells)
+Node 52 (depth 6): HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 > 1.894 AND HUMAN_GZMB > 1.924 AND HUMAN_LYZ <= 1.013 AND HUMAN_CMC1 <= 0.890 AND HUMAN_CD8A > 6.499 [5 cells, target lift 2.00x] -- below min support (44 cells)
+Node 55 (depth 6): HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 > 1.894 AND HUMAN_GZMB > 1.924 AND HUMAN_LYZ <= 1.013 AND HUMAN_CMC1 > 0.890 AND HUMAN_CD79A > 1.793 [5 cells, target lift 4.00x] -- below min support (44 cells)
+Node 57 (depth 5): HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 > 1.894 AND HUMAN_GZMB > 1.924 AND HUMAN_LYZ > 1.013 AND HUMAN_RP11-1143G9.4 <= 0.984 [6 cells, target lift 1.67x] -- below min support (44 cells)
+Node 58 (depth 5): HUMAN_NKG7 > 1.276 AND HUMAN_NKG7 > 1.894 AND HUMAN_GZMB > 1.924 AND HUMAN_LYZ > 1.013 AND HUMAN_RP11-1143G9.4 > 0.984 [7 cells, target lift 8.57x] -- below min support (44 cells)
+
+--- FULL DECISION TREE RAW RULES ---
+|--- HUMAN_NKG7 <= 1.28
+|   |--- HUMAN_HOPX <= 2.61
+|   |   |--- HUMAN_CMC1 <= 1.88
+|   |   |   |--- HUMAN_CST7 <= 2.13
+|   |   |   |   |--- class: 0
+|   |   |   |--- HUMAN_CST7 >  2.13
+|   |   |   |   |--- class: 0
+|   |   |--- HUMAN_CMC1 >  1.88
+|   |   |   |--- HUMAN_KLRB1 <= 1.70
+|   |   |   |   |--- class: 0
+|   |   |   |--- HUMAN_KLRB1 >  1.70
+|   |   |   |   |--- class: 1
+|   |--- HUMAN_HOPX >  2.61
+|   |   |--- class: 1
+|--- HUMAN_NKG7 >  1.28
+|   |--- HUMAN_NKG7 <= 1.89
+|   |   |--- HUMAN_CLIC3 <= 1.24
+|   |   |   |--- HUMAN_HOPX <= 2.16
+|   |   |   |   |--- HUMAN_KLRF1 <= 1.38
+|   |   |   |   |   |--- HUMAN_GSN <= 0.49
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- HUMAN_GSN >  0.49
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- HUMAN_KLRF1 >  1.38
+|   |   |   |   |   |--- HUMAN_CST7 <= 1.35
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- HUMAN_CST7 >  1.35
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |--- HUMAN_HOPX >  2.16
+|   |   |   |   |--- HUMAN_NKG7 <= 1.72
+|   |   |   |   |   |--- HUMAN_KLRB1 <= 1.42
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- HUMAN_KLRB1 >  1.42
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- HUMAN_NKG7 >  1.72
+|   |   |   |   |   |--- class: 0
+|   |   |--- HUMAN_CLIC3 >  1.24
+|   |   |   |--- HUMAN_GZMB <= 1.53
+|   |   |   |   |--- HUMAN_S100A12 <= 1.01
+|   |   |   |   |   |--- HUMAN_KLRF1 <= 0.76
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- HUMAN_KLRF1 >  0.76
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- HUMAN_S100A12 >  1.01
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- HUMAN_GZMB >  1.53
+|   |   |   |   |--- HUMAN_CLEC4E <= 0.55
+|   |   |   |   |   |--- HUMAN_GZMB <= 1.88
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- HUMAN_GZMB >  1.88
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- HUMAN_CLEC4E >  0.55
+|   |   |   |   |   |--- class: 1
+|   |--- HUMAN_NKG7 >  1.89
+|   |   |--- HUMAN_GZMB <= 1.92
+|   |   |   |--- HUMAN_KLRB1 <= 1.05
+|   |   |   |   |--- HUMAN_GZMB <= 1.31
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- HUMAN_GZMB >  1.31
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- HUMAN_KLRB1 >  1.05
+|   |   |   |   |--- HUMAN_KLRF1 <= 1.63
+|   |   |   |   |   |--- HUMAN_GZMB <= 1.78
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- HUMAN_GZMB >  1.78
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- HUMAN_KLRF1 >  1.63
+|   |   |   |   |   |--- HUMAN_HOPX <= 1.87
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- HUMAN_HOPX >  1.87
+|   |   |   |   |   |   |--- class: 1
+|   |   |--- HUMAN_GZMB >  1.92
+|   |   |   |--- HUMAN_LYZ <= 1.01
+|   |   |   |   |--- HUMAN_CMC1 <= 0.89
+|   |   |   |   |   |--- HUMAN_CD8A <= 6.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- HUMAN_CD8A >  6.50
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- HUMAN_CMC1 >  0.89
+|   |   |   |   |   |--- HUMAN_CD79A <= 1.79
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- HUMAN_CD79A >  1.79
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |--- HUMAN_LYZ >  1.01
+|   |   |   |   |--- HUMAN_RP11-1143G9.4 <= 0.98
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- HUMAN_RP11-1143G9.4 >  0.98
+|   |   |   |   |   |--- class: 1
+--- TASK ---
+Based on the CANDIDATE NODES above, first explicitly state (a) the single BEST node for hypothesis generation and why, and (b) the 4 most important contexts (features/conditions) driving that conclusion. Then form rationale and hypotheses of the feature relationships (pathways) to explain HOW features and HUMAN_GNLY together associate with CD45RA. Highlight which zones are the most biologically robust based on support, enrichment, and impurity reduction (not Gini alone). Identify findings into two categories: 1. findings that directly confirm literature knowledge; 2. findings suggesting new testable mechanisms supported by literature. List the publications supporting the conclusions.
+
+FINAL OUTPUT REQUIREMENT: After the narrative, append exactly one fenced json code block with this structure, so your selections can be checked against the quantitative evidence above:
+```json
+{
+  "primary_zone_node_id": <integer node id from the CANDIDATE NODES section>,
+  "top_4_contexts": ["<feature name>", "<feature name>", "<feature name>", "<feature name>"]
+}
+```
+Feature names in top_4_contexts must be copied verbatim from the split conditions of the primary zone (e.g. the feature name in "HUMAN_NKG7 <= 1.23" is "HUMAN_NKG7"), not the focused feature 'HUMAN_GNLY' itself.

@@ -1,0 +1,15 @@
+{
+  "dataset": "CITEseq_CD45RA_naive",
+  "setting": "top60_depth6",
+  "judge_model": "gpt-5.6-sol",
+  "scores": {
+    "Feature Comprehensiveness": 10,
+    "Logic Rigor": 10,
+    "Biological Plausibility": 8,
+    "Biological Plausibility_reason": "The cytotoxic-state interpretation linking GNLY with NKG7 and GZMB, together with LYZ/CD79A lineage exclusion, is biologically defensible. However, assigning the population specifically to TEMRA rather than an NK-like contaminant and proposing NKG7 as an upstream master regulator are stronger claims than the features establish.",
+    "Specificity": 8,
+    "Mechanistic Synthesis": 7,
+    "Mechanistic Synthesis_reason": "The response integrates NKG7-mediated granule function, GZMB/GNLY co-expression, and LYZ/CD79A lineage exclusion into a coherent cytotoxic CD45RA-positive state. The transition from the cytotoxic program to CD45RA re-expression remains a state-based association rather than a resolved mechanism, and the TEMRA-versus-NK distinction is insufficiently connected to discriminating markers. No mechanistic-synthesis ceiling was applied because the focus-target mechanism and most contextual contributions were explicit.",
+    "Literature Grounding": 6
+  }
+}

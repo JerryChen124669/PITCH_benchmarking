@@ -53,3 +53,5 @@ biomedical models). Script, data and plot are together in `5_evaluation_results/
 The folder `1_pillar_plots_4cases_excl_pRPS6_IL2RA` holds the individual criterion charts (four prompts).
 
 Rubric scoring and pairwise similarity need `OPENAI_API_KEY` in the environment; no key is stored in the code.
+
+**Legacy zone-identification fields.** The scorecards produced by the earlier seven-criterion judge (benchmark scores `evaluation_results_rubric_v12/`, ablation scorecards `ablation_conditions/.../scorecards/`) still contain a `Zone Identification score_zone1` field. Zone identification is not reported: this field is excluded from every analysis, figure and table in the manuscript, and the scripts in this repository no longer request or use it.

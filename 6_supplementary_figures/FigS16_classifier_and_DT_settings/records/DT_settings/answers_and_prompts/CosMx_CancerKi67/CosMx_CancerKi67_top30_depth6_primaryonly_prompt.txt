@@ -1,0 +1,751 @@
+--- SYSTEM PROMPT ---
+Data Domain Context: Oncology / CosMx spatial transcriptomics
+Cell Type / Study Tissue: Breast cancer cells, Ki-67 dual-gated (proliferation status)
+
+You are an expert computational biologist tasked with interpreting decision tree classification rules that predict specific biomarkers based on RNA gene expression and gene attributes. Your objective is to translate the mathematical logic of the tree, including feature hierarchy, split thresholds, and conditional dependencies, into a cohesive biological narrative that explains the underlying regulatory mechanisms. Using the specific biological context provided, you must synthesize these findings into concrete, experimentally testable hypotheses.
+CRITICAL INSTRUCTION: Primarily analyze the CANDIDATE NODES section below. Prioritize nodes that combine substantial population support, strong IG enrichment, high target-cell enrichment, meaningful Gini impurity reduction, and relatively low tree depth -- do NOT select a node solely because it has the lowest Gini impurity or highest precision if it is only supported by a handful of cells. Nodes flagged as low support are listed separately and should be treated as overfitting risks, not primary evidence. Use the full raw decision tree only as supplementary context; do not attempt to parse every individual branch.
+ADDITIONAL INSTRUCTION: Explicitly identify (a) the single BEST node overall for hypothesis generation, stating why it beats the alternatives on the criteria above, and (b) the 4 most important contexts (i.e. the most decision-relevant split conditions/features) that should anchor your hypothesis. When a node's rule has more than 4 conditions (e.g. a depth-6 path), use that node's own 'Feature confidence ranking' (its per-condition local Gini-reduction contribution) to select the top ~4 conditions -- do not just take the first 4 in path order. State both (a) and (b) explicitly before building the narrative.
+
+--- EXPERIMENT CONTEXT & DATA PIPELINE ---
+1. Goal: Forming biological rationale and hypothesis based on the decision tree results to explain why PTMA heavily attributes to the prediction of Ki-67. Focused feature: 'PTMA'. Target response: 'Ki-67'.
+2. Upstream Model: A PyTorch nonlinear Multi-layer Perceptron model was trained on the raw dataset.
+3. Feature Selection: Integrated Gradients (IG) was applied. The top 30 features with the highest Mean Absolute IG Attribution were selected as candidate attributing features (the focused feature itself is excluded from this attributing set), yielding 29 attributing features actually used by the tree.
+4. Target response and Focus feature Correlation: Direct correlation between PTMA and Ki-67.
+5. Label Generation: Samples were labeled as Class 1 ('High focused Attribution') if their IG score for PTMA fell in the extreme 10% according to the analysis type. All other samples are Class 0. Analysis type: the Positive Attribution Analysis focusing on conditions of PTMA's Positive attribution effect.
+6. Tree Parameters and classification: max_depth=6, min_samples_leaf=5, no max_leaf_nodes cap (leaf count is bounded only by max_depth and min_samples_leaf, so depth is free to add structure rather than being capped at a shared leaf budget), class_weight={0: 1, 1: 4}. 5-fold CV F1 (macro): 69.6%. The decision tree aims to find the conditions that contain most Class 1 data points and minimal Class 0 data points.
+7. Node exclusion rule: leaf nodes with fewer than 150 cells (max(15 cells, 0.5% of the dataset)) are flagged and excluded from primary consideration, since a highly pure node with very few cells is more likely to reflect overfitting than a reproducible biological context.
+
+--- CANDIDATE NODES: QUANTITATIVE EVIDENCE (all leaf nodes, sorted by target-cell lift) ---
+Node 126 (depth 6)
+  (1) Split conditions: RPL41 > 0.274 AND TUBA1C > 0.588 AND TUBB4B > 0.489 AND HNRNPA2B1 > 0.333 AND TUBB4B > 1.856 AND RPL39 > -0.653
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 > 0.274  (local Gini-reduction contribution: 0.1041)
+      2. TUBA1C > 0.588  (local Gini-reduction contribution: 0.0190)
+      3. TUBB4B > 0.489  (local Gini-reduction contribution: 0.0038)
+      4. HNRNPA2B1 > 0.333  (local Gini-reduction contribution: 0.0011)
+      5. TUBB4B > 1.856  (local Gini-reduction contribution: 0.0004)
+      6. RPL39 > -0.653  (local Gini-reduction contribution: 0.0002)
+  (2) Node depth: 6
+  (3) Support: 674 cells (2.25% of total population)
+  (4) Node Gini impurity: 0.1887
+  (5) Gini reduction from originating split: 0.0029
+  (6) Target-cell fraction: 68.0% (population rate 10.0%, enrichment/lift = 6.80x)
+  (7) Mean IG score of 'PTMA' in node: 0.1757 (population mean -0.0206, SD 0.0972; enrichment = +2.02 population-SD units above/below the population mean)
+
+Node 123 (depth 6)
+  (1) Split conditions: RPL41 > 0.274 AND TUBA1C > 0.588 AND TUBB4B > 0.489 AND HNRNPA2B1 > 0.333 AND TUBB4B <= 1.856 AND COX8A > -0.369
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 > 0.274  (local Gini-reduction contribution: 0.1041)
+      2. TUBA1C > 0.588  (local Gini-reduction contribution: 0.0190)
+      3. TUBB4B > 0.489  (local Gini-reduction contribution: 0.0038)
+      4. HNRNPA2B1 > 0.333  (local Gini-reduction contribution: 0.0011)
+      5. TUBB4B <= 1.856  (local Gini-reduction contribution: 0.0004)
+      6. COX8A > -0.369  (local Gini-reduction contribution: 0.0002)
+  (2) Node depth: 6
+  (3) Support: 680 cells (2.27% of total population)
+  (4) Node Gini impurity: 0.3031
+  (5) Gini reduction from originating split: 0.0047
+  (6) Target-cell fraction: 52.2% (population rate 10.0%, enrichment/lift = 5.22x)
+  (7) Mean IG score of 'PTMA' in node: 0.1252 (population mean -0.0206, SD 0.0972; enrichment = +1.50 population-SD units above/below the population mean)
+
+Node 94 (depth 6)
+  (1) Split conditions: RPL41 > 0.274 AND TUBA1C <= 0.588 AND HNRNPA2B1 > 0.983 AND TUBB4B > 0.489 AND RPL41 > 1.126 AND ARF4 <= 3.268
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 > 0.274  (local Gini-reduction contribution: 0.1041)
+      2. TUBA1C <= 0.588  (local Gini-reduction contribution: 0.0190)
+      3. HNRNPA2B1 > 0.983  (local Gini-reduction contribution: 0.0062)
+      4. TUBB4B > 0.489  (local Gini-reduction contribution: 0.0009)
+      5. RPL41 > 1.126  (local Gini-reduction contribution: 0.0004)
+      6. ARF4 <= 3.268  (local Gini-reduction contribution: 0.0001)
+  (2) Node depth: 6
+  (3) Support: 278 cells (0.93% of total population)
+  (4) Node Gini impurity: 0.3366
+  (5) Gini reduction from originating split: 0.0064
+  (6) Target-cell fraction: 47.8% (population rate 10.0%, enrichment/lift = 4.78x)
+  (7) Mean IG score of 'PTMA' in node: 0.1182 (population mean -0.0206, SD 0.0972; enrichment = +1.43 population-SD units above/below the population mean)
+
+Node 108 (depth 6)
+  (1) Split conditions: RPL41 > 0.274 AND TUBA1C > 0.588 AND TUBB4B <= 0.489 AND HNRNPA2B1 > 0.658 AND HDGF <= 1.280 AND NFIX > 0.680
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 > 0.274  (local Gini-reduction contribution: 0.1041)
+      2. TUBA1C > 0.588  (local Gini-reduction contribution: 0.0190)
+      3. TUBB4B <= 0.489  (local Gini-reduction contribution: 0.0038)
+      4. HNRNPA2B1 > 0.658  (local Gini-reduction contribution: 0.0013)
+      5. NFIX > 0.680  (local Gini-reduction contribution: 0.0005)
+      6. HDGF <= 1.280  (local Gini-reduction contribution: 0.0004)
+  (2) Node depth: 6
+  (3) Support: 269 cells (0.90% of total population)
+  (4) Node Gini impurity: 0.4039
+  (5) Gini reduction from originating split: 0.0201
+  (6) Target-cell fraction: 39.0% (population rate 10.0%, enrichment/lift = 3.90x)
+  (7) Mean IG score of 'PTMA' in node: 0.0919 (population mean -0.0206, SD 0.0972; enrichment = +1.16 population-SD units above/below the population mean)
+
+Node 104 (depth 6)
+  (1) Split conditions: RPL41 > 0.274 AND TUBA1C > 0.588 AND TUBB4B <= 0.489 AND HNRNPA2B1 <= 0.658 AND RPLP0 > 0.444 AND HDGF > 0.720
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 > 0.274  (local Gini-reduction contribution: 0.1041)
+      2. TUBA1C > 0.588  (local Gini-reduction contribution: 0.0190)
+      3. TUBB4B <= 0.489  (local Gini-reduction contribution: 0.0038)
+      4. HNRNPA2B1 <= 0.658  (local Gini-reduction contribution: 0.0013)
+      5. RPLP0 > 0.444  (local Gini-reduction contribution: 0.0006)
+      6. HDGF > 0.720  (local Gini-reduction contribution: 0.0005)
+  (2) Node depth: 6
+  (3) Support: 195 cells (0.65% of total population)
+  (4) Node Gini impurity: 0.4304
+  (5) Gini reduction from originating split: 0.0214
+  (6) Target-cell fraction: 35.4% (population rate 10.0%, enrichment/lift = 3.54x)
+  (7) Mean IG score of 'PTMA' in node: 0.0819 (population mean -0.0206, SD 0.0972; enrichment = +1.05 population-SD units above/below the population mean)
+
+Node 118 (depth 6)
+  (1) Split conditions: RPL41 > 0.274 AND TUBA1C > 0.588 AND TUBB4B > 0.489 AND HNRNPA2B1 <= 0.333 AND RPLP0 > 0.169 AND TUBB4B <= 2.540
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 > 0.274  (local Gini-reduction contribution: 0.1041)
+      2. TUBA1C > 0.588  (local Gini-reduction contribution: 0.0190)
+      3. TUBB4B > 0.489  (local Gini-reduction contribution: 0.0038)
+      4. HNRNPA2B1 <= 0.333  (local Gini-reduction contribution: 0.0011)
+      5. RPLP0 > 0.169  (local Gini-reduction contribution: 0.0005)
+      6. TUBB4B <= 2.540  (local Gini-reduction contribution: 0.0003)
+  (2) Node depth: 6
+  (3) Support: 220 cells (0.73% of total population)
+  (4) Node Gini impurity: 0.4455
+  (5) Gini reduction from originating split: 0.0158
+  (6) Target-cell fraction: 33.2% (population rate 10.0%, enrichment/lift = 3.32x)
+  (7) Mean IG score of 'PTMA' in node: 0.0770 (population mean -0.0206, SD 0.0972; enrichment = +1.00 population-SD units above/below the population mean)
+
+Node 62 (depth 6)
+  (1) Split conditions: RPL41 <= 0.274 AND HNRNPA2B1 > 0.333 AND TUBB4B > 0.489 AND RPS18 > -0.272 AND HNRNPA2B1 > 0.983 AND PABPC1 <= 0.503
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 <= 0.274  (local Gini-reduction contribution: 0.1041)
+      2. HNRNPA2B1 > 0.333  (local Gini-reduction contribution: 0.0157)
+      3. TUBB4B > 0.489  (local Gini-reduction contribution: 0.0043)
+      4. RPS18 > -0.272  (local Gini-reduction contribution: 0.0009)
+      5. HNRNPA2B1 > 0.983  (local Gini-reduction contribution: 0.0006)
+      6. PABPC1 <= 0.503  (local Gini-reduction contribution: 0.0004)
+  (2) Node depth: 6
+  (3) Support: 180 cells (0.60% of total population)
+  (4) Node Gini impurity: 0.4829
+  (5) Gini reduction from originating split: 0.0246
+  (6) Target-cell fraction: 26.7% (population rate 10.0%, enrichment/lift = 2.67x)
+  (7) Mean IG score of 'PTMA' in node: 0.0634 (population mean -0.0206, SD 0.0972; enrichment = +0.86 population-SD units above/below the population mean)
+
+Node 91 (depth 6)
+  (1) Split conditions: RPL41 > 0.274 AND TUBA1C <= 0.588 AND HNRNPA2B1 > 0.983 AND TUBB4B > 0.489 AND RPL41 <= 1.126 AND PABPC1 <= 1.916
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 > 0.274  (local Gini-reduction contribution: 0.1041)
+      2. TUBA1C <= 0.588  (local Gini-reduction contribution: 0.0190)
+      3. HNRNPA2B1 > 0.983  (local Gini-reduction contribution: 0.0062)
+      4. TUBB4B > 0.489  (local Gini-reduction contribution: 0.0009)
+      5. RPL41 <= 1.126  (local Gini-reduction contribution: 0.0004)
+      6. PABPC1 <= 1.916  (local Gini-reduction contribution: 0.0002)
+  (2) Node depth: 6
+  (3) Support: 235 cells (0.78% of total population)
+  (4) Node Gini impurity: 0.4924
+  (5) Gini reduction from originating split: 0.0163
+  (6) Target-cell fraction: 24.3% (population rate 10.0%, enrichment/lift = 2.43x)
+  (7) Mean IG score of 'PTMA' in node: 0.0636 (population mean -0.0206, SD 0.0972; enrichment = +0.87 population-SD units above/below the population mean)
+
+Node 85 (depth 6)
+  (1) Split conditions: RPL41 > 0.274 AND TUBA1C <= 0.588 AND HNRNPA2B1 > 0.983 AND TUBB4B <= 0.489 AND RPS27 <= 1.806 AND HNRNPA2B1 > 1.308
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 > 0.274  (local Gini-reduction contribution: 0.1041)
+      2. TUBA1C <= 0.588  (local Gini-reduction contribution: 0.0190)
+      3. HNRNPA2B1 > 0.983  (local Gini-reduction contribution: 0.0062)
+      4. RPS27 <= 1.806  (local Gini-reduction contribution: 0.0010)
+      5. TUBB4B <= 0.489  (local Gini-reduction contribution: 0.0009)
+      6. HNRNPA2B1 > 1.308  (local Gini-reduction contribution: 0.0004)
+  (2) Node depth: 6
+  (3) Support: 457 cells (1.52% of total population)
+  (4) Node Gini impurity: 0.4984
+  (5) Gini reduction from originating split: 0.0155
+  (6) Target-cell fraction: 21.9% (population rate 10.0%, enrichment/lift = 2.19x)
+  (7) Mean IG score of 'PTMA' in node: 0.0557 (population mean -0.0206, SD 0.0972; enrichment = +0.79 population-SD units above/below the population mean)
+
+Node 76 (depth 6)
+  (1) Split conditions: RPL41 > 0.274 AND TUBA1C <= 0.588 AND HNRNPA2B1 <= 0.983 AND PABPC1 > 1.351 AND TUBB4B <= 0.489 AND ALDOA <= 1.790
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 > 0.274  (local Gini-reduction contribution: 0.1041)
+      2. TUBA1C <= 0.588  (local Gini-reduction contribution: 0.0190)
+      3. HNRNPA2B1 <= 0.983  (local Gini-reduction contribution: 0.0062)
+      4. PABPC1 > 1.351  (local Gini-reduction contribution: 0.0030)
+      5. TUBB4B <= 0.489  (local Gini-reduction contribution: 0.0006)
+      6. ALDOA <= 1.790  (local Gini-reduction contribution: 0.0005)
+  (2) Node depth: 6
+  (3) Support: 432 cells (1.44% of total population)
+  (4) Node Gini impurity: 0.4997
+  (5) Gini reduction from originating split: 0.0261
+  (6) Target-cell fraction: 20.8% (population rate 10.0%, enrichment/lift = 2.08x)
+  (7) Mean IG score of 'PTMA' in node: 0.0513 (population mean -0.0206, SD 0.0972; enrichment = +0.74 population-SD units above/below the population mean)
+
+Node 107 (depth 6)
+  (1) Split conditions: RPL41 > 0.274 AND TUBA1C > 0.588 AND TUBB4B <= 0.489 AND HNRNPA2B1 > 0.658 AND HDGF <= 1.280 AND NFIX <= 0.680
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 > 0.274  (local Gini-reduction contribution: 0.1041)
+      2. TUBA1C > 0.588  (local Gini-reduction contribution: 0.0190)
+      3. TUBB4B <= 0.489  (local Gini-reduction contribution: 0.0038)
+      4. HNRNPA2B1 > 0.658  (local Gini-reduction contribution: 0.0013)
+      5. NFIX <= 0.680  (local Gini-reduction contribution: 0.0005)
+      6. HDGF <= 1.280  (local Gini-reduction contribution: 0.0004)
+  (2) Node depth: 6
+  (3) Support: 221 cells (0.74% of total population)
+  (4) Node Gini impurity: 0.4997
+  (5) Gini reduction from originating split: 0.0201
+  (6) Target-cell fraction: 20.8% (population rate 10.0%, enrichment/lift = 2.08x)
+  (7) Mean IG score of 'PTMA' in node: 0.0621 (population mean -0.0206, SD 0.0972; enrichment = +0.85 population-SD units above/below the population mean)
+
+Node 103 (depth 6)
+  (1) Split conditions: RPL41 > 0.274 AND TUBA1C > 0.588 AND TUBB4B <= 0.489 AND HNRNPA2B1 <= 0.658 AND RPLP0 > 0.444 AND HDGF <= 0.720
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 > 0.274  (local Gini-reduction contribution: 0.1041)
+      2. TUBA1C > 0.588  (local Gini-reduction contribution: 0.0190)
+      3. TUBB4B <= 0.489  (local Gini-reduction contribution: 0.0038)
+      4. HNRNPA2B1 <= 0.658  (local Gini-reduction contribution: 0.0013)
+      5. RPLP0 > 0.444  (local Gini-reduction contribution: 0.0006)
+      6. HDGF <= 0.720  (local Gini-reduction contribution: 0.0005)
+  (2) Node depth: 6
+  (3) Support: 305 cells (1.02% of total population)
+  (4) Node Gini impurity: 0.4991
+  (5) Gini reduction from originating split: 0.0214
+  (6) Target-cell fraction: 18.7% (population rate 10.0%, enrichment/lift = 1.87x)
+  (7) Mean IG score of 'PTMA' in node: 0.0452 (population mean -0.0206, SD 0.0972; enrichment = +0.68 population-SD units above/below the population mean)
+
+Node 47 (depth 6)
+  (1) Split conditions: RPL41 <= 0.274 AND HNRNPA2B1 > 0.333 AND TUBB4B <= 0.489 AND TUBA1C > -0.342 AND RPLP0 > 0.719 AND HDGF <= 1.280
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 <= 0.274  (local Gini-reduction contribution: 0.1041)
+      2. HNRNPA2B1 > 0.333  (local Gini-reduction contribution: 0.0157)
+      3. TUBB4B <= 0.489  (local Gini-reduction contribution: 0.0043)
+      4. TUBA1C > -0.342  (local Gini-reduction contribution: 0.0016)
+      5. RPLP0 > 0.719  (local Gini-reduction contribution: 0.0009)
+      6. HDGF <= 1.280  (local Gini-reduction contribution: 0.0003)
+  (2) Node depth: 6
+  (3) Support: 179 cells (0.60% of total population)
+  (4) Node Gini impurity: 0.4961
+  (5) Gini reduction from originating split: 0.0289
+  (6) Target-cell fraction: 17.3% (population rate 10.0%, enrichment/lift = 1.73x)
+  (7) Mean IG score of 'PTMA' in node: 0.0408 (population mean -0.0206, SD 0.0972; enrichment = +0.63 population-SD units above/below the population mean)
+
+Node 45 (depth 6)
+  (1) Split conditions: RPL41 <= 0.274 AND HNRNPA2B1 > 0.333 AND TUBB4B <= 0.489 AND TUBA1C > -0.342 AND RPLP0 <= 0.719 AND PABPC1 > 0.645
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 <= 0.274  (local Gini-reduction contribution: 0.1041)
+      2. HNRNPA2B1 > 0.333  (local Gini-reduction contribution: 0.0157)
+      3. TUBB4B <= 0.489  (local Gini-reduction contribution: 0.0043)
+      4. TUBA1C > -0.342  (local Gini-reduction contribution: 0.0016)
+      5. RPLP0 <= 0.719  (local Gini-reduction contribution: 0.0009)
+      6. PABPC1 > 0.645  (local Gini-reduction contribution: 0.0006)
+  (2) Node depth: 6
+  (3) Support: 222 cells (0.74% of total population)
+  (4) Node Gini impurity: 0.4955
+  (5) Gini reduction from originating split: 0.0197
+  (6) Target-cell fraction: 17.1% (population rate 10.0%, enrichment/lift = 1.71x)
+  (7) Mean IG score of 'PTMA' in node: 0.0370 (population mean -0.0206, SD 0.0972; enrichment = +0.59 population-SD units above/below the population mean)
+
+Node 73 (depth 6)
+  (1) Split conditions: RPL41 > 0.274 AND TUBA1C <= 0.588 AND HNRNPA2B1 <= 0.983 AND PABPC1 <= 1.351 AND TUBB4B > -0.194 AND NFIX > -0.364
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 > 0.274  (local Gini-reduction contribution: 0.1041)
+      2. TUBA1C <= 0.588  (local Gini-reduction contribution: 0.0190)
+      3. HNRNPA2B1 <= 0.983  (local Gini-reduction contribution: 0.0062)
+      4. PABPC1 <= 1.351  (local Gini-reduction contribution: 0.0030)
+      5. TUBB4B > -0.194  (local Gini-reduction contribution: 0.0020)
+      6. NFIX > -0.364  (local Gini-reduction contribution: 0.0015)
+  (2) Node depth: 6
+  (3) Support: 1188 cells (3.96% of total population)
+  (4) Node Gini impurity: 0.4951
+  (5) Gini reduction from originating split: 0.0254
+  (6) Target-cell fraction: 17.0% (population rate 10.0%, enrichment/lift = 1.70x)
+  (7) Mean IG score of 'PTMA' in node: 0.0422 (population mean -0.0206, SD 0.0972; enrichment = +0.65 population-SD units above/below the population mean)
+
+Node 59 (depth 6)
+  (1) Split conditions: RPL41 <= 0.274 AND HNRNPA2B1 > 0.333 AND TUBB4B > 0.489 AND RPS18 > -0.272 AND HNRNPA2B1 <= 0.983 AND TUBA1C <= 2.448
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 <= 0.274  (local Gini-reduction contribution: 0.1041)
+      2. HNRNPA2B1 > 0.333  (local Gini-reduction contribution: 0.0157)
+      3. TUBB4B > 0.489  (local Gini-reduction contribution: 0.0043)
+      4. RPS18 > -0.272  (local Gini-reduction contribution: 0.0009)
+      5. HNRNPA2B1 <= 0.983  (local Gini-reduction contribution: 0.0006)
+      6. TUBA1C <= 2.448  (local Gini-reduction contribution: 0.0003)
+  (2) Node depth: 6
+  (3) Support: 261 cells (0.87% of total population)
+  (4) Node Gini impurity: 0.4946
+  (5) Gini reduction from originating split: 0.0248
+  (6) Target-cell fraction: 16.9% (population rate 10.0%, enrichment/lift = 1.69x)
+  (7) Mean IG score of 'PTMA' in node: 0.0432 (population mean -0.0206, SD 0.0972; enrichment = +0.66 population-SD units above/below the population mean)
+
+Node 84 (depth 6)
+  (1) Split conditions: RPL41 > 0.274 AND TUBA1C <= 0.588 AND HNRNPA2B1 > 0.983 AND TUBB4B <= 0.489 AND RPS27 <= 1.806 AND HNRNPA2B1 <= 1.308
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 > 0.274  (local Gini-reduction contribution: 0.1041)
+      2. TUBA1C <= 0.588  (local Gini-reduction contribution: 0.0190)
+      3. HNRNPA2B1 > 0.983  (local Gini-reduction contribution: 0.0062)
+      4. RPS27 <= 1.806  (local Gini-reduction contribution: 0.0010)
+      5. TUBB4B <= 0.489  (local Gini-reduction contribution: 0.0009)
+      6. HNRNPA2B1 <= 1.308  (local Gini-reduction contribution: 0.0004)
+  (2) Node depth: 6
+  (3) Support: 248 cells (0.83% of total population)
+  (4) Node Gini impurity: 0.4471
+  (5) Gini reduction from originating split: 0.0155
+  (6) Target-cell fraction: 11.3% (population rate 10.0%, enrichment/lift = 1.13x)
+  (7) Mean IG score of 'PTMA' in node: 0.0356 (population mean -0.0206, SD 0.0972; enrichment = +0.58 population-SD units above/below the population mean)
+
+Node 100 (depth 6)
+  (1) Split conditions: RPL41 > 0.274 AND TUBA1C > 0.588 AND TUBB4B <= 0.489 AND HNRNPA2B1 <= 0.658 AND RPLP0 <= 0.444 AND TUBA1C <= 2.913
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 > 0.274  (local Gini-reduction contribution: 0.1041)
+      2. TUBA1C > 0.588  (local Gini-reduction contribution: 0.0190)
+      3. TUBB4B <= 0.489  (local Gini-reduction contribution: 0.0038)
+      4. HNRNPA2B1 <= 0.658  (local Gini-reduction contribution: 0.0013)
+      5. RPLP0 <= 0.444  (local Gini-reduction contribution: 0.0006)
+      6. TUBA1C <= 2.913  (local Gini-reduction contribution: 0.0005)
+  (2) Node depth: 6
+  (3) Support: 291 cells (0.97% of total population)
+  (4) Node Gini impurity: 0.4373
+  (5) Gini reduction from originating split: 0.0442
+  (6) Target-cell fraction: 10.7% (population rate 10.0%, enrichment/lift = 1.07x)
+  (7) Mean IG score of 'PTMA' in node: 0.0296 (population mean -0.0206, SD 0.0972; enrichment = +0.52 population-SD units above/below the population mean)
+
+Node 70 (depth 6)
+  (1) Split conditions: RPL41 > 0.274 AND TUBA1C <= 0.588 AND HNRNPA2B1 <= 0.983 AND PABPC1 <= 1.351 AND TUBB4B <= -0.194 AND RPL41 > 0.984
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 > 0.274  (local Gini-reduction contribution: 0.1041)
+      2. TUBA1C <= 0.588  (local Gini-reduction contribution: 0.0190)
+      3. HNRNPA2B1 <= 0.983  (local Gini-reduction contribution: 0.0062)
+      4. PABPC1 <= 1.351  (local Gini-reduction contribution: 0.0030)
+      5. TUBB4B <= -0.194  (local Gini-reduction contribution: 0.0020)
+      6. RPL41 > 0.984  (local Gini-reduction contribution: 0.0006)
+  (2) Node depth: 6
+  (3) Support: 505 cells (1.68% of total population)
+  (4) Node Gini impurity: 0.4313
+  (5) Gini reduction from originating split: 0.0118
+  (6) Target-cell fraction: 10.3% (population rate 10.0%, enrichment/lift = 1.03x)
+  (7) Mean IG score of 'PTMA' in node: 0.0253 (population mean -0.0206, SD 0.0972; enrichment = +0.47 population-SD units above/below the population mean)
+
+Node 24 (depth 6)
+  (1) Split conditions: RPL41 <= 0.274 AND HNRNPA2B1 <= 0.333 AND TUBA1C > 0.123 AND TUBB4B <= 1.173 AND PABPC1 > 0.362 AND MUCL1 <= 0.579
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 <= 0.274  (local Gini-reduction contribution: 0.1041)
+      2. HNRNPA2B1 <= 0.333  (local Gini-reduction contribution: 0.0157)
+      3. TUBA1C > 0.123  (local Gini-reduction contribution: 0.0045)
+      4. TUBB4B <= 1.173  (local Gini-reduction contribution: 0.0020)
+      5. PABPC1 > 0.362  (local Gini-reduction contribution: 0.0014)
+      6. MUCL1 <= 0.579  (local Gini-reduction contribution: 0.0004)
+  (2) Node depth: 6
+  (3) Support: 351 cells (1.17% of total population)
+  (4) Node Gini impurity: 0.4087
+  (5) Gini reduction from originating split: 0.0212
+  (6) Target-cell fraction: 9.1% (population rate 10.0%, enrichment/lift = 0.91x)
+  (7) Mean IG score of 'PTMA' in node: 0.0179 (population mean -0.0206, SD 0.0972; enrichment = +0.40 population-SD units above/below the population mean)
+
+Node 44 (depth 6)
+  (1) Split conditions: RPL41 <= 0.274 AND HNRNPA2B1 > 0.333 AND TUBB4B <= 0.489 AND TUBA1C > -0.342 AND RPLP0 <= 0.719 AND PABPC1 <= 0.645
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 <= 0.274  (local Gini-reduction contribution: 0.1041)
+      2. HNRNPA2B1 > 0.333  (local Gini-reduction contribution: 0.0157)
+      3. TUBB4B <= 0.489  (local Gini-reduction contribution: 0.0043)
+      4. TUBA1C > -0.342  (local Gini-reduction contribution: 0.0016)
+      5. RPLP0 <= 0.719  (local Gini-reduction contribution: 0.0009)
+      6. PABPC1 <= 0.645  (local Gini-reduction contribution: 0.0006)
+  (2) Node depth: 6
+  (3) Support: 772 cells (2.57% of total population)
+  (4) Node Gini impurity: 0.3517
+  (5) Gini reduction from originating split: 0.0197
+  (6) Target-cell fraction: 6.9% (population rate 10.0%, enrichment/lift = 0.69x)
+  (7) Mean IG score of 'PTMA' in node: 0.0038 (population mean -0.0206, SD 0.0972; enrichment = +0.25 population-SD units above/below the population mean)
+
+Node 72 (depth 6)
+  (1) Split conditions: RPL41 > 0.274 AND TUBA1C <= 0.588 AND HNRNPA2B1 <= 0.983 AND PABPC1 <= 1.351 AND TUBB4B > -0.194 AND NFIX <= -0.364
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 > 0.274  (local Gini-reduction contribution: 0.1041)
+      2. TUBA1C <= 0.588  (local Gini-reduction contribution: 0.0190)
+      3. HNRNPA2B1 <= 0.983  (local Gini-reduction contribution: 0.0062)
+      4. PABPC1 <= 1.351  (local Gini-reduction contribution: 0.0030)
+      5. TUBB4B > -0.194  (local Gini-reduction contribution: 0.0020)
+      6. NFIX <= -0.364  (local Gini-reduction contribution: 0.0015)
+  (2) Node depth: 6
+  (3) Support: 469 cells (1.56% of total population)
+  (4) Node Gini impurity: 0.3001
+  (5) Gini reduction from originating split: 0.0254
+  (6) Target-cell fraction: 5.3% (population rate 10.0%, enrichment/lift = 0.53x)
+  (7) Mean IG score of 'PTMA' in node: 0.0120 (population mean -0.0206, SD 0.0972; enrichment = +0.34 population-SD units above/below the population mean)
+
+Node 14 (depth 6)
+  (1) Split conditions: RPL41 <= 0.274 AND HNRNPA2B1 <= 0.333 AND TUBA1C <= 0.123 AND PABPC1 > -0.344 AND HDGF <= 1.280 AND TUBB4B > -0.194
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 <= 0.274  (local Gini-reduction contribution: 0.1041)
+      2. HNRNPA2B1 <= 0.333  (local Gini-reduction contribution: 0.0157)
+      3. TUBA1C <= 0.123  (local Gini-reduction contribution: 0.0045)
+      4. PABPC1 > -0.344  (local Gini-reduction contribution: 0.0014)
+      5. HDGF <= 1.280  (local Gini-reduction contribution: 0.0010)
+      6. TUBB4B > -0.194  (local Gini-reduction contribution: 0.0006)
+  (2) Node depth: 6
+  (3) Support: 1294 cells (4.31% of total population)
+  (4) Node Gini impurity: 0.2628
+  (5) Gini reduction from originating split: 0.0054
+  (6) Target-cell fraction: 4.4% (population rate 10.0%, enrichment/lift = 0.44x)
+  (7) Mean IG score of 'PTMA' in node: -0.0139 (population mean -0.0206, SD 0.0972; enrichment = +0.07 population-SD units above/below the population mean)
+
+Node 69 (depth 6)
+  (1) Split conditions: RPL41 > 0.274 AND TUBA1C <= 0.588 AND HNRNPA2B1 <= 0.983 AND PABPC1 <= 1.351 AND TUBB4B <= -0.194 AND RPL41 <= 0.984
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 > 0.274  (local Gini-reduction contribution: 0.1041)
+      2. TUBA1C <= 0.588  (local Gini-reduction contribution: 0.0190)
+      3. HNRNPA2B1 <= 0.983  (local Gini-reduction contribution: 0.0062)
+      4. PABPC1 <= 1.351  (local Gini-reduction contribution: 0.0030)
+      5. TUBB4B <= -0.194  (local Gini-reduction contribution: 0.0020)
+      6. RPL41 <= 0.984  (local Gini-reduction contribution: 0.0006)
+  (2) Node depth: 6
+  (3) Support: 1288 cells (4.29% of total population)
+  (4) Node Gini impurity: 0.2535
+  (5) Gini reduction from originating split: 0.0118
+  (6) Target-cell fraction: 4.2% (population rate 10.0%, enrichment/lift = 0.42x)
+  (7) Mean IG score of 'PTMA' in node: 0.0007 (population mean -0.0206, SD 0.0972; enrichment = +0.22 population-SD units above/below the population mean)
+
+Node 21 (depth 6)
+  (1) Split conditions: RPL41 <= 0.274 AND HNRNPA2B1 <= 0.333 AND TUBA1C > 0.123 AND TUBB4B <= 1.173 AND PABPC1 <= 0.362 AND TUBA1C <= 2.913
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 <= 0.274  (local Gini-reduction contribution: 0.1041)
+      2. HNRNPA2B1 <= 0.333  (local Gini-reduction contribution: 0.0157)
+      3. TUBA1C > 0.123  (local Gini-reduction contribution: 0.0045)
+      4. TUBB4B <= 1.173  (local Gini-reduction contribution: 0.0020)
+      5. PABPC1 <= 0.362  (local Gini-reduction contribution: 0.0014)
+      6. TUBA1C <= 2.913  (local Gini-reduction contribution: 0.0005)
+  (2) Node depth: 6
+  (3) Support: 1632 cells (5.44% of total population)
+  (4) Node Gini impurity: 0.1928
+  (5) Gini reduction from originating split: 0.0097
+  (6) Target-cell fraction: 2.9% (population rate 10.0%, enrichment/lift = 0.29x)
+  (7) Mean IG score of 'PTMA' in node: -0.0246 (population mean -0.0206, SD 0.0972; enrichment = -0.04 population-SD units above/below the population mean)
+
+Node 37 (depth 6)
+  (1) Split conditions: RPL41 <= 0.274 AND HNRNPA2B1 > 0.333 AND TUBB4B <= 0.489 AND TUBA1C <= -0.342 AND NOP56 <= 0.850 AND HDGF <= 1.280
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 <= 0.274  (local Gini-reduction contribution: 0.1041)
+      2. HNRNPA2B1 > 0.333  (local Gini-reduction contribution: 0.0157)
+      3. TUBB4B <= 0.489  (local Gini-reduction contribution: 0.0043)
+      4. TUBA1C <= -0.342  (local Gini-reduction contribution: 0.0016)
+      5. NOP56 <= 0.850  (local Gini-reduction contribution: 0.0004)
+      6. HDGF <= 1.280  (local Gini-reduction contribution: 0.0002)
+  (2) Node depth: 6
+  (3) Support: 747 cells (2.49% of total population)
+  (4) Node Gini impurity: 0.1151
+  (5) Gini reduction from originating split: 0.0102
+  (6) Target-cell fraction: 1.6% (population rate 10.0%, enrichment/lift = 0.16x)
+  (7) Mean IG score of 'PTMA' in node: -0.0204 (population mean -0.0206, SD 0.0972; enrichment = +0.00 population-SD units above/below the population mean)
+
+Node 13 (depth 6)
+  (1) Split conditions: RPL41 <= 0.274 AND HNRNPA2B1 <= 0.333 AND TUBA1C <= 0.123 AND PABPC1 > -0.344 AND HDGF <= 1.280 AND TUBB4B <= -0.194
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 <= 0.274  (local Gini-reduction contribution: 0.1041)
+      2. HNRNPA2B1 <= 0.333  (local Gini-reduction contribution: 0.0157)
+      3. TUBA1C <= 0.123  (local Gini-reduction contribution: 0.0045)
+      4. PABPC1 > -0.344  (local Gini-reduction contribution: 0.0014)
+      5. HDGF <= 1.280  (local Gini-reduction contribution: 0.0010)
+      6. TUBB4B <= -0.194  (local Gini-reduction contribution: 0.0006)
+  (2) Node depth: 6
+  (3) Support: 2841 cells (9.47% of total population)
+  (4) Node Gini impurity: 0.0858
+  (5) Gini reduction from originating split: 0.0054
+  (6) Target-cell fraction: 1.2% (population rate 10.0%, enrichment/lift = 0.12x)
+  (7) Mean IG score of 'PTMA' in node: -0.0336 (population mean -0.0206, SD 0.0972; enrichment = -0.13 population-SD units above/below the population mean)
+
+Node 9 (depth 6)
+  (1) Split conditions: RPL41 <= 0.274 AND HNRNPA2B1 <= 0.333 AND TUBA1C <= 0.123 AND PABPC1 <= -0.344 AND RPS7 > -0.387 AND CKS2 <= 1.870
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 <= 0.274  (local Gini-reduction contribution: 0.1041)
+      2. HNRNPA2B1 <= 0.333  (local Gini-reduction contribution: 0.0157)
+      3. TUBA1C <= 0.123  (local Gini-reduction contribution: 0.0045)
+      4. PABPC1 <= -0.344  (local Gini-reduction contribution: 0.0014)
+      5. CKS2 <= 1.870  (local Gini-reduction contribution: 0.0002)
+      6. RPS7 > -0.387  (local Gini-reduction contribution: 0.0001)
+  (2) Node depth: 6
+  (3) Support: 1698 cells (5.66% of total population)
+  (4) Node Gini impurity: 0.0706
+  (5) Gini reduction from originating split: 0.0042
+  (6) Target-cell fraction: 0.9% (population rate 10.0%, enrichment/lift = 0.09x)
+  (7) Mean IG score of 'PTMA' in node: -0.0467 (population mean -0.0206, SD 0.0972; enrichment = -0.27 population-SD units above/below the population mean)
+
+Node 6 (depth 6)
+  (1) Split conditions: RPL41 <= 0.274 AND HNRNPA2B1 <= 0.333 AND TUBA1C <= 0.123 AND PABPC1 <= -0.344 AND RPS7 <= -0.387 AND ARF4 <= 2.411
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. RPL41 <= 0.274  (local Gini-reduction contribution: 0.1041)
+      2. HNRNPA2B1 <= 0.333  (local Gini-reduction contribution: 0.0157)
+      3. TUBA1C <= 0.123  (local Gini-reduction contribution: 0.0045)
+      4. PABPC1 <= -0.344  (local Gini-reduction contribution: 0.0014)
+      5. RPS7 <= -0.387  (local Gini-reduction contribution: 0.0001)
+      6. ARF4 <= 2.411  (local Gini-reduction contribution: 0.0000)
+  (2) Node depth: 6
+  (3) Support: 9498 cells (31.66% of total population)
+  (4) Node Gini impurity: 0.0008
+  (5) Gini reduction from originating split: 0.0001
+  (6) Target-cell fraction: 0.0% (population rate 10.0%, enrichment/lift = 0.00x)
+  (7) Mean IG score of 'PTMA' in node: -0.1084 (population mean -0.0206, SD 0.0972; enrichment = -0.90 population-SD units above/below the population mean)
+
+
+--- LOW-SUPPORT / FLAGGED NODES (for reference only, not primary evidence) ---
+Node 7 (depth 6): RPL41 <= 0.274 AND HNRNPA2B1 <= 0.333 AND TUBA1C <= 0.123 AND PABPC1 <= -0.344 AND RPS7 <= -0.387 AND ARF4 > 2.411 [20 cells, target lift 0.50x] -- below min support (150 cells)
+Node 10 (depth 6): RPL41 <= 0.274 AND HNRNPA2B1 <= 0.333 AND TUBA1C <= 0.123 AND PABPC1 <= -0.344 AND RPS7 > -0.387 AND CKS2 > 1.870 [22 cells, target lift 1.36x] -- below min support (150 cells)
+Node 16 (depth 6): RPL41 <= 0.274 AND HNRNPA2B1 <= 0.333 AND TUBA1C <= 0.123 AND PABPC1 > -0.344 AND HDGF > 1.280 AND SERHL2 <= 0.198 [132 cells, target lift 1.67x] -- below min support (150 cells)
+Node 17 (depth 6): RPL41 <= 0.274 AND HNRNPA2B1 <= 0.333 AND TUBA1C <= 0.123 AND PABPC1 > -0.344 AND HDGF > 1.280 AND SERHL2 > 0.198 [59 cells, target lift 0.34x] -- below min support (150 cells)
+Node 22 (depth 6): RPL41 <= 0.274 AND HNRNPA2B1 <= 0.333 AND TUBA1C > 0.123 AND TUBB4B <= 1.173 AND PABPC1 <= 0.362 AND TUBA1C > 2.913 [16 cells, target lift 3.12x] -- below min support (150 cells)
+Node 25 (depth 6): RPL41 <= 0.274 AND HNRNPA2B1 <= 0.333 AND TUBA1C > 0.123 AND TUBB4B <= 1.173 AND PABPC1 > 0.362 AND MUCL1 > 0.579 [121 cells, target lift 2.07x] -- below min support (150 cells)
+Node 28 (depth 6): RPL41 <= 0.274 AND HNRNPA2B1 <= 0.333 AND TUBA1C > 0.123 AND TUBB4B > 1.173 AND RPS27 <= -0.111 AND ARF4 <= -0.160 [53 cells, target lift 0.38x] -- below min support (150 cells)
+Node 29 (depth 6): RPL41 <= 0.274 AND HNRNPA2B1 <= 0.333 AND TUBA1C > 0.123 AND TUBB4B > 1.173 AND RPS27 <= -0.111 AND ARF4 > -0.160 [34 cells, target lift 2.06x] -- below min support (150 cells)
+Node 31 (depth 6): RPL41 <= 0.274 AND HNRNPA2B1 <= 0.333 AND TUBA1C > 0.123 AND TUBB4B > 1.173 AND RPS27 > -0.111 AND HDGF <= 1.280 [103 cells, target lift 2.33x] -- below min support (150 cells)
+Node 32 (depth 6): RPL41 <= 0.274 AND HNRNPA2B1 <= 0.333 AND TUBA1C > 0.123 AND TUBB4B > 1.173 AND RPS27 > -0.111 AND HDGF > 1.280 [25 cells, target lift 6.00x] -- below min support (150 cells)
+Node 38 (depth 6): RPL41 <= 0.274 AND HNRNPA2B1 > 0.333 AND TUBB4B <= 0.489 AND TUBA1C <= -0.342 AND NOP56 <= 0.850 AND HDGF > 1.280 [59 cells, target lift 1.02x] -- below min support (150 cells)
+Node 40 (depth 6): RPL41 <= 0.274 AND HNRNPA2B1 > 0.333 AND TUBB4B <= 0.489 AND TUBA1C <= -0.342 AND NOP56 > 0.850 AND HNRNPA2B1 <= 0.658 [61 cells, target lift 0.00x] -- below min support (150 cells)
+Node 41 (depth 6): RPL41 <= 0.274 AND HNRNPA2B1 > 0.333 AND TUBB4B <= 0.489 AND TUBA1C <= -0.342 AND NOP56 > 0.850 AND HNRNPA2B1 > 0.658 [99 cells, target lift 1.52x] -- below min support (150 cells)
+Node 48 (depth 6): RPL41 <= 0.274 AND HNRNPA2B1 > 0.333 AND TUBB4B <= 0.489 AND TUBA1C > -0.342 AND RPLP0 > 0.719 AND HDGF > 1.280 [51 cells, target lift 3.92x] -- below min support (150 cells)
+Node 52 (depth 6): RPL41 <= 0.274 AND HNRNPA2B1 > 0.333 AND TUBB4B > 0.489 AND RPS18 <= -0.272 AND RPS27 <= 0.272 AND SERHL2 <= -0.367 [71 cells, target lift 1.55x] -- below min support (150 cells)
+Node 53 (depth 6): RPL41 <= 0.274 AND HNRNPA2B1 > 0.333 AND TUBB4B > 0.489 AND RPS18 <= -0.272 AND RPS27 <= 0.272 AND SERHL2 > -0.367 [118 cells, target lift 0.34x] -- below min support (150 cells)
+Node 55 (depth 6): RPL41 <= 0.274 AND HNRNPA2B1 > 0.333 AND TUBB4B > 0.489 AND RPS18 <= -0.272 AND RPS27 > 0.272 AND PKM <= -0.372 [23 cells, target lift 0.43x] -- below min support (150 cells)
+Node 56 (depth 6): RPL41 <= 0.274 AND HNRNPA2B1 > 0.333 AND TUBB4B > 0.489 AND RPS18 <= -0.272 AND RPS27 > 0.272 AND PKM > -0.372 [50 cells, target lift 3.40x] -- below min support (150 cells)
+Node 60 (depth 6): RPL41 <= 0.274 AND HNRNPA2B1 > 0.333 AND TUBB4B > 0.489 AND RPS18 > -0.272 AND HNRNPA2B1 <= 0.983 AND TUBA1C > 2.448 [20 cells, target lift 5.00x] -- below min support (150 cells)
+Node 63 (depth 6): RPL41 <= 0.274 AND HNRNPA2B1 > 0.333 AND TUBB4B > 0.489 AND RPS18 > -0.272 AND HNRNPA2B1 > 0.983 AND PABPC1 > 0.503 [130 cells, target lift 5.23x] -- below min support (150 cells)
+Node 77 (depth 6): RPL41 > 0.274 AND TUBA1C <= 0.588 AND HNRNPA2B1 <= 0.983 AND PABPC1 > 1.351 AND TUBB4B <= 0.489 AND ALDOA > 1.790 [96 cells, target lift 0.52x] -- below min support (150 cells)
+Node 79 (depth 6): RPL41 > 0.274 AND TUBA1C <= 0.588 AND HNRNPA2B1 <= 0.983 AND PABPC1 > 1.351 AND TUBB4B > 0.489 AND TUBA1C <= -0.342 [90 cells, target lift 1.89x] -- below min support (150 cells)
+Node 80 (depth 6): RPL41 > 0.274 AND TUBA1C <= 0.588 AND HNRNPA2B1 <= 0.983 AND PABPC1 > 1.351 AND TUBB4B > 0.489 AND TUBA1C > -0.342 [144 cells, target lift 4.24x] -- below min support (150 cells)
+Node 87 (depth 6): RPL41 > 0.274 AND TUBA1C <= 0.588 AND HNRNPA2B1 > 0.983 AND TUBB4B <= 0.489 AND RPS27 > 1.806 AND FABP7 <= 0.347 [92 cells, target lift 2.93x] -- below min support (150 cells)
+Node 88 (depth 6): RPL41 > 0.274 AND TUBA1C <= 0.588 AND HNRNPA2B1 > 0.983 AND TUBB4B <= 0.489 AND RPS27 > 1.806 AND FABP7 > 0.347 [79 cells, target lift 5.32x] -- below min support (150 cells)
+Node 92 (depth 6): RPL41 > 0.274 AND TUBA1C <= 0.588 AND HNRNPA2B1 > 0.983 AND TUBB4B > 0.489 AND RPL41 <= 1.126 AND PABPC1 > 1.916 [34 cells, target lift 5.00x] -- below min support (150 cells)
+Node 95 (depth 6): RPL41 > 0.274 AND TUBA1C <= 0.588 AND HNRNPA2B1 > 0.983 AND TUBB4B > 0.489 AND RPL41 > 1.126 AND ARF4 > 3.268 [16 cells, target lift 1.88x] -- below min support (150 cells)
+Node 101 (depth 6): RPL41 > 0.274 AND TUBA1C > 0.588 AND TUBB4B <= 0.489 AND HNRNPA2B1 <= 0.658 AND RPLP0 <= 0.444 AND TUBA1C > 2.913 [14 cells, target lift 5.71x] -- below min support (150 cells)
+Node 110 (depth 6): RPL41 > 0.274 AND TUBA1C > 0.588 AND TUBB4B <= 0.489 AND HNRNPA2B1 > 0.658 AND HDGF > 1.280 AND FTH1 <= 1.119 [140 cells, target lift 4.14x] -- below min support (150 cells)
+Node 111 (depth 6): RPL41 > 0.274 AND TUBA1C > 0.588 AND TUBB4B <= 0.489 AND HNRNPA2B1 > 0.658 AND HDGF > 1.280 AND FTH1 > 1.119 [101 cells, target lift 5.94x] -- below min support (150 cells)
+Node 115 (depth 6): RPL41 > 0.274 AND TUBA1C > 0.588 AND TUBB4B > 0.489 AND HNRNPA2B1 <= 0.333 AND RPLP0 <= 0.169 AND RPS7 <= 0.002 [35 cells, target lift 0.57x] -- below min support (150 cells)
+Node 116 (depth 6): RPL41 > 0.274 AND TUBA1C > 0.588 AND TUBB4B > 0.489 AND HNRNPA2B1 <= 0.333 AND RPLP0 <= 0.169 AND RPS7 > 0.002 [88 cells, target lift 2.39x] -- below min support (150 cells)
+Node 119 (depth 6): RPL41 > 0.274 AND TUBA1C > 0.588 AND TUBB4B > 0.489 AND HNRNPA2B1 <= 0.333 AND RPLP0 > 0.169 AND TUBB4B > 2.540 [68 cells, target lift 6.03x] -- below min support (150 cells)
+Node 122 (depth 6): RPL41 > 0.274 AND TUBA1C > 0.588 AND TUBB4B > 0.489 AND HNRNPA2B1 > 0.333 AND TUBB4B <= 1.856 AND COX8A <= -0.369 [95 cells, target lift 3.16x] -- below min support (150 cells)
+Node 125 (depth 6): RPL41 > 0.274 AND TUBA1C > 0.588 AND TUBB4B > 0.489 AND HNRNPA2B1 > 0.333 AND TUBB4B > 1.856 AND RPL39 <= -0.653 [11 cells, target lift 1.82x] -- below min support (150 cells)
+
+--- FULL DECISION TREE RAW RULES ---
+|--- RPL41 <= 0.27
+|   |--- HNRNPA2B1 <= 0.33
+|   |   |--- TUBA1C <= 0.12
+|   |   |   |--- PABPC1 <= -0.34
+|   |   |   |   |--- RPS7 <= -0.39
+|   |   |   |   |   |--- ARF4 <= 2.41
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- ARF4 >  2.41
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- RPS7 >  -0.39
+|   |   |   |   |   |--- CKS2 <= 1.87
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- CKS2 >  1.87
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |--- PABPC1 >  -0.34
+|   |   |   |   |--- HDGF <= 1.28
+|   |   |   |   |   |--- TUBB4B <= -0.19
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- TUBB4B >  -0.19
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- HDGF >  1.28
+|   |   |   |   |   |--- SERHL2 <= 0.20
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- SERHL2 >  0.20
+|   |   |   |   |   |   |--- class: 0
+|   |   |--- TUBA1C >  0.12
+|   |   |   |--- TUBB4B <= 1.17
+|   |   |   |   |--- PABPC1 <= 0.36
+|   |   |   |   |   |--- TUBA1C <= 2.91
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- TUBA1C >  2.91
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- PABPC1 >  0.36
+|   |   |   |   |   |--- MUCL1 <= 0.58
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- MUCL1 >  0.58
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |--- TUBB4B >  1.17
+|   |   |   |   |--- RPS27 <= -0.11
+|   |   |   |   |   |--- ARF4 <= -0.16
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- ARF4 >  -0.16
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- RPS27 >  -0.11
+|   |   |   |   |   |--- HDGF <= 1.28
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- HDGF >  1.28
+|   |   |   |   |   |   |--- class: 1
+|   |--- HNRNPA2B1 >  0.33
+|   |   |--- TUBB4B <= 0.49
+|   |   |   |--- TUBA1C <= -0.34
+|   |   |   |   |--- NOP56 <= 0.85
+|   |   |   |   |   |--- HDGF <= 1.28
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- HDGF >  1.28
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- NOP56 >  0.85
+|   |   |   |   |   |--- HNRNPA2B1 <= 0.66
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- HNRNPA2B1 >  0.66
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |--- TUBA1C >  -0.34
+|   |   |   |   |--- RPLP0 <= 0.72
+|   |   |   |   |   |--- PABPC1 <= 0.64
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- PABPC1 >  0.64
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- RPLP0 >  0.72
+|   |   |   |   |   |--- HDGF <= 1.28
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- HDGF >  1.28
+|   |   |   |   |   |   |--- class: 1
+|   |   |--- TUBB4B >  0.49
+|   |   |   |--- RPS18 <= -0.27
+|   |   |   |   |--- RPS27 <= 0.27
+|   |   |   |   |   |--- SERHL2 <= -0.37
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- SERHL2 >  -0.37
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- RPS27 >  0.27
+|   |   |   |   |   |--- PKM <= -0.37
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- PKM >  -0.37
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |--- RPS18 >  -0.27
+|   |   |   |   |--- HNRNPA2B1 <= 0.98
+|   |   |   |   |   |--- TUBA1C <= 2.45
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- TUBA1C >  2.45
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- HNRNPA2B1 >  0.98
+|   |   |   |   |   |--- PABPC1 <= 0.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- PABPC1 >  0.50
+|   |   |   |   |   |   |--- class: 1
+|--- RPL41 >  0.27
+|   |--- TUBA1C <= 0.59
+|   |   |--- HNRNPA2B1 <= 0.98
+|   |   |   |--- PABPC1 <= 1.35
+|   |   |   |   |--- TUBB4B <= -0.19
+|   |   |   |   |   |--- RPL41 <= 0.98
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- RPL41 >  0.98
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- TUBB4B >  -0.19
+|   |   |   |   |   |--- NFIX <= -0.36
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- NFIX >  -0.36
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |--- PABPC1 >  1.35
+|   |   |   |   |--- TUBB4B <= 0.49
+|   |   |   |   |   |--- ALDOA <= 1.79
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- ALDOA >  1.79
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- TUBB4B >  0.49
+|   |   |   |   |   |--- TUBA1C <= -0.34
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- TUBA1C >  -0.34
+|   |   |   |   |   |   |--- class: 1
+|   |   |--- HNRNPA2B1 >  0.98
+|   |   |   |--- TUBB4B <= 0.49
+|   |   |   |   |--- RPS27 <= 1.81
+|   |   |   |   |   |--- HNRNPA2B1 <= 1.31
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- HNRNPA2B1 >  1.31
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- RPS27 >  1.81
+|   |   |   |   |   |--- FABP7 <= 0.35
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- FABP7 >  0.35
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |--- TUBB4B >  0.49
+|   |   |   |   |--- RPL41 <= 1.13
+|   |   |   |   |   |--- PABPC1 <= 1.92
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- PABPC1 >  1.92
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- RPL41 >  1.13
+|   |   |   |   |   |--- ARF4 <= 3.27
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- ARF4 >  3.27
+|   |   |   |   |   |   |--- class: 0
+|   |--- TUBA1C >  0.59
+|   |   |--- TUBB4B <= 0.49
+|   |   |   |--- HNRNPA2B1 <= 0.66
+|   |   |   |   |--- RPLP0 <= 0.44
+|   |   |   |   |   |--- TUBA1C <= 2.91
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- TUBA1C >  2.91
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- RPLP0 >  0.44
+|   |   |   |   |   |--- HDGF <= 0.72
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- HDGF >  0.72
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |--- HNRNPA2B1 >  0.66
+|   |   |   |   |--- HDGF <= 1.28
+|   |   |   |   |   |--- NFIX <= 0.68
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- NFIX >  0.68
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- HDGF >  1.28
+|   |   |   |   |   |--- FTH1 <= 1.12
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- FTH1 >  1.12
+|   |   |   |   |   |   |--- class: 1
+|   |   |--- TUBB4B >  0.49
+|   |   |   |--- HNRNPA2B1 <= 0.33
+|   |   |   |   |--- RPLP0 <= 0.17
+|   |   |   |   |   |--- RPS7 <= 0.00
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- RPS7 >  0.00
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- RPLP0 >  0.17
+|   |   |   |   |   |--- TUBB4B <= 2.54
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- TUBB4B >  2.54
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |--- HNRNPA2B1 >  0.33
+|   |   |   |   |--- TUBB4B <= 1.86
+|   |   |   |   |   |--- COX8A <= -0.37
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- COX8A >  -0.37
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- TUBB4B >  1.86
+|   |   |   |   |   |--- RPL39 <= -0.65
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- RPL39 >  -0.65
+|   |   |   |   |   |   |--- class: 1
+--- TASK ---
+Based on the CANDIDATE NODES above, first explicitly state (a) the single BEST node for hypothesis generation and why, and (b) the 4 most important contexts (features/conditions) driving that conclusion. Then form rationale and hypotheses of the feature relationships (pathways) to explain HOW features and PTMA together associate with Ki-67. Highlight which zones are the most biologically robust based on support, enrichment, and impurity reduction (not Gini alone). Identify findings into two categories: 1. findings that directly confirm literature knowledge; 2. findings suggesting new testable mechanisms supported by literature. List the publications supporting the conclusions.
+
+FINAL OUTPUT REQUIREMENT: After the narrative, append exactly one fenced json code block with this structure, so your selections can be checked against the quantitative evidence above:
+```json
+{
+  "primary_zone_node_id": <integer node id from the CANDIDATE NODES section>,
+  "top_4_contexts": ["<feature name>", "<feature name>", "<feature name>", "<feature name>"]
+}
+```
+Feature names in top_4_contexts must be copied verbatim from the split conditions of the primary zone (e.g. the feature name in "PABPC1 <= 1.23" is "PABPC1"), not the focused feature 'PTMA' itself.

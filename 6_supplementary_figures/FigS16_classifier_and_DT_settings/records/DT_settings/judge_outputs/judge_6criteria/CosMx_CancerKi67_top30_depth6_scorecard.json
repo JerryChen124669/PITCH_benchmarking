@@ -1,0 +1,15 @@
+{
+  "dataset": "CosMx_CancerKi67",
+  "setting": "top30_depth6",
+  "judge_model": "gpt-5.6-sol",
+  "scores": {
+    "Feature Comprehensiveness": 10,
+    "Logic Rigor": 10,
+    "Biological Plausibility": 8,
+    "Biological Plausibility_reason": "The assignments of PTMA, HNRNPA2B1, ribosomal activity, and tubulins to a proliferative breast-cancer state are broadly defensible, and the proposed RNA-regulatory and microtubule hypotheses are testable. However, the G2/M interpretation, RPL41 as a translational-capacity prerequisite, and PTMA-driven E2F activity are stated more strongly than the evidence supports.",
+    "Specificity": 5,
+    "Mechanistic Synthesis": 5,
+    "Mechanistic Synthesis_reason": "HNRNPA2B1 was connected to PTMA RNA regulation, the tubulins to a proposed PTMA-dependent spindle process, and RPL41 to a permissive translation-rich state associated with Ki-67. These elements remain largely separate hypotheses, with little explanation linking RNA processing, translation, chromatin activity, and microtubule dynamics into one causal sequence. The multiple-unrelated-mechanisms ceiling of 5 was applied.",
+    "Literature Grounding": 5
+  }
+}

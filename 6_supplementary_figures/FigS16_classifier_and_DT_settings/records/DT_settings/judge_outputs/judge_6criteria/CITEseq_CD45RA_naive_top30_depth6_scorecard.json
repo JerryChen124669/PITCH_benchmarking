@@ -1,0 +1,15 @@
+{
+  "dataset": "CITEseq_CD45RA_naive",
+  "setting": "top30_depth6",
+  "judge_model": "gpt-5.6-sol",
+  "scores": {
+    "Feature Comprehensiveness": 10,
+    "Logic Rigor": 10,
+    "Biological Plausibility": 8,
+    "Biological Plausibility_reason": "The TEMRA/common-cell-state explanation linking CD45RA re-expression with GNLY, NKG7, and GZMB is biologically defensible, and low LYZ reasonably marks lymphoid rather than myeloid identity. The proposed CMC1-dependent oxidative phosphorylation mechanism is more speculative and overgeneralizes effector T-cell metabolism, but it is framed as a testable hypothesis rather than established fact.",
+    "Specificity": 8,
+    "Mechanistic Synthesis": 8,
+    "Mechanistic Synthesis_reason": "The response integrates GNLY, NKG7, and GZMB through a cytotoxic TEMRA state associated with CD45RA re-expression, while low LYZ provides a lineage-exclusion context and CMC1 supplies a proposed metabolic contribution. The transition from CMC1 expression to oxidative phosphorylation dependence and maintenance of the TEMRA phenotype remains broad and insufficiently established. No mechanistic ceiling was applied because the focus-target association and most contextual contributions were explicitly connected.",
+    "Literature Grounding": 7
+  }
+}

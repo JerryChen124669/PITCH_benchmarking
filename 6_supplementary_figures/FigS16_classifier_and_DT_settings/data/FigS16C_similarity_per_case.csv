@@ -1,0 +1,13 @@
+Dataset,Pair,Feature Selection Similarity,Feature Interpretation & Coverage Similarity,Mechanistic Hypothesis Similarity,Functional/Causal-Role Similarity,Supporting Reasoning & Experimental Implication Similarity,Response Scope & Elaboration Similarity,Hypothesis Similarity (mean of 6 criteria),Plotted in Fig S16C
+CITE-seq CD45RA,DT vs RF,6,6,5,5,4,7,5.5,True
+CITE-seq CD45RA,LR vs DT,7,7,8,8,8,8,7.666666666666667,True
+CITE-seq CD45RA,LR vs RF,8,8,8,8,7,9,8.0,True
+CosMx Ki-67,DT vs RF,8,8,9,9,8,9,8.5,True
+CosMx Ki-67,LR vs DT,10,9,8,8,8,9,8.666666666666666,True
+CosMx Ki-67,LR vs RF,8,8,8,8,8,9,8.166666666666666,True
+Gouwens input resistance,DT vs RF,4,4,5,5,4,8,5.0,True
+Gouwens input resistance,LR vs DT,6,6,5,6,5,7,5.833333333333333,True
+Gouwens input resistance,LR vs RF,8,4,5,5,4,8,5.666666666666667,True
+pERK EGF10,DT vs RF,5,7,8,8,8,8,7.333333333333333,False
+pERK EGF10,LR vs DT,5,6,7,7,6,8,6.5,False
+pERK EGF10,LR vs RF,3,4,6,6,4,8,5.166666666666667,False

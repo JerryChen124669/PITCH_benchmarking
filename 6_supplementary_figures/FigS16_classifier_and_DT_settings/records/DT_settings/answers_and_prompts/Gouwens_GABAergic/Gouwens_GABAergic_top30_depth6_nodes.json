@@ -1,0 +1,2431 @@
+{
+  "dataset_key": "Gouwens_GABAergic",
+  "setting_name": "top30_depth6",
+  "target_prot": "Fxyd6",
+  "target_name": "input resistance",
+  "attr_features": [
+    "Pcdh8",
+    "Coro6",
+    "Kcnq5",
+    "Cpne7",
+    "Fam19a2",
+    "Kcnmb4",
+    "Dab1",
+    "Nrgn",
+    "Tle4",
+    "Rell1",
+    "Lama4",
+    "Tmem145",
+    "Flt3",
+    "Lingo2",
+    "Rerg",
+    "Pld5",
+    "Crtac1",
+    "Ano4",
+    "Ndst3",
+    "9630002D21Rik",
+    "Phactr2",
+    "Tmem158",
+    "Il1rap",
+    "Sema3e",
+    "Zfp831",
+    "Ankrd55",
+    "Elavl2",
+    "Kcna3",
+    "Ptk2b"
+  ],
+  "cv_f1": 0.6579938900895421,
+  "min_support": 17,
+  "nodes": [
+    {
+      "node_id": 6,
+      "rule": "Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 <= 0.669 AND Flt3 <= -0.389 AND Crtac1 <= 0.766 AND Lama4 <= 1.475",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 <= 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= 0.669",
+          "local_importance": 0.006813272095792039
+        },
+        {
+          "feature": "Flt3",
+          "condition": "Flt3 <= -0.389",
+          "local_importance": 0.004682413871254905
+        },
+        {
+          "feature": "Crtac1",
+          "condition": "Crtac1 <= 0.766",
+          "local_importance": 0.0032198190298284666
+        },
+        {
+          "feature": "Lama4",
+          "condition": "Lama4 <= 1.475",
+          "local_importance": 0.0028097346797974617
+        }
+      ],
+      "depth": 6,
+      "n_cells": 119,
+      "pop_fraction": 0.03505154639175258,
+      "gini_impurity": 0.4067283380520522,
+      "gini_reduction": 0.044303495040377866,
+      "target_fraction": 0.3865546218487395,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 3.8598615916955015,
+      "mean_ig": 0.035717546939849854,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.821251352646304,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 7,
+      "rule": "Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 <= 0.669 AND Flt3 <= -0.389 AND Crtac1 <= 0.766 AND Lama4 > 1.475",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 <= 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= 0.669",
+          "local_importance": 0.006813272095792039
+        },
+        {
+          "feature": "Flt3",
+          "condition": "Flt3 <= -0.389",
+          "local_importance": 0.004682413871254905
+        },
+        {
+          "feature": "Crtac1",
+          "condition": "Crtac1 <= 0.766",
+          "local_importance": 0.0032198190298284666
+        },
+        {
+          "feature": "Lama4",
+          "condition": "Lama4 > 1.475",
+          "local_importance": 0.0028097346797974617
+        }
+      ],
+      "depth": 6,
+      "n_cells": 20,
+      "pop_fraction": 0.005891016200294551,
+      "gini_impurity": 0.2873345935727788,
+      "gini_reduction": 0.044303495040377866,
+      "target_fraction": 0.05,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.49926470588235294,
+      "mean_ig": 0.0033760741353034973,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.07823745733497986,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 9,
+      "rule": "Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 <= 0.669 AND Flt3 <= -0.389 AND Crtac1 > 0.766 AND Dab1 <= -0.723",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 <= 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= 0.669",
+          "local_importance": 0.006813272095792039
+        },
+        {
+          "feature": "Flt3",
+          "condition": "Flt3 <= -0.389",
+          "local_importance": 0.004682413871254905
+        },
+        {
+          "feature": "Crtac1",
+          "condition": "Crtac1 > 0.766",
+          "local_importance": 0.0032198190298284666
+        },
+        {
+          "feature": "Dab1",
+          "condition": "Dab1 <= -0.723",
+          "local_importance": 0.0014672101457581584
+        }
+      ],
+      "depth": 6,
+      "n_cells": 7,
+      "pop_fraction": 0.002061855670103093,
+      "gini_impurity": 0.47337278106508873,
+      "gini_reduction": 0.17046665246111234,
+      "target_fraction": 0.2857142857142857,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 2.852941176470588,
+      "mean_ig": 0.03234492614865303,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.7437686688297882,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 10,
+      "rule": "Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 <= 0.669 AND Flt3 <= -0.389 AND Crtac1 > 0.766 AND Dab1 > -0.723",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 <= 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= 0.669",
+          "local_importance": 0.006813272095792039
+        },
+        {
+          "feature": "Flt3",
+          "condition": "Flt3 <= -0.389",
+          "local_importance": 0.004682413871254905
+        },
+        {
+          "feature": "Crtac1",
+          "condition": "Crtac1 > 0.766",
+          "local_importance": 0.0032198190298284666
+        },
+        {
+          "feature": "Dab1",
+          "condition": "Dab1 > -0.723",
+          "local_importance": 0.0014672101457581584
+        }
+      ],
+      "depth": 6,
+      "n_cells": 25,
+      "pop_fraction": 0.007363770250368188,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.17046665246111234,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": 0.0044566611759364605,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.10306289404702622,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 12,
+      "rule": "Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 <= 0.669 AND Flt3 > -0.389 AND Pld5 <= -0.616",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 <= 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= 0.669",
+          "local_importance": 0.006813272095792039
+        },
+        {
+          "feature": "Flt3",
+          "condition": "Flt3 > -0.389",
+          "local_importance": 0.004682413871254905
+        },
+        {
+          "feature": "Pld5",
+          "condition": "Pld5 <= -0.616",
+          "local_importance": 0.0021694748114421325
+        }
+      ],
+      "depth": 5,
+      "n_cells": 44,
+      "pop_fraction": 0.012960235640648013,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.09773705400527566,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": -0.011332252062857151,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": -0.25967203763609287,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 14,
+      "rule": "Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 <= 0.669 AND Flt3 > -0.389 AND Pld5 > -0.616 AND Nrgn <= 0.061",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 <= 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= 0.669",
+          "local_importance": 0.006813272095792039
+        },
+        {
+          "feature": "Flt3",
+          "condition": "Flt3 > -0.389",
+          "local_importance": 0.004682413871254905
+        },
+        {
+          "feature": "Pld5",
+          "condition": "Pld5 > -0.616",
+          "local_importance": 0.0021694748114421325
+        },
+        {
+          "feature": "Nrgn",
+          "condition": "Nrgn <= 0.061",
+          "local_importance": 0.0017062001275692832
+        }
+      ],
+      "depth": 6,
+      "n_cells": 14,
+      "pop_fraction": 0.004123711340206186,
+      "gini_impurity": 0.4280618311533888,
+      "gini_reduction": 0.13949765857811824,
+      "target_fraction": 0.35714285714285715,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 3.566176470588235,
+      "mean_ig": 0.04196276515722275,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.9647291695905953,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 15,
+      "rule": "Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 <= 0.669 AND Flt3 > -0.389 AND Pld5 > -0.616 AND Nrgn > 0.061",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 <= 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= 0.669",
+          "local_importance": 0.006813272095792039
+        },
+        {
+          "feature": "Flt3",
+          "condition": "Flt3 > -0.389",
+          "local_importance": 0.004682413871254905
+        },
+        {
+          "feature": "Pld5",
+          "condition": "Pld5 > -0.616",
+          "local_importance": 0.0021694748114421325
+        },
+        {
+          "feature": "Nrgn",
+          "condition": "Nrgn > 0.061",
+          "local_importance": 0.0017062001275692832
+        }
+      ],
+      "depth": 6,
+      "n_cells": 22,
+      "pop_fraction": 0.006480117820324006,
+      "gini_impurity": 0.26880000000000004,
+      "gini_reduction": 0.13949765857811824,
+      "target_fraction": 0.045454545454545456,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.45387700534759357,
+      "mean_ig": 0.016219651326537132,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.37330615678050083,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 19,
+      "rule": "Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 > 0.669 AND Pcdh8 <= 0.574 AND Pld5 <= 1.529 AND Tmem145 <= 1.155",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 <= 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 > 0.669",
+          "local_importance": 0.006813272095792039
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 <= 0.574",
+          "local_importance": 0.004999656304841468
+        },
+        {
+          "feature": "Pld5",
+          "condition": "Pld5 <= 1.529",
+          "local_importance": 0.0027915978370169144
+        },
+        {
+          "feature": "Tmem145",
+          "condition": "Tmem145 <= 1.155",
+          "local_importance": 0.0016401544216371148
+        }
+      ],
+      "depth": 6,
+      "n_cells": 99,
+      "pop_fraction": 0.029160530191458027,
+      "gini_impurity": 0.39365317653927145,
+      "gini_reduction": 0.032041069785521514,
+      "target_fraction": 0.40404040404040403,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 4.034462269756387,
+      "mean_ig": 0.04616919904947281,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.061367898770886,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 20,
+      "rule": "Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 > 0.669 AND Pcdh8 <= 0.574 AND Pld5 <= 1.529 AND Tmem145 > 1.155",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 <= 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 > 0.669",
+          "local_importance": 0.006813272095792039
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 <= 0.574",
+          "local_importance": 0.004999656304841468
+        },
+        {
+          "feature": "Pld5",
+          "condition": "Pld5 <= 1.529",
+          "local_importance": 0.0027915978370169144
+        },
+        {
+          "feature": "Tmem145",
+          "condition": "Tmem145 > 1.155",
+          "local_importance": 0.0016401544216371148
+        }
+      ],
+      "depth": 6,
+      "n_cells": 7,
+      "pop_fraction": 0.002061855670103093,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.032041069785521514,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": 0.034960873425006866,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.80386751428062,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 22,
+      "rule": "Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 > 0.669 AND Pcdh8 <= 0.574 AND Pld5 > 1.529 AND Ano4 <= -0.841",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 <= 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 > 0.669",
+          "local_importance": 0.006813272095792039
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 <= 0.574",
+          "local_importance": 0.004999656304841468
+        },
+        {
+          "feature": "Pld5",
+          "condition": "Pld5 > 1.529",
+          "local_importance": 0.0027915978370169144
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 <= -0.841",
+          "local_importance": 0.0021409530446903045
+        }
+      ],
+      "depth": 6,
+      "n_cells": 24,
+      "pop_fraction": 0.007069219440353461,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.1890461538461539,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": 0.018301425501704216,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.42113289455454483,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 23,
+      "rule": "Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 > 0.669 AND Pcdh8 <= 0.574 AND Pld5 > 1.529 AND Ano4 > -0.841",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 <= 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 > 0.669",
+          "local_importance": 0.006813272095792039
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 <= 0.574",
+          "local_importance": 0.004999656304841468
+        },
+        {
+          "feature": "Pld5",
+          "condition": "Pld5 > 1.529",
+          "local_importance": 0.0027915978370169144
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 > -0.841",
+          "local_importance": 0.0021409530446903045
+        }
+      ],
+      "depth": 6,
+      "n_cells": 14,
+      "pop_fraction": 0.004123711340206186,
+      "gini_impurity": 0.47337278106508873,
+      "gini_reduction": 0.1890461538461539,
+      "target_fraction": 0.2857142857142857,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 2.852941176470588,
+      "mean_ig": 0.05038096383213997,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.1581290999758191,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 25,
+      "rule": "Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 > 0.669 AND Pcdh8 > 0.574 AND Tmem145 <= -1.292",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 <= 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 > 0.669",
+          "local_importance": 0.006813272095792039
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 > 0.574",
+          "local_importance": 0.004999656304841468
+        },
+        {
+          "feature": "Tmem145",
+          "condition": "Tmem145 <= -1.292",
+          "local_importance": 0.0012635787579062363
+        }
+      ],
+      "depth": 5,
+      "n_cells": 7,
+      "pop_fraction": 0.002061855670103093,
+      "gini_impurity": 0.48,
+      "gini_reduction": 0.01971272161185879,
+      "target_fraction": 0.14285714285714285,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 1.426470588235294,
+      "mean_ig": 0.05352317541837692,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.230318356312163,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 27,
+      "rule": "Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 > 0.669 AND Pcdh8 > 0.574 AND Tmem145 > -1.292 AND Pld5 <= 1.099",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 <= 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 > 0.669",
+          "local_importance": 0.006813272095792039
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 > 0.574",
+          "local_importance": 0.004999656304841468
+        },
+        {
+          "feature": "Tmem145",
+          "condition": "Tmem145 > -1.292",
+          "local_importance": 0.0012635787579062363
+        },
+        {
+          "feature": "Pld5",
+          "condition": "Pld5 <= 1.099",
+          "local_importance": 0.0008670623316940312
+        }
+      ],
+      "depth": 6,
+      "n_cells": 71,
+      "pop_fraction": 0.020913107511045654,
+      "gini_impurity": 0.07564015128030255,
+      "gini_reduction": 0.014022271774465744,
+      "target_fraction": 0.8591549295774648,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 8.578914664457331,
+      "mean_ig": 0.07231747359037399,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.662099085001025,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 28,
+      "rule": "Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 > 0.669 AND Pcdh8 > 0.574 AND Tmem145 > -1.292 AND Pld5 > 1.099",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 <= 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 > 0.669",
+          "local_importance": 0.006813272095792039
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 > 0.574",
+          "local_importance": 0.004999656304841468
+        },
+        {
+          "feature": "Tmem145",
+          "condition": "Tmem145 > -1.292",
+          "local_importance": 0.0012635787579062363
+        },
+        {
+          "feature": "Pld5",
+          "condition": "Pld5 > 1.099",
+          "local_importance": 0.0008670623316940312
+        }
+      ],
+      "depth": 6,
+      "n_cells": 10,
+      "pop_fraction": 0.0029455081001472753,
+      "gini_impurity": 0.46537396121883656,
+      "gini_reduction": 0.014022271774465744,
+      "target_fraction": 0.3,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 2.995588235294117,
+      "mean_ig": 0.04112176224589348,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.9454079453256606,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 33,
+      "rule": "Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 <= 1.428 AND Tmem145 <= 1.099 AND Cpne7 <= 1.056 AND Kcnmb4 <= 1.471",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 > 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 <= 1.428",
+          "local_importance": 0.005441048028493751
+        },
+        {
+          "feature": "Kcnmb4",
+          "condition": "Kcnmb4 <= 1.471",
+          "local_importance": 0.0030815017046772
+        },
+        {
+          "feature": "Cpne7",
+          "condition": "Cpne7 <= 1.056",
+          "local_importance": 0.002934895643648885
+        },
+        {
+          "feature": "Tmem145",
+          "condition": "Tmem145 <= 1.099",
+          "local_importance": 0.002864320432722524
+        }
+      ],
+      "depth": 6,
+      "n_cells": 150,
+      "pop_fraction": 0.044182621502209134,
+      "gini_impurity": 0.21303948576675846,
+      "gini_reduction": 0.06906005089416163,
+      "target_fraction": 0.03333333333333333,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.33284313725490194,
+      "mean_ig": 0.011898175813257694,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.2740244582005002,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 34,
+      "rule": "Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 <= 1.428 AND Tmem145 <= 1.099 AND Cpne7 <= 1.056 AND Kcnmb4 > 1.471",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 > 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 <= 1.428",
+          "local_importance": 0.005441048028493751
+        },
+        {
+          "feature": "Kcnmb4",
+          "condition": "Kcnmb4 > 1.471",
+          "local_importance": 0.0030815017046772
+        },
+        {
+          "feature": "Cpne7",
+          "condition": "Cpne7 <= 1.056",
+          "local_importance": 0.002934895643648885
+        },
+        {
+          "feature": "Tmem145",
+          "condition": "Tmem145 <= 1.099",
+          "local_importance": 0.002864320432722524
+        }
+      ],
+      "depth": 6,
+      "n_cells": 17,
+      "pop_fraction": 0.005007363770250369,
+      "gini_impurity": 0.46875,
+      "gini_reduction": 0.06906005089416163,
+      "target_fraction": 0.29411764705882354,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 2.936851211072664,
+      "mean_ig": 0.027723385021090508,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.6375932544853614,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 36,
+      "rule": "Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 <= 1.428 AND Tmem145 <= 1.099 AND Cpne7 > 1.056 AND Kcnmb4 <= -0.706",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 > 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 <= 1.428",
+          "local_importance": 0.005441048028493751
+        },
+        {
+          "feature": "Cpne7",
+          "condition": "Cpne7 > 1.056",
+          "local_importance": 0.002934895643648885
+        },
+        {
+          "feature": "Tmem145",
+          "condition": "Tmem145 <= 1.099",
+          "local_importance": 0.002864320432722524
+        },
+        {
+          "feature": "Kcnmb4",
+          "condition": "Kcnmb4 <= -0.706",
+          "local_importance": 0.002359286489973882
+        }
+      ],
+      "depth": 6,
+      "n_cells": 84,
+      "pop_fraction": 0.024742268041237112,
+      "gini_impurity": 0.3911111111111111,
+      "gini_reduction": 0.03829503622512753,
+      "target_fraction": 0.08333333333333333,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.8321078431372548,
+      "mean_ig": 0.03672167286276817,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.8443201695143392,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 37,
+      "rule": "Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 <= 1.428 AND Tmem145 <= 1.099 AND Cpne7 > 1.056 AND Kcnmb4 > -0.706",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 > 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 <= 1.428",
+          "local_importance": 0.005441048028493751
+        },
+        {
+          "feature": "Cpne7",
+          "condition": "Cpne7 > 1.056",
+          "local_importance": 0.002934895643648885
+        },
+        {
+          "feature": "Tmem145",
+          "condition": "Tmem145 <= 1.099",
+          "local_importance": 0.002864320432722524
+        },
+        {
+          "feature": "Kcnmb4",
+          "condition": "Kcnmb4 > -0.706",
+          "local_importance": 0.002359286489973882
+        }
+      ],
+      "depth": 6,
+      "n_cells": 98,
+      "pop_fraction": 0.0288659793814433,
+      "gini_impurity": 0.49481874574204887,
+      "gini_reduction": 0.03829503622512753,
+      "target_fraction": 0.23469387755102042,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 2.3434873949579833,
+      "mean_ig": 0.04477039724588394,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.0292317872482541,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 40,
+      "rule": "Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 <= 1.428 AND Tmem145 > 1.099 AND Fam19a2 <= 1.133 AND Lingo2 <= 0.905",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 > 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 <= 1.428",
+          "local_importance": 0.005441048028493751
+        },
+        {
+          "feature": "Tmem145",
+          "condition": "Tmem145 > 1.099",
+          "local_importance": 0.002864320432722524
+        },
+        {
+          "feature": "Fam19a2",
+          "condition": "Fam19a2 <= 1.133",
+          "local_importance": 0.0022694381589182947
+        },
+        {
+          "feature": "Lingo2",
+          "condition": "Lingo2 <= 0.905",
+          "local_importance": 0.0020708623200129425
+        }
+      ],
+      "depth": 6,
+      "n_cells": 20,
+      "pop_fraction": 0.005891016200294551,
+      "gini_impurity": 0.24489795918367352,
+      "gini_reduction": 0.14512471655328796,
+      "target_fraction": 0.6,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 5.991176470588234,
+      "mean_ig": 0.043936874717473984,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.010082417508464,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 41,
+      "rule": "Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 <= 1.428 AND Tmem145 > 1.099 AND Fam19a2 <= 1.133 AND Lingo2 > 0.905",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 > 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 <= 1.428",
+          "local_importance": 0.005441048028493751
+        },
+        {
+          "feature": "Tmem145",
+          "condition": "Tmem145 > 1.099",
+          "local_importance": 0.002864320432722524
+        },
+        {
+          "feature": "Fam19a2",
+          "condition": "Fam19a2 <= 1.133",
+          "local_importance": 0.0022694381589182947
+        },
+        {
+          "feature": "Lingo2",
+          "condition": "Lingo2 > 0.905",
+          "local_importance": 0.0020708623200129425
+        }
+      ],
+      "depth": 6,
+      "n_cells": 7,
+      "pop_fraction": 0.002061855670103093,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.14512471655328796,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": 0.04386257007718086,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.0083753406366853,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 42,
+      "rule": "Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 <= 1.428 AND Tmem145 > 1.099 AND Fam19a2 > 1.133",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 > 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 <= 1.428",
+          "local_importance": 0.005441048028493751
+        },
+        {
+          "feature": "Tmem145",
+          "condition": "Tmem145 > 1.099",
+          "local_importance": 0.002864320432722524
+        },
+        {
+          "feature": "Fam19a2",
+          "condition": "Fam19a2 > 1.133",
+          "local_importance": 0.0022694381589182947
+        }
+      ],
+      "depth": 5,
+      "n_cells": 10,
+      "pop_fraction": 0.0029455081001472753,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.13725437632362014,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": 0.031023388728499413,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.7134076314001636,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 46,
+      "rule": "Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 > 1.428 AND Tle4 <= 0.808 AND Lingo2 <= 1.013 AND Nrgn <= 0.972",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 > 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 > 1.428",
+          "local_importance": 0.005441048028493751
+        },
+        {
+          "feature": "Tle4",
+          "condition": "Tle4 <= 0.808",
+          "local_importance": 0.003347408587739594
+        },
+        {
+          "feature": "Lingo2",
+          "condition": "Lingo2 <= 1.013",
+          "local_importance": 0.0022995431605825666
+        },
+        {
+          "feature": "Nrgn",
+          "condition": "Nrgn <= 0.972",
+          "local_importance": 0.002242668244635391
+        }
+      ],
+      "depth": 6,
+      "n_cells": 109,
+      "pop_fraction": 0.0321060382916053,
+      "gini_impurity": 0.372992,
+      "gini_reduction": 0.03390883664405908,
+      "target_fraction": 0.43119266055045874,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 4.30558553696708,
+      "mean_ig": 0.04952928051352501,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.1385625037369855,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 47,
+      "rule": "Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 > 1.428 AND Tle4 <= 0.808 AND Lingo2 <= 1.013 AND Nrgn > 0.972",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 > 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 > 1.428",
+          "local_importance": 0.005441048028493751
+        },
+        {
+          "feature": "Tle4",
+          "condition": "Tle4 <= 0.808",
+          "local_importance": 0.003347408587739594
+        },
+        {
+          "feature": "Lingo2",
+          "condition": "Lingo2 <= 1.013",
+          "local_importance": 0.0022995431605825666
+        },
+        {
+          "feature": "Nrgn",
+          "condition": "Nrgn > 0.972",
+          "local_importance": 0.002242668244635391
+        }
+      ],
+      "depth": 6,
+      "n_cells": 30,
+      "pop_fraction": 0.008836524300441826,
+      "gini_impurity": 0.47165532879818595,
+      "gini_reduction": 0.03390883664405908,
+      "target_fraction": 0.13333333333333333,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 1.3313725490196078,
+      "mean_ig": 0.043866921216249466,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.0084753038266099,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 49,
+      "rule": "Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 > 1.428 AND Tle4 <= 0.808 AND Lingo2 > 1.013 AND Kcnq5 <= 0.202",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 > 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 > 1.428",
+          "local_importance": 0.005441048028493751
+        },
+        {
+          "feature": "Tle4",
+          "condition": "Tle4 <= 0.808",
+          "local_importance": 0.003347408587739594
+        },
+        {
+          "feature": "Lingo2",
+          "condition": "Lingo2 > 1.013",
+          "local_importance": 0.0022995431605825666
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= 0.202",
+          "local_importance": 0.0016692405367377053
+        }
+      ],
+      "depth": 6,
+      "n_cells": 5,
+      "pop_fraction": 0.0014727540500736377,
+      "gini_impurity": 0.39669421487603307,
+      "gini_reduction": 0.24565656565656563,
+      "target_fraction": 0.4,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 3.9941176470588236,
+      "mean_ig": 0.048304229974746704,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.1104181586024326,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 50,
+      "rule": "Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 > 1.428 AND Tle4 <= 0.808 AND Lingo2 > 1.013 AND Kcnq5 > 0.202",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 > 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 > 1.428",
+          "local_importance": 0.005441048028493751
+        },
+        {
+          "feature": "Tle4",
+          "condition": "Tle4 <= 0.808",
+          "local_importance": 0.003347408587739594
+        },
+        {
+          "feature": "Lingo2",
+          "condition": "Lingo2 > 1.013",
+          "local_importance": 0.0022995431605825666
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 > 0.202",
+          "local_importance": 0.0016692405367377053
+        }
+      ],
+      "depth": 6,
+      "n_cells": 19,
+      "pop_fraction": 0.005596465390279823,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.24565656565656563,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": 0.03593076020479202,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.8261497201224586,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 51,
+      "rule": "Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 > 1.428 AND Tle4 > 0.808",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Ano4",
+          "condition": "Ano4 > 0.214",
+          "local_importance": 0.00811073673763467
+        },
+        {
+          "feature": "Pcdh8",
+          "condition": "Pcdh8 > 1.428",
+          "local_importance": 0.005441048028493751
+        },
+        {
+          "feature": "Tle4",
+          "condition": "Tle4 > 0.808",
+          "local_importance": 0.003347408587739594
+        }
+      ],
+      "depth": 4,
+      "n_cells": 18,
+      "pop_fraction": 0.005301914580265096,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.0434670850437362,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": 0.038192328065633774,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.8781070430294943,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 57,
+      "rule": "Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 <= -0.151 AND Flt3 <= -1.083 AND Dab1 <= -0.637 AND Rerg <= -0.588",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Pld5",
+          "condition": "Pld5 <= -0.151",
+          "local_importance": 0.01501786347708248
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Flt3",
+          "condition": "Flt3 <= -1.083",
+          "local_importance": 0.004076654010917931
+        },
+        {
+          "feature": "Dab1",
+          "condition": "Dab1 <= -0.637",
+          "local_importance": 0.003978474179762092
+        },
+        {
+          "feature": "Rerg",
+          "condition": "Rerg <= -0.588",
+          "local_importance": 0.0036240090600226506
+        }
+      ],
+      "depth": 6,
+      "n_cells": 34,
+      "pop_fraction": 0.010014727540500737,
+      "gini_impurity": 0.31999999999999995,
+      "gini_reduction": 0.1777777777777778,
+      "target_fraction": 0.058823529411764705,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.5873702422145328,
+      "mean_ig": -0.008173443377017975,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": -0.18710147907208463,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 58,
+      "rule": "Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 <= -0.151 AND Flt3 <= -1.083 AND Dab1 <= -0.637 AND Rerg > -0.588",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Pld5",
+          "condition": "Pld5 <= -0.151",
+          "local_importance": 0.01501786347708248
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Flt3",
+          "condition": "Flt3 <= -1.083",
+          "local_importance": 0.004076654010917931
+        },
+        {
+          "feature": "Dab1",
+          "condition": "Dab1 <= -0.637",
+          "local_importance": 0.003978474179762092
+        },
+        {
+          "feature": "Rerg",
+          "condition": "Rerg > -0.588",
+          "local_importance": 0.0036240090600226506
+        }
+      ],
+      "depth": 6,
+      "n_cells": 20,
+      "pop_fraction": 0.005891016200294551,
+      "gini_impurity": 0.31999999999999995,
+      "gini_reduction": 0.1777777777777778,
+      "target_fraction": 0.5,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 4.992647058823529,
+      "mean_ig": 0.026533514261245728,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.6102571305700326,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 59,
+      "rule": "Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 <= -0.151 AND Flt3 <= -1.083 AND Dab1 > -0.637",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Pld5",
+          "condition": "Pld5 <= -0.151",
+          "local_importance": 0.01501786347708248
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Flt3",
+          "condition": "Flt3 <= -1.083",
+          "local_importance": 0.004076654010917931
+        },
+        {
+          "feature": "Dab1",
+          "condition": "Dab1 > -0.637",
+          "local_importance": 0.003978474179762092
+        }
+      ],
+      "depth": 5,
+      "n_cells": 47,
+      "pop_fraction": 0.013843888070692194,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.1282114124353988,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": -0.011362253688275814,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": -0.26036129581251266,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 62,
+      "rule": "Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 <= -0.151 AND Flt3 > -1.083 AND Cpne7 <= 0.772 AND Kcnq5 <= -0.979",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Pld5",
+          "condition": "Pld5 <= -0.151",
+          "local_importance": 0.01501786347708248
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Flt3",
+          "condition": "Flt3 > -1.083",
+          "local_importance": 0.004076654010917931
+        },
+        {
+          "feature": "Cpne7",
+          "condition": "Cpne7 <= 0.772",
+          "local_importance": 0.0010116119680441604
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= -0.979",
+          "local_importance": 0.0008382129293728629
+        }
+      ],
+      "depth": 6,
+      "n_cells": 307,
+      "pop_fraction": 0.09042709867452135,
+      "gini_impurity": 0.025473465140478657,
+      "gini_reduction": 0.011637453091764748,
+      "target_fraction": 0.003257328990228013,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.03252538800536501,
+      "mean_ig": -0.029279442504048347,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": -0.6719912897676495,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 63,
+      "rule": "Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 <= -0.151 AND Flt3 > -1.083 AND Cpne7 <= 0.772 AND Kcnq5 > -0.979",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Pld5",
+          "condition": "Pld5 <= -0.151",
+          "local_importance": 0.01501786347708248
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Flt3",
+          "condition": "Flt3 > -1.083",
+          "local_importance": 0.004076654010917931
+        },
+        {
+          "feature": "Cpne7",
+          "condition": "Cpne7 <= 0.772",
+          "local_importance": 0.0010116119680441604
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 > -0.979",
+          "local_importance": 0.0008382129293728629
+        }
+      ],
+      "depth": 6,
+      "n_cells": 5,
+      "pop_fraction": 0.0014727540500736377,
+      "gini_impurity": 0.5,
+      "gini_reduction": 0.011637453091764748,
+      "target_fraction": 0.2,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 1.9970588235294118,
+      "mean_ig": -0.0101091880351305,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": -0.23157333066166624,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 65,
+      "rule": "Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 <= -0.151 AND Flt3 > -1.083 AND Cpne7 > 0.772 AND Ndst3 <= 0.814",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Pld5",
+          "condition": "Pld5 <= -0.151",
+          "local_importance": 0.01501786347708248
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Flt3",
+          "condition": "Flt3 > -1.083",
+          "local_importance": 0.004076654010917931
+        },
+        {
+          "feature": "Ndst3",
+          "condition": "Ndst3 <= 0.814",
+          "local_importance": 0.0013751180623010845
+        },
+        {
+          "feature": "Cpne7",
+          "condition": "Cpne7 > 0.772",
+          "local_importance": 0.0010116119680441604
+        }
+      ],
+      "depth": 6,
+      "n_cells": 12,
+      "pop_fraction": 0.0035346097201767305,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.26396288021996905,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": 0.00664132134988904,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.15325333761742038,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 66,
+      "rule": "Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 <= -0.151 AND Flt3 > -1.083 AND Cpne7 > 0.772 AND Ndst3 > 0.814",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Pld5",
+          "condition": "Pld5 <= -0.151",
+          "local_importance": 0.01501786347708248
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Flt3",
+          "condition": "Flt3 > -1.083",
+          "local_importance": 0.004076654010917931
+        },
+        {
+          "feature": "Ndst3",
+          "condition": "Ndst3 > 0.814",
+          "local_importance": 0.0013751180623010845
+        },
+        {
+          "feature": "Cpne7",
+          "condition": "Cpne7 > 0.772",
+          "local_importance": 0.0010116119680441604
+        }
+      ],
+      "depth": 6,
+      "n_cells": 5,
+      "pop_fraction": 0.0014727540500736377,
+      "gini_impurity": 0.39669421487603307,
+      "gini_reduction": 0.26396288021996905,
+      "target_fraction": 0.4,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 3.9941176470588236,
+      "mean_ig": 0.0510760135948658,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.1740971925472103,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 70,
+      "rule": "Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 > -0.151 AND Dab1 <= -0.527 AND Lama4 <= 0.507 AND Kcnmb4 <= 0.191",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Pld5",
+          "condition": "Pld5 > -0.151",
+          "local_importance": 0.01501786347708248
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Dab1",
+          "condition": "Dab1 <= -0.527",
+          "local_importance": 0.008505260003494634
+        },
+        {
+          "feature": "Lama4",
+          "condition": "Lama4 <= 0.507",
+          "local_importance": 0.00316655666922614
+        },
+        {
+          "feature": "Kcnmb4",
+          "condition": "Kcnmb4 <= 0.191",
+          "local_importance": 0.0007684683588949853
+        }
+      ],
+      "depth": 6,
+      "n_cells": 32,
+      "pop_fraction": 0.00942562592047128,
+      "gini_impurity": 0.39198571711961916,
+      "gini_reduction": 0.023080189146403793,
+      "target_fraction": 0.40625,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 4.056525735294118,
+      "mean_ig": 0.05484267324209213,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.2606325359965105,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 71,
+      "rule": "Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 > -0.151 AND Dab1 <= -0.527 AND Lama4 <= 0.507 AND Kcnmb4 > 0.191",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Pld5",
+          "condition": "Pld5 > -0.151",
+          "local_importance": 0.01501786347708248
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Dab1",
+          "condition": "Dab1 <= -0.527",
+          "local_importance": 0.008505260003494634
+        },
+        {
+          "feature": "Lama4",
+          "condition": "Lama4 <= 0.507",
+          "local_importance": 0.00316655666922614
+        },
+        {
+          "feature": "Kcnmb4",
+          "condition": "Kcnmb4 > 0.191",
+          "local_importance": 0.0007684683588949853
+        }
+      ],
+      "depth": 6,
+      "n_cells": 22,
+      "pop_fraction": 0.006480117820324006,
+      "gini_impurity": 0.09972299168975074,
+      "gini_reduction": 0.023080189146403793,
+      "target_fraction": 0.8181818181818182,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 8.169786096256685,
+      "mean_ig": 0.061185941100120544,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.406362948111022,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 73,
+      "rule": "Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 > -0.151 AND Dab1 <= -0.527 AND Lama4 > 0.507 AND Lingo2 <= -0.077",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Pld5",
+          "condition": "Pld5 > -0.151",
+          "local_importance": 0.01501786347708248
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Dab1",
+          "condition": "Dab1 <= -0.527",
+          "local_importance": 0.008505260003494634
+        },
+        {
+          "feature": "Lama4",
+          "condition": "Lama4 > 0.507",
+          "local_importance": 0.00316655666922614
+        },
+        {
+          "feature": "Lingo2",
+          "condition": "Lingo2 <= -0.077",
+          "local_importance": 0.001594630360202274
+        }
+      ],
+      "depth": 6,
+      "n_cells": 7,
+      "pop_fraction": 0.002061855670103093,
+      "gini_impurity": 0.375,
+      "gini_reduction": 0.16762602476888191,
+      "target_fraction": 0.42857142857142855,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 4.279411764705882,
+      "mean_ig": 0.045311544090509415,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.0416641099006747,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 74,
+      "rule": "Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 > -0.151 AND Dab1 <= -0.527 AND Lama4 > 0.507 AND Lingo2 > -0.077",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Pld5",
+          "condition": "Pld5 > -0.151",
+          "local_importance": 0.01501786347708248
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Dab1",
+          "condition": "Dab1 <= -0.527",
+          "local_importance": 0.008505260003494634
+        },
+        {
+          "feature": "Lama4",
+          "condition": "Lama4 > 0.507",
+          "local_importance": 0.00316655666922614
+        },
+        {
+          "feature": "Lingo2",
+          "condition": "Lingo2 > -0.077",
+          "local_importance": 0.001594630360202274
+        }
+      ],
+      "depth": 6,
+      "n_cells": 23,
+      "pop_fraction": 0.006774668630338734,
+      "gini_impurity": 0.2603550295857988,
+      "gini_reduction": 0.16762602476888191,
+      "target_fraction": 0.043478260869565216,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.4341432225063938,
+      "mean_ig": 0.011584414169192314,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.2668160894671031,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 76,
+      "rule": "Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 > -0.151 AND Dab1 > -0.527 AND Lingo2 <= 0.920",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Pld5",
+          "condition": "Pld5 > -0.151",
+          "local_importance": 0.01501786347708248
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Dab1",
+          "condition": "Dab1 > -0.527",
+          "local_importance": 0.008505260003494634
+        },
+        {
+          "feature": "Lingo2",
+          "condition": "Lingo2 <= 0.920",
+          "local_importance": 0.002196369127286454
+        }
+      ],
+      "depth": 5,
+      "n_cells": 55,
+      "pop_fraction": 0.016200294550810016,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.14692378328741962,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": -0.005070820916444063,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": -0.11582174440930934,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 77,
+      "rule": "Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 > -0.151 AND Dab1 > -0.527 AND Lingo2 > 0.920",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Pld5",
+          "condition": "Pld5 > -0.151",
+          "local_importance": 0.01501786347708248
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 <= -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Dab1",
+          "condition": "Dab1 > -0.527",
+          "local_importance": 0.008505260003494634
+        },
+        {
+          "feature": "Lingo2",
+          "condition": "Lingo2 > 0.920",
+          "local_importance": 0.002196369127286454
+        }
+      ],
+      "depth": 5,
+      "n_cells": 5,
+      "pop_fraction": 0.0014727540500736377,
+      "gini_impurity": 0.39669421487603307,
+      "gini_reduction": 0.14692378328741962,
+      "target_fraction": 0.4,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 3.9941176470588236,
+      "mean_ig": 0.054155029356479645,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.244834586251806,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 80,
+      "rule": "Coro6 > -0.877 AND Kcnq5 > -0.941 AND Elavl2 <= -1.881 AND Coro6 <= -0.010",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 > -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Elavl2",
+          "condition": "Elavl2 <= -1.881",
+          "local_importance": 0.003726752969789114
+        },
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.010",
+          "local_importance": 0.0033345855761733843
+        }
+      ],
+      "depth": 4,
+      "n_cells": 9,
+      "pop_fraction": 0.002650957290132548,
+      "gini_impurity": 0.2777777777777778,
+      "gini_reduction": 0.24952873421704222,
+      "target_fraction": 0.5555555555555556,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 5.5473856209150325,
+      "mean_ig": 0.0529051199555397,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.2161191329268701,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 82,
+      "rule": "Coro6 > -0.877 AND Kcnq5 > -0.941 AND Elavl2 <= -1.881 AND Coro6 > -0.010 AND 9630002D21Rik <= -0.700",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 > -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Elavl2",
+          "condition": "Elavl2 <= -1.881",
+          "local_importance": 0.003726752969789114
+        },
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.010",
+          "local_importance": 0.0033345855761733843
+        },
+        {
+          "feature": "9630002D21Rik",
+          "condition": "9630002D21Rik <= -0.700",
+          "local_importance": 0.0006989160330043681
+        }
+      ],
+      "depth": 5,
+      "n_cells": 27,
+      "pop_fraction": 0.007952871870397643,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.08816326530612244,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": 0.009007098153233528,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.20760475966654424,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 83,
+      "rule": "Coro6 > -0.877 AND Kcnq5 > -0.941 AND Elavl2 <= -1.881 AND Coro6 > -0.010 AND 9630002D21Rik > -0.700",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 > -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Elavl2",
+          "condition": "Elavl2 <= -1.881",
+          "local_importance": 0.003726752969789114
+        },
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.010",
+          "local_importance": 0.0033345855761733843
+        },
+        {
+          "feature": "9630002D21Rik",
+          "condition": "9630002D21Rik > -0.700",
+          "local_importance": 0.0006989160330043681
+        }
+      ],
+      "depth": 5,
+      "n_cells": 5,
+      "pop_fraction": 0.0014727540500736377,
+      "gini_impurity": 0.5,
+      "gini_reduction": 0.08816326530612244,
+      "target_fraction": 0.2,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 1.9970588235294118,
+      "mean_ig": 0.002345677465200424,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.05456509559078994,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 87,
+      "rule": "Coro6 > -0.877 AND Kcnq5 > -0.941 AND Elavl2 > -1.881 AND Kcna3 <= 1.190 AND Coro6 <= -0.725 AND Lama4 <= -0.642",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 > -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Elavl2",
+          "condition": "Elavl2 > -1.881",
+          "local_importance": 0.003726752969789114
+        },
+        {
+          "feature": "Kcna3",
+          "condition": "Kcna3 <= 1.190",
+          "local_importance": 0.0008693242958428216
+        },
+        {
+          "feature": "Lama4",
+          "condition": "Lama4 <= -0.642",
+          "local_importance": 0.0005033345916698125
+        },
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.725",
+          "local_importance": 0.00034631430731721006
+        }
+      ],
+      "depth": 6,
+      "n_cells": 5,
+      "pop_fraction": 0.0014727540500736377,
+      "gini_impurity": 0.5,
+      "gini_reduction": 0.12345679012345678,
+      "target_fraction": 0.2,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 1.9970588235294118,
+      "mean_ig": -0.005219695623964071,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": -0.11924199607862186,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 88,
+      "rule": "Coro6 > -0.877 AND Kcnq5 > -0.941 AND Elavl2 > -1.881 AND Kcna3 <= 1.190 AND Coro6 <= -0.725 AND Lama4 > -0.642",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 > -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Elavl2",
+          "condition": "Elavl2 > -1.881",
+          "local_importance": 0.003726752969789114
+        },
+        {
+          "feature": "Kcna3",
+          "condition": "Kcna3 <= 1.190",
+          "local_importance": 0.0008693242958428216
+        },
+        {
+          "feature": "Lama4",
+          "condition": "Lama4 > -0.642",
+          "local_importance": 0.0005033345916698125
+        },
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.725",
+          "local_importance": 0.00034631430731721006
+        }
+      ],
+      "depth": 6,
+      "n_cells": 10,
+      "pop_fraction": 0.0029455081001472753,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.12345679012345678,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": -0.0038421903736889362,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": -0.0875951521638682,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 90,
+      "rule": "Coro6 > -0.877 AND Kcnq5 > -0.941 AND Elavl2 > -1.881 AND Kcna3 <= 1.190 AND Coro6 > -0.725 AND Flt3 <= -0.492",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 > -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Elavl2",
+          "condition": "Elavl2 > -1.881",
+          "local_importance": 0.003726752969789114
+        },
+        {
+          "feature": "Kcna3",
+          "condition": "Kcna3 <= 1.190",
+          "local_importance": 0.0008693242958428216
+        },
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.725",
+          "local_importance": 0.00034631430731721006
+        },
+        {
+          "feature": "Flt3",
+          "condition": "Flt3 <= -0.492",
+          "local_importance": 0.000298420657021629
+        }
+      ],
+      "depth": 6,
+      "n_cells": 383,
+      "pop_fraction": 0.11281296023564065,
+      "gini_impurity": 0.09545213504709482,
+      "gini_reduction": 0.0008224264673848247,
+      "target_fraction": 0.013054830287206266,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.1303563200737214,
+      "mean_ig": -0.0028462186455726624,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": -0.06471366999390357,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 91,
+      "rule": "Coro6 > -0.877 AND Kcnq5 > -0.941 AND Elavl2 > -1.881 AND Kcna3 <= 1.190 AND Coro6 > -0.725 AND Flt3 > -0.492",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 > -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Elavl2",
+          "condition": "Elavl2 > -1.881",
+          "local_importance": 0.003726752969789114
+        },
+        {
+          "feature": "Kcna3",
+          "condition": "Kcna3 <= 1.190",
+          "local_importance": 0.0008693242958428216
+        },
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.725",
+          "local_importance": 0.00034631430731721006
+        },
+        {
+          "feature": "Flt3",
+          "condition": "Flt3 > -0.492",
+          "local_importance": 0.000298420657021629
+        }
+      ],
+      "depth": 6,
+      "n_cells": 1201,
+      "pop_fraction": 0.3537555228276878,
+      "gini_impurity": 0.006622443460888916,
+      "gini_reduction": 0.0008224264673848247,
+      "target_fraction": 0.0008326394671107411,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.008314149973061664,
+      "mean_ig": -0.02445375733077526,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": -0.5611258644418213,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 94,
+      "rule": "Coro6 > -0.877 AND Kcnq5 > -0.941 AND Elavl2 > -1.881 AND Kcna3 > 1.190 AND Tmem158 <= 1.473 AND Dab1 <= 1.016",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 > -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Elavl2",
+          "condition": "Elavl2 > -1.881",
+          "local_importance": 0.003726752969789114
+        },
+        {
+          "feature": "Tmem158",
+          "condition": "Tmem158 <= 1.473",
+          "local_importance": 0.0017264857842940707
+        },
+        {
+          "feature": "Kcna3",
+          "condition": "Kcna3 > 1.190",
+          "local_importance": 0.0008693242958428216
+        },
+        {
+          "feature": "Dab1",
+          "condition": "Dab1 <= 1.016",
+          "local_importance": 0.0008376247355712722
+        }
+      ],
+      "depth": 6,
+      "n_cells": 98,
+      "pop_fraction": 0.0288659793814433,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.034887860448558176,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": -0.01956196129322052,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": -0.4487416062820906,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 95,
+      "rule": "Coro6 > -0.877 AND Kcnq5 > -0.941 AND Elavl2 > -1.881 AND Kcna3 > 1.190 AND Tmem158 <= 1.473 AND Dab1 > 1.016",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 > -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Elavl2",
+          "condition": "Elavl2 > -1.881",
+          "local_importance": 0.003726752969789114
+        },
+        {
+          "feature": "Tmem158",
+          "condition": "Tmem158 <= 1.473",
+          "local_importance": 0.0017264857842940707
+        },
+        {
+          "feature": "Kcna3",
+          "condition": "Kcna3 > 1.190",
+          "local_importance": 0.0008693242958428216
+        },
+        {
+          "feature": "Dab1",
+          "condition": "Dab1 > 1.016",
+          "local_importance": 0.0008376247355712722
+        }
+      ],
+      "depth": 6,
+      "n_cells": 5,
+      "pop_fraction": 0.0014727540500736377,
+      "gini_impurity": 0.5,
+      "gini_reduction": 0.034887860448558176,
+      "target_fraction": 0.2,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 1.9970588235294118,
+      "mean_ig": 0.00796384084969759,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.18363693737233938,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 97,
+      "rule": "Coro6 > -0.877 AND Kcnq5 > -0.941 AND Elavl2 > -1.881 AND Kcna3 > 1.190 AND Tmem158 > 1.473 AND Cpne7 <= 0.880",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 > -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Elavl2",
+          "condition": "Elavl2 > -1.881",
+          "local_importance": 0.003726752969789114
+        },
+        {
+          "feature": "Tmem158",
+          "condition": "Tmem158 > 1.473",
+          "local_importance": 0.0017264857842940707
+        },
+        {
+          "feature": "Cpne7",
+          "condition": "Cpne7 <= 0.880",
+          "local_importance": 0.0012531100381459395
+        },
+        {
+          "feature": "Kcna3",
+          "condition": "Kcna3 > 1.190",
+          "local_importance": 0.0008693242958428216
+        }
+      ],
+      "depth": 6,
+      "n_cells": 20,
+      "pop_fraction": 0.005891016200294551,
+      "gini_impurity": 0.2873345935727788,
+      "gini_reduction": 0.1383120204603581,
+      "target_fraction": 0.05,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.49926470588235294,
+      "mean_ig": 0.0009630012209527194,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.022799453116755766,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 98,
+      "rule": "Coro6 > -0.877 AND Kcnq5 > -0.941 AND Elavl2 > -1.881 AND Kcna3 > 1.190 AND Tmem158 > 1.473 AND Cpne7 > 0.880",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Kcnq5",
+          "condition": "Kcnq5 > -0.941",
+          "local_importance": 0.01477907483098502
+        },
+        {
+          "feature": "Elavl2",
+          "condition": "Elavl2 > -1.881",
+          "local_importance": 0.003726752969789114
+        },
+        {
+          "feature": "Tmem158",
+          "condition": "Tmem158 > 1.473",
+          "local_importance": 0.0017264857842940707
+        },
+        {
+          "feature": "Cpne7",
+          "condition": "Cpne7 > 0.880",
+          "local_importance": 0.0012531100381459395
+        },
+        {
+          "feature": "Kcna3",
+          "condition": "Kcna3 > 1.190",
+          "local_importance": 0.0008693242958428216
+        }
+      ],
+      "depth": 6,
+      "n_cells": 8,
+      "pop_fraction": 0.00235640648011782,
+      "gini_impurity": 0.4152249134948097,
+      "gini_reduction": 0.1383120204603581,
+      "target_fraction": 0.375,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 3.7444852941176467,
+      "mean_ig": 0.040904451161623,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.9404154344343374,
+      "flag_low_support": true
+    }
+  ]
+}

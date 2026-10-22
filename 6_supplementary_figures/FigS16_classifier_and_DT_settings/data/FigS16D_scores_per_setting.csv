@@ -1,0 +1,13 @@
+Dataset,Setting,Feature Comprehensiveness,Biological Plausibility,Hypothesis Specificity,Mechanistic Synthesis,Logic Rigor,Literature Grounding
+CITE-seq CD45RA,"30 genes, depth 4",10,9,8,8,10,8
+CITE-seq CD45RA,"30 genes, depth 6",10,8,8,8,10,7
+CITE-seq CD45RA,"60 genes, depth 4",10,6,8,7,10,6
+CITE-seq CD45RA,"60 genes, depth 6",10,8,8,7,10,6
+CosMx Ki-67,"30 genes, depth 4",10,9,8,8,10,6
+CosMx Ki-67,"30 genes, depth 6",10,8,5,5,10,5
+CosMx Ki-67,"60 genes, depth 4",10,9,8,8,10,7
+CosMx Ki-67,"60 genes, depth 6",10,9,8,8,10,6
+Gouwens input resistance,"30 genes, depth 4",9,8,6,6,10,8
+Gouwens input resistance,"30 genes, depth 6",10,8,8,7,10,7
+Gouwens input resistance,"60 genes, depth 4",10,8,8,7,10,8
+Gouwens input resistance,"60 genes, depth 6",10,8,8,8,10,6

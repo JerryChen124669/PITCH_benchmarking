@@ -1,0 +1,15 @@
+{
+  "dataset": "CosMx_CancerKi67",
+  "setting": "top30_depth4",
+  "judge_model": "gpt-5.6-sol",
+  "scores": {
+    "Feature Comprehensiveness": 10,
+    "Logic Rigor": 10,
+    "Biological Plausibility": 9,
+    "Biological Plausibility_reason": "The chromatin-associated role of PTMA and the RNA-processing, translational, and microtubule contexts are biologically compatible with a proliferative breast-cancer state. Calling PTMA rate-limiting and assigning specific spindle dependence to these tubulin isotypes are speculative but defensible as hypotheses rather than established facts.",
+    "Specificity": 8,
+    "Mechanistic Synthesis": 8,
+    "Mechanistic Synthesis_reason": "The response integrates PTMA-mediated chromatin accessibility with HNRNPA2B1-dependent RNA processing, RPL41-associated translation, and TUBA1C/TUBB4B-associated mitotic machinery. The transitions from PTMA to these execution programs and from RPL41 expression to global translational capacity remain broad and partly state-marker based. No mechanistic-synthesis ceiling was applied because all four contextual features contribute explicitly to a coherent focus-feature\u2013target model.",
+    "Literature Grounding": 6
+  }
+}

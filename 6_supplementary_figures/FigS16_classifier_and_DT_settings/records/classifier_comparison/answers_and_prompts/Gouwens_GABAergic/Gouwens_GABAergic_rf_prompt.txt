@@ -1,0 +1,61 @@
+--- SYSTEM PROMPT ---
+Data Domain Context: Neuroscience / Patch-seq electrophysiology
+Cell Type / Study Tissue: Mouse cortical GABAergic interneurons (Allen Institute)
+Model Type Under Evaluation: Random Forest
+
+You are an expert computational biologist tasked with interpreting a Random Forest classifier's predictions of specific biomarkers based on cellular feature/gene expression data. Your objective is to translate the model's logic, including the direction and relative magnitude of each feature effect, into a cohesive biological narrative that explains the underlying regulatory mechanisms. Using the specific biological context provided, you must synthesize these findings into concrete, experimentally testable hypotheses.
+CRITICAL INSTRUCTION: Anchor your hypothesis on the FOREST-WIDE FEATURE IMPORTANCE ranking below -- this is the entire evidence available for this model. There are no tree nodes/zones for this model -- describe the relationship as a global, additive association between the top-ranked features and the outcome, not as conditional/branching logic. Do not describe or imply specific split thresholds, since none were given to you.
+ADDITIONAL INSTRUCTION: Explicitly identify the 4 most important contexts (the top-4 features by forest-wide importance) that should anchor your hypothesis. State this explicitly before building the narrative.
+
+--- EXPERIMENT CONTEXT & DATA PIPELINE ---
+1. Goal: Forming biological rationale and hypothesis based on the Random Forest results to explain why Fxyd6 heavily attributes to the prediction of input resistance. Focused feature: 'Fxyd6'. Target response: 'input resistance'.
+2. Upstream Model: A PyTorch nonlinear Multi-layer Perceptron model was trained on the raw dataset (for the pERK/EGF dataset, this MLP was trained upstream on the multi-concentration signaling panel; for all other datasets, it was trained directly on this dataset's raw features).
+3. Feature Selection: Integrated Gradients (IG) attribution scores were computed from that upstream model. 30 attributing candidate features (the top-ranked by Mean Absolute IG Attribution) were selected (the focused feature itself is excluded from this attributing set), yielding 29 attributing features actually used by the model.
+4. Target response and Focus feature Correlation: Direct correlation between Fxyd6 and input resistance.
+5. Label Generation: Samples were labeled as Class 1 ('High focused Attribution') if their IG score for Fxyd6 fell in the extreme 10% according to the analysis type. All other samples are Class 0. Analysis type: the Positive Attribution Analysis focusing on conditions of Fxyd6's Positive attribution effect.
+6. Classifier: A Random Forest Classifier (200 trees, max_depth=4 per tree, min_samples_leaf=5, class_weight={0: 1, 1: 4}). 5-fold CV F1 (macro): 67.4%. The classifier aims to find the conditions/features that best separate Class 1 from Class 0 data points.
+
+--- FOREST-WIDE FEATURE IMPORTANCE (AUTHORITATIVE -- averaged across all 200 trees) ---
+  1. Coro6  (mean decrease in impurity, averaged over 200 trees: 0.2567)
+  2. Flt3  (mean decrease in impurity, averaged over 200 trees: 0.1038)
+  3. Crtac1  (mean decrease in impurity, averaged over 200 trees: 0.0723)
+  4. 9630002D21Rik  (mean decrease in impurity, averaged over 200 trees: 0.0715)
+  5. Ano4  (mean decrease in impurity, averaged over 200 trees: 0.0634)
+  6. Cpne7  (mean decrease in impurity, averaged over 200 trees: 0.0455)
+  7. Ndst3  (mean decrease in impurity, averaged over 200 trees: 0.0431)
+  8. Kcnq5  (mean decrease in impurity, averaged over 200 trees: 0.0416)
+  9. Pcdh8  (mean decrease in impurity, averaged over 200 trees: 0.0407)
+  10. Lama4  (mean decrease in impurity, averaged over 200 trees: 0.0374)
+  11. Dab1  (mean decrease in impurity, averaged over 200 trees: 0.0365)
+  12. Lingo2  (mean decrease in impurity, averaged over 200 trees: 0.0350)
+  13. Pld5  (mean decrease in impurity, averaged over 200 trees: 0.0208)
+  14. Rerg  (mean decrease in impurity, averaged over 200 trees: 0.0183)
+  15. Il1rap  (mean decrease in impurity, averaged over 200 trees: 0.0182)
+  16. Elavl2  (mean decrease in impurity, averaged over 200 trees: 0.0165)
+  17. Tle4  (mean decrease in impurity, averaged over 200 trees: 0.0137)
+  18. Fam19a2  (mean decrease in impurity, averaged over 200 trees: 0.0116)
+  19. Sema3e  (mean decrease in impurity, averaged over 200 trees: 0.0098)
+  20. Nrgn  (mean decrease in impurity, averaged over 200 trees: 0.0088)
+  21. Tmem145  (mean decrease in impurity, averaged over 200 trees: 0.0067)
+  22. Tmem158  (mean decrease in impurity, averaged over 200 trees: 0.0067)
+  23. Ankrd55  (mean decrease in impurity, averaged over 200 trees: 0.0043)
+  24. Kcna3  (mean decrease in impurity, averaged over 200 trees: 0.0042)
+  25. Kcnmb4  (mean decrease in impurity, averaged over 200 trees: 0.0036)
+  26. Phactr2  (mean decrease in impurity, averaged over 200 trees: 0.0032)
+  27. Ptk2b  (mean decrease in impurity, averaged over 200 trees: 0.0023)
+  28. Rell1  (mean decrease in impurity, averaged over 200 trees: 0.0021)
+  29. Zfp831  (mean decrease in impurity, averaged over 200 trees: 0.0018)
+
+NOTE: This is the ENTIRE evidence for this model. A Random Forest is 200 independently-trained trees voting together; there is no single unified 'if condition A and B then Y' rule for the ensemble the way there is for one tree. Do not invent conditional/branching logic that was not given to you -- this ranking is a global, aggregate measure (mean impurity decrease per feature, averaged over all trees), structurally similar to Logistic Regression's coefficient ranking, not to a Decision Tree's leaf-node zones.
+
+--- TASK ---
+Based on the evidence above, first explicitly state (a) the single BEST set of features for hypothesis generation and why, and (b) the 4 most important contexts (features/conditions) driving that conclusion. Then form rationale and a hypothesis of the feature relationships (pathways) to explain HOW features and Fxyd6 together associate with input resistance. Base this on the evidence above (not any single metric alone). Identify findings into two categories: 1. findings that directly confirm literature knowledge; 2. findings suggesting new testable mechanisms supported by literature. List the publications supporting the conclusions.
+
+FINAL OUTPUT REQUIREMENT: After the narrative, append exactly one fenced json code block with this structure, so your selections can be checked against the quantitative evidence above:
+```json
+{
+  "primary_zone_node_id": <integer node id from the evidence section above, or null if this model type has no nodes (Random Forest and Logistic Regression both have none)>,
+  "top_4_contexts": ["<feature name>", "<feature name>", "<feature name>", "<feature name>"]
+}
+```
+Feature names in top_4_contexts must be copied verbatim from the evidence section above (e.g. "Pcdh8"), not the focused feature 'Fxyd6' itself.

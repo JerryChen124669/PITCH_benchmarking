@@ -1,0 +1,4 @@
+dataset,target_response,n_cells_in_dataset,n_features,n_cells_sampled,sampled_percent,data_block_tokens
+CITEseq_CD45RA_naive,CD45RA,8617,1500,45,0.522,518069
+CosMx_CancerKi67,Ki-67,30000,500,152,0.507,518904
+Gouwens_GABAergic,input resistance,3395,1000,77,2.268,517691

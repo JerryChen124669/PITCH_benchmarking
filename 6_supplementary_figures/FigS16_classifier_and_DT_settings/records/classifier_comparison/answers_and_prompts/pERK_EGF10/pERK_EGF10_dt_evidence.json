@@ -1,0 +1,659 @@
+{
+  "dataset_key": "pERK_EGF10",
+  "model_key": "dt",
+  "model_label": "Decision Tree",
+  "target_prot": "Cytoplasm Intensity mean Actin",
+  "target_name": "pERK",
+  "attr_features": [
+    "Nucleus Morphology Area",
+    "Nucleus Morphology Perimeter",
+    "Nucleus Morphology Elongation",
+    "Morphology Area",
+    "Morphology Perimeter",
+    "Morphology Elongation",
+    "Cytoplasm Morphology Area",
+    "Cytoplasm Morphology Perimeter",
+    "Cytoplasm Morphology Elongation",
+    "Membrane Morphology Area",
+    "Membrane Morphology Perimeter",
+    "Membrane Morphology Elongation",
+    "Cytobody Morphology Area",
+    "Cytobody Morphology Perimeter",
+    "Cytobody Morphology Elongation",
+    "Nucleus Intensity mean DAPI",
+    "Cytoplasm Intensity mean Paxillin",
+    "Nucleus Intensity mean YAP",
+    "Membrane Intensity mean YAP",
+    "Nucleus Intensity mean PCNA",
+    "Cytobody Intensity mean Paxillin",
+    "Nucleus Intensity std DAPI"
+  ],
+  "cv_f1": 0.7486262935772391,
+  "node_records": [
+    {
+      "node_id": 4,
+      "rule": "Cytoplasm Intensity mean Paxillin <= 0.778 AND Cytoplasm Intensity mean Paxillin <= 0.273 AND Nucleus Intensity mean PCNA <= -1.528 AND Nucleus Morphology Perimeter <= 0.805",
+      "feature_confidence": [
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin <= 0.778",
+          "local_importance": 0.16246365659139828
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin <= 0.273",
+          "local_importance": 0.012479290997147273
+        },
+        {
+          "feature": "Nucleus Intensity mean PCNA",
+          "condition": "Nucleus Intensity mean PCNA <= -1.528",
+          "local_importance": 0.0027120848855921274
+        },
+        {
+          "feature": "Nucleus Morphology Perimeter",
+          "condition": "Nucleus Morphology Perimeter <= 0.805",
+          "local_importance": 0.0012546272754273577
+        }
+      ],
+      "depth": 4,
+      "n_cells": 120,
+      "pop_fraction": 0.006,
+      "gini_impurity": 0.4951941560938101,
+      "gini_reduction": 0.09346793455905815,
+      "target_fraction": 0.23333333333333334,
+      "overall_target_rate": 0.1,
+      "target_lift": 2.333333333333333,
+      "mean_ig": 0.02327372506260872,
+      "overall_mean_ig": 0.009206676855683327,
+      "overall_std_ig": 0.20080038905143738,
+      "ig_enrichment_sd": 0.07005488521898208,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 5,
+      "rule": "Cytoplasm Intensity mean Paxillin <= 0.778 AND Cytoplasm Intensity mean Paxillin <= 0.273 AND Nucleus Intensity mean PCNA <= -1.528 AND Nucleus Morphology Perimeter > 0.805",
+      "feature_confidence": [
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin <= 0.778",
+          "local_importance": 0.16246365659139828
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin <= 0.273",
+          "local_importance": 0.012479290997147273
+        },
+        {
+          "feature": "Nucleus Intensity mean PCNA",
+          "condition": "Nucleus Intensity mean PCNA <= -1.528",
+          "local_importance": 0.0027120848855921274
+        },
+        {
+          "feature": "Nucleus Morphology Perimeter",
+          "condition": "Nucleus Morphology Perimeter > 0.805",
+          "local_importance": 0.0012546272754273577
+        }
+      ],
+      "depth": 4,
+      "n_cells": 133,
+      "pop_fraction": 0.00665,
+      "gini_impurity": 0.1963376932223544,
+      "gini_reduction": 0.09346793455905815,
+      "target_fraction": 0.03007518796992481,
+      "overall_target_rate": 0.1,
+      "target_lift": 0.3007518796992481,
+      "mean_ig": -0.2010093629360199,
+      "overall_mean_ig": 0.009206676855683327,
+      "overall_std_ig": 0.20080038905143738,
+      "ig_enrichment_sd": -1.0468906000867055,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 7,
+      "rule": "Cytoplasm Intensity mean Paxillin <= 0.778 AND Cytoplasm Intensity mean Paxillin <= 0.273 AND Nucleus Intensity mean PCNA > -1.528 AND Cytoplasm Intensity mean Paxillin <= -0.023",
+      "feature_confidence": [
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin <= 0.778",
+          "local_importance": 0.16246365659139828
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin <= 0.273",
+          "local_importance": 0.012479290997147273
+        },
+        {
+          "feature": "Nucleus Intensity mean PCNA",
+          "condition": "Nucleus Intensity mean PCNA > -1.528",
+          "local_importance": 0.0027120848855921274
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin <= -0.023",
+          "local_importance": 0.0008941515989053831
+        }
+      ],
+      "depth": 4,
+      "n_cells": 9150,
+      "pop_fraction": 0.4575,
+      "gini_impurity": 0.05330438874517884,
+      "gini_reduction": 0.0019112086132472839,
+      "target_fraction": 0.006994535519125683,
+      "overall_target_rate": 0.1,
+      "target_lift": 0.06994535519125683,
+      "mean_ig": -0.08415735512971878,
+      "overall_mean_ig": 0.009206676855683327,
+      "overall_std_ig": 0.20080038905143738,
+      "ig_enrichment_sd": -0.46495941779020067,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 8,
+      "rule": "Cytoplasm Intensity mean Paxillin <= 0.778 AND Cytoplasm Intensity mean Paxillin <= 0.273 AND Nucleus Intensity mean PCNA > -1.528 AND Cytoplasm Intensity mean Paxillin > -0.023",
+      "feature_confidence": [
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin <= 0.778",
+          "local_importance": 0.16246365659139828
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin <= 0.273",
+          "local_importance": 0.012479290997147273
+        },
+        {
+          "feature": "Nucleus Intensity mean PCNA",
+          "condition": "Nucleus Intensity mean PCNA > -1.528",
+          "local_importance": 0.0027120848855921274
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin > -0.023",
+          "local_importance": 0.0008941515989053831
+        }
+      ],
+      "depth": 4,
+      "n_cells": 2609,
+      "pop_fraction": 0.13045,
+      "gini_impurity": 0.18101973910567015,
+      "gini_reduction": 0.0019112086132472839,
+      "target_fraction": 0.027213491759294748,
+      "overall_target_rate": 0.1,
+      "target_lift": 0.27213491759294745,
+      "mean_ig": -0.0013520540669560432,
+      "overall_mean_ig": 0.009206676855683327,
+      "overall_std_ig": 0.20080038905143738,
+      "ig_enrichment_sd": -0.05258321944752122,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 11,
+      "rule": "Cytoplasm Intensity mean Paxillin <= 0.778 AND Cytoplasm Intensity mean Paxillin > 0.273 AND Nucleus Intensity mean YAP <= -0.463 AND Nucleus Intensity mean PCNA <= -1.623",
+      "feature_confidence": [
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin <= 0.778",
+          "local_importance": 0.16246365659139828
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin > 0.273",
+          "local_importance": 0.012479290997147273
+        },
+        {
+          "feature": "Nucleus Intensity mean YAP",
+          "condition": "Nucleus Intensity mean YAP <= -0.463",
+          "local_importance": 0.004215618485748628
+        },
+        {
+          "feature": "Nucleus Intensity mean PCNA",
+          "condition": "Nucleus Intensity mean PCNA <= -1.623",
+          "local_importance": 0.0023497106907872847
+        }
+      ],
+      "depth": 4,
+      "n_cells": 60,
+      "pop_fraction": 0.003,
+      "gini_impurity": 0.46537396121883656,
+      "gini_reduction": 0.030792579617172078,
+      "target_fraction": 0.3,
+      "overall_target_rate": 0.1,
+      "target_lift": 2.9999999999999996,
+      "mean_ig": 0.04929008334875107,
+      "overall_mean_ig": 0.009206676855683327,
+      "overall_std_ig": 0.20080038905143738,
+      "ig_enrichment_sd": 0.19961817147077293,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 12,
+      "rule": "Cytoplasm Intensity mean Paxillin <= 0.778 AND Cytoplasm Intensity mean Paxillin > 0.273 AND Nucleus Intensity mean YAP <= -0.463 AND Nucleus Intensity mean PCNA > -1.623",
+      "feature_confidence": [
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin <= 0.778",
+          "local_importance": 0.16246365659139828
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin > 0.273",
+          "local_importance": 0.012479290997147273
+        },
+        {
+          "feature": "Nucleus Intensity mean YAP",
+          "condition": "Nucleus Intensity mean YAP <= -0.463",
+          "local_importance": 0.004215618485748628
+        },
+        {
+          "feature": "Nucleus Intensity mean PCNA",
+          "condition": "Nucleus Intensity mean PCNA > -1.623",
+          "local_importance": 0.0023497106907872847
+        }
+      ],
+      "depth": 4,
+      "n_cells": 1732,
+      "pop_fraction": 0.0866,
+      "gini_impurity": 0.17742800766393096,
+      "gini_reduction": 0.030792579617172078,
+      "target_fraction": 0.026558891454965358,
+      "overall_target_rate": 0.1,
+      "target_lift": 0.26558891454965355,
+      "mean_ig": 0.00808933936059475,
+      "overall_mean_ig": 0.009206676855683327,
+      "overall_std_ig": 0.20080038905143738,
+      "ig_enrichment_sd": -0.0055644189753156215,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 14,
+      "rule": "Cytoplasm Intensity mean Paxillin <= 0.778 AND Cytoplasm Intensity mean Paxillin > 0.273 AND Nucleus Intensity mean YAP > -0.463 AND Cytoplasm Intensity mean Paxillin <= 0.583",
+      "feature_confidence": [
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin <= 0.778",
+          "local_importance": 0.16246365659139828
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin > 0.273",
+          "local_importance": 0.012479290997147273
+        },
+        {
+          "feature": "Nucleus Intensity mean YAP",
+          "condition": "Nucleus Intensity mean YAP > -0.463",
+          "local_importance": 0.004215618485748628
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin <= 0.583",
+          "local_importance": 0.002233738373160758
+        }
+      ],
+      "depth": 4,
+      "n_cells": 1686,
+      "pop_fraction": 0.0843,
+      "gini_impurity": 0.39040087156579717,
+      "gini_reduction": 0.017111725899286917,
+      "target_fraction": 0.0830367734282325,
+      "overall_target_rate": 0.1,
+      "target_lift": 0.8303677342823249,
+      "mean_ig": 0.07039186358451843,
+      "overall_mean_ig": 0.009206676855683327,
+      "overall_std_ig": 0.20080038905143738,
+      "ig_enrichment_sd": 0.3047065148522287,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 15,
+      "rule": "Cytoplasm Intensity mean Paxillin <= 0.778 AND Cytoplasm Intensity mean Paxillin > 0.273 AND Nucleus Intensity mean YAP > -0.463 AND Cytoplasm Intensity mean Paxillin > 0.583",
+      "feature_confidence": [
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin <= 0.778",
+          "local_importance": 0.16246365659139828
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin > 0.273",
+          "local_importance": 0.012479290997147273
+        },
+        {
+          "feature": "Nucleus Intensity mean YAP",
+          "condition": "Nucleus Intensity mean YAP > -0.463",
+          "local_importance": 0.004215618485748628
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin > 0.583",
+          "local_importance": 0.002233738373160758
+        }
+      ],
+      "depth": 4,
+      "n_cells": 847,
+      "pop_fraction": 0.04235,
+      "gini_impurity": 0.49621928166351603,
+      "gini_reduction": 0.017111725899286917,
+      "target_fraction": 0.17355371900826447,
+      "overall_target_rate": 0.1,
+      "target_lift": 1.7355371900826446,
+      "mean_ig": 0.11489485949277878,
+      "overall_mean_ig": 0.009206676855683327,
+      "overall_std_ig": 0.20080038905143738,
+      "ig_enrichment_sd": 0.5263345511249093,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 19,
+      "rule": "Cytoplasm Intensity mean Paxillin > 0.778 AND Cytoplasm Intensity mean Paxillin <= 1.109 AND Nucleus Intensity mean YAP <= 0.267 AND Nucleus Morphology Perimeter <= 0.509",
+      "feature_confidence": [
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin > 0.778",
+          "local_importance": 0.16246365659139828
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin <= 1.109",
+          "local_importance": 0.015060665029838554
+        },
+        {
+          "feature": "Nucleus Intensity mean YAP",
+          "condition": "Nucleus Intensity mean YAP <= 0.267",
+          "local_importance": 0.004046978518663635
+        },
+        {
+          "feature": "Nucleus Morphology Perimeter",
+          "condition": "Nucleus Morphology Perimeter <= 0.509",
+          "local_importance": 0.0008136803246051039
+        }
+      ],
+      "depth": 4,
+      "n_cells": 916,
+      "pop_fraction": 0.0458,
+      "gini_impurity": 0.49856774449513985,
+      "gini_reduction": 0.011146305816508287,
+      "target_fraction": 0.18340611353711792,
+      "overall_target_rate": 0.1,
+      "target_lift": 1.834061135371179,
+      "mean_ig": 0.1086917519569397,
+      "overall_mean_ig": 0.009206676855683327,
+      "overall_std_ig": 0.20080038905143738,
+      "ig_enrichment_sd": 0.4954426411782106,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 20,
+      "rule": "Cytoplasm Intensity mean Paxillin > 0.778 AND Cytoplasm Intensity mean Paxillin <= 1.109 AND Nucleus Intensity mean YAP <= 0.267 AND Nucleus Morphology Perimeter > 0.509",
+      "feature_confidence": [
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin > 0.778",
+          "local_importance": 0.16246365659139828
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin <= 1.109",
+          "local_importance": 0.015060665029838554
+        },
+        {
+          "feature": "Nucleus Intensity mean YAP",
+          "condition": "Nucleus Intensity mean YAP <= 0.267",
+          "local_importance": 0.004046978518663635
+        },
+        {
+          "feature": "Nucleus Morphology Perimeter",
+          "condition": "Nucleus Morphology Perimeter > 0.509",
+          "local_importance": 0.0008136803246051039
+        }
+      ],
+      "depth": 4,
+      "n_cells": 370,
+      "pop_fraction": 0.0185,
+      "gini_impurity": 0.4210010328950824,
+      "gini_reduction": 0.011146305816508287,
+      "target_fraction": 0.0972972972972973,
+      "overall_target_rate": 0.1,
+      "target_lift": 0.972972972972973,
+      "mean_ig": 0.08736702054738998,
+      "overall_mean_ig": 0.009206676855683327,
+      "overall_std_ig": 0.20080038905143738,
+      "ig_enrichment_sd": 0.38924398533752325,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 22,
+      "rule": "Cytoplasm Intensity mean Paxillin > 0.778 AND Cytoplasm Intensity mean Paxillin <= 1.109 AND Nucleus Intensity mean YAP > 0.267 AND Nucleus Intensity mean YAP <= 0.939",
+      "feature_confidence": [
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin > 0.778",
+          "local_importance": 0.16246365659139828
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin <= 1.109",
+          "local_importance": 0.015060665029838554
+        },
+        {
+          "feature": "Nucleus Intensity mean YAP",
+          "condition": "Nucleus Intensity mean YAP > 0.267",
+          "local_importance": 0.004046978518663635
+        },
+        {
+          "feature": "Nucleus Intensity mean YAP",
+          "condition": "Nucleus Intensity mean YAP <= 0.939",
+          "local_importance": 0.0007075602402283075
+        }
+      ],
+      "depth": 4,
+      "n_cells": 386,
+      "pop_fraction": 0.0193,
+      "gini_impurity": 0.46805941311435817,
+      "gini_reduction": 0.015266859955133619,
+      "target_fraction": 0.29533678756476683,
+      "overall_target_rate": 0.1,
+      "target_lift": 2.9533678756476682,
+      "mean_ig": 0.15667003393173218,
+      "overall_mean_ig": 0.009206676855683327,
+      "overall_std_ig": 0.20080038905143738,
+      "ig_enrichment_sd": 0.7343778454446838,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 23,
+      "rule": "Cytoplasm Intensity mean Paxillin > 0.778 AND Cytoplasm Intensity mean Paxillin <= 1.109 AND Nucleus Intensity mean YAP > 0.267 AND Nucleus Intensity mean YAP > 0.939",
+      "feature_confidence": [
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin > 0.778",
+          "local_importance": 0.16246365659139828
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin <= 1.109",
+          "local_importance": 0.015060665029838554
+        },
+        {
+          "feature": "Nucleus Intensity mean YAP",
+          "condition": "Nucleus Intensity mean YAP > 0.267",
+          "local_importance": 0.004046978518663635
+        },
+        {
+          "feature": "Nucleus Intensity mean YAP",
+          "condition": "Nucleus Intensity mean YAP > 0.939",
+          "local_importance": 0.0007075602402283075
+        }
+      ],
+      "depth": 4,
+      "n_cells": 189,
+      "pop_fraction": 0.00945,
+      "gini_impurity": 0.31391163324235594,
+      "gini_reduction": 0.015266859955133619,
+      "target_fraction": 0.5079365079365079,
+      "overall_target_rate": 0.1,
+      "target_lift": 5.079365079365079,
+      "mean_ig": 0.23727034032344818,
+      "overall_mean_ig": 0.009206676855683327,
+      "overall_std_ig": 0.20080038905143738,
+      "ig_enrichment_sd": 1.135773015904584,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 26,
+      "rule": "Cytoplasm Intensity mean Paxillin > 0.778 AND Cytoplasm Intensity mean Paxillin > 1.109 AND Cytoplasm Intensity mean Paxillin <= 1.342 AND Nucleus Intensity mean YAP <= -1.405",
+      "feature_confidence": [
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin > 0.778",
+          "local_importance": 0.16246365659139828
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin > 1.109",
+          "local_importance": 0.015060665029838554
+        },
+        {
+          "feature": "Nucleus Intensity mean YAP",
+          "condition": "Nucleus Intensity mean YAP <= -1.405",
+          "local_importance": 0.0018599306497700196
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin <= 1.342",
+          "local_importance": 0.0018223962987903525
+        }
+      ],
+      "depth": 4,
+      "n_cells": 95,
+      "pop_fraction": 0.00475,
+      "gini_impurity": 0.451171875,
+      "gini_reduction": 0.026353240814180112,
+      "target_fraction": 0.11578947368421053,
+      "overall_target_rate": 0.1,
+      "target_lift": 1.157894736842105,
+      "mean_ig": 0.08191721886396408,
+      "overall_mean_ig": 0.009206676855683327,
+      "overall_std_ig": 0.20080038905143738,
+      "ig_enrichment_sd": 0.3621035912916239,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 27,
+      "rule": "Cytoplasm Intensity mean Paxillin > 0.778 AND Cytoplasm Intensity mean Paxillin > 1.109 AND Cytoplasm Intensity mean Paxillin <= 1.342 AND Nucleus Intensity mean YAP > -1.405",
+      "feature_confidence": [
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin > 0.778",
+          "local_importance": 0.16246365659139828
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin > 1.109",
+          "local_importance": 0.015060665029838554
+        },
+        {
+          "feature": "Nucleus Intensity mean YAP",
+          "condition": "Nucleus Intensity mean YAP > -1.405",
+          "local_importance": 0.0018599306497700196
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin <= 1.342",
+          "local_importance": 0.0018223962987903525
+        }
+      ],
+      "depth": 4,
+      "n_cells": 690,
+      "pop_fraction": 0.0345,
+      "gini_impurity": 0.32668542536006495,
+      "gini_reduction": 0.026353240814180112,
+      "target_fraction": 0.49130434782608695,
+      "overall_target_rate": 0.1,
+      "target_lift": 4.913043478260869,
+      "mean_ig": 0.21570023894309998,
+      "overall_mean_ig": 0.009206676855683327,
+      "overall_std_ig": 0.20080038905143738,
+      "ig_enrichment_sd": 1.0283524004254838,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 29,
+      "rule": "Cytoplasm Intensity mean Paxillin > 0.778 AND Cytoplasm Intensity mean Paxillin > 1.109 AND Cytoplasm Intensity mean Paxillin > 1.342 AND Nucleus Intensity mean YAP <= -0.236",
+      "feature_confidence": [
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin > 0.778",
+          "local_importance": 0.16246365659139828
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin > 1.109",
+          "local_importance": 0.015060665029838554
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin > 1.342",
+          "local_importance": 0.0018223962987903525
+        },
+        {
+          "feature": "Nucleus Intensity mean YAP",
+          "condition": "Nucleus Intensity mean YAP <= -0.236",
+          "local_importance": 0.0005695916599992088
+        }
+      ],
+      "depth": 4,
+      "n_cells": 480,
+      "pop_fraction": 0.024,
+      "gini_impurity": 0.25711662075298436,
+      "gini_reduction": 0.0046702564364488955,
+      "target_fraction": 0.5833333333333334,
+      "overall_target_rate": 0.1,
+      "target_lift": 5.833333333333333,
+      "mean_ig": 0.2746972441673279,
+      "overall_mean_ig": 0.009206676855683327,
+      "overall_std_ig": 0.20080038905143738,
+      "ig_enrichment_sd": 1.3221616181412679,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 30,
+      "rule": "Cytoplasm Intensity mean Paxillin > 0.778 AND Cytoplasm Intensity mean Paxillin > 1.109 AND Cytoplasm Intensity mean Paxillin > 1.342 AND Nucleus Intensity mean YAP > -0.236",
+      "feature_confidence": [
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin > 0.778",
+          "local_importance": 0.16246365659139828
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin > 1.109",
+          "local_importance": 0.015060665029838554
+        },
+        {
+          "feature": "Cytoplasm Intensity mean Paxillin",
+          "condition": "Cytoplasm Intensity mean Paxillin > 1.342",
+          "local_importance": 0.0018223962987903525
+        },
+        {
+          "feature": "Nucleus Intensity mean YAP",
+          "condition": "Nucleus Intensity mean YAP > -0.236",
+          "local_importance": 0.0005695916599992088
+        }
+      ],
+      "depth": 4,
+      "n_cells": 537,
+      "pop_fraction": 0.02685,
+      "gini_impurity": 0.10124800033623249,
+      "gini_reduction": 0.0046702564364488955,
+      "target_fraction": 0.8156424581005587,
+      "overall_target_rate": 0.1,
+      "target_lift": 8.156424581005586,
+      "mean_ig": 0.41527262330055237,
+      "overall_mean_ig": 0.009206676855683327,
+      "overall_std_ig": 0.20080038905143738,
+      "ig_enrichment_sd": 2.02223685104938,
+      "flag_low_support": false
+    }
+  ],
+  "min_support": 100
+}

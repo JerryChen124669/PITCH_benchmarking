@@ -1,0 +1,157 @@
+{
+  "dataset_key": "CosMx_CancerKi67",
+  "model_key": "logreg",
+  "model_label": "Logistic Regression",
+  "target_prot": "PTMA",
+  "target_name": "Ki-67",
+  "attr_features": [
+    "PABPC1",
+    "CKS2",
+    "FTH1",
+    "HDGF",
+    "RPLP0",
+    "FABP7",
+    "RPS18",
+    "TUBB4B",
+    "SERHL2",
+    "TUBA1C",
+    "ALDOA",
+    "RPS27",
+    "RPS3A",
+    "RPS7",
+    "GLUL",
+    "MUCL1",
+    "ARF3",
+    "NFIX",
+    "COX8A",
+    "NOP56",
+    "PPP1CB",
+    "GPAA1",
+    "HNRNPA2B1",
+    "RPL41",
+    "RPL34",
+    "ARF4",
+    "PKM",
+    "RPL39",
+    "ASS1"
+  ],
+  "cv_f1": 0.73441803926126,
+  "coef_ranking": [
+    {
+      "feature": "HNRNPA2B1",
+      "coefficient": 0.4138794268346241
+    },
+    {
+      "feature": "TUBB4B",
+      "coefficient": 0.3721550611955407
+    },
+    {
+      "feature": "TUBA1C",
+      "coefficient": 0.30594536903552616
+    },
+    {
+      "feature": "RPL41",
+      "coefficient": 0.29015616511037584
+    },
+    {
+      "feature": "PABPC1",
+      "coefficient": 0.2687929334624567
+    },
+    {
+      "feature": "SERHL2",
+      "coefficient": -0.2534504181653253
+    },
+    {
+      "feature": "HDGF",
+      "coefficient": 0.24360080658595634
+    },
+    {
+      "feature": "RPS27",
+      "coefficient": 0.19328252891510442
+    },
+    {
+      "feature": "NFIX",
+      "coefficient": 0.18011129161055536
+    },
+    {
+      "feature": "RPLP0",
+      "coefficient": 0.17344656115863472
+    },
+    {
+      "feature": "CKS2",
+      "coefficient": 0.14468063755851468
+    },
+    {
+      "feature": "ALDOA",
+      "coefficient": -0.13835442869677989
+    },
+    {
+      "feature": "NOP56",
+      "coefficient": 0.13444379580591803
+    },
+    {
+      "feature": "RPS7",
+      "coefficient": 0.12374381506516723
+    },
+    {
+      "feature": "FTH1",
+      "coefficient": -0.11951677874708479
+    },
+    {
+      "feature": "ARF4",
+      "coefficient": -0.08250586551945839
+    },
+    {
+      "feature": "GPAA1",
+      "coefficient": 0.06833056016978253
+    },
+    {
+      "feature": "PPP1CB",
+      "coefficient": 0.05554493628191753
+    },
+    {
+      "feature": "RPS3A",
+      "coefficient": -0.05299475270354803
+    },
+    {
+      "feature": "RPL39",
+      "coefficient": -0.05085364252643164
+    },
+    {
+      "feature": "MUCL1",
+      "coefficient": 0.04957562034985682
+    },
+    {
+      "feature": "PKM",
+      "coefficient": 0.04407847304540384
+    },
+    {
+      "feature": "COX8A",
+      "coefficient": 0.03498434660655268
+    },
+    {
+      "feature": "RPL34",
+      "coefficient": -0.03299634598553391
+    },
+    {
+      "feature": "ARF3",
+      "coefficient": -0.03127698691400516
+    },
+    {
+      "feature": "FABP7",
+      "coefficient": -0.016361322391533588
+    },
+    {
+      "feature": "ASS1",
+      "coefficient": 0.014874252802701821
+    },
+    {
+      "feature": "GLUL",
+      "coefficient": -0.014447802357352208
+    },
+    {
+      "feature": "RPS18",
+      "coefficient": 0.010475209680438413
+    }
+  ]
+}

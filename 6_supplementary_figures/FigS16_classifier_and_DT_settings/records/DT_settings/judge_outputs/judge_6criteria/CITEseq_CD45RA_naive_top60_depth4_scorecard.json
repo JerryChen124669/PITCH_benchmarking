@@ -1,0 +1,15 @@
+{
+  "dataset": "CITEseq_CD45RA_naive",
+  "setting": "top60_depth4",
+  "judge_model": "gpt-5.6-sol",
+  "scores": {
+    "Feature Comprehensiveness": 10,
+    "Logic Rigor": 10,
+    "Biological Plausibility": 6,
+    "Biological Plausibility_reason": "The cytotoxic GNLY/NKG7/GZMB program and LYZ-low lymphoid context plausibly identify a CD45RA-expressing TEMRA-like state. However, the submission conflates the high-attribution class with measured CD45RA positivity and incorrectly frames CD45RA isoform re-expression primarily as PTPRC-locus chromatin opening rather than regulated alternative splicing.",
+    "Specificity": 8,
+    "Mechanistic Synthesis": 7,
+    "Mechanistic Synthesis_reason": "GNLY, NKG7, and GZMB are integrated as a cytotoxic module associated with a TEMRA-like CD45RA state, while low LYZ is used to constrain the association to a lymphoid rather than myeloid context. The transition from terminal differentiation to CD45RA isoform expression is insufficiently resolved and relies on a questionable T-bet/Eomes-driven chromatin-accessibility explanation. No synthesis ceiling was applied because a coherent cell-state/proxy mechanism remains after excluding that questionable molecular transition.",
+    "Literature Grounding": 6
+  }
+}

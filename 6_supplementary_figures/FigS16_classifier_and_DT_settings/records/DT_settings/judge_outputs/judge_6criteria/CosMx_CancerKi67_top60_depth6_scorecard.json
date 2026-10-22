@@ -1,0 +1,15 @@
+{
+  "dataset": "CosMx_CancerKi67",
+  "setting": "top60_depth6",
+  "judge_model": "gpt-5.6-sol",
+  "scores": {
+    "Feature Comprehensiveness": 10,
+    "Logic Rigor": 10,
+    "Biological Plausibility": 9,
+    "Biological Plausibility_reason": "The proposed PTMA\u2013chromatin, ribosomal-capacity, RNA-processing, and microtubule-readiness model is biologically defensible in proliferating breast cancer cells. RPL41 as an absolute translational prerequisite and HNRNPA2B1-dependent tubulin production are overstrong interpretations, but they are framed largely as testable extensions rather than established facts.",
+    "Specificity": 8,
+    "Mechanistic Synthesis": 8,
+    "Mechanistic Synthesis_reason": "PTMA-mediated chromatin accessibility is connected to RPL41-associated translation, HNRNPA2B1-mediated RNA handling, and TUBA1C/TUBB4B-associated mitotic execution. The direct transitions from PTMA to HNRNPA2B1-regulated tubulin production and ultimately to Ki-67 remain incompletely resolved. No synthesis ceiling was applied because all four contextual features contribute explicitly to one coherent mechanism.",
+    "Literature Grounding": 6
+  }
+}

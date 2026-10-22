@@ -1,0 +1,157 @@
+{
+  "dataset_key": "CITEseq_CD45RA_naive",
+  "model_key": "logreg",
+  "model_label": "Logistic Regression",
+  "target_prot": "HUMAN_GNLY",
+  "target_name": "CD45RA",
+  "attr_features": [
+    "HUMAN_NKG7",
+    "HUMAN_GZMA",
+    "HUMAN_CST3",
+    "HUMAN_S100A12",
+    "HUMAN_GZMB",
+    "HUMAN_RP11-1143G9.4",
+    "HUMAN_FCN1",
+    "HUMAN_CMC1",
+    "HUMAN_CD8B",
+    "HUMAN_CLIC3",
+    "HUMAN_LGALS2",
+    "HUMAN_S100B",
+    "HUMAN_LGALS1",
+    "MOUSE_Neat1",
+    "HUMAN_MNDA",
+    "HUMAN_KLRB1",
+    "HUMAN_KLRF1",
+    "HUMAN_LYZ",
+    "HUMAN_HLA-DRB1",
+    "HUMAN_CD14",
+    "HUMAN_CTSW",
+    "MOUSE_Gnb2",
+    "HUMAN_IFI30",
+    "HUMAN_STAT4",
+    "MOUSE_Rpl8",
+    "HUMAN_IGHV1OR15-1",
+    "HUMAN_TRDC",
+    "MOUSE_Cald1",
+    "HUMAN_CST7"
+  ],
+  "cv_f1": 0.9252640816320173,
+  "coef_ranking": [
+    {
+      "feature": "HUMAN_NKG7",
+      "coefficient": 1.1769990267703427
+    },
+    {
+      "feature": "HUMAN_GZMB",
+      "coefficient": 0.5685518985141287
+    },
+    {
+      "feature": "HUMAN_S100A12",
+      "coefficient": -0.543644124800352
+    },
+    {
+      "feature": "HUMAN_KLRB1",
+      "coefficient": 0.43710852493068986
+    },
+    {
+      "feature": "HUMAN_CTSW",
+      "coefficient": 0.433482989054178
+    },
+    {
+      "feature": "HUMAN_MNDA",
+      "coefficient": 0.34759980848757666
+    },
+    {
+      "feature": "HUMAN_GZMA",
+      "coefficient": 0.3339071890588102
+    },
+    {
+      "feature": "HUMAN_KLRF1",
+      "coefficient": 0.29603387673365816
+    },
+    {
+      "feature": "MOUSE_Gnb2",
+      "coefficient": -0.29220786162592566
+    },
+    {
+      "feature": "HUMAN_CMC1",
+      "coefficient": 0.2882642593743295
+    },
+    {
+      "feature": "HUMAN_CST3",
+      "coefficient": 0.2639563733788168
+    },
+    {
+      "feature": "HUMAN_IFI30",
+      "coefficient": -0.17692384843857567
+    },
+    {
+      "feature": "MOUSE_Neat1",
+      "coefficient": -0.16917229838467385
+    },
+    {
+      "feature": "HUMAN_RP11-1143G9.4",
+      "coefficient": 0.15982675875451235
+    },
+    {
+      "feature": "HUMAN_TRDC",
+      "coefficient": 0.13841256374131256
+    },
+    {
+      "feature": "HUMAN_CST7",
+      "coefficient": 0.13246095977368094
+    },
+    {
+      "feature": "HUMAN_LGALS2",
+      "coefficient": 0.1193652091611648
+    },
+    {
+      "feature": "HUMAN_CLIC3",
+      "coefficient": -0.092155209815282
+    },
+    {
+      "feature": "MOUSE_Cald1",
+      "coefficient": -0.08958965359486541
+    },
+    {
+      "feature": "MOUSE_Rpl8",
+      "coefficient": -0.08514406938248555
+    },
+    {
+      "feature": "HUMAN_LYZ",
+      "coefficient": 0.06896162980749629
+    },
+    {
+      "feature": "HUMAN_HLA-DRB1",
+      "coefficient": 0.06019420958308066
+    },
+    {
+      "feature": "HUMAN_S100B",
+      "coefficient": 0.055715498603501626
+    },
+    {
+      "feature": "HUMAN_FCN1",
+      "coefficient": 0.04266418512659775
+    },
+    {
+      "feature": "HUMAN_CD8B",
+      "coefficient": 0.04217860255341081
+    },
+    {
+      "feature": "HUMAN_LGALS1",
+      "coefficient": -0.04153882080664869
+    },
+    {
+      "feature": "HUMAN_IGHV1OR15-1",
+      "coefficient": -0.03461192766436098
+    },
+    {
+      "feature": "HUMAN_STAT4",
+      "coefficient": -0.015997843973017935
+    },
+    {
+      "feature": "HUMAN_CD14",
+      "coefficient": 0.0026240454491017274
+    }
+  ]
+}

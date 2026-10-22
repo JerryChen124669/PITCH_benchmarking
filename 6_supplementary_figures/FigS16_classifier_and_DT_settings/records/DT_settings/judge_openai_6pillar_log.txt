@@ -1,0 +1,15 @@
+Judging CITEseq_CD45RA_naive / top30_depth4 ... Feat=10  Logi=10  Biol=9  Spec=8  Mech=8  Lite=8
+Judging CITEseq_CD45RA_naive / top60_depth4 ... Feat=10  Logi=10  Biol=6  Spec=8  Mech=7  Lite=6
+Judging CITEseq_CD45RA_naive / top30_depth6 ... Feat=10  Logi=10  Biol=8  Spec=8  Mech=8  Lite=7
+Judging CITEseq_CD45RA_naive / top60_depth6 ... Feat=10  Logi=10  Biol=8  Spec=8  Mech=7  Lite=6
+Judging CosMx_CancerKi67 / top30_depth4 ... Feat=10  Logi=10  Biol=9  Spec=8  Mech=8  Lite=6
+Judging CosMx_CancerKi67 / top60_depth4 ... Feat=10  Logi=10  Biol=9  Spec=8  Mech=8  Lite=7
+Judging CosMx_CancerKi67 / top30_depth6 ... Feat=10  Logi=10  Biol=8  Spec=5  Mech=5  Lite=5
+Judging CosMx_CancerKi67 / top60_depth6 ... Feat=10  Logi=10  Biol=9  Spec=8  Mech=8  Lite=6
+Judging Gouwens_GABAergic / top30_depth4 ... Feat=9  Logi=10  Biol=8  Spec=6  Mech=6  Lite=8
+Judging Gouwens_GABAergic / top60_depth4 ... Feat=10  Logi=10  Biol=8  Spec=8  Mech=7  Lite=8
+Judging Gouwens_GABAergic / top30_depth6 ... Feat=10  Logi=10  Biol=8  Spec=8  Mech=7  Lite=7
+Judging Gouwens_GABAergic / top60_depth6 ... Feat=10  Logi=10  Biol=8  Spec=8  Mech=8  Lite=6
+
+Done. 12 scorecard(s), 0 missing/failed: none
+Aggregate: C:\Users\twjer\nonlinear-multimodal\DTEvaluation\results\judge_evaluation_openai_6pillar\all_scores.json

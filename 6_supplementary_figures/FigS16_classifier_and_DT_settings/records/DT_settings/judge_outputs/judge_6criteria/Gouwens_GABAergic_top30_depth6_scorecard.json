@@ -1,0 +1,15 @@
+{
+  "dataset": "Gouwens_GABAergic",
+  "setting": "top30_depth6",
+  "judge_model": "gpt-5.6-sol",
+  "scores": {
+    "Feature Comprehensiveness": 10,
+    "Logic Rigor": 10,
+    "Biological Plausibility": 8,
+    "Biological Plausibility_reason": "The Kv7.5/M-current, FXYD6\u2013Na+/K+-ATPase, cytoskeletal, adhesion, and membrane-lipid premises are broadly defensible, and the speculative extensions are clearly framed as hypotheses. The main weakness is an overstatement that electrogenic pump activity directly and significantly determines input resistance rather than primarily membrane potential, with effects on slope resistance requiring additional voltage- or activity-dependent steps.",
+    "Specificity": 8,
+    "Mechanistic Synthesis": 7,
+    "Mechanistic Synthesis_reason": "Kcnq5 was connected to membrane conductance, Ano4 to lipid-dependent KCNQ gating, and Coro6 to proposed pump-channel organization around Fxyd6. Pcdh8 remained mainly a network-state marker, and the transition from altered pump activity to measured input resistance was not fully resolved. No formal ceiling was applied because three of the four contextual features were explicitly integrated into a compatible central model.",
+    "Literature Grounding": 7
+  }
+}

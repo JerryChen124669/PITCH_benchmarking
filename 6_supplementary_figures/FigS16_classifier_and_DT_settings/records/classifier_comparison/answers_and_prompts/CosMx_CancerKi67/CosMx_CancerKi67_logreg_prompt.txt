@@ -1,0 +1,63 @@
+--- SYSTEM PROMPT ---
+Data Domain Context: Oncology / CosMx spatial transcriptomics
+Cell Type / Study Tissue: Breast cancer cells, Ki-67 dual-gated (proliferation status)
+Model Type Under Evaluation: Logistic Regression
+
+You are an expert computational biologist tasked with interpreting a Logistic Regression classifier's predictions of specific biomarkers based on cellular feature/gene expression data. Your objective is to translate the model's logic, including the direction and relative magnitude of each feature effect, into a cohesive biological narrative that explains the underlying regulatory mechanisms. Using the specific biological context provided, you must synthesize these findings into concrete, experimentally testable hypotheses.
+CRITICAL INSTRUCTION: Primarily anchor your hypothesis on the STANDARDIZED LOGISTIC REGRESSION COEFFICIENTS section below, in ranked order of |coefficient|. There are no tree nodes/zones for this model -- describe the relationship as a global, additive, monotonic association, not as conditional branching logic.
+ADDITIONAL INSTRUCTION: Explicitly identify the 4 most important contexts (the top-4 features by |standardized coefficient|) that should anchor your hypothesis, and state the direction (positive or negative) of each one's association with high attribution of the focused feature. State this explicitly before building the narrative.
+
+--- EXPERIMENT CONTEXT & DATA PIPELINE ---
+1. Goal: Forming biological rationale and hypothesis based on the Logistic Regression results to explain why PTMA heavily attributes to the prediction of Ki-67. Focused feature: 'PTMA'. Target response: 'Ki-67'.
+2. Upstream Model: A PyTorch nonlinear Multi-layer Perceptron model was trained on the raw dataset (for the pERK/EGF dataset, this MLP was trained upstream on the multi-concentration signaling panel; for all other datasets, it was trained directly on this dataset's raw features).
+3. Feature Selection: Integrated Gradients (IG) attribution scores were computed from that upstream model. 30 attributing candidate features (the top-ranked by Mean Absolute IG Attribution) were selected (the focused feature itself is excluded from this attributing set), yielding 29 attributing features actually used by the model.
+4. Target response and Focus feature Correlation: Direct correlation between PTMA and Ki-67.
+5. Label Generation: Samples were labeled as Class 1 ('High focused Attribution') if their IG score for PTMA fell in the extreme 10% according to the analysis type. All other samples are Class 0. Analysis type: the Positive Attribution Analysis focusing on conditions of PTMA's Positive attribution effect.
+6. Classifier: A Logistic Regression classifier fit on z-scored features (class_weight={0: 1, 1: 4}, L2-regularized, max_iter=2000). 5-fold CV F1 (macro): 73.4%. The classifier aims to find the conditions/features that best separate Class 1 from Class 0 data points.
+
+--- STANDARDIZED LOGISTIC REGRESSION COEFFICIENTS (AUTHORITATIVE, ranked by |coefficient|) ---
+All attributing features were z-scored (mean 0, SD 1) before fitting, so coefficients are directly comparable in magnitude across features of different raw units. A positive coefficient means higher values of that feature push the sample toward Class 1 ('High PTMA Attribution'); a negative coefficient means the opposite.
+
+  1. HNRNPA2B1  (standardized coefficient: +0.4139, increases log-odds of high 'PTMA' attribution per +1 SD)
+  2. TUBB4B  (standardized coefficient: +0.3722, increases log-odds of high 'PTMA' attribution per +1 SD)
+  3. TUBA1C  (standardized coefficient: +0.3059, increases log-odds of high 'PTMA' attribution per +1 SD)
+  4. RPL41  (standardized coefficient: +0.2902, increases log-odds of high 'PTMA' attribution per +1 SD)
+  5. PABPC1  (standardized coefficient: +0.2688, increases log-odds of high 'PTMA' attribution per +1 SD)
+  6. SERHL2  (standardized coefficient: -0.2535, decreases log-odds of high 'PTMA' attribution per +1 SD)
+  7. HDGF  (standardized coefficient: +0.2436, increases log-odds of high 'PTMA' attribution per +1 SD)
+  8. RPS27  (standardized coefficient: +0.1933, increases log-odds of high 'PTMA' attribution per +1 SD)
+  9. NFIX  (standardized coefficient: +0.1801, increases log-odds of high 'PTMA' attribution per +1 SD)
+  10. RPLP0  (standardized coefficient: +0.1734, increases log-odds of high 'PTMA' attribution per +1 SD)
+  11. CKS2  (standardized coefficient: +0.1447, increases log-odds of high 'PTMA' attribution per +1 SD)
+  12. ALDOA  (standardized coefficient: -0.1384, decreases log-odds of high 'PTMA' attribution per +1 SD)
+  13. NOP56  (standardized coefficient: +0.1344, increases log-odds of high 'PTMA' attribution per +1 SD)
+  14. RPS7  (standardized coefficient: +0.1237, increases log-odds of high 'PTMA' attribution per +1 SD)
+  15. FTH1  (standardized coefficient: -0.1195, decreases log-odds of high 'PTMA' attribution per +1 SD)
+  16. ARF4  (standardized coefficient: -0.0825, decreases log-odds of high 'PTMA' attribution per +1 SD)
+  17. GPAA1  (standardized coefficient: +0.0683, increases log-odds of high 'PTMA' attribution per +1 SD)
+  18. PPP1CB  (standardized coefficient: +0.0555, increases log-odds of high 'PTMA' attribution per +1 SD)
+  19. RPS3A  (standardized coefficient: -0.0530, decreases log-odds of high 'PTMA' attribution per +1 SD)
+  20. RPL39  (standardized coefficient: -0.0509, decreases log-odds of high 'PTMA' attribution per +1 SD)
+  21. MUCL1  (standardized coefficient: +0.0496, increases log-odds of high 'PTMA' attribution per +1 SD)
+  22. PKM  (standardized coefficient: +0.0441, increases log-odds of high 'PTMA' attribution per +1 SD)
+  23. COX8A  (standardized coefficient: +0.0350, increases log-odds of high 'PTMA' attribution per +1 SD)
+  24. RPL34  (standardized coefficient: -0.0330, decreases log-odds of high 'PTMA' attribution per +1 SD)
+  25. ARF3  (standardized coefficient: -0.0313, decreases log-odds of high 'PTMA' attribution per +1 SD)
+  26. FABP7  (standardized coefficient: -0.0164, decreases log-odds of high 'PTMA' attribution per +1 SD)
+  27. ASS1  (standardized coefficient: +0.0149, increases log-odds of high 'PTMA' attribution per +1 SD)
+  28. GLUL  (standardized coefficient: -0.0144, decreases log-odds of high 'PTMA' attribution per +1 SD)
+  29. RPS18  (standardized coefficient: +0.0105, increases log-odds of high 'PTMA' attribution per +1 SD)
+
+NOTE: Logistic Regression is a GLOBAL LINEAR model -- there are no rule-based 'zones' or leaf nodes. Its hypothesis should be framed in terms of a monotonic, additive relationship between the top-weighted features and PTMA's attribution, not conditional/branching logic.
+
+--- TASK ---
+Based on the evidence above, first explicitly state (a) the single BEST set of features for hypothesis generation and why, and (b) the 4 most important contexts (features/conditions) driving that conclusion. Then form rationale and a hypothesis of the feature relationships (pathways) to explain HOW features and PTMA together associate with Ki-67. Base this on the evidence above (not any single metric alone). Identify findings into two categories: 1. findings that directly confirm literature knowledge; 2. findings suggesting new testable mechanisms supported by literature. List the publications supporting the conclusions.
+
+FINAL OUTPUT REQUIREMENT: After the narrative, append exactly one fenced json code block with this structure, so your selections can be checked against the quantitative evidence above:
+```json
+{
+  "primary_zone_node_id": <integer node id from the evidence section above, or null if this model type has no nodes (Random Forest and Logistic Regression both have none)>,
+  "top_4_contexts": ["<feature name>", "<feature name>", "<feature name>", "<feature name>"]
+}
+```
+Feature names in top_4_contexts must be copied verbatim from the evidence section above (e.g. "PABPC1"), not the focused feature 'PTMA' itself.

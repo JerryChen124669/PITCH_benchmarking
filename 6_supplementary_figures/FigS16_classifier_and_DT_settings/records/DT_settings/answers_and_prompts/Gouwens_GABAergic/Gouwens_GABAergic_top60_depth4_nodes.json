@@ -1,0 +1,607 @@
+{
+  "dataset_key": "Gouwens_GABAergic",
+  "setting_name": "top60_depth4",
+  "target_prot": "Fxyd6",
+  "target_name": "input resistance",
+  "attr_features": [
+    "Pcdh8",
+    "Coro6",
+    "Kcnq5",
+    "Cpne7",
+    "Fam19a2",
+    "Kcnmb4",
+    "Dab1",
+    "Nrgn",
+    "Tle4",
+    "Rell1",
+    "Lama4",
+    "Tmem145",
+    "Flt3",
+    "Lingo2",
+    "Rerg",
+    "Pld5",
+    "Crtac1",
+    "Ano4",
+    "Ndst3",
+    "9630002D21Rik",
+    "Phactr2",
+    "Tmem158",
+    "Il1rap",
+    "Sema3e",
+    "Zfp831",
+    "Ankrd55",
+    "Elavl2",
+    "Kcna3",
+    "Ptk2b",
+    "Cadps2",
+    "Arhgap24",
+    "Tshz3",
+    "Rspo3",
+    "Cdh12",
+    "Pde7b",
+    "Zbtb18",
+    "Cnr1",
+    "Pacsin3",
+    "Man1a",
+    "Cacna2d3",
+    "Vwc2l",
+    "Dlx5",
+    "Ctxn1",
+    "Atp2b4",
+    "LOC100503338",
+    "3300002P13Rik",
+    "Arpp21",
+    "Ajap1",
+    "Cacna2d1",
+    "Arhgef3",
+    "Sox2ot",
+    "Pcp4l1",
+    "Pxdn",
+    "Bcl11b",
+    "Ltk",
+    "Elmo1",
+    "Moxd1",
+    "Esrrg",
+    "LOC105245487"
+  ],
+  "cv_f1": 0.6932992034402649,
+  "min_support": 17,
+  "nodes": [
+    {
+      "node_id": 4,
+      "rule": "Coro6 <= -0.877 AND Cnr1 <= 1.331 AND Esrrg <= 0.505 AND Nrgn <= 0.637",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg <= 0.505",
+          "local_importance": 0.006203406219055266
+        },
+        {
+          "feature": "Nrgn",
+          "condition": "Nrgn <= 0.637",
+          "local_importance": 0.005182983429567841
+        }
+      ],
+      "depth": 4,
+      "n_cells": 413,
+      "pop_fraction": 0.12164948453608247,
+      "gini_impurity": 0.48719124337292574,
+      "gini_reduction": 0.022216380428681543,
+      "target_fraction": 0.2566585956416465,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 2.562811565304088,
+      "mean_ig": 0.03441297635436058,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.7912801117479396,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 5,
+      "rule": "Coro6 <= -0.877 AND Cnr1 <= 1.331 AND Esrrg <= 0.505 AND Nrgn > 0.637",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg <= 0.505",
+          "local_importance": 0.006203406219055266
+        },
+        {
+          "feature": "Nrgn",
+          "condition": "Nrgn > 0.637",
+          "local_importance": 0.005182983429567841
+        }
+      ],
+      "depth": 4,
+      "n_cells": 221,
+      "pop_fraction": 0.06509572901325479,
+      "gini_impurity": 0.45368620037807184,
+      "gini_reduction": 0.022216380428681543,
+      "target_fraction": 0.11764705882352941,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 1.1747404844290656,
+      "mean_ig": 0.022311586886644363,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.513262453695481,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 7,
+      "rule": "Coro6 <= -0.877 AND Cnr1 <= 1.331 AND Esrrg > 0.505 AND Cacna2d3 <= 0.694",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg > 0.505",
+          "local_importance": 0.006203406219055266
+        },
+        {
+          "feature": "Cacna2d3",
+          "condition": "Cacna2d3 <= 0.694",
+          "local_importance": 0.002868920557437101
+        }
+      ],
+      "depth": 4,
+      "n_cells": 141,
+      "pop_fraction": 0.04153166421207658,
+      "gini_impurity": 0.22353714661406965,
+      "gini_reduction": 0.05006436466831937,
+      "target_fraction": 0.03546099290780142,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.3540884438881936,
+      "mean_ig": 0.021752983331680298,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.5004290800944414,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 8,
+      "rule": "Coro6 <= -0.877 AND Cnr1 <= 1.331 AND Esrrg > 0.505 AND Cacna2d3 > 0.694",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Esrrg",
+          "condition": "Esrrg > 0.505",
+          "local_importance": 0.006203406219055266
+        },
+        {
+          "feature": "Cacna2d3",
+          "condition": "Cacna2d3 > 0.694",
+          "local_importance": 0.002868920557437101
+        }
+      ],
+      "depth": 4,
+      "n_cells": 64,
+      "pop_fraction": 0.01885125184094256,
+      "gini_impurity": 0.4956956105856095,
+      "gini_reduction": 0.05006436466831937,
+      "target_fraction": 0.171875,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 1.716222426470588,
+      "mean_ig": 0.0277617909014225,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.6384755922478,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 11,
+      "rule": "Coro6 <= -0.877 AND Cnr1 > 1.331 AND Ctxn1 <= 1.581 AND Cnr1 <= 1.526",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 > 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Ctxn1",
+          "condition": "Ctxn1 <= 1.581",
+          "local_importance": 0.0022824070481262783
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.526",
+          "local_importance": 0.002036733038922544
+        }
+      ],
+      "depth": 4,
+      "n_cells": 87,
+      "pop_fraction": 0.025625920471281295,
+      "gini_impurity": 0.3949652777777778,
+      "gini_reduction": 0.015859217578206408,
+      "target_fraction": 0.40229885057471265,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 4.017072346179851,
+      "mean_ig": 0.04837902635335922,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.1121365326840316,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 12,
+      "rule": "Coro6 <= -0.877 AND Cnr1 > 1.331 AND Ctxn1 <= 1.581 AND Cnr1 > 1.526",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 > 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Ctxn1",
+          "condition": "Ctxn1 <= 1.581",
+          "local_importance": 0.0022824070481262783
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 > 1.526",
+          "local_importance": 0.002036733038922544
+        }
+      ],
+      "depth": 4,
+      "n_cells": 117,
+      "pop_fraction": 0.034462444771723125,
+      "gini_impurity": 0.1516657777777778,
+      "gini_reduction": 0.015859217578206408,
+      "target_fraction": 0.7350427350427351,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 7.339617898441428,
+      "mean_ig": 0.06836545467376709,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.5713052925439495,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 13,
+      "rule": "Coro6 <= -0.877 AND Cnr1 > 1.331 AND Ctxn1 > 1.581",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 > 1.331",
+          "local_importance": 0.026185945620570066
+        },
+        {
+          "feature": "Ctxn1",
+          "condition": "Ctxn1 > 1.581",
+          "local_importance": 0.0022824070481262783
+        }
+      ],
+      "depth": 3,
+      "n_cells": 7,
+      "pop_fraction": 0.002061855670103093,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.017555447939856306,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": 0.0481913685798645,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.1078252777788387,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 17,
+      "rule": "Coro6 > -0.877 AND Man1a <= 1.661 AND Coro6 <= -0.020 AND Elavl2 <= -1.816",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a <= 1.661",
+          "local_importance": 0.03972113993673033
+        },
+        {
+          "feature": "Elavl2",
+          "condition": "Elavl2 <= -1.816",
+          "local_importance": 0.004653531068024522
+        },
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.020",
+          "local_importance": 0.0030085909319583918
+        }
+      ],
+      "depth": 4,
+      "n_cells": 10,
+      "pop_fraction": 0.0029455081001472753,
+      "gini_impurity": 0.31999999999999995,
+      "gini_reduction": 0.06302251431082292,
+      "target_fraction": 0.5,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 4.992647058823529,
+      "mean_ig": 0.04406745359301567,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.0130823402252787,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 18,
+      "rule": "Coro6 > -0.877 AND Man1a <= 1.661 AND Coro6 <= -0.020 AND Elavl2 > -1.816",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a <= 1.661",
+          "local_importance": 0.03972113993673033
+        },
+        {
+          "feature": "Elavl2",
+          "condition": "Elavl2 > -1.816",
+          "local_importance": 0.004653531068024522
+        },
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 <= -0.020",
+          "local_importance": 0.0030085909319583918
+        }
+      ],
+      "depth": 4,
+      "n_cells": 271,
+      "pop_fraction": 0.07982326951399116,
+      "gini_impurity": 0.23046103243893556,
+      "gini_reduction": 0.06302251431082292,
+      "target_fraction": 0.03690036900369004,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.36846103755155196,
+      "mean_ig": -0.00248141260817647,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": -0.05633260594907967,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 20,
+      "rule": "Coro6 > -0.877 AND Man1a <= 1.661 AND Coro6 > -0.020 AND Cnr1 <= 1.523",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a <= 1.661",
+          "local_importance": 0.03972113993673033
+        },
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.020",
+          "local_importance": 0.0030085909319583918
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 <= 1.523",
+          "local_importance": 0.0018716506855442562
+        }
+      ],
+      "depth": 4,
+      "n_cells": 1941,
+      "pop_fraction": 0.5717231222385861,
+      "gini_impurity": 0.05114580144883174,
+      "gini_reduction": 0.00414410119191469,
+      "target_fraction": 0.006697578567748583,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.06687729187501894,
+      "mean_ig": -0.021090121939778328,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": -0.4838496114592938,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 21,
+      "rule": "Coro6 > -0.877 AND Man1a <= 1.661 AND Coro6 > -0.020 AND Cnr1 > 1.523",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a <= 1.661",
+          "local_importance": 0.03972113993673033
+        },
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.020",
+          "local_importance": 0.0030085909319583918
+        },
+        {
+          "feature": "Cnr1",
+          "condition": "Cnr1 > 1.523",
+          "local_importance": 0.0018716506855442562
+        }
+      ],
+      "depth": 4,
+      "n_cells": 8,
+      "pop_fraction": 0.00235640648011782,
+      "gini_impurity": 0.4897959183673469,
+      "gini_reduction": 0.00414410119191469,
+      "target_fraction": 0.25,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 2.4963235294117645,
+      "mean_ig": 0.05057297274470329,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.1625403180709366,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 24,
+      "rule": "Coro6 > -0.877 AND Man1a > 1.661 AND Moxd1 <= -0.372 AND Pde7b <= -0.172",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a > 1.661",
+          "local_importance": 0.03972113993673033
+        },
+        {
+          "feature": "Moxd1",
+          "condition": "Moxd1 <= -0.372",
+          "local_importance": 0.0076665747625884115
+        },
+        {
+          "feature": "Pde7b",
+          "condition": "Pde7b <= -0.172",
+          "local_importance": 0.0029877923587621463
+        }
+      ],
+      "depth": 4,
+      "n_cells": 74,
+      "pop_fraction": 0.021796759941089837,
+      "gini_impurity": 0.2789043778504986,
+      "gini_reduction": 0.06372513654074818,
+      "target_fraction": 0.5540540540540541,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 5.532392686804451,
+      "mean_ig": 0.05748310685157776,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 1.3212939311454373,
+      "flag_low_support": false
+    },
+    {
+      "node_id": 25,
+      "rule": "Coro6 > -0.877 AND Man1a > 1.661 AND Moxd1 <= -0.372 AND Pde7b > -0.172",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a > 1.661",
+          "local_importance": 0.03972113993673033
+        },
+        {
+          "feature": "Moxd1",
+          "condition": "Moxd1 <= -0.372",
+          "local_importance": 0.0076665747625884115
+        },
+        {
+          "feature": "Pde7b",
+          "condition": "Pde7b > -0.172",
+          "local_importance": 0.0029877923587621463
+        }
+      ],
+      "depth": 4,
+      "n_cells": 10,
+      "pop_fraction": 0.0029455081001472753,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.06372513654074818,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": 0.0022305198945105076,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": 0.05191946236035536,
+      "flag_low_support": true
+    },
+    {
+      "node_id": 26,
+      "rule": "Coro6 > -0.877 AND Man1a > 1.661 AND Moxd1 > -0.372",
+      "feature_confidence": [
+        {
+          "feature": "Coro6",
+          "condition": "Coro6 > -0.877",
+          "local_importance": 0.10693600961542288
+        },
+        {
+          "feature": "Man1a",
+          "condition": "Man1a > 1.661",
+          "local_importance": 0.03972113993673033
+        },
+        {
+          "feature": "Moxd1",
+          "condition": "Moxd1 > -0.372",
+          "local_importance": 0.0076665747625884115
+        }
+      ],
+      "depth": 3,
+      "n_cells": 31,
+      "pop_fraction": 0.009131075110456554,
+      "gini_impurity": 0.0,
+      "gini_reduction": 0.14221818309591527,
+      "target_fraction": 0.0,
+      "overall_target_rate": 0.10014727540500737,
+      "target_lift": 0.0,
+      "mean_ig": -0.004682311322540045,
+      "overall_mean_ig": -2.9399994673440233e-05,
+      "overall_std_ig": 0.04352741315960884,
+      "ig_enrichment_sd": -0.10689611419831084,
+      "flag_low_support": false
+    }
+  ]
+}

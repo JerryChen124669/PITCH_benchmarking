@@ -1,0 +1,704 @@
+--- SYSTEM PROMPT ---
+Data Domain Context: Neuroscience / Patch-seq electrophysiology
+Cell Type / Study Tissue: Mouse cortical GABAergic interneurons (Allen Institute)
+
+You are an expert computational biologist tasked with interpreting decision tree classification rules that predict specific biomarkers based on RNA gene expression and gene attributes. Your objective is to translate the mathematical logic of the tree, including feature hierarchy, split thresholds, and conditional dependencies, into a cohesive biological narrative that explains the underlying regulatory mechanisms. Using the specific biological context provided, you must synthesize these findings into concrete, experimentally testable hypotheses.
+CRITICAL INSTRUCTION: Primarily analyze the CANDIDATE NODES section below. Prioritize nodes that combine substantial population support, strong IG enrichment, high target-cell enrichment, meaningful Gini impurity reduction, and relatively low tree depth -- do NOT select a node solely because it has the lowest Gini impurity or highest precision if it is only supported by a handful of cells. Nodes flagged as low support are listed separately and should be treated as overfitting risks, not primary evidence. Use the full raw decision tree only as supplementary context; do not attempt to parse every individual branch.
+ADDITIONAL INSTRUCTION: Explicitly identify (a) the single BEST node overall for hypothesis generation, stating why it beats the alternatives on the criteria above, and (b) the 4 most important contexts (i.e. the most decision-relevant split conditions/features) that should anchor your hypothesis. When a node's rule has more than 4 conditions (e.g. a depth-6 path), use that node's own 'Feature confidence ranking' (its per-condition local Gini-reduction contribution) to select the top ~4 conditions -- do not just take the first 4 in path order. State both (a) and (b) explicitly before building the narrative.
+
+--- EXPERIMENT CONTEXT & DATA PIPELINE ---
+1. Goal: Forming biological rationale and hypothesis based on the decision tree results to explain why Fxyd6 heavily attributes to the prediction of input resistance. Focused feature: 'Fxyd6'. Target response: 'input resistance'.
+2. Upstream Model: A PyTorch nonlinear Multi-layer Perceptron model was trained on the raw dataset.
+3. Feature Selection: Integrated Gradients (IG) was applied. The top 30 features with the highest Mean Absolute IG Attribution were selected as candidate attributing features (the focused feature itself is excluded from this attributing set), yielding 29 attributing features actually used by the tree.
+4. Target response and Focus feature Correlation: Direct correlation between Fxyd6 and input resistance.
+5. Label Generation: Samples were labeled as Class 1 ('High focused Attribution') if their IG score for Fxyd6 fell in the extreme 10% according to the analysis type. All other samples are Class 0. Analysis type: the Positive Attribution Analysis focusing on conditions of Fxyd6's Positive attribution effect.
+6. Tree Parameters and classification: max_depth=6, min_samples_leaf=5, no max_leaf_nodes cap (leaf count is bounded only by max_depth and min_samples_leaf, so depth is free to add structure rather than being capped at a shared leaf budget), class_weight={0: 1, 1: 4}. 5-fold CV F1 (macro): 65.8%. The decision tree aims to find the conditions that contain most Class 1 data points and minimal Class 0 data points.
+7. Node exclusion rule: leaf nodes with fewer than 17 cells (max(15 cells, 0.5% of the dataset)) are flagged and excluded from primary consideration, since a highly pure node with very few cells is more likely to reflect overfitting than a reproducible biological context.
+
+--- CANDIDATE NODES: QUANTITATIVE EVIDENCE (all leaf nodes, sorted by target-cell lift) ---
+Node 27 (depth 6)
+  (1) Split conditions: Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 > 0.669 AND Pcdh8 > 0.574 AND Tmem145 > -1.292 AND Pld5 <= 1.099
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 <= -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Ano4 <= 0.214  (local Gini-reduction contribution: 0.0081)
+      3. Kcnq5 > 0.669  (local Gini-reduction contribution: 0.0068)
+      4. Pcdh8 > 0.574  (local Gini-reduction contribution: 0.0050)
+      5. Tmem145 > -1.292  (local Gini-reduction contribution: 0.0013)
+      6. Pld5 <= 1.099  (local Gini-reduction contribution: 0.0009)
+  (2) Node depth: 6
+  (3) Support: 71 cells (2.09% of total population)
+  (4) Node Gini impurity: 0.0756
+  (5) Gini reduction from originating split: 0.0140
+  (6) Target-cell fraction: 85.9% (population rate 10.0%, enrichment/lift = 8.58x)
+  (7) Mean IG score of 'Fxyd6' in node: 0.0723 (population mean -0.0000, SD 0.0435; enrichment = +1.66 population-SD units above/below the population mean)
+
+Node 71 (depth 6)
+  (1) Split conditions: Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 > -0.151 AND Dab1 <= -0.527 AND Lama4 <= 0.507 AND Kcnmb4 > 0.191
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 > -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Pld5 > -0.151  (local Gini-reduction contribution: 0.0150)
+      3. Kcnq5 <= -0.941  (local Gini-reduction contribution: 0.0148)
+      4. Dab1 <= -0.527  (local Gini-reduction contribution: 0.0085)
+      5. Lama4 <= 0.507  (local Gini-reduction contribution: 0.0032)
+      6. Kcnmb4 > 0.191  (local Gini-reduction contribution: 0.0008)
+  (2) Node depth: 6
+  (3) Support: 22 cells (0.65% of total population)
+  (4) Node Gini impurity: 0.0997
+  (5) Gini reduction from originating split: 0.0231
+  (6) Target-cell fraction: 81.8% (population rate 10.0%, enrichment/lift = 8.17x)
+  (7) Mean IG score of 'Fxyd6' in node: 0.0612 (population mean -0.0000, SD 0.0435; enrichment = +1.41 population-SD units above/below the population mean)
+
+Node 40 (depth 6)
+  (1) Split conditions: Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 <= 1.428 AND Tmem145 > 1.099 AND Fam19a2 <= 1.133 AND Lingo2 <= 0.905
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 <= -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Ano4 > 0.214  (local Gini-reduction contribution: 0.0081)
+      3. Pcdh8 <= 1.428  (local Gini-reduction contribution: 0.0054)
+      4. Tmem145 > 1.099  (local Gini-reduction contribution: 0.0029)
+      5. Fam19a2 <= 1.133  (local Gini-reduction contribution: 0.0023)
+      6. Lingo2 <= 0.905  (local Gini-reduction contribution: 0.0021)
+  (2) Node depth: 6
+  (3) Support: 20 cells (0.59% of total population)
+  (4) Node Gini impurity: 0.2449
+  (5) Gini reduction from originating split: 0.1451
+  (6) Target-cell fraction: 60.0% (population rate 10.0%, enrichment/lift = 5.99x)
+  (7) Mean IG score of 'Fxyd6' in node: 0.0439 (population mean -0.0000, SD 0.0435; enrichment = +1.01 population-SD units above/below the population mean)
+
+Node 58 (depth 6)
+  (1) Split conditions: Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 <= -0.151 AND Flt3 <= -1.083 AND Dab1 <= -0.637 AND Rerg > -0.588
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 > -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Pld5 <= -0.151  (local Gini-reduction contribution: 0.0150)
+      3. Kcnq5 <= -0.941  (local Gini-reduction contribution: 0.0148)
+      4. Flt3 <= -1.083  (local Gini-reduction contribution: 0.0041)
+      5. Dab1 <= -0.637  (local Gini-reduction contribution: 0.0040)
+      6. Rerg > -0.588  (local Gini-reduction contribution: 0.0036)
+  (2) Node depth: 6
+  (3) Support: 20 cells (0.59% of total population)
+  (4) Node Gini impurity: 0.3200
+  (5) Gini reduction from originating split: 0.1778
+  (6) Target-cell fraction: 50.0% (population rate 10.0%, enrichment/lift = 4.99x)
+  (7) Mean IG score of 'Fxyd6' in node: 0.0265 (population mean -0.0000, SD 0.0435; enrichment = +0.61 population-SD units above/below the population mean)
+
+Node 46 (depth 6)
+  (1) Split conditions: Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 > 1.428 AND Tle4 <= 0.808 AND Lingo2 <= 1.013 AND Nrgn <= 0.972
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 <= -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Ano4 > 0.214  (local Gini-reduction contribution: 0.0081)
+      3. Pcdh8 > 1.428  (local Gini-reduction contribution: 0.0054)
+      4. Tle4 <= 0.808  (local Gini-reduction contribution: 0.0033)
+      5. Lingo2 <= 1.013  (local Gini-reduction contribution: 0.0023)
+      6. Nrgn <= 0.972  (local Gini-reduction contribution: 0.0022)
+  (2) Node depth: 6
+  (3) Support: 109 cells (3.21% of total population)
+  (4) Node Gini impurity: 0.3730
+  (5) Gini reduction from originating split: 0.0339
+  (6) Target-cell fraction: 43.1% (population rate 10.0%, enrichment/lift = 4.31x)
+  (7) Mean IG score of 'Fxyd6' in node: 0.0495 (population mean -0.0000, SD 0.0435; enrichment = +1.14 population-SD units above/below the population mean)
+
+Node 70 (depth 6)
+  (1) Split conditions: Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 > -0.151 AND Dab1 <= -0.527 AND Lama4 <= 0.507 AND Kcnmb4 <= 0.191
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 > -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Pld5 > -0.151  (local Gini-reduction contribution: 0.0150)
+      3. Kcnq5 <= -0.941  (local Gini-reduction contribution: 0.0148)
+      4. Dab1 <= -0.527  (local Gini-reduction contribution: 0.0085)
+      5. Lama4 <= 0.507  (local Gini-reduction contribution: 0.0032)
+      6. Kcnmb4 <= 0.191  (local Gini-reduction contribution: 0.0008)
+  (2) Node depth: 6
+  (3) Support: 32 cells (0.94% of total population)
+  (4) Node Gini impurity: 0.3920
+  (5) Gini reduction from originating split: 0.0231
+  (6) Target-cell fraction: 40.6% (population rate 10.0%, enrichment/lift = 4.06x)
+  (7) Mean IG score of 'Fxyd6' in node: 0.0548 (population mean -0.0000, SD 0.0435; enrichment = +1.26 population-SD units above/below the population mean)
+
+Node 19 (depth 6)
+  (1) Split conditions: Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 > 0.669 AND Pcdh8 <= 0.574 AND Pld5 <= 1.529 AND Tmem145 <= 1.155
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 <= -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Ano4 <= 0.214  (local Gini-reduction contribution: 0.0081)
+      3. Kcnq5 > 0.669  (local Gini-reduction contribution: 0.0068)
+      4. Pcdh8 <= 0.574  (local Gini-reduction contribution: 0.0050)
+      5. Pld5 <= 1.529  (local Gini-reduction contribution: 0.0028)
+      6. Tmem145 <= 1.155  (local Gini-reduction contribution: 0.0016)
+  (2) Node depth: 6
+  (3) Support: 99 cells (2.92% of total population)
+  (4) Node Gini impurity: 0.3937
+  (5) Gini reduction from originating split: 0.0320
+  (6) Target-cell fraction: 40.4% (population rate 10.0%, enrichment/lift = 4.03x)
+  (7) Mean IG score of 'Fxyd6' in node: 0.0462 (population mean -0.0000, SD 0.0435; enrichment = +1.06 population-SD units above/below the population mean)
+
+Node 6 (depth 6)
+  (1) Split conditions: Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 <= 0.669 AND Flt3 <= -0.389 AND Crtac1 <= 0.766 AND Lama4 <= 1.475
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 <= -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Ano4 <= 0.214  (local Gini-reduction contribution: 0.0081)
+      3. Kcnq5 <= 0.669  (local Gini-reduction contribution: 0.0068)
+      4. Flt3 <= -0.389  (local Gini-reduction contribution: 0.0047)
+      5. Crtac1 <= 0.766  (local Gini-reduction contribution: 0.0032)
+      6. Lama4 <= 1.475  (local Gini-reduction contribution: 0.0028)
+  (2) Node depth: 6
+  (3) Support: 119 cells (3.51% of total population)
+  (4) Node Gini impurity: 0.4067
+  (5) Gini reduction from originating split: 0.0443
+  (6) Target-cell fraction: 38.7% (population rate 10.0%, enrichment/lift = 3.86x)
+  (7) Mean IG score of 'Fxyd6' in node: 0.0357 (population mean -0.0000, SD 0.0435; enrichment = +0.82 population-SD units above/below the population mean)
+
+Node 34 (depth 6)
+  (1) Split conditions: Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 <= 1.428 AND Tmem145 <= 1.099 AND Cpne7 <= 1.056 AND Kcnmb4 > 1.471
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 <= -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Ano4 > 0.214  (local Gini-reduction contribution: 0.0081)
+      3. Pcdh8 <= 1.428  (local Gini-reduction contribution: 0.0054)
+      4. Kcnmb4 > 1.471  (local Gini-reduction contribution: 0.0031)
+      5. Cpne7 <= 1.056  (local Gini-reduction contribution: 0.0029)
+      6. Tmem145 <= 1.099  (local Gini-reduction contribution: 0.0029)
+  (2) Node depth: 6
+  (3) Support: 17 cells (0.50% of total population)
+  (4) Node Gini impurity: 0.4688
+  (5) Gini reduction from originating split: 0.0691
+  (6) Target-cell fraction: 29.4% (population rate 10.0%, enrichment/lift = 2.94x)
+  (7) Mean IG score of 'Fxyd6' in node: 0.0277 (population mean -0.0000, SD 0.0435; enrichment = +0.64 population-SD units above/below the population mean)
+
+Node 37 (depth 6)
+  (1) Split conditions: Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 <= 1.428 AND Tmem145 <= 1.099 AND Cpne7 > 1.056 AND Kcnmb4 > -0.706
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 <= -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Ano4 > 0.214  (local Gini-reduction contribution: 0.0081)
+      3. Pcdh8 <= 1.428  (local Gini-reduction contribution: 0.0054)
+      4. Cpne7 > 1.056  (local Gini-reduction contribution: 0.0029)
+      5. Tmem145 <= 1.099  (local Gini-reduction contribution: 0.0029)
+      6. Kcnmb4 > -0.706  (local Gini-reduction contribution: 0.0024)
+  (2) Node depth: 6
+  (3) Support: 98 cells (2.89% of total population)
+  (4) Node Gini impurity: 0.4948
+  (5) Gini reduction from originating split: 0.0383
+  (6) Target-cell fraction: 23.5% (population rate 10.0%, enrichment/lift = 2.34x)
+  (7) Mean IG score of 'Fxyd6' in node: 0.0448 (population mean -0.0000, SD 0.0435; enrichment = +1.03 population-SD units above/below the population mean)
+
+Node 47 (depth 6)
+  (1) Split conditions: Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 > 1.428 AND Tle4 <= 0.808 AND Lingo2 <= 1.013 AND Nrgn > 0.972
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 <= -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Ano4 > 0.214  (local Gini-reduction contribution: 0.0081)
+      3. Pcdh8 > 1.428  (local Gini-reduction contribution: 0.0054)
+      4. Tle4 <= 0.808  (local Gini-reduction contribution: 0.0033)
+      5. Lingo2 <= 1.013  (local Gini-reduction contribution: 0.0023)
+      6. Nrgn > 0.972  (local Gini-reduction contribution: 0.0022)
+  (2) Node depth: 6
+  (3) Support: 30 cells (0.88% of total population)
+  (4) Node Gini impurity: 0.4717
+  (5) Gini reduction from originating split: 0.0339
+  (6) Target-cell fraction: 13.3% (population rate 10.0%, enrichment/lift = 1.33x)
+  (7) Mean IG score of 'Fxyd6' in node: 0.0439 (population mean -0.0000, SD 0.0435; enrichment = +1.01 population-SD units above/below the population mean)
+
+Node 36 (depth 6)
+  (1) Split conditions: Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 <= 1.428 AND Tmem145 <= 1.099 AND Cpne7 > 1.056 AND Kcnmb4 <= -0.706
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 <= -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Ano4 > 0.214  (local Gini-reduction contribution: 0.0081)
+      3. Pcdh8 <= 1.428  (local Gini-reduction contribution: 0.0054)
+      4. Cpne7 > 1.056  (local Gini-reduction contribution: 0.0029)
+      5. Tmem145 <= 1.099  (local Gini-reduction contribution: 0.0029)
+      6. Kcnmb4 <= -0.706  (local Gini-reduction contribution: 0.0024)
+  (2) Node depth: 6
+  (3) Support: 84 cells (2.47% of total population)
+  (4) Node Gini impurity: 0.3911
+  (5) Gini reduction from originating split: 0.0383
+  (6) Target-cell fraction: 8.3% (population rate 10.0%, enrichment/lift = 0.83x)
+  (7) Mean IG score of 'Fxyd6' in node: 0.0367 (population mean -0.0000, SD 0.0435; enrichment = +0.84 population-SD units above/below the population mean)
+
+Node 57 (depth 6)
+  (1) Split conditions: Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 <= -0.151 AND Flt3 <= -1.083 AND Dab1 <= -0.637 AND Rerg <= -0.588
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 > -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Pld5 <= -0.151  (local Gini-reduction contribution: 0.0150)
+      3. Kcnq5 <= -0.941  (local Gini-reduction contribution: 0.0148)
+      4. Flt3 <= -1.083  (local Gini-reduction contribution: 0.0041)
+      5. Dab1 <= -0.637  (local Gini-reduction contribution: 0.0040)
+      6. Rerg <= -0.588  (local Gini-reduction contribution: 0.0036)
+  (2) Node depth: 6
+  (3) Support: 34 cells (1.00% of total population)
+  (4) Node Gini impurity: 0.3200
+  (5) Gini reduction from originating split: 0.1778
+  (6) Target-cell fraction: 5.9% (population rate 10.0%, enrichment/lift = 0.59x)
+  (7) Mean IG score of 'Fxyd6' in node: -0.0082 (population mean -0.0000, SD 0.0435; enrichment = -0.19 population-SD units above/below the population mean)
+
+Node 7 (depth 6)
+  (1) Split conditions: Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 <= 0.669 AND Flt3 <= -0.389 AND Crtac1 <= 0.766 AND Lama4 > 1.475
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 <= -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Ano4 <= 0.214  (local Gini-reduction contribution: 0.0081)
+      3. Kcnq5 <= 0.669  (local Gini-reduction contribution: 0.0068)
+      4. Flt3 <= -0.389  (local Gini-reduction contribution: 0.0047)
+      5. Crtac1 <= 0.766  (local Gini-reduction contribution: 0.0032)
+      6. Lama4 > 1.475  (local Gini-reduction contribution: 0.0028)
+  (2) Node depth: 6
+  (3) Support: 20 cells (0.59% of total population)
+  (4) Node Gini impurity: 0.2873
+  (5) Gini reduction from originating split: 0.0443
+  (6) Target-cell fraction: 5.0% (population rate 10.0%, enrichment/lift = 0.50x)
+  (7) Mean IG score of 'Fxyd6' in node: 0.0034 (population mean -0.0000, SD 0.0435; enrichment = +0.08 population-SD units above/below the population mean)
+
+Node 97 (depth 6)
+  (1) Split conditions: Coro6 > -0.877 AND Kcnq5 > -0.941 AND Elavl2 > -1.881 AND Kcna3 > 1.190 AND Tmem158 > 1.473 AND Cpne7 <= 0.880
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 > -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Kcnq5 > -0.941  (local Gini-reduction contribution: 0.0148)
+      3. Elavl2 > -1.881  (local Gini-reduction contribution: 0.0037)
+      4. Tmem158 > 1.473  (local Gini-reduction contribution: 0.0017)
+      5. Cpne7 <= 0.880  (local Gini-reduction contribution: 0.0013)
+      6. Kcna3 > 1.190  (local Gini-reduction contribution: 0.0009)
+  (2) Node depth: 6
+  (3) Support: 20 cells (0.59% of total population)
+  (4) Node Gini impurity: 0.2873
+  (5) Gini reduction from originating split: 0.1383
+  (6) Target-cell fraction: 5.0% (population rate 10.0%, enrichment/lift = 0.50x)
+  (7) Mean IG score of 'Fxyd6' in node: 0.0010 (population mean -0.0000, SD 0.0435; enrichment = +0.02 population-SD units above/below the population mean)
+
+Node 15 (depth 6)
+  (1) Split conditions: Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 <= 0.669 AND Flt3 > -0.389 AND Pld5 > -0.616 AND Nrgn > 0.061
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 <= -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Ano4 <= 0.214  (local Gini-reduction contribution: 0.0081)
+      3. Kcnq5 <= 0.669  (local Gini-reduction contribution: 0.0068)
+      4. Flt3 > -0.389  (local Gini-reduction contribution: 0.0047)
+      5. Pld5 > -0.616  (local Gini-reduction contribution: 0.0022)
+      6. Nrgn > 0.061  (local Gini-reduction contribution: 0.0017)
+  (2) Node depth: 6
+  (3) Support: 22 cells (0.65% of total population)
+  (4) Node Gini impurity: 0.2688
+  (5) Gini reduction from originating split: 0.1395
+  (6) Target-cell fraction: 4.5% (population rate 10.0%, enrichment/lift = 0.45x)
+  (7) Mean IG score of 'Fxyd6' in node: 0.0162 (population mean -0.0000, SD 0.0435; enrichment = +0.37 population-SD units above/below the population mean)
+
+Node 74 (depth 6)
+  (1) Split conditions: Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 > -0.151 AND Dab1 <= -0.527 AND Lama4 > 0.507 AND Lingo2 > -0.077
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 > -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Pld5 > -0.151  (local Gini-reduction contribution: 0.0150)
+      3. Kcnq5 <= -0.941  (local Gini-reduction contribution: 0.0148)
+      4. Dab1 <= -0.527  (local Gini-reduction contribution: 0.0085)
+      5. Lama4 > 0.507  (local Gini-reduction contribution: 0.0032)
+      6. Lingo2 > -0.077  (local Gini-reduction contribution: 0.0016)
+  (2) Node depth: 6
+  (3) Support: 23 cells (0.68% of total population)
+  (4) Node Gini impurity: 0.2604
+  (5) Gini reduction from originating split: 0.1676
+  (6) Target-cell fraction: 4.3% (population rate 10.0%, enrichment/lift = 0.43x)
+  (7) Mean IG score of 'Fxyd6' in node: 0.0116 (population mean -0.0000, SD 0.0435; enrichment = +0.27 population-SD units above/below the population mean)
+
+Node 33 (depth 6)
+  (1) Split conditions: Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 <= 1.428 AND Tmem145 <= 1.099 AND Cpne7 <= 1.056 AND Kcnmb4 <= 1.471
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 <= -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Ano4 > 0.214  (local Gini-reduction contribution: 0.0081)
+      3. Pcdh8 <= 1.428  (local Gini-reduction contribution: 0.0054)
+      4. Kcnmb4 <= 1.471  (local Gini-reduction contribution: 0.0031)
+      5. Cpne7 <= 1.056  (local Gini-reduction contribution: 0.0029)
+      6. Tmem145 <= 1.099  (local Gini-reduction contribution: 0.0029)
+  (2) Node depth: 6
+  (3) Support: 150 cells (4.42% of total population)
+  (4) Node Gini impurity: 0.2130
+  (5) Gini reduction from originating split: 0.0691
+  (6) Target-cell fraction: 3.3% (population rate 10.0%, enrichment/lift = 0.33x)
+  (7) Mean IG score of 'Fxyd6' in node: 0.0119 (population mean -0.0000, SD 0.0435; enrichment = +0.27 population-SD units above/below the population mean)
+
+Node 90 (depth 6)
+  (1) Split conditions: Coro6 > -0.877 AND Kcnq5 > -0.941 AND Elavl2 > -1.881 AND Kcna3 <= 1.190 AND Coro6 > -0.725 AND Flt3 <= -0.492
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 > -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Kcnq5 > -0.941  (local Gini-reduction contribution: 0.0148)
+      3. Elavl2 > -1.881  (local Gini-reduction contribution: 0.0037)
+      4. Kcna3 <= 1.190  (local Gini-reduction contribution: 0.0009)
+      5. Coro6 > -0.725  (local Gini-reduction contribution: 0.0003)
+      6. Flt3 <= -0.492  (local Gini-reduction contribution: 0.0003)
+  (2) Node depth: 6
+  (3) Support: 383 cells (11.28% of total population)
+  (4) Node Gini impurity: 0.0955
+  (5) Gini reduction from originating split: 0.0008
+  (6) Target-cell fraction: 1.3% (population rate 10.0%, enrichment/lift = 0.13x)
+  (7) Mean IG score of 'Fxyd6' in node: -0.0028 (population mean -0.0000, SD 0.0435; enrichment = -0.06 population-SD units above/below the population mean)
+
+Node 62 (depth 6)
+  (1) Split conditions: Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 <= -0.151 AND Flt3 > -1.083 AND Cpne7 <= 0.772 AND Kcnq5 <= -0.979
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 > -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Pld5 <= -0.151  (local Gini-reduction contribution: 0.0150)
+      3. Kcnq5 <= -0.941  (local Gini-reduction contribution: 0.0148)
+      4. Flt3 > -1.083  (local Gini-reduction contribution: 0.0041)
+      5. Cpne7 <= 0.772  (local Gini-reduction contribution: 0.0010)
+      6. Kcnq5 <= -0.979  (local Gini-reduction contribution: 0.0008)
+  (2) Node depth: 6
+  (3) Support: 307 cells (9.04% of total population)
+  (4) Node Gini impurity: 0.0255
+  (5) Gini reduction from originating split: 0.0116
+  (6) Target-cell fraction: 0.3% (population rate 10.0%, enrichment/lift = 0.03x)
+  (7) Mean IG score of 'Fxyd6' in node: -0.0293 (population mean -0.0000, SD 0.0435; enrichment = -0.67 population-SD units above/below the population mean)
+
+Node 91 (depth 6)
+  (1) Split conditions: Coro6 > -0.877 AND Kcnq5 > -0.941 AND Elavl2 > -1.881 AND Kcna3 <= 1.190 AND Coro6 > -0.725 AND Flt3 > -0.492
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 > -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Kcnq5 > -0.941  (local Gini-reduction contribution: 0.0148)
+      3. Elavl2 > -1.881  (local Gini-reduction contribution: 0.0037)
+      4. Kcna3 <= 1.190  (local Gini-reduction contribution: 0.0009)
+      5. Coro6 > -0.725  (local Gini-reduction contribution: 0.0003)
+      6. Flt3 > -0.492  (local Gini-reduction contribution: 0.0003)
+  (2) Node depth: 6
+  (3) Support: 1201 cells (35.38% of total population)
+  (4) Node Gini impurity: 0.0066
+  (5) Gini reduction from originating split: 0.0008
+  (6) Target-cell fraction: 0.1% (population rate 10.0%, enrichment/lift = 0.01x)
+  (7) Mean IG score of 'Fxyd6' in node: -0.0245 (population mean -0.0000, SD 0.0435; enrichment = -0.56 population-SD units above/below the population mean)
+
+Node 94 (depth 6)
+  (1) Split conditions: Coro6 > -0.877 AND Kcnq5 > -0.941 AND Elavl2 > -1.881 AND Kcna3 > 1.190 AND Tmem158 <= 1.473 AND Dab1 <= 1.016
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 > -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Kcnq5 > -0.941  (local Gini-reduction contribution: 0.0148)
+      3. Elavl2 > -1.881  (local Gini-reduction contribution: 0.0037)
+      4. Tmem158 <= 1.473  (local Gini-reduction contribution: 0.0017)
+      5. Kcna3 > 1.190  (local Gini-reduction contribution: 0.0009)
+      6. Dab1 <= 1.016  (local Gini-reduction contribution: 0.0008)
+  (2) Node depth: 6
+  (3) Support: 98 cells (2.89% of total population)
+  (4) Node Gini impurity: 0.0000
+  (5) Gini reduction from originating split: 0.0349
+  (6) Target-cell fraction: 0.0% (population rate 10.0%, enrichment/lift = 0.00x)
+  (7) Mean IG score of 'Fxyd6' in node: -0.0196 (population mean -0.0000, SD 0.0435; enrichment = -0.45 population-SD units above/below the population mean)
+
+Node 76 (depth 5)
+  (1) Split conditions: Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 > -0.151 AND Dab1 > -0.527 AND Lingo2 <= 0.920
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 > -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Pld5 > -0.151  (local Gini-reduction contribution: 0.0150)
+      3. Kcnq5 <= -0.941  (local Gini-reduction contribution: 0.0148)
+      4. Dab1 > -0.527  (local Gini-reduction contribution: 0.0085)
+      5. Lingo2 <= 0.920  (local Gini-reduction contribution: 0.0022)
+  (2) Node depth: 5
+  (3) Support: 55 cells (1.62% of total population)
+  (4) Node Gini impurity: 0.0000
+  (5) Gini reduction from originating split: 0.1469
+  (6) Target-cell fraction: 0.0% (population rate 10.0%, enrichment/lift = 0.00x)
+  (7) Mean IG score of 'Fxyd6' in node: -0.0051 (population mean -0.0000, SD 0.0435; enrichment = -0.12 population-SD units above/below the population mean)
+
+Node 59 (depth 5)
+  (1) Split conditions: Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 <= -0.151 AND Flt3 <= -1.083 AND Dab1 > -0.637
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 > -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Pld5 <= -0.151  (local Gini-reduction contribution: 0.0150)
+      3. Kcnq5 <= -0.941  (local Gini-reduction contribution: 0.0148)
+      4. Flt3 <= -1.083  (local Gini-reduction contribution: 0.0041)
+      5. Dab1 > -0.637  (local Gini-reduction contribution: 0.0040)
+  (2) Node depth: 5
+  (3) Support: 47 cells (1.38% of total population)
+  (4) Node Gini impurity: 0.0000
+  (5) Gini reduction from originating split: 0.1282
+  (6) Target-cell fraction: 0.0% (population rate 10.0%, enrichment/lift = 0.00x)
+  (7) Mean IG score of 'Fxyd6' in node: -0.0114 (population mean -0.0000, SD 0.0435; enrichment = -0.26 population-SD units above/below the population mean)
+
+Node 12 (depth 5)
+  (1) Split conditions: Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 <= 0.669 AND Flt3 > -0.389 AND Pld5 <= -0.616
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 <= -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Ano4 <= 0.214  (local Gini-reduction contribution: 0.0081)
+      3. Kcnq5 <= 0.669  (local Gini-reduction contribution: 0.0068)
+      4. Flt3 > -0.389  (local Gini-reduction contribution: 0.0047)
+      5. Pld5 <= -0.616  (local Gini-reduction contribution: 0.0022)
+  (2) Node depth: 5
+  (3) Support: 44 cells (1.30% of total population)
+  (4) Node Gini impurity: 0.0000
+  (5) Gini reduction from originating split: 0.0977
+  (6) Target-cell fraction: 0.0% (population rate 10.0%, enrichment/lift = 0.00x)
+  (7) Mean IG score of 'Fxyd6' in node: -0.0113 (population mean -0.0000, SD 0.0435; enrichment = -0.26 population-SD units above/below the population mean)
+
+Node 82 (depth 5)
+  (1) Split conditions: Coro6 > -0.877 AND Kcnq5 > -0.941 AND Elavl2 <= -1.881 AND Coro6 > -0.010 AND 9630002D21Rik <= -0.700
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 > -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Kcnq5 > -0.941  (local Gini-reduction contribution: 0.0148)
+      3. Elavl2 <= -1.881  (local Gini-reduction contribution: 0.0037)
+      4. Coro6 > -0.010  (local Gini-reduction contribution: 0.0033)
+      5. 9630002D21Rik <= -0.700  (local Gini-reduction contribution: 0.0007)
+  (2) Node depth: 5
+  (3) Support: 27 cells (0.80% of total population)
+  (4) Node Gini impurity: 0.0000
+  (5) Gini reduction from originating split: 0.0882
+  (6) Target-cell fraction: 0.0% (population rate 10.0%, enrichment/lift = 0.00x)
+  (7) Mean IG score of 'Fxyd6' in node: 0.0090 (population mean -0.0000, SD 0.0435; enrichment = +0.21 population-SD units above/below the population mean)
+
+Node 10 (depth 6)
+  (1) Split conditions: Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 <= 0.669 AND Flt3 <= -0.389 AND Crtac1 > 0.766 AND Dab1 > -0.723
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 <= -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Ano4 <= 0.214  (local Gini-reduction contribution: 0.0081)
+      3. Kcnq5 <= 0.669  (local Gini-reduction contribution: 0.0068)
+      4. Flt3 <= -0.389  (local Gini-reduction contribution: 0.0047)
+      5. Crtac1 > 0.766  (local Gini-reduction contribution: 0.0032)
+      6. Dab1 > -0.723  (local Gini-reduction contribution: 0.0015)
+  (2) Node depth: 6
+  (3) Support: 25 cells (0.74% of total population)
+  (4) Node Gini impurity: 0.0000
+  (5) Gini reduction from originating split: 0.1705
+  (6) Target-cell fraction: 0.0% (population rate 10.0%, enrichment/lift = 0.00x)
+  (7) Mean IG score of 'Fxyd6' in node: 0.0045 (population mean -0.0000, SD 0.0435; enrichment = +0.10 population-SD units above/below the population mean)
+
+Node 22 (depth 6)
+  (1) Split conditions: Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 > 0.669 AND Pcdh8 <= 0.574 AND Pld5 > 1.529 AND Ano4 <= -0.841
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 <= -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Ano4 <= 0.214  (local Gini-reduction contribution: 0.0081)
+      3. Kcnq5 > 0.669  (local Gini-reduction contribution: 0.0068)
+      4. Pcdh8 <= 0.574  (local Gini-reduction contribution: 0.0050)
+      5. Pld5 > 1.529  (local Gini-reduction contribution: 0.0028)
+      6. Ano4 <= -0.841  (local Gini-reduction contribution: 0.0021)
+  (2) Node depth: 6
+  (3) Support: 24 cells (0.71% of total population)
+  (4) Node Gini impurity: 0.0000
+  (5) Gini reduction from originating split: 0.1890
+  (6) Target-cell fraction: 0.0% (population rate 10.0%, enrichment/lift = 0.00x)
+  (7) Mean IG score of 'Fxyd6' in node: 0.0183 (population mean -0.0000, SD 0.0435; enrichment = +0.42 population-SD units above/below the population mean)
+
+Node 50 (depth 6)
+  (1) Split conditions: Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 > 1.428 AND Tle4 <= 0.808 AND Lingo2 > 1.013 AND Kcnq5 > 0.202
+  (path has >4 conditions -- use the ranking below to pick the top ~4)
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 <= -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Ano4 > 0.214  (local Gini-reduction contribution: 0.0081)
+      3. Pcdh8 > 1.428  (local Gini-reduction contribution: 0.0054)
+      4. Tle4 <= 0.808  (local Gini-reduction contribution: 0.0033)
+      5. Lingo2 > 1.013  (local Gini-reduction contribution: 0.0023)
+      6. Kcnq5 > 0.202  (local Gini-reduction contribution: 0.0017)
+  (2) Node depth: 6
+  (3) Support: 19 cells (0.56% of total population)
+  (4) Node Gini impurity: 0.0000
+  (5) Gini reduction from originating split: 0.2457
+  (6) Target-cell fraction: 0.0% (population rate 10.0%, enrichment/lift = 0.00x)
+  (7) Mean IG score of 'Fxyd6' in node: 0.0359 (population mean -0.0000, SD 0.0435; enrichment = +0.83 population-SD units above/below the population mean)
+
+Node 51 (depth 4)
+  (1) Split conditions: Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 > 1.428 AND Tle4 > 0.808
+      Feature confidence ranking within this rule (highest local Gini-reduction contribution first):
+      1. Coro6 <= -0.877  (local Gini-reduction contribution: 0.1069)
+      2. Ano4 > 0.214  (local Gini-reduction contribution: 0.0081)
+      3. Pcdh8 > 1.428  (local Gini-reduction contribution: 0.0054)
+      4. Tle4 > 0.808  (local Gini-reduction contribution: 0.0033)
+  (2) Node depth: 4
+  (3) Support: 18 cells (0.53% of total population)
+  (4) Node Gini impurity: 0.0000
+  (5) Gini reduction from originating split: 0.0435
+  (6) Target-cell fraction: 0.0% (population rate 10.0%, enrichment/lift = 0.00x)
+  (7) Mean IG score of 'Fxyd6' in node: 0.0382 (population mean -0.0000, SD 0.0435; enrichment = +0.88 population-SD units above/below the population mean)
+
+
+--- LOW-SUPPORT / FLAGGED NODES (for reference only, not primary evidence) ---
+Node 9 (depth 6): Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 <= 0.669 AND Flt3 <= -0.389 AND Crtac1 > 0.766 AND Dab1 <= -0.723 [7 cells, target lift 2.85x] -- below min support (17 cells)
+Node 14 (depth 6): Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 <= 0.669 AND Flt3 > -0.389 AND Pld5 > -0.616 AND Nrgn <= 0.061 [14 cells, target lift 3.57x] -- below min support (17 cells)
+Node 20 (depth 6): Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 > 0.669 AND Pcdh8 <= 0.574 AND Pld5 <= 1.529 AND Tmem145 > 1.155 [7 cells, target lift 0.00x] -- below min support (17 cells)
+Node 23 (depth 6): Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 > 0.669 AND Pcdh8 <= 0.574 AND Pld5 > 1.529 AND Ano4 > -0.841 [14 cells, target lift 2.85x] -- below min support (17 cells)
+Node 25 (depth 5): Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 > 0.669 AND Pcdh8 > 0.574 AND Tmem145 <= -1.292 [7 cells, target lift 1.43x] -- below min support (17 cells)
+Node 28 (depth 6): Coro6 <= -0.877 AND Ano4 <= 0.214 AND Kcnq5 > 0.669 AND Pcdh8 > 0.574 AND Tmem145 > -1.292 AND Pld5 > 1.099 [10 cells, target lift 3.00x] -- below min support (17 cells)
+Node 41 (depth 6): Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 <= 1.428 AND Tmem145 > 1.099 AND Fam19a2 <= 1.133 AND Lingo2 > 0.905 [7 cells, target lift 0.00x] -- below min support (17 cells)
+Node 42 (depth 5): Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 <= 1.428 AND Tmem145 > 1.099 AND Fam19a2 > 1.133 [10 cells, target lift 0.00x] -- below min support (17 cells)
+Node 49 (depth 6): Coro6 <= -0.877 AND Ano4 > 0.214 AND Pcdh8 > 1.428 AND Tle4 <= 0.808 AND Lingo2 > 1.013 AND Kcnq5 <= 0.202 [5 cells, target lift 3.99x] -- below min support (17 cells)
+Node 63 (depth 6): Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 <= -0.151 AND Flt3 > -1.083 AND Cpne7 <= 0.772 AND Kcnq5 > -0.979 [5 cells, target lift 2.00x] -- below min support (17 cells)
+Node 65 (depth 6): Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 <= -0.151 AND Flt3 > -1.083 AND Cpne7 > 0.772 AND Ndst3 <= 0.814 [12 cells, target lift 0.00x] -- below min support (17 cells)
+Node 66 (depth 6): Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 <= -0.151 AND Flt3 > -1.083 AND Cpne7 > 0.772 AND Ndst3 > 0.814 [5 cells, target lift 3.99x] -- below min support (17 cells)
+Node 73 (depth 6): Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 > -0.151 AND Dab1 <= -0.527 AND Lama4 > 0.507 AND Lingo2 <= -0.077 [7 cells, target lift 4.28x] -- below min support (17 cells)
+Node 77 (depth 5): Coro6 > -0.877 AND Kcnq5 <= -0.941 AND Pld5 > -0.151 AND Dab1 > -0.527 AND Lingo2 > 0.920 [5 cells, target lift 3.99x] -- below min support (17 cells)
+Node 80 (depth 4): Coro6 > -0.877 AND Kcnq5 > -0.941 AND Elavl2 <= -1.881 AND Coro6 <= -0.010 [9 cells, target lift 5.55x] -- below min support (17 cells)
+Node 83 (depth 5): Coro6 > -0.877 AND Kcnq5 > -0.941 AND Elavl2 <= -1.881 AND Coro6 > -0.010 AND 9630002D21Rik > -0.700 [5 cells, target lift 2.00x] -- below min support (17 cells)
+Node 87 (depth 6): Coro6 > -0.877 AND Kcnq5 > -0.941 AND Elavl2 > -1.881 AND Kcna3 <= 1.190 AND Coro6 <= -0.725 AND Lama4 <= -0.642 [5 cells, target lift 2.00x] -- below min support (17 cells)
+Node 88 (depth 6): Coro6 > -0.877 AND Kcnq5 > -0.941 AND Elavl2 > -1.881 AND Kcna3 <= 1.190 AND Coro6 <= -0.725 AND Lama4 > -0.642 [10 cells, target lift 0.00x] -- below min support (17 cells)
+Node 95 (depth 6): Coro6 > -0.877 AND Kcnq5 > -0.941 AND Elavl2 > -1.881 AND Kcna3 > 1.190 AND Tmem158 <= 1.473 AND Dab1 > 1.016 [5 cells, target lift 2.00x] -- below min support (17 cells)
+Node 98 (depth 6): Coro6 > -0.877 AND Kcnq5 > -0.941 AND Elavl2 > -1.881 AND Kcna3 > 1.190 AND Tmem158 > 1.473 AND Cpne7 > 0.880 [8 cells, target lift 3.74x] -- below min support (17 cells)
+
+--- FULL DECISION TREE RAW RULES ---
+|--- Coro6 <= -0.88
+|   |--- Ano4 <= 0.21
+|   |   |--- Kcnq5 <= 0.67
+|   |   |   |--- Flt3 <= -0.39
+|   |   |   |   |--- Crtac1 <= 0.77
+|   |   |   |   |   |--- Lama4 <= 1.48
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- Lama4 >  1.48
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- Crtac1 >  0.77
+|   |   |   |   |   |--- Dab1 <= -0.72
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- Dab1 >  -0.72
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |--- Flt3 >  -0.39
+|   |   |   |   |--- Pld5 <= -0.62
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- Pld5 >  -0.62
+|   |   |   |   |   |--- Nrgn <= 0.06
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- Nrgn >  0.06
+|   |   |   |   |   |   |--- class: 0
+|   |   |--- Kcnq5 >  0.67
+|   |   |   |--- Pcdh8 <= 0.57
+|   |   |   |   |--- Pld5 <= 1.53
+|   |   |   |   |   |--- Tmem145 <= 1.15
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- Tmem145 >  1.15
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- Pld5 >  1.53
+|   |   |   |   |   |--- Ano4 <= -0.84
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- Ano4 >  -0.84
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |--- Pcdh8 >  0.57
+|   |   |   |   |--- Tmem145 <= -1.29
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- Tmem145 >  -1.29
+|   |   |   |   |   |--- Pld5 <= 1.10
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- Pld5 >  1.10
+|   |   |   |   |   |   |--- class: 1
+|   |--- Ano4 >  0.21
+|   |   |--- Pcdh8 <= 1.43
+|   |   |   |--- Tmem145 <= 1.10
+|   |   |   |   |--- Cpne7 <= 1.06
+|   |   |   |   |   |--- Kcnmb4 <= 1.47
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- Kcnmb4 >  1.47
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- Cpne7 >  1.06
+|   |   |   |   |   |--- Kcnmb4 <= -0.71
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- Kcnmb4 >  -0.71
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |--- Tmem145 >  1.10
+|   |   |   |   |--- Fam19a2 <= 1.13
+|   |   |   |   |   |--- Lingo2 <= 0.90
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- Lingo2 >  0.90
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- Fam19a2 >  1.13
+|   |   |   |   |   |--- class: 0
+|   |   |--- Pcdh8 >  1.43
+|   |   |   |--- Tle4 <= 0.81
+|   |   |   |   |--- Lingo2 <= 1.01
+|   |   |   |   |   |--- Nrgn <= 0.97
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- Nrgn >  0.97
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- Lingo2 >  1.01
+|   |   |   |   |   |--- Kcnq5 <= 0.20
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- Kcnq5 >  0.20
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |--- Tle4 >  0.81
+|   |   |   |   |--- class: 0
+|--- Coro6 >  -0.88
+|   |--- Kcnq5 <= -0.94
+|   |   |--- Pld5 <= -0.15
+|   |   |   |--- Flt3 <= -1.08
+|   |   |   |   |--- Dab1 <= -0.64
+|   |   |   |   |   |--- Rerg <= -0.59
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- Rerg >  -0.59
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- Dab1 >  -0.64
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- Flt3 >  -1.08
+|   |   |   |   |--- Cpne7 <= 0.77
+|   |   |   |   |   |--- Kcnq5 <= -0.98
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- Kcnq5 >  -0.98
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- Cpne7 >  0.77
+|   |   |   |   |   |--- Ndst3 <= 0.81
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- Ndst3 >  0.81
+|   |   |   |   |   |   |--- class: 1
+|   |   |--- Pld5 >  -0.15
+|   |   |   |--- Dab1 <= -0.53
+|   |   |   |   |--- Lama4 <= 0.51
+|   |   |   |   |   |--- Kcnmb4 <= 0.19
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- Kcnmb4 >  0.19
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- Lama4 >  0.51
+|   |   |   |   |   |--- Lingo2 <= -0.08
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- Lingo2 >  -0.08
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |--- Dab1 >  -0.53
+|   |   |   |   |--- Lingo2 <= 0.92
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- Lingo2 >  0.92
+|   |   |   |   |   |--- class: 1
+|   |--- Kcnq5 >  -0.94
+|   |   |--- Elavl2 <= -1.88
+|   |   |   |--- Coro6 <= -0.01
+|   |   |   |   |--- class: 1
+|   |   |   |--- Coro6 >  -0.01
+|   |   |   |   |--- 9630002D21Rik <= -0.70
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- 9630002D21Rik >  -0.70
+|   |   |   |   |   |--- class: 0
+|   |   |--- Elavl2 >  -1.88
+|   |   |   |--- Kcna3 <= 1.19
+|   |   |   |   |--- Coro6 <= -0.73
+|   |   |   |   |   |--- Lama4 <= -0.64
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- Lama4 >  -0.64
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- Coro6 >  -0.73
+|   |   |   |   |   |--- Flt3 <= -0.49
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- Flt3 >  -0.49
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |--- Kcna3 >  1.19
+|   |   |   |   |--- Tmem158 <= 1.47
+|   |   |   |   |   |--- Dab1 <= 1.02
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- Dab1 >  1.02
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- Tmem158 >  1.47
+|   |   |   |   |   |--- Cpne7 <= 0.88
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- Cpne7 >  0.88
+|   |   |   |   |   |   |--- class: 1
+--- TASK ---
+Based on the CANDIDATE NODES above, first explicitly state (a) the single BEST node for hypothesis generation and why, and (b) the 4 most important contexts (features/conditions) driving that conclusion. Then form rationale and hypotheses of the feature relationships (pathways) to explain HOW features and Fxyd6 together associate with input resistance. Highlight which zones are the most biologically robust based on support, enrichment, and impurity reduction (not Gini alone). Identify findings into two categories: 1. findings that directly confirm literature knowledge; 2. findings suggesting new testable mechanisms supported by literature. List the publications supporting the conclusions.
+
+FINAL OUTPUT REQUIREMENT: After the narrative, append exactly one fenced json code block with this structure, so your selections can be checked against the quantitative evidence above:
+```json
+{
+  "primary_zone_node_id": <integer node id from the CANDIDATE NODES section>,
+  "top_4_contexts": ["<feature name>", "<feature name>", "<feature name>", "<feature name>"]
+}
+```
+Feature names in top_4_contexts must be copied verbatim from the split conditions of the primary zone (e.g. the feature name in "Pcdh8 <= 1.23" is "Pcdh8"), not the focused feature 'Fxyd6' itself.

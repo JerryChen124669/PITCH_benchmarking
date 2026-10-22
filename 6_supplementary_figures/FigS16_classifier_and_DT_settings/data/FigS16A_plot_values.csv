@@ -1,0 +1,4 @@
+Classifier,Mean accuracy over datasets,SD over datasets (ddof=1),CITE-seq CD45RA,CosMx Ki-67,Gouwens input resistance,pERK EGF10
+LR,0.8977,0.0531,0.9699,0.8873,0.8421,0.8913
+DT,0.8786,0.0677,0.9665,0.8445,0.8103,0.893
+RF,0.9038,0.0438,0.9687,0.8768,0.8775,0.8923

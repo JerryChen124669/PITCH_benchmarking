@@ -1,0 +1,11 @@
+{
+  "dataset": "CosMx_CancerKi67",
+  "setting_a": "top30_depth4",
+  "setting_b": "top60_depth6",
+  "scores": {
+    "Feature Interpretation & Coverage Similarity": 10,
+    "Mechanistic Hypothesis Similarity": 10,
+    "Functional/Causal-Role Similarity": 10
+  },
+  "overall_similarity": 10.0
+}

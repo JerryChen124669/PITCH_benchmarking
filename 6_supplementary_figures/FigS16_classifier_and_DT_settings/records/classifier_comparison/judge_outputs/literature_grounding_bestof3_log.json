@@ -1,0 +1,134 @@
+[
+  {
+    "dataset": "CITEseq_CD45RA_naive",
+    "classifier": "logreg",
+    "current_LG": 5,
+    "rerun_LGs": [
+      7,
+      7
+    ],
+    "best_LG": 7,
+    "changed": true
+  },
+  {
+    "dataset": "CITEseq_CD45RA_naive",
+    "classifier": "dt",
+    "current_LG": 6,
+    "rerun_LGs": [
+      6,
+      7
+    ],
+    "best_LG": 7,
+    "changed": true
+  },
+  {
+    "dataset": "CITEseq_CD45RA_naive",
+    "classifier": "rf",
+    "current_LG": 6,
+    "rerun_LGs": [
+      6,
+      6
+    ],
+    "best_LG": 6,
+    "changed": false
+  },
+  {
+    "dataset": "CosMx_CancerKi67",
+    "classifier": "logreg",
+    "current_LG": 7,
+    "rerun_LGs": [
+      6,
+      5
+    ],
+    "best_LG": 7,
+    "changed": false
+  },
+  {
+    "dataset": "CosMx_CancerKi67",
+    "classifier": "dt",
+    "current_LG": 5,
+    "rerun_LGs": [
+      6,
+      6
+    ],
+    "best_LG": 6,
+    "changed": true
+  },
+  {
+    "dataset": "CosMx_CancerKi67",
+    "classifier": "rf",
+    "current_LG": 7,
+    "rerun_LGs": [
+      7,
+      6
+    ],
+    "best_LG": 7,
+    "changed": false
+  },
+  {
+    "dataset": "Gouwens_GABAergic",
+    "classifier": "logreg",
+    "current_LG": 6,
+    "rerun_LGs": [
+      6,
+      6
+    ],
+    "best_LG": 6,
+    "changed": false
+  },
+  {
+    "dataset": "Gouwens_GABAergic",
+    "classifier": "dt",
+    "current_LG": 7,
+    "rerun_LGs": [
+      8,
+      7
+    ],
+    "best_LG": 8,
+    "changed": true
+  },
+  {
+    "dataset": "Gouwens_GABAergic",
+    "classifier": "rf",
+    "current_LG": 6,
+    "rerun_LGs": [
+      7,
+      6
+    ],
+    "best_LG": 7,
+    "changed": true
+  },
+  {
+    "dataset": "pERK_EGF10",
+    "classifier": "logreg",
+    "current_LG": 5,
+    "rerun_LGs": [
+      5,
+      4
+    ],
+    "best_LG": 5,
+    "changed": false
+  },
+  {
+    "dataset": "pERK_EGF10",
+    "classifier": "dt",
+    "current_LG": 8,
+    "rerun_LGs": [
+      8,
+      7
+    ],
+    "best_LG": 8,
+    "changed": false
+  },
+  {
+    "dataset": "pERK_EGF10",
+    "classifier": "rf",
+    "current_LG": 8,
+    "rerun_LGs": [
+      7,
+      7
+    ],
+    "best_LG": 8,
+    "changed": false
+  }
+]

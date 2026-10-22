@@ -1,0 +1,122 @@
+{
+  "dataset_key": "pERK_EGF10",
+  "model_key": "logreg",
+  "model_label": "Logistic Regression",
+  "target_prot": "Cytoplasm Intensity mean Actin",
+  "target_name": "pERK",
+  "attr_features": [
+    "Nucleus Morphology Area",
+    "Nucleus Morphology Perimeter",
+    "Nucleus Morphology Elongation",
+    "Morphology Area",
+    "Morphology Perimeter",
+    "Morphology Elongation",
+    "Cytoplasm Morphology Area",
+    "Cytoplasm Morphology Perimeter",
+    "Cytoplasm Morphology Elongation",
+    "Membrane Morphology Area",
+    "Membrane Morphology Perimeter",
+    "Membrane Morphology Elongation",
+    "Cytobody Morphology Area",
+    "Cytobody Morphology Perimeter",
+    "Cytobody Morphology Elongation",
+    "Nucleus Intensity mean DAPI",
+    "Cytoplasm Intensity mean Paxillin",
+    "Nucleus Intensity mean YAP",
+    "Membrane Intensity mean YAP",
+    "Nucleus Intensity mean PCNA",
+    "Cytobody Intensity mean Paxillin",
+    "Nucleus Intensity std DAPI"
+  ],
+  "cv_f1": 0.7510771531009407,
+  "coef_ranking": [
+    {
+      "feature": "Cytoplasm Intensity mean Paxillin",
+      "coefficient": 2.9111618224733373
+    },
+    {
+      "feature": "Membrane Morphology Perimeter",
+      "coefficient": -1.889055610311039
+    },
+    {
+      "feature": "Cytoplasm Morphology Perimeter",
+      "coefficient": 1.1143592113782297
+    },
+    {
+      "feature": "Morphology Perimeter",
+      "coefficient": 0.964660712513072
+    },
+    {
+      "feature": "Nucleus Intensity mean DAPI",
+      "coefficient": 0.9250651135538991
+    },
+    {
+      "feature": "Nucleus Morphology Area",
+      "coefficient": -0.9161732132474012
+    },
+    {
+      "feature": "Cytobody Intensity mean Paxillin",
+      "coefficient": -0.8717750406026803
+    },
+    {
+      "feature": "Morphology Area",
+      "coefficient": 0.7709097373994962
+    },
+    {
+      "feature": "Nucleus Intensity std DAPI",
+      "coefficient": -0.7105965943486285
+    },
+    {
+      "feature": "Cytobody Morphology Perimeter",
+      "coefficient": -0.4656904876347405
+    },
+    {
+      "feature": "Membrane Intensity mean YAP",
+      "coefficient": 0.4287995713626463
+    },
+    {
+      "feature": "Cytobody Morphology Area",
+      "coefficient": 0.36877979077927575
+    },
+    {
+      "feature": "Nucleus Intensity mean YAP",
+      "coefficient": 0.337675668092907
+    },
+    {
+      "feature": "Membrane Morphology Elongation",
+      "coefficient": 0.31460528730348813
+    },
+    {
+      "feature": "Cytoplasm Morphology Elongation",
+      "coefficient": -0.30156031395050087
+    },
+    {
+      "feature": "Nucleus Morphology Perimeter",
+      "coefficient": 0.27167766089940676
+    },
+    {
+      "feature": "Cytobody Morphology Elongation",
+      "coefficient": 0.23165362137138296
+    },
+    {
+      "feature": "Membrane Morphology Area",
+      "coefficient": -0.1526149690804409
+    },
+    {
+      "feature": "Nucleus Intensity mean PCNA",
+      "coefficient": -0.10546009912514827
+    },
+    {
+      "feature": "Nucleus Morphology Elongation",
+      "coefficient": -0.06992060376918019
+    },
+    {
+      "feature": "Morphology Elongation",
+      "coefficient": -0.06261957883296274
+    },
+    {
+      "feature": "Cytoplasm Morphology Area",
+      "coefficient": -0.05550713582372463
+    }
+  ]
+}

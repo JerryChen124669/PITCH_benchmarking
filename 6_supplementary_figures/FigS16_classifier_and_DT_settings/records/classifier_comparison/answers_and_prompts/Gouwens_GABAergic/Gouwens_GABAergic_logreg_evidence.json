@@ -1,0 +1,157 @@
+{
+  "dataset_key": "Gouwens_GABAergic",
+  "model_key": "logreg",
+  "model_label": "Logistic Regression",
+  "target_prot": "Fxyd6",
+  "target_name": "input resistance",
+  "attr_features": [
+    "Pcdh8",
+    "Coro6",
+    "Kcnq5",
+    "Cpne7",
+    "Fam19a2",
+    "Kcnmb4",
+    "Dab1",
+    "Nrgn",
+    "Tle4",
+    "Rell1",
+    "Lama4",
+    "Tmem145",
+    "Flt3",
+    "Lingo2",
+    "Rerg",
+    "Pld5",
+    "Crtac1",
+    "Ano4",
+    "Ndst3",
+    "9630002D21Rik",
+    "Phactr2",
+    "Tmem158",
+    "Il1rap",
+    "Sema3e",
+    "Zfp831",
+    "Ankrd55",
+    "Elavl2",
+    "Kcna3",
+    "Ptk2b"
+  ],
+  "cv_f1": 0.6813666799854413,
+  "coef_ranking": [
+    {
+      "feature": "Coro6",
+      "coefficient": -1.0717540137054293
+    },
+    {
+      "feature": "Lama4",
+      "coefficient": -0.6923840980354572
+    },
+    {
+      "feature": "9630002D21Rik",
+      "coefficient": -0.4804801095792249
+    },
+    {
+      "feature": "Ano4",
+      "coefficient": -0.44706315987514494
+    },
+    {
+      "feature": "Lingo2",
+      "coefficient": 0.44431884844143726
+    },
+    {
+      "feature": "Flt3",
+      "coefficient": -0.4126135700778122
+    },
+    {
+      "feature": "Nrgn",
+      "coefficient": -0.36576252351405303
+    },
+    {
+      "feature": "Il1rap",
+      "coefficient": -0.3585561514420178
+    },
+    {
+      "feature": "Ndst3",
+      "coefficient": -0.287114150622869
+    },
+    {
+      "feature": "Kcnmb4",
+      "coefficient": 0.28632805199574285
+    },
+    {
+      "feature": "Pcdh8",
+      "coefficient": 0.2599661161274465
+    },
+    {
+      "feature": "Kcnq5",
+      "coefficient": -0.253083994535241
+    },
+    {
+      "feature": "Fam19a2",
+      "coefficient": -0.239652506535512
+    },
+    {
+      "feature": "Crtac1",
+      "coefficient": -0.20574492486168935
+    },
+    {
+      "feature": "Cpne7",
+      "coefficient": 0.18754327410891275
+    },
+    {
+      "feature": "Tmem158",
+      "coefficient": 0.18134748479924243
+    },
+    {
+      "feature": "Sema3e",
+      "coefficient": 0.17796853953394237
+    },
+    {
+      "feature": "Dab1",
+      "coefficient": -0.16877753297633655
+    },
+    {
+      "feature": "Tmem145",
+      "coefficient": 0.15845892866915604
+    },
+    {
+      "feature": "Kcna3",
+      "coefficient": 0.11764727489868121
+    },
+    {
+      "feature": "Phactr2",
+      "coefficient": -0.103491246361094
+    },
+    {
+      "feature": "Tle4",
+      "coefficient": -0.06082449119408258
+    },
+    {
+      "feature": "Zfp831",
+      "coefficient": 0.05278371408749883
+    },
+    {
+      "feature": "Rell1",
+      "coefficient": 0.04606360627361385
+    },
+    {
+      "feature": "Rerg",
+      "coefficient": 0.044953499775511684
+    },
+    {
+      "feature": "Ankrd55",
+      "coefficient": -0.02618945952038796
+    },
+    {
+      "feature": "Pld5",
+      "coefficient": -0.014167751896048422
+    },
+    {
+      "feature": "Elavl2",
+      "coefficient": -0.01125820679818768
+    },
+    {
+      "feature": "Ptk2b",
+      "coefficient": -0.008741682997777249
+    }
+  ]
+}

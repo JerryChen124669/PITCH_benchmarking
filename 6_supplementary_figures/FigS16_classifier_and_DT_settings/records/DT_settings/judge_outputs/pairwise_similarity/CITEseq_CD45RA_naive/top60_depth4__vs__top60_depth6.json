@@ -1,0 +1,11 @@
+{
+  "dataset": "CITEseq_CD45RA_naive",
+  "setting_a": "top60_depth4",
+  "setting_b": "top60_depth6",
+  "scores": {
+    "Feature Interpretation & Coverage Similarity": 9,
+    "Mechanistic Hypothesis Similarity": 7,
+    "Functional/Causal-Role Similarity": 8
+  },
+  "overall_similarity": 8.0
+}

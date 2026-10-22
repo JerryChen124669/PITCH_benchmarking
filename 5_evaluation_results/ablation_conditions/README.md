@@ -23,14 +23,18 @@ Percentage of attempts (all completed calls, including retries) that committed t
 
 
 ## Six-axis radar (all-model averages, 0-10)
+The axis is called **Hypothesis Specificity** in the manuscript (Figure S15). The radar images and datasheets in this folder were drawn earlier and label it "Hypothesis Integration & Specificity" (the same scores); `6_supplementary_figures/FigS15_ablation/` redraws the figure with the manuscript names from its `data/` tables.
+
 | Axis | PITCH | MLP + IG | Measurement-only (n = 7) |
 |---|---|---|---|
 | Feature Comprehensiveness | 9.58 | 8.50 | 8.57 |
 | Biological Plausibility | 8.29 | 8.21 | 7.93 |
-| Hypothesis Integration & Specificity | 7.33 | 5.83 | 4.86 |
+| Hypothesis Specificity | 7.33 | 5.83 | 4.86 |
 | Mechanistic Synthesis | 7.17 | 5.75 | 4.79 |
 | Literature Grounding | 7.42 | 7.96 | 7.64 |
 | Hypothesis composition agreement (across the 4 models) | 7.67 | 4.33 | not measured (plotted as 0) |
 
 Notes: quality scores are the mean of two judge passes on one selected committed answer per model, condition and dataset (12 answers per condition; 7 for measurement-only, where a committed answer exists in 7 of 12 cells);
 the agreement score is the mean of three random-order judging passes per prompt (3 prompts per condition). The PITCH prompt still asks for four contextual features whereas the MLP + IG prompt does not.
+
+**Legacy zone-identification fields.** The scorecards produced by the earlier seven-criterion judge (benchmark scores `evaluation_results_rubric_v12/`, ablation scorecards `ablation_conditions/.../scorecards/`) still contain a `Zone Identification score_zone1` field. Zone identification is not reported: this field is excluded from every analysis, figure and table in the manuscript, and the scripts in this repository no longer request or use it.

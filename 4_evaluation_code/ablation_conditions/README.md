@@ -13,6 +13,7 @@ Run from this folder (`python <script>`); paths resolve through `common.py` to `
 | `04b_plot_hypothesis_composition_agreement.py` | bar plot and datasheet of the agreement score | no |
 | `02e_plot_radar_6axes.py` | **6-axis radar**, PITCH vs MLP + IG: 5 quality criteria + hypothesis composition agreement | no |
 | `02f_plot_radars_3conditions.py` | radars for all three conditions; its 6-axis version plots the measurement-only agreement as 0 (not measured) | no |
+| `sampling/` | **measurement-only sampling**: `raw_data_sampler.py`, `run_ablation.py` and the modules it imports; rule, seed (42) and the sampled row indices (`measurement_only_sampled_cells.csv`) | token counting only |
 | `common.py`, `raw_prompt_versions.py`, `evaluation/` | shared paths and helpers; exact measurement-only prompt wordings; judge rubric module (`judge_evaluation.py` is the verbatim 7-criterion rubric, sha256 522c88817cdc...; it is not the same file as `../judge_evaluation.py` of the benchmark), rubrics | - |
 
 Order: `02a` -> `01`; `02b` (pass 1, pass 2; measurement-only with `--conds cond2_raw_data`) -> `02c`; `04a` -> `04b` -> `02e`, `02f`.

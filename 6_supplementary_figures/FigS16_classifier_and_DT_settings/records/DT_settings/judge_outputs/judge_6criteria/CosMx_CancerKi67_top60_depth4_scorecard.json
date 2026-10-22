@@ -1,0 +1,15 @@
+{
+  "dataset": "CosMx_CancerKi67",
+  "setting": "top60_depth4",
+  "judge_model": "gpt-5.6-sol",
+  "scores": {
+    "Feature Comprehensiveness": 10,
+    "Logic Rigor": 10,
+    "Biological Plausibility": 9,
+    "Biological Plausibility_reason": "The proposed chromatin/transcription, RNA-processing, translational-capacity, and microtubule context is biologically defensible for proliferating breast cancer cells. The interpretation somewhat overstates RPL41 as evidence of active translation and the node as specifically S/G2/M or Ki-67-positive, since the classified outcome is high PTMA attribution.",
+    "Specificity": 8,
+    "Mechanistic Synthesis": 8,
+    "Mechanistic Synthesis_reason": "PTMA-mediated chromatin accessibility was connected to HNRNPA2B1-dependent RNA processing, RPL41-associated translational capacity, and TUBA1C/TUBB4B-supported spindle formation as a coherent proliferative program associated with Ki-67. All four contextual features contributed, although the proposed processing of tubulin transcripts by HNRNPA2B1 and the transition from RPL41 expression to productive translation remained broad. No mechanistic-synthesis ceiling was applied because an explicit focus-feature-to-target mechanism and all contextual contributions were provided.",
+    "Literature Grounding": 7
+  }
+}

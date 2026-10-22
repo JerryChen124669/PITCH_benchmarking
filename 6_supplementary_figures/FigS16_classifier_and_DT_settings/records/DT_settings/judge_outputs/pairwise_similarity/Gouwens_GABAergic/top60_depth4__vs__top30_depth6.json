@@ -1,0 +1,11 @@
+{
+  "dataset": "Gouwens_GABAergic",
+  "setting_a": "top60_depth4",
+  "setting_b": "top30_depth6",
+  "scores": {
+    "Feature Interpretation & Coverage Similarity": 5,
+    "Mechanistic Hypothesis Similarity": 5,
+    "Functional/Causal-Role Similarity": 5
+  },
+  "overall_similarity": 5.0
+}

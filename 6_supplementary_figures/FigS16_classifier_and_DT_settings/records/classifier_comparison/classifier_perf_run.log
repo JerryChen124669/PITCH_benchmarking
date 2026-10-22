@@ -1,0 +1,32 @@
+
+=== CITEseq_CD45RA_naive (mode=ig_auto) ===
+  8617 cells x 29 features, target=HUMAN_GNLY, class balance=862/8617 positive (211.9s)
+  [logreg ] accuracy=0.970 f1_macro=0.925 roc_auc=0.990 average_precision=0.880
+  [dt     ] accuracy=0.966 f1_macro=0.917 roc_auc=0.979 average_precision=0.826
+  [rf     ] accuracy=0.969 f1_macro=0.922 roc_auc=0.991 average_precision=0.881
+  Done with CITEseq_CD45RA_naive in 213.6s
+
+=== CosMx_CancerKi67 (mode=ig_auto) ===
+  30000 cells x 29 features, target=PTMA, class balance=3000/30000 positive (309.9s)
+  [logreg ] accuracy=0.887 f1_macro=0.733 roc_auc=0.909 average_precision=0.525
+  [dt     ] accuracy=0.845 f1_macro=0.682 roc_auc=0.868 average_precision=0.410
+  [rf     ] accuracy=0.877 f1_macro=0.719 roc_auc=0.899 average_precision=0.500
+  Done with CosMx_CancerKi67 in 312.0s
+
+=== Gouwens_GABAergic (mode=ig_auto) ===
+  3395 cells x 29 features, target=Fxyd6, class balance=340/3395 positive (56.6s)
+  [logreg ] accuracy=0.842 f1_macro=0.681 roc_auc=0.882 average_precision=0.421
+  [dt     ] accuracy=0.810 f1_macro=0.656 roc_auc=0.827 average_precision=0.347
+  [rf     ] accuracy=0.877 f1_macro=0.688 roc_auc=0.887 average_precision=0.457
+  Done with Gouwens_GABAergic in 58.1s
+
+=== pERK_EGF10 (mode=manual) ===
+  20000 cells x 22 features, target=Cytoplasm Intensity mean Actin, class balance=2000/20000 positive (2.0s)
+  [logreg ] accuracy=0.891 f1_macro=0.753 roc_auc=0.910 average_precision=0.618
+  [dt     ] accuracy=0.893 f1_macro=0.752 roc_auc=0.897 average_precision=0.543
+  [rf     ] accuracy=0.892 f1_macro=0.749 roc_auc=0.906 average_precision=0.574
+  Done with pERK_EGF10 in 6.0s
+
+Saved -> C:\Users\twjer\nonlinear-multimodal\ClassifierEvaluation\new_rubric_results\FINAL_organized\0_classifier_performance\classifier_performance_by_fold.csv
+Saved -> C:\Users\twjer\nonlinear-multimodal\ClassifierEvaluation\new_rubric_results\FINAL_organized\0_classifier_performance\classifier_performance_summary.csv
+Saved -> C:\Users\twjer\nonlinear-multimodal\ClassifierEvaluation\new_rubric_results\FINAL_organized\0_classifier_performance\logreg_threshold_example.json

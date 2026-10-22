@@ -1,0 +1,5 @@
+Setting,"30 genes, depth 4","60 genes, depth 4","30 genes, depth 6","60 genes, depth 6"
+"30 genes, depth 4",,8.667,7.778,9.0
+"60 genes, depth 4",8.667,,6.444,8.556
+"30 genes, depth 6",7.778,6.444,,7.333
+"60 genes, depth 6",9.0,8.556,7.333,
