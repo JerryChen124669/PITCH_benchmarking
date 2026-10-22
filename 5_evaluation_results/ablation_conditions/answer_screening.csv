@@ -1,0 +1,139 @@
+model,condition,dataset,run,prompt_variant,verdict,note
+Qwen,cond0_full_pipeline,CITEseq_CD45RA_naive,1,standard,stated,
+Qwen,cond0_full_pipeline,CITEseq_CD45RA_naive,2,standard,stated,
+Qwen,cond0_full_pipeline,CITEseq_CD45RA_naive,3,standard,stated,
+Qwen,cond1_ig_only,CITEseq_CD45RA_naive,1,standard,stated,
+Qwen,cond1_ig_only,CITEseq_CD45RA_naive,2,standard,stated,
+Qwen,cond1_ig_only,CITEseq_CD45RA_naive,3,standard,stated,
+Qwen,cond2_raw_data,CITEseq_CD45RA_naive,1,standard,stated,low-confidence single best hypothesis
+Qwen,cond2_raw_data,CITEseq_CD45RA_naive,2,standard,tentative,'if forced'
+Qwen,cond2_raw_data,CITEseq_CD45RA_naive,3,standard,tentative,'largely as a fallback'
+Qwen,cond0_full_pipeline,CosMx_CancerKi67,1,standard,stated,
+Qwen,cond0_full_pipeline,CosMx_CancerKi67,2,standard,stated,
+Qwen,cond0_full_pipeline,CosMx_CancerKi67,3,standard,stated,
+Qwen,cond1_ig_only,CosMx_CancerKi67,1,standard,stated,
+Qwen,cond1_ig_only,CosMx_CancerKi67,2,standard,stated,
+Qwen,cond1_ig_only,CosMx_CancerKi67,3,standard,stated,
+Qwen,cond2_raw_data,CosMx_CancerKi67,1,standard,stated,best-effort hypothesis
+Qwen,cond2_raw_data,CosMx_CancerKi67,2,standard,stated,single best hypothesis
+Qwen,cond2_raw_data,CosMx_CancerKi67,3,standard,stated,single best tentative hypothesis
+Qwen,cond0_full_pipeline,Gouwens_GABAergic,1,standard,stated,
+Qwen,cond0_full_pipeline,Gouwens_GABAergic,2,standard,stated,
+Qwen,cond0_full_pipeline,Gouwens_GABAergic,3,standard,stated,
+Qwen,cond1_ig_only,Gouwens_GABAergic,1,standard,stated,
+Qwen,cond1_ig_only,Gouwens_GABAergic,2,standard,stated,
+Qwen,cond1_ig_only,Gouwens_GABAergic,3,standard,stated,
+Qwen,cond2_raw_data,Gouwens_GABAergic,1,standard,tentative,"general prior-knowledge hypothesis, not shown from the table"
+Qwen,cond2_raw_data,Gouwens_GABAergic,2,standard,declined,cannot identify; outlier not sufficient
+Qwen,cond2_raw_data,Gouwens_GABAergic,3,standard,tentative,'if forced' literature-based
+DeepSeek,cond0_full_pipeline,CITEseq_CD45RA_naive,1,standard,stated,
+DeepSeek,cond0_full_pipeline,CITEseq_CD45RA_naive,2,standard,stated,
+DeepSeek,cond0_full_pipeline,CITEseq_CD45RA_naive,3,standard,stated,
+DeepSeek,cond1_ig_only,CITEseq_CD45RA_naive,1,standard,stated,
+DeepSeek,cond1_ig_only,CITEseq_CD45RA_naive,2,standard,stated,
+DeepSeek,cond1_ig_only,CITEseq_CD45RA_naive,3,standard,stated,
+DeepSeek,cond0_full_pipeline,CosMx_CancerKi67,1,standard,stated,
+DeepSeek,cond0_full_pipeline,CosMx_CancerKi67,2,standard,stated,
+DeepSeek,cond0_full_pipeline,CosMx_CancerKi67,3,standard,stated,
+DeepSeek,cond1_ig_only,CosMx_CancerKi67,1,standard,stated,
+DeepSeek,cond1_ig_only,CosMx_CancerKi67,2,standard,stated,
+DeepSeek,cond1_ig_only,CosMx_CancerKi67,3,standard,stated,
+DeepSeek,cond2_raw_data,CosMx_CancerKi67,1,standard,stated,single best hypothesis (cell-cycle program)
+DeepSeek,cond2_raw_data,CosMx_CancerKi67,2,standard,stated,single best hypothesis (translation axis)
+DeepSeek,cond2_raw_data,CosMx_CancerKi67,3,standard,tentative,"'if forced', explicitly prior knowledge"
+DeepSeek,cond0_full_pipeline,Gouwens_GABAergic,1,standard,stated,
+DeepSeek,cond0_full_pipeline,Gouwens_GABAergic,2,standard,stated,
+DeepSeek,cond0_full_pipeline,Gouwens_GABAergic,3,standard,stated,
+DeepSeek,cond1_ig_only,Gouwens_GABAergic,1,standard,stated,
+DeepSeek,cond1_ig_only,Gouwens_GABAergic,2,standard,stated,
+DeepSeek,cond1_ig_only,Gouwens_GABAergic,3,standard,stated,
+DeepSeek,cond2_raw_data,Gouwens_GABAergic,2,standard,declined,states it cannot form a hypothesis
+Gemini,cond0_full_pipeline,CITEseq_CD45RA_naive,1,standard,stated,
+Gemini,cond0_full_pipeline,CITEseq_CD45RA_naive,2,standard,stated,
+Gemini,cond0_full_pipeline,CITEseq_CD45RA_naive,3,standard,stated,
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,1,standard,declined,"insufficient evidence, no hypothesis"
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,2,standard,declined,cannot formulate
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,3,standard,declined,cannot formulate
+Gemini,cond2_raw_data,CITEseq_CD45RA_naive,1,guide_line,declined,says it cannot determine / needs a computational pipeline; no hypothesis
+Gemini,cond2_raw_data,CITEseq_CD45RA_naive,2,standard,declined,says it cannot determine / needs a computational pipeline; no hypothesis
+Gemini,cond2_raw_data,CITEseq_CD45RA_naive,3,standard,declined,says it cannot determine / needs a computational pipeline; no hypothesis
+Gemini,cond0_full_pipeline,CosMx_CancerKi67,1,standard,stated,
+Gemini,cond0_full_pipeline,CosMx_CancerKi67,2,standard,stated,
+Gemini,cond0_full_pipeline,CosMx_CancerKi67,3,standard,stated,
+Gemini,cond1_ig_only,CosMx_CancerKi67,1,standard,stated,
+Gemini,cond1_ig_only,CosMx_CancerKi67,2,standard,stated,
+Gemini,cond1_ig_only,CosMx_CancerKi67,3,standard,tentative,'if forced' hypothesis
+Gemini,cond2_raw_data,CosMx_CancerKi67,1,guide_line,declined,says it cannot determine / needs a computational pipeline; no hypothesis
+Gemini,cond2_raw_data,CosMx_CancerKi67,2,standard,declined,says it cannot determine / needs a computational pipeline; no hypothesis
+Gemini,cond2_raw_data,CosMx_CancerKi67,3,standard,declined,says it cannot determine / needs a computational pipeline; no hypothesis
+Gemini,cond0_full_pipeline,Gouwens_GABAergic,1,standard,stated,
+Gemini,cond0_full_pipeline,Gouwens_GABAergic,2,standard,stated,
+Gemini,cond0_full_pipeline,Gouwens_GABAergic,3,standard,stated,
+Gemini,cond1_ig_only,Gouwens_GABAergic,1,standard,stated,
+Gemini,cond1_ig_only,Gouwens_GABAergic,2,standard,declined,themes only; says evidence insufficient for any specific hypothesis
+Gemini,cond1_ig_only,Gouwens_GABAergic,3,standard,stated,
+Gemini,cond2_raw_data,Gouwens_GABAergic,1,guide_line,declined,says it cannot determine / needs a computational pipeline; no hypothesis
+Gemini,cond2_raw_data,Gouwens_GABAergic,2,standard,tentative,"declines, then only a prior-knowledge expectation (Kcnk leak channels)"
+Gemini,cond2_raw_data,Gouwens_GABAergic,3,standard,stated,"FLAG: rests on a false data claim (says Mapk4 is identical to the target, conf 9); in the table the max difference is 5.06"
+GLM,cond0_full_pipeline,CITEseq_CD45RA_naive,1,standard,stated,
+GLM,cond0_full_pipeline,CITEseq_CD45RA_naive,2,standard,stated,
+GLM,cond0_full_pipeline,CITEseq_CD45RA_naive,3,standard,stated,
+GLM,cond1_ig_only,CITEseq_CD45RA_naive,1,standard,stated,
+GLM,cond1_ig_only,CITEseq_CD45RA_naive,2,standard,stated,
+GLM,cond1_ig_only,CITEseq_CD45RA_naive,3,standard,stated,
+GLM,cond0_full_pipeline,CosMx_CancerKi67,1,standard,stated,
+GLM,cond0_full_pipeline,CosMx_CancerKi67,2,standard,stated,
+GLM,cond0_full_pipeline,CosMx_CancerKi67,3,standard,stated,
+GLM,cond1_ig_only,CosMx_CancerKi67,1,standard,stated,
+GLM,cond1_ig_only,CosMx_CancerKi67,2,standard,stated,
+GLM,cond1_ig_only,CosMx_CancerKi67,3,standard,stated,
+GLM,cond2_raw_data,CosMx_CancerKi67,1,standard,stated,
+GLM,cond2_raw_data,CosMx_CancerKi67,2,standard,stated,
+GLM,cond0_full_pipeline,Gouwens_GABAergic,1,standard,stated,
+GLM,cond0_full_pipeline,Gouwens_GABAergic,2,standard,stated,
+GLM,cond0_full_pipeline,Gouwens_GABAergic,3,standard,stated,
+GLM,cond1_ig_only,Gouwens_GABAergic,1,standard,stated,
+GLM,cond1_ig_only,Gouwens_GABAergic,2,standard,stated,
+GLM,cond1_ig_only,Gouwens_GABAergic,3,standard,stated,
+GLM,cond2_raw_data,Gouwens_GABAergic,1,standard,stated,
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,4,final_prompt_set,declined,cannot form a hypothesis; lists information needed
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,5,final_prompt_set,stated,"BORDERLINE: declines a molecular-regulation hypothesis but states 'the model is learning population heterogeneity' (data-structure hypothesis, conf 1)"
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,6,final_prompt_set,tentative,"two hedged 'proxy hypotheses' (positive / negative), commits to neither"
+Gemini,cond1_ig_only,CosMx_CancerKi67,4,final_prompt_set,declined,themes only; says it cannot formulate a testable hypothesis
+Gemini,cond1_ig_only,Gouwens_GABAergic,4,final_prompt_set,stated,"specific Kcnq5 / cell-size hypothesis, conf 8"
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,7,final_prompt_set,declined,cannot formulate; needs signed attributions
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,8,final_prompt_set,declined,not possible to formulate; lists what would be needed
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,9,final_prompt_set,declined,cannot form a hypothesis about molecular regulation
+Gemini,cond1_ig_only,CosMx_CancerKi67,5,final_prompt_set,declined,themes only; evidence insufficient for a hypothesis
+Gemini,cond1_ig_only,CosMx_CancerKi67,6,final_prompt_set,declined,themes only; 'fundamentally insufficient'
+Gemini,cond1_ig_only,CosMx_CancerKi67,7,final_prompt_set,stated,general hypothesis: top genes are co-regulated downstream effectors of E2F/MYC programs (conf 2); also says specific regulation can't be determined
+DeepSeek,cond2_raw_data,CITEseq_CD45RA_naive,2,raw_corr_rank,declined,'not sufficient to form a hypothesis'; no feature named as its conclusion
+DeepSeek,cond2_raw_data,CITEseq_CD45RA_naive,3,raw_corr_rank,declined,cannot form a hypothesis; would need computed correlation / feature ranking
+DeepSeek,cond2_raw_data,Gouwens_GABAergic,3,raw_corr_rank,declined,too large to rank by correlation by eye; any gene named would be a literature guess
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,10,final_prompt_set,declined,read/flagged: declines to give a mechanistic hypothesis
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,11,final_prompt_set,declined,read/flagged: declines to give a mechanistic hypothesis
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,12,final_prompt_set,declined,read/flagged: declines to give a mechanistic hypothesis
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,13,final_prompt_set,declined,read/flagged: declines to give a mechanistic hypothesis
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,14,final_prompt_set,declined,read/flagged: declines to give a mechanistic hypothesis
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,15,final_prompt_set,declined,read/flagged: declines to give a mechanistic hypothesis
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,16,final_prompt_set,declined,read/flagged: declines to give a mechanistic hypothesis
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,17,final_prompt_set,declined,read/flagged: declines to give a mechanistic hypothesis
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,18,final_prompt_set,declined,read/flagged: declines to give a mechanistic hypothesis
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,19,final_prompt_set,declined,read/flagged: declines to give a mechanistic hypothesis
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,20,final_prompt_set,declined,read/flagged: declines to give a mechanistic hypothesis
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,21,final_prompt_set,declined,read/flagged: declines to give a mechanistic hypothesis
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,22,final_prompt_set,declined,read/flagged: declines to give a mechanistic hypothesis
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,23,final_prompt_set,declined,read/flagged: declines to give a mechanistic hypothesis
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,24,final_prompt_set,declined,read/flagged: declines to give a mechanistic hypothesis
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,25,final_prompt_set,declined,read/flagged: declines to give a mechanistic hypothesis
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,26,final_prompt_set,declined,read/flagged: declines to give a mechanistic hypothesis
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,27,final_prompt_set,declined,read/flagged: declines to give a mechanistic hypothesis
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,28,final_prompt_set,declined,read/flagged: declines to give a mechanistic hypothesis
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,29,final_prompt_set,declined,read/flagged: declines to give a mechanistic hypothesis
+Gemini,cond1_ig_only,CITEseq_CD45RA_naive,30,final_prompt_set,declined,read/flagged: declines to give a mechanistic hypothesis
+GLM,cond2_raw_data,CITEseq_CD45RA_naive,1,final_prompt_set,stated,"states PTGDS-PGD2 hypothesis (confidence 3, caveated)"
+GLM,cond2_raw_data,CITEseq_CD45RA_naive,2,final_prompt_set,stated,best hypothesis: cytotoxic/TEMRA GZMB+ state
+GLM,cond2_raw_data,CITEseq_CD45RA_naive,3,final_prompt_set,stated,"best hypothesis: inverse association with activation/effector program, TCL1A positive"
+GLM,cond2_raw_data,CosMx_CancerKi67,3,final_prompt_set,stated,single best hypothesis: coordinated ribosome-biogenesis + cell-cycle program
+GLM,cond2_raw_data,Gouwens_GABAergic,2,final_prompt_set,stated,hypothesis: Pvalb/Kcna3 K+ conductance sets input resistance
+GLM,cond2_raw_data,Gouwens_GABAergic,3,final_prompt_set,stated,hypothesis: Pvalb strongest negative correlate (cell-type/Kv conductance)

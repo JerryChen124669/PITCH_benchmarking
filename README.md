@@ -29,3 +29,7 @@ Code, prompts, generated answers, similarity & quality evaluation and evaluation
 | `3_answers/` | the answer used for evaluation of 24 models for each of the six prompts |
 | `4_evaluation_code/` | rubric judging, pairwise similarity, clustering and selection scripts; `reproduce_figures.sh` regenerates the five evaluation figures.|
 | `5_evaluation_results/` | judged scores and pairwise similarity records for all six prompts, and the result tables and figures |
+
+## Ablation of the evidence conditions (generation rate, five-criteria radar)
+Beyond the 24-model benchmark, the folders `ablation_conditions/` inside `2_prompts/`, `3_answers/`, `4_evaluation_code/` and `5_evaluation_results/` hold an ablation of what the LLM is given (PITCH decision-tree output vs the MLP + IG ranking vs measurements only; four LLMs, three datasets):
+the prompts, all attempts and selected answers, the scripts for the generation rate, the five-criteria quality radar and the hypothesis composition agreement, and their results. See the README in each folder.

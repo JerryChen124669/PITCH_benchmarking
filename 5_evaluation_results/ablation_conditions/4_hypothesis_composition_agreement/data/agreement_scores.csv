@@ -1,0 +1,7 @@
+condition,dataset,n_passes_scored,mean_score,sd_across_passes,scores_per_pass
+cond0_full_pipeline,CITEseq_CD45RA_naive,3,8.333,0.577,"[9, 8, 8]"
+cond0_full_pipeline,CosMx_CancerKi67,3,8,0.0,"[8, 8, 8]"
+cond0_full_pipeline,Gouwens_GABAergic,3,6.667,1.155,"[6, 6, 8]"
+cond1_ig_only,CITEseq_CD45RA_naive,3,4.333,1.528,"[6, 4, 3]"
+cond1_ig_only,CosMx_CancerKi67,3,4.667,1.155,"[6, 4, 4]"
+cond1_ig_only,Gouwens_GABAergic,3,4,0.0,"[4, 4, 4]"

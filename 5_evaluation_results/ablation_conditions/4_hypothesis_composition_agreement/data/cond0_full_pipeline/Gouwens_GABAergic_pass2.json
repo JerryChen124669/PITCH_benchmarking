@@ -1,0 +1,34 @@
+{
+  "condition": "cond0_full_pipeline",
+  "dataset": "Gouwens_GABAergic",
+  "pass": 2,
+  "seed": 20,
+  "rubric": "coverage",
+  "order": [
+    {
+      "label": "A",
+      "model": "gemini-3.1-pro-preview",
+      "picked_run": 3
+    },
+    {
+      "label": "B",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "picked_run": 3
+    },
+    {
+      "label": "C",
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "picked_run": 2
+    },
+    {
+      "label": "D",
+      "model": "zai-org/GLM-5.3",
+      "picked_run": 2
+    }
+  ],
+  "judge": {
+    "rationale": "The answers share the principal Fxyd6\u2013Na+/K+-ATPase mechanism and the Htr3a/Cnr1-defined CGE interneuron context, but Coro6 and Flt3 receive explanatory state or trafficking roles mainly in B\u2013D and D adds distinct CB1\u2013cAMP/PKA\u2013FXYD1 coupling, leaving roughly one-quarter or more of the molecular content incompletely shared and invoking the maximum-6 ceiling.",
+    "cross_model_agreement_score": 6
+  },
+  "score": 6
+}

@@ -1,0 +1,34 @@
+{
+  "condition": "cond1_ig_only",
+  "dataset": "Gouwens_GABAergic",
+  "pass": 3,
+  "seed": 20,
+  "rubric": "coverage",
+  "order": [
+    {
+      "label": "A",
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "picked_run": 1
+    },
+    {
+      "label": "B",
+      "model": "gemini-3.1-pro-preview",
+      "picked_run": 3
+    },
+    {
+      "label": "C",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "picked_run": 3
+    },
+    {
+      "label": "D",
+      "model": "zai-org/GLM-5.3",
+      "picked_run": 3
+    }
+  ],
+  "judge": {
+    "rationale": "The answers share a clear core involving FXYD6-regulated Na+/K+-ATPase activity and KCNQ5/KCNMB4-related potassium conductance, with some recurrence of Kcna3 and Kcnd3, but more than half of the complete molecular content differs through A\u2019s morphology module, C\u2019s tonic GABA/ANO4 and lineage program, D\u2019s GABRD-centered subtype and gating-modulator explanation, and B\u2019s PVALB emphasis, so the shared-minority ceiling of 4 applies.",
+    "cross_model_agreement_score": 4
+  },
+  "score": 4
+}

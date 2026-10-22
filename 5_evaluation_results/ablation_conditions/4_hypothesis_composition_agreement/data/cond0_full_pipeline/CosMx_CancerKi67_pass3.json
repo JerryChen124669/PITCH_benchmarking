@@ -1,0 +1,34 @@
+{
+  "condition": "cond0_full_pipeline",
+  "dataset": "CosMx_CancerKi67",
+  "pass": 3,
+  "seed": 20,
+  "rubric": "coverage",
+  "order": [
+    {
+      "label": "A",
+      "model": "gemini-3.1-pro-preview",
+      "picked_run": 1
+    },
+    {
+      "label": "B",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "picked_run": 3
+    },
+    {
+      "label": "C",
+      "model": "zai-org/GLM-5.3",
+      "picked_run": 1
+    },
+    {
+      "label": "D",
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "picked_run": 2
+    }
+  ],
+  "judge": {
+    "rationale": "The primary Node 14 hypotheses strongly agree on HNRNPA2B1-mediated RNA processing, RPLP0-linked translational capacity, TUBB4B-associated mitotic machinery, and PTMA\u2019s proliferation/chromatin context, with the main difference being the additional MYC-centered mechanism in Answers B and C, so roughly three-quarters or more of the molecular content is shared and no ceiling applies.",
+    "cross_model_agreement_score": 8
+  },
+  "score": 8
+}

@@ -1,0 +1,20 @@
+{
+  "model": "zai-org/GLM-5.3",
+  "model_slug": "zai-org__GLM-5.3",
+  "dataset": "CosMx_CancerKi67",
+  "condition": "cond2_raw_data",
+  "picked_run": 2,
+  "preamble": "v2",
+  "scores": {
+    "Zone Identification score_zone1": null,
+    "Logic Rigor_zone1": null,
+    "Feature Comprehensiveness_zone1": 9,
+    "Biological Plausibility_zone1": 8,
+    "Biological Plausibility_reason": "The proposed E2F/MYBL2-linked proliferation program coherently connects TK1, CDK1/CKS proteins, ribosome biogenesis, and Ki-67, and the assigned gene functions are mostly established. The claim that Ki-67's nucleolar role specifically explains ribosomal-gene co-expression is plausible but stronger than the supplied evidence supports.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 7,
+    "Grounded Mechanistic Synthesis_reason": "The response integrates MYBL2/E2F activity, TK1-mediated nucleotide metabolism, CDK1/CKS-mediated mitotic progression, and RPL/RPS expression into a common proliferative state associated with Ki-67. The transition from this shared program to direct MKI67 transcription and the distinct contribution of CKS2 remain broad, while the ribosomal connection is partly asserted rather than mechanistically resolved. No formal synthesis ceiling was applied because an explicit focus-feature\u2013target mechanism and most contextual contributions were present.",
+    "Literature Grounding_zone1": 7
+  },
+  "final_score_5pillar": 35.5
+}

@@ -1,0 +1,20 @@
+{
+  "model": "Qwen/Qwen3.8-2.4T-A95B",
+  "model_slug": "Qwen__Qwen3.8-2.4T-A95B",
+  "dataset": "CosMx_CancerKi67",
+  "condition": "cond2_raw_data",
+  "picked_run": 2,
+  "preamble": "v2",
+  "scores": {
+    "Zone Identification score_zone1": null,
+    "Logic Rigor_zone1": null,
+    "Feature Comprehensiveness_zone1": 9,
+    "Biological Plausibility_zone1": 9,
+    "Biological Plausibility_reason": "The required invoked features are TK1, CDK1, and ribosomal/translation-associated expression. Their interpretation as components or correlates of active S/G2/M progression is biologically sound, although the proposed association is a shared proliferation-state explanation rather than evidence that TK1 directly regulates Ki-67.",
+    "Specificity_zone1": 4,
+    "Grounded Mechanistic Synthesis_zone1": 4,
+    "Grounded Mechanistic Synthesis_reason": "The response integrates TK1, CDK1, and increased ribosome biogenesis and translation through a shared active-cycling state associated with high Ki-67. These features remain primarily parallel markers, with few biological transitions explaining how the program determines Ki-67 abundance. No formal ceiling was applied, but the broad cell-state account limits mechanistic resolution.",
+    "Literature Grounding_zone1": 9
+  },
+  "final_score_5pillar": 30.5
+}

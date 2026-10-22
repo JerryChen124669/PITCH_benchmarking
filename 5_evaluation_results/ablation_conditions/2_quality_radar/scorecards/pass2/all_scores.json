@@ -1,0 +1,482 @@
+[
+  {
+    "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+    "model_slug": "deepseek-ai__DeepSeek-V4.1-Flash",
+    "dataset": "CITEseq_CD45RA_naive",
+    "condition": "cond0_full_pipeline",
+    "picked_run": 1,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 10,
+      "Biological Plausibility_zone1": 9,
+      "Biological Plausibility_reason": "The interpretation that GNLY, NKG7, GZMB, and KLRD1 identify a CD45RA-positive cytotoxic/NK state is biologically well founded, while low CST3 plausibly helps exclude myeloid-like cells. Claims that CST3 is permissive or directly modulates GNLY or CD45RA are speculative, but they are presented as testable extensions rather than established premises.",
+      "Specificity_zone1": 8,
+      "Grounded Mechanistic Synthesis_zone1": 7,
+      "Grounded Mechanistic Synthesis_reason": "GNLY was connected to CD45RA through a cytotoxic lymphocyte state defined by NKG7 and GZMB, with KLRD1 identifying an NK-like context and low CST3 excluding myeloid-like states. The explanation remains primarily a shared-cell-state or marker mechanism and does not resolve molecular transitions linking the cytotoxic program to CD45RA isoform expression. No mechanistic-synthesis ceiling was applied because all four contextual features were explicitly integrated and a defensible focus-feature\u2013target connection was provided.",
+      "Literature Grounding_zone1": 8
+    },
+    "final_score_5pillar": 38.0
+  },
+  {
+    "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+    "model_slug": "deepseek-ai__DeepSeek-V4.1-Flash",
+    "dataset": "CosMx_CancerKi67",
+    "condition": "cond0_full_pipeline",
+    "picked_run": 3,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 10,
+      "Biological Plausibility_zone1": 9,
+      "Biological Plausibility_reason": "The proposed common proliferation program linking PTMA, Ki-67, ribosomal output, RNA processing, and microtubule state is biologically defensible. Some assignments, particularly treating TUBB4B and RPLP0 as specific spindle and ribosome-output measures, are simplified but not materially implausible.",
+      "Specificity_zone1": 8,
+      "Grounded Mechanistic Synthesis_zone1": 7,
+      "Grounded Mechanistic Synthesis_reason": "PTMA and Ki-67 were connected through a MYC-associated proliferation program, with HNRNPA2B1, RPLP0, and TUBB4B contributing RNA-processing, translational-capacity, and microtubule-state contexts. The biological transitions by which RPLP0 or TUBB4B specifically alter PTMA's relationship to Ki-67 remained broad, while the proposed HNRNPA2B1\u2013PTMA regulation was explicitly speculative. No synthesis ceiling was applied because all primary contextual features were meaningfully integrated and an explicit focus-feature\u2013target explanation was provided.",
+      "Literature Grounding_zone1": 8
+    },
+    "final_score_5pillar": 38.0
+  },
+  {
+    "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+    "model_slug": "deepseek-ai__DeepSeek-V4.1-Flash",
+    "dataset": "Gouwens_GABAergic",
+    "condition": "cond0_full_pipeline",
+    "picked_run": 3,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 9,
+      "Biological Plausibility_zone1": 9,
+      "Biological Plausibility_reason": "The proposed FXYD6\u2013Na,K-ATPase mechanism is biologically defensible, and the Cnr1/Htr3a context is reasonably assigned to CGE-derived CCK/CB1 interneurons. The link from pump regulation to input resistance is indirect and not established specifically for FXYD6, but it is appropriately presented as a testable hypothesis.",
+      "Specificity_zone1": 7,
+      "Grounded Mechanistic Synthesis_zone1": 7,
+      "Grounded Mechanistic Synthesis_reason": "FXYD6 was connected through Na,K-ATPase regulation to resting membrane physiology, while Cnr1 and Htr3a defined a relevant CGE/CCK interneuron context and Coro6 was proposed as a permissive trafficking state. Flt3 remained only a state marker, and the transition from altered pump activity to measured input resistance was not mechanistically resolved in detail. No synthesis ceiling was applied because an explicit focus-feature\u2013target mechanism was provided and most contextual features had stated roles.",
+      "Literature Grounding_zone1": 9
+    },
+    "final_score_5pillar": 36.5
+  },
+  {
+    "model": "gemini-3.1-pro-preview",
+    "model_slug": "gemini-3.1-pro-preview",
+    "dataset": "CITEseq_CD45RA_naive",
+    "condition": "cond0_full_pipeline",
+    "picked_run": 1,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 10,
+      "Biological Plausibility_zone1": 9,
+      "Biological Plausibility_reason": "The interpretation that GNLY and CD45RA co-associate within an NKG7-high, GZMB-high, KLRD1-high cytotoxic NK-like state depleted of myeloid CST3 is biologically defensible. The proposed disproportionate reliance on GNLY for neonatal antimicrobial activity is speculative but clearly framed as a testable hypothesis rather than established fact.",
+      "Specificity_zone1": 5,
+      "Grounded Mechanistic Synthesis_zone1": 5,
+      "Grounded Mechanistic Synthesis_reason": "NKG7, GZMB, and KLRD1 are integrated as indicators of a cytotoxic NK-like state, while low CST3 is used to exclude a myeloid context in which the GNLY\u2013CD45RA association would be less specific. The claimed transition from this cellular state to disproportionate GNLY-dependent neonatal antimicrobial function is not mechanistically connected to CD45RA or to the contextual markers. The feature-function-listing ceiling of 5 was applied because the explanation primarily establishes a shared cell-state signature rather than resolving biological transitions linking GNLY to CD45RA.",
+      "Literature Grounding_zone1": 7
+    },
+    "final_score_5pillar": 32.5
+  },
+  {
+    "model": "gemini-3.1-pro-preview",
+    "model_slug": "gemini-3.1-pro-preview",
+    "dataset": "CosMx_CancerKi67",
+    "condition": "cond0_full_pipeline",
+    "picked_run": 1,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 10,
+      "Biological Plausibility_zone1": 8,
+      "Biological Plausibility_reason": "The proposed PTMA-centered proliferative state involving RNA processing, translation, and microtubule machinery is biologically defensible. However, the isoform-specific claim that TUBB4B is strictly required for spindle formation and the direct framing of PTMA as inducing Ki-67 are overstated.",
+      "Specificity_zone1": 8,
+      "Grounded Mechanistic Synthesis_zone1": 8,
+      "Grounded Mechanistic Synthesis_reason": "The response integrates PTMA-mediated transcriptional accessibility with HNRNPA2B1-dependent RNA processing, RPLP0-supported translation, and TUBB4B-associated mitotic capacity. The proposed feed-forward dependence lacks identified PTMA-responsive transcripts or a resolved molecular connection between PTMA and the RNA-processing machinery. No synthesis ceiling was applied because all primary contextual features contribute explicitly to one coherent mechanism.",
+      "Literature Grounding_zone1": 5
+    },
+    "final_score_5pillar": 36.5
+  },
+  {
+    "model": "gemini-3.1-pro-preview",
+    "model_slug": "gemini-3.1-pro-preview",
+    "dataset": "Gouwens_GABAergic",
+    "condition": "cond0_full_pipeline",
+    "picked_run": 3,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 6,
+      "Biological Plausibility_zone1": 7,
+      "Biological Plausibility_reason": "FXYD6 regulation of Na+/K+-ATPase and the Htr3a/Cnr1 CGE-interneuron context are biologically credible. However, the proposed lineage-specific delay in leak-channel maturation and the direction of the predicted input-resistance change after FXYD6 inhibition are insufficiently supported.",
+      "Specificity_zone1": 5,
+      "Grounded Mechanistic Synthesis_zone1": 5,
+      "Grounded Mechanistic Synthesis_reason": "The response connects Fxyd6-modulated Na+/K+-ATPase activity to input resistance and uses Htr3a and Cnr1 to identify a relevant CGE-derived neuronal state. Coro6 and Flt3 are not biologically integrated, while delayed leak-channel maturation is asserted rather than mechanistically established. No formal ceiling was applied, but the omitted contextual features and incompletely resolved pump-to-resistance transition limit the synthesis.",
+      "Literature Grounding_zone1": 6
+    },
+    "final_score_5pillar": 26.0
+  },
+  {
+    "model": "Qwen/Qwen3.8-2.4T-A95B",
+    "model_slug": "Qwen__Qwen3.8-2.4T-A95B",
+    "dataset": "CITEseq_CD45RA_naive",
+    "condition": "cond0_full_pipeline",
+    "picked_run": 1,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 10,
+      "Biological Plausibility_zone1": 9,
+      "Biological Plausibility_reason": "The interpretation of GNLY, NKG7, GZMB, and KLRD1 as a coordinated cytotoxic-lymphocyte state is biologically strong and supports a defensible marker/proxy relationship with CD45RA. The proposed protease-permissive role of low CST3 and the inference that KLRD1-high denotes maturation are plausible but remain indirect and somewhat speculative.",
+      "Specificity_zone1": 8,
+      "Grounded Mechanistic Synthesis_zone1": 8,
+      "Grounded Mechanistic Synthesis_reason": "GNLY was coherently connected with NKG7 and GZMB-mediated cytotoxic competence, KLRD1-associated NK/cytotoxic identity, and low CST3 as a proposed permissive protease context. The transition from this cytotoxic state to CD45RA association remains chiefly a cell-state or proxy explanation, and the CST3-to-granule-function bridge is incompletely resolved. No synthesis ceiling was applied because all primary contextual features were explicitly incorporated into one compatible model.",
+      "Literature Grounding_zone1": 8
+    },
+    "final_score_5pillar": 39.0
+  },
+  {
+    "model": "Qwen/Qwen3.8-2.4T-A95B",
+    "model_slug": "Qwen__Qwen3.8-2.4T-A95B",
+    "dataset": "CosMx_CancerKi67",
+    "condition": "cond0_full_pipeline",
+    "picked_run": 2,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 10,
+      "Biological Plausibility_zone1": 9,
+      "Biological Plausibility_reason": "The proposed proliferation-state model is biologically coherent, and the assigned roles of PTMA, HNRNPA2B1, RPLP0, TUBB4B, and Ki-67 are generally defensible. The interpretation of TUBB4B and RPLP0 as indicators of mitotic and translational capacity is somewhat generalized but not materially inaccurate.",
+      "Specificity_zone1": 7,
+      "Grounded Mechanistic Synthesis_zone1": 7,
+      "Grounded Mechanistic Synthesis_reason": "The response integrates PTMA and Ki-67 with HNRNPA2B1-mediated RNA processing, RPLP0-associated translation capacity, and a TUBB4B-marked microtubule/mitotic state. These components are connected mainly through a shared proliferative state, while direct transitions from the RNA-processing, translational, and microtubule programs to PTMA\u2013Ki-67 coupling remain broad and hypothetical. No formal ceiling was applied because all three contextual features contribute explicitly and an identifiable focus-to-target mechanism is proposed.",
+      "Literature Grounding_zone1": 8
+    },
+    "final_score_5pillar": 37.0
+  },
+  {
+    "model": "Qwen/Qwen3.8-2.4T-A95B",
+    "model_slug": "Qwen__Qwen3.8-2.4T-A95B",
+    "dataset": "Gouwens_GABAergic",
+    "condition": "cond0_full_pipeline",
+    "picked_run": 2,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 10,
+      "Biological Plausibility_zone1": 8,
+      "Biological Plausibility_reason": "The FXYD6\u2013Na+/K+-ATPase model and the Htr3a/Cnr1 developmental-interneuron context are biologically defensible. The proposed Coro6 trafficking role, neural relevance of Flt3, and direct effect of pump regulation on input resistance remain speculative but are appropriately qualified.",
+      "Specificity_zone1": 8,
+      "Grounded Mechanistic Synthesis_zone1": 8,
+      "Grounded Mechanistic Synthesis_reason": "The response connects Htr3a-associated cation flux and Cnr1 signaling to increased dependence on FXYD6-mediated Na+/K+-ATPase regulation, while assigning Coro6 and Flt3 permissive developmental or trafficking roles. The Coro6-to-pump trafficking link and Flt3-to-electrophysiological-state transition remain broad and are not tightly joined to the central mechanism. No synthesis ceiling was applied because all contextual features receive explicit roles and a substantive focus-feature\u2013target mechanism is provided.",
+      "Literature Grounding_zone1": 7
+    },
+    "final_score_5pillar": 37.5
+  },
+  {
+    "model": "zai-org/GLM-5.3",
+    "model_slug": "zai-org__GLM-5.3",
+    "dataset": "CITEseq_CD45RA_naive",
+    "condition": "cond0_full_pipeline",
+    "picked_run": 1,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 10,
+      "Biological Plausibility_zone1": 8,
+      "Biological Plausibility_reason": "The cell-identity explanation linking GNLY, NKG7, GZMB, and KLRD1 to a cytotoxic NK-cell state associated with CD45RA is biologically defensible. However, CST3-low as strict myeloid exclusion and the characterization of this compartment as uniformly CD45RA-positive or definitively mature are overgeneralizations.",
+      "Specificity_zone1": 8,
+      "Grounded Mechanistic Synthesis_zone1": 8,
+      "Grounded Mechanistic Synthesis_reason": "GNLY, NKG7, GZMB, CST3, and KLRD1 are integrated into a coherent cytotoxic-lymphocyte identity model that connects GNLY attribution to CD45RA through an NK-cell state. The transition from this inferred NK state to CD45RA abundance remains largely marker-based, and S100A12 is only loosely connected to the primary-zone mechanism. No synthesis ceiling was applied because the focus\u2013target connection and most primary contextual contributions are explicit.",
+      "Literature Grounding_zone1": 8
+    },
+    "final_score_5pillar": 38.0
+  },
+  {
+    "model": "zai-org/GLM-5.3",
+    "model_slug": "zai-org__GLM-5.3",
+    "dataset": "CosMx_CancerKi67",
+    "condition": "cond0_full_pipeline",
+    "picked_run": 1,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 10,
+      "Biological Plausibility_zone1": 9,
+      "Biological Plausibility_reason": "The proposed MYC-linked proliferative state coherently connects PTMA with RNA processing, translational capacity, mitotic machinery, and Ki-67, while appropriately allowing these features to function as state markers rather than direct regulators. Claims that RPLP0 specifically represents increased ribosome biogenesis and that PTMA directly enables MKI67 transcription are plausible but not firmly established.",
+      "Specificity_zone1": 8,
+      "Grounded Mechanistic Synthesis_zone1": 8,
+      "Grounded Mechanistic Synthesis_reason": "PTMA, HNRNPA2B1, RPLP0, and TUBB4B are successfully integrated through a MYC-associated cycling state encompassing RNA processing, protein synthesis, and mitotic commitment. The direct transition from PTMA chromatin activity to MKI67 transcription remains hypothetical and less resolved than the common-state explanation. No synthesis ceiling was applied because all primary contextual features contribute explicitly to the proposed association.",
+      "Literature Grounding_zone1": 8
+    },
+    "final_score_5pillar": 39.0
+  },
+  {
+    "model": "zai-org/GLM-5.3",
+    "model_slug": "zai-org__GLM-5.3",
+    "dataset": "Gouwens_GABAergic",
+    "condition": "cond0_full_pipeline",
+    "picked_run": 2,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 9,
+      "Biological Plausibility_zone1": 7,
+      "Biological Plausibility_reason": "The FXYD6\u2013Na+/K+-ATPase foundation and the Htr3a/Cnr1 interpretation are biologically defensible, but the claim that pump conductance becomes a dominant determinant of input resistance in these immature neurons is a substantial, though explicitly testable, extrapolation.",
+      "Specificity_zone1": 8,
+      "Grounded Mechanistic Synthesis_zone1": 8,
+      "Grounded Mechanistic Synthesis_reason": "The response connects FXYD6-dependent pump modulation to input resistance and integrates Htr3a-mediated Na+ loading, Cnr1/PKA signaling, and Flt3-low neuronal identity into that context. Coro6 remains only a weakly characterized state marker, and the transition from electrogenic pump activity to a dominant share of resting conductance is asserted more strongly than it is mechanistically resolved. No synthesis ceiling was applied because an explicit focus-feature\u2013target mechanism and meaningful roles for most contextual features were provided.",
+      "Literature Grounding_zone1": 8
+    },
+    "final_score_5pillar": 36.0
+  },
+  {
+    "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+    "model_slug": "deepseek-ai__DeepSeek-V4.1-Flash",
+    "dataset": "CITEseq_CD45RA_naive",
+    "condition": "cond1_ig_only",
+    "picked_run": 3,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 10,
+      "Biological Plausibility_zone1": 8,
+      "Biological Plausibility_reason": "The lineage-proxy and ambient-RNA explanation is biologically defensible and fits the conspicuous mixture of cytotoxic, myeloid, B-cell, erythroid, platelet, and mouse-associated features. Some individual marker assignments are imperfect, and composition confounding is less straightforward under the stated naive-T-cell restriction.",
+      "Specificity_zone1": 8,
+      "Grounded Mechanistic Synthesis_zone1": 8,
+      "Grounded Mechanistic Synthesis_reason": "Cytotoxic, myeloid, B-cell, erythroid, platelet, and mouse-housekeeping features are coherently integrated as lineage or technical proxies whose covariance lets the MLP predict CD45RA. The response does not connect these features to a T-cell-intrinsic regulatory pathway, and several individual marker assignments remain broad or imperfect. No synthesis ceiling was applied because an explicit proxy/common-cause mechanism connects most contextual feature groups to the target association.",
+      "Literature Grounding_zone1": 9
+    },
+    "final_score_5pillar": 38.5
+  },
+  {
+    "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+    "model_slug": "deepseek-ai__DeepSeek-V4.1-Flash",
+    "dataset": "CosMx_CancerKi67",
+    "condition": "cond1_ig_only",
+    "picked_run": 1,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 8,
+      "Biological Plausibility_zone1": 8,
+      "Biological Plausibility_reason": "The coordinated cell-cycle, translation, mitotic, metabolic, and lineage-state interpretation is biologically defensible and appropriately framed as association rather than causation. The FTH1/MYC and iron-dependency framing is somewhat overstated, since ferritin can sequester iron and its attribution does not establish a proliferative dependency.",
+      "Specificity_zone1": 7,
+      "Grounded Mechanistic Synthesis_zone1": 6,
+      "Grounded Mechanistic Synthesis_reason": "The response integrates translation capacity, CDK and mitotic programs, histone supply, redox/iron metabolism, and lineage identity into a coherent growth-state explanation of Ki-67 prediction. PTMA and several individual genes are mostly assigned to broad modules, while the transitions linking translation, iron handling, and lineage state to Ki-67 remain insufficiently resolved. No formal ceiling was applied, although the module-level rather than multi-step causal synthesis limits the score.",
+      "Literature Grounding_zone1": 7
+    },
+    "final_score_5pillar": 32.5
+  },
+  {
+    "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+    "model_slug": "deepseek-ai__DeepSeek-V4.1-Flash",
+    "dataset": "Gouwens_GABAergic",
+    "condition": "cond1_ig_only",
+    "picked_run": 3,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 8,
+      "Biological Plausibility_zone1": 7,
+      "Biological Plausibility_reason": "The core model linking KCNQ/K2P and tonic GABA conductances to total membrane conductance and input resistance is biologically defensible. However, KCNMB4-containing BK channels are unlikely to act as ordinary resting leak conductances, and the assignment of ANO4 as a Ca2+-activated chloride channel is uncertain.",
+      "Specificity_zone1": 6,
+      "Grounded Mechanistic Synthesis_zone1": 6,
+      "Grounded Mechanistic Synthesis_reason": "The response connects interneuron identity programs, potassium and tonic GABA conductances, and membrane area to total conductance and input resistance. The individual transcription factors are not linked to particular channel programs, while the adhesion-to-membrane-area interpretation and the KCNMB4/ANO4 contributions remain insufficiently resolved. A ceiling of 6 was applied because multiple important transitions are asserted without feature-specific regulatory or physiological bridges.",
+      "Literature Grounding_zone1": 8
+    },
+    "final_score_5pillar": 31.0
+  },
+  {
+    "model": "gemini-3.1-pro-preview",
+    "model_slug": "gemini-3.1-pro-preview",
+    "dataset": "CITEseq_CD45RA_naive",
+    "condition": "cond1_ig_only",
+    "picked_run": 5,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 10,
+      "Biological Plausibility_zone1": 8,
+      "Biological Plausibility_reason": "The lineage-proxy hypothesis is biologically defensible and appropriately recognizes that absolute IG scores cannot establish direction or causality. However, CD45RA is not defined by inclusion of all three variable PTPRC exons, and the characterization of monocytes and KLRB1 as straightforward CD45RA-positive or TEMRA markers is oversimplified.",
+      "Specificity_zone1": 4,
+      "Grounded Mechanistic Synthesis_zone1": 4,
+      "Grounded Mechanistic Synthesis_reason": "The response integrates the cytotoxic genes and myeloid genes as two lineage or cell-state programs that could serve as proxies for CD45RA-associated population heterogeneity. The hnRNPLL splicing discussion remains separate from that proxy model, and no attribution direction or biological transition connects individual ranked genes to CD45RA regulation. The feature-listing and broad cell-state ceiling of 5 applies because the response does not develop a molecular mechanism showing how the programs work together.",
+      "Literature Grounding_zone1": 7
+    },
+    "final_score_5pillar": 29.5
+  },
+  {
+    "model": "gemini-3.1-pro-preview",
+    "model_slug": "gemini-3.1-pro-preview",
+    "dataset": "CosMx_CancerKi67",
+    "condition": "cond1_ig_only",
+    "picked_run": 7,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 9,
+      "Biological Plausibility_zone1": 9,
+      "Biological Plausibility_reason": "The interpretation that PTMA, CKS2, translational machinery, tubulins, and metabolic enzymes mark a shared proliferative state is biologically well founded. The proposed E2F/MYC common-cause model is defensible but remains unsupported by the nondirectional attribution ranking itself.",
+      "Specificity_zone1": 3,
+      "Grounded Mechanistic Synthesis_zone1": 4,
+      "Grounded Mechanistic Synthesis_reason": "The response connects cell-cycle, translation, glycolytic, iron-handling, and mitotic-cytoskeletal features to Ki-67 through a shared proliferative program. These modules remain largely parallel descriptions, and the proposed E2F/MYC programs are not connected to them or MKI67 through explicit intermediate steps. The feature-listing ceiling of 5 applies because the answer does not explain in mechanistic detail how the modules work together.",
+      "Literature Grounding_zone1": 7
+    },
+    "final_score_5pillar": 28.5
+  },
+  {
+    "model": "gemini-3.1-pro-preview",
+    "model_slug": "gemini-3.1-pro-preview",
+    "dataset": "Gouwens_GABAergic",
+    "condition": "cond1_ig_only",
+    "picked_run": 3,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 9,
+      "Biological Plausibility_zone1": 8,
+      "Biological Plausibility_reason": "The Kcnq5\u2013M-current mechanism is well established and provides a defensible link to input resistance, while the additional potassium-channel and interneuron-subtype context is broadly accurate. Fxyd6 plausibly affects resting physiology through Na+/K+-ATPase regulation, but its contribution to measured input resistance is less direct than claimed.",
+      "Specificity_zone1": 4,
+      "Grounded Mechanistic Synthesis_zone1": 5,
+      "Grounded Mechanistic Synthesis_reason": "The response explicitly connects Kcnq5-mediated M-current and Fxyd6-regulated pump activity to resting membrane current, and it relates Pvalb to a low-input-resistance interneuron state. Kcnmb4, Kcna3, and Kcnd3 are mostly presented as a parallel list of potassium-channel functions rather than being integrated with Kcnq5, Fxyd6, and Pvalb in one mechanism. The feature-listing ceiling of 5 was applied because the contextual channels are not mechanistically composed into the principal focus-feature\u2013target explanation.",
+      "Literature Grounding_zone1": 7
+    },
+    "final_score_5pillar": 29.5
+  },
+  {
+    "model": "Qwen/Qwen3.8-2.4T-A95B",
+    "model_slug": "Qwen__Qwen3.8-2.4T-A95B",
+    "dataset": "CITEseq_CD45RA_naive",
+    "condition": "cond1_ig_only",
+    "picked_run": 3,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 10,
+      "Biological Plausibility_zone1": 10,
+      "Biological Plausibility_reason": "The interpretation that mixed cytotoxic, B-cell, and myeloid signatures act as proxies for lineage composition or technical heterogeneity is biologically defensible and appropriately distinguishes association from direct CD45RA regulation. Its caution about unsigned attributions and the need for PTPRC isoform-resolved measurements is well founded.",
+      "Specificity_zone1": 7,
+      "Grounded Mechanistic Synthesis_zone1": 5,
+      "Grounded Mechanistic Synthesis_reason": "The response integrates cytotoxic/NK, B-cell, and myeloid markers as indicators of cellular composition that the model may use as indirect proxies for CD45RA. It does not resolve how any individual high-attribution feature connects biologically to CD45RA abundance or isoform choice, and contamination, doublets, ambient RNA, and genuine heterogeneity remain alternative explanations. A ceiling of 5 was applied because the primary explanation is a broad cell-state and model-proxy account rather than a resolved molecular mechanism.",
+      "Literature Grounding_zone1": 10
+    },
+    "final_score_5pillar": 37.0
+  },
+  {
+    "model": "Qwen/Qwen3.8-2.4T-A95B",
+    "model_slug": "Qwen__Qwen3.8-2.4T-A95B",
+    "dataset": "CosMx_CancerKi67",
+    "condition": "cond1_ig_only",
+    "picked_run": 1,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 9,
+      "Biological Plausibility_zone1": 9,
+      "Biological Plausibility_reason": "The interpretation that Ki-67 reflects a coordinated cycling, translational, metabolic, and mitotic state is strongly consistent with established cancer-cell biology and appropriately framed as association rather than direct causation. PTMA-mediated chromatin permissiveness is more tentative, but it is clearly presented as a testable candidate mechanism.",
+      "Specificity_zone1": 7,
+      "Grounded Mechanistic Synthesis_zone1": 7,
+      "Grounded Mechanistic Synthesis_reason": "The response integrates PTMA, PABPC1, CKS2/CDK machinery, ribosomal capacity, metabolism, chromatin, and mitotic structures into a coherent proliferative-state explanation for Ki-67. FTH1, HDGF, proteostasis factors, and several metabolic subprograms remain mostly module labels or predictive correlates rather than being connected through explicit biological transitions. No formal ceiling was applied because a focus-feature\u2013target relationship is given and most contextual programs are integrated, although the broad cell-state mechanism limits mechanistic resolution.",
+      "Literature Grounding_zone1": 9
+    },
+    "final_score_5pillar": 36.5
+  },
+  {
+    "model": "Qwen/Qwen3.8-2.4T-A95B",
+    "model_slug": "Qwen__Qwen3.8-2.4T-A95B",
+    "dataset": "Gouwens_GABAergic",
+    "condition": "cond1_ig_only",
+    "picked_run": 1,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 6,
+      "Biological Plausibility_zone1": 8,
+      "Biological Plausibility_reason": "The channel-conductance and membrane-geometry framework is biologically defensible, and the response appropriately treats Fxyd6, BK-channel, and morphology effects as indirect hypotheses. Some gene-specific morphology assignments and the proposed influence of pump regulation on measured input resistance are plausible but only broadly supported.",
+      "Specificity_zone1": 7,
+      "Grounded Mechanistic Synthesis_zone1": 7,
+      "Grounded Mechanistic Synthesis_reason": "Fxyd6-mediated ion homeostasis, Kcnq5/Kcnmb4-associated conductance, and the Pcdh8/Coro6/Lama4/Dab1/Lingo2 morphology program were connected through resting conductance, membrane area, and electrotonic compactness. The additional potassium-channel genes and auxiliary genes such as Cpne7, Nrgn, Tle4, and Flt3 remained mostly descriptive state markers rather than resolved parts of the mechanism. No formal ceiling was applied because the central pump\u2013channel\u2013geometry model provides an explicit, biologically defensible connection to input resistance.",
+      "Literature Grounding_zone1": 7
+    },
+    "final_score_5pillar": 31.5
+  },
+  {
+    "model": "zai-org/GLM-5.3",
+    "model_slug": "zai-org__GLM-5.3",
+    "dataset": "CITEseq_CD45RA_naive",
+    "condition": "cond1_ig_only",
+    "picked_run": 3,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 6,
+      "Biological Plausibility_zone1": 6,
+      "Biological Plausibility_reason": "The CD45RA/PTPRC alternative-splicing foundation and interpretation of lineage programs as cell-state proxies are defensible. However, the hypothesis overgeneralizes cytotoxic NK/CD8 states as CD45RA-low despite NK and TEMRA populations often expressing CD45RA, and the inferred mouse-cell subpopulation is not established by attribution magnitudes alone.",
+      "Specificity_zone1": 4,
+      "Grounded Mechanistic Synthesis_zone1": 4,
+      "Grounded Mechanistic Synthesis_reason": "The response connects cytotoxic differentiation to a PTPRC RA-to-RO isoform transition and uses erythroid, platelet, and putative mouse signatures to explain antibody-background states. Most individual genes and the monocyte and B-cell programs remain lineage labels rather than explicit contributors to a connected regulatory mechanism. A ceiling of 5 applies because the response primarily organizes feature lists into broad cell-state programs without resolving how most features work together.",
+      "Literature Grounding_zone1": 8
+    },
+    "final_score_5pillar": 24.0
+  },
+  {
+    "model": "zai-org/GLM-5.3",
+    "model_slug": "zai-org__GLM-5.3",
+    "dataset": "CosMx_CancerKi67",
+    "condition": "cond1_ig_only",
+    "picked_run": 2,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 8,
+      "Biological Plausibility_zone1": 8,
+      "Biological Plausibility_reason": "A shared biosynthetic-growth program linking ribosome biogenesis, metabolism, mitotic readiness, and Ki-67 is biologically defensible, and the response appropriately treats it mainly as an association. The proposed MYC/mTOR and PTMA-mediated coupling is plausible but remains inferential rather than established by the unsigned IG ranking.",
+      "Specificity_zone1": 6,
+      "Grounded Mechanistic Synthesis_zone1": 6,
+      "Grounded Mechanistic Synthesis_reason": "The response integrates PTMA and the ribosome/translation, metabolic/iron, and tubulin modules through a shared MYC/mTOR-linked biosynthetic-growth state associated with Ki-67. Most individual genes within those modules remain category labels, and the transitions from PTMA or metabolic and spindle readiness to Ki-67 are not mechanistically resolved. A maximum-6 ceiling was applied because multiple central transitions are supported only by broad program-level relationships.",
+      "Literature Grounding_zone1": 8
+    },
+    "final_score_5pillar": 32.0
+  },
+  {
+    "model": "zai-org/GLM-5.3",
+    "model_slug": "zai-org__GLM-5.3",
+    "dataset": "Gouwens_GABAergic",
+    "condition": "cond1_ig_only",
+    "picked_run": 3,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 10,
+      "Biological Plausibility_zone1": 8,
+      "Biological Plausibility_reason": "The proposed KCNQ5-mediated M-current, GABRD-dependent tonic shunting, and tentative FXYD6 pump\u2013leak mechanism are biologically defensible, although the asserted interneuron input-resistance ordering and several subtype-marker assignments are questionable.",
+      "Specificity_zone1": 8,
+      "Grounded Mechanistic Synthesis_zone1": 7,
+      "Grounded Mechanistic Synthesis_reason": "Kcnq5 and Gabrd are explicitly connected to input resistance through resting potassium conductance and tonic chloride shunting, while Fxyd6 is integrated through a testable pump\u2013leak model. The numerous subtype markers and signaling modulators are mostly descriptive or proxy variables rather than mechanistically connected to those three effectors. No formal ceiling was applied because an explicit and biologically defensible focus-feature\u2013target mechanism is present.",
+      "Literature Grounding_zone1": 7
+    },
+    "final_score_5pillar": 36.5
+  }
+]

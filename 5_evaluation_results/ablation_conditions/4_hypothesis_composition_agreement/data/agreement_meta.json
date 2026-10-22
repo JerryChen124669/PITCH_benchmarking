@@ -1,0 +1,28 @@
+{
+  "judge_model": "gpt-5.6-sol",
+  "rubric": "marker_agreement_coverage",
+  "rubric_variant": "coverage",
+  "rubric_files": [
+    "marker_coverage_rubric.txt"
+  ],
+  "rubric_sha256": "0ffd5598c1bf4051610f4da18fbdbaa856a22dcf632dfb2167273c977dd51a69",
+  "passes": 3,
+  "seed": 20,
+  "models": [
+    "gemini-3.1-pro-preview",
+    "zai-org/GLM-5.3",
+    "deepseek-ai/DeepSeek-V4.1-Flash",
+    "Qwen/Qwen3.8-2.4T-A95B"
+  ],
+  "conditions": [
+    "cond0_full_pipeline",
+    "cond1_ig_only"
+  ],
+  "datasets": [
+    "CITEseq_CD45RA_naive",
+    "CosMx_CancerKi67",
+    "Gouwens_GABAergic"
+  ],
+  "answers_from": "single_answers/ (picked committed runs)",
+  "n_records": 18
+}

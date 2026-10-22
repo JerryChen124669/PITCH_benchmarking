@@ -1,0 +1,20 @@
+{
+  "model": "zai-org/GLM-5.3",
+  "model_slug": "zai-org__GLM-5.3",
+  "dataset": "Gouwens_GABAergic",
+  "condition": "cond2_raw_data",
+  "picked_run": 3,
+  "preamble": "v2",
+  "scores": {
+    "Zone Identification score_zone1": null,
+    "Logic Rigor_zone1": null,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 8,
+    "Biological Plausibility_reason": "The interpretation that Pvalb marks a fast-spiking interneuron program associated with greater membrane area and lower input resistance is biologically defensible. However, Kv3 channels are mainly activated at depolarized potentials, so portraying them as major contributors to resting membrane conductance is questionable.",
+    "Specificity_zone1": 7,
+    "Grounded Mechanistic Synthesis_zone1": 7,
+    "Grounded Mechanistic Synthesis_reason": "Pvalb was connected to a coordinated PV-cell program involving morphology, membrane area, and elevated potassium-channel expression, which was then linked to lower input resistance. The developmental program and leak-channel contribution remained broad, while the proposed resting-conductance role of Kv3 channels was insufficiently accurate and resolved. No synthesis ceiling was applied because an explicit focus-feature\u2013target mechanism was present and its major contextual elements were connected.",
+    "Literature Grounding_zone1": 6
+  },
+  "final_score_5pillar": 35.0
+}

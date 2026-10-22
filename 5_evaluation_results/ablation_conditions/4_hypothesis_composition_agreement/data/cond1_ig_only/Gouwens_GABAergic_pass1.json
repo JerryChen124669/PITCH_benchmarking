@@ -1,0 +1,34 @@
+{
+  "condition": "cond1_ig_only",
+  "dataset": "Gouwens_GABAergic",
+  "pass": 1,
+  "seed": 20,
+  "rubric": "coverage",
+  "order": [
+    {
+      "label": "A",
+      "model": "gemini-3.1-pro-preview",
+      "picked_run": 3
+    },
+    {
+      "label": "B",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "picked_run": 3
+    },
+    {
+      "label": "C",
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "picked_run": 1
+    },
+    {
+      "label": "D",
+      "model": "zai-org/GLM-5.3",
+      "picked_run": 3
+    }
+  ],
+  "judge": {
+    "rationale": "Agreement is limited to a common KCNQ5/FXYD6 conductance\u2013pump core with partial overlap on KCNMB4, other K+ channels, GABRD, and subtype or morphology markers, while more than half of the full explanatory inventories\u2014especially tonic GABA, lineage, cytoskeletal, and signaling contributors\u2014differ, invoking the shared-minority ceiling of 4.",
+    "cross_model_agreement_score": 4
+  },
+  "score": 4
+}

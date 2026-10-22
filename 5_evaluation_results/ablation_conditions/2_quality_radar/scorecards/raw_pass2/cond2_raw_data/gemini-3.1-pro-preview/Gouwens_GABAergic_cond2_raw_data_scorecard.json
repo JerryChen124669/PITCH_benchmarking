@@ -1,0 +1,20 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "model_slug": "gemini-3.1-pro-preview",
+  "dataset": "Gouwens_GABAergic",
+  "condition": "cond2_raw_data",
+  "picked_run": 3,
+  "preamble": "v2",
+  "scores": {
+    "Zone Identification score_zone1": null,
+    "Logic Rigor_zone1": null,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 5,
+    "Biological Plausibility_reason": "Required items were Mapk4, K2P/leak potassium channels, and HCN channels. Reduced resting conductance could plausibly increase input resistance, but the proposed MAPK4-specific control of these channels is an unsupported extrapolation from generic MAPK biology, and perfect numerical identity should raise concern for target leakage rather than direct regulation.",
+    "Specificity_zone1": 5,
+    "Grounded Mechanistic Synthesis_zone1": 5,
+    "Grounded Mechanistic Synthesis_reason": "Mapk4 was connected to input resistance through proposed downregulation or internalization of K2P leak and HCN channels. The response did not identify a MAPK4-specific intermediary, while the morphology and VIP/LAMP5 explanation remained a separate alternative rather than part of the same mechanism. A ceiling of 5 was applied because multiple alternative mechanisms were proposed without explaining how they are related or discriminated.",
+    "Literature Grounding_zone1": 6
+  },
+  "final_score_5pillar": 28.0
+}

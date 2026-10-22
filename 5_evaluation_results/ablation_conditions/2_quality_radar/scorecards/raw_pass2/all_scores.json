@@ -1,0 +1,142 @@
+[
+  {
+    "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+    "model_slug": "deepseek-ai__DeepSeek-V4.1-Flash",
+    "dataset": "CosMx_CancerKi67",
+    "condition": "cond2_raw_data",
+    "picked_run": 2,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 8,
+      "Biological Plausibility_zone1": 8,
+      "Biological Plausibility_reason": "Required items are Ki-67, the global expression/library-size axis, RPL36, RPL9, RPS10, and RPL18A. The proposed common association of ribosomal output and Ki-67 with proliferation is biologically defensible, although it does not establish whether the pattern is biological or technical.",
+      "Specificity_zone1": 2,
+      "Grounded Mechanistic Synthesis_zone1": 3,
+      "Grounded Mechanistic Synthesis_reason": "The response connects RPL36, RPL9, RPS10, and RPL18A collectively to translational activity and a proliferative Ki-67 state while acknowledging library size as an alternative explanation. The individual genes remain interchangeable examples, and no resolved biological transition connects ribosome activity specifically to Ki-67 abundance. No formal ceiling was needed, but the explanation remains a broad cellular-state hypothesis rather than a detailed mechanism.",
+      "Literature Grounding_zone1": 8
+    },
+    "final_score_5pillar": 25.0
+  },
+  {
+    "model": "gemini-3.1-pro-preview",
+    "model_slug": "gemini-3.1-pro-preview",
+    "dataset": "Gouwens_GABAergic",
+    "condition": "cond2_raw_data",
+    "picked_run": 3,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 10,
+      "Biological Plausibility_zone1": 5,
+      "Biological Plausibility_reason": "Required items were Mapk4, K2P/leak potassium channels, and HCN channels. Reduced resting conductance could plausibly increase input resistance, but the proposed MAPK4-specific control of these channels is an unsupported extrapolation from generic MAPK biology, and perfect numerical identity should raise concern for target leakage rather than direct regulation.",
+      "Specificity_zone1": 5,
+      "Grounded Mechanistic Synthesis_zone1": 5,
+      "Grounded Mechanistic Synthesis_reason": "Mapk4 was connected to input resistance through proposed downregulation or internalization of K2P leak and HCN channels. The response did not identify a MAPK4-specific intermediary, while the morphology and VIP/LAMP5 explanation remained a separate alternative rather than part of the same mechanism. A ceiling of 5 was applied because multiple alternative mechanisms were proposed without explaining how they are related or discriminated.",
+      "Literature Grounding_zone1": 6
+    },
+    "final_score_5pillar": 28.0
+  },
+  {
+    "model": "Qwen/Qwen3.8-2.4T-A95B",
+    "model_slug": "Qwen__Qwen3.8-2.4T-A95B",
+    "dataset": "CITEseq_CD45RA_naive",
+    "condition": "cond2_raw_data",
+    "picked_run": 1,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 7,
+      "Biological Plausibility_zone1": 7,
+      "Biological Plausibility_reason": "TRDC and the CCL5/GNLY/IL2RB cytotoxic program can plausibly mark \u03b3\u03b4 or innate-like lymphocyte states associated with CD45RA, and PTPRC alternative splicing correctly explains CD45 isoforms. However, substantial lineage heterogeneity is somewhat strained in a nominally CD45RA+ naive T-cell sample, and no specific state-to-splicing regulator is identified.",
+      "Specificity_zone1": 4,
+      "Grounded Mechanistic Synthesis_zone1": 4,
+      "Grounded Mechanistic Synthesis_reason": "TRDC and the collective cytotoxic markers are connected to CD45RA as proxies for a lymphoid state, while PTPRC alternative splicing provides a general link to the surface isoform. CCL5, GNLY, and IL2RB remain largely interchangeable marker labels, and the transition from the proposed lineage state to altered PTPRC exon usage is not explained. The primarily broad cell-state mechanism invokes the feature-listing ceiling of 5, and its limited mechanistic resolution supports a score of 4.",
+      "Literature Grounding_zone1": 9
+    },
+    "final_score_5pillar": 26.5
+  },
+  {
+    "model": "Qwen/Qwen3.8-2.4T-A95B",
+    "model_slug": "Qwen__Qwen3.8-2.4T-A95B",
+    "dataset": "CosMx_CancerKi67",
+    "condition": "cond2_raw_data",
+    "picked_run": 2,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 9,
+      "Biological Plausibility_zone1": 9,
+      "Biological Plausibility_reason": "The common-cause hypothesis that Ki-67, TK1, CDK1, and biosynthetic genes co-vary with active cell-cycle state is well established and biologically coherent. It appropriately avoids claiming that TK1 directly regulates Ki-67.",
+      "Specificity_zone1": 6,
+      "Grounded Mechanistic Synthesis_zone1": 6,
+      "Grounded Mechanistic Synthesis_reason": "TK1 was connected to S-phase DNA synthesis, CDK1 to the broader S/G2/M program, and ribosomal genes to the increased biosynthetic activity of proliferating cells. These features were unified mainly as parallel readouts of cycling state, without detailed transitions explaining regulation of Ki-67 abundance. No formal ceiling was applied, although the broad common-state mechanism limits mechanistic resolution.",
+      "Literature Grounding_zone1": 10
+    },
+    "final_score_5pillar": 35.0
+  },
+  {
+    "model": "zai-org/GLM-5.3",
+    "model_slug": "zai-org__GLM-5.3",
+    "dataset": "CITEseq_CD45RA_naive",
+    "condition": "cond2_raw_data",
+    "picked_run": 2,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 7,
+      "Biological Plausibility_zone1": 9,
+      "Biological Plausibility_reason": "Required items: CD45RA, GZMB, GNLY, NKG7, FGFBP2, and CCL5. The proposed cytotoxic/TEMRA state is biologically consistent with CD45RA re-expression, although the supporting genes are state markers rather than demonstrated regulators.",
+      "Specificity_zone1": 4,
+      "Grounded Mechanistic Synthesis_zone1": 3,
+      "Grounded Mechanistic Synthesis_reason": "GZMB and the GNLY, NKG7, FGFBP2, and CCL5 markers were integrated as indicators of a cytotoxic TEMRA-like state associated with CD45RA. The response did not explain a molecular transition connecting that state or GZMB specifically to PTPRC isoform regulation. The no-explicit-focus-to-target-mechanism ceiling of 3 was applied.",
+      "Literature Grounding_zone1": 8
+    },
+    "final_score_5pillar": 27.0
+  },
+  {
+    "model": "zai-org/GLM-5.3",
+    "model_slug": "zai-org__GLM-5.3",
+    "dataset": "CosMx_CancerKi67",
+    "condition": "cond2_raw_data",
+    "picked_run": 2,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 9,
+      "Biological Plausibility_zone1": 8,
+      "Biological Plausibility_reason": "The proposed E2F/MYBL2-linked proliferation program coherently connects TK1, CDK1/CKS proteins, ribosome biogenesis, and Ki-67, and the assigned gene functions are mostly established. The claim that Ki-67's nucleolar role specifically explains ribosomal-gene co-expression is plausible but stronger than the supplied evidence supports.",
+      "Specificity_zone1": 8,
+      "Grounded Mechanistic Synthesis_zone1": 7,
+      "Grounded Mechanistic Synthesis_reason": "The response integrates MYBL2/E2F activity, TK1-mediated nucleotide metabolism, CDK1/CKS-mediated mitotic progression, and RPL/RPS expression into a common proliferative state associated with Ki-67. The transition from this shared program to direct MKI67 transcription and the distinct contribution of CKS2 remain broad, while the ribosomal connection is partly asserted rather than mechanistically resolved. No formal synthesis ceiling was applied because an explicit focus-feature\u2013target mechanism and most contextual contributions were present.",
+      "Literature Grounding_zone1": 7
+    },
+    "final_score_5pillar": 35.5
+  },
+  {
+    "model": "zai-org/GLM-5.3",
+    "model_slug": "zai-org__GLM-5.3",
+    "dataset": "Gouwens_GABAergic",
+    "condition": "cond2_raw_data",
+    "picked_run": 3,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 10,
+      "Biological Plausibility_zone1": 8,
+      "Biological Plausibility_reason": "Required items were Pvalb, soma size, dendritic arborization, and Kv3-channel expression, and each received a specific role in the proposed input-resistance association. PV identity and greater membrane area are defensible explanations for low input resistance, although Kv3 channels are primarily high-threshold channels and are not generally a major source of resting conductance.",
+      "Specificity_zone1": 7,
+      "Grounded Mechanistic Synthesis_zone1": 6,
+      "Grounded Mechanistic Synthesis_reason": "The response connects Pvalb-marked interneuron identity to larger membrane area, greater leak conductance, and reduced input resistance, while also invoking coordinated potassium-channel expression. The developmental program remains unspecified, and the proposed Kv3 contribution to resting conductance is insufficiently grounded. No synthesis ceiling was applied because an explicit morphology-to-conductance mechanism remains even without the Kv3 branch.",
+      "Literature Grounding_zone1": 7
+    },
+    "final_score_5pillar": 34.5
+  }
+]
