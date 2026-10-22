@@ -1,0 +1,8 @@
+pillar,mean_merged,mean_large,mean_diff_a_minus_b,cliffs_delta_a_vs_b,p_unadjusted_mann_whitney,p_kruskal_wallis,p_holm_core_pillars
+Zone Identification score_zone1,9.4444,9.5513,-0.1068,-0.1282,0.7012,0.1361,0.1361
+Logic Rigor_zone1,8.8611,9.5897,-0.7286,-0.5897,0.0462,0.0404,0.0809
+Feature Comprehensiveness_zone1,9.9167,9.9615,-0.0449,-0.3077,0.3229,0.0037,0.0147
+Biological Plausibility_zone1,5.2222,7.5256,-2.3034,-0.7949,0.0047,0.0185,0.0555
+Specificity_zone1,7.4167,8.2308,-0.8141,-0.7051,0.0167,0.0026,0.0128
+Grounded Mechanistic Synthesis_zone1,5.2778,7.4359,-2.1581,-0.9231,0.0005,0.0006,0.0033
+Literature Grounding_zone1,3.8056,6.3846,-2.5791,-0.8077,0.0047,0.0133,

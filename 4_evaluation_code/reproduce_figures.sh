@@ -13,6 +13,9 @@ python analyze_pairwise_clustering.py --min-total-b 0 --exclude-models Qwen3.5-9
     --category-names "Rule-faithful descriptive annotators" "Integrative, weakly grounded hypothesis generators" "Mechanistic, literature-grounded integrators" \
     --out-dir "$FINAL"                                   # -> $FINAL/dendrogram_heatmap.svg
 
+# Diagnostics of the merge of clusters 2, 3 and 5 (optional)
+python cluster_merge_diagnostics.py                      # -> $FINAL/cluster_merge_diagnostics/
+
 # Figure B  (category profile heat map): rubric scores of the three categories, six prompts
 python characterize_categories.py                        # -> $FINAL/category_profile_heatmap.svg
 

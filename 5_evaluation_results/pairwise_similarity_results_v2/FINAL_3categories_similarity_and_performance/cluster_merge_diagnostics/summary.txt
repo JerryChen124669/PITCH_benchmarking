@@ -1,0 +1,53 @@
+CLUSTER MERGE DIAGNOSTICS
+======================================================================
+22 models; similarity = mean of P1, P2, P3, P4, P5, P6 over the prompts; distance = 1 - S/10; average linkage; k = 5.
+
+Silhouette of the k=5 partition: 0.212; of the merged 3-category partition: 0.219
+      partition  group  n_models  merged_into_category  mean_silhouette
+    k=5 cluster      1         3                     1            0.363
+    k=5 cluster      2         3                     2            0.103
+    k=5 cluster      3         2                     2            0.129
+    k=5 cluster      4        13                     3            0.231
+    k=5 cluster      5         1                     2            0.000
+merged category      1         3                     1            0.389
+merged category      2         6                     2           -0.014
+merged category      3        13                     3            0.287
+
+Mean model-pair similarity (0-10); diagonal = within the group:
+  k=5 clusters:
+      1     2     3     4     5
+1  6.92  4.97  5.15  4.20  4.44
+2  4.97  6.43  5.76  5.94  5.55
+3  5.15  5.76  6.78  6.11  5.90
+4  4.20  5.94  6.11  7.15  5.86
+5  4.44  5.55  5.90  5.86   NaN
+  merged categories:
+      1     2     3
+1  6.92  4.94  4.20
+2  4.94  5.94  5.98
+3  4.20  5.98  7.15
+
+Bootstrap over prompts: 2000 resamples of the 6 prompts with replacement, seed 0; each resample re-averages the pair similarities and re-cuts the average-linkage tree at k=5.
+Mean co-clustering frequency of the members of each group (1 = always in the same cluster; single-model groups give NaN):
+      partition  group  n_models  mean_pairwise_coclustering
+    k=5 cluster      1         3                       0.857
+    k=5 cluster      2         3                       0.388
+    k=5 cluster      3         2                       0.387
+    k=5 cluster      4        13                       0.854
+    k=5 cluster      5         1                         NaN
+merged category      1         3                       0.857
+merged category      2         6                       0.236
+merged category      3        13                       0.854
+Mean co-clustering between members of merged category 2 and category 3: 0.325
+
+Rubric scores (not used to form the groups): merged category 2 vs category 3. Pairwise p-values are unadjusted and descriptive; the Kruskal-Wallis column is across all three categories, Holm-corrected over the six core criteria.
+                              pillar  mean_merged  mean_large  mean_diff_a_minus_b  cliffs_delta_a_vs_b  p_unadjusted_mann_whitney  p_kruskal_wallis  p_holm_core_pillars
+     Zone Identification score_zone1        9.444       9.551               -0.107               -0.128                      0.701             0.136                0.136
+                   Logic Rigor_zone1        8.861       9.590               -0.729               -0.590                      0.046             0.040                0.081
+     Feature Comprehensiveness_zone1        9.917       9.962               -0.045               -0.308                      0.323             0.004                0.015
+       Biological Plausibility_zone1        5.222       7.526               -2.303               -0.795                      0.005             0.018                0.055
+                   Specificity_zone1        7.417       8.231               -0.814               -0.705                      0.017             0.003                0.013
+Grounded Mechanistic Synthesis_zone1        5.278       7.436               -2.158               -0.923                      0.001             0.001                0.003
+          Literature Grounding_zone1        3.806       6.385               -2.579               -0.808                      0.005             0.013                  NaN
+
+Reading: the merged category is a post-hoc residual grouping, not a discovered cluster. It is justified by the instability of its sub-clusters and by its rubric profile, not by a separate similarity cluster.

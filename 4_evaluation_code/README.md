@@ -7,7 +7,8 @@ bars, PDF/JPG pixels) from the data in `../5_evaluation_results/`.
 | Figure | File | Script |
 |---|---|---|
 | A. Total-similarity dendrogram and heat map | `.../FINAL_3categories_similarity_and_performance/dendrogram_heatmap.svg` | `analyze_pairwise_clustering.py` |
-| B. Category profile heat map | `.../FINAL_3categories_similarity_and_performance/category_profile_heatmap.svg` | `characterize_categories.py` |
+| B. Category profile heat map | `.../FINAL_3categories_similarity_and_performance/category_profile_heatmap.svg` | `cluster_merge_diagnostics.py` | Diagnostics of the post-hoc merge of clusters 2, 3 and 5 (silhouette per cluster, within / between-cluster similarity, a bootstrap over the six prompts with 2,000 resamples and seed 0, and the rubric contrast of the merged group). It does not choose the clusters. Output: `FINAL_3categories_similarity_and_performance/cluster_merge_diagnostics/`. |
+| `characterize_categories.py` |
 | C. Total hypothesis-generation score, 24 models | `evaluation_results_rubric_v12/total_score_6cases_excl_zone_identification/total_score_barplot_6cases_excl_zone.pdf` | `total_score_6cases_excl_zone_identification/plot_total_score_barplot.py` (in the results folder, with its data) |
 | D. Quality eligibility vs mechanistic diversity | `.../selected_models_4cases/plots/1_quality_vs_diversity_selection.svg` | `quality_vs_diversity_selection.py` |
 | E. Mean quality vs mean distinctiveness | `.../selected_models_4cases/plots/2_mean_quality_vs_mean_distinctiveness.svg` | `diversity_vs_quality.py` |
