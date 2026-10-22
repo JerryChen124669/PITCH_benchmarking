@@ -1,0 +1,20 @@
+{
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "model_slug": "deepseek-ai__DeepSeek-V4.1-Flash",
+  "dataset": "CosMx_CancerKi67",
+  "condition": "cond2_raw_data",
+  "picked_run": 2,
+  "preamble": "v2",
+  "scores": {
+    "Zone Identification score_zone1": null,
+    "Logic Rigor_zone1": null,
+    "Feature Comprehensiveness_zone1": 8,
+    "Biological Plausibility_zone1": 9,
+    "Biological Plausibility_reason": "The required items are the global-expression/library-size axis and RPL36, RPL9, RPS10, and RPL18A. A proliferation-associated ribosome-biogenesis and translation state is biologically defensible, and the alternative technical-confounding explanation is appropriately acknowledged.",
+    "Specificity_zone1": 2,
+    "Grounded Mechanistic Synthesis_zone1": 3,
+    "Grounded Mechanistic Synthesis_reason": "The response collectively integrated RPL36, RPL9, RPS10, and RPL18A as indicators of a translation-rich proliferative state associated with Ki-67. It did not distinguish their individual contributions or explain biological transitions beyond the broad shared-state relationship. No formal ceiling was applied; the low score reflects the largely unresolved cellular-state mechanism.",
+    "Literature Grounding_zone1": 9
+  },
+  "final_score_5pillar": 26.5
+}

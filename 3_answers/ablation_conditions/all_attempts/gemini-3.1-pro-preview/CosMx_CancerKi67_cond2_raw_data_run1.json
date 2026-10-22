@@ -1,0 +1,19 @@
+{
+ "final_answer": "I cannot determine with confidence which features are most associated with Ki-67 from the given evidence. \n\nWhile I possess general biological knowledge that Ki-67 is a widely used marker of cellular proliferation and typically covaries with other cell cycle-related genes (such as cyclin-dependent kinases like CDK1, tubulins like TUBA1B, and various histones present in the feature list), I cannot actually derive a specific relationship from the raw numbers in front of me. The evidence provided is a raw CSV matrix of 152 cells and 501 standardized features. As an AI language model, I cannot perform genuine multivariate statistical inference, compute correlation coefficients, or rank feature importances across a matrix of this size simply by reading the text. \n\nAny specific hypothesis I could provide regarding which of these 500 genes regulates or co-expresses with Ki-67 would be based purely on pattern-matching from established biological literature rather than an actual mathematical analysis of the provided dataset. \n\nTo form a specific, well-grounded, and data-driven biological hypothesis, I would need the raw data to be computationally processed. Specifically, I would need precomputed statistical measures (such as Pearson or Spearman correlation coefficients with the target), feature importance scores from a trained predictive model (e.g., Random Forest, XGBoost), or attribution scores (e.g., Integrated Gradients) to identify which features genuinely show the strongest association with Ki-67 in this specific sample of breast cancer cells.\n\n```json\n{\n  \"confidence\": 1,\n  \"sufficient_information\": false\n}\n```",
+ "finish_reason": "FinishReason.STOP",
+ "temperature_applied": true,
+ "reasoning_effort": null,
+ "usage": {
+  "prompt": 519724,
+  "output": 335,
+  "thinking": 14783
+ },
+ "model": "gemini-3.1-pro-preview",
+ "dataset": "CosMx_CancerKi67",
+ "condition": "cond2_raw_data",
+ "run": 1,
+ "temperature": 0.5,
+ "prompt_variant": "guide_line",
+ "prompts_dir": "prompts_deepseek_guide",
+ "elapsed_s": 94.2
+}

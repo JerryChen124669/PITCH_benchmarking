@@ -1,0 +1,20 @@
+{
+  "model": "Qwen/Qwen3.8-2.4T-A95B",
+  "model_slug": "Qwen__Qwen3.8-2.4T-A95B",
+  "dataset": "CosMx_CancerKi67",
+  "condition": "cond2_raw_data",
+  "picked_run": 2,
+  "preamble": "v2",
+  "scores": {
+    "Zone Identification score_zone1": null,
+    "Logic Rigor_zone1": null,
+    "Feature Comprehensiveness_zone1": 9,
+    "Biological Plausibility_zone1": 9,
+    "Biological Plausibility_reason": "The common-cause hypothesis that Ki-67, TK1, CDK1, and biosynthetic genes co-vary with active cell-cycle state is well established and biologically coherent. It appropriately avoids claiming that TK1 directly regulates Ki-67.",
+    "Specificity_zone1": 6,
+    "Grounded Mechanistic Synthesis_zone1": 6,
+    "Grounded Mechanistic Synthesis_reason": "TK1 was connected to S-phase DNA synthesis, CDK1 to the broader S/G2/M program, and ribosomal genes to the increased biosynthetic activity of proliferating cells. These features were unified mainly as parallel readouts of cycling state, without detailed transitions explaining regulation of Ki-67 abundance. No formal ceiling was applied, although the broad common-state mechanism limits mechanistic resolution.",
+    "Literature Grounding_zone1": 10
+  },
+  "final_score_5pillar": 35.0
+}

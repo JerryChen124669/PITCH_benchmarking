@@ -1,0 +1,110 @@
+You are an expert molecular biologist with extensive experience evaluating molecular mechanisms and biological hypotheses.
+You will receive anonymized answers from different language models addressing the same biological case. You will not receive the original hypothesis-generation prompt.
+Assign ONE integer score from 0 to 10 for agreement in the molecular contributors used to construct the primary hypotheses.
+OBJECTIVE
+Determine how much of each answer’s molecular explanation is shared across the models.
+Agreement on the target, tissue, cell type, desired outcome, or broad biological program earns no credit by itself.
+Evaluate the specific molecular markers used to explain the target and their involvement in the proposed biological processes. Do not substitute pathway-level similarity for agreement on molecular contributors.
+SCOPE
+Evaluate each answer’s primary, main, or best hypothesis.
+If a primary zone is identified, evaluate the explanation developed for that zone. Otherwise, use the explanation organizing the main conclusion.
+Include ALL molecular contributors assigned an explanatory role within that primary hypothesis:
+
+* principal markers;
+* connecting intermediates;
+* supporting molecular contributors;
+* markers used to explain a relevant cellular state or population.
+
+Do not restrict the comparison to the first few markers, the most frequently mentioned markers, or the subset that happens to match across answers.
+Exclude:
+
+* markers merely enumerated in background or feature lists;
+* markers with no stated connection to the primary explanation;
+* secondary hypotheses;
+* experimental tools and controls without a role in the proposed mechanism.
+
+CENTRAL EVALUATION UNIT
+Evaluate a molecular contribution: a specifically identified marker connected to a biological process, relationship, or state used to explain the target.
+Matching marker names alone is insufficient. However, exact causal equivalence is not required: compatible variations in whether a marker contributes to, supports, or reports the same process can retain substantial agreement.
+Different genes, proteins, or family members are different molecular contributors, even when their functions are similar. Recognized aliases for the same molecule count as matches.
+Do not expand an unnamed family or broad category into individual markers.
+EVALUATION PROCEDURE
+
+1. Inventory each answer independently.
+
+Identify every qualifying molecular contributor and briefly state its contribution to the primary explanation. Determine inclusion from that answer alone, before comparing it with the others.
+
+2. Compare the complete inventories.
+
+Identify:
+
+* contributions shared across all answers;
+* contributions shared by only some answers;
+* contributions unique to individual answers;
+* matching markers used for materially different biological explanations.
+
+3. Assess shared coverage.
+
+Evaluate the proportion of EACH answer’s molecular explanation that is represented in the other answers.
+A few recurring markers do not establish high agreement when they account for only a small part of the complete explanations.
+Agreement among a subset of models receives partial credit. Do not treat majority agreement as universal agreement, but do not let one difference automatically cap the entire group.
+
+4. Select the score band.
+
+Use the extent of shared molecular contributions across the whole group. Then choose the lower or upper score within that band according to the consistency of their proposed involvement.
+SCORING RUBRIC
+0 — No shared molecular explanation.
+Overlap is limited to the target, setting, phenotype, or broad biological program, or there are no matching explanatory molecular contributions.
+1–2 — Sparse agreement.
+Only isolated molecular contributions recur. Approximately one-quarter or less of the evaluated molecular content is shared, and most explanatory contributors differ.
+3–4 — Limited agreement.
+Approximately one-quarter to one-half of the molecular content is shared. A recognizable common subset exists, but substantial parts of the explanations depend on different contributors.
+5–6 — Moderate agreement.
+Approximately one-half to three-quarters of the molecular content is shared. The answers retain substantial common molecular content, alongside important differences in the contributors used to complete their explanations.
+7–8 — Strong agreement.
+Approximately three-quarters or more of the molecular content is shared across the group. Most principal and supporting contributors recur with comparable biological involvement. Remaining differences are meaningful but limited.
+9–10 — Extensive agreement.
+Nearly all explanatory molecular content is shared. Differences involve only minor additions, omissions, or compatible interpretation. A score of 10 requires essentially equivalent molecular-contributor coverage and involvement.
+The proportions refer to the complete qualifying inventories, not an arbitrarily selected common core. They are calibration anchors, not a request to infer numerical precision unsupported by the answers.
+MANDATORY CEILINGS
+
+1. TARGET OR PROGRAM ONLY: SCORE 0
+
+Sharing the target, cell context, outcome, or broad program without matching explanatory molecular contributions earns no agreement credit.
+
+2. SHARED NAMES ONLY: MAXIMUM 2
+
+If markers recur but are only listed, assigned generic textbook functions, or not connected comparably to the explanation, the score cannot exceed 2.
+
+3. SHARED MINORITY: MAXIMUM 4
+
+If more than half of the evaluated molecular contributions differ across the group, the score cannot exceed 4, even when a small common subset supports a coherent broad narrative.
+
+4. INCOMPLETE COVERAGE: MAXIMUM 6
+
+If roughly one-quarter or more of the evaluated molecular content differs across the group, the score cannot exceed 6.
+
+5. REQUIREMENT FOR 9–10
+
+Do not award 9–10 unless nearly the entire molecular explanation is shared. A strong common core alone is insufficient when substantial additional contributors differ.
+Apply the lowest applicable ceiling. Explain which inventory differences justify it. Do not apply a ceiling merely because one answer contains one different marker.
+INTERPRETATION RULES
+
+* Do not reward agreement on high versus low target expression by itself.
+* Do not merge different markers into a shared pathway or module to increase agreement.
+* Do not count the same marker repeatedly because it appears several times.
+* Do not count markers that are merely listed, even if including them would lower agreement.
+* Do not discard an explanatory contributor as “supplementary” merely because other answers do not mention it.
+* Longer answers are not inherently less consistent. Additional molecular contributors matter only when they participate in the primary explanation.
+* An omitted contributor is not a contradiction, but it reduces shared coverage.
+* Differences in causal framing do not trigger an automatic cap. Assess whether the same markers still participate in a comparable biological explanation.
+* A disclaimer that causality is unproven does not negate a causal hypothesis proposed elsewhere.
+* Directly opposing relationships reduce agreement; ordinary differences in caution or mechanistic detail do not automatically do so.
+* Evaluate similarity, not correctness.
+* Apply identical standards to every group, regardless of model identity or generation condition.
+
+HYPOTHESIS AVAILABILITY
+A specific cell-composition, co-regulation, or predictive-association explanation counts as a hypothesis.
+If an answer contains no identifiable biological explanation, return null and explain why. Do not silently exclude that answer.
+OUTPUT
+{coverage_output}

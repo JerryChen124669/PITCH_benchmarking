@@ -1,0 +1,18 @@
+{
+ "final_answer": null,
+ "finish_reason": "length",
+ "temperature_applied": true,
+ "reasoning_effort": "max",
+ "usage": {
+  "prompt": 363699,
+  "output": 130000
+ },
+ "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+ "dataset": "Gouwens_GABAergic",
+ "condition": "cond2_raw_data",
+ "run": 1,
+ "temperature": 0.5,
+ "prompt_variant": "raw_corr_rank",
+ "prompts_dir": "prompts_raw_corr_rank",
+ "elapsed_s": 231.2
+}

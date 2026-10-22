@@ -1,0 +1,34 @@
+{
+  "condition": "cond1_ig_only",
+  "dataset": "CosMx_CancerKi67",
+  "pass": 1,
+  "seed": 20,
+  "rubric": "coverage",
+  "order": [
+    {
+      "label": "A",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "picked_run": 1
+    },
+    {
+      "label": "B",
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "picked_run": 1
+    },
+    {
+      "label": "C",
+      "model": "zai-org/GLM-5.3",
+      "picked_run": 2
+    },
+    {
+      "label": "D",
+      "model": "gemini-3.1-pro-preview",
+      "picked_run": 7
+    }
+  ],
+  "judge": {
+    "rationale": "Approximately one-half to three-quarters of the molecular explanation is shared\u2014especially PTMA, PABPC1, CKS2, FTH1, multiple named ribosomal proteins, TUBB4B/TUBA1C, ALDOA, PKM, and MYC-linked proliferation\u2014while A and B add extensive cell-cycle, histone, redox, proteostasis, metabolic, and lineage contributors that C and especially D omit, so the incomplete-coverage ceiling of 6 applies.",
+    "cross_model_agreement_score": 6
+  },
+  "score": 6
+}

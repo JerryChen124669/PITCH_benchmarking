@@ -1,0 +1,34 @@
+{
+  "condition": "cond0_full_pipeline",
+  "dataset": "Gouwens_GABAergic",
+  "pass": 3,
+  "seed": 20,
+  "rubric": "coverage",
+  "order": [
+    {
+      "label": "A",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "picked_run": 3
+    },
+    {
+      "label": "B",
+      "model": "zai-org/GLM-5.3",
+      "picked_run": 2
+    },
+    {
+      "label": "C",
+      "model": "gemini-3.1-pro-preview",
+      "picked_run": 3
+    },
+    {
+      "label": "D",
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "picked_run": 2
+    }
+  ],
+  "judge": {
+    "rationale": "Roughly three-quarters or more of the primary molecular explanation is shared\u2014FXYD6 regulation of Na+/K+-ATPase in a CNR1-high/HTR3A-high, CORO6-low/FLT3-low CGE-like state\u2014while unique additions such as CCK identity, HTR3A-driven Na+ loading, CNR1\u2013cAMP/PKA signaling, FXYD1 analogy, and stronger CORO6/FLT3 mechanistic claims prevent near-complete agreement.",
+    "cross_model_agreement_score": 8
+  },
+  "score": 8
+}

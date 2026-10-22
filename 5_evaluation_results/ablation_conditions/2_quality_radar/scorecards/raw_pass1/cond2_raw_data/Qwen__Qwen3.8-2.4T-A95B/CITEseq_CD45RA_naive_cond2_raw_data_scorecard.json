@@ -1,0 +1,20 @@
+{
+  "model": "Qwen/Qwen3.8-2.4T-A95B",
+  "model_slug": "Qwen__Qwen3.8-2.4T-A95B",
+  "dataset": "CITEseq_CD45RA_naive",
+  "condition": "cond2_raw_data",
+  "picked_run": 1,
+  "preamble": "v2",
+  "scores": {
+    "Zone Identification score_zone1": null,
+    "Logic Rigor_zone1": null,
+    "Feature Comprehensiveness_zone1": 6,
+    "Biological Plausibility_zone1": 8,
+    "Biological Plausibility_reason": "The PTPRC alternative-splicing premise and interpretation of TRDC, CCL5, GNLY, and IL2RB as lineage/state markers are biologically defensible. However, the proposed TCR\u03b4/NK-like heterogeneity is somewhat strained by the stated naive-T-cell context, and CD45RA is not exclusively a naive or less-differentiated marker.",
+    "Specificity_zone1": 4,
+    "Grounded Mechanistic Synthesis_zone1": 4,
+    "Grounded Mechanistic Synthesis_reason": "TRDC and the grouped CCL5/GNLY/IL2RB signal were connected to an innate-like or cytotoxic lymphocyte state, while PTPRC splicing was connected to CD45RA abundance. CCL5, GNLY, and IL2RB were not assigned distinct mechanistic roles, and the transition from the proposed cell state to altered PTPRC exon inclusion was not explained. The feature-list/broad-state ceiling of 5 was applied because the contextual markers were not shown to work together mechanistically.",
+    "Literature Grounding_zone1": 9
+  },
+  "final_score_5pillar": 26.5
+}

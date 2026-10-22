@@ -1,0 +1,34 @@
+{
+  "condition": "cond1_ig_only",
+  "dataset": "CITEseq_CD45RA_naive",
+  "pass": 2,
+  "seed": 20,
+  "rubric": "coverage",
+  "order": [
+    {
+      "label": "A",
+      "model": "zai-org/GLM-5.3",
+      "picked_run": 3
+    },
+    {
+      "label": "B",
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "picked_run": 3
+    },
+    {
+      "label": "C",
+      "model": "gemini-3.1-pro-preview",
+      "picked_run": 5
+    },
+    {
+      "label": "D",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "picked_run": 3
+    }
+  ],
+  "judge": {
+    "rationale": "All four answers comparably use a shared cytotoxic/NK and myeloid marker core (including GNLY, NKG7, GZMA/GZMB, CD8B, CST3, S100A12, FCN1, LYZ, and CD14) as proxies for cell-state heterogeneity rather than direct PTPRC regulation, but A and D invoke many additional B-cell, erythroid, platelet, HLA, mouse, and ambient-RNA contributors that are absent or only partly represented in B and especially C, so more than half of the complete group-level molecular inventory is not shared and the shared-minority ceiling of 4 applies.",
+    "cross_model_agreement_score": 4
+  },
+  "score": 4
+}

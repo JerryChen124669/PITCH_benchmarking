@@ -1,0 +1,20 @@
+{
+  "model": "zai-org/GLM-5.3",
+  "model_slug": "zai-org__GLM-5.3",
+  "dataset": "CosMx_CancerKi67",
+  "condition": "cond2_raw_data",
+  "picked_run": 2,
+  "preamble": "v2",
+  "scores": {
+    "Zone Identification score_zone1": null,
+    "Logic Rigor_zone1": null,
+    "Feature Comprehensiveness_zone1": 9,
+    "Biological Plausibility_zone1": 8,
+    "Biological Plausibility_reason": "The core model linking Ki-67, MYBL2/E2F-associated cell-cycle progression, TK1, CDK1, and CKS proteins is biologically coherent. However, it overstates both direct common transcriptional control of broad ribosomal genes and the extent to which Ki-67\u2019s nucleolar role itself explains their co-expression.",
+    "Specificity_zone1": 7,
+    "Grounded Mechanistic Synthesis_zone1": 7,
+    "Grounded Mechanistic Synthesis_reason": "The response integrates MYBL2/E2F-associated proliferation with TK1-mediated DNA synthesis, CDK1/CKS-associated mitosis, and Ki-67 expression, while also connecting ribosomal genes to a biosynthetic state. The proposed common transcriptional control and the bridge from Ki-67\u2019s nucleolar function to ribosomal-protein co-expression remain insufficiently resolved. No formal synthesis ceiling was applied because a recognizable focus-feature\u2013target mechanism and roles for most invoked features were provided.",
+    "Literature Grounding_zone1": 6
+  },
+  "final_score_5pillar": 34.0
+}

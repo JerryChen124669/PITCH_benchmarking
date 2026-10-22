@@ -1,0 +1,34 @@
+{
+  "condition": "cond0_full_pipeline",
+  "dataset": "Gouwens_GABAergic",
+  "pass": 1,
+  "seed": 20,
+  "rubric": "coverage",
+  "order": [
+    {
+      "label": "A",
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "picked_run": 2
+    },
+    {
+      "label": "B",
+      "model": "gemini-3.1-pro-preview",
+      "picked_run": 3
+    },
+    {
+      "label": "C",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "picked_run": 3
+    },
+    {
+      "label": "D",
+      "model": "zai-org/GLM-5.3",
+      "picked_run": 2
+    }
+  ],
+  "judge": {
+    "rationale": "The answers share the main Fxyd6\u2013Na+/K+-ATPase mechanism and comparable roles for Htr3a and Cnr1, with Coro6 and Flt3 recurring in most accounts, but differing treatment of those state markers and D-specific FXYD1/cAMP/PKA intermediates leaves roughly one-quarter of the molecular explanation incompletely shared, invoking the maximum-6 incomplete-coverage ceiling.",
+    "cross_model_agreement_score": 6
+  },
+  "score": 6
+}

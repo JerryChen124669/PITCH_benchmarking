@@ -1,0 +1,9 @@
+{
+  "judge_model": "gpt-5.6-sol",
+  "rubric_sha256": "522c88817cdc85a4a832bdbd11cfb0c4f58a1b1c0228eb9b018676e5d0cd2cff",
+  "matches_earlier_rubric": true,
+  "preamble_mode": "v2",
+  "preamble_text": "IMPORTANT OVERRIDE: this is a FIVE-criterion evaluation. Do NOT score Zone Identification or Logic Rigor: return null for \"Zone Identification score_zone1\" and \"Logic Rigor_zone1\", and do not penalize any tree-rule extraction issues anywhere. (The prompt you see may have given the model a decision tree, only an Integrated-Gradients feature ranking, or only a raw cells-x-features table; grade every case the same way.) Score the other five criteria as specified, treating the submission's single main hypothesis as its 'primary zone'. For Feature Comprehensiveness, the required items are every feature (gene or measurement, excluding the target itself) that the submission's hypothesis relies on or invokes as part of its mechanism; list them before scoring. Features that are only mentioned in passing, or appear in a list without being used in the hypothesis, are not required items. Judge whether each required item is explained, meaning it is given an item-specific biological or contextual role tied to the target association, using the 0-2 item credits and the formula as specified. Do not reward or penalize the NUMBER of features used. Judge factual claims against the evidence actually provided in the prompt and established biology. Keep all other output keys and formats exactly as specified.\n\n",
+  "n_scorecards": 7,
+  "selection_seed": 20
+}

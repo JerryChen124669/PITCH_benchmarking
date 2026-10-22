@@ -1,0 +1,34 @@
+{
+  "condition": "cond0_full_pipeline",
+  "dataset": "CITEseq_CD45RA_naive",
+  "pass": 1,
+  "seed": 20,
+  "rubric": "coverage",
+  "order": [
+    {
+      "label": "A",
+      "model": "zai-org/GLM-5.3",
+      "picked_run": 1
+    },
+    {
+      "label": "B",
+      "model": "gemini-3.1-pro-preview",
+      "picked_run": 1
+    },
+    {
+      "label": "C",
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "picked_run": 1
+    },
+    {
+      "label": "D",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "picked_run": 1
+    }
+  ],
+  "judge": {
+    "rationale": "Nearly all primary molecular content is shared\u2014GNLY, NKG7, GZMB, KLRD1/CD94, and low CST3 consistently define a CD45RA-associated cytotoxic NK-like state\u2014with only minor variation in whether CST3 is treated solely as myeloid exclusion or also as a protease-permissive mechanism, so no mandatory ceiling applies.",
+    "cross_model_agreement_score": 9
+  },
+  "score": 9
+}
