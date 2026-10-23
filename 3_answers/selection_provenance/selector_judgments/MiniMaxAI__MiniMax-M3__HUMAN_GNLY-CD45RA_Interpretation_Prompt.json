@@ -1,0 +1,12 @@
+{
+  "model": "MiniMaxAI__MiniMax-M3",
+  "case": "HUMAN_GNLY-CD45RA_Interpretation_Prompt",
+  "selection_method": "consistent_pair",
+  "candidate_count": 3,
+  "selected_index_1based": 3,
+  "selector": "LLM consistency check of select_best_answer.py (the script names gpt-5.6-sol; the model used is not stored with the judgment)",
+  "selector_judgment_text_verbatim": "Both identify Node 20’s NKG7-high/GZMB-high/CST3-low/KLRD1-high rule as a CD94-positive cytotoxic NK-cell program in which GNLY serves as a surrogate for CD45RA-positive neonatal NK cells. X is more complete and directly connects every gate in the rule to lineage exclusion, cytotoxic-granule biology, and testable predictions.",
+  "selector_raw_output_saved": false,
+  "random_seed": "unrecorded",
+  "order_shown_to_selector": "unrecorded"
+}

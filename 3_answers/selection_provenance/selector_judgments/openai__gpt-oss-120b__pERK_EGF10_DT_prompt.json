@@ -1,0 +1,12 @@
+{
+  "model": "openai__gpt-oss-120b",
+  "case": "pERK_EGF10_DT_prompt",
+  "selection_method": "consistent_pair",
+  "candidate_count": 3,
+  "selected_index_1based": 1,
+  "selector": "LLM consistency check of select_best_answer.py (the script names gpt-5.6-sol; the model used is not stored with the judgment)",
+  "selector_judgment_text_verbatim": "Both prioritize Nodes 28 and 24 and interpret them as Paxillin/FAK-Src-driven ERK states, with YAP-dependent amplification in Node 28 and a YAP-independent hyper-adhesive mechanism in Node 24. Z is more complete because it maps each threshold directly to the proposed mechanism and provides more specific mechanistic distinctions and perturbation tests.",
+  "selector_raw_output_saved": false,
+  "random_seed": "unrecorded",
+  "order_shown_to_selector": "unrecorded"
+}

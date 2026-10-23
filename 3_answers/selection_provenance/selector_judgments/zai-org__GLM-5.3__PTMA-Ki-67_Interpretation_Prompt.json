@@ -1,0 +1,12 @@
+{
+  "model": "zai-org__GLM-5.3",
+  "case": "PTMA-Ki-67_Interpretation_Prompt",
+  "selection_method": "consistent_pair",
+  "candidate_count": 3,
+  "selected_index_1based": 2,
+  "selector": "LLM consistency check of select_best_answer.py (the script names gpt-5.6-sol; the model used is not stored with the judgment)",
+  "selector_judgment_text_verbatim": "Both identify Node 14 as the primary zone and explain it as a MYC–E2F proliferation state requiring coordinated RNA processing, translation, and spindle activity, with PTMA acting as a chromatin-permissive effector linked to Ki-67. Y is slightly more complete, explicitly grounding the mechanism in the Node 13 sibling contrast and Node 22 compensatory logic.",
+  "selector_raw_output_saved": false,
+  "random_seed": "unrecorded",
+  "order_shown_to_selector": "unrecorded"
+}

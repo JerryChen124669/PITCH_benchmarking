@@ -1,0 +1,12 @@
+{
+  "model": "MiniMaxAI__MiniMax-M3",
+  "case": "PTMA-Ki-67_Interpretation_Prompt",
+  "selection_method": "consistent_pair",
+  "candidate_count": 3,
+  "selected_index_1based": 3,
+  "selector": "LLM consistency check of select_best_answer.py (the script names gpt-5.6-sol; the model used is not stored with the judgment)",
+  "selector_judgment_text_verbatim": "Both prioritize Node 14 and explain it as a coordinated HNRNPA2B1-mediated RNA-processing, RPLP0-dependent translation, and TUBB4B-linked mitotic program that conditions PTMA–Ki-67 coupling. Z is more directly tied to the tree’s attribution logic and more carefully frames PTMA and Ki-67 as context-dependent readouts while distinguishing Node 22 as an alternative route.",
+  "selector_raw_output_saved": false,
+  "random_seed": "unrecorded",
+  "order_shown_to_selector": "unrecorded"
+}

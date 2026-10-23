@@ -1,0 +1,12 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "case": "pERK_EGF10_DT_prompt",
+  "selection_method": "consistent_pair",
+  "candidate_count": 3,
+  "selected_index_1based": 3,
+  "selector": "LLM consistency check of select_best_answer.py (the script names gpt-5.6-sol; the model used is not stored with the judgment)",
+  "selector_judgment_text_verbatim": "Both prioritize Node 28 as a high-Paxillin, nuclear-YAP, tension-dependent actin scaffold that enhances EGFR–ERK signaling, while interpreting Node 24 as a YAP-low, branched-actin remodeling state. Y is slightly more complete because its proposed perturbations more specifically distinguish contractile stress fibers from Arp2/3-dependent dynamic actin and are explicitly tied to each rule.",
+  "selector_raw_output_saved": false,
+  "random_seed": "unrecorded",
+  "order_shown_to_selector": "unrecorded"
+}

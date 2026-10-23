@@ -1,0 +1,12 @@
+{
+  "model": "moonshotai__Kimi-K3",
+  "case": "PTMA-Ki-67_Interpretation_Prompt",
+  "selection_method": "consistent_pair",
+  "candidate_count": 3,
+  "selected_index_1based": 3,
+  "selector": "LLM consistency check of select_best_answer.py (the script names gpt-5.6-sol; the model used is not stored with the judgment)",
+  "selector_judgment_text_verbatim": "Both identify Node 14 as the dominant HNRNPA2B1-high/TUBB4B-high/RPLP0-high zone and explain it as a MYC-linked anabolic, ribosome-biogenesis, and mitotic program coupling PTMA to Ki-67. Y is slightly more complete and directly anchored to the sibling-node RPLP0 contrast, exact thresholds, and a specific chromatin–nucleolar mechanism.",
+  "selector_raw_output_saved": false,
+  "random_seed": "unrecorded",
+  "order_shown_to_selector": "unrecorded"
+}

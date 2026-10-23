@@ -1,0 +1,12 @@
+{
+  "model": "zai-org__GLM-5.3",
+  "case": "HUMAN_GNLY-CD45RA_Interpretation_Prompt",
+  "selection_method": "consistent_pair",
+  "candidate_count": 3,
+  "selected_index_1based": 3,
+  "selector": "LLM consistency check of select_best_answer.py (the script names gpt-5.6-sol; the model used is not stored with the judgment)",
+  "selector_judgment_text_verbatim": "Both identify Node 20 as the primary CD94-positive NK rule and Node 12 as a distinct GZMB-low immature NK state, explaining GNLY as an indirect NK-lineage surrogate for constitutive CD45RA rather than a causal regulator. Z is more complete because it ties the mechanism more explicitly to the full split hierarchy, node statistics, maturation trajectory, and myeloid-exclusion guards.",
+  "selector_raw_output_saved": false,
+  "random_seed": "unrecorded",
+  "order_shown_to_selector": "unrecorded"
+}

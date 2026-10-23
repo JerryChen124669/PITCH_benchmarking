@@ -1,0 +1,14 @@
+PASS  144 canonical selected files (expected 144)
+PASS  all canonical files are identical to the archived SHA-256 list
+PASS  the answer text of all 144 responses is unchanged (hash of the answer field)
+PASS  one manifest row per canonical file (144 rows, no duplicates, none missing)
+PASS  selected_index = source_answer_index + 1 for all rows with a recorded index (138 rows); 'unrecorded' in both files otherwise
+PASS  rows with selected_index 'unrecorded' are the 6 documented Gemma 4 12B rows (6)
+PASS  selection_method in the manifest equals the canonical file
+PASS  method counts 78 single / 57 consistent-pair / 6 embedding-medoid / 2 random / 1 manual
+PASS  every referenced selector judgment file exists
+PASS  raw candidate files exist when flagged, candidate_count matches, canonical answer = selected candidate (137 cases)
+PASS  all 10 manual_exceptions rows refer to a manifest row
+PASS  the 2 random selections and the Gemini Fxyd6 manual selection are listed
+
+RESULT: ALL CHECKS PASSED

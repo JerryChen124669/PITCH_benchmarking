@@ -1,0 +1,12 @@
+{
+  "model": "deepseek-ai__DeepSeek-V4-Pro-0813",
+  "case": "Fxyd6-input resistance_Interpretation_Prompt",
+  "selection_method": "consistent_pair",
+  "candidate_count": 3,
+  "selected_index_1based": 2,
+  "selector": "LLM consistency check of select_best_answer.py (the script names gpt-5.6-sol; the model used is not stored with the judgment)",
+  "selector_judgment_text_verbatim": "Both identify Node 23 as the primary CGE-derived Cnr1-high/Htr3a-high interneuron zone and propose that FXYD6 regulation of Na,K-ATPase becomes especially important in a low-conductance membrane state. X is slightly more complete because it explicitly distinguishes contextual split genes from Fxyd6 attribution and more clearly connects the exact tree logic and precision to its primary-versus-secondary ranking.",
+  "selector_raw_output_saved": false,
+  "random_seed": "unrecorded",
+  "order_shown_to_selector": "unrecorded"
+}

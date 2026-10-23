@@ -1,0 +1,13 @@
+metric,model,dataset,mean_score,n_assessors,scale
+Factual accuracy (accuracy of specific molecular claims),Gemini-3.1-Pro,pERK,3.4,5,1-5
+Factual accuracy (accuracy of specific molecular claims),Gemini-3.1-Pro,GABA,3.4,5,1-5
+Factual accuracy (accuracy of specific molecular claims),Gemini-3.1-Pro,Ki-67,3.4,5,1-5
+Factual accuracy (accuracy of specific molecular claims),Gemini-3.1-Pro,Overall mean,3.4,5,1-5
+Factual accuracy (accuracy of specific molecular claims),Qwen3.8-2.4T,pERK,3.6,5,1-5
+Factual accuracy (accuracy of specific molecular claims),Qwen3.8-2.4T,GABA,4.2,5,1-5
+Factual accuracy (accuracy of specific molecular claims),Qwen3.8-2.4T,Ki-67,3.8,5,1-5
+Factual accuracy (accuracy of specific molecular claims),Qwen3.8-2.4T,Overall mean,3.866666666666667,5,1-5
+Factual accuracy (accuracy of specific molecular claims),Qwen3.5-9B,pERK,3.2,5,1-5
+Factual accuracy (accuracy of specific molecular claims),Qwen3.5-9B,GABA,2.6,5,1-5
+Factual accuracy (accuracy of specific molecular claims),Qwen3.5-9B,Ki-67,2.4,5,1-5
+Factual accuracy (accuracy of specific molecular claims),Qwen3.5-9B,Overall mean,2.733333333333334,5,1-5

@@ -1,0 +1,12 @@
+{
+  "model": "biomistral",
+  "case": "HUMAN_GNLY-CD45RA_Interpretation_Prompt",
+  "selection_method": "consistent_pair",
+  "candidate_count": 5,
+  "selected_index_1based": 3,
+  "selector": "LLM consistency check of select_best_answer.py (the script names gpt-5.6-sol; the model used is not stored with the judgment)",
+  "selector_judgment_text_verbatim": "Both identify Node 12 as a cytotoxic NK/CD8+ T-cell program mediating tumor-cell killing. C is more complete and directly connects the tree markers GNLY, GZMA, CD8B, and PRF1 to granule-mediated apoptosis.",
+  "selector_raw_output_saved": false,
+  "random_seed": "unrecorded",
+  "order_shown_to_selector": "unrecorded"
+}

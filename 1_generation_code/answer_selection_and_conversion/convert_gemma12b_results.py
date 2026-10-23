@@ -11,7 +11,7 @@ Writes:
         matching the schema official_trial.py writes.
     trial_results/<model_slug>/<prompt_stem>_selected_answer.json
         {prompt_file, model, source_answer_index: 0,
-         selection_method: "single_sample_no_consistency_check", answer}
+         selection_method: "embedding_medoid_of_5", answer}
         -- judge_evaluation.py and pairwise_similarity.py, which only read
         this file's "answer"/"model"/"prompt_file" fields, work unmodified.
 """
@@ -52,9 +52,9 @@ def convert_all(src_dir: Path) -> int:
                 {
                     "prompt_file": f"{prompt_stem}.txt",
                     "model": model_name,
-                    "source_answer_index": 0,
-                    "selection_method": "single_sample_no_consistency_check",
-                    "selection_notes": "Only one generation was provided for this (model, prompt) combo -- no 3-way self-consistency check was possible or necessary.",
+                    "source_answer_index": "unrecorded",
+                    "selection_method": "embedding_medoid_of_5",
+                    "selection_notes": "Five candidates were generated (seeds 1234-1238); the embedding medoid (highest mean cosine similarity of all-MiniLM-L6-v2 embeddings; select_consistent.py) was kept and only the selected answer was retained. The index of the selected candidate among the five is unrecorded.",
                     "answer": answer,
                 },
                 indent=2,

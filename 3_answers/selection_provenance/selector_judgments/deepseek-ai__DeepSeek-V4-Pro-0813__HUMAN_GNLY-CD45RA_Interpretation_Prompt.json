@@ -1,0 +1,12 @@
+{
+  "model": "deepseek-ai__DeepSeek-V4-Pro-0813",
+  "case": "HUMAN_GNLY-CD45RA_Interpretation_Prompt",
+  "selection_method": "consistent_pair",
+  "candidate_count": 3,
+  "selected_index_1based": 1,
+  "selector": "LLM consistency check of select_best_answer.py (the script names gpt-5.6-sol; the model used is not stored with the judgment)",
+  "selector_judgment_text_verbatim": "Both identify Node 20 and explain GNLY attribution through a CD45RA-positive mature cytotoxic NK-cell program. Z is preferred because it ties each split directly to lineage and effector biology while keeping speculative mechanisms clearly separated.",
+  "selector_raw_output_saved": false,
+  "random_seed": "unrecorded",
+  "order_shown_to_selector": "unrecorded"
+}

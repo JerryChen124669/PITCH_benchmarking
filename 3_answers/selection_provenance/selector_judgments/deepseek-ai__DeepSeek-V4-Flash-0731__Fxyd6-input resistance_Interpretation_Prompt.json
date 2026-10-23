@@ -1,0 +1,12 @@
+{
+  "model": "deepseek-ai__DeepSeek-V4-Flash-0731",
+  "case": "Fxyd6-input resistance_Interpretation_Prompt",
+  "selection_method": "consistent_pair",
+  "candidate_count": 3,
+  "selected_index_1based": 3,
+  "selector": "LLM consistency check of select_best_answer.py (the script names gpt-5.6-sol; the model used is not stored with the judgment)",
+  "selector_judgment_text_verbatim": "Both prioritize Node 23 as an Htr3a+/Cnr1+ CGE interneuron context where Fxyd6 regulates input resistance through Na+/K+-ATPase activity. Z ties the complete leaf logic more explicitly to a specific 5-HT3A-driven ionic-load mechanism and provides direct experimental predictions.",
+  "selector_raw_output_saved": false,
+  "random_seed": "unrecorded",
+  "order_shown_to_selector": "unrecorded"
+}

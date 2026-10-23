@@ -1,0 +1,12 @@
+{
+  "model": "openai__gpt-oss-120b",
+  "case": "PTMA-Ki-67_Interpretation_Prompt",
+  "selection_method": "consistent_pair",
+  "candidate_count": 3,
+  "selected_index_1based": 2,
+  "selector": "LLM consistency check of select_best_answer.py (the script names gpt-5.6-sol; the model used is not stored with the judgment)",
+  "selector_judgment_text_verbatim": "Both identify Node 14 as primary and propose a PTMA-centered program coupling HNRNPA2B1-mediated RNA processing, RPLP0-supported translation, and TUBB4B-dependent mitosis to high Ki-67. X is more complete because it maps each component explicitly to the conjunctive tree rule and provides a broader, more specific set of mechanistic tests.",
+  "selector_raw_output_saved": false,
+  "random_seed": "unrecorded",
+  "order_shown_to_selector": "unrecorded"
+}

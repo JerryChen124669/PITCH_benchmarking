@@ -1,0 +1,12 @@
+{
+  "model": "deepseek-ai__DeepSeek-V4-Pro-0813",
+  "case": "PTMA-Ki-67_Interpretation_Prompt",
+  "selection_method": "consistent_pair",
+  "candidate_count": 3,
+  "selected_index_1based": 2,
+  "selector": "LLM consistency check of select_best_answer.py (the script names gpt-5.6-sol; the model used is not stored with the judgment)",
+  "selector_judgment_text_verbatim": "Both identify Node 14 as primary and propose the same RNA-processing, translation, and mitotic context linking PTMA to Ki-67. Y is preferred because it more explicitly integrates the exact split variables into a coherent c-MYC/PTMA mechanism while distinguishing conditional association from causality.",
+  "selector_raw_output_saved": false,
+  "random_seed": "unrecorded",
+  "order_shown_to_selector": "unrecorded"
+}

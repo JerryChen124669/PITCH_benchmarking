@@ -1,0 +1,12 @@
+{
+  "model": "pmc_llama",
+  "case": "HUMAN_GNLY-CD45RA_Interpretation_Prompt",
+  "selection_method": "consistent_pair",
+  "candidate_count": 5,
+  "selected_index_1based": 5,
+  "selector": "LLM consistency check of select_best_answer.py (the script names gpt-5.6-sol; the model used is not stored with the judgment)",
+  "selector_judgment_text_verbatim": "Both prioritize a GNLY-low, activation-marker-high dendritic-cell zone and interpret it through dendritic-cell activation or maturation. C is more complete because it states the Node 4 split explicitly and connects the expression pattern to a specific immature-to-mature dendritic-cell mechanism.",
+  "selector_raw_output_saved": false,
+  "random_seed": "unrecorded",
+  "order_shown_to_selector": "unrecorded"
+}

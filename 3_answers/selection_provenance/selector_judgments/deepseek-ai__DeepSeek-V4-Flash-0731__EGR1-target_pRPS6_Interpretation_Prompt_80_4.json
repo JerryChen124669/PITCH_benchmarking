@@ -1,0 +1,12 @@
+{
+  "model": "deepseek-ai__DeepSeek-V4-Flash-0731",
+  "case": "EGR1-target_pRPS6_Interpretation_Prompt_80_4",
+  "selection_method": "consistent_pair",
+  "candidate_count": 3,
+  "selected_index_1based": 3,
+  "selector": "LLM consistency check of select_best_answer.py (the script names gpt-5.6-sol; the model used is not stored with the judgment)",
+  "selector_judgment_text_verbatim": "Both prioritize Node 19 and interpret it as a FOS-high, DUSP5-low, AKT-low ERK/RSK-driven pRPS6 state. X provides the cleaner mechanistic discrimination between MEK/ERK, RSK, and mTORC1 effects and ties its predictions more directly to the rule.",
+  "selector_raw_output_saved": false,
+  "random_seed": "unrecorded",
+  "order_shown_to_selector": "unrecorded"
+}

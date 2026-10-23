@@ -1,0 +1,12 @@
+{
+  "model": "biomistral",
+  "case": "IL2RA-target_CCR5_Interpretation_Prompt_80_4",
+  "selection_method": "random_no_consensus",
+  "candidate_count": 5,
+  "selected_index_1based": 4,
+  "selector": "LLM consistency check found no agreeing pair; the answer was then drawn with random.choice in code",
+  "selector_judgment_text_verbatim": "Although several candidates share node numbers or low-FOXP3/TIGIT features, their full primary rules differ and they invoke distinct mechanisms such as T-cell proliferation, chemokine-mediated trafficking, or tumor-associated Treg recruitment.",
+  "selector_raw_output_saved": false,
+  "random_seed": "unrecorded (select_best_answer.py calls random.choice without seeding)",
+  "order_shown_to_selector": "unrecorded"
+}

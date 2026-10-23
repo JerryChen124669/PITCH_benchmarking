@@ -1,0 +1,12 @@
+{
+  "model": "pmc_llama",
+  "case": "Fxyd6-input resistance_Interpretation_Prompt",
+  "selection_method": "consistent_pair",
+  "candidate_count": 5,
+  "selected_index_1based": 1,
+  "selector": "LLM consistency check of select_best_answer.py (the script names gpt-5.6-sol; the model used is not stored with the judgment)",
+  "selector_judgment_text_verbatim": "Both prioritize the Coro6/Cnr/Htr3a/Reln rule and explain resistance through altered neurite morphology, reduced synaptic connectivity, and diminished neuronal responsiveness. D states the rule more coherently and ties each feature more directly to the proposed seizure-resistance mechanism.",
+  "selector_raw_output_saved": false,
+  "random_seed": "unrecorded",
+  "order_shown_to_selector": "unrecorded"
+}

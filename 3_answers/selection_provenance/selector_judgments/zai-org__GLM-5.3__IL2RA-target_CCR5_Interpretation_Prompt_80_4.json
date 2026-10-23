@@ -1,0 +1,12 @@
+{
+  "model": "zai-org__GLM-5.3",
+  "case": "IL2RA-target_CCR5_Interpretation_Prompt_80_4",
+  "selection_method": "consistent_pair",
+  "candidate_count": 3,
+  "selected_index_1based": 3,
+  "selector": "LLM consistency check of select_best_answer.py (the script names gpt-5.6-sol; the model used is not stored with the judgment)",
+  "selector_judgment_text_verbatim": "Both identify Node 25—FOXP3-high, OX40-high, RUNX3-low Tregs—as primary and propose an IL2RA–IL-2/STAT5-driven CCR5 positioning program. X is more complete and directly grounded in the tree, especially through its precision/base-rate calibration and use of the RUNX3-high sibling leaf as a negative control.",
+  "selector_raw_output_saved": false,
+  "random_seed": "unrecorded",
+  "order_shown_to_selector": "unrecorded"
+}

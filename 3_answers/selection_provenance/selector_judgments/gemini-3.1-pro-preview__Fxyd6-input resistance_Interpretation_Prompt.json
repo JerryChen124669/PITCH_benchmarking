@@ -1,0 +1,33 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "case": "Fxyd6-input resistance_Interpretation_Prompt",
+  "selection_method": "manual_selection_from_archive",
+  "candidate_count": 5,
+  "selected_index_1based": 5,
+  "history": [
+    {
+      "step": 1,
+      "candidates": "runs 1-3 of the 5-run archive",
+      "method": "consistent_pair",
+      "selected_index_1based": 3,
+      "selector_judgment_text_verbatim": "Both identify Node 23’s Htr3a-high/Cnr1-high CGE interneuron state as primary and explain Fxyd6 importance through Na+/K+-ATPase control of input resistance. X is more complete because it proposes a specific receptor-signaling/phosphorylation mechanism while directly incorporating the node’s defining expression logic.",
+      "record": "raw_candidates/gemini-3.1-pro-preview/superseded_fxyd6/_pre_retest_backup_20260921__*"
+    },
+    {
+      "step": 2,
+      "candidates": "one ad hoc regeneration (generate_gemini_answer.py)",
+      "method": "single_sample_no_consistency_check",
+      "selected_index_1based": 1,
+      "record": "raw_candidates/gemini-3.1-pro-preview/superseded_fxyd6/_pre_original_restore_backup_20260921__*"
+    },
+    {
+      "step": 3,
+      "candidates": "the 5-run archive",
+      "method": "manual_selection_from_archive",
+      "selected_index_1based": 5,
+      "selector_judgment_text_verbatim": "Restored from the original 5-run generation archive at gemini_3.1_pro_hypothesis/results/Fxyd6-input resistance_Interpretation_Prompt_results.jsonl (run 5), replacing a one-off ad-hoc regeneration to avoid having two different provenances for this (model, prompt) answer."
+    }
+  ],
+  "criterion_for_choosing_run_5_over_runs_1_to_4": "selection criterion unrecorded",
+  "note": "The record states that run 5 was restored from the original archive to replace the ad hoc regeneration so that the answer has one provenance. Selection criterion unrecorded: the reason run 5 was chosen among the five archived runs (and not run 3, the earlier consistent-pair choice) is not documented in any saved record; no justification is inferred here."
+}

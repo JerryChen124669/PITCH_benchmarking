@@ -1,0 +1,12 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "case": "IL2RA-target_CCR5_Interpretation_Prompt_80_4",
+  "selection_method": "consistent_pair",
+  "candidate_count": 3,
+  "selected_index_1based": 1,
+  "selector": "LLM consistency check of select_best_answer.py (the script names gpt-5.6-sol; the model used is not stored with the judgment)",
+  "selector_judgment_text_verbatim": "Both identify Node 25—FOXP3-high, OX40-high, RUNX3-low Tregs—as primary and propose that RUNX3 repression enables OX40-supported IL2RA/STAT5 signaling to drive CCR5. Y ties the mechanism more explicitly to each tree split and proposes direct chromatin-accessibility and STAT5-occupancy tests.",
+  "selector_raw_output_saved": false,
+  "random_seed": "unrecorded",
+  "order_shown_to_selector": "unrecorded"
+}

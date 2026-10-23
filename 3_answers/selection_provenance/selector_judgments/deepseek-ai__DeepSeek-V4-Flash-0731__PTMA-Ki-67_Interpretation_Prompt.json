@@ -1,0 +1,12 @@
+{
+  "model": "deepseek-ai__DeepSeek-V4-Flash-0731",
+  "case": "PTMA-Ki-67_Interpretation_Prompt",
+  "selection_method": "consistent_pair",
+  "candidate_count": 3,
+  "selected_index_1based": 1,
+  "selector": "LLM consistency check of select_best_answer.py (the script names gpt-5.6-sol; the model used is not stored with the judgment)",
+  "selector_judgment_text_verbatim": "Both identify Node 14 as primary and propose that PTMA–Ki-67 coupling is enabled by an HNRNPA2B1-dependent translational/mitotic state involving RPLP0 and TUBB4B. Z is better tied to the tree because it contrasts Node 14 with its lower-precision sibling to identify RPLP0 as a key switch and gives more specific mechanistic predictions.",
+  "selector_raw_output_saved": false,
+  "random_seed": "unrecorded",
+  "order_shown_to_selector": "unrecorded"
+}
