@@ -1,4 +1,4 @@
-Classifier,Mean accuracy over datasets,SD over datasets (ddof=1),CITE-seq CD45RA,CosMx Ki-67,Gouwens input resistance
-LR,0.8998,0.0648,0.9699,0.8873,0.8421
-DT,0.8738,0.0821,0.9665,0.8445,0.8103
-RF,0.9077,0.0528,0.9687,0.8768,0.8775
+Classifier,CITE-seq,CosMx,Gouwens,Mean (%),SD across datasets (%)
+LR,96.99,77.64,75.68,83.43,11.78
+DT,96.49,75.7,76.13,82.77,11.88
+RF,97.07,77.02,70.32,81.47,13.92

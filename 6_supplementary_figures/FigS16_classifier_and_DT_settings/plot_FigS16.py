@@ -1,10 +1,11 @@
 """Figure S16 - effects of classifier choice (A-C) and decision-tree settings (D-E) on PITCH hypothesis generation.
 
-Reads data/*.csv only (no API calls, nothing is refitted) and writes one file per panel (svg, pdf, png) plus
+Reads data/ only (no API calls, nothing is refitted; needs scikit-learn for panel A) and writes one file per panel (svg, pdf, png) plus
 data/FigS16*_plot_values.csv with the numbers that are drawn.
 
-  A  accuracy of LR / DT / RF in predicting the IG-derived label: 5-fold CV accuracy per dataset (mean of the 5 folds), then mean and SD
-     (ddof = 1) over the 3 datasets with "Plotted in Fig S16A" = True (n = 3; pERK EGF10 is in the table but not plotted)
+  A  balanced accuracy of LR / DT / RF in predicting the IG-derived label, from the saved out-of-fold predictions (data/FigS16A_oof_predictions.csv.gz,
+     stratified 5-fold CV, the same folds for the three classifiers): balanced accuracy per fold, mean of the 5 folds per dataset, then mean +/- SD
+     (ddof = 1) across CITE-seq, CosMx and Gouwens; the three dataset values are overlaid; dashed line = 50%, the all-background classifier
   B  five criteria per classifier: mean over the datasets with "Plotted in Fig S16B" = True (CITE-seq CD45RA, CosMx Ki-67, Gouwens input resistance)
   C  Hypothesis Similarity between classifiers: mean over the datasets with "Plotted in Fig S16C" = True of the mean of the six pairwise criteria
   D  six criteria per decision-tree setting: mean over the 3 datasets
@@ -20,6 +21,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from matplotlib.patches import Rectangle
+from sklearn.metrics import balanced_accuracy_score
 
 HERE = Path(__file__).resolve().parent
 DATA = HERE / "data"
@@ -111,30 +113,49 @@ def heatmap(mat, names, stem, row_labels=None, col_labels=None, figsize=(5.2, 4.
     save(fig, stem)
 
 
+DATASET_SHORT = {"CITEseq_CD45RA_naive": "CITE-seq", "CosMx_CancerKi67": "CosMx", "Gouwens_GABAergic": "Gouwens"}      # the three datasets of Figure S16
+DATASET_MARKER = {"CITE-seq": "o", "CosMx": "s", "Gouwens": "^"}
+
+
 def panel_A():
-    """Accuracy bars over the three datasets used in panels B-E (rows with "Plotted in Fig S16A" = True; pERK EGF10 is in the table but not plotted)."""
-    f = pd.read_csv(DATA / "FigS16A_accuracy_by_fold.csv")
-    f = f[f["Plotted in Fig S16A"]]
-    per_ds = f.groupby(["Classifier", "Dataset"])["Accuracy"].mean().unstack("Dataset").loc[CLASSIFIERS]       # mean of the 5 folds
-    out = pd.DataFrame({"Mean accuracy over datasets": per_ds.mean(axis=1), "SD over datasets (ddof=1)": per_ds.std(axis=1, ddof=1)})
-    out.round(4).join(per_ds.round(4)).to_csv(DATA / "FigS16A_plot_values.csv", index_label="Classifier")
-    fig, ax = plt.subplots(figsize=(4.6, 5))
+    """Balanced accuracy of LR / DT / RF from the saved out-of-fold predictions (5-fold CV, identical folds for the three classifiers).
+    Per dataset: balanced accuracy in each fold, then the mean of the 5 folds; bar = mean +/- SD (ddof = 1) across the three datasets, dots = the dataset values."""
+    oof = pd.read_csv(DATA / "FigS16A_oof_predictions.csv.gz")
+    oof = oof[oof["dataset"].isin(DATASET_SHORT)]
+    rows = []
+    for (ds, fold), g in oof.groupby(["dataset", "fold"]):
+        for c in CLASSIFIERS:
+            rows.append({"Dataset": DATASET_SHORT[ds], "Classifier": c, "Fold": fold, "Balanced accuracy (%)": 100 * balanced_accuracy_score(g["y_true"], g[f"{c}_pred"])})
+    per_fold = pd.DataFrame(rows)
+    per_ds = per_fold.groupby(["Classifier", "Dataset"])["Balanced accuracy (%)"].mean().unstack("Dataset").loc[CLASSIFIERS, list(DATASET_MARKER)]
+    out = per_ds.copy()
+    out["Mean (%)"], out["SD across datasets (%)"] = per_ds.mean(axis=1), per_ds.std(axis=1, ddof=1)
+    out.round(2).to_csv(DATA / "FigS16A_plot_values.csv", index_label="Classifier")
+    per_fold.round(3).to_csv(DATA / "FigS16A_balanced_accuracy_by_fold.csv", index=False)
+
+    fig, ax = plt.subplots(figsize=(7.2, 5.2))
     x = np.arange(3)
-    ax.bar(x, out.iloc[:, 0], width=0.6, color=[BAR_COLOR[c] for c in CLASSIFIERS], zorder=3)
-    ax.errorbar(x, out.iloc[:, 0], yerr=out.iloc[:, 1], fmt="none", ecolor=INK, elinewidth=1.3, capsize=5, capthick=1.3, zorder=4)
+    ax.bar(x, out["Mean (%)"], width=0.6, color=[BAR_COLOR[c] for c in CLASSIFIERS], zorder=3)
+    ax.errorbar(x, out["Mean (%)"], yerr=out["SD across datasets (%)"], fmt="none", ecolor=INK, elinewidth=1.3, capsize=5, capthick=1.3, zorder=5)
+    for k, (ds, mk) in enumerate(DATASET_MARKER.items()):
+        ax.scatter(x + (k - 1) * 0.16, per_ds[ds], marker=mk, s=44, facecolor="white", edgecolor=INK, linewidth=1.1, zorder=6, label=ds)
+    ax.axhline(50, color="#c0392b", linestyle="--", linewidth=1.4, zorder=4)
+    ax.text(2.42, 51.5, "No-discrimination baseline", ha="left", va="bottom", fontsize=10.5, color="#c0392b")
+    ax.set_xlim(-0.6, 3.9)
     ax.set_xticks(x)
     ax.set_xticklabels(CLASSIFIERS, fontsize=13, color=SECONDARY_INK)
-    ax.set_ylim(0, 1.05)
-    ax.set_yticks([0, 0.25, 0.5, 0.75, 1.0])
+    ax.set_ylim(0, 100)
+    ax.set_yticks([0, 25, 50, 75, 100])
     ax.set_yticklabels(["0%", "25%", "50%", "75%", "100%"], fontsize=11, color=SECONDARY_INK)
-    ax.set_ylabel("Accuracy", fontsize=12, color=SECONDARY_INK)
+    ax.set_ylabel("Balanced accuracy", fontsize=12, color=SECONDARY_INK)
     ax.yaxis.grid(True, color=GRIDLINE, linewidth=0.9, zorder=0)
     ax.set_axisbelow(True)
     for s in ("top", "right"):
         ax.spines[s].set_visible(False)
     for s in ("left", "bottom"):
         ax.spines[s].set_color(GRIDLINE)
-    save(fig, "FigS16A_accuracy")
+    ax.legend(loc="upper right", bbox_to_anchor=(1.0, 0.99), frameon=False, fontsize=10.5, handletextpad=0.4, labelcolor=SECONDARY_INK)
+    save(fig, "FigS16A_balanced_accuracy")
 
 
 def panel_B():

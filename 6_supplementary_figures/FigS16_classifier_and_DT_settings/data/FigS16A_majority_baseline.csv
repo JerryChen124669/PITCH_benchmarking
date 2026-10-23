@@ -1,0 +1,5 @@
+dataset,n_cells,n_positive,positive_prevalence,all_background_accuracy,all_background_balanced_accuracy,all_background_positive_recall,used_in_figure_S16
+CITEseq_CD45RA_naive,8617,862,0.10003481490077754,0.8999651850992225,0.5,0.0,True
+CosMx_CancerKi67,30000,3000,0.1,0.9,0.5,0.0,True
+Gouwens_GABAergic,3395,340,0.10014727540500737,0.8998527245949927,0.5,0.0,True
+pERK_EGF10,20000,2000,0.1,0.9,0.5,0.0,False

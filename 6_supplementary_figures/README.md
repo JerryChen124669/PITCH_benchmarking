@@ -1,7 +1,7 @@
 # Supplementary Figures S15 and S16: data and code to reproduce the plots
 
 Everything needed to redraw the panels from tables is in `FigS15_ablation/` and `FigS16_classifier_and_DT_settings/`. Run `python plot_FigS15.py` and
-`python plot_FigS16.py` in the respective folder (Python 3, `numpy`, `pandas`, `matplotlib`; no API key, no model call). Each script reads only `data/*.csv`, writes
+`python plot_FigS16.py` in the respective folder (Python 3, `numpy`, `pandas`, `matplotlib`, `scikit-learn`; no API key, no model call). Each script reads only the files in `data/`, writes
 the panels as `svg` (live text), `pdf` and `png`, and writes the numbers it draws to `data/*_plot_values.csv`. Names in the data tables and on the plots are the
 names used in the manuscript.
 
@@ -14,9 +14,13 @@ FigS15_ablation/
   (records of S15: prompts `../2_prompts/ablation_conditions/`, answers `../3_answers/ablation_conditions/`, judge scorecards and screening
    `../5_evaluation_results/ablation_conditions/`, code incl. measurement-only sampling `../4_evaluation_code/ablation_conditions/`)
 FigS16_classifier_and_DT_settings/
-  plot_FigS16.py                        -> FigS16A_accuracy, FigS16B_criteria_by_classifier, FigS16C_similarity_between_classifiers,
+  plot_FigS16.py                        -> FigS16A_balanced_accuracy, FigS16B_criteria_by_classifier, FigS16C_similarity_between_classifiers,
                                            FigS16D_criteria_by_DT_setting, FigS16E_similarity_between_DT_settings   (.svg/.pdf/.png)
-  data/FigS16A_accuracy_by_fold.csv         per dataset, classifier and CV fold
+  data/FigS16A_oof_predictions.csv.gz       out-of-fold prediction (class and positive-class probability) of LR, DT, RF for every cell, with its fold
+  data/FigS16A_balanced_accuracy_by_fold.csv, FigS16A_plot_values.csv   balanced accuracy per fold and the plotted values (%)
+  data/FigS16A_majority_baseline.csv, FigS16A_heldout_metrics_by_dataset.csv, FigS16A_heldout_summary_across_datasets.csv
+                                            prevalence, all-background accuracy, accuracy / balanced accuracy / positive-class precision and recall
+  data/FigS16A_accuracy_by_fold.csv         plain accuracy per dataset, classifier and fold (earlier version of panel A)
   data/FigS16B_scores_per_case.csv          five criteria per (dataset, classifier)
   data/FigS16C_similarity_per_case.csv      pairwise similarity (six criteria + their mean) per (dataset, classifier pair)
   data/FigS16D_scores_per_setting.csv       six criteria per (dataset, decision-tree setting)
@@ -48,7 +52,7 @@ What the three conditions were given (see `2_prompts/ablation_conditions/README.
 attributes to the target, and only PITCH requests four contextual features; MLP + IG and Measurement-only ask the LLM to identify the relevant features itself.
 
 ## Figure S16. Effects of classifier choice and decision-tree settings on PITCH hypothesis generation
-(A) Logistic regression (LR), decision tree (DT), and random forest (RF) achieve comparable accuracy in predicting IG-derived labels to classify the cell groups.
+(A) Logistic regression (LR), decision tree (DT), and random forest (RF) achieve comparable out-of-fold balanced accuracy in predicting IG-derived labels (bars: mean ± SD across the CITE-seq, CosMx and Gouwens datasets; points: individual datasets; dashed line: 50%, the accuracy of a classifier with no discrimination).
 (n = 3 empirical prompts) (B) Hypothesis-generation performance remains comparable across classifiers using the 5 criteria metric. (C) Pairwise comparisons show
 substantial agreement among hypotheses generated using different classifiers. Therefore, (B) and (C) support flexibility in classifier choice according to
 analytical priorities. The default setting comprises 30 candidate features and a maximum tree depth of 4. (D) Varying DT depth and candidate feature-pool size
@@ -57,13 +61,20 @@ tested settings on a ten-point scale (n = 3 datasets).
 
 | Panel | Data | Computation | Datasets |
 |---|---|---|---|
-| A | `FigS16A_accuracy_by_fold.csv` | stratified 5-fold CV accuracy per dataset (mean of folds); bar = mean over the 3 datasets, error bar = SD (n-1) over the 3 datasets | 3 (rows with `Plotted in Fig S16A` = True: CITE-seq CD45RA, CosMx Ki-67, Gouwens input resistance; pERK EGF10 is in the table but not plotted) |
+| A | `FigS16A_oof_predictions.csv.gz` | balanced accuracy of each classifier from the out-of-fold predictions of the stratified 5-fold CV (seed 42, identical folds for LR, DT, RF), per fold, mean of the 5 folds per dataset; bar = mean ± SD (n-1) over the 3 datasets, dots = the 3 dataset values; dashed line = 50% (all-background or random prediction) | 3: CITE-seq CD45RA, CosMx Ki-67, Gouwens input resistance (pERK EGF10 predictions are in the file but not plotted) |
 | B | `FigS16B_scores_per_case.csv` | five criteria (Feature Comprehensiveness, Biological Plausibility, Mechanistic Synthesis, Hypothesis Specificity, Literature Grounding); mean over datasets | 3 (rows with `Plotted in Fig S16B` = True; pERK EGF10 is in the table but not plotted) |
 | C | `FigS16C_similarity_per_case.csv` | Hypothesis Similarity = mean of the six pairwise criteria, then mean over datasets | 3 (`Plotted in Fig S16C`) |
 | D | `FigS16D_scores_per_setting.csv` | six criteria (B's five plus Logic Rigor); mean over datasets | 3: CITE-seq CD45RA, CosMx Ki-67, Gouwens input resistance |
 | E | `FigS16E_similarity_between_settings.csv` | Hypothesis Similarity = mean of three pairwise criteria (Feature Interpretation & Coverage, Mechanistic Hypothesis, Functional/Causal-Role Similarity), then mean over datasets | 3 |
 
 Setting names in the data: `30 genes, depth 4`, `60 genes, depth 4`, `30 genes, depth 6`, `60 genes, depth 6` (30/60 candidate features x maximum depth 4/6; default 30 genes, depth 4).
+
+## Plotting command for Figure S16A (balanced accuracy)
+```
+cd FigS16_classifier_and_DT_settings
+python plot_FigS16.py        # writes FigS16A_balanced_accuracy.svg / .pdf / .png (300 dpi) and data/FigS16A_plot_values.csv; also panels B-E
+```
+The out-of-fold predictions were produced by `records/classifier_comparison/heldout_evaluation/run_heldout_evaluation.py` (same data, label, features, classifier settings and folds as the original comparison; reproduces the original per-fold accuracies exactly). Positive-class prevalence is 10% in every dataset, so an all-background classifier has 90% accuracy and 50% balanced accuracy; plain accuracy of the classifiers (87-91%) is therefore at the all-background level and is not used as the measure of detection (see `data/FigS16A_heldout_metrics_by_dataset.csv`: positive-class precision 0.48-0.54 and recall 0.70-0.77 on average).
 
 ## Facts a reader should know before relying on a panel
 - The classifiers are compared on the same IG-derived binary label (top 10% of positive IG attribution = class 1) and the same candidate features, using stratified 5-fold
