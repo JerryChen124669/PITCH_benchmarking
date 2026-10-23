@@ -3,4 +3,4 @@ PMC-LLaMA 13B,axiong/PMC_LLaMA_13B,float32,plain_concat + completion directive (
 BioMistral 7B,BioMistral/BioMistral-7B,bfloat16,chat template (system folded into user) + chat directive,True,0.7,0.9,,1024,400,1.15,4,5,1234-1238,bioLLM/scripts/run_experiment.py --model biomistral
 Gemma 4 12B,google/gemma-4-12B-it,bfloat16,chat template (system + user),True,1.0,0.95,64,1024,,,,5,1234-1238,gemma12B/scripts/run_experiment.py
 Phi-4 14B,microsoft/phi-4,bfloat16,chat template (system + user),True,0.7,0.9,,1536,,,,1,1234,phi4_14B/run_inference.py
-Ministral 3 14B Base,mistralai/Ministral-3-14B-Base-2512,bfloat16,plain_concat (system + user),True,1.0,0.9,,1536,,1.05,3,1,1234,ministral3_14B/run_inference.py
+Ministral 3 14B Reasoning,unsloth/Ministral-3-14B-Reasoning-2512-bnb-4bit,bnb 4-bit weights (dtype bfloat16),chat template (system + user); [THINK] block split off,True,0.3,0.9,,4096,,,,1,1234,ministral3_14B/run_inference_reasoning.py

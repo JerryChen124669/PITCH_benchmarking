@@ -1,11 +1,11 @@
 """
-Export the raw JSON records in ministral3_14B_results/ as minimal .json
-files: prompt_file, model, generation_settings, and the response field
-verbatim (only .strip()'d of leading/trailing whitespace) -- no other
-reprocessing, filtering, or added text.
+Export the raw JSON records in results/ as minimal
+.json files: prompt_file, model, generation_settings, reasoning, and
+response, all verbatim (only .strip()'d of leading/trailing whitespace) --
+no other reprocessing, filtering, or added text.
 
 Usage:
-    python export_clean_results.py
+    python export_clean_reasoning_results.py
 """
 
 import glob
@@ -34,6 +34,7 @@ def main():
             "prompt_file": record["prompt_file"],
             "model": record["model"],
             "generation_settings": record["generation_settings"],
+            "reasoning": record["reasoning"].strip(),
             "response": record["response"].strip(),
         }
 

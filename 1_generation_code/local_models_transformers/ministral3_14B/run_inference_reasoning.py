@@ -1,20 +1,20 @@
 """
 One-off inference run: interpret the decision-tree prompts in exp_prompts/
-with the base (non-instruction-tuned) Ministral 3 14B model.
+with the instruction/reasoning-tuned Ministral-3-14B-Reasoning-2512
+checkpoint (4-bit, unsloth/Ministral-3-14B-Reasoning-2512-bnb-4bit),
+following the same system/user prompt composition as
+bioLLM/scripts/inference.py.
 
-Prompt composition follows the same convention as bioLLM/scripts/inference.py:
-each exp_prompts/*.txt file is split on its "--- SECTION ---" headers, the
-first section is the system prompt, and the literal remainder (including its
-own headers) is the user prompt. Ministral-3-14B-Base-2512 is a base/
-completion-style model -- it ships no chat_template (unlike the
-Reasoning-2512 checkpoint) -- so system + user are concatenated into one
-continuous document and fed as a single completion prompt, the same
-plain_concat handling bioLLM uses for PMC-LLaMA.
+Unlike Ministral-3-14B-Base-2512, this checkpoint ships a chat_template
+with a native system role and a [THINK]...[/THINK] reasoning scratchpad, so
+system_prompt/user_prompt are passed through tokenizer.apply_chat_template
+as separate messages, and the model's [THINK] block is split out from the
+final answer in the saved record.
 
 This is a single run per prompt (no repeated-seed variability experiment).
 
 Usage:
-    python run_inference.py
+    python run_inference_reasoning.py
 """
 
 import glob
@@ -26,11 +26,11 @@ import time
 import torch
 from transformers import AutoTokenizer, Mistral3ForConditionalGeneration
 
-MODEL_PATH = "/mnt/data/models/Ministral-3-14B-Base-2512"
+MODEL_PATH = "unsloth/Ministral-3-14B-Reasoning-2512-bnb-4bit"
 PROMPTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "exp_prompts")
 RESULTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
 SEED = 1234
-MAX_NEW_TOKENS = 1536
+MAX_NEW_TOKENS = 4096
 
 SECTION_HEADER_RE = re.compile(r"^---\s*(.+?)\s*---\s*$")
 
@@ -49,6 +49,14 @@ def parse_prompt_file(path):
     return system_prompt, user_prompt
 
 
+def split_reasoning(text):
+    for marker in ("[/THINK]", "</think>"):
+        if marker in text:
+            reasoning, final_answer = text.split(marker, 1)
+            return reasoning.strip(), final_answer.strip()
+    return "", text.strip()
+
+
 def main():
     os.makedirs(RESULTS_DIR, exist_ok=True)
 
@@ -57,10 +65,9 @@ def main():
         raise SystemExit(f"No prompt files found in {PROMPTS_DIR}")
     print(f"[info] found {len(prompt_paths)} prompt files in {PROMPTS_DIR}")
 
-    print(f"[info] loading base model from {MODEL_PATH}")
+    print(f"[info] loading {MODEL_PATH}")
     tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
-    model = Mistral3ForConditionalGeneration.from_pretrained(MODEL_PATH, dtype=torch.bfloat16)
-    model.to("cuda")
+    model = Mistral3ForConditionalGeneration.from_pretrained(MODEL_PATH, dtype=torch.bfloat16, device_map={"": 0})
     model.eval()
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
@@ -71,9 +78,18 @@ def main():
         print(f"[info] {prompt_path} -> {out_path}")
 
         system_prompt, user_prompt = parse_prompt_file(prompt_path)
-        rendered_prompt = f"{system_prompt}\n\n{user_prompt}"
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
+        ]
 
-        inputs = tokenizer(rendered_prompt, return_tensors="pt", add_special_tokens=True).to("cuda")
+        inputs = tokenizer.apply_chat_template(
+            messages,
+            tokenize=True,
+            add_generation_prompt=True,
+            return_tensors="pt",
+            return_dict=True,
+        ).to(model.device)
         prompt_len = inputs["input_ids"].shape[1]
 
         torch.manual_seed(SEED)
@@ -85,35 +101,32 @@ def main():
                 **inputs,
                 max_new_tokens=MAX_NEW_TOKENS,
                 do_sample=True,
-                temperature=1.0,
+                temperature=0.3,
                 top_p=0.9,
-                repetition_penalty=1.05,
-                no_repeat_ngram_size=3,
                 pad_token_id=tokenizer.pad_token_id,
             )
         gen_time = round(time.time() - t0, 2)
 
         completion_ids = output_ids[0][prompt_len:]
         completion_text = tokenizer.decode(completion_ids, skip_special_tokens=True)
+        reasoning, final_answer = split_reasoning(completion_text)
 
         record = {
             "prompt_file": os.path.basename(prompt_path),
-            "model": "mistralai/Ministral-3-14B-Base-2512",
+            "model": MODEL_PATH,
             "system_prompt": system_prompt,
             "user_prompt": user_prompt,
-            "rendered_prompt": rendered_prompt,
             "prompt_token_length": prompt_len,
             "generation_settings": {
                 "max_new_tokens": MAX_NEW_TOKENS,
                 "do_sample": True,
-                "temperature": 1.0,
+                "temperature": 0.3,
                 "top_p": 0.9,
-                "repetition_penalty": 1.05,
-                "no_repeat_ngram_size": 3,
                 "seed": SEED,
             },
             "generation_time_sec": gen_time,
-            "response": completion_text,
+            "reasoning": reasoning,
+            "response": final_answer,
         }
 
         with open(out_path, "w", encoding="utf-8") as f:
