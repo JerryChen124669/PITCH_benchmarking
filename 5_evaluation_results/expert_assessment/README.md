@@ -7,6 +7,7 @@ De-identified records of the blinded expert survey and the numbers plotted in Fi
 | `questionnaire/` | `questionnaire_items.csv` (the 36 items) and `questionnaire_reconstructed.md`: a fixed text copy **reconstructed from the column headers of the survey export** (the original form was not found; see the checklist) |
 | `background_materials/` | `dataset_titles_in_survey.csv` (section titles that appear in the export) and a README listing the background material that was not found |
 | `anonymized_hypotheses/` | the hypotheses exactly as shown, with the anonymous labels A, B, C, one file per dataset |
+| `label_mapping_source/mechanism_summaries_three_models.docx` | the source document for the label mapping: for each dataset, the three hypotheses with the model named beside each blind label (A/B/C). It lists the condensed hypotheses with their decision-tree thresholds, so its wording differs slightly from the text shown to the assessors (`anonymized_hypotheses/`). Its labels were used to build `hypothesis_label_mapping.csv`; the document calls the 9B model by an earlier version number (it is Qwen3.5-9B). The author name in the document properties was removed; the text is unchanged. It also contains a CD45RA case that was not part of the survey |
 | `hypothesis_label_mapping.csv` | blind label -> model for every dataset, canonical response it corresponds to, text hash |
 | `deidentified_ratings.csv` | one row per assessor x dataset x item (180 ratings): 5 assessors x 3 datasets x (3 hypotheses x 3 pillars + 3 pairs) |
 | `aggregate_expert_ratings.py` | aggregation of the ratings into the plotted values; checks them against `figure_7E_plotting_input.csv` |
@@ -45,5 +46,4 @@ Assessors 1-4: the survey export was available locally and every one of their 14
 - [ ] the background information given to the assessors (dataset description, decision-tree zones, what a "node" is, ...) - only the section titles in the export were found; the title of the first section (pERK) is not in the export;
 - [ ] the survey export that contains Assessor 5;
 - [ ] how the assessors were recruited, their expertise and the instructions they received (unrecorded);
-- [ ] the file `mechanism_summaries_three_models(3).docx` named in the earlier workbook (the version found has the same labels and hypotheses but lists the model beside each label);
 - [ ] the script that produced the Figure 7E plot (only the plotted values and an SVG exist).
