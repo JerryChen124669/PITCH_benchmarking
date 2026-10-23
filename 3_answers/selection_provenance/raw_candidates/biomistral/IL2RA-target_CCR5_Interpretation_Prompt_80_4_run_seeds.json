@@ -1,0 +1,27 @@
+[
+ {
+  "run_index": 0,
+  "seed": 1234,
+  "generation_time_sec": 9.56
+ },
+ {
+  "run_index": 1,
+  "seed": 1235,
+  "generation_time_sec": 5.7
+ },
+ {
+  "run_index": 2,
+  "seed": 1236,
+  "generation_time_sec": 7.14
+ },
+ {
+  "run_index": 3,
+  "seed": 1237,
+  "generation_time_sec": 8.92
+ },
+ {
+  "run_index": 4,
+  "seed": 1238,
+  "generation_time_sec": 8.92
+ }
+]

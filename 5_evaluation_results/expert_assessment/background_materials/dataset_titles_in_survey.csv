@@ -1,4 +1,4 @@
-survey_section,section_title_in_export
-pERK,(title not present in the export)
-GABA,Dataset 2 — Molecular Regulation of Input Resistance in Developing GABAergic Interneurons
-Ki-67,Dataset 3 — PTMA-Centered Regulation of Ki-67 Expression in Breast Cancer
+survey_section,section_title_in_questionnaire,background_document
+pERK,Dataset 1 — Role of Cytoplasmic Actin in EGF-Induced ERK Phosphorylation,Dataset1_Background context for Role of Cytoplasmic Actin in EGF-Induced ERK Phosphorylation.docx
+GABA,Dataset 2 — Molecular Regulation of Input Resistance in Developing GABAergic Interneurons,Dataset2_Background context for Input Resistance in Developing GABAergic Interneurons.docx
+Ki-67,Dataset 3 — PTMA-Centered Regulation of Ki-67 Expression in Breast Cancer,Dataset3_Background context for PTMA-Centered Regulation of Ki-67 Expression in Breast Cancer.docx
