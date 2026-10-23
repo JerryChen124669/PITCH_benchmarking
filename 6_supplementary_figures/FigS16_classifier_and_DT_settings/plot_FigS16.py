@@ -4,7 +4,7 @@ Reads data/*.csv only (no API calls, nothing is refitted) and writes one file pe
 data/FigS16*_plot_values.csv with the numbers that are drawn.
 
   A  accuracy of LR / DT / RF in predicting the IG-derived label: 5-fold CV accuracy per dataset (mean of the 5 folds), then mean and SD
-     (ddof = 1) over the 4 datasets (n = 4 empirical prompts)
+     (ddof = 1) over the 3 datasets with "Plotted in Fig S16A" = True (n = 3; pERK EGF10 is in the table but not plotted)
   B  five criteria per classifier: mean over the datasets with "Plotted in Fig S16B" = True (CITE-seq CD45RA, CosMx Ki-67, Gouwens input resistance)
   C  Hypothesis Similarity between classifiers: mean over the datasets with "Plotted in Fig S16C" = True of the mean of the six pairwise criteria
   D  six criteria per decision-tree setting: mean over the 3 datasets
@@ -111,15 +111,13 @@ def heatmap(mat, names, stem, row_labels=None, col_labels=None, figsize=(5.2, 4.
     save(fig, stem)
 
 
-def panel_A(exclude_perk=False):
-    """Accuracy bars. exclude_perk=True draws the same panel over the three datasets that panels B-E use (no pERK EGF10)."""
+def panel_A():
+    """Accuracy bars over the three datasets used in panels B-E (rows with "Plotted in Fig S16A" = True; pERK EGF10 is in the table but not plotted)."""
     f = pd.read_csv(DATA / "FigS16A_accuracy_by_fold.csv")
-    if exclude_perk:
-        f = f[f["Dataset"] != "pERK EGF10"]
-    tag = "_3datasets" if exclude_perk else ""
+    f = f[f["Plotted in Fig S16A"]]
     per_ds = f.groupby(["Classifier", "Dataset"])["Accuracy"].mean().unstack("Dataset").loc[CLASSIFIERS]       # mean of the 5 folds
     out = pd.DataFrame({"Mean accuracy over datasets": per_ds.mean(axis=1), "SD over datasets (ddof=1)": per_ds.std(axis=1, ddof=1)})
-    out.round(4).join(per_ds.round(4)).to_csv(DATA / f"FigS16A_plot_values{tag}.csv", index_label="Classifier")
+    out.round(4).join(per_ds.round(4)).to_csv(DATA / "FigS16A_plot_values.csv", index_label="Classifier")
     fig, ax = plt.subplots(figsize=(4.6, 5))
     x = np.arange(3)
     ax.bar(x, out.iloc[:, 0], width=0.6, color=[BAR_COLOR[c] for c in CLASSIFIERS], zorder=3)
@@ -136,7 +134,7 @@ def panel_A(exclude_perk=False):
         ax.spines[s].set_visible(False)
     for s in ("left", "bottom"):
         ax.spines[s].set_color(GRIDLINE)
-    save(fig, f"FigS16A_accuracy{tag}")
+    save(fig, "FigS16A_accuracy")
 
 
 def panel_B():
@@ -182,4 +180,4 @@ def panel_E():
 
 
 if __name__ == "__main__":
-    panel_A(); panel_A(exclude_perk=True); panel_B(); panel_C(); panel_D(); panel_E()
+    panel_A(); panel_B(); panel_C(); panel_D(); panel_E()

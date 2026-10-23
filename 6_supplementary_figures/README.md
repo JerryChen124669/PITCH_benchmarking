@@ -49,7 +49,7 @@ attributes to the target, and only PITCH requests four contextual features; MLP 
 
 ## Figure S16. Effects of classifier choice and decision-tree settings on PITCH hypothesis generation
 (A) Logistic regression (LR), decision tree (DT), and random forest (RF) achieve comparable accuracy in predicting IG-derived labels to classify the cell groups.
-(n = 4 empirical prompts) (B) Hypothesis-generation performance remains comparable across classifiers using the 5 criteria metric. (C) Pairwise comparisons show
+(n = 3 empirical prompts) (B) Hypothesis-generation performance remains comparable across classifiers using the 5 criteria metric. (C) Pairwise comparisons show
 substantial agreement among hypotheses generated using different classifiers. Therefore, (B) and (C) support flexibility in classifier choice according to
 analytical priorities. The default setting comprises 30 candidate features and a maximum tree depth of 4. (D) Varying DT depth and candidate feature-pool size
 yields similar hypothesis-generation quality across six criteria (n = 3 datasets); (E) Pairwise hypothesis similarity shows substantial similarity between the
@@ -57,7 +57,7 @@ tested settings on a ten-point scale (n = 3 datasets).
 
 | Panel | Data | Computation | Datasets |
 |---|---|---|---|
-| A | `FigS16A_accuracy_by_fold.csv` | stratified 5-fold CV accuracy per dataset (mean of folds); bar = mean over datasets, error bar = SD (n-1) over datasets | 4: CITE-seq CD45RA, CosMx Ki-67, Gouwens input resistance, pERK EGF10 (`FigS16A_accuracy_3datasets.*` is the same panel without pERK EGF10, n = 3) |
+| A | `FigS16A_accuracy_by_fold.csv` | stratified 5-fold CV accuracy per dataset (mean of folds); bar = mean over the 3 datasets, error bar = SD (n-1) over the 3 datasets | 3 (rows with `Plotted in Fig S16A` = True: CITE-seq CD45RA, CosMx Ki-67, Gouwens input resistance; pERK EGF10 is in the table but not plotted) |
 | B | `FigS16B_scores_per_case.csv` | five criteria (Feature Comprehensiveness, Biological Plausibility, Mechanistic Synthesis, Hypothesis Specificity, Literature Grounding); mean over datasets | 3 (rows with `Plotted in Fig S16B` = True; pERK EGF10 is in the table but not plotted) |
 | C | `FigS16C_similarity_per_case.csv` | Hypothesis Similarity = mean of the six pairwise criteria, then mean over datasets | 3 (`Plotted in Fig S16C`) |
 | D | `FigS16D_scores_per_setting.csv` | six criteria (B's five plus Logic Rigor); mean over datasets | 3: CITE-seq CD45RA, CosMx Ki-67, Gouwens input resistance |
@@ -74,7 +74,7 @@ Setting names in the data: `30 genes, depth 4`, `60 genes, depth 4`, `30 genes, 
   Grounding score of the classifier comparison is the best of three judge calls (`records/classifier_comparison/judge_outputs/literature_grounding_bestof3_log.json`
   holds all three).
 - The judge and pairwise calls were not seeded; the A/B order of each pairwise comparison was randomized.
-- pERK EGF10 uses a curated 22-feature panel instead of an IG-ranked list; it is part of panel A only.
+- pERK EGF10 uses a curated 22-feature panel instead of an IG-ranked list; its rows are in the data tables but it is not plotted in any panel of S16 (all panels use the same 3 datasets).
 - The scripts in `records/*/code/` are the generation and judging code; they read the API keys from environment variables and need the original datasets.
 
 ## Figure S16: where each required record is
