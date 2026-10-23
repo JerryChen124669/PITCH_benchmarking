@@ -23,15 +23,15 @@ Factual accuracy (accuracy of specific molecular claims),Qwen3.5-9B,pERK,3.2,5,1
 Factual accuracy (accuracy of specific molecular claims),Qwen3.5-9B,GABA,2.6,5,1-5,True
 Factual accuracy (accuracy of specific molecular claims),Qwen3.5-9B,Ki-67,2.4,5,1-5,True
 Factual accuracy (accuracy of specific molecular claims),Qwen3.5-9B,Overall mean,2.733333333333334,5,1-5,True
-Pairwise mechanistic concordance,Gemini-3.1-Pro vs Qwen3.8-2.4T,pERK,4.0,5,1-5,False
-Pairwise mechanistic concordance,Gemini-3.1-Pro vs Qwen3.8-2.4T,GABA,3.8,5,1-5,False
-Pairwise mechanistic concordance,Gemini-3.1-Pro vs Qwen3.8-2.4T,Ki-67,3.8,5,1-5,False
-Pairwise mechanistic concordance,Gemini-3.1-Pro vs Qwen3.8-2.4T,Overall mean,3.8666666666666667,5,1-5,False
-Pairwise mechanistic concordance,Gemini-3.1-Pro vs Qwen3.5-9B,pERK,2.6,5,1-5,False
-Pairwise mechanistic concordance,Gemini-3.1-Pro vs Qwen3.5-9B,GABA,2.6,5,1-5,False
-Pairwise mechanistic concordance,Gemini-3.1-Pro vs Qwen3.5-9B,Ki-67,2.8,5,1-5,False
-Pairwise mechanistic concordance,Gemini-3.1-Pro vs Qwen3.5-9B,Overall mean,2.6666666666666665,5,1-5,False
-Pairwise mechanistic concordance,Qwen3.8-2.4T vs Qwen3.5-9B,pERK,3.0,5,1-5,False
-Pairwise mechanistic concordance,Qwen3.8-2.4T vs Qwen3.5-9B,GABA,2.6,5,1-5,False
-Pairwise mechanistic concordance,Qwen3.8-2.4T vs Qwen3.5-9B,Ki-67,3.4,5,1-5,False
-Pairwise mechanistic concordance,Qwen3.8-2.4T vs Qwen3.5-9B,Overall mean,3.0,5,1-5,False
+Pairwise similarity (mechanistic concordance),Gemini-3.1-Pro vs Qwen3.8-2.4T,pERK,4.0,5,1-5,True
+Pairwise similarity (mechanistic concordance),Gemini-3.1-Pro vs Qwen3.8-2.4T,GABA,3.8,5,1-5,True
+Pairwise similarity (mechanistic concordance),Gemini-3.1-Pro vs Qwen3.8-2.4T,Ki-67,3.8,5,1-5,True
+Pairwise similarity (mechanistic concordance),Gemini-3.1-Pro vs Qwen3.8-2.4T,Overall mean,3.8666666666666667,5,1-5,True
+Pairwise similarity (mechanistic concordance),Gemini-3.1-Pro vs Qwen3.5-9B,pERK,2.6,5,1-5,True
+Pairwise similarity (mechanistic concordance),Gemini-3.1-Pro vs Qwen3.5-9B,GABA,2.6,5,1-5,True
+Pairwise similarity (mechanistic concordance),Gemini-3.1-Pro vs Qwen3.5-9B,Ki-67,2.8,5,1-5,True
+Pairwise similarity (mechanistic concordance),Gemini-3.1-Pro vs Qwen3.5-9B,Overall mean,2.6666666666666665,5,1-5,True
+Pairwise similarity (mechanistic concordance),Qwen3.8-2.4T vs Qwen3.5-9B,pERK,3.0,5,1-5,True
+Pairwise similarity (mechanistic concordance),Qwen3.8-2.4T vs Qwen3.5-9B,GABA,2.6,5,1-5,True
+Pairwise similarity (mechanistic concordance),Qwen3.8-2.4T vs Qwen3.5-9B,Ki-67,3.4,5,1-5,True
+Pairwise similarity (mechanistic concordance),Qwen3.8-2.4T vs Qwen3.5-9B,Overall mean,3.0,5,1-5,True

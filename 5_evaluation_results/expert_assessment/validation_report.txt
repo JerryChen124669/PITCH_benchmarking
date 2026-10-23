@@ -8,7 +8,7 @@ PASS  no duplicate ratings; 36 ratings per assessor (180 in total)
 PASS  each dataset's 3 blind labels map to 3 different models
 PASS  the shown-hypothesis files exist
 PASS  shown texts match the recorded SHA-256 prefixes
-      Figure 7E: 12 plotted values, max |difference| to the recomputed means = 0.00e+00; all match = True; assessor-level file consistent with the ratings = True
+      Figure 7E: 24 plotted values, max |difference| to the recomputed means = 4.44e-16; all match = True; assessor-level files (45 + 45 scores) consistent with the ratings = True
 PASS  aggregate_expert_ratings.py reproduces figure_7E_plotting_input.csv
 PASS  no e-mail addresses, timestamps, URLs or personal paths in any file
 PASS  no raw survey export or workbook is included
