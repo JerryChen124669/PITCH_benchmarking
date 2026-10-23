@@ -7,8 +7,8 @@ Commits that last changed the 144 canonical selected answers (3_answers/<model>/
   1f15941f0f28d6f37a200f7a74e6784def8cb8b6   1 model folder
 Repository HEAD before the provenance, expert-assessment and version-manifest records were added:
   10df1c9424be802a915f9831f25eec5913155549
-Commit of the archived benchmark to cite (adds the provenance, expert-assessment and version-manifest records, the label correction of the six Gemma 4 12B files the Figure 7E data and the label-mapping source document):
-  11949d81e9d5e14cb8ef646bae88f5ca5a755bd6
+Commit of the archived benchmark to cite (adds the provenance, expert-assessment and version-manifest records, the label correction of the six Gemma 4 12B files the Figure 7E data the label-mapping source document, the questionnaire and background documents):
+  a73ab4c899058b7a49e93a2249288eb07b50aed6
 (The 144 responses themselves are identical in all of these commits; the answer text of every file is checked by 3_answers/selection_provenance/canonical_answer_text.sha256.)
 What a commit hash is: a 40-character identifier computed by git from the full content and history of the repository at that commit; checking out this commit (git checkout <hash>) always returns exactly this version of every file.
 Validation: 3_answers/selection_provenance/validate_selection_provenance.py checks the 144 canonical files against canonical_selected_answers.sha256 and canonical_answer_text.sha256.
