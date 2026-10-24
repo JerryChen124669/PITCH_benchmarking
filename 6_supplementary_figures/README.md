@@ -52,7 +52,7 @@ What the three conditions were given (see `2_prompts/ablation_conditions/README.
 attributes to the target, and only PITCH requests four contextual features; MLP + IG and Measurement-only ask the LLM to identify the relevant features itself.
 
 ## Figure S16. Effects of classifier choice and decision-tree settings on PITCH hypothesis generation
-(A) Logistic regression (LR), decision tree (DT), and random forest (RF) achieve comparable out-of-fold balanced accuracy in predicting IG-derived labels (bars: mean ± SD across the CITE-seq, CosMx and Gouwens datasets; points: individual datasets; dashed line: 50%, the accuracy of a classifier with no discrimination).
+(A) Logistic regression (LR), decision tree (DT), and random forest (RF) achieve comparable out-of-fold balanced accuracy in predicting IG-derived labels (bars: mean ± SD across the CITE-seq, CosMx and Gouwens datasets; points: individual datasets; dashed line: 50%, the balanced-accuracy no-discrimination baseline).
 (n = 3 empirical prompts) (B) Hypothesis-generation performance remains comparable across classifiers using the 5 criteria metric. (C) Pairwise comparisons show
 substantial agreement among hypotheses generated using different classifiers. Therefore, (B) and (C) support flexibility in classifier choice according to
 analytical priorities. The default setting comprises 30 candidate features and a maximum tree depth of 4. (D) Varying DT depth and candidate feature-pool size
@@ -79,8 +79,7 @@ The out-of-fold predictions were produced by `records/classifier_comparison/held
 ## Facts a reader should know before relying on a panel
 - The classifiers are compared on the same IG-derived binary label (top 10% of positive IG attribution = class 1) and the same candidate features, using stratified 5-fold
   cross-validation over all cells (seed 42; class weights {0: 1, 1: 4}; LR standardized inside each fold; DT depth 4; RF 200 trees, depth 4). The MLP, IG ranking and
-  label are computed once on all cells before the cross-validation, and per-cell held-out predictions were not saved; panel A therefore measures how well each
-  classifier reproduces the IG-derived label, and only per-fold metrics are available (`records/classifier_comparison/classifier_perf_run.log`).
+  label are computed once on all cells before the cross-validation. The out-of-fold prediction of every cell (class and positive-class probability, with its fold) is saved in `data/FigS16A_oof_predictions.csv.gz`; panel A therefore measures how well each classifier reproduces the IG-derived label on held-out cells, not an independent test of the label.
 - One answer was generated per (dataset, classifier) and per (dataset, setting) with Gemini-3.1-pro-preview (temperature 0.3 in the saved scripts). The Literature
   Grounding score of the classifier comparison is the best of three judge calls (`records/classifier_comparison/judge_outputs/literature_grounding_bestof3_log.json`
   holds all three).

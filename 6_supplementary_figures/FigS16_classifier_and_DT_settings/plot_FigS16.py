@@ -5,7 +5,7 @@ data/FigS16*_plot_values.csv with the numbers that are drawn.
 
   A  balanced accuracy of LR / DT / RF in predicting the IG-derived label, from the saved out-of-fold predictions (data/FigS16A_oof_predictions.csv.gz,
      stratified 5-fold CV, the same folds for the three classifiers): balanced accuracy per fold, mean of the 5 folds per dataset, then mean +/- SD
-     (ddof = 1) across CITE-seq, CosMx and Gouwens; the three dataset values are overlaid; dashed line = 50%, the all-background classifier
+     (ddof = 1) across CITE-seq, CosMx and Gouwens; the three dataset values are overlaid; dashed line = 50%, the balanced-accuracy no-discrimination baseline (a classifier that predicts one class for every cell, or predicts at random)
   B  five criteria per classifier: mean over the datasets with "Plotted in Fig S16B" = True (CITE-seq CD45RA, CosMx Ki-67, Gouwens input resistance)
   C  Hypothesis Similarity between classifiers: mean over the datasets with "Plotted in Fig S16C" = True of the mean of the six pairwise criteria
   D  six criteria per decision-tree setting: mean over the 3 datasets

@@ -1,11 +1,14 @@
 #!/bin/bash
 # Reproduces the five figures of the paper from the judged data in ../5_evaluation_results.
-# Run from a working directory that holds the scripts in this folder (including model_registry.json) together with
-# evaluation_results_rubric_v12/ and pairwise_similarity_results_v2/ from ../5_evaluation_results/ (see README.md).
+# Run it directly from its location in the repository (no staging or copying of files needed):
+#     bash 4_evaluation_code/reproduce_figures.sh        (from any directory)
 # Needs numpy, pandas, scipy, scikit-learn, matplotlib, Pillow (no API key: nothing is re-judged).
+# Outputs are written into ../5_evaluation_results (the figure files that are already there are overwritten with identical content).
 set -e
-FINAL=pairwise_similarity_results_v2/FINAL_3categories_similarity_and_performance
-SEL=pairwise_similarity_results_v2/FINAL_all_models_no_temp0/selected_models_4cases
+cd "$(dirname "$0")"
+RES=../5_evaluation_results
+FINAL=$RES/pairwise_similarity_results_v2/FINAL_3categories_similarity_and_performance
+SEL=$RES/pairwise_similarity_results_v2/FINAL_all_models_no_temp0/selected_models_4cases
 
 # Figure A  (similarity dendrogram + heat map): total similarity, all six criteria, six prompts, 22 models
 python analyze_pairwise_clustering.py --min-total-b 0 --exclude-models Qwen3.5-9B-think-temp0 biomistral pmc_llama \
@@ -20,10 +23,10 @@ python cluster_merge_diagnostics.py                      # -> $FINAL/cluster_mer
 python characterize_categories.py                        # -> $FINAL/category_profile_heatmap.svg
 
 # Figure C  (total hypothesis-generation score, 24 models: six criteria without zone identification, six prompts)
-python evaluation_results_rubric_v12/total_score_6cases_excl_zone_identification/plot_total_score_barplot.py
+python $RES/evaluation_results_rubric_v12/total_score_6cases_excl_zone_identification/plot_total_score_barplot.py
 # per-criterion charts (four prompts), optional:
-python plot_evaluation_pillars.py --eval-dir evaluation_results_rubric_v12 --exclude-prompts pRPS6 IL2RA \
-    --out-dir evaluation_results_rubric_v12/1_pillar_plots_4cases_excl_pRPS6_IL2RA
+python plot_evaluation_pillars.py --eval-dir $RES/evaluation_results_rubric_v12 --exclude-prompts pRPS6 IL2RA \
+    --out-dir $RES/evaluation_results_rubric_v12/1_pillar_plots_4cases_excl_pRPS6_IL2RA
 
 # Figure D  (quality eligibility vs mechanistic diversity): four prompts
 python quality_vs_diversity_selection.py --assignments "$FINAL/cluster_assignments.csv" --exclude-cases IL2RA pRPS6 --strict --redundant-below 2 \

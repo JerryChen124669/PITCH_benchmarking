@@ -52,8 +52,10 @@ from scipy.stats import spearmanr
 from analyze_pairwise_clustering import PAIRWISE_DIR, _place_labels, load_long_table, model_short_name
 from model_registry import load_registry
 
+from paths import RESULTS_DIR
+
 SCRIPT_DIR = Path(__file__).resolve().parent
-DEFAULT_SCORES = SCRIPT_DIR / "evaluation_results_rubric_v12" / "all_scores.csv"
+DEFAULT_SCORES = RESULTS_DIR / "evaluation_results_rubric_v12" / "all_scores.csv"
 OUT_DIR = PAIRWISE_DIR / "FINAL_ge200B_10models_with_gemini" / "diversity_vs_quality"
 
 SIM_PILLARS = ["P3", "P4"]

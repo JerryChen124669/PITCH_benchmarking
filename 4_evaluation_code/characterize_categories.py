@@ -58,13 +58,15 @@ from scipy.stats import kruskal, mannwhitneyu
 
 from analyze_pairwise_clustering import CLUSTER_PALETTE, model_short_name
 
+from paths import RESULTS_DIR
+
 SCRIPT_DIR = Path(__file__).resolve().parent
-PAIRWISE_DIR = SCRIPT_DIR / "pairwise_similarity_results_v2"
+PAIRWISE_DIR = RESULTS_DIR / "pairwise_similarity_results_v2"
 # The final deliverable folder: analyze_pairwise_clustering.py writes the similarity figures and
 # cluster_assignments.csv here, and this script adds the performance figures and tables beside them.
 FINAL_DIR = PAIRWISE_DIR / "FINAL_3categories_similarity_and_performance"
 DEFAULT_ASSIGNMENTS = FINAL_DIR / "cluster_assignments.csv"
-DEFAULT_SCORES = SCRIPT_DIR / "evaluation_results_rubric_v12" / "all_scores.csv"
+DEFAULT_SCORES = RESULTS_DIR / "evaluation_results_rubric_v12" / "all_scores.csv"
 OUT_DIR = FINAL_DIR
 
 # (score column, display label, domain)

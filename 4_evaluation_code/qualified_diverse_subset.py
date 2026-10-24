@@ -51,8 +51,10 @@ from scipy.spatial.distance import squareform
 
 from analyze_pairwise_clustering import PAIRWISE_DIR, _place_labels, load_long_table, model_short_name
 
+from paths import RESULTS_DIR
+
 SCRIPT_DIR = Path(__file__).resolve().parent
-DEFAULT_SCORES = SCRIPT_DIR / "evaluation_results_rubric_v12" / "all_scores.csv"
+DEFAULT_SCORES = RESULTS_DIR / "evaluation_results_rubric_v12" / "all_scores.csv"
 OUT_DIR = PAIRWISE_DIR / "FINAL_all_models_no_temp0" / "qualified_diverse_subset"
 BLUE, RED, ORANGE, GREY, INK, MUTED = "#4575B4", "#D73027", "#FC8D59", "#9a9a9a", "#222222", "#666666"
 

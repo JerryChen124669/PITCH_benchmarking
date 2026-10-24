@@ -4,19 +4,21 @@ Everything needed to reproduce the five evaluation figures from the judged data,
 judgements. `reproduce_figures.sh` holds the exact command for each figure; all five regenerate identically (SVG text and
 bars, PDF/JPG pixels) from the data in `../5_evaluation_results/`.
 
-| Figure | File | Script |
-|---|---|---|
-| A. Total-similarity dendrogram and heat map | `.../FINAL_3categories_similarity_and_performance/dendrogram_heatmap.svg` | `analyze_pairwise_clustering.py` |
-| B. Category profile heat map | `.../FINAL_3categories_similarity_and_performance/category_profile_heatmap.svg` | `cluster_merge_diagnostics.py` | Diagnostics of the post-hoc merge of clusters 2, 3 and 5 (silhouette per cluster, within / between-cluster similarity, a bootstrap over the six prompts with 2,000 resamples and seed 0, and the rubric contrast of the merged group). It does not choose the clusters. Output: `FINAL_3categories_similarity_and_performance/cluster_merge_diagnostics/`. |
-| `characterize_categories.py` |
-| C. Total hypothesis-generation score, 24 models | `evaluation_results_rubric_v12/total_score_6cases_excl_zone_identification/total_score_barplot_6cases_excl_zone.pdf` | `total_score_6cases_excl_zone_identification/plot_total_score_barplot.py` (in the results folder, with its data) |
-| D. Quality eligibility vs mechanistic diversity | `.../selected_models_4cases/plots/1_quality_vs_diversity_selection.svg` | `quality_vs_diversity_selection.py` |
-| E. Mean quality vs mean distinctiveness | `.../selected_models_4cases/plots/2_mean_quality_vs_mean_distinctiveness.svg` | `diversity_vs_quality.py` |
+| Figure (script label) | Manuscript panel | File | Script |
+|---|---|---|---|
+| A. Total-similarity dendrogram and heat map | 7A | `.../FINAL_3categories_similarity_and_performance/dendrogram_heatmap.svg` | `analyze_pairwise_clustering.py` |
+| B. Category profile heat map | 7B | `.../FINAL_3categories_similarity_and_performance/category_profile_heatmap.svg` | `characterize_categories.py` |
+| C. Total hypothesis-generation score, 24 models | 7C | `evaluation_results_rubric_v12/total_score_6cases_excl_zone_identification/total_score_barplot_6cases_excl_zone.pdf` | `total_score_6cases_excl_zone_identification/plot_total_score_barplot.py` (in the results folder, with its data) |
+| D. Quality eligibility vs mechanistic diversity | 7D | `.../selected_models_4cases/plots/1_quality_vs_diversity_selection.svg` | `quality_vs_diversity_selection.py` |
+| E. Mean quality vs mean distinctiveness | 7F | `.../selected_models_4cases/plots/2_mean_quality_vs_mean_distinctiveness.svg` | `diversity_vs_quality.py` |
 
-## Working directory
-The scripts import each other and read their inputs from sibling folders. Put in one directory: all files from this
-folder, and `evaluation_results_rubric_v12/` and `pairwise_similarity_results_v2/` from `../5_evaluation_results/`.
-To rerun the judges (not needed for the figures) the selected answers from `../3_answers/` are also needed, as `trial_results/`.
+Also: `cluster_merge_diagnostics.py` reports numbers on the post-hoc merge of clusters 2, 3 and 5 (silhouette per cluster, within- and between-cluster similarity, a bootstrap over the six prompts with 2,000 resamples and seed 0, and the rubric contrast of the merged group; it does not choose the clusters; output `FINAL_3categories_similarity_and_performance/cluster_merge_diagnostics/`).
+Manuscript Figure 7E (blinded expert assessment) is reproduced from `../5_evaluation_results/expert_assessment/` (`aggregate_expert_ratings.py`).
+
+## Running
+Run the figure scripts directly from this folder in the repository, e.g. `bash reproduce_figures.sh` (from any directory): they read the judged data from `../5_evaluation_results/` through `paths.py` and need no staging or copying.
+If you copy the data folders (`evaluation_results_rubric_v12/`, `pairwise_similarity_results_v2/`) next to the scripts, those copies are used instead; `PITCH_RESULTS_DIR` overrides both.
+To rerun the judges (not needed for the figures) the selected answers from `../3_answers/` are also needed, as `trial_results/` next to the judging scripts.
 
 ## Judging scripts (already run; their outputs are in the results folder)
 | Script | Purpose |

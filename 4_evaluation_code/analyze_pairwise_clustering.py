@@ -76,9 +76,11 @@ from scipy.cluster.hierarchy import dendrogram, fcluster, linkage
 from scipy.spatial.distance import squareform
 from sklearn.metrics import silhouette_score
 
+from paths import RESULTS_DIR
+
 SCRIPT_DIR = Path(__file__).resolve().parent
-PAIRWISE_DIR = SCRIPT_DIR / "pairwise_similarity_results_v2"
-DEFAULT_PERFORMANCE_CSV = SCRIPT_DIR / "evaluation_results_rubric_v12" / "all_scores.csv"
+PAIRWISE_DIR = RESULTS_DIR / "pairwise_similarity_results_v2"
+DEFAULT_PERFORMANCE_CSV = RESULTS_DIR / "evaluation_results_rubric_v12" / "all_scores.csv"
 OUT_DIR = PAIRWISE_DIR / "clustering_analysis"
 
 # Full rubric criterion name -> short pillar code, in P1..P6 order (matches
