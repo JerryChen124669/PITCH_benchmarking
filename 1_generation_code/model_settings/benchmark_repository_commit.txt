@@ -7,8 +7,11 @@ Commits that last changed the 144 canonical selected answers (3_answers/<model>/
   1f15941f0f28d6f37a200f7a74e6784def8cb8b6   1 model folder
 Repository HEAD before the provenance, expert-assessment and version-manifest records were added:
   10df1c9424be802a915f9831f25eec5913155549
-Commit of the archived benchmark to cite (adds the provenance, expert-assessment and version-manifest records, the label correction of the six Gemma 4 12B files the Figure 7E data the label-mapping source document, the questionnaire and background documents):
-  a73ab4c899058b7a49e93a2249288eb07b50aed6
+Commit of the archived benchmark to cite (the complete repository content: answers, provenance, expert assessment, results, supplementary figures, documentation):
+  e69895d9b131034c50037f9a6b21c6967b0aeb85
 (The 144 responses themselves are identical in all of these commits; the answer text of every file is checked by 3_answers/selection_provenance/canonical_answer_text.sha256.)
 What a commit hash is: a 40-character identifier computed by git from the full content and history of the repository at that commit; checking out this commit (git checkout <hash>) always returns exactly this version of every file.
 Validation: 3_answers/selection_provenance/validate_selection_provenance.py checks the 144 canonical files against canonical_selected_answers.sha256 and canonical_answer_text.sha256.
+
+Frozen release: the git tag v1.0-submission marks the version to cite before submission. The tag points to the commit that adds this note, which differs from the commit above only in this file.
+DOI: not assigned yet (it can be minted by archiving the tagged release, for example with Zenodo's GitHub integration; add it to README.md when it exists).
