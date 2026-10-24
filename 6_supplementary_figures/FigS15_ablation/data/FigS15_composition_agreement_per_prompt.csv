@@ -1,7 +1,10 @@
-Condition,Prompt,Judge passes scored,Hypothesis composition agreement (mean of passes),Scores per pass
-PITCH,CITE-seq CD45RA,3,8.333,"[9, 8, 8]"
-PITCH,CosMx Ki-67,3,8.0,"[8, 8, 8]"
-PITCH,Gouwens input resistance,3,6.667,"[6, 6, 8]"
-MLP + IG,CITE-seq CD45RA,3,4.333,"[6, 4, 3]"
-MLP + IG,CosMx Ki-67,3,4.667,"[6, 4, 4]"
-MLP + IG,Gouwens input resistance,3,4.0,"[4, 4, 4]"
+Condition,Prompt,Judge passes scored,Hypothesis composition agreement (mean of passes),Scores per pass,LLMs in the group
+PITCH,CITE-seq CD45RA,3,8.333,"[9, 8, 8]","Gemini-3.1-pro-preview, GLM-5.3, DeepSeek V4.1 Flash, Qwen3.8-2.4T-A95B"
+PITCH,CosMx Ki-67,3,8.0,"[8, 8, 8]","Gemini-3.1-pro-preview, GLM-5.3, DeepSeek V4.1 Flash, Qwen3.8-2.4T-A95B"
+PITCH,Gouwens input resistance,3,6.667,"[6, 6, 8]","Gemini-3.1-pro-preview, GLM-5.3, DeepSeek V4.1 Flash, Qwen3.8-2.4T-A95B"
+MLP + IG,CITE-seq CD45RA,3,4.333,"[6, 4, 3]","Gemini-3.1-pro-preview, GLM-5.3, DeepSeek V4.1 Flash, Qwen3.8-2.4T-A95B"
+MLP + IG,CosMx Ki-67,3,4.667,"[6, 4, 4]","Gemini-3.1-pro-preview, GLM-5.3, DeepSeek V4.1 Flash, Qwen3.8-2.4T-A95B"
+MLP + IG,Gouwens input resistance,3,4.0,"[4, 4, 4]","Gemini-3.1-pro-preview, GLM-5.3, DeepSeek V4.1 Flash, Qwen3.8-2.4T-A95B"
+Measurement-only,CITE-seq CD45RA,3,5.0,"[5, 5, 5]","GLM-5.3, Qwen3.8-2.4T-A95B"
+Measurement-only,CosMx Ki-67,3,2.667,"[3, 3, 2]","GLM-5.3, DeepSeek V4.1 Flash, Qwen3.8-2.4T-A95B"
+Measurement-only,Gouwens input resistance,3,1.0,"[1, 1, 1]","Gemini-3.1-pro-preview, GLM-5.3"

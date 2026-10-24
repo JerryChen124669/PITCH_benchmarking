@@ -1,0 +1,33 @@
+{
+  "condition": "cond2_raw_data",
+  "dataset": "CosMx_CancerKi67",
+  "pass": 1,
+  "seed": 20,
+  "models": [
+    "zai-org/GLM-5.3",
+    "deepseek-ai/DeepSeek-V4.1-Flash",
+    "Qwen/Qwen3.8-2.4T-A95B"
+  ],
+  "order": [
+    {
+      "label": "A",
+      "model": "zai-org/GLM-5.3",
+      "picked_run": 2
+    },
+    {
+      "label": "B",
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "picked_run": 2
+    },
+    {
+      "label": "C",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "picked_run": 2
+    }
+  ],
+  "judge": {
+    "rationale": "Agreement is limited: all answers invoke RPL/RPS ribosomal contributors and A\u2013B additionally share TK1 and CDK1 in a cycling-cell explanation, but C centers distinct ribosomal genes and rejects consistent cell-cycle-marker involvement while many A/B contributors are absent elsewhere, so more than half of the molecular inventories differ and the shared-minority ceiling of 4 applies.",
+    "cross_model_agreement_score": 3
+  },
+  "score": 3
+}

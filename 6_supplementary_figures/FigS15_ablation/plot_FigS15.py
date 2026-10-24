@@ -7,8 +7,10 @@ Averaging, in this order:
   1. every answer was judged in two passes (gpt-5.6-sol, blind, five criteria); the answer's score = mean of its two passes;
   2. condition mean = mean of the answers' scores (PITCH n = 12, MLP + IG n = 12, Measurement-only n = 7; n = successfully generated answers;
      12 = 4 LLMs x 3 prompts);
-  3. hypothesis composition agreement: judged across the four LLMs within each prompt (3 passes, mean), then averaged over the three prompts.
-     It is defined for PITCH and MLP + IG only; Measurement-only is drawn at the centre (not measured).
+  3. hypothesis composition agreement: judged across the LLMs within each prompt (3 passes, mean), then averaged over the three prompts.
+     PITCH and MLP + IG: across all four LLMs. Measurement-only: across the LLMs that successfully generated an answer for that prompt
+     (CITE-seq GLM-5.3 + Qwen3.8; CosMx GLM-5.3 + DeepSeek V4.1 Flash + Qwen3.8; Gouwens Gemini-3.1-pro-preview + GLM-5.3), because no prompt has
+     a Measurement-only answer from all four LLMs. Groups of two or three answers agree more easily than groups of four, so this point is not strictly comparable.
 Usage: python plot_FigS15.py
 """
 from pathlib import Path
@@ -45,7 +47,7 @@ def main():
     for c in CONDITIONS:
         values.loc[c, "n answers"] = n[c]
         values.loc[c, CRITERIA] = mean.loc[c, CRITERIA].values
-        values.loc[c, AGREEMENT] = ag[c] if c in ag.index else np.nan                                       # Measurement-only: not measured
+        values.loc[c, AGREEMENT] = ag[c]
     values.index.name = "Condition"
     values.round(3).to_csv(DATA / "FigS15_plot_values.csv")
 
@@ -67,7 +69,7 @@ def main():
     ax.fill_between(th, 0, 10, color="#8a2b2b", alpha=0.045, zorder=0)
     for c in CONDITIONS:
         col, mk, ls = STYLE[c]
-        v = values.loc[c, AXES].astype(float).fillna(0).values            # Measurement-only agreement drawn at the centre
+        v = values.loc[c, AXES].astype(float).values
         vc = np.concatenate([v, v[:1]])
         ac = np.concatenate([ang, ang[:1]])
         ax.plot(ac, vc, color=col, lw=2.2, ls=ls, marker=mk, ms=6, label=c, zorder=3)

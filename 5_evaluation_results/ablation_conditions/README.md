@@ -9,8 +9,8 @@ Datasets: CITE-seq CD45RA, CosMx Ki-67, Gouwens input resistance. Models: Gemini
 | `1_success_rate_table/` | generation rate table (`.xlsx`, `.csv`, `.md`): % of attempts that formulated a hypothesis, 95% Wilson CIs, attempts and per-dataset breakdown |
 | `2_quality_radar/scorecards/` | judge scores of the selected answers (`pass1`, `pass2` for PITCH and MLP + IG; `raw_pass1`, `raw_pass2` for measurement-only) |
 | `2_quality_radar/radar_all_models_average_6axes.*` | 6-axis radar, PITCH vs MLP + IG (datasheet `radar_6axes_datasheet.xlsx`) |
-| `2_quality_radar/radar_all_models_average_6axes_3conditions.*` | 6-axis radar for the three conditions; the sixth axis of measurement-only is plotted as 0 (not measured) (datasheet `radar_3conditions_datasheet.xlsx`) |
-| `4_hypothesis_composition_agreement/` | agreement scores across the four models (`data/` records, rationale CSV, datasheet, bar plot) |
+| `2_quality_radar/radar_all_models_average_6axes_3conditions.*` | 6-axis radar for the three conditions; the sixth axis of measurement-only is the agreement among the LLMs with a successfully generated answer (datasheet `radar_3conditions_datasheet.xlsx`) |
+| `4_hypothesis_composition_agreement/` | agreement scores across the four models (`data/` records, rationale CSV, datasheet, bar plot); `data_available_models/` = measurement-only agreement among the LLMs that generated a hypothesis (records of 3 prompts x 3 passes, scores and rationales) |
 
 ## Generation rate
 Percentage of attempts (all completed calls, including retries) that committed to a hypothesis, 95% Wilson CI in parentheses, successes/attempts in brackets.
@@ -32,7 +32,7 @@ The axis is called **Hypothesis Specificity** in the manuscript (Figure S15). Th
 | Hypothesis Specificity | 7.33 | 5.83 | 4.86 |
 | Mechanistic Synthesis | 7.17 | 5.75 | 4.79 |
 | Literature Grounding | 7.42 | 7.96 | 7.64 |
-| Hypothesis composition agreement (across the 4 models) | 7.67 | 4.33 | not measured (plotted as 0) |
+| Hypothesis composition agreement (PITCH, MLP + IG: across the 4 models; measurement-only: among the LLMs with a successfully generated answer, 2-3 per prompt) | 7.67 | 4.33 | 2.89 |
 
 Notes: quality scores are the mean of two judge passes on one selected committed answer per model, condition and dataset (12 answers per condition; 7 for measurement-only, where a committed answer exists in 7 of 12 cells);
 the agreement score is the mean of three random-order judging passes per prompt (3 prompts per condition). The PITCH prompt still asks for four contextual features whereas the MLP + IG prompt does not.

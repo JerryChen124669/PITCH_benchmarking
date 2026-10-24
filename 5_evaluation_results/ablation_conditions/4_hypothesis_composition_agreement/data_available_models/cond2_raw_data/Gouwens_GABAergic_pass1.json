@@ -1,0 +1,27 @@
+{
+  "condition": "cond2_raw_data",
+  "dataset": "Gouwens_GABAergic",
+  "pass": 1,
+  "seed": 20,
+  "models": [
+    "gemini-3.1-pro-preview",
+    "zai-org/GLM-5.3"
+  ],
+  "order": [
+    {
+      "label": "A",
+      "model": "gemini-3.1-pro-preview",
+      "picked_run": 3
+    },
+    {
+      "label": "B",
+      "model": "zai-org/GLM-5.3",
+      "picked_run": 3
+    }
+  ],
+  "judge": {
+    "rationale": "Agreement is sparse: only LAMP5 weakly recurs as a possible high-resistance subtype marker, while Answer A centers MAPK4 with K2P/HCN regulation and Answer B centers PVALB with Kv3-associated fast-spiking identity; VIP is invoked incompatibly, so most molecular contributors differ and the shared-minority ceiling applies.",
+    "cross_model_agreement_score": 1
+  },
+  "score": 1
+}

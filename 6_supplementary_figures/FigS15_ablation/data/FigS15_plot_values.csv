@@ -1,4 +1,4 @@
 Condition,n answers,Feature Comprehensiveness,Biological Plausibility,Hypothesis Specificity,Mechanistic Synthesis,Literature Grounding,Hypothesis composition agreement
 PITCH,12.0,9.583,8.292,7.333,7.167,7.417,7.667
 MLP + IG,12.0,8.5,8.208,5.833,5.75,7.958,4.333
-Measurement-only,7.0,8.571,7.929,4.857,4.786,7.643,
+Measurement-only,7.0,8.571,7.929,4.857,4.786,7.643,2.889

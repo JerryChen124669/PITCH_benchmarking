@@ -12,9 +12,10 @@ Run from this folder (`python <script>`); paths resolve through `common.py` to `
 | `04a_judge_hypothesis_composition_agreement.py` | **hypothesis composition agreement**: four models' answers judged together in random order, 3 passes; `--dry-run` checks the rubric hash (0ffd5598c1bf...) | yes |
 | `04b_plot_hypothesis_composition_agreement.py` | bar plot and datasheet of the agreement score | no |
 | `02e_plot_radar_6axes.py` | **6-axis radar**, PITCH vs MLP + IG: 5 quality criteria + hypothesis composition agreement | no |
-| `02f_plot_radars_3conditions.py` | radars for all three conditions; its 6-axis version plots the measurement-only agreement as 0 (not measured) | no |
+| `04c_judge_hypothesis_composition_agreement_available_models.py` | **hypothesis composition agreement of the measurement-only condition**: the same rubric, judge and random-order passes as `04a`, applied to the models that have a successfully generated measurement-only answer for the prompt (CITE-seq 2, CosMx 3, Gouwens 2 answers); `--dry-run` shows the groups; `--conds` can also judge the other conditions on the same models | yes |
+| `02f_plot_radars_3conditions.py` | radars for all three conditions; its 6-axis version takes the measurement-only agreement from `04c` (PITCH and MLP + IG: across the 4 models, `04a`) | no |
 | `sampling/` | **measurement-only sampling**: `raw_data_sampler.py`, `run_ablation.py` and the modules it imports; rule, seed (42) and the sampled row indices (`measurement_only_sampled_cells.csv`) | token counting only |
 | `common.py`, `raw_prompt_versions.py`, `evaluation/` | shared paths and helpers; exact measurement-only prompt wordings; judge rubric module (`judge_evaluation.py` is the verbatim 7-criterion rubric, sha256 522c88817cdc...; it is not the same file as `../judge_evaluation.py` of the benchmark), rubrics | - |
 
-Order: `02a` -> `01`; `02b` (pass 1, pass 2; measurement-only with `--conds cond2_raw_data`) -> `02c`; `04a` -> `04b` -> `02e`, `02f`.
+Order: `02a` -> `01`; `02b` (pass 1, pass 2; measurement-only with `--conds cond2_raw_data`) -> `02c`; `04a` -> `04b` -> `02e`; `04c` (measurement-only agreement) -> `02f`. The manuscript panel (Fig. S15) is drawn from tables by `6_supplementary_figures/FigS15_ablation/plot_FigS15.py`.
 Results are in `../5_evaluation_results/ablation_conditions/`.

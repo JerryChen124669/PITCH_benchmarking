@@ -1,0 +1,263 @@
+[
+  {
+    "condition": "cond2_raw_data",
+    "dataset": "CITEseq_CD45RA_naive",
+    "pass": 1,
+    "seed": 20,
+    "models": [
+      "zai-org/GLM-5.3",
+      "Qwen/Qwen3.8-2.4T-A95B"
+    ],
+    "order": [
+      {
+        "label": "A",
+        "model": "Qwen/Qwen3.8-2.4T-A95B",
+        "picked_run": 1
+      },
+      {
+        "label": "B",
+        "model": "zai-org/GLM-5.3",
+        "picked_run": 2
+      }
+    ],
+    "judge": {
+      "rationale": "Roughly half of the molecular explanation is shared through GNLY, CCL5, and the IGHM/CD79A/TCL1A B-cell subset, while A uniquely emphasizes TRDC, IL2RB, MS4A1, and PTPRC isoform biology and B emphasizes GZMB, NKG7, FGFBP2, and IGHD, so the incomplete-coverage ceiling of 6 applies.",
+      "cross_model_agreement_score": 5
+    },
+    "score": 5
+  },
+  {
+    "condition": "cond2_raw_data",
+    "dataset": "CITEseq_CD45RA_naive",
+    "pass": 2,
+    "seed": 20,
+    "models": [
+      "zai-org/GLM-5.3",
+      "Qwen/Qwen3.8-2.4T-A95B"
+    ],
+    "order": [
+      {
+        "label": "A",
+        "model": "zai-org/GLM-5.3",
+        "picked_run": 2
+      },
+      {
+        "label": "B",
+        "model": "Qwen/Qwen3.8-2.4T-A95B",
+        "picked_run": 1
+      }
+    ],
+    "judge": {
+      "rationale": "About half of the explanatory molecular content overlaps\u2014GNLY and CCL5 support a cytotoxic lymphocyte state, while IGHM, CD79A, and TCL1A mark high-CD45RA B-cell subsets\u2014but A uniquely relies on GZMB/NKG7/FGFBP2 and B on TRDC/IL2RB/PTPRC, so the incomplete-coverage ceiling of 6 applies.",
+      "cross_model_agreement_score": 5
+    },
+    "score": 5
+  },
+  {
+    "condition": "cond2_raw_data",
+    "dataset": "CITEseq_CD45RA_naive",
+    "pass": 3,
+    "seed": 20,
+    "models": [
+      "zai-org/GLM-5.3",
+      "Qwen/Qwen3.8-2.4T-A95B"
+    ],
+    "order": [
+      {
+        "label": "A",
+        "model": "Qwen/Qwen3.8-2.4T-A95B",
+        "picked_run": 1
+      },
+      {
+        "label": "B",
+        "model": "zai-org/GLM-5.3",
+        "picked_run": 2
+      }
+    ],
+    "judge": {
+      "rationale": "Roughly half to two-thirds of the molecular content overlaps through GNLY, CCL5, PTPRC isoform biology, and the IGHM/CD79A/TCL1A B-cell subset, while A uniquely emphasizes TRDC, IL2RB, and MS4A1 and B emphasizes GZMB, NKG7, FGFBP2, and IGHD, so the incomplete-coverage ceiling of 6 applies.",
+      "cross_model_agreement_score": 5
+    },
+    "score": 5
+  },
+  {
+    "condition": "cond2_raw_data",
+    "dataset": "CosMx_CancerKi67",
+    "pass": 1,
+    "seed": 20,
+    "models": [
+      "zai-org/GLM-5.3",
+      "deepseek-ai/DeepSeek-V4.1-Flash",
+      "Qwen/Qwen3.8-2.4T-A95B"
+    ],
+    "order": [
+      {
+        "label": "A",
+        "model": "zai-org/GLM-5.3",
+        "picked_run": 2
+      },
+      {
+        "label": "B",
+        "model": "Qwen/Qwen3.8-2.4T-A95B",
+        "picked_run": 2
+      },
+      {
+        "label": "C",
+        "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+        "picked_run": 2
+      }
+    ],
+    "judge": {
+      "rationale": "Agreement is limited: all answers invoke RPL/RPS ribosomal contributors and A\u2013B additionally share TK1 and CDK1 in a cycling-cell explanation, but C centers distinct ribosomal genes and rejects consistent cell-cycle-marker involvement while many A/B contributors are absent elsewhere, so more than half of the molecular inventories differ and the shared-minority ceiling of 4 applies.",
+      "cross_model_agreement_score": 3
+    },
+    "score": 3
+  },
+  {
+    "condition": "cond2_raw_data",
+    "dataset": "CosMx_CancerKi67",
+    "pass": 2,
+    "seed": 20,
+    "models": [
+      "zai-org/GLM-5.3",
+      "deepseek-ai/DeepSeek-V4.1-Flash",
+      "Qwen/Qwen3.8-2.4T-A95B"
+    ],
+    "order": [
+      {
+        "label": "A",
+        "model": "zai-org/GLM-5.3",
+        "picked_run": 2
+      },
+      {
+        "label": "B",
+        "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+        "picked_run": 2
+      },
+      {
+        "label": "C",
+        "model": "Qwen/Qwen3.8-2.4T-A95B",
+        "picked_run": 2
+      }
+    ],
+    "judge": {
+      "rationale": "Agreement is limited: all three invoke RPL/RPS ribosomal contributors, A and C additionally share TK1, CDK1, and CKS2 in a cell-cycle explanation, but B instead centers on distinct ribosomal genes and rejects consistent cell-cycle-marker involvement, so most complete contributor inventories differ and the shared-minority ceiling of 4 applies.",
+      "cross_model_agreement_score": 3
+    },
+    "score": 3
+  },
+  {
+    "condition": "cond2_raw_data",
+    "dataset": "CosMx_CancerKi67",
+    "pass": 3,
+    "seed": 20,
+    "models": [
+      "zai-org/GLM-5.3",
+      "deepseek-ai/DeepSeek-V4.1-Flash",
+      "Qwen/Qwen3.8-2.4T-A95B"
+    ],
+    "order": [
+      {
+        "label": "A",
+        "model": "zai-org/GLM-5.3",
+        "picked_run": 2
+      },
+      {
+        "label": "B",
+        "model": "Qwen/Qwen3.8-2.4T-A95B",
+        "picked_run": 2
+      },
+      {
+        "label": "C",
+        "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+        "picked_run": 2
+      }
+    ],
+    "judge": {
+      "rationale": "Agreement is sparse: A and B comparably implicate TK1 and CDK1, while A and C overlap on RPL36/ribosomal activity, but C rejects the specific cell-cycle-marker explanation and most named contributors are not shared across all models, so the shared-minority ceiling applies.",
+      "cross_model_agreement_score": 2
+    },
+    "score": 2
+  },
+  {
+    "condition": "cond2_raw_data",
+    "dataset": "Gouwens_GABAergic",
+    "pass": 1,
+    "seed": 20,
+    "models": [
+      "gemini-3.1-pro-preview",
+      "zai-org/GLM-5.3"
+    ],
+    "order": [
+      {
+        "label": "A",
+        "model": "gemini-3.1-pro-preview",
+        "picked_run": 3
+      },
+      {
+        "label": "B",
+        "model": "zai-org/GLM-5.3",
+        "picked_run": 3
+      }
+    ],
+    "judge": {
+      "rationale": "Agreement is sparse: only LAMP5 weakly recurs as a possible high-resistance subtype marker, while Answer A centers MAPK4 with K2P/HCN regulation and Answer B centers PVALB with Kv3-associated fast-spiking identity; VIP is invoked incompatibly, so most molecular contributors differ and the shared-minority ceiling applies.",
+      "cross_model_agreement_score": 1
+    },
+    "score": 1
+  },
+  {
+    "condition": "cond2_raw_data",
+    "dataset": "Gouwens_GABAergic",
+    "pass": 2,
+    "seed": 20,
+    "models": [
+      "gemini-3.1-pro-preview",
+      "zai-org/GLM-5.3"
+    ],
+    "order": [
+      {
+        "label": "A",
+        "model": "zai-org/GLM-5.3",
+        "picked_run": 3
+      },
+      {
+        "label": "B",
+        "model": "gemini-3.1-pro-preview",
+        "picked_run": 3
+      }
+    ],
+    "judge": {
+      "rationale": "The primary explanations rely on distinct contributors\u2014Pvalb and Kv3-family channels in Answer A versus Mapk4, K2P, and HCN channels in Answer B\u2014with only sparse subtype-marker overlap such as LAMP5 and differing VIP interpretations, so most molecular content differs and the shared-minority ceiling applies.",
+      "cross_model_agreement_score": 1
+    },
+    "score": 1
+  },
+  {
+    "condition": "cond2_raw_data",
+    "dataset": "Gouwens_GABAergic",
+    "pass": 3,
+    "seed": 20,
+    "models": [
+      "gemini-3.1-pro-preview",
+      "zai-org/GLM-5.3"
+    ],
+    "order": [
+      {
+        "label": "A",
+        "model": "gemini-3.1-pro-preview",
+        "picked_run": 3
+      },
+      {
+        "label": "B",
+        "model": "zai-org/GLM-5.3",
+        "picked_run": 3
+      }
+    ],
+    "judge": {
+      "rationale": "Agreement is sparse: only LAMP5 has a compatible subtype-marker role, while VIP is framed differently and the primary explanations rely on distinct contributors (MAPK4 with K2P/HCN channels versus PVALB with Kv3 channels), so well under one-quarter of the molecular content is shared.",
+      "cross_model_agreement_score": 1
+    },
+    "score": 1
+  }
+]

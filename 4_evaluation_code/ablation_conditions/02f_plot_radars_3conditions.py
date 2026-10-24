@@ -4,8 +4,9 @@ Measurement-only scores: only 7 of the 12 (model, prompt) cells have a committed
 available cell was judged (same 5-pillar judge, two passes; 3_answers/ablation_conditions/selected_answers/cond2_raw_data, 02a + 02b). Plotted value = mean of the two passes; the measurement-only average is over the
 7 answers (not balanced across models). PITCH and MLP + IG are the 12 answers per condition of result 2.
   * radar_all_models_average_5axes_3conditions  5 pillars, 3 conditions (all-model average)
-  * radar_all_models_average_6axes_3conditions  the same + hypothesis composition agreement; agreement of the MEASUREMENT-ONLY condition is set to 0 for plotting (it could not be computed:
-                                                  measurement-only answers do not exist for all four models on every prompt)
+  * radar_all_models_average_6axes_3conditions  the same + hypothesis composition agreement. PITCH and MLP + IG: agreement across all 4 models (result 4, 04a). MEASUREMENT-ONLY: agreement among the
+                                                  models that have a successfully generated answer for the prompt (3, 2 and 2 answers per prompt; 04c), because measurement-only answers do
+                                                  not exist for all four models on any prompt. Groups of 2-3 answers agree more easily than groups of 4, so this point is not strictly comparable.
   * radar_model_<model>_5axes_3conditions       5 pillars, 3 conditions per model (raw n: Gemini 1, GLM 3, DeepSeek 1, Qwen 2)
   * radar_3conditions_datasheet.xlsx            every plotted number, the n behind it and the individual measurement-only scores
 Usage: python 02f_plot_radars_3conditions.py
@@ -85,13 +86,18 @@ def main():
     mdl = df.groupby(["model", "condition"])[KEYS].mean()
     n_mdl = df.groupby(["model", "condition"]).size()
     conc = pd.read_excel(ROOT / "4_hypothesis_composition_agreement" / "hypothesis_composition_agreement_datasheet.xlsx", sheet_name="Bars").set_index("condition")["mean_of_3_prompts"]
-    conc_val = {c: (float(conc[COND_LABEL[c]]) if c != "cond2_raw_data" else 0.0) for c in ALL_CONDS}
+    recs = json.loads((ROOT / "4_hypothesis_composition_agreement" / "data_available_models" / "all_agreement_available_models.json").read_text(encoding="utf-8"))
+    avail = pd.DataFrame([{"dataset": r["dataset"], "pass": r["pass"], "n_models": len(r["models"]), "score": r["score"]} for r in recs if r["condition"] == "cond2_raw_data"])
+    assert len(avail) == 9 and avail.score.notna().all()
+    avail_prompt = avail.groupby("dataset").score.mean()                 # mean of the 3 passes per prompt
+    conc_val = {c: float(conc[COND_LABEL[c]]) for c in ALL_CONDS if c != "cond2_raw_data"}
+    conc_val["cond2_raw_data"] = float(avail_prompt.mean())              # mean of the 3 prompts
 
     label = lambda c: f"{COND_LABEL[c].replace('Measurement-only', 'Measurement-only')} (n = {n_all[c]} answers)"
     foot5 = "Measurement-only: one committed answer per available (model, prompt) cell, 7 of 12 cells (GLM 3, Qwen 2, DeepSeek 1, Gemini 1); PITCH and MLP + IG: 12 answers each."
     radar(AX5, [(label(c), allm.loc[c][KEYS].values, c) for c in ALL_CONDS],
           "Hypothesis quality by evidence condition\nAll models averaged (3 datasets)", "radar_all_models_average_5axes_3conditions", foot5, ncol=1)
-    foot6 = (foot5 + "\nAxis 6: agreement across the 4 models (3 prompts per condition); it could not be computed for measurement-only (answers missing for some models) and is plotted as 0.")
+    foot6 = (foot5 + "\nAxis 6: agreement across the 4 models for PITCH and MLP + IG; for measurement-only, among the models with a successfully generated answer (3, 2 and 2 answers per prompt).")
     radar(AX6, [(label(c), np.append(allm.loc[c][KEYS].values, conc_val[c]), c) for c in ALL_CONDS],
           "Hypothesis quality and cross-model hypothesis composition agreement\nAll models averaged (3 datasets)", "radar_all_models_average_6axes_3conditions", foot6,
           highlight_last=True, ncol=1)
@@ -102,7 +108,7 @@ def main():
 
     with pd.ExcelWriter(OUT / "radar_3conditions_datasheet.xlsx", engine="openpyxl") as w:
         a = allm.reindex(ALL_CONDS); a.columns = PILLARS
-        a.insert(0, "n_answers", [int(n_all[c]) for c in ALL_CONDS]); a["Hypothesis composition agreement (plotted; measurement-only set to 0)"] = [conc_val[c] for c in ALL_CONDS]
+        a.insert(0, "n_answers", [int(n_all[c]) for c in ALL_CONDS]); a["Hypothesis composition agreement (measurement-only: available models only)"] = [conc_val[c] for c in ALL_CONDS]
         a.index = [COND_LABEL[c] for c in a.index]; a.index.name = "Condition"
         a.round(3).reset_index().to_excel(w, sheet_name="All_models_average", index=False)
         mm = mdl.reset_index(); mm["n_answers"] = [int(n_mdl[(r.model, r.condition)]) for r in mm.itertuples()]
@@ -112,12 +118,15 @@ def main():
         pd.DataFrame({"Measurement-only, model-balanced mean (mean of the 4 model means)": bal.values}, index=PILLARS).round(3).to_excel(w, sheet_name="Raw_model_balanced")
         r = raw.copy(); r["model"] = r.model.map(MODEL_LABEL); r["dataset"] = r.dataset.map(DATASET_LABEL)
         r.rename(columns=dict(zip(KEYS, PILLARS))).round(3).to_excel(w, sheet_name="Raw_individual_answers", index=False)
+        ap = avail_prompt.rename(index=DATASET_LABEL).reset_index(); ap.columns = ["Prompt", "Measurement-only agreement (mean of 3 passes)"]
+        ap["Models in the group"] = [int(avail[avail.dataset == d].n_models.iloc[0]) for d in avail_prompt.index]
+        ap.round(3).to_excel(w, sheet_name="Raw_agreement_per_prompt", index=False)
         pd.DataFrame({"note": [
             "Same 5-pillar blind judge as result 2 (gpt-5.6-sol, unmodified rubric, five-criterion preamble); plotted = mean of two passes.",
             "Measurement-only: 7 answers (one committed answer per available model x prompt cell). The measurement-only averages are over these 7 answers: GLM 3, Qwen 2, DeepSeek 1, Gemini 1 (sheet Raw_model_balanced shows the model-balanced mean).",
             "Most measurement-only answers were generated under earlier wordings of the measurement-only prompt (the judge was shown the wording each answer actually saw). Gemini's only raw answer (Gouwens) rests on a false claim about the data.",
-            "6-axis radar: hypothesis composition agreement of the measurement-only condition is set to 0 for plotting because it could not be computed; this is a placeholder, not a measured score.",
-            "Reproduce: 02a_select_answers.py, 02b_judge_quality.py --conds cond2_raw_data --out-dir ../../5_evaluation_results/ablation_conditions/2_quality_radar/scorecards/raw_pass1 (and raw_pass2), 02f_plot_radars_3conditions.py"]}).to_excel(w, sheet_name="README", index=False)
+            "6-axis radar, axis 6: PITCH and MLP + IG = hypothesis composition agreement across the 4 models (04a, mean of 3 prompts); measurement-only = agreement among the models with a successfully generated answer (CITE-seq GLM + Qwen, CosMx GLM + DeepSeek + Qwen, Gouwens Gemini + GLM; 04c; 3 passes per prompt, mean of 3 prompts). Smaller groups agree more easily, so this point is not strictly comparable.",
+            "Reproduce: 02a_select_answers.py, 02b_judge_quality.py --conds cond2_raw_data --out-dir ../../5_evaluation_results/ablation_conditions/2_quality_radar/scorecards/raw_pass1 (and raw_pass2), 04c_judge_hypothesis_composition_agreement_available_models.py, 02f_plot_radars_3conditions.py"]}).to_excel(w, sheet_name="README", index=False)
     print(a.round(2).to_string())
     print(f"-> {OUT}")
 

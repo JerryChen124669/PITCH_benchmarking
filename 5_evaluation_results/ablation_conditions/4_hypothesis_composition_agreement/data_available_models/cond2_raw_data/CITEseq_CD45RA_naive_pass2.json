@@ -1,0 +1,27 @@
+{
+  "condition": "cond2_raw_data",
+  "dataset": "CITEseq_CD45RA_naive",
+  "pass": 2,
+  "seed": 20,
+  "models": [
+    "zai-org/GLM-5.3",
+    "Qwen/Qwen3.8-2.4T-A95B"
+  ],
+  "order": [
+    {
+      "label": "A",
+      "model": "zai-org/GLM-5.3",
+      "picked_run": 2
+    },
+    {
+      "label": "B",
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "picked_run": 1
+    }
+  ],
+  "judge": {
+    "rationale": "About half of the explanatory molecular content overlaps\u2014GNLY and CCL5 support a cytotoxic lymphocyte state, while IGHM, CD79A, and TCL1A mark high-CD45RA B-cell subsets\u2014but A uniquely relies on GZMB/NKG7/FGFBP2 and B on TRDC/IL2RB/PTPRC, so the incomplete-coverage ceiling of 6 applies.",
+    "cross_model_agreement_score": 5
+  },
+  "score": 5
+}

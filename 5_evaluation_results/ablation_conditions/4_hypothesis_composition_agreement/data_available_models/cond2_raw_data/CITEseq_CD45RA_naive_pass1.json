@@ -1,0 +1,27 @@
+{
+  "condition": "cond2_raw_data",
+  "dataset": "CITEseq_CD45RA_naive",
+  "pass": 1,
+  "seed": 20,
+  "models": [
+    "zai-org/GLM-5.3",
+    "Qwen/Qwen3.8-2.4T-A95B"
+  ],
+  "order": [
+    {
+      "label": "A",
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "picked_run": 1
+    },
+    {
+      "label": "B",
+      "model": "zai-org/GLM-5.3",
+      "picked_run": 2
+    }
+  ],
+  "judge": {
+    "rationale": "Roughly half of the molecular explanation is shared through GNLY, CCL5, and the IGHM/CD79A/TCL1A B-cell subset, while A uniquely emphasizes TRDC, IL2RB, MS4A1, and PTPRC isoform biology and B emphasizes GZMB, NKG7, FGFBP2, and IGHD, so the incomplete-coverage ceiling of 6 applies.",
+    "cross_model_agreement_score": 5
+  },
+  "score": 5
+}

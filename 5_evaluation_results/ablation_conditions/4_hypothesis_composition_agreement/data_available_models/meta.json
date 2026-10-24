@@ -1,0 +1,22 @@
+{
+  "judge_model": "gpt-5.6-sol",
+  "rubric_sha256": "0ffd5598c1bf4051610f4da18fbdbaa856a22dcf632dfb2167273c977dd51a69",
+  "passes": 3,
+  "seed": 20,
+  "groups": {
+    "CITEseq_CD45RA_naive": [
+      "zai-org/GLM-5.3",
+      "Qwen/Qwen3.8-2.4T-A95B"
+    ],
+    "CosMx_CancerKi67": [
+      "zai-org/GLM-5.3",
+      "deepseek-ai/DeepSeek-V4.1-Flash",
+      "Qwen/Qwen3.8-2.4T-A95B"
+    ],
+    "Gouwens_GABAergic": [
+      "gemini-3.1-pro-preview",
+      "zai-org/GLM-5.3"
+    ]
+  },
+  "n_records": 9
+}

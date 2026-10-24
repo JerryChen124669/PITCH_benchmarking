@@ -33,13 +33,13 @@ FigS16_classifier_and_DT_settings/
 ## Figure S15. Ablation analysis of PITCH intermediate representations
 Mean scores across five hypothesis-quality criteria were compared for PITCH (blue, n=12), MLP + IG without DT rules (orange, n=12), and measurement-only input
 (green, n=7); n denotes successfully generated responses. Hypothesis-composition agreement was evaluated across four LLMs within each prompt for PITCH and
-MLP + IG and then averaged across three prompts. All metrics used 0-10 scales.
+MLP + IG, and across the LLMs that successfully generated a response for measurement-only (two or three per prompt), and then averaged across three prompts. All metrics used 0-10 scales.
 
 | Quantity | How it is computed (`plot_FigS15.py`) |
 |---|---|
 | Five criteria | each selected answer was judged twice by the same blind judge (gpt-5.6-sol); answer score = mean of the two passes; condition value = mean over its answers |
 | n | PITCH 12 and MLP + IG 12 (4 LLMs x 3 prompts); Measurement-only 7 (the answers that committed to a hypothesis: GLM 3, Qwen 2, DeepSeek 1, Gemini 1) |
-| Hypothesis composition agreement | judged across the four LLMs within each prompt (3 passes, mean), then mean over the 3 prompts: PITCH 7.67, MLP + IG 4.33. Not measured for Measurement-only (drawn at the centre) |
+| Hypothesis composition agreement | judged across the four LLMs within each prompt (3 passes, mean), then mean over the 3 prompts: PITCH 7.67, MLP + IG 4.33. Measurement-only: judged among the LLMs with a successfully generated answer for that prompt (CITE-seq GLM-5.3 + Qwen3.8; CosMx GLM-5.3 + DeepSeek V4.1 Flash + Qwen3.8; Gouwens Gemini-3.1-pro-preview + GLM-5.3; code `04c_judge_hypothesis_composition_agreement_available_models.py`, records `5_evaluation_results/ablation_conditions/4_hypothesis_composition_agreement/data_available_models/`): 2.89. Groups of two or three answers agree more easily than groups of four, so this point is not strictly comparable |
 | Prompts | CITE-seq CD45RA, CosMx Ki-67, Gouwens input resistance (3 prompts) |
 | LLMs | Gemini-3.1-pro-preview, GLM-5.3, DeepSeek V4.1 Flash, Qwen3.8-2.4T-A95B |
 

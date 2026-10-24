@@ -1,0 +1,27 @@
+{
+  "condition": "cond2_raw_data",
+  "dataset": "Gouwens_GABAergic",
+  "pass": 3,
+  "seed": 20,
+  "models": [
+    "gemini-3.1-pro-preview",
+    "zai-org/GLM-5.3"
+  ],
+  "order": [
+    {
+      "label": "A",
+      "model": "gemini-3.1-pro-preview",
+      "picked_run": 3
+    },
+    {
+      "label": "B",
+      "model": "zai-org/GLM-5.3",
+      "picked_run": 3
+    }
+  ],
+  "judge": {
+    "rationale": "Agreement is sparse: only LAMP5 has a compatible subtype-marker role, while VIP is framed differently and the primary explanations rely on distinct contributors (MAPK4 with K2P/HCN channels versus PVALB with Kv3 channels), so well under one-quarter of the molecular content is shared.",
+    "cross_model_agreement_score": 1
+  },
+  "score": 1
+}

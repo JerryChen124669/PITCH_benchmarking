@@ -1,0 +1,33 @@
+{
+  "condition": "cond2_raw_data",
+  "dataset": "CosMx_CancerKi67",
+  "pass": 3,
+  "seed": 20,
+  "models": [
+    "zai-org/GLM-5.3",
+    "deepseek-ai/DeepSeek-V4.1-Flash",
+    "Qwen/Qwen3.8-2.4T-A95B"
+  ],
+  "order": [
+    {
+      "label": "A",
+      "model": "zai-org/GLM-5.3",
+      "picked_run": 2
+    },
+    {
+      "label": "B",
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "picked_run": 2
+    },
+    {
+      "label": "C",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "picked_run": 2
+    }
+  ],
+  "judge": {
+    "rationale": "Agreement is sparse: A and B comparably implicate TK1 and CDK1, while A and C overlap on RPL36/ribosomal activity, but C rejects the specific cell-cycle-marker explanation and most named contributors are not shared across all models, so the shared-minority ceiling applies.",
+    "cross_model_agreement_score": 2
+  },
+  "score": 2
+}
