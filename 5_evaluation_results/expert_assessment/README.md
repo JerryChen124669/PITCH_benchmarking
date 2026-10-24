@@ -20,7 +20,7 @@ De-identified records of the blinded expert survey and the numbers plotted in Fi
 ## What the assessors did
 Three datasets (pERK / EGF, GABAergic input resistance with Fxyd6, Ki-67 with PTMA), each with three single-answer hypotheses from three models (Gemini-3.1-Pro, Qwen3.8-2.4T-A95B and Qwen3.5-9B) under anonymous labels A, B, C; the label order differs between datasets (`hypothesis_label_mapping.csv`).
 For every hypothesis the assessor gave three 1-5 scores: **Core biological plausibility**, **Mechanistic specificity and completeness**, **Accuracy of specific molecular claims** (called "Factual accuracy" in the figure data); then rated each of the three pairs for **mechanistic concordance** (1-5).
-Five assessors completed the survey. The CD45RA case was not part of the survey.
+**Assessor qualification:** the assessors were at the PhD-candidate level or above in biology-related fields, with research experience in molecular and cellular regulation. Five assessors completed the survey. The CD45RA case was not part of the survey.
 Instructions (questionnaire PDF): each section starts with a background document that summarises the dataset context and the molecular functions; the assessors could use it as a common reference. Step 1 scored each hypothesis on the three pillars below with the same 1-5 scale (1 fails the criterion, 2 weak, 3 moderate, 4 strong, 5 exceptional); Step 2 scored each pair for mechanistic concordance (1 no concordance ... 5 near-complete concordance; sharing only the features given in the decision trees counts as low). Only the scientific content of the hypotheses was to be judged; Google Search was allowed, AI chatbots, AI-assisted answer services and AI-generated summaries were not.
 The text shown is a condensed summary (five sentences, per the source document) of each model's primary-zone rationale, not the full response. The summaries correspond to the canonical selected responses: for all nine, the saved candidate most similar to the shown text (TF-IDF cosine, `lexical_check_*` columns of the mapping) is the canonical selected candidate (Gemini candidates 3, 5 and 2 for pERK, GABA and Ki-67). This is a similarity indication; no link between summary and response was recorded.
 
@@ -37,7 +37,7 @@ python validate_expert_archive.py       # all archive checks
 ```
 
 ## De-identification
-Assessors are `Assessor_1` ... `Assessor_5`, numbered in order of submission. Names, e-mail addresses, job titles, timestamps and the raw survey export are not included (the export had no name or e-mail field; the timestamps were dropped). No qualification, recruitment or affiliation information is stored.
+Assessors are `Assessor_1` ... `Assessor_5`, numbered in order of submission. Names, e-mail addresses, job titles, timestamps and the raw survey export are not included (the export had no name or e-mail field; the timestamps were dropped). The qualification criterion for assessors is stated above; no individual qualification, recruitment or affiliation information is stored.
 
 ## Source and verification of the ratings
 Assessors 1-4: the survey export was available locally and every one of their 144 ratings in the workbook was checked against it (0 differences). **Assessor 5: the ratings come from the evaluation workbook only; the survey export that contains them was not found locally** (column `record_source` in the ratings file).
@@ -47,5 +47,5 @@ The questionnaire PDF is a print of the Google Form made on 23 October 2026, aft
 
 ## Missing-record checklist (not found locally; nothing was estimated or reconstructed beyond what is stated)
 - [ ] the survey export that contains Assessor 5;
-- [ ] how the assessors were recruited, their expertise and the instructions they received (unrecorded);
+- [ ] how the assessors were recruited and how each assessor's qualification was confirmed (unrecorded; the qualification criterion itself is documented above);
 - [ ] the script that produced the Figure 7E plot (only the plotted values and an SVG exist).
