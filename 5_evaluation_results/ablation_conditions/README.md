@@ -20,7 +20,7 @@ Datasets: CITE-seq CD45RA, CosMx Ki-67, Gouwens input resistance. Models: Gemini
 | `2_quality_radar/radar_all_models_average_6axes_4conditions.*`, `..._5axes_4conditions.*` | the same without Feature Comprehensiveness and Mechanistic Synthesis for context-only (not applicable) |
 | `2_quality_radar/per_model_scores_table.{csv,md}` | per-model, per-condition scores (n, FC, BP, Spec., MS, LG): the source of Table S3 |
 | `2_quality_radar/radar_all_models_average_6axes.*`, `..._6axes_3conditions.*` | earlier radars: PITCH vs MLP + IG, and the three data-fed conditions |
-| `4_hypothesis_composition_agreement/` | agreement scores across the four models (`data/` records, rationale CSV, datasheet, bar plot); `data_available_models/` = agreement of measurement-only (2-3 LLMs per prompt) and context-only (4 LLMs per prompt), records of 3 prompts x 3 passes, scores and rationales |
+| `4_hypothesis_composition_agreement/` | records of all four conditions (see its `README.md`): `data/` = PITCH and MLP + IG (4 LLMs per prompt; datasheet and bar plot show only these two); `data_available_models/` = measurement-only (2-3 LLMs per prompt) and context-only (4 LLMs per prompt); `agreement_all_conditions.csv` = all four conditions in one table with the LLMs of each group |
 
 ## Generation rate (Table S2)
 Percentage of attempts (all completed calls, including retries) that committed to a hypothesis, 95% Wilson CI in parentheses, successes/attempts in brackets.

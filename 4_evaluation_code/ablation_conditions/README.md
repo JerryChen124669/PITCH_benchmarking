@@ -14,6 +14,7 @@ Condition identifiers: `cond0_full_pipeline` PITCH, `cond1_ig_only` MLP + IG, `c
 | `04a_judge_hypothesis_composition_agreement.py` | **hypothesis composition agreement** for PITCH and MLP + IG: the four LLMs' answers judged together in random order, 3 passes; `--dry-run` checks the rubric hash (0ffd5598c1bf...) | yes |
 | `04b_plot_hypothesis_composition_agreement.py` | bar plot and datasheet of the agreement score (PITCH, MLP + IG) | no |
 | `04c_judge_hypothesis_composition_agreement_available_models.py` | agreement of **measurement-only and context-only**: same rubric, judge and random-order passes as `04a`, applied to the LLMs that have a committed answer for the prompt (measurement-only 2, 3 and 2 answers; context-only 4, 4 and 4); `--conds`, `--dry-run`, `--group-from` | yes |
+| `04d_summarize_agreement_all_conditions.py` | one table of the agreement of all four conditions (LLMs judged together, pass scores, mean, record folder) -> `4_hypothesis_composition_agreement/agreement_all_conditions.{csv,md}` | no |
 | `02e_plot_radar_6axes.py` | 6-axis radar, PITCH vs MLP + IG | no |
 | `02f_plot_radars_3conditions.py` | radars for PITCH, MLP + IG and measurement-only (and the helper functions used by `02h`) | no |
 | `02h_plot_radars_4conditions.py` | **four-condition radars and the per-model score table** (Table S3 source): `radar_all_models_average_{5,6}axes_4conditions[_all_axes]`, `radar_4conditions_datasheet.xlsx`, `per_model_scores_table.{csv,md}` | no |
