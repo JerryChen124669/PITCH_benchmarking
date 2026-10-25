@@ -1,6 +1,6 @@
 # Ablation-condition prompts
 
-The prompts of the evidence-condition ablation: what the LLM is given when asked to formulate a hypothesis for a prediction target. Three datasets (CITE-seq CD45RA, CosMx Ki-67, Gouwens/Patch-seq input resistance) x four conditions (PITCH, MLP + IG, measurement-only, context-only).
+The prompts of the evidence-condition ablation: what the LLM is given when asked to formulate a hypothesis for a prediction target. Three datasets (CITE-seq CD45RA, CosMx Ki-67, Gouwens/Patch-seq input resistance) x three conditions (PITCH, MLP + IG, measurement-only) plus the context-only control, which is not used in Table S3 or Figure S15.
 
 | File pattern | Condition (label in the results) | Content |
 |---|---|---|
@@ -29,4 +29,4 @@ These differences are part of the design (each condition asks the question its e
 ## Context-only condition (control for prior knowledge)
 The LLM receives no data. The prompt has the layout of the others (system part: data domain, cell type, role "expert computational biologist"; `--- EXPERIMENT CONTEXT ---` with three numbered items: study system, experimental design, target response; `--- TASK ---`; JSON footer with `confidence` and `sufficient_information`).
 It differs from the other conditions in three ways: (i) no focus feature, no feature list, no values; (ii) **no honesty / abstention paragraph** (the other three prompts contain it) and no "say so instead of inventing one" sentence; (iii) the task asks to "state your single best, specific hypothesis" and "commit to one specific, experimentally testable mechanism, naming the key molecules, pathway or cell state involved".
-An earlier version of this prompt that kept the honesty paragraph made Gemini and Qwen decline or hedge in part of the attempts (Gemini 4/9, Qwen 7/9 committed); the softened version above is the one analysed and reported (Tables S2 and S3, Figure S15). The earlier version is not part of the reported results.
+An earlier version of this prompt that kept the honesty paragraph made Gemini and Qwen decline or hedge in part of the attempts (Gemini 4/9, Qwen 7/9 committed); the softened version above is the one that was run for the control. The context-only condition is a control that is **not used in Table S3 or Figure S15** (its generation rate is in Table S2); the earlier prompt version is not part of the repository.

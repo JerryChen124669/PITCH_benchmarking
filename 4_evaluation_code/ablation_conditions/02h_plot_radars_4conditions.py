@@ -1,4 +1,7 @@
-"""Result 2f - 6-axis radar with the context-only condition added, and the per-model score table.
+"""EXPLORATORY CONTROL, NOT USED IN THE MANUSCRIPT (Figure S15 and Table S3 show PITCH, MLP + IG and measurement-only only).
+The outputs of this script (four-condition radars, datasheet, per-model table with the Context-only control) are not kept in the repository; the records it reads
+(Context-only answers, scorecards `ctx2_pass1/2`, agreement records) are, so that the control can be inspected and re-run.
+Result 2f - 6-axis radar with the context-only condition added, and the per-model score table.
 
 Conditions: PITCH, MLP + IG, Measurement-only, Context-only (the LLM receives only the study system, the design and the target response; softened prompt, condition cond4:
 no honesty instruction, a specific mechanism requested). The first context-only prompt (cond3) is archived and not analysed here.
