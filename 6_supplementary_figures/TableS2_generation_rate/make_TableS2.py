@@ -33,7 +33,7 @@ def main():
             s = a[(a["Input condition"] == c) & (a.LLM == m)]
             k, n = int((s.Outcome == "committed").sum()), len(s)
             lo, hi = wilson(k, n)
-            long.append({"Input condition": c, "LLM": m, "Successes": k, "Attempts": n, "Generation rate %": round(100 * k / n, 1), "CI low %": round(100 * lo, 1), "CI high %": round(100 * hi, 1)})
+            long.append({"Input condition": c, "LLM": m, "Successes": k, "Attempts": n, "Generation rate %": round(100 * k / n, 2), "CI low %": round(100 * lo, 2), "CI high %": round(100 * hi, 2)})
             row[m] = f"{round(100 * k / n):.0f} ({round(100 * lo):.0f}–{round(100 * hi):.0f})"
         shown.append(row)
     pd.DataFrame(long).to_csv(HERE / "TableS2_generation_rates.csv", index=False)
