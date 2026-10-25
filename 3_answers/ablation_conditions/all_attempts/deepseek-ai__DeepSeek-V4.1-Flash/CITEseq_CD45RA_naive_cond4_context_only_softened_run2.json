@@ -1,0 +1,19 @@
+{
+ "final_answer": "**Rationale.** CD45RA is not a separate gene product; it is an alternatively spliced isoform of *PTPRC* (CD45) that includes exon 4. The reciprocal CD45RO isoform lacks exon 4. Therefore, cell-surface CD45RA abundance is primarily a readout of *PTPRC* exon 4 inclusion, not simply total *PTPRC* mRNA. In human T cells, naive cells are CD45RA-high, while activation and memory/effector differentiation switch splicing toward exon 4 skipping and CD45RO expression. This switch is controlled by RNA-binding proteins. A key activation-induced regulator is CELF2, which promotes *PTPRC* exon 4 skipping; CELF2 is low in naive T cells and induced in activated/memory T cells. Other factors such as hnRNP L, PTBP1, and SR proteins modulate the splicing balance, but CELF2 provides a specific, testable link between T-cell state and CD45RA loss. In cord blood, most T cells are naive, but the mixed mononuclear population also contains B cells and some activated/memory T cells, so CD45RA variation should track CELF2-dependent splicing.\n\n**Hypothesis.** Across primary human cord blood mononuclear cells, cell-surface CD45RA abundance is primarily determined by cell-state-specific alternative splicing of *PTPRC* exon 4, controlled by CELF2. Specifically, CELF2-low cells\u2014such as naive T cells and B cells\u2014include exon 4 and are CD45RA-high, whereas CELF2-high activated/memory T cells skip exon 4 and are CD45RA-low. The variation is therefore not driven mainly by total *PTPRC* expression but by the CELF2-dependent exon 4 splicing switch.\n\n**Test.** Correlate CD45RA ADT signal with CELF2 mRNA and with *PTPRC* exon 4 inclusion measured by isoform-specific RT-qPCR or long-read single-cell RNA-seq. Then perturb CELF2 in cord blood T cells using siRNA or CRISPR and measure CD45RA/CD45RO by flow cytometry or CITE-seq. If CELF2 is necessary for exon 4 skipping, CELF2 loss should increase CD45RA and decrease CD45RO.\n\nThis reflects established literature on the CD45RA/CD45RO switch and CELF2-mediated *PTPRC* splicing (e.g., Hermiston et al., *Annu Rev Immunol* 2003; Lynch, *Nat Rev Immunol* 2004; Mallory et al., *J Immunol* 2015), with the specific quantitative claim in neonatal cord blood mixed populations as a testable extension.\n\n```json\n{\n  \"confidence\": 8,\n  \"sufficient_information\": true\n}\n```",
+ "finish_reason": "stop",
+ "temperature_applied": true,
+ "reasoning_effort": "max",
+ "usage": {
+  "prompt": 332,
+  "output": 9435
+ },
+ "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+ "dataset": "CITEseq_CD45RA_naive",
+ "condition": "cond4_context_only_softened",
+ "run": 2,
+ "temperature": 0.5,
+ "prompt_variant": "context_only_softened_prompt",
+ "prompts_dir": "prompts",
+ "elapsed_s": 21.1,
+ "source_file": "context_only_softened/answers/deepseek-ai__DeepSeek-V4.1-Flash/CITEseq_CD45RA_naive_cond3_context_only_run2.json"
+}

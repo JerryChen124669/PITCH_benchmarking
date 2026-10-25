@@ -1,0 +1,20 @@
+{
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "model_slug": "deepseek-ai__DeepSeek-V4.1-Flash",
+  "dataset": "CosMx_CancerKi67",
+  "condition": "cond4_context_only_softened",
+  "picked_run": 3,
+  "preamble": "v2",
+  "scores": {
+    "Zone Identification score_zone1": null,
+    "Logic Rigor_zone1": null,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 9,
+    "Biological Plausibility_reason": "The CAF-derived TGF-\u03b21\u2013TGFBR\u2013SMAD\u2013CDKN1B/CDKN1A\u2013RB/E2F mechanism is biologically coherent and well grounded, although asserting it as the dominant source of Ki-67 heterogeneity is a testable extrapolation rather than established fact.",
+    "Specificity_zone1": 10,
+    "Grounded Mechanistic Synthesis_zone1": 9,
+    "Grounded Mechanistic Synthesis_reason": "The response explicitly integrates CAF-derived TGFB1, tumor-cell TGFBR1/2 and SMAD2/3 signaling, p27/p21-mediated CDK inhibition, RB/E2F/FOXM1 suppression, and reduced MKI67 expression into a resolved spatial mechanism. APC/C\u2013Cdh1 turnover and the vessel-distance component remain comparatively isolated from the principal TGF-\u03b2 niche model. No mechanistic-synthesis ceiling was applied because the central focus-to-target chain and most contextual contributions are explicit and biologically defensible.",
+    "Literature Grounding_zone1": 9
+  },
+  "final_score_5pillar": 42.5
+}

@@ -1,18 +1,25 @@
-# Supplementary Figures S15 and S16: data and code to reproduce the plots
+# Supplementary Tables S2 and S3 and Figures S15 and S16: data and code to reproduce them
 
-Everything needed to redraw the panels from tables is in `FigS15_ablation/` and `FigS16_classifier_and_DT_settings/`. Run `python plot_FigS15.py` and
-`python plot_FigS16.py` in the respective folder (Python 3, `numpy`, `pandas`, `matplotlib`, `scikit-learn`; no API key, no model call). Each script reads only the files in `data/`, writes
-the panels as `svg` (live text), `pdf` and `png`, and writes the numbers it draws to `data/*_plot_values.csv`. Names in the data tables and on the plots are the
-names used in the manuscript.
+Everything needed to redraw the tables and panels from data tables is in `TableS2_generation_rate/`, `TableS3_quality_by_model/`, `FigS15_ablation/` and `FigS16_classifier_and_DT_settings/`. Run the scripts in the respective folder
+(Python 3, `numpy`, `pandas`, `matplotlib`, `openpyxl`, `scikit-learn`; no API key, no model call). Each script reads only the files in its folder (Table S2's `export_TableS2_attempts.py` reads the saved attempts of the ablation), writes
+the tables as `csv`, `md` and `xlsx` and the panels as `svg` (live text), `pdf` and `png`, and writes the numbers it draws. Names in the data tables and on the plots are the names used in the manuscript.
+Supplementary Table S2, Table S3 and Figure S15 are the **ablation of the evidence conditions** (PITCH, MLP + IG, measurement-only, context-only); their records are in the `ablation_conditions/` folders of `1_generation_code/`, `2_prompts/`, `3_answers/`, `4_evaluation_code/` and `5_evaluation_results/`.
 
 ```
+TableS2_generation_rate/
+  export_TableS2_attempts.py            step 1: one row per completed attempt (condition, LLM, prompt, run, outcome) from ../../3_answers/ablation_conditions/ and answer_screening.csv
+  data/TableS2_attempts.csv             the exported attempts (176)
+  make_TableS2.py                       step 2: -> TableS2_generation_rates.{csv,md,xlsx}  (percentage, Wilson 95% CI, successes and attempts)
+TableS3_quality_by_model/
+  make_TableS3.py                       -> TableS3_quality_by_model.{csv,md,xlsx}   (reads ../FigS15_ablation/data/FigS15_scores_per_answer.csv)
 FigS15_ablation/
-  plot_FigS15.py                        -> FigS15_ablation_radar.{svg,pdf,png}
+  plot_FigS15.py                        -> FigS15_ablation_radar.{svg,pdf,png}  (all axes, all four conditions)
+                                           FigS15_ablation_radar_applicable_axes.{svg,pdf,png}  (context-only without the two criteria that do not apply)
   data/FigS15_scores_per_answer.csv     one row per (answer, judge pass): five criteria
-  data/FigS15_composition_agreement_per_prompt.csv   hypothesis composition agreement per prompt and condition
+  data/FigS15_composition_agreement_per_prompt.csv   hypothesis composition agreement per prompt and condition (and the LLMs in each group)
   data/FigS15_plot_values.csv           the plotted values and n per condition
-  (records of S15: prompts `../2_prompts/ablation_conditions/`, answers `../3_answers/ablation_conditions/`, judge scorecards and screening
-   `../5_evaluation_results/ablation_conditions/`, code incl. measurement-only sampling `../4_evaluation_code/ablation_conditions/`)
+  (records: prompts `../2_prompts/ablation_conditions/`, answers `../3_answers/ablation_conditions/`, judge scorecards, screening and agreement records
+   `../5_evaluation_results/ablation_conditions/`, code incl. measurement-only sampling `../4_evaluation_code/ablation_conditions/`, generation code `../1_generation_code/ablation_conditions/`)
 FigS16_classifier_and_DT_settings/
   plot_FigS16.py                        -> FigS16A_balanced_accuracy, FigS16B_criteria_by_classifier, FigS16C_similarity_between_classifiers,
                                            FigS16D_criteria_by_DT_setting, FigS16E_similarity_between_DT_settings   (.svg/.pdf/.png)
@@ -30,16 +37,37 @@ FigS16_classifier_and_DT_settings/
   records/DT_settings/                      tree nodes, prompts, answers, judge outputs, logs, code for panels D-E
 ```
 
+## Table S2. Hypothesis generation rates across four LLMs under input conditions
+Values indicate the percentage of attempts that produced a specific hypothesis, with 95% Wilson confidence intervals in parentheses, pooled across the CITE-seq CD45RA, CosMx Ki-67, and Patch-seq input-resistance tasks.
+All completed attempts, including retries and empty responses, were counted. Context-only: the LLM received only the study system, design and target response (no data).
+
+| Input condition | Gemini 3.1 Pro Preview | Qwen3.8 2.4T-A95B | GLM-5.3 | DeepSeek V4.1 Flash |
+|---|---|---|---|---|
+| PITCH | 100 (70-100) | 100 (70-100) | 100 (70-100) | 100 (70-100) |
+| MLP + IG | 17 (9-31) | 100 (70-100) | 100 (70-100) | 100 (70-100) |
+| Measurement-only | 11 (2-44) | 44 (19-73) | 100 (70-100) | 22 (6-55) |
+| Context-only | 100 (70-100) | 100 (70-100) | 100 (70-100) | 89 (56-98) |
+
+How it is computed (`make_TableS2.py`): rate = attempts with outcome `committed` / completed attempts (3 per prompt and LLM = 9 per cell; Gemini with MLP + IG: 41 because it was retried; one DeepSeek context-only call returned no text and counts as a failure), Wilson interval.
+`committed` = the answer commits to one specific hypothesis (caveats and low confidence allowed); `tentative` (hedged "if forced" guess), `declined` and `no text` (output limit reached) are not generated hypotheses. Verdicts are from reading each answer (`5_evaluation_results/ablation_conditions/answer_screening.csv`).
+
+## Table S3. Model-level hypothesis-quality scores across ablation conditions
+Scores are means across the successfully generated responses for each model; n denotes the number of prompts yielding an evaluable hypothesis. PITCH represents the complete pipeline, MLP + IG excludes DT rules, measurement-only input excludes both IG attribution and DT rules, and context-only input provides no data.
+FC, feature comprehensiveness; BP, biological plausibility; Spec., hypothesis specificity; MS, mechanistic synthesis; LG, literature grounding. All criteria were scored from 0 to 10 by GPT-5.6-sol.
+Qwen3.8, Qwen3.8-2.4T-A95B; DeepSeek, DeepSeek-V4.1-Flash; Gemini, Gemini-3.1-Pro. For context-only, FC and MS (dagger) are defined on supplied focus / contextual features and do not apply when no data are given; they are shown for reference.
+How it is computed (`make_TableS3.py`): each selected answer was judged in two blind passes, the score of an answer is the mean of its two passes, a cell is the mean over the datasets for which the LLM has an answer (`data` = `../FigS15_ablation/data/FigS15_scores_per_answer.csv`).
+
 ## Figure S15. Ablation analysis of PITCH intermediate representations
-Mean scores across five hypothesis-quality criteria were compared for PITCH (blue, n=12), MLP + IG without DT rules (orange, n=12), and measurement-only input
-(green, n=7); n denotes successfully generated responses. Hypothesis-composition agreement was evaluated across four LLMs within each prompt for PITCH and
-MLP + IG, and across the LLMs that successfully generated a response for measurement-only (two or three per prompt), and then averaged across three prompts. All metrics used 0-10 scales.
+Mean scores across five hypothesis-quality criteria and hypothesis-composition agreement were compared for PITCH (blue, n=12), MLP + IG without DT rules (orange, n=12), measurement-only input (green, n=7) and context-only input (purple, n=12); n denotes successfully generated responses.
+Hypothesis-composition agreement was evaluated within each prompt and then averaged across three prompts: across the four LLMs for PITCH, MLP + IG and context-only, and across the LLMs that successfully generated a response for measurement-only (two or three per prompt), because no prompt has a measurement-only response from all four LLMs (agreement among fewer responses is easier to reach).
+All metrics used 0-10 scales. In the main panel context-only is drawn on all axes; feature comprehensiveness and mechanistic synthesis are defined on supplied focus / contextual features and do not apply to context-only (`FigS15_ablation_radar_applicable_axes` omits them for that condition).
 
 | Quantity | How it is computed (`plot_FigS15.py`) |
 |---|---|
 | Five criteria | each selected answer was judged twice by the same blind judge (gpt-5.6-sol); answer score = mean of the two passes; condition value = mean over its answers |
-| n | PITCH 12 and MLP + IG 12 (4 LLMs x 3 prompts); Measurement-only 7 (the answers that committed to a hypothesis: GLM 3, Qwen 2, DeepSeek 1, Gemini 1) |
-| Hypothesis composition agreement | judged across the four LLMs within each prompt (3 passes, mean), then mean over the 3 prompts: PITCH 7.67, MLP + IG 4.33. Measurement-only: judged among the LLMs with a successfully generated answer for that prompt (CITE-seq GLM-5.3 + Qwen3.8; CosMx GLM-5.3 + DeepSeek V4.1 Flash + Qwen3.8; Gouwens Gemini-3.1-pro-preview + GLM-5.3; code `04c_judge_hypothesis_composition_agreement_available_models.py`, records `5_evaluation_results/ablation_conditions/4_hypothesis_composition_agreement/data_available_models/`): 2.89. Groups of two or three answers agree more easily than groups of four, so this point is not strictly comparable |
+| n | PITCH 12 and MLP + IG 12 (4 LLMs x 3 prompts); Measurement-only 7 (the answers that committed to a hypothesis: GLM 3, Qwen 2, DeepSeek 1, Gemini 1); Context-only 12 (4 LLMs x 3 prompts) |
+| Hypothesis composition agreement | judged among the LLMs within each prompt (3 passes, mean), then mean over the 3 prompts: PITCH 7.67, MLP + IG 4.33, Measurement-only 2.89 (CITE-seq GLM-5.3 + Qwen3.8; CosMx GLM-5.3 + DeepSeek V4.1 Flash + Qwen3.8; Gouwens Gemini-3.1-pro-preview + GLM-5.3; code `04c_judge_hypothesis_composition_agreement_available_models.py`, records `5_evaluation_results/ablation_conditions/4_hypothesis_composition_agreement/data_available_models/`), Context-only 3.44 (4 LLMs per prompt) |
+| Axis order | Literature Grounding, Biological Plausibility, Hypothesis Specificity, Mechanistic Synthesis, Feature Comprehensiveness, Hypothesis composition agreement |
 | Prompts | CITE-seq CD45RA, CosMx Ki-67, Gouwens input resistance (3 prompts) |
 | LLMs | Gemini-3.1-pro-preview, GLM-5.3, DeepSeek V4.1 Flash, Qwen3.8-2.4T-A95B |
 
@@ -48,8 +76,9 @@ Which answer entered each cell: one randomly picked committed answer per (LLM, c
 `5_evaluation_results/ablation_conditions/2_quality_radar/scorecards/`. Measurement-only cells: decile-stratified sample of the target, seed 42, 45 / 152 / 77 cells, code and row indices in
 `4_evaluation_code/ablation_conditions/sampling/`.
 
-What the three conditions were given (see `2_prompts/ablation_conditions/README.md`): the dataset and predicted response are fixed, but only PITCH names a focus feature (GNLY, PTMA, Fxyd6) and asks why it
-attributes to the target, and only PITCH requests four contextual features; MLP + IG and Measurement-only ask the LLM to identify the relevant features itself.
+What the four conditions were given (see `2_prompts/ablation_conditions/README.md`): the dataset and predicted response are fixed, but only PITCH names a focus feature (GNLY, PTMA, Fxyd6) and asks why it
+attributes to the target, and only PITCH requests four contextual features; MLP + IG and measurement-only ask the LLM to identify the relevant features itself; context-only gives no data and no honesty / abstention paragraph and asks for one specific mechanism.
+Two criteria deserve care when reading the figure: Hypothesis Specificity and Mechanistic Synthesis correlate r = 0.96 across answers, and neither tests whether the data support the hypothesis, so a context-only answer can score as high as a PITCH answer on both; the hypothesis composition agreement is the axis that depends on the data.
 
 ## Figure S16. Effects of classifier choice and decision-tree settings on PITCH hypothesis generation
 (A) Logistic regression (LR), decision tree (DT), and random forest (RF) achieve comparable out-of-fold balanced accuracy in predicting IG-derived labels (bars: mean ± SD across the CITE-seq, CosMx and Gouwens datasets; points: individual datasets; dashed line: 50%, the balanced-accuracy no-discrimination baseline).

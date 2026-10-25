@@ -1,0 +1,17 @@
+Input condition,LLM,Successes,Attempts,Generation rate %,CI low %,CI high %
+PITCH,Gemini 3.1 Pro Preview,9,9,100.0,70.1,100.0
+PITCH,Qwen3.8 2.4T-A95B,9,9,100.0,70.1,100.0
+PITCH,GLM-5.3,9,9,100.0,70.1,100.0
+PITCH,DeepSeek V4.1 Flash,9,9,100.0,70.1,100.0
+MLP + IG,Gemini 3.1 Pro Preview,7,41,17.1,8.5,31.3
+MLP + IG,Qwen3.8 2.4T-A95B,9,9,100.0,70.1,100.0
+MLP + IG,GLM-5.3,9,9,100.0,70.1,100.0
+MLP + IG,DeepSeek V4.1 Flash,9,9,100.0,70.1,100.0
+Measurement-only,Gemini 3.1 Pro Preview,1,9,11.1,2.0,43.5
+Measurement-only,Qwen3.8 2.4T-A95B,4,9,44.4,18.9,73.3
+Measurement-only,GLM-5.3,9,9,100.0,70.1,100.0
+Measurement-only,DeepSeek V4.1 Flash,2,9,22.2,6.3,54.7
+Context-only,Gemini 3.1 Pro Preview,9,9,100.0,70.1,100.0
+Context-only,Qwen3.8 2.4T-A95B,9,9,100.0,70.1,100.0
+Context-only,GLM-5.3,9,9,100.0,70.1,100.0
+Context-only,DeepSeek V4.1 Flash,8,9,88.9,56.5,98.0

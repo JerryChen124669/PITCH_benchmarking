@@ -1,0 +1,20 @@
+{
+  "model": "Qwen/Qwen3.8-2.4T-A95B",
+  "model_slug": "Qwen__Qwen3.8-2.4T-A95B",
+  "dataset": "CITEseq_CD45RA_naive",
+  "condition": "cond4_context_only_softened",
+  "picked_run": 1,
+  "preamble": "v2",
+  "scores": {
+    "Zone Identification score_zone1": null,
+    "Logic Rigor_zone1": null,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 8,
+    "Biological Plausibility_reason": "The TCR activation\u2013HNRNPLL\u2013PTPRC alternative-splicing mechanism is well established and biologically coherent for human T cells. Its attribution of variation across all mixed cord-blood populations, particularly B and myeloid cells, is broader than the cited evidence supports.",
+    "Specificity_zone1": 9,
+    "Grounded Mechanistic Synthesis_zone1": 9,
+    "Grounded Mechanistic Synthesis_reason": "The response explicitly connects naive versus activated state, TCR signaling, HNRNPLL induction, PTPRC exon exclusion, and the reciprocal CD45RA/CD45RO phenotype. The extension to naive B cells and the broader mixed-population variation is less mechanistically resolved than the T-cell pathway. No synthesis ceiling was applied because the principal focus-to-target mechanism is explicit, multistep, and biologically defensible.",
+    "Literature Grounding_zone1": 8
+  },
+  "final_score_5pillar": 40.0
+}

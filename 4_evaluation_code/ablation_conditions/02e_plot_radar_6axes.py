@@ -16,8 +16,8 @@ import pandas as pd
 from common import COND_COLOR, COND_LABEL, CONDS, ROOT
 
 OUT = ROOT / "2_quality_radar"
-PILLARS = ["Feature Comprehensiveness", "Biological Plausibility", "Hypothesis Integration & Specificity", "Mechanistic Synthesis", "Literature Grounding"]
-AXES = ["Feature\nComprehensiveness", "Biological\nPlausibility", "Hypothesis Integration\n& Specificity", "Mechanistic\nSynthesis", "Literature\nGrounding",
+PILLARS = ["Feature Comprehensiveness", "Biological Plausibility", "Hypothesis Specificity", "Mechanistic Synthesis", "Literature Grounding"]
+AXES = ["Feature\nComprehensiveness", "Biological\nPlausibility", "Hypothesis\nSpecificity", "Mechanistic\nSynthesis", "Literature\nGrounding",
         "Hypothesis composition agreement\nacross models (0-10)"]
 STYLE = {"cond0_full_pipeline": ("o", "-"), "cond1_ig_only": ("s", "--")}
 

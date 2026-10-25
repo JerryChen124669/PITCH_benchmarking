@@ -1,0 +1,20 @@
+{
+  "model": "zai-org/GLM-5.3",
+  "model_slug": "zai-org__GLM-5.3",
+  "dataset": "Gouwens_GABAergic",
+  "condition": "cond4_context_only_softened",
+  "picked_run": 3,
+  "preamble": "v2",
+  "scores": {
+    "Zone Identification score_zone1": null,
+    "Logic Rigor_zone1": null,
+    "Feature Comprehensiveness_zone1": 9,
+    "Biological Plausibility_zone1": 9,
+    "Biological Plausibility_reason": "The proposed KCNK9/TASK-3-to-resting K+ conductance-to-input resistance mechanism is well established and biologically coherent. The main uncertainty is the strength and specificity of Kcnk9 enrichment in adult visual-cortex PV interneurons.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 8,
+    "Grounded Mechanistic Synthesis_reason": "KCNK9 abundance, membrane TASK-3 channels, resting potassium conductance, the PV fast-spiking state, and input resistance are connected through an explicit causal chain. The PV state is used mainly to identify the predicted Kcnk9-high context rather than being mechanistically linked to Kcnk9 regulation. No synthesis ceiling was applied because the principal channel-to-conductance-to-resistance transitions are explicit and biologically defensible.",
+    "Literature Grounding_zone1": 8
+  },
+  "final_score_5pillar": 38.0
+}

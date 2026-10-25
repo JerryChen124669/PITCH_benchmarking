@@ -1,416 +1,560 @@
 {
- "seed": 20,
- "pool": "answers_3per, verdict == stated",
- "conditions": [
-  "cond0_full_pipeline",
-  "cond1_ig_only",
-  "cond2_raw_data"
- ],
- "cells": [
-  {
-   "model": "gemini-3.1-pro-preview",
-   "condition": "cond0_full_pipeline",
-   "dataset": "CITEseq_CD45RA_naive",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 1
-  },
-  {
-   "model": "gemini-3.1-pro-preview",
-   "condition": "cond0_full_pipeline",
-   "dataset": "CosMx_CancerKi67",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 1
-  },
-  {
-   "model": "gemini-3.1-pro-preview",
-   "condition": "cond0_full_pipeline",
-   "dataset": "Gouwens_GABAergic",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 3
-  },
-  {
-   "model": "gemini-3.1-pro-preview",
-   "condition": "cond1_ig_only",
-   "dataset": "CITEseq_CD45RA_naive",
-   "committed_runs": [
-    5
-   ],
-   "attempts_in_cell": 30,
-   "picked_run": 5
-  },
-  {
-   "model": "gemini-3.1-pro-preview",
-   "condition": "cond1_ig_only",
-   "dataset": "CosMx_CancerKi67",
-   "committed_runs": [
-    1,
-    2,
-    7
-   ],
-   "attempts_in_cell": 7,
-   "picked_run": 7
-  },
-  {
-   "model": "gemini-3.1-pro-preview",
-   "condition": "cond1_ig_only",
-   "dataset": "Gouwens_GABAergic",
-   "committed_runs": [
-    1,
-    3,
-    4
-   ],
-   "attempts_in_cell": 4,
-   "picked_run": 3
-  },
-  {
-   "model": "gemini-3.1-pro-preview",
-   "condition": "cond2_raw_data",
-   "dataset": "CITEseq_CD45RA_naive",
-   "committed_runs": [],
-   "attempts_in_cell": 3,
-   "picked_run": null
-  },
-  {
-   "model": "gemini-3.1-pro-preview",
-   "condition": "cond2_raw_data",
-   "dataset": "CosMx_CancerKi67",
-   "committed_runs": [],
-   "attempts_in_cell": 3,
-   "picked_run": null
-  },
-  {
-   "model": "gemini-3.1-pro-preview",
-   "condition": "cond2_raw_data",
-   "dataset": "Gouwens_GABAergic",
-   "committed_runs": [
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 3
-  },
-  {
-   "model": "zai-org/GLM-5.3",
-   "condition": "cond0_full_pipeline",
-   "dataset": "CITEseq_CD45RA_naive",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 1
-  },
-  {
-   "model": "zai-org/GLM-5.3",
-   "condition": "cond0_full_pipeline",
-   "dataset": "CosMx_CancerKi67",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 1
-  },
-  {
-   "model": "zai-org/GLM-5.3",
-   "condition": "cond0_full_pipeline",
-   "dataset": "Gouwens_GABAergic",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 2
-  },
-  {
-   "model": "zai-org/GLM-5.3",
-   "condition": "cond1_ig_only",
-   "dataset": "CITEseq_CD45RA_naive",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 3
-  },
-  {
-   "model": "zai-org/GLM-5.3",
-   "condition": "cond1_ig_only",
-   "dataset": "CosMx_CancerKi67",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 2
-  },
-  {
-   "model": "zai-org/GLM-5.3",
-   "condition": "cond1_ig_only",
-   "dataset": "Gouwens_GABAergic",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 3
-  },
-  {
-   "model": "zai-org/GLM-5.3",
-   "condition": "cond2_raw_data",
-   "dataset": "CITEseq_CD45RA_naive",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 2
-  },
-  {
-   "model": "zai-org/GLM-5.3",
-   "condition": "cond2_raw_data",
-   "dataset": "CosMx_CancerKi67",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 2
-  },
-  {
-   "model": "zai-org/GLM-5.3",
-   "condition": "cond2_raw_data",
-   "dataset": "Gouwens_GABAergic",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 3
-  },
-  {
-   "model": "deepseek-ai/DeepSeek-V4.1-Flash",
-   "condition": "cond0_full_pipeline",
-   "dataset": "CITEseq_CD45RA_naive",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 1
-  },
-  {
-   "model": "deepseek-ai/DeepSeek-V4.1-Flash",
-   "condition": "cond0_full_pipeline",
-   "dataset": "CosMx_CancerKi67",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 3
-  },
-  {
-   "model": "deepseek-ai/DeepSeek-V4.1-Flash",
-   "condition": "cond0_full_pipeline",
-   "dataset": "Gouwens_GABAergic",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 3
-  },
-  {
-   "model": "deepseek-ai/DeepSeek-V4.1-Flash",
-   "condition": "cond1_ig_only",
-   "dataset": "CITEseq_CD45RA_naive",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 3
-  },
-  {
-   "model": "deepseek-ai/DeepSeek-V4.1-Flash",
-   "condition": "cond1_ig_only",
-   "dataset": "CosMx_CancerKi67",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 1
-  },
-  {
-   "model": "deepseek-ai/DeepSeek-V4.1-Flash",
-   "condition": "cond1_ig_only",
-   "dataset": "Gouwens_GABAergic",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 3
-  },
-  {
-   "model": "deepseek-ai/DeepSeek-V4.1-Flash",
-   "condition": "cond2_raw_data",
-   "dataset": "CITEseq_CD45RA_naive",
-   "committed_runs": [],
-   "attempts_in_cell": 3,
-   "picked_run": null
-  },
-  {
-   "model": "deepseek-ai/DeepSeek-V4.1-Flash",
-   "condition": "cond2_raw_data",
-   "dataset": "CosMx_CancerKi67",
-   "committed_runs": [
-    1,
-    2
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 2
-  },
-  {
-   "model": "deepseek-ai/DeepSeek-V4.1-Flash",
-   "condition": "cond2_raw_data",
-   "dataset": "Gouwens_GABAergic",
-   "committed_runs": [],
-   "attempts_in_cell": 3,
-   "picked_run": null
-  },
-  {
-   "model": "Qwen/Qwen3.8-2.4T-A95B",
-   "condition": "cond0_full_pipeline",
-   "dataset": "CITEseq_CD45RA_naive",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 1
-  },
-  {
-   "model": "Qwen/Qwen3.8-2.4T-A95B",
-   "condition": "cond0_full_pipeline",
-   "dataset": "CosMx_CancerKi67",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 2
-  },
-  {
-   "model": "Qwen/Qwen3.8-2.4T-A95B",
-   "condition": "cond0_full_pipeline",
-   "dataset": "Gouwens_GABAergic",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 2
-  },
-  {
-   "model": "Qwen/Qwen3.8-2.4T-A95B",
-   "condition": "cond1_ig_only",
-   "dataset": "CITEseq_CD45RA_naive",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 3
-  },
-  {
-   "model": "Qwen/Qwen3.8-2.4T-A95B",
-   "condition": "cond1_ig_only",
-   "dataset": "CosMx_CancerKi67",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 1
-  },
-  {
-   "model": "Qwen/Qwen3.8-2.4T-A95B",
-   "condition": "cond1_ig_only",
-   "dataset": "Gouwens_GABAergic",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 1
-  },
-  {
-   "model": "Qwen/Qwen3.8-2.4T-A95B",
-   "condition": "cond2_raw_data",
-   "dataset": "CITEseq_CD45RA_naive",
-   "committed_runs": [
-    1
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 1
-  },
-  {
-   "model": "Qwen/Qwen3.8-2.4T-A95B",
-   "condition": "cond2_raw_data",
-   "dataset": "CosMx_CancerKi67",
-   "committed_runs": [
-    1,
-    2,
-    3
-   ],
-   "attempts_in_cell": 3,
-   "picked_run": 2
-  },
-  {
-   "model": "Qwen/Qwen3.8-2.4T-A95B",
-   "condition": "cond2_raw_data",
-   "dataset": "Gouwens_GABAergic",
-   "committed_runs": [],
-   "attempts_in_cell": 3,
-   "picked_run": null
-  }
- ]
+  "seed": 20,
+  "pool": "answers_3per, verdict == stated",
+  "conditions": [
+    "cond0_full_pipeline",
+    "cond1_ig_only",
+    "cond2_raw_data",
+    "cond4_context_only_softened"
+  ],
+  "cells": [
+    {
+      "model": "gemini-3.1-pro-preview",
+      "condition": "cond0_full_pipeline",
+      "dataset": "CITEseq_CD45RA_naive",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 1
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "condition": "cond0_full_pipeline",
+      "dataset": "CosMx_CancerKi67",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 1
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "condition": "cond0_full_pipeline",
+      "dataset": "Gouwens_GABAergic",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 3
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "condition": "cond1_ig_only",
+      "dataset": "CITEseq_CD45RA_naive",
+      "committed_runs": [
+        5
+      ],
+      "attempts_in_cell": 30,
+      "picked_run": 5
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "condition": "cond1_ig_only",
+      "dataset": "CosMx_CancerKi67",
+      "committed_runs": [
+        1,
+        2,
+        7
+      ],
+      "attempts_in_cell": 7,
+      "picked_run": 7
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "condition": "cond1_ig_only",
+      "dataset": "Gouwens_GABAergic",
+      "committed_runs": [
+        1,
+        3,
+        4
+      ],
+      "attempts_in_cell": 4,
+      "picked_run": 3
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "condition": "cond2_raw_data",
+      "dataset": "CITEseq_CD45RA_naive",
+      "committed_runs": [],
+      "attempts_in_cell": 3,
+      "picked_run": null
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "condition": "cond2_raw_data",
+      "dataset": "CosMx_CancerKi67",
+      "committed_runs": [],
+      "attempts_in_cell": 3,
+      "picked_run": null
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "condition": "cond2_raw_data",
+      "dataset": "Gouwens_GABAergic",
+      "committed_runs": [
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 3
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "condition": "cond4_context_only_softened",
+      "dataset": "CITEseq_CD45RA_naive",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 3
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "condition": "cond4_context_only_softened",
+      "dataset": "CosMx_CancerKi67",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 3
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "condition": "cond4_context_only_softened",
+      "dataset": "Gouwens_GABAergic",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 2
+    },
+    {
+      "model": "zai-org/GLM-5.3",
+      "condition": "cond0_full_pipeline",
+      "dataset": "CITEseq_CD45RA_naive",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 1
+    },
+    {
+      "model": "zai-org/GLM-5.3",
+      "condition": "cond0_full_pipeline",
+      "dataset": "CosMx_CancerKi67",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 1
+    },
+    {
+      "model": "zai-org/GLM-5.3",
+      "condition": "cond0_full_pipeline",
+      "dataset": "Gouwens_GABAergic",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 2
+    },
+    {
+      "model": "zai-org/GLM-5.3",
+      "condition": "cond1_ig_only",
+      "dataset": "CITEseq_CD45RA_naive",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 3
+    },
+    {
+      "model": "zai-org/GLM-5.3",
+      "condition": "cond1_ig_only",
+      "dataset": "CosMx_CancerKi67",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 2
+    },
+    {
+      "model": "zai-org/GLM-5.3",
+      "condition": "cond1_ig_only",
+      "dataset": "Gouwens_GABAergic",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 3
+    },
+    {
+      "model": "zai-org/GLM-5.3",
+      "condition": "cond2_raw_data",
+      "dataset": "CITEseq_CD45RA_naive",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 2
+    },
+    {
+      "model": "zai-org/GLM-5.3",
+      "condition": "cond2_raw_data",
+      "dataset": "CosMx_CancerKi67",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 2
+    },
+    {
+      "model": "zai-org/GLM-5.3",
+      "condition": "cond2_raw_data",
+      "dataset": "Gouwens_GABAergic",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 3
+    },
+    {
+      "model": "zai-org/GLM-5.3",
+      "condition": "cond4_context_only_softened",
+      "dataset": "CITEseq_CD45RA_naive",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 2
+    },
+    {
+      "model": "zai-org/GLM-5.3",
+      "condition": "cond4_context_only_softened",
+      "dataset": "CosMx_CancerKi67",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 3
+    },
+    {
+      "model": "zai-org/GLM-5.3",
+      "condition": "cond4_context_only_softened",
+      "dataset": "Gouwens_GABAergic",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 3
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "condition": "cond0_full_pipeline",
+      "dataset": "CITEseq_CD45RA_naive",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 1
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "condition": "cond0_full_pipeline",
+      "dataset": "CosMx_CancerKi67",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 3
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "condition": "cond0_full_pipeline",
+      "dataset": "Gouwens_GABAergic",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 3
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "condition": "cond1_ig_only",
+      "dataset": "CITEseq_CD45RA_naive",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 3
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "condition": "cond1_ig_only",
+      "dataset": "CosMx_CancerKi67",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 1
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "condition": "cond1_ig_only",
+      "dataset": "Gouwens_GABAergic",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 3
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "condition": "cond2_raw_data",
+      "dataset": "CITEseq_CD45RA_naive",
+      "committed_runs": [],
+      "attempts_in_cell": 3,
+      "picked_run": null
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "condition": "cond2_raw_data",
+      "dataset": "CosMx_CancerKi67",
+      "committed_runs": [
+        1,
+        2
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 2
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "condition": "cond2_raw_data",
+      "dataset": "Gouwens_GABAergic",
+      "committed_runs": [],
+      "attempts_in_cell": 3,
+      "picked_run": null
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "condition": "cond4_context_only_softened",
+      "dataset": "CITEseq_CD45RA_naive",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 1
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "condition": "cond4_context_only_softened",
+      "dataset": "CosMx_CancerKi67",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 3
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "condition": "cond4_context_only_softened",
+      "dataset": "Gouwens_GABAergic",
+      "committed_runs": [
+        1,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 3
+    },
+    {
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "condition": "cond0_full_pipeline",
+      "dataset": "CITEseq_CD45RA_naive",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 1
+    },
+    {
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "condition": "cond0_full_pipeline",
+      "dataset": "CosMx_CancerKi67",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 2
+    },
+    {
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "condition": "cond0_full_pipeline",
+      "dataset": "Gouwens_GABAergic",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 2
+    },
+    {
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "condition": "cond1_ig_only",
+      "dataset": "CITEseq_CD45RA_naive",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 3
+    },
+    {
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "condition": "cond1_ig_only",
+      "dataset": "CosMx_CancerKi67",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 1
+    },
+    {
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "condition": "cond1_ig_only",
+      "dataset": "Gouwens_GABAergic",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 1
+    },
+    {
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "condition": "cond2_raw_data",
+      "dataset": "CITEseq_CD45RA_naive",
+      "committed_runs": [
+        1
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 1
+    },
+    {
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "condition": "cond2_raw_data",
+      "dataset": "CosMx_CancerKi67",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 2
+    },
+    {
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "condition": "cond2_raw_data",
+      "dataset": "Gouwens_GABAergic",
+      "committed_runs": [],
+      "attempts_in_cell": 3,
+      "picked_run": null
+    },
+    {
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "condition": "cond4_context_only_softened",
+      "dataset": "CITEseq_CD45RA_naive",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 1
+    },
+    {
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "condition": "cond4_context_only_softened",
+      "dataset": "CosMx_CancerKi67",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 1
+    },
+    {
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "condition": "cond4_context_only_softened",
+      "dataset": "Gouwens_GABAergic",
+      "committed_runs": [
+        1,
+        2,
+        3
+      ],
+      "attempts_in_cell": 3,
+      "picked_run": 3
+    }
+  ]
 }

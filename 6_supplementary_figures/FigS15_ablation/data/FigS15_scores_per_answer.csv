@@ -61,3 +61,27 @@ Qwen3.8-2.4T-A95B,CosMx Ki-67,PITCH,2,1,10,9,8,8,8
 Qwen3.8-2.4T-A95B,CosMx Ki-67,PITCH,2,2,10,9,7,7,8
 Qwen3.8-2.4T-A95B,Gouwens input resistance,PITCH,2,1,10,8,7,7,7
 Qwen3.8-2.4T-A95B,Gouwens input resistance,PITCH,2,2,10,8,8,8,7
+DeepSeek V4.1 Flash,CITE-seq CD45RA,Context-only,1,1,10,8,9,9,9
+DeepSeek V4.1 Flash,CosMx Ki-67,Context-only,3,1,10,9,10,9,9
+DeepSeek V4.1 Flash,Gouwens input resistance,Context-only,3,1,10,8,8,8,8
+Gemini-3.1-pro-preview,CITE-seq CD45RA,Context-only,3,1,10,9,8,8,9
+Gemini-3.1-pro-preview,CosMx Ki-67,Context-only,3,1,10,8,9,9,8
+Gemini-3.1-pro-preview,Gouwens input resistance,Context-only,2,1,10,7,6,7,5
+Qwen3.8-2.4T-A95B,CITE-seq CD45RA,Context-only,1,1,10,8,9,9,8
+Qwen3.8-2.4T-A95B,CosMx Ki-67,Context-only,1,1,10,9,9,9,9
+Qwen3.8-2.4T-A95B,Gouwens input resistance,Context-only,3,1,10,9,8,8,8
+GLM-5.3,CITE-seq CD45RA,Context-only,2,1,10,8,9,9,8
+GLM-5.3,CosMx Ki-67,Context-only,3,1,7,5,7,3,5
+GLM-5.3,Gouwens input resistance,Context-only,3,1,9,9,8,8,8
+DeepSeek V4.1 Flash,CITE-seq CD45RA,Context-only,1,2,9,9,8,8,9
+DeepSeek V4.1 Flash,CosMx Ki-67,Context-only,3,2,9,9,9,9,9
+DeepSeek V4.1 Flash,Gouwens input resistance,Context-only,3,2,9,8,7,7,8
+Gemini-3.1-pro-preview,CITE-seq CD45RA,Context-only,3,2,10,9,8,8,9
+Gemini-3.1-pro-preview,CosMx Ki-67,Context-only,3,2,10,9,9,9,7
+Gemini-3.1-pro-preview,Gouwens input resistance,Context-only,2,2,10,7,6,6,5
+Qwen3.8-2.4T-A95B,CITE-seq CD45RA,Context-only,1,2,10,8,9,9,7
+Qwen3.8-2.4T-A95B,CosMx Ki-67,Context-only,1,2,10,10,10,9,10
+Qwen3.8-2.4T-A95B,Gouwens input resistance,Context-only,3,2,10,9,8,9,8
+GLM-5.3,CITE-seq CD45RA,Context-only,2,2,10,8,9,9,7
+GLM-5.3,CosMx Ki-67,Context-only,3,2,7,6,6,6,6
+GLM-5.3,Gouwens input resistance,Context-only,3,2,9,9,8,8,8

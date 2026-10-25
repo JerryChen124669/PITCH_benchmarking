@@ -1,8 +1,8 @@
 """Result 2, judging step - 5-pillar blind quality judge on the single picked answers (3_answers/ablation_conditions/selected_answers/), PITCH and MLP + IG, 3 datasets.
 
 Judge     : gpt-5.6-sol with the UNMODIFIED 7-pillar rubric (code/evaluation/judge_evaluation.py); its sha256 is asserted against the hash of the rubric used
-            in the earlier judging. Pillars shown in the radar: Feature Comprehensiveness, Biological Plausibility, Specificity (Hypothesis Integration &
-            Specificity), Grounded Mechanistic Synthesis, Literature Grounding.
+            in the earlier judging. Pillars shown in the radar: Feature Comprehensiveness, Biological Plausibility, Hypothesis Specificity,
+            Grounded Mechanistic Synthesis, Literature Grounding.
 Exam text : the judge is shown the prompt each model actually received (2_prompts/ablation_conditions/...) followed by the model's answer (JSON footer removed); the model
             name is never shown.
 Preamble  : the "five-criterion, no Zone/Logic" override, with Feature Comprehensiveness defined as "does the answer explain every feature it actually used

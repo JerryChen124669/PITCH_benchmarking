@@ -45,9 +45,9 @@ DATASETS = ["CITEseq_CD45RA_naive", "CosMx_CancerKi67", "Gouwens_GABAergic"]
 DATASET_LABEL = {"CITEseq_CD45RA_naive": "CITE-seq CD45RA", "CosMx_CancerKi67": "CosMx Ki-67", "Gouwens_GABAergic": "Gouwens input resistance"}
 DATASET_MARKER = {"CITEseq_CD45RA_naive": "o", "CosMx_CancerKi67": "s", "Gouwens_GABAergic": "^"}
 CONDS = ["cond0_full_pipeline", "cond1_ig_only"]                       # conditions that are evaluated for quality / feature use / hypothesis composition agreement
-ALL_CONDS = CONDS + ["cond2_raw_data"]                                  # the success-rate table also reports measurement-only
-COND_LABEL = {"cond0_full_pipeline": "PITCH", "cond1_ig_only": "MLP + IG", "cond2_raw_data": "Measurement-only"}
-COND_COLOR = {"cond0_full_pipeline": "#2b78d4", "cond1_ig_only": "#ec6a36", "cond2_raw_data": "#1db07a"}
+ALL_CONDS = CONDS + ["cond2_raw_data", "cond4_context_only_softened"]   # the success-rate table also reports measurement-only and context-only
+COND_LABEL = {"cond0_full_pipeline": "PITCH", "cond1_ig_only": "MLP + IG", "cond2_raw_data": "Measurement-only", "cond3_context_only": "Context-only (first prompt)", "cond4_context_only_softened": "Context-only"}
+COND_COLOR = {"cond0_full_pipeline": "#2b78d4", "cond1_ig_only": "#ec6a36", "cond2_raw_data": "#1db07a", "cond3_context_only": "#9a9a9a", "cond4_context_only_softened": "#8b5fbf"}
 LABELS = "ABCD"
 
 

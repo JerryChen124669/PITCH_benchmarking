@@ -1,0 +1,19 @@
+{
+ "final_answer": null,
+ "finish_reason": "length",
+ "temperature_applied": true,
+ "reasoning_effort": "max",
+ "usage": {
+  "prompt": 328,
+  "output": 130000
+ },
+ "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+ "dataset": "Gouwens_GABAergic",
+ "condition": "cond4_context_only_softened",
+ "run": 2,
+ "temperature": 0.5,
+ "prompt_variant": "context_only_softened_prompt",
+ "prompts_dir": "prompts",
+ "elapsed_s": 269.0,
+ "source_file": "context_only_softened/answers/deepseek-ai__DeepSeek-V4.1-Flash/Gouwens_GABAergic_cond3_context_only_run2.json"
+}

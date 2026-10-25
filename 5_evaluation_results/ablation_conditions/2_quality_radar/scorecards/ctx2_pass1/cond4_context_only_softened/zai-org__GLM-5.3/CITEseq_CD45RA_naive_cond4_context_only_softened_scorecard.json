@@ -1,0 +1,20 @@
+{
+  "model": "zai-org/GLM-5.3",
+  "model_slug": "zai-org__GLM-5.3",
+  "dataset": "CITEseq_CD45RA_naive",
+  "condition": "cond4_context_only_softened",
+  "picked_run": 2,
+  "preamble": "v2",
+  "scores": {
+    "Zone Identification score_zone1": null,
+    "Logic Rigor_zone1": null,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 8,
+    "Biological Plausibility_reason": "The central PTPRC exon-4 splicing explanation and the roles of PTBP1, hnRNP L, SFPQ, and activation-dependent GSK3 regulation are biologically defensible. The claim that GSK3 phosphorylation causes SFPQ degradation is inaccurate\u2014the reported regulation primarily involves phosphorylation-dependent sequestration\u2014and the T-cell mechanism is somewhat overgeneralized to all listed lineages.",
+    "Specificity_zone1": 9,
+    "Grounded Mechanistic Synthesis_zone1": 9,
+    "Grounded Mechanistic Synthesis_reason": "The response effectively connects lymphocyte activation, PI3K\u2013Akt/GSK3 regulation, the PTBP1\u2013hnRNP L\u2013SFPQ splicing machinery, PTPRC exon-4 usage, and resulting CD45RA versus CD45RO display. The extension of this regulatory chain to monocytes, B cells, and NK cells is less directly developed than its application to activated T cells. No synthesis ceiling was applied because the principal focus-feature\u2013target mechanism is explicit, multistep, and substantially integrated.",
+    "Literature Grounding_zone1": 8
+  },
+  "final_score_5pillar": 40.0
+}

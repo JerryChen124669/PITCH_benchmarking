@@ -1,0 +1,21 @@
+--- SYSTEM PROMPT ---
+Data Domain Context: Immunology / CITE-seq (surface protein and RNA)
+Cell Type / Study Tissue: Primary human cord blood mononuclear cells comprising mixed neonatal immune-cell populations
+
+You are an expert computational biologist. Your objective is to use the experimental context and established biological knowledge to construct a cohesive biological narrative and a concrete, experimentally testable hypothesis.
+
+--- EXPERIMENT CONTEXT ---
+1. Study system: primary human cord blood mononuclear cells comprising mixed neonatal immune-cell populations.
+2. Experimental design: CITE-seq was used to measure transcript abundance and cell-surface protein abundance in individual cells.
+3. Target response: cell-surface CD45RA abundance.
+
+--- TASK ---
+Form a rationale and state your single best, specific hypothesis for a molecular or cell-state mechanism that could explain variation in cell-surface CD45RA abundance across these cells. Identify whether your conclusion (a) reflects established literature knowledge or (b) suggests a new testable mechanism, and cite supporting publications if you can. Commit to one specific, experimentally testable mechanism, naming the key molecules, pathway or cell state involved.
+
+FINAL OUTPUT REQUIREMENT: After the narrative, append exactly one fenced JSON code block with this structure:
+```json
+{
+  "confidence": <integer 1-10, your genuine confidence in this specific hypothesis>,
+  "sufficient_information": <true or false -- was the information you were given actually enough to form a specific, testable hypothesis, as opposed to a generic guess?>
+}
+```

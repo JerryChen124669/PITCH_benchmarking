@@ -1,0 +1,20 @@
+{
+  "model": "Qwen/Qwen3.8-2.4T-A95B",
+  "model_slug": "Qwen__Qwen3.8-2.4T-A95B",
+  "dataset": "Gouwens_GABAergic",
+  "condition": "cond4_context_only_softened",
+  "picked_run": 3,
+  "preamble": "v2",
+  "scores": {
+    "Zone Identification score_zone1": null,
+    "Logic Rigor_zone1": null,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 9,
+    "Biological Plausibility_reason": "The required features, Kcnk3 and Kcnk9, have defensible roles as TASK-family background potassium channels whose activity can increase resting conductance and reduce input resistance. Their specific importance across visual-cortical interneuron subclasses remains unproven but is appropriately presented as a testable hypothesis.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 8,
+    "Grounded Mechanistic Synthesis_reason": "Kcnk3 and Kcnk9 were integrated as TASK-1/TASK-3 channels whose expression or open probability increases resting potassium leak conductance and thereby lowers input resistance and membrane time constant. Hcn1/Hcn2 and capacitance were appropriately treated as alternative-conductance and cell-size covariates, although the relative contributions and assembly of TASK-1 versus TASK-3 were not resolved. No synthesis ceiling was applied because the response provides an explicit and biologically reasonable feature-to-conductance-to-target mechanism.",
+    "Literature Grounding_zone1": 8
+  },
+  "final_score_5pillar": 39.0
+}

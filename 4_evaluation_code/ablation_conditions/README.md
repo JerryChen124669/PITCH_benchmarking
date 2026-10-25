@@ -1,21 +1,27 @@
 # Evaluation code: ablation of the evidence conditions
 
-Scripts for the generation rate, the five-criteria quality radar plots and the hypothesis composition agreement of the evidence-condition ablation (PITCH vs MLP + IG vs measurement-only; CITE-seq CD45RA, CosMx Ki-67, Gouwens input resistance; four LLMs).
+Scripts for the generation rate, the five-criteria quality evaluation and the hypothesis composition agreement of the ablation (PITCH vs MLP + IG vs measurement-only vs context-only; CITE-seq CD45RA, CosMx Ki-67, Gouwens input resistance; four LLMs).
+**They produce the data behind Table S2 (generation rates), Table S3 (model-level quality scores) and Figure S15 (radar); the tables and the figure themselves are drawn from `5_evaluation_results/ablation_conditions/` by the scripts in `6_supplementary_figures/`.**
 Run from this folder (`python <script>`); paths resolve through `common.py` to `2_prompts/`, `3_answers/` and `5_evaluation_results/` of this repository. Judging scripts need `OPENAI_API_KEY` in the environment (no key is stored).
+Condition identifiers: `cond0_full_pipeline` PITCH, `cond1_ig_only` MLP + IG, `cond2_raw_data` measurement-only, `cond4_context_only_softened` context-only.
 
 | Script | Purpose | API |
 |---|---|---|
-| `01_build_success_rate_table.py` | **Generation rate**: % of attempts that formulated a hypothesis per model and condition, 95% Wilson CI -> `1_success_rate_table/` | no |
-| `02a_select_answers.py` | keeps 3 answers per prompt (committed first) and draws one committed answer per model, condition and dataset (seed 20) -> `3_answers/ablation_conditions/selected_answers/` | no |
-| `02b_judge_quality.py` | blind 5-criteria quality judge (gpt-5.6-sol; unmodified rubric with the five-criterion preamble), `--conds`, `--out-dir`; run twice (two passes) | yes |
-| `02c_plot_quality_radars.py` | mean of the two passes; writes `quality_radar_datasheet.xlsx` (all-model averages used by the 6-axis radars) and the 5-axis radars | no |
-| `04a_judge_hypothesis_composition_agreement.py` | **hypothesis composition agreement**: four models' answers judged together in random order, 3 passes; `--dry-run` checks the rubric hash (0ffd5598c1bf...) | yes |
-| `04b_plot_hypothesis_composition_agreement.py` | bar plot and datasheet of the agreement score | no |
-| `02e_plot_radar_6axes.py` | **6-axis radar**, PITCH vs MLP + IG: 5 quality criteria + hypothesis composition agreement | no |
-| `04c_judge_hypothesis_composition_agreement_available_models.py` | **hypothesis composition agreement of the measurement-only condition**: the same rubric, judge and random-order passes as `04a`, applied to the models that have a successfully generated measurement-only answer for the prompt (CITE-seq 2, CosMx 3, Gouwens 2 answers); `--dry-run` shows the groups; `--conds` can also judge the other conditions on the same models | yes |
-| `02f_plot_radars_3conditions.py` | radars for all three conditions; its 6-axis version takes the measurement-only agreement from `04c` (PITCH and MLP + IG: across the 4 models, `04a`) | no |
-| `sampling/` | **measurement-only sampling**: `raw_data_sampler.py`, `run_ablation.py` and the modules it imports; rule, seed (42) and the sampled row indices (`measurement_only_sampled_cells.csv`) | token counting only |
-| `common.py`, `raw_prompt_versions.py`, `evaluation/` | shared paths and helpers; exact measurement-only prompt wordings; judge rubric module (`judge_evaluation.py` is the verbatim 7-criterion rubric, sha256 522c88817cdc...; it is not the same file as `../judge_evaluation.py` of the benchmark), rubrics | - |
+| `01_build_success_rate_table.py` | **Generation rate** (Table S2 source): % of attempts that formulated a hypothesis per model and condition, 95% Wilson CI -> `5_evaluation_results/ablation_conditions/1_success_rate_table/` | no |
+| `02a_select_answers.py` | keeps 3 answers per prompt (committed first) and draws one committed answer per model, condition and dataset (seed 20) -> `3_answers/ablation_conditions/selected_answers/` (earlier picks are unchanged when a condition is added) | no |
+| `02b_judge_quality.py` | blind 5-criteria quality judge (gpt-5.6-sol; unmodified rubric with the five-criterion preamble), `--conds`, `--out-dir`; two passes. PITCH and MLP + IG: `scorecards/pass1`, `pass2`; measurement-only: `--conds cond2_raw_data` -> `raw_pass1`, `raw_pass2`; context-only: `--conds cond4_context_only_softened` -> `ctx2_pass1`, `ctx2_pass2` | yes |
+| `02c_plot_quality_radars.py` | mean of the two passes; `quality_radar_datasheet.xlsx` (PITCH and MLP + IG) | no |
+| `04a_judge_hypothesis_composition_agreement.py` | **hypothesis composition agreement** for PITCH and MLP + IG: the four LLMs' answers judged together in random order, 3 passes; `--dry-run` checks the rubric hash (0ffd5598c1bf...) | yes |
+| `04b_plot_hypothesis_composition_agreement.py` | bar plot and datasheet of the agreement score (PITCH, MLP + IG) | no |
+| `04c_judge_hypothesis_composition_agreement_available_models.py` | agreement of **measurement-only and context-only**: same rubric, judge and random-order passes as `04a`, applied to the LLMs that have a committed answer for the prompt (measurement-only 2, 3 and 2 answers; context-only 4, 4 and 4); `--conds`, `--dry-run`, `--group-from` | yes |
+| `02e_plot_radar_6axes.py` | 6-axis radar, PITCH vs MLP + IG | no |
+| `02f_plot_radars_3conditions.py` | radars for PITCH, MLP + IG and measurement-only (and the helper functions used by `02h`) | no |
+| `02h_plot_radars_4conditions.py` | **four-condition radars and the per-model score table** (Table S3 source): `radar_all_models_average_{5,6}axes_4conditions[_all_axes]`, `radar_4conditions_datasheet.xlsx`, `per_model_scores_table.{csv,md}` | no |
+| `common.py`, `raw_prompt_versions.py`, `evaluation/`, `sampling/` | shared paths and helpers; exact measurement-only prompt wordings; judge rubric module (`judge_evaluation.py` is the verbatim 7-criterion rubric, sha256 522c88817cdc...; it is not the same file as `../judge_evaluation.py` of the benchmark) and rubrics; measurement-only sampling | - |
 
-Order: `02a` -> `01`; `02b` (pass 1, pass 2; measurement-only with `--conds cond2_raw_data`) -> `02c`; `04a` -> `04b` -> `02e`; `04c` (measurement-only agreement) -> `02f`. The manuscript panel (Fig. S15) is drawn from tables by `6_supplementary_figures/FigS15_ablation/plot_FigS15.py`.
-Results are in `../5_evaluation_results/ablation_conditions/`.
+Order: `02a` -> `01`; `02b` (pass 1 and 2 for each condition, see above) -> `02c`; `04a` -> `04b`; `04c` (measurement-only and context-only) -> `02h`. Then `6_supplementary_figures/` (Tables S2, S3, Figure S15).
+
+**Context-only and the criteria.** Feature Comprehensiveness and Mechanistic Synthesis are defined on supplied focus / contextual features and do not apply when no data are given; they are scored for the context-only answers and shown for reference (`02h` draws the context-only series on all axes in `*_all_axes` and without these two criteria in the other radars).
+Agreement groups of different size (2-4 answers) are not strictly comparable.
+The displayed name of the specificity criterion is **Hypothesis Specificity** everywhere; the judge rubric file keeps its original heading "Hypothesis Integration and Specificity" (it is the text the judge was given).
+Generation code: `../../1_generation_code/ablation_conditions/`.

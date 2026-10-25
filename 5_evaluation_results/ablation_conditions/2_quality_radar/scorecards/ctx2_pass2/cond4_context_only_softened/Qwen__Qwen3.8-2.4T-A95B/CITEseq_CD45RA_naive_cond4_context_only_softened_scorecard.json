@@ -1,0 +1,20 @@
+{
+  "model": "Qwen/Qwen3.8-2.4T-A95B",
+  "model_slug": "Qwen__Qwen3.8-2.4T-A95B",
+  "dataset": "CITEseq_CD45RA_naive",
+  "condition": "cond4_context_only_softened",
+  "picked_run": 1,
+  "preamble": "v2",
+  "scores": {
+    "Zone Identification score_zone1": null,
+    "Logic Rigor_zone1": null,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 8,
+    "Biological Plausibility_reason": "The HNRNPLL\u2013PTPRC alternative-splicing mechanism is established and biologically coherent for activation-associated CD45 isoform switching in T cells. Its extrapolation as the principal explanation across mixed cord-blood immune populations, particularly naive B and non-lymphoid cells, is less well supported.",
+    "Specificity_zone1": 9,
+    "Grounded Mechanistic Synthesis_zone1": 9,
+    "Grounded Mechanistic Synthesis_reason": "The response explicitly connects TCR activation, HNRNPLL induction, PTPRC exon exclusion, CD45RA loss, and the reciprocal CD45RO-associated memory state. It does not adequately connect this T-cell-centered mechanism to variation among B cells and other immune lineages in the mixed cord-blood sample. No synthesis ceiling was applied because the principal focus-to-target mechanism is explicit, multistep, and biologically defensible.",
+    "Literature Grounding_zone1": 7
+  },
+  "final_score_5pillar": 39.5
+}

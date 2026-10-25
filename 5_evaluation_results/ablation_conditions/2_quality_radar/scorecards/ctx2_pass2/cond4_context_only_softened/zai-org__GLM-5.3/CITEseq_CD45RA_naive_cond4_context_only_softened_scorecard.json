@@ -1,0 +1,20 @@
+{
+  "model": "zai-org/GLM-5.3",
+  "model_slug": "zai-org__GLM-5.3",
+  "dataset": "CITEseq_CD45RA_naive",
+  "condition": "cond4_context_only_softened",
+  "picked_run": 2,
+  "preamble": "v2",
+  "scores": {
+    "Zone Identification score_zone1": null,
+    "Logic Rigor_zone1": null,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 8,
+    "Biological Plausibility_reason": "PTPRC exon-4 alternative splicing is a strong, biologically established explanation for CD45RA variation and is coherently linked to lymphocyte state. The main weakness is the inaccurate description of GSK3 phosphorylation as causing SFPQ degradation, rather than primarily regulating its RNA-binding and splicing activity, together with an oversimplified account of the relevant repressors.",
+    "Specificity_zone1": 9,
+    "Grounded Mechanistic Synthesis_zone1": 9,
+    "Grounded Mechanistic Synthesis_reason": "The response integrates PTPRC exon-4 inclusion, PTBP1, hnRNP L, SFPQ, PI3K\u2013Akt\u2013GSK3 signaling, and naive versus activated or myeloid states into a clear explanation of CD45RA abundance. The precise GSK3-to-SFPQ transition is misstated, and lineage-specific differences are somewhat generalized rather than mechanistically resolved. No synthesis ceiling was applied because the central focus-feature\u2013target mechanism remains explicit, multistep, and well integrated.",
+    "Literature Grounding_zone1": 7
+  },
+  "final_score_5pillar": 39.5
+}

@@ -1,0 +1,39 @@
+{
+  "condition": "cond4_context_only_softened",
+  "dataset": "CosMx_CancerKi67",
+  "pass": 3,
+  "seed": 20,
+  "models": [
+    "gemini-3.1-pro-preview",
+    "zai-org/GLM-5.3",
+    "deepseek-ai/DeepSeek-V4.1-Flash",
+    "Qwen/Qwen3.8-2.4T-A95B"
+  ],
+  "order": [
+    {
+      "label": "A",
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "picked_run": 1
+    },
+    {
+      "label": "B",
+      "model": "zai-org/GLM-5.3",
+      "picked_run": 3
+    },
+    {
+      "label": "C",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "picked_run": 3
+    },
+    {
+      "label": "D",
+      "model": "gemini-3.1-pro-preview",
+      "picked_run": 3
+    }
+  ],
+  "judge": {
+    "rationale": "Agreement is limited: A and B share RB\u2013E2F/CDK4/6 and several cycling markers, C overlaps with them through RB/E2F, FOXM1, and CDKN1B and with D through CDKN1A/CDKN1B-mediated arrest, but the ER/MYC, TGF-\u03b2/SMAD/CAF, and HIF1A mechanisms use largely distinct contributors, so more than half of the complete molecular content differs and the shared-minority ceiling applies.",
+    "cross_model_agreement_score": 3
+  },
+  "score": 3
+}

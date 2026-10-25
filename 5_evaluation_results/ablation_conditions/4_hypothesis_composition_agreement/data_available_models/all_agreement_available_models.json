@@ -259,5 +259,356 @@
       "cross_model_agreement_score": 1
     },
     "score": 1
+  },
+  {
+    "condition": "cond4_context_only_softened",
+    "dataset": "CITEseq_CD45RA_naive",
+    "pass": 1,
+    "seed": 20,
+    "models": [
+      "gemini-3.1-pro-preview",
+      "zai-org/GLM-5.3",
+      "deepseek-ai/DeepSeek-V4.1-Flash",
+      "Qwen/Qwen3.8-2.4T-A95B"
+    ],
+    "order": [
+      {
+        "label": "A",
+        "model": "Qwen/Qwen3.8-2.4T-A95B",
+        "picked_run": 1
+      },
+      {
+        "label": "B",
+        "model": "zai-org/GLM-5.3",
+        "picked_run": 2
+      },
+      {
+        "label": "C",
+        "model": "gemini-3.1-pro-preview",
+        "picked_run": 3
+      },
+      {
+        "label": "D",
+        "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+        "picked_run": 1
+      }
+    ],
+    "judge": {
+      "rationale": "All answers share PTPRC exon-4 splicing and CD45RO as the explanation, and three of four center HNRNPLL, but Answer B instead develops a PTBP1\u2013hnRNP L\u2013SFPQ\u2013GSK3\u2013PI3K/AKT axis and the answers use many differing state markers, leaving more than half of the complete molecular inventories nonshared and invoking the shared-minority ceiling of 4.",
+      "cross_model_agreement_score": 4
+    },
+    "score": 4
+  },
+  {
+    "condition": "cond4_context_only_softened",
+    "dataset": "CITEseq_CD45RA_naive",
+    "pass": 2,
+    "seed": 20,
+    "models": [
+      "gemini-3.1-pro-preview",
+      "zai-org/GLM-5.3",
+      "deepseek-ai/DeepSeek-V4.1-Flash",
+      "Qwen/Qwen3.8-2.4T-A95B"
+    ],
+    "order": [
+      {
+        "label": "A",
+        "model": "Qwen/Qwen3.8-2.4T-A95B",
+        "picked_run": 1
+      },
+      {
+        "label": "B",
+        "model": "gemini-3.1-pro-preview",
+        "picked_run": 3
+      },
+      {
+        "label": "C",
+        "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+        "picked_run": 1
+      },
+      {
+        "label": "D",
+        "model": "zai-org/GLM-5.3",
+        "picked_run": 2
+      }
+    ],
+    "judge": {
+      "rationale": "All answers share PTPRC exon-4 splicing and the CD45RA-to-CD45RO switch, and three additionally share HNRNPLL, but answer D substitutes a PTBP1\u2013hnRNP L\u2013SFPQ\u2013GSK3/PI3K\u2013Akt mechanism and the answers use many nonshared state markers, so more than half of the complete molecular content differs and the shared-minority ceiling limits the score to 4.",
+      "cross_model_agreement_score": 4
+    },
+    "score": 4
+  },
+  {
+    "condition": "cond4_context_only_softened",
+    "dataset": "CITEseq_CD45RA_naive",
+    "pass": 3,
+    "seed": 20,
+    "models": [
+      "gemini-3.1-pro-preview",
+      "zai-org/GLM-5.3",
+      "deepseek-ai/DeepSeek-V4.1-Flash",
+      "Qwen/Qwen3.8-2.4T-A95B"
+    ],
+    "order": [
+      {
+        "label": "A",
+        "model": "zai-org/GLM-5.3",
+        "picked_run": 2
+      },
+      {
+        "label": "B",
+        "model": "Qwen/Qwen3.8-2.4T-A95B",
+        "picked_run": 1
+      },
+      {
+        "label": "C",
+        "model": "gemini-3.1-pro-preview",
+        "picked_run": 3
+      },
+      {
+        "label": "D",
+        "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+        "picked_run": 1
+      }
+    ],
+    "judge": {
+      "rationale": "All answers share PTPRC exon-4 splicing as the CD45RA/CD45RO mechanism, and B\u2013D additionally share HNRNPLL, but A instead relies on PTBP1, hnRNP L, SFPQ, PI3K\u2013AKT, and GSK3 while the state-marker sets also diverge, so more than half of the complete molecular content differs and the shared-minority ceiling of 4 applies.",
+      "cross_model_agreement_score": 4
+    },
+    "score": 4
+  },
+  {
+    "condition": "cond4_context_only_softened",
+    "dataset": "CosMx_CancerKi67",
+    "pass": 1,
+    "seed": 20,
+    "models": [
+      "gemini-3.1-pro-preview",
+      "zai-org/GLM-5.3",
+      "deepseek-ai/DeepSeek-V4.1-Flash",
+      "Qwen/Qwen3.8-2.4T-A95B"
+    ],
+    "order": [
+      {
+        "label": "A",
+        "model": "Qwen/Qwen3.8-2.4T-A95B",
+        "picked_run": 1
+      },
+      {
+        "label": "B",
+        "model": "zai-org/GLM-5.3",
+        "picked_run": 3
+      },
+      {
+        "label": "C",
+        "model": "gemini-3.1-pro-preview",
+        "picked_run": 3
+      },
+      {
+        "label": "D",
+        "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+        "picked_run": 3
+      }
+    ],
+    "judge": {
+      "rationale": "Agreement is limited: pairwise subsets recur around RB/E2F, CDK components, CDKN1B, CDKN1A, FOXM1, and several proliferation markers, but the primary explanations rely on largely distinct ER/MYC, hypoxia/HIF1A, or TGF-\u03b2/SMAD contributors, so more than half of the complete molecular content differs and the shared-minority ceiling of 4 applies.",
+      "cross_model_agreement_score": 3
+    },
+    "score": 3
+  },
+  {
+    "condition": "cond4_context_only_softened",
+    "dataset": "CosMx_CancerKi67",
+    "pass": 2,
+    "seed": 20,
+    "models": [
+      "gemini-3.1-pro-preview",
+      "zai-org/GLM-5.3",
+      "deepseek-ai/DeepSeek-V4.1-Flash",
+      "Qwen/Qwen3.8-2.4T-A95B"
+    ],
+    "order": [
+      {
+        "label": "A",
+        "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+        "picked_run": 3
+      },
+      {
+        "label": "B",
+        "model": "Qwen/Qwen3.8-2.4T-A95B",
+        "picked_run": 1
+      },
+      {
+        "label": "C",
+        "model": "zai-org/GLM-5.3",
+        "picked_run": 3
+      },
+      {
+        "label": "D",
+        "model": "gemini-3.1-pro-preview",
+        "picked_run": 3
+      }
+    ],
+    "judge": {
+      "rationale": "Agreement is limited: A, B, and C partially share RB/E2F, CDK, FOXM1 and proliferation-marker contributions, while A and D share CDKN1A/CDKN1B-mediated arrest, but the dominant TGF-\u03b2/SMAD, ER/MYC, and HIF1A contributors are distinct, so more than half of the complete molecular content differs and the shared-minority ceiling of 4 applies.",
+      "cross_model_agreement_score": 3
+    },
+    "score": 3
+  },
+  {
+    "condition": "cond4_context_only_softened",
+    "dataset": "CosMx_CancerKi67",
+    "pass": 3,
+    "seed": 20,
+    "models": [
+      "gemini-3.1-pro-preview",
+      "zai-org/GLM-5.3",
+      "deepseek-ai/DeepSeek-V4.1-Flash",
+      "Qwen/Qwen3.8-2.4T-A95B"
+    ],
+    "order": [
+      {
+        "label": "A",
+        "model": "Qwen/Qwen3.8-2.4T-A95B",
+        "picked_run": 1
+      },
+      {
+        "label": "B",
+        "model": "zai-org/GLM-5.3",
+        "picked_run": 3
+      },
+      {
+        "label": "C",
+        "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+        "picked_run": 3
+      },
+      {
+        "label": "D",
+        "model": "gemini-3.1-pro-preview",
+        "picked_run": 3
+      }
+    ],
+    "judge": {
+      "rationale": "Agreement is limited: A and B share RB\u2013E2F/CDK4/6 and several cycling markers, C overlaps with them through RB/E2F, FOXM1, and CDKN1B and with D through CDKN1A/CDKN1B-mediated arrest, but the ER/MYC, TGF-\u03b2/SMAD/CAF, and HIF1A mechanisms use largely distinct contributors, so more than half of the complete molecular content differs and the shared-minority ceiling applies.",
+      "cross_model_agreement_score": 3
+    },
+    "score": 3
+  },
+  {
+    "condition": "cond4_context_only_softened",
+    "dataset": "Gouwens_GABAergic",
+    "pass": 1,
+    "seed": 20,
+    "models": [
+      "gemini-3.1-pro-preview",
+      "zai-org/GLM-5.3",
+      "deepseek-ai/DeepSeek-V4.1-Flash",
+      "Qwen/Qwen3.8-2.4T-A95B"
+    ],
+    "order": [
+      {
+        "label": "A",
+        "model": "gemini-3.1-pro-preview",
+        "picked_run": 2
+      },
+      {
+        "label": "B",
+        "model": "zai-org/GLM-5.3",
+        "picked_run": 3
+      },
+      {
+        "label": "C",
+        "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+        "picked_run": 3
+      },
+      {
+        "label": "D",
+        "model": "Qwen/Qwen3.8-2.4T-A95B",
+        "picked_run": 3
+      }
+    ],
+    "judge": {
+      "rationale": "Agreement is limited: KCNK9/TASK-3 provides a comparable leak-conductance mechanism in B\u2013D, but A instead centers KCNJ2, while C adds KCNK2 and D adds KCNK3, leaving A with no mechanistic marker overlap and roughly half or more of the complete contributor coverage differing, so the shared-minority ceiling of 4 applies.",
+      "cross_model_agreement_score": 4
+    },
+    "score": 4
+  },
+  {
+    "condition": "cond4_context_only_softened",
+    "dataset": "Gouwens_GABAergic",
+    "pass": 2,
+    "seed": 20,
+    "models": [
+      "gemini-3.1-pro-preview",
+      "zai-org/GLM-5.3",
+      "deepseek-ai/DeepSeek-V4.1-Flash",
+      "Qwen/Qwen3.8-2.4T-A95B"
+    ],
+    "order": [
+      {
+        "label": "A",
+        "model": "zai-org/GLM-5.3",
+        "picked_run": 3
+      },
+      {
+        "label": "B",
+        "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+        "picked_run": 3
+      },
+      {
+        "label": "C",
+        "model": "Qwen/Qwen3.8-2.4T-A95B",
+        "picked_run": 3
+      },
+      {
+        "label": "D",
+        "model": "gemini-3.1-pro-preview",
+        "picked_run": 2
+      }
+    ],
+    "judge": {
+      "rationale": "KCNK9/TASK-3 provides a comparable leak-conductance explanation in three answers, but KCNK2 and KCNK3 are additional nonshared primary contributors and the fourth answer instead relies entirely on KCNJ2/Kir2.1, leaving under half of the complete molecular content shared and invoking the shared-minority ceiling of 4.",
+      "cross_model_agreement_score": 3
+    },
+    "score": 3
+  },
+  {
+    "condition": "cond4_context_only_softened",
+    "dataset": "Gouwens_GABAergic",
+    "pass": 3,
+    "seed": 20,
+    "models": [
+      "gemini-3.1-pro-preview",
+      "zai-org/GLM-5.3",
+      "deepseek-ai/DeepSeek-V4.1-Flash",
+      "Qwen/Qwen3.8-2.4T-A95B"
+    ],
+    "order": [
+      {
+        "label": "A",
+        "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+        "picked_run": 3
+      },
+      {
+        "label": "B",
+        "model": "Qwen/Qwen3.8-2.4T-A95B",
+        "picked_run": 3
+      },
+      {
+        "label": "C",
+        "model": "zai-org/GLM-5.3",
+        "picked_run": 3
+      },
+      {
+        "label": "D",
+        "model": "gemini-3.1-pro-preview",
+        "picked_run": 2
+      }
+    ],
+    "judge": {
+      "rationale": "KCNK9/TASK-3 provides a comparable leak-conductance explanation in A\u2013C, but A additionally centers KCNK2, B centers KCNK3, and D instead relies entirely on KCNJ2/Kir2.1, yielding only limited shared molecular coverage and invoking the incomplete-coverage ceiling.",
+      "cross_model_agreement_score": 3
+    },
+    "score": 3
   }
 ]

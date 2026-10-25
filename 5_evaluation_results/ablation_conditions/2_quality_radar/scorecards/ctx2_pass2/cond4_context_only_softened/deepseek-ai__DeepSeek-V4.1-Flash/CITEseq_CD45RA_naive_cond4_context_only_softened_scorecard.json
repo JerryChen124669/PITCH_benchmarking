@@ -1,0 +1,20 @@
+{
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "model_slug": "deepseek-ai__DeepSeek-V4.1-Flash",
+  "dataset": "CITEseq_CD45RA_naive",
+  "condition": "cond4_context_only_softened",
+  "picked_run": 1,
+  "preamble": "v2",
+  "scores": {
+    "Zone Identification score_zone1": null,
+    "Logic Rigor_zone1": null,
+    "Feature Comprehensiveness_zone1": 9,
+    "Biological Plausibility_zone1": 9,
+    "Biological Plausibility_reason": "The required mechanistic items are HNRNPLL, PTPRC exon-4 inclusion/skipping, reciprocal CD45RO, the naive/resting versus activated/memory state, and optional PTBP1. The HNRNPLL\u2013PTPRC splicing mechanism is well established in T cells, although presenting it as the main determinant across mixed cord-blood immune lineages is somewhat overgeneralized.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 8,
+    "Grounded Mechanistic Synthesis_reason": "The response clearly connects activation-induced HNRNPLL to PTPRC exon skipping, reciprocal CD45RA/CD45RO expression, and naive-versus-memory T-cell states. PTBP1 remains only an optional modifier, and lineage-specific sources of CD45RA variation in the mixed immune-cell population are not incorporated. No mechanistic-synthesis ceiling was applied because the principal focus-to-target mechanism is explicit and biologically defensible.",
+    "Literature Grounding_zone1": 9
+  },
+  "final_score_5pillar": 38.5
+}

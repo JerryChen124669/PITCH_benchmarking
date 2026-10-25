@@ -20,7 +20,7 @@ from common import COND_COLOR, COND_LABEL, CONDS, DATASETS, MODEL_LABEL, MODELS,
 
 OUT = ROOT / "2_quality_radar"
 SC = OUT / "scorecards"
-PILLARS = ["Feature\nComprehensiveness", "Biological\nPlausibility", "Hypothesis Integration\n& Specificity", "Mechanistic\nSynthesis", "Literature\nGrounding"]
+PILLARS = ["Feature\nComprehensiveness", "Biological\nPlausibility", "Hypothesis\nSpecificity", "Mechanistic\nSynthesis", "Literature\nGrounding"]
 PL = [p.replace("\n", " ") for p in PILLARS]
 KEYS = ["Feature Comprehensiveness_zone1", "Biological Plausibility_zone1", "Specificity_zone1", "Grounded Mechanistic Synthesis_zone1", "Literature Grounding_zone1"]
 STYLE = {"cond0_full_pipeline": ("o", "-"), "cond1_ig_only": ("s", "--")}

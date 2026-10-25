@@ -1,0 +1,20 @@
+{
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "model_slug": "deepseek-ai__DeepSeek-V4.1-Flash",
+  "dataset": "CosMx_CancerKi67",
+  "condition": "cond4_context_only_softened",
+  "picked_run": 3,
+  "preamble": "v2",
+  "scores": {
+    "Zone Identification score_zone1": null,
+    "Logic Rigor_zone1": null,
+    "Feature Comprehensiveness_zone1": 9,
+    "Biological Plausibility_zone1": 9,
+    "Biological Plausibility_reason": "CAF-derived TGF-\u03b2 signaling through TGFBR\u2013SMAD and p21/p27-mediated RB/E2F suppression is a biologically defensible mechanism for reduced proliferation and Ki-67. TGF-\u03b2 responses in breast cancer are context-dependent, so its proposed dominance and vessel-distance relationship remain hypotheses rather than established conclusions.",
+    "Specificity_zone1": 9,
+    "Grounded Mechanistic Synthesis_zone1": 9,
+    "Grounded Mechanistic Synthesis_reason": "The response integrates CAF-derived TGFB1, tumor TGFBR1/2\u2013SMAD2/3 signaling, p21/p27-mediated CDK inhibition, RB/E2F\u2013FOXM1 suppression, and reduced Ki-67 into a coherent spatial mechanism. FAP, ACTA2, PDGFRB, SERPINE1, JUNB, and SKIL function mainly as state or source markers rather than mechanistic intermediates, and the vessel-distance component is not fully connected. No synthesis ceiling was applied because the principal focus-to-target mechanism is explicit, multistep, and biologically resolved.",
+    "Literature Grounding_zone1": 9
+  },
+  "final_score_5pillar": 40.5
+}

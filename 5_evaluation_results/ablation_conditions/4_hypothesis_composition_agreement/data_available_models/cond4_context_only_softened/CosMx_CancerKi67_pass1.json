@@ -1,0 +1,39 @@
+{
+  "condition": "cond4_context_only_softened",
+  "dataset": "CosMx_CancerKi67",
+  "pass": 1,
+  "seed": 20,
+  "models": [
+    "gemini-3.1-pro-preview",
+    "zai-org/GLM-5.3",
+    "deepseek-ai/DeepSeek-V4.1-Flash",
+    "Qwen/Qwen3.8-2.4T-A95B"
+  ],
+  "order": [
+    {
+      "label": "A",
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "picked_run": 1
+    },
+    {
+      "label": "B",
+      "model": "zai-org/GLM-5.3",
+      "picked_run": 3
+    },
+    {
+      "label": "C",
+      "model": "gemini-3.1-pro-preview",
+      "picked_run": 3
+    },
+    {
+      "label": "D",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "picked_run": 3
+    }
+  ],
+  "judge": {
+    "rationale": "Agreement is limited: pairwise subsets recur around RB/E2F, CDK components, CDKN1B, CDKN1A, FOXM1, and several proliferation markers, but the primary explanations rely on largely distinct ER/MYC, hypoxia/HIF1A, or TGF-\u03b2/SMAD contributors, so more than half of the complete molecular content differs and the shared-minority ceiling of 4 applies.",
+    "cross_model_agreement_score": 3
+  },
+  "score": 3
+}

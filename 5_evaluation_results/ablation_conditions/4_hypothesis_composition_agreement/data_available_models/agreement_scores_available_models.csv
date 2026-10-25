@@ -2,3 +2,6 @@ condition,dataset,models_in_group,n_models,n_passes_scored,mean_score,sd_across_
 cond2_raw_data,CITEseq_CD45RA_naive,GLM-5.3; Qwen3.8-2.4T-A95B,2,3,5,0.0,"[5, 5, 5]"
 cond2_raw_data,CosMx_CancerKi67,GLM-5.3; DeepSeek-V4.1-Flash; Qwen3.8-2.4T-A95B,3,3,2.667,0.577,"[3, 3, 2]"
 cond2_raw_data,Gouwens_GABAergic,gemini-3.1-pro-preview; GLM-5.3,2,3,1,0.0,"[1, 1, 1]"
+cond4_context_only_softened,CITEseq_CD45RA_naive,gemini-3.1-pro-preview; GLM-5.3; DeepSeek-V4.1-Flash; Qwen3.8-2.4T-A95B,4,3,4,0.0,"[4, 4, 4]"
+cond4_context_only_softened,CosMx_CancerKi67,gemini-3.1-pro-preview; GLM-5.3; DeepSeek-V4.1-Flash; Qwen3.8-2.4T-A95B,4,3,3,0.0,"[3, 3, 3]"
+cond4_context_only_softened,Gouwens_GABAergic,gemini-3.1-pro-preview; GLM-5.3; DeepSeek-V4.1-Flash; Qwen3.8-2.4T-A95B,4,3,3.333,0.577,"[4, 3, 3]"

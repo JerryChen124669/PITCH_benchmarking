@@ -8,3 +8,6 @@ MLP + IG,Gouwens input resistance,3,4.0,"[4, 4, 4]","Gemini-3.1-pro-preview, GLM
 Measurement-only,CITE-seq CD45RA,3,5.0,"[5, 5, 5]","GLM-5.3, Qwen3.8-2.4T-A95B"
 Measurement-only,CosMx Ki-67,3,2.667,"[3, 3, 2]","GLM-5.3, DeepSeek V4.1 Flash, Qwen3.8-2.4T-A95B"
 Measurement-only,Gouwens input resistance,3,1.0,"[1, 1, 1]","Gemini-3.1-pro-preview, GLM-5.3"
+Context-only,CITE-seq CD45RA,3,4.0,"[4, 4, 4]","Gemini-3.1-pro-preview, GLM-5.3, DeepSeek V4.1 Flash, Qwen3.8-2.4T-A95B"
+Context-only,CosMx Ki-67,3,3.0,"[3, 3, 3]","Gemini-3.1-pro-preview, GLM-5.3, DeepSeek V4.1 Flash, Qwen3.8-2.4T-A95B"
+Context-only,Gouwens input resistance,3,3.333,"[4, 3, 3]","Gemini-3.1-pro-preview, GLM-5.3, DeepSeek V4.1 Flash, Qwen3.8-2.4T-A95B"

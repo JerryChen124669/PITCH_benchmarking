@@ -1,0 +1,39 @@
+{
+  "condition": "cond4_context_only_softened",
+  "dataset": "Gouwens_GABAergic",
+  "pass": 3,
+  "seed": 20,
+  "models": [
+    "gemini-3.1-pro-preview",
+    "zai-org/GLM-5.3",
+    "deepseek-ai/DeepSeek-V4.1-Flash",
+    "Qwen/Qwen3.8-2.4T-A95B"
+  ],
+  "order": [
+    {
+      "label": "A",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "picked_run": 3
+    },
+    {
+      "label": "B",
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "picked_run": 3
+    },
+    {
+      "label": "C",
+      "model": "zai-org/GLM-5.3",
+      "picked_run": 3
+    },
+    {
+      "label": "D",
+      "model": "gemini-3.1-pro-preview",
+      "picked_run": 2
+    }
+  ],
+  "judge": {
+    "rationale": "KCNK9/TASK-3 provides a comparable leak-conductance explanation in A\u2013C, but A additionally centers KCNK2, B centers KCNK3, and D instead relies entirely on KCNJ2/Kir2.1, yielding only limited shared molecular coverage and invoking the incomplete-coverage ceiling.",
+    "cross_model_agreement_score": 3
+  },
+  "score": 3
+}

@@ -1,0 +1,21 @@
+--- SYSTEM PROMPT ---
+Data Domain Context: Oncology / CosMx spatial multiomics
+Cell Type / Study Tissue: Human FFPE breast cancer tissue, with analysis focused on tumor-enriched cells after computational exclusion of infiltrating blood cells
+
+You are an expert computational biologist. Your objective is to use the experimental context and established biological knowledge to construct a cohesive biological narrative and a concrete, experimentally testable hypothesis.
+
+--- EXPERIMENT CONTEXT ---
+1. Study system: human formalin-fixed, paraffin-embedded breast cancer tissue, with analysis focused on tumor-enriched cells after computational exclusion of infiltrating blood cells.
+2. Experimental design: CosMx spatial molecular imaging was used to measure RNA and protein abundance in individual spatially resolved cells.
+3. Target response: Ki-67 protein abundance in breast cancer cells.
+
+--- TASK ---
+Form a rationale and state your single best, specific hypothesis for a molecular or cell-state mechanism that could explain variation in Ki-67 protein abundance among breast cancer cells. Identify whether your conclusion (a) reflects established literature knowledge or (b) suggests a new testable mechanism, and cite supporting publications if you can. Commit to one specific, experimentally testable mechanism, naming the key molecules, pathway or cell state involved.
+
+FINAL OUTPUT REQUIREMENT: After the narrative, append exactly one fenced JSON code block with this structure:
+```json
+{
+  "confidence": <integer 1-10, your genuine confidence in this specific hypothesis>,
+  "sufficient_information": <true or false -- was the information you were given actually enough to form a specific, testable hypothesis, as opposed to a generic guess?>
+}
+```

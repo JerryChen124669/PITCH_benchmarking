@@ -1,0 +1,39 @@
+{
+  "condition": "cond4_context_only_softened",
+  "dataset": "Gouwens_GABAergic",
+  "pass": 2,
+  "seed": 20,
+  "models": [
+    "gemini-3.1-pro-preview",
+    "zai-org/GLM-5.3",
+    "deepseek-ai/DeepSeek-V4.1-Flash",
+    "Qwen/Qwen3.8-2.4T-A95B"
+  ],
+  "order": [
+    {
+      "label": "A",
+      "model": "zai-org/GLM-5.3",
+      "picked_run": 3
+    },
+    {
+      "label": "B",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "picked_run": 3
+    },
+    {
+      "label": "C",
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "picked_run": 3
+    },
+    {
+      "label": "D",
+      "model": "gemini-3.1-pro-preview",
+      "picked_run": 2
+    }
+  ],
+  "judge": {
+    "rationale": "KCNK9/TASK-3 provides a comparable leak-conductance explanation in three answers, but KCNK2 and KCNK3 are additional nonshared primary contributors and the fourth answer instead relies entirely on KCNJ2/Kir2.1, leaving under half of the complete molecular content shared and invoking the shared-minority ceiling of 4.",
+    "cross_model_agreement_score": 3
+  },
+  "score": 3
+}

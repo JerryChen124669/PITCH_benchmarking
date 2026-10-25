@@ -1,0 +1,242 @@
+[
+  {
+    "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+    "model_slug": "deepseek-ai__DeepSeek-V4.1-Flash",
+    "dataset": "CITEseq_CD45RA_naive",
+    "condition": "cond4_context_only_softened",
+    "picked_run": 1,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 9,
+      "Biological Plausibility_zone1": 9,
+      "Biological Plausibility_reason": "The required mechanistic items are HNRNPLL, PTPRC exon-4 inclusion/skipping, reciprocal CD45RO, the naive/resting versus activated/memory state, and optional PTBP1. The HNRNPLL\u2013PTPRC splicing mechanism is well established in T cells, although presenting it as the main determinant across mixed cord-blood immune lineages is somewhat overgeneralized.",
+      "Specificity_zone1": 8,
+      "Grounded Mechanistic Synthesis_zone1": 8,
+      "Grounded Mechanistic Synthesis_reason": "The response clearly connects activation-induced HNRNPLL to PTPRC exon skipping, reciprocal CD45RA/CD45RO expression, and naive-versus-memory T-cell states. PTBP1 remains only an optional modifier, and lineage-specific sources of CD45RA variation in the mixed immune-cell population are not incorporated. No mechanistic-synthesis ceiling was applied because the principal focus-to-target mechanism is explicit and biologically defensible.",
+      "Literature Grounding_zone1": 9
+    },
+    "final_score_5pillar": 38.5
+  },
+  {
+    "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+    "model_slug": "deepseek-ai__DeepSeek-V4.1-Flash",
+    "dataset": "CosMx_CancerKi67",
+    "condition": "cond4_context_only_softened",
+    "picked_run": 3,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 9,
+      "Biological Plausibility_zone1": 9,
+      "Biological Plausibility_reason": "CAF-derived TGF-\u03b2 signaling through TGFBR\u2013SMAD and p21/p27-mediated RB/E2F suppression is a biologically defensible mechanism for reduced proliferation and Ki-67. TGF-\u03b2 responses in breast cancer are context-dependent, so its proposed dominance and vessel-distance relationship remain hypotheses rather than established conclusions.",
+      "Specificity_zone1": 9,
+      "Grounded Mechanistic Synthesis_zone1": 9,
+      "Grounded Mechanistic Synthesis_reason": "The response integrates CAF-derived TGFB1, tumor TGFBR1/2\u2013SMAD2/3 signaling, p21/p27-mediated CDK inhibition, RB/E2F\u2013FOXM1 suppression, and reduced Ki-67 into a coherent spatial mechanism. FAP, ACTA2, PDGFRB, SERPINE1, JUNB, and SKIL function mainly as state or source markers rather than mechanistic intermediates, and the vessel-distance component is not fully connected. No synthesis ceiling was applied because the principal focus-to-target mechanism is explicit, multistep, and biologically resolved.",
+      "Literature Grounding_zone1": 9
+    },
+    "final_score_5pillar": 40.5
+  },
+  {
+    "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+    "model_slug": "deepseek-ai__DeepSeek-V4.1-Flash",
+    "dataset": "Gouwens_GABAergic",
+    "condition": "cond4_context_only_softened",
+    "picked_run": 3,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 9,
+      "Biological Plausibility_zone1": 8,
+      "Biological Plausibility_reason": "The proposed KCNK9/KCNK2-to-resting-K+ conductance-to-input-resistance mechanism is biologically coherent and experimentally defensible. However, K2P dominance and the asserted Pvalb-versus-Vip expression pattern are somewhat overstated, and reduced excitability after leak-channel knockdown is not the generally expected consequence of increased input resistance.",
+      "Specificity_zone1": 7,
+      "Grounded Mechanistic Synthesis_zone1": 7,
+      "Grounded Mechanistic Synthesis_reason": "KCNK9 and KCNK2 expression are explicitly connected through resting K+ conductance to input resistance, with Pvalb and Vip identities used to define contrasting cellular contexts. The two channels are not mechanistically distinguished, and cell size and other conductances remain controls or caveats rather than integrated parts of the explanation. No synthesis ceiling was applied because the focus-feature\u2013target mechanism and its principal intermediate are explicit.",
+      "Literature Grounding_zone1": 8
+    },
+    "final_score_5pillar": 35.0
+  },
+  {
+    "model": "gemini-3.1-pro-preview",
+    "model_slug": "gemini-3.1-pro-preview",
+    "dataset": "CITEseq_CD45RA_naive",
+    "condition": "cond4_context_only_softened",
+    "picked_run": 3,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 10,
+      "Biological Plausibility_zone1": 9,
+      "Biological Plausibility_reason": "The HNRNPLL-mediated exclusion of PTPRC variable exons provides an accurate and coherent mechanism for reducing CD45RA expression. The main limitation is extrapolating HNRNPLL transcript abundance as the dominant determinant across mixed neonatal lineages, where lineage composition, total CD45 expression, and post-transcriptional factors may also contribute.",
+      "Specificity_zone1": 8,
+      "Grounded Mechanistic Synthesis_zone1": 8,
+      "Grounded Mechanistic Synthesis_reason": "The response explicitly connects activation-associated HNRNPLL expression to PTPRC exon silencing, CD45 isoform switching, and reduced surface CD45RA. T-cell and progenitor-state differences are mentioned but are not fully incorporated into the causal chain or used to explain lineage-specific regulation. No synthesis ceiling was applied because a clear, biologically defensible focus-feature-to-target mechanism is provided.",
+      "Literature Grounding_zone1": 9
+    },
+    "final_score_5pillar": 39.5
+  },
+  {
+    "model": "gemini-3.1-pro-preview",
+    "model_slug": "gemini-3.1-pro-preview",
+    "dataset": "CosMx_CancerKi67",
+    "condition": "cond4_context_only_softened",
+    "picked_run": 3,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 10,
+      "Biological Plausibility_zone1": 9,
+      "Biological Plausibility_reason": "The hypoxia\u2013HIF-1\u03b1\u2013p21/p27\u2013cell-cycle arrest mechanism is biologically coherent and well established in tumors. The main weakness is treating HIF1A RNA abundance as a direct measure of HIF-1\u03b1 activity, which is chiefly regulated through oxygen-dependent protein stabilization.",
+      "Specificity_zone1": 9,
+      "Grounded Mechanistic Synthesis_zone1": 9,
+      "Grounded Mechanistic Synthesis_reason": "Distance from vascular supply, hypoxia, HIF-1\u03b1 activity, CDKN1A/CDKN1B induction, cell-cycle arrest, and reduced Ki-67 are integrated into a clear multistep mechanism. The use of a vascular/stromal boundary as a vascular proxy and HIF1A transcript abundance as an activity readout remains insufficiently resolved. No synthesis ceiling was applied because all principal contextual features contribute explicitly to the mechanism.",
+      "Literature Grounding_zone1": 7
+    },
+    "final_score_5pillar": 40.5
+  },
+  {
+    "model": "gemini-3.1-pro-preview",
+    "model_slug": "gemini-3.1-pro-preview",
+    "dataset": "Gouwens_GABAergic",
+    "condition": "cond4_context_only_softened",
+    "picked_run": 2,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 10,
+      "Biological Plausibility_zone1": 7,
+      "Biological Plausibility_reason": "Kir2.1 can plausibly increase resting potassium conductance and thereby lower input resistance. However, the asserted high-Kcnj2 Pvalb and low-Kcnj2 Vip/Sst pattern, and its status as a primary established driver, are not firmly supported by the cited broad Patch-seq studies.",
+      "Specificity_zone1": 6,
+      "Grounded Mechanistic Synthesis_zone1": 6,
+      "Grounded Mechanistic Synthesis_reason": "The response explicitly connects Kcnj2 abundance to Kir2.1 resting conductance, current shunting, and reduced input resistance, while using Pvalb, Vip, and Sst identities to define the predicted expression states. Those cell identities are primarily presumed expression strata rather than mechanistically explained determinants, and morphology is treated only as an excluded alternative. No formal ceiling was applied; the score reflects a clear central mechanism with limited contextual integration and mechanistic depth.",
+      "Literature Grounding_zone1": 5
+    },
+    "final_score_5pillar": 31.5
+  },
+  {
+    "model": "Qwen/Qwen3.8-2.4T-A95B",
+    "model_slug": "Qwen__Qwen3.8-2.4T-A95B",
+    "dataset": "CITEseq_CD45RA_naive",
+    "condition": "cond4_context_only_softened",
+    "picked_run": 1,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 10,
+      "Biological Plausibility_zone1": 8,
+      "Biological Plausibility_reason": "The HNRNPLL\u2013PTPRC alternative-splicing mechanism is established and biologically coherent for activation-associated CD45 isoform switching in T cells. Its extrapolation as the principal explanation across mixed cord-blood immune populations, particularly naive B and non-lymphoid cells, is less well supported.",
+      "Specificity_zone1": 9,
+      "Grounded Mechanistic Synthesis_zone1": 9,
+      "Grounded Mechanistic Synthesis_reason": "The response explicitly connects TCR activation, HNRNPLL induction, PTPRC exon exclusion, CD45RA loss, and the reciprocal CD45RO-associated memory state. It does not adequately connect this T-cell-centered mechanism to variation among B cells and other immune lineages in the mixed cord-blood sample. No synthesis ceiling was applied because the principal focus-to-target mechanism is explicit, multistep, and biologically defensible.",
+      "Literature Grounding_zone1": 7
+    },
+    "final_score_5pillar": 39.5
+  },
+  {
+    "model": "Qwen/Qwen3.8-2.4T-A95B",
+    "model_slug": "Qwen__Qwen3.8-2.4T-A95B",
+    "dataset": "CosMx_CancerKi67",
+    "condition": "cond4_context_only_softened",
+    "picked_run": 1,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 10,
+      "Biological Plausibility_zone1": 10,
+      "Biological Plausibility_reason": "The proposed CCND1\u2013CDK4/6\u2013RB1\u2013E2F and CCNE1\u2013CDK2 mechanism is well-established, contextually appropriate for breast cancer, and coherently explains Ki-67 variation through heterogeneous cell-cycle entry and progression.",
+      "Specificity_zone1": 10,
+      "Grounded Mechanistic Synthesis_zone1": 9,
+      "Grounded Mechanistic Synthesis_reason": "CCND1, CDK4/6, CCNE1, CDK2, RB1, E2F1/2, and CDKN1B are integrated into a coherent sequence connecting RB phosphorylation and E2F activation to active cycling and elevated Ki-67. No key feature is isolated, although the upstream source of heterogeneous mitogenic activation and the precise link from E2F-driven cycling to Ki-67 abundance remain broad. No synthesis ceiling was applied.",
+      "Literature Grounding_zone1": 10
+    },
+    "final_score_5pillar": 44.0
+  },
+  {
+    "model": "Qwen/Qwen3.8-2.4T-A95B",
+    "model_slug": "Qwen__Qwen3.8-2.4T-A95B",
+    "dataset": "Gouwens_GABAergic",
+    "condition": "cond4_context_only_softened",
+    "picked_run": 3,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 10,
+      "Biological Plausibility_zone1": 9,
+      "Biological Plausibility_reason": "The required features are Kcnk3 and Kcnk9, and both are accurately explained as encoding TASK-family background potassium channels whose increased resting conductance would lower input resistance. Their proposed importance across visual-cortical interneuron subclasses remains speculative but is biologically defensible and clearly framed as a testable hypothesis.",
+      "Specificity_zone1": 8,
+      "Grounded Mechanistic Synthesis_zone1": 9,
+      "Grounded Mechanistic Synthesis_reason": "Kcnk3 and Kcnk9 are explicitly connected through TASK-channel expression and open probability to resting potassium conductance, membrane time constant, and input resistance. HCN conductance and cell size are appropriately treated as competing determinants or covariates rather than fully integrated parts of the principal mechanism. No synthesis ceiling was applied because the focus-feature\u2013target mechanism is explicit, biologically resolved, and includes all features required by the primary hypothesis.",
+      "Literature Grounding_zone1": 8
+    },
+    "final_score_5pillar": 40.0
+  },
+  {
+    "model": "zai-org/GLM-5.3",
+    "model_slug": "zai-org__GLM-5.3",
+    "dataset": "CITEseq_CD45RA_naive",
+    "condition": "cond4_context_only_softened",
+    "picked_run": 2,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 10,
+      "Biological Plausibility_zone1": 8,
+      "Biological Plausibility_reason": "PTPRC exon-4 alternative splicing is a strong, biologically established explanation for CD45RA variation and is coherently linked to lymphocyte state. The main weakness is the inaccurate description of GSK3 phosphorylation as causing SFPQ degradation, rather than primarily regulating its RNA-binding and splicing activity, together with an oversimplified account of the relevant repressors.",
+      "Specificity_zone1": 9,
+      "Grounded Mechanistic Synthesis_zone1": 9,
+      "Grounded Mechanistic Synthesis_reason": "The response integrates PTPRC exon-4 inclusion, PTBP1, hnRNP L, SFPQ, PI3K\u2013Akt\u2013GSK3 signaling, and naive versus activated or myeloid states into a clear explanation of CD45RA abundance. The precise GSK3-to-SFPQ transition is misstated, and lineage-specific differences are somewhat generalized rather than mechanistically resolved. No synthesis ceiling was applied because the central focus-feature\u2013target mechanism remains explicit, multistep, and well integrated.",
+      "Literature Grounding_zone1": 7
+    },
+    "final_score_5pillar": 39.5
+  },
+  {
+    "model": "zai-org/GLM-5.3",
+    "model_slug": "zai-org__GLM-5.3",
+    "dataset": "CosMx_CancerKi67",
+    "condition": "cond4_context_only_softened",
+    "picked_run": 3,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 7,
+      "Biological Plausibility_zone1": 6,
+      "Biological Plausibility_reason": "The ESR-low/cycling versus luminal-differentiated association is defensible, and the MYC\u2013E2F\u2013CDK4/6 axis plausibly explains Ki-67 variation. However, the response overstates ER signaling as intrinsically antiproliferative and its prediction that estradiol preferentially expands Ki-67 in ER-low cells conflicts with the usual ER-dependent mitogenic response.",
+      "Specificity_zone1": 6,
+      "Grounded Mechanistic Synthesis_zone1": 6,
+      "Grounded Mechanistic Synthesis_reason": "The response connects ESR1-associated luminal differentiation, MYC\u2013E2F\u2013CDK4/6 cell-cycle entry, and several cycling-gene readouts to Ki-67 abundance. PGR, TFF1, XBP1, AGR2, TOP2A, CCNB1, UBE2C, and PCNA mostly remain grouped state markers rather than making distinct mechanistic contributions, and the transition from ER-program loss to MYC/E2F activation is not resolved. No formal synthesis ceiling was applied because a clear focus-to-target mechanism and contextual cell-state bridge were provided.",
+      "Literature Grounding_zone1": 6
+    },
+    "final_score_5pillar": 28.0
+  },
+  {
+    "model": "zai-org/GLM-5.3",
+    "model_slug": "zai-org__GLM-5.3",
+    "dataset": "Gouwens_GABAergic",
+    "condition": "cond4_context_only_softened",
+    "picked_run": 3,
+    "preamble": "v2",
+    "scores": {
+      "Zone Identification score_zone1": null,
+      "Logic Rigor_zone1": null,
+      "Feature Comprehensiveness_zone1": 9,
+      "Biological Plausibility_zone1": 9,
+      "Biological Plausibility_reason": "The proposed KCNK9/TASK-3-to-resting K+ conductance-to-input resistance mechanism is well established and biologically coherent. The main uncertainty is the strength and specificity of Kcnk9 enrichment in adult visual-cortex PV interneurons.",
+      "Specificity_zone1": 8,
+      "Grounded Mechanistic Synthesis_zone1": 8,
+      "Grounded Mechanistic Synthesis_reason": "KCNK9 abundance, membrane TASK-3 channels, resting potassium conductance, the PV fast-spiking state, and input resistance are connected through an explicit causal chain. The PV state is used mainly to identify the predicted Kcnk9-high context rather than being mechanistically linked to Kcnk9 regulation. No synthesis ceiling was applied because the principal channel-to-conductance-to-resistance transitions are explicit and biologically defensible.",
+      "Literature Grounding_zone1": 8
+    },
+    "final_score_5pillar": 38.0
+  }
+]

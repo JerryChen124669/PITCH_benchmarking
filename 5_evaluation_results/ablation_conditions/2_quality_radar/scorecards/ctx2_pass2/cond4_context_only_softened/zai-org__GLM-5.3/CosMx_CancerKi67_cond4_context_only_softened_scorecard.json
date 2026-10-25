@@ -1,0 +1,20 @@
+{
+  "model": "zai-org/GLM-5.3",
+  "model_slug": "zai-org__GLM-5.3",
+  "dataset": "CosMx_CancerKi67",
+  "condition": "cond4_context_only_softened",
+  "picked_run": 3,
+  "preamble": "v2",
+  "scores": {
+    "Zone Identification score_zone1": null,
+    "Logic Rigor_zone1": null,
+    "Feature Comprehensiveness_zone1": 7,
+    "Biological Plausibility_zone1": 6,
+    "Biological Plausibility_reason": "The ESR-low/cycling versus luminal-differentiated association is defensible, and the MYC\u2013E2F\u2013CDK4/6 axis plausibly explains Ki-67 variation. However, the response overstates ER signaling as intrinsically antiproliferative and its prediction that estradiol preferentially expands Ki-67 in ER-low cells conflicts with the usual ER-dependent mitogenic response.",
+    "Specificity_zone1": 6,
+    "Grounded Mechanistic Synthesis_zone1": 6,
+    "Grounded Mechanistic Synthesis_reason": "The response connects ESR1-associated luminal differentiation, MYC\u2013E2F\u2013CDK4/6 cell-cycle entry, and several cycling-gene readouts to Ki-67 abundance. PGR, TFF1, XBP1, AGR2, TOP2A, CCNB1, UBE2C, and PCNA mostly remain grouped state markers rather than making distinct mechanistic contributions, and the transition from ER-program loss to MYC/E2F activation is not resolved. No formal synthesis ceiling was applied because a clear focus-to-target mechanism and contextual cell-state bridge were provided.",
+    "Literature Grounding_zone1": 6
+  },
+  "final_score_5pillar": 28.0
+}

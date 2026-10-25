@@ -1,0 +1,177 @@
+Input condition,LLM,Prompt,Run,Outcome
+PITCH,DeepSeek V4.1 Flash,CITE-seq CD45RA,1,committed
+PITCH,DeepSeek V4.1 Flash,CITE-seq CD45RA,2,committed
+PITCH,DeepSeek V4.1 Flash,CITE-seq CD45RA,3,committed
+PITCH,DeepSeek V4.1 Flash,CosMx Ki-67,1,committed
+PITCH,DeepSeek V4.1 Flash,CosMx Ki-67,2,committed
+PITCH,DeepSeek V4.1 Flash,CosMx Ki-67,3,committed
+PITCH,DeepSeek V4.1 Flash,Patch-seq input resistance,1,committed
+PITCH,DeepSeek V4.1 Flash,Patch-seq input resistance,2,committed
+PITCH,DeepSeek V4.1 Flash,Patch-seq input resistance,3,committed
+PITCH,GLM-5.3,CITE-seq CD45RA,1,committed
+PITCH,GLM-5.3,CITE-seq CD45RA,2,committed
+PITCH,GLM-5.3,CITE-seq CD45RA,3,committed
+PITCH,GLM-5.3,CosMx Ki-67,1,committed
+PITCH,GLM-5.3,CosMx Ki-67,2,committed
+PITCH,GLM-5.3,CosMx Ki-67,3,committed
+PITCH,GLM-5.3,Patch-seq input resistance,1,committed
+PITCH,GLM-5.3,Patch-seq input resistance,2,committed
+PITCH,GLM-5.3,Patch-seq input resistance,3,committed
+PITCH,Gemini 3.1 Pro Preview,CITE-seq CD45RA,1,committed
+PITCH,Gemini 3.1 Pro Preview,CITE-seq CD45RA,2,committed
+PITCH,Gemini 3.1 Pro Preview,CITE-seq CD45RA,3,committed
+PITCH,Gemini 3.1 Pro Preview,CosMx Ki-67,1,committed
+PITCH,Gemini 3.1 Pro Preview,CosMx Ki-67,2,committed
+PITCH,Gemini 3.1 Pro Preview,CosMx Ki-67,3,committed
+PITCH,Gemini 3.1 Pro Preview,Patch-seq input resistance,1,committed
+PITCH,Gemini 3.1 Pro Preview,Patch-seq input resistance,2,committed
+PITCH,Gemini 3.1 Pro Preview,Patch-seq input resistance,3,committed
+PITCH,Qwen3.8 2.4T-A95B,CITE-seq CD45RA,1,committed
+PITCH,Qwen3.8 2.4T-A95B,CITE-seq CD45RA,2,committed
+PITCH,Qwen3.8 2.4T-A95B,CITE-seq CD45RA,3,committed
+PITCH,Qwen3.8 2.4T-A95B,CosMx Ki-67,1,committed
+PITCH,Qwen3.8 2.4T-A95B,CosMx Ki-67,2,committed
+PITCH,Qwen3.8 2.4T-A95B,CosMx Ki-67,3,committed
+PITCH,Qwen3.8 2.4T-A95B,Patch-seq input resistance,1,committed
+PITCH,Qwen3.8 2.4T-A95B,Patch-seq input resistance,2,committed
+PITCH,Qwen3.8 2.4T-A95B,Patch-seq input resistance,3,committed
+MLP + IG,DeepSeek V4.1 Flash,CITE-seq CD45RA,1,committed
+MLP + IG,DeepSeek V4.1 Flash,CITE-seq CD45RA,2,committed
+MLP + IG,DeepSeek V4.1 Flash,CITE-seq CD45RA,3,committed
+MLP + IG,DeepSeek V4.1 Flash,CosMx Ki-67,1,committed
+MLP + IG,DeepSeek V4.1 Flash,CosMx Ki-67,2,committed
+MLP + IG,DeepSeek V4.1 Flash,CosMx Ki-67,3,committed
+MLP + IG,DeepSeek V4.1 Flash,Patch-seq input resistance,1,committed
+MLP + IG,DeepSeek V4.1 Flash,Patch-seq input resistance,2,committed
+MLP + IG,DeepSeek V4.1 Flash,Patch-seq input resistance,3,committed
+MLP + IG,GLM-5.3,CITE-seq CD45RA,1,committed
+MLP + IG,GLM-5.3,CITE-seq CD45RA,2,committed
+MLP + IG,GLM-5.3,CITE-seq CD45RA,3,committed
+MLP + IG,GLM-5.3,CosMx Ki-67,1,committed
+MLP + IG,GLM-5.3,CosMx Ki-67,2,committed
+MLP + IG,GLM-5.3,CosMx Ki-67,3,committed
+MLP + IG,GLM-5.3,Patch-seq input resistance,1,committed
+MLP + IG,GLM-5.3,Patch-seq input resistance,2,committed
+MLP + IG,GLM-5.3,Patch-seq input resistance,3,committed
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,1,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,2,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,3,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,4,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,5,committed
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,6,tentative
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,7,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,8,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,9,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,10,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,11,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,12,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,13,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,14,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,15,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,16,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,17,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,18,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,19,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,20,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,21,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,22,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,23,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,24,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,25,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,26,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,27,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,28,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,29,declined
+MLP + IG,Gemini 3.1 Pro Preview,CITE-seq CD45RA,30,declined
+MLP + IG,Gemini 3.1 Pro Preview,CosMx Ki-67,1,committed
+MLP + IG,Gemini 3.1 Pro Preview,CosMx Ki-67,2,committed
+MLP + IG,Gemini 3.1 Pro Preview,CosMx Ki-67,3,tentative
+MLP + IG,Gemini 3.1 Pro Preview,CosMx Ki-67,4,declined
+MLP + IG,Gemini 3.1 Pro Preview,CosMx Ki-67,5,declined
+MLP + IG,Gemini 3.1 Pro Preview,CosMx Ki-67,6,declined
+MLP + IG,Gemini 3.1 Pro Preview,CosMx Ki-67,7,committed
+MLP + IG,Gemini 3.1 Pro Preview,Patch-seq input resistance,1,committed
+MLP + IG,Gemini 3.1 Pro Preview,Patch-seq input resistance,2,declined
+MLP + IG,Gemini 3.1 Pro Preview,Patch-seq input resistance,3,committed
+MLP + IG,Gemini 3.1 Pro Preview,Patch-seq input resistance,4,committed
+MLP + IG,Qwen3.8 2.4T-A95B,CITE-seq CD45RA,1,committed
+MLP + IG,Qwen3.8 2.4T-A95B,CITE-seq CD45RA,2,committed
+MLP + IG,Qwen3.8 2.4T-A95B,CITE-seq CD45RA,3,committed
+MLP + IG,Qwen3.8 2.4T-A95B,CosMx Ki-67,1,committed
+MLP + IG,Qwen3.8 2.4T-A95B,CosMx Ki-67,2,committed
+MLP + IG,Qwen3.8 2.4T-A95B,CosMx Ki-67,3,committed
+MLP + IG,Qwen3.8 2.4T-A95B,Patch-seq input resistance,1,committed
+MLP + IG,Qwen3.8 2.4T-A95B,Patch-seq input resistance,2,committed
+MLP + IG,Qwen3.8 2.4T-A95B,Patch-seq input resistance,3,committed
+Measurement-only,DeepSeek V4.1 Flash,CITE-seq CD45RA,1,no text
+Measurement-only,DeepSeek V4.1 Flash,CITE-seq CD45RA,2,declined
+Measurement-only,DeepSeek V4.1 Flash,CITE-seq CD45RA,3,declined
+Measurement-only,DeepSeek V4.1 Flash,CosMx Ki-67,1,committed
+Measurement-only,DeepSeek V4.1 Flash,CosMx Ki-67,2,committed
+Measurement-only,DeepSeek V4.1 Flash,CosMx Ki-67,3,tentative
+Measurement-only,DeepSeek V4.1 Flash,Patch-seq input resistance,1,no text
+Measurement-only,DeepSeek V4.1 Flash,Patch-seq input resistance,2,declined
+Measurement-only,DeepSeek V4.1 Flash,Patch-seq input resistance,3,declined
+Measurement-only,GLM-5.3,CITE-seq CD45RA,1,committed
+Measurement-only,GLM-5.3,CITE-seq CD45RA,2,committed
+Measurement-only,GLM-5.3,CITE-seq CD45RA,3,committed
+Measurement-only,GLM-5.3,CosMx Ki-67,1,committed
+Measurement-only,GLM-5.3,CosMx Ki-67,2,committed
+Measurement-only,GLM-5.3,CosMx Ki-67,3,committed
+Measurement-only,GLM-5.3,Patch-seq input resistance,1,committed
+Measurement-only,GLM-5.3,Patch-seq input resistance,2,committed
+Measurement-only,GLM-5.3,Patch-seq input resistance,3,committed
+Measurement-only,Gemini 3.1 Pro Preview,CITE-seq CD45RA,1,declined
+Measurement-only,Gemini 3.1 Pro Preview,CITE-seq CD45RA,2,declined
+Measurement-only,Gemini 3.1 Pro Preview,CITE-seq CD45RA,3,declined
+Measurement-only,Gemini 3.1 Pro Preview,CosMx Ki-67,1,declined
+Measurement-only,Gemini 3.1 Pro Preview,CosMx Ki-67,2,declined
+Measurement-only,Gemini 3.1 Pro Preview,CosMx Ki-67,3,declined
+Measurement-only,Gemini 3.1 Pro Preview,Patch-seq input resistance,1,declined
+Measurement-only,Gemini 3.1 Pro Preview,Patch-seq input resistance,2,tentative
+Measurement-only,Gemini 3.1 Pro Preview,Patch-seq input resistance,3,committed
+Measurement-only,Qwen3.8 2.4T-A95B,CITE-seq CD45RA,1,committed
+Measurement-only,Qwen3.8 2.4T-A95B,CITE-seq CD45RA,2,tentative
+Measurement-only,Qwen3.8 2.4T-A95B,CITE-seq CD45RA,3,tentative
+Measurement-only,Qwen3.8 2.4T-A95B,CosMx Ki-67,1,committed
+Measurement-only,Qwen3.8 2.4T-A95B,CosMx Ki-67,2,committed
+Measurement-only,Qwen3.8 2.4T-A95B,CosMx Ki-67,3,committed
+Measurement-only,Qwen3.8 2.4T-A95B,Patch-seq input resistance,1,tentative
+Measurement-only,Qwen3.8 2.4T-A95B,Patch-seq input resistance,2,declined
+Measurement-only,Qwen3.8 2.4T-A95B,Patch-seq input resistance,3,tentative
+Context-only,DeepSeek V4.1 Flash,CITE-seq CD45RA,1,committed
+Context-only,DeepSeek V4.1 Flash,CITE-seq CD45RA,2,committed
+Context-only,DeepSeek V4.1 Flash,CITE-seq CD45RA,3,committed
+Context-only,DeepSeek V4.1 Flash,CosMx Ki-67,1,committed
+Context-only,DeepSeek V4.1 Flash,CosMx Ki-67,2,committed
+Context-only,DeepSeek V4.1 Flash,CosMx Ki-67,3,committed
+Context-only,DeepSeek V4.1 Flash,Patch-seq input resistance,1,committed
+Context-only,DeepSeek V4.1 Flash,Patch-seq input resistance,2,no text
+Context-only,DeepSeek V4.1 Flash,Patch-seq input resistance,3,committed
+Context-only,GLM-5.3,CITE-seq CD45RA,1,committed
+Context-only,GLM-5.3,CITE-seq CD45RA,2,committed
+Context-only,GLM-5.3,CITE-seq CD45RA,3,committed
+Context-only,GLM-5.3,CosMx Ki-67,1,committed
+Context-only,GLM-5.3,CosMx Ki-67,2,committed
+Context-only,GLM-5.3,CosMx Ki-67,3,committed
+Context-only,GLM-5.3,Patch-seq input resistance,1,committed
+Context-only,GLM-5.3,Patch-seq input resistance,2,committed
+Context-only,GLM-5.3,Patch-seq input resistance,3,committed
+Context-only,Gemini 3.1 Pro Preview,CITE-seq CD45RA,1,committed
+Context-only,Gemini 3.1 Pro Preview,CITE-seq CD45RA,2,committed
+Context-only,Gemini 3.1 Pro Preview,CITE-seq CD45RA,3,committed
+Context-only,Gemini 3.1 Pro Preview,CosMx Ki-67,1,committed
+Context-only,Gemini 3.1 Pro Preview,CosMx Ki-67,2,committed
+Context-only,Gemini 3.1 Pro Preview,CosMx Ki-67,3,committed
+Context-only,Gemini 3.1 Pro Preview,Patch-seq input resistance,1,committed
+Context-only,Gemini 3.1 Pro Preview,Patch-seq input resistance,2,committed
+Context-only,Gemini 3.1 Pro Preview,Patch-seq input resistance,3,committed
+Context-only,Qwen3.8 2.4T-A95B,CITE-seq CD45RA,1,committed
+Context-only,Qwen3.8 2.4T-A95B,CITE-seq CD45RA,2,committed
+Context-only,Qwen3.8 2.4T-A95B,CITE-seq CD45RA,3,committed
+Context-only,Qwen3.8 2.4T-A95B,CosMx Ki-67,1,committed
+Context-only,Qwen3.8 2.4T-A95B,CosMx Ki-67,2,committed
+Context-only,Qwen3.8 2.4T-A95B,CosMx Ki-67,3,committed
+Context-only,Qwen3.8 2.4T-A95B,Patch-seq input resistance,1,committed
+Context-only,Qwen3.8 2.4T-A95B,Patch-seq input resistance,2,committed
+Context-only,Qwen3.8 2.4T-A95B,Patch-seq input resistance,3,committed

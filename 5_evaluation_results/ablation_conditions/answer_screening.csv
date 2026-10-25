@@ -137,3 +137,39 @@ GLM,cond2_raw_data,CITEseq_CD45RA_naive,3,final_prompt_set,stated,"best hypothes
 GLM,cond2_raw_data,CosMx_CancerKi67,3,final_prompt_set,stated,single best hypothesis: coordinated ribosome-biogenesis + cell-cycle program
 GLM,cond2_raw_data,Gouwens_GABAergic,2,final_prompt_set,stated,hypothesis: Pvalb/Kcna3 K+ conductance sets input resistance
 GLM,cond2_raw_data,Gouwens_GABAergic,3,final_prompt_set,stated,hypothesis: Pvalb strongest negative correlate (cell-type/Kv conductance)
+DeepSeek,cond4_context_only_softened,CITEseq_CD45RA_naive,1,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 8; sufficient_information true
+DeepSeek,cond4_context_only_softened,CITEseq_CD45RA_naive,2,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 8; sufficient_information true
+DeepSeek,cond4_context_only_softened,CITEseq_CD45RA_naive,3,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 7; sufficient_information true
+DeepSeek,cond4_context_only_softened,CosMx_CancerKi67,1,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 6; sufficient_information true
+DeepSeek,cond4_context_only_softened,CosMx_CancerKi67,2,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 6; sufficient_information true
+DeepSeek,cond4_context_only_softened,CosMx_CancerKi67,3,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 6; sufficient_information true
+DeepSeek,cond4_context_only_softened,Gouwens_GABAergic,1,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 6; sufficient_information true
+DeepSeek,cond4_context_only_softened,Gouwens_GABAergic,2,context_only_softened_prompt,no text,output cap reached on hidden reasoning (finish=length); no answer
+DeepSeek,cond4_context_only_softened,Gouwens_GABAergic,3,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 5; sufficient_information true
+Gemini,cond4_context_only_softened,CITEseq_CD45RA_naive,1,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 9; sufficient_information true
+Gemini,cond4_context_only_softened,CITEseq_CD45RA_naive,2,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 9; sufficient_information true
+Gemini,cond4_context_only_softened,CITEseq_CD45RA_naive,3,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 9; sufficient_information true
+Gemini,cond4_context_only_softened,CosMx_CancerKi67,1,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 8; sufficient_information false
+Gemini,cond4_context_only_softened,CosMx_CancerKi67,2,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 8; sufficient_information false
+Gemini,cond4_context_only_softened,CosMx_CancerKi67,3,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 8; sufficient_information false
+Gemini,cond4_context_only_softened,Gouwens_GABAergic,1,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 8; sufficient_information true
+Gemini,cond4_context_only_softened,Gouwens_GABAergic,2,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 9; sufficient_information true
+Gemini,cond4_context_only_softened,Gouwens_GABAergic,3,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 9; sufficient_information true
+Qwen,cond4_context_only_softened,CITEseq_CD45RA_naive,1,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 8; sufficient_information true
+Qwen,cond4_context_only_softened,CITEseq_CD45RA_naive,2,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 8; sufficient_information true
+Qwen,cond4_context_only_softened,CITEseq_CD45RA_naive,3,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 8; sufficient_information true
+Qwen,cond4_context_only_softened,CosMx_CancerKi67,1,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 8; sufficient_information true
+Qwen,cond4_context_only_softened,CosMx_CancerKi67,2,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 8; sufficient_information true
+Qwen,cond4_context_only_softened,CosMx_CancerKi67,3,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 8; sufficient_information true
+Qwen,cond4_context_only_softened,Gouwens_GABAergic,1,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 6; sufficient_information true
+Qwen,cond4_context_only_softened,Gouwens_GABAergic,2,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 7; sufficient_information true
+Qwen,cond4_context_only_softened,Gouwens_GABAergic,3,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 6; sufficient_information true
+GLM,cond4_context_only_softened,CITEseq_CD45RA_naive,1,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 8; sufficient_information true
+GLM,cond4_context_only_softened,CITEseq_CD45RA_naive,2,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 8; sufficient_information true
+GLM,cond4_context_only_softened,CITEseq_CD45RA_naive,3,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 8; sufficient_information true
+GLM,cond4_context_only_softened,CosMx_CancerKi67,1,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 8; sufficient_information true
+GLM,cond4_context_only_softened,CosMx_CancerKi67,2,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 6; sufficient_information true
+GLM,cond4_context_only_softened,CosMx_CancerKi67,3,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 7; sufficient_information true
+GLM,cond4_context_only_softened,Gouwens_GABAergic,1,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 7; sufficient_information true
+GLM,cond4_context_only_softened,Gouwens_GABAergic,2,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 5; sufficient_information true
+GLM,cond4_context_only_softened,Gouwens_GABAergic,3,context_only_softened_prompt,stated,commits to one specific mechanism; confidence 6; sufficient_information true

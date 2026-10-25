@@ -20,14 +20,15 @@ import numpy as np
 import pandas as pd
 
 from common import ALL_CONDS, COND_COLOR, COND_LABEL, DATASET_LABEL, DATASETS, MODEL_LABEL, MODELS, ROOT, slug
+CONDS3 = ALL_CONDS[:3]                                           # PITCH, MLP + IG, measurement-only (the context-only condition is added by 02h)
 
 OUT = ROOT / "2_quality_radar"
 SC = OUT / "scorecards"
-PILLARS = ["Feature Comprehensiveness", "Biological Plausibility", "Hypothesis Integration & Specificity", "Mechanistic Synthesis", "Literature Grounding"]
+PILLARS = ["Feature Comprehensiveness", "Biological Plausibility", "Hypothesis Specificity", "Mechanistic Synthesis", "Literature Grounding"]
 KEYS = ["Feature Comprehensiveness_zone1", "Biological Plausibility_zone1", "Specificity_zone1", "Grounded Mechanistic Synthesis_zone1", "Literature Grounding_zone1"]
-AX5 = ["Feature\nComprehensiveness", "Biological\nPlausibility", "Hypothesis Integration\n& Specificity", "Mechanistic\nSynthesis", "Literature\nGrounding"]
+AX5 = ["Feature\nComprehensiveness", "Biological\nPlausibility", "Hypothesis\nSpecificity", "Mechanistic\nSynthesis", "Literature\nGrounding"]
 AX6 = AX5 + ["Hypothesis composition agreement\nacross models (0-10)"]
-STYLE = {"cond0_full_pipeline": ("o", "-"), "cond1_ig_only": ("s", "--"), "cond2_raw_data": ("^", "-.")}
+STYLE = {"cond0_full_pipeline": ("o", "-"), "cond1_ig_only": ("s", "--"), "cond2_raw_data": ("^", "-."), "cond3_context_only": ("v", (0, (5, 2))), "cond4_context_only_softened": ("D", ":")}
 
 
 def load(dirname, conds):
@@ -77,7 +78,7 @@ def radar(ax_labels, series, title, stem, footnote, highlight_last=False, ncol=3
 
 def main():
     plt.rcParams.update({"font.family": "DejaVu Sans", "pdf.fonttype": 42, "ps.fonttype": 42, "svg.fonttype": "none"})
-    main2 = mean_of_passes(load("pass1", ALL_CONDS), load("pass2", ALL_CONDS))
+    main2 = mean_of_passes(load("pass1", CONDS3), load("pass2", CONDS3))
     raw = mean_of_passes(load("raw_pass1", ["cond2_raw_data"]), load("raw_pass2", ["cond2_raw_data"]))
     assert len(raw) == 7 and len(main2) == 24
     df = pd.concat([main2, raw], ignore_index=True)
@@ -90,25 +91,25 @@ def main():
     avail = pd.DataFrame([{"dataset": r["dataset"], "pass": r["pass"], "n_models": len(r["models"]), "score": r["score"]} for r in recs if r["condition"] == "cond2_raw_data"])
     assert len(avail) == 9 and avail.score.notna().all()
     avail_prompt = avail.groupby("dataset").score.mean()                 # mean of the 3 passes per prompt
-    conc_val = {c: float(conc[COND_LABEL[c]]) for c in ALL_CONDS if c != "cond2_raw_data"}
+    conc_val = {c: float(conc[COND_LABEL[c]]) for c in CONDS3 if c != "cond2_raw_data"}
     conc_val["cond2_raw_data"] = float(avail_prompt.mean())              # mean of the 3 prompts
 
     label = lambda c: f"{COND_LABEL[c].replace('Measurement-only', 'Measurement-only')} (n = {n_all[c]} answers)"
     foot5 = "Measurement-only: one committed answer per available (model, prompt) cell, 7 of 12 cells (GLM 3, Qwen 2, DeepSeek 1, Gemini 1); PITCH and MLP + IG: 12 answers each."
-    radar(AX5, [(label(c), allm.loc[c][KEYS].values, c) for c in ALL_CONDS],
+    radar(AX5, [(label(c), allm.loc[c][KEYS].values, c) for c in CONDS3],
           "Hypothesis quality by evidence condition\nAll models averaged (3 datasets)", "radar_all_models_average_5axes_3conditions", foot5, ncol=1)
     foot6 = (foot5 + "\nAxis 6: agreement across the 4 models for PITCH and MLP + IG; for measurement-only, among the models with a successfully generated answer (3, 2 and 2 answers per prompt).")
-    radar(AX6, [(label(c), np.append(allm.loc[c][KEYS].values, conc_val[c]), c) for c in ALL_CONDS],
+    radar(AX6, [(label(c), np.append(allm.loc[c][KEYS].values, conc_val[c]), c) for c in CONDS3],
           "Hypothesis quality and cross-model hypothesis composition agreement\nAll models averaged (3 datasets)", "radar_all_models_average_6axes_3conditions", foot6,
           highlight_last=True, ncol=1)
     for m in MODELS:
-        ser = [(f"{COND_LABEL[c]} (n = {int(n_mdl.get((m, c), 0))})", mdl.loc[(m, c)][KEYS].values, c) for c in ALL_CONDS if (m, c) in mdl.index]
+        ser = [(f"{COND_LABEL[c]} (n = {int(n_mdl.get((m, c), 0))})", mdl.loc[(m, c)][KEYS].values, c) for c in CONDS3 if (m, c) in mdl.index]
         radar(AX5, ser, f"Hypothesis quality by evidence condition\n{MODEL_LABEL[m]} (3 datasets)", f"radar_model_{slug(m)}_5axes_3conditions",
               "n = number of answers (one per prompt); measurement-only only where the model produced a committed hypothesis.", ncol=1)
 
     with pd.ExcelWriter(OUT / "radar_3conditions_datasheet.xlsx", engine="openpyxl") as w:
-        a = allm.reindex(ALL_CONDS); a.columns = PILLARS
-        a.insert(0, "n_answers", [int(n_all[c]) for c in ALL_CONDS]); a["Hypothesis composition agreement (measurement-only: available models only)"] = [conc_val[c] for c in ALL_CONDS]
+        a = allm.reindex(CONDS3); a.columns = PILLARS
+        a.insert(0, "n_answers", [int(n_all[c]) for c in CONDS3]); a["Hypothesis composition agreement (measurement-only: available models only)"] = [conc_val[c] for c in CONDS3]
         a.index = [COND_LABEL[c] for c in a.index]; a.index.name = "Condition"
         a.round(3).reset_index().to_excel(w, sheet_name="All_models_average", index=False)
         mm = mdl.reset_index(); mm["n_answers"] = [int(n_mdl[(r.model, r.condition)]) for r in mm.itertuples()]

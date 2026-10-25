@@ -1,0 +1,20 @@
+{
+  "model": "Qwen/Qwen3.8-2.4T-A95B",
+  "model_slug": "Qwen__Qwen3.8-2.4T-A95B",
+  "dataset": "CosMx_CancerKi67",
+  "condition": "cond4_context_only_softened",
+  "picked_run": 1,
+  "preamble": "v2",
+  "scores": {
+    "Zone Identification score_zone1": null,
+    "Logic Rigor_zone1": null,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 9,
+    "Biological Plausibility_reason": "The cyclin D/CDK4/6\u2013cyclin E/CDK2\u2013RB\u2013E2F model is a well-established and biologically coherent explanation for heterogeneous cell-cycle entry and Ki-67 abundance in breast cancer. The proposed association is slightly simplified because Ki-67 accumulation is chiefly a cell-cycle-state readout rather than necessarily a direct E2F-regulated endpoint.",
+    "Specificity_zone1": 9,
+    "Grounded Mechanistic Synthesis_zone1": 9,
+    "Grounded Mechanistic Synthesis_reason": "CCND1\u2013CDK4/6, CCNE1\u2013CDK2, RB1 phosphorylation, E2F activation, DREAM repression, and p27-mediated inhibition are integrated into a coherent transition from quiescence through G1/S to Ki-67-high proliferation. The transition from E2F-driven cell-cycle progression to Ki-67 accumulation remains state-level rather than specifying direct regulation, and the upstream source of mitogenic heterogeneity is not identified. No synthesis ceiling was applied because an explicit focus-to-target mechanism is provided and nearly all invoked contextual features contribute materially.",
+    "Literature Grounding_zone1": 9
+  },
+  "final_score_5pillar": 41.5
+}

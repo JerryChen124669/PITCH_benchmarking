@@ -1,0 +1,39 @@
+{
+  "condition": "cond4_context_only_softened",
+  "dataset": "CITEseq_CD45RA_naive",
+  "pass": 1,
+  "seed": 20,
+  "models": [
+    "gemini-3.1-pro-preview",
+    "zai-org/GLM-5.3",
+    "deepseek-ai/DeepSeek-V4.1-Flash",
+    "Qwen/Qwen3.8-2.4T-A95B"
+  ],
+  "order": [
+    {
+      "label": "A",
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "picked_run": 1
+    },
+    {
+      "label": "B",
+      "model": "zai-org/GLM-5.3",
+      "picked_run": 2
+    },
+    {
+      "label": "C",
+      "model": "gemini-3.1-pro-preview",
+      "picked_run": 3
+    },
+    {
+      "label": "D",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "picked_run": 1
+    }
+  ],
+  "judge": {
+    "rationale": "All answers share PTPRC exon-4 splicing and CD45RO as the explanation, and three of four center HNRNPLL, but Answer B instead develops a PTBP1\u2013hnRNP L\u2013SFPQ\u2013GSK3\u2013PI3K/AKT axis and the answers use many differing state markers, leaving more than half of the complete molecular inventories nonshared and invoking the shared-minority ceiling of 4.",
+    "cross_model_agreement_score": 4
+  },
+  "score": 4
+}

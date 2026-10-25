@@ -5,6 +5,7 @@ Share of attempts that produced a committed hypothesis, % (95% Wilson CI) [succe
 | PITCH | 100% (70-100%)  [9/9] | 100% (70-100%)  [9/9] | 100% (70-100%)  [9/9] | 100% (70-100%)  [9/9] |
 | MLP + IG | 17% (9-31%)  [7/41] | 100% (70-100%)  [9/9] | 100% (70-100%)  [9/9] | 100% (70-100%)  [9/9] |
 | Measurement-only | 11% (2-44%)  [1/9] | 44% (19-73%)  [4/9] | 100% (70-100%)  [9/9] | 22% (6-55%)  [2/9] |
+| Context-only | 100% (70-100%)  [9/9] | 100% (70-100%)  [9/9] | 100% (70-100%)  [9/9] | 89% (56-98%)  [8/9] |
 
 Attempts behind each cell
 
@@ -13,3 +14,4 @@ Attempts behind each cell
 | PITCH | 9 | 9 | 9 | 9 |
 | MLP + IG | 41 | 9 | 9 | 9 |
 | Measurement-only | 9 | 9 | 9 | 9 (incl. 2 with no text at the output cap) |
+| Context-only | 9 | 9 | 9 | 9 (incl. 1 with no text at the output cap) |

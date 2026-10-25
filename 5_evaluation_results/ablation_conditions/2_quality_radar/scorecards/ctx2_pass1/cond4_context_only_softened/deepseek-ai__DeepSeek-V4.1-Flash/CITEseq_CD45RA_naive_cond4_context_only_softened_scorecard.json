@@ -1,0 +1,20 @@
+{
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "model_slug": "deepseek-ai__DeepSeek-V4.1-Flash",
+  "dataset": "CITEseq_CD45RA_naive",
+  "condition": "cond4_context_only_softened",
+  "picked_run": 1,
+  "preamble": "v2",
+  "scores": {
+    "Zone Identification score_zone1": null,
+    "Logic Rigor_zone1": null,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 8,
+    "Biological Plausibility_reason": "The activation\u2013HNRNPLL\u2013PTPRC exon-skipping mechanism is established and biologically coherent in T cells. Its main weakness is overgeneralization from T-cell isoform regulation to variation across all mixed cord-blood immune populations.",
+    "Specificity_zone1": 9,
+    "Grounded Mechanistic Synthesis_zone1": 9,
+    "Grounded Mechanistic Synthesis_reason": "HNRNPLL, activation state, PTPRC exon 4 inclusion or skipping, and reciprocal CD45RO production are integrated into a clear activation-to-splicing-to-surface-epitope mechanism. PTBP1 and the ancillary surface markers remain optional predictions rather than developed parts of the mechanism, while extension from T cells to all mixed cord-blood populations is underexplained. No synthesis ceiling was applied because the principal HNRNPLL-to-CD45RA mechanism is explicit and the relevant contextual features are integrated.",
+    "Literature Grounding_zone1": 9
+  },
+  "final_score_5pillar": 40.5
+}

@@ -1,0 +1,39 @@
+{
+  "condition": "cond4_context_only_softened",
+  "dataset": "Gouwens_GABAergic",
+  "pass": 1,
+  "seed": 20,
+  "models": [
+    "gemini-3.1-pro-preview",
+    "zai-org/GLM-5.3",
+    "deepseek-ai/DeepSeek-V4.1-Flash",
+    "Qwen/Qwen3.8-2.4T-A95B"
+  ],
+  "order": [
+    {
+      "label": "A",
+      "model": "gemini-3.1-pro-preview",
+      "picked_run": 2
+    },
+    {
+      "label": "B",
+      "model": "zai-org/GLM-5.3",
+      "picked_run": 3
+    },
+    {
+      "label": "C",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "picked_run": 3
+    },
+    {
+      "label": "D",
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "picked_run": 3
+    }
+  ],
+  "judge": {
+    "rationale": "Agreement is limited: KCNK9/TASK-3 provides a comparable leak-conductance mechanism in B\u2013D, but A instead centers KCNJ2, while C adds KCNK2 and D adds KCNK3, leaving A with no mechanistic marker overlap and roughly half or more of the complete contributor coverage differing, so the shared-minority ceiling of 4 applies.",
+    "cross_model_agreement_score": 4
+  },
+  "score": 4
+}

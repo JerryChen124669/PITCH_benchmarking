@@ -1,0 +1,39 @@
+{
+  "condition": "cond4_context_only_softened",
+  "dataset": "CITEseq_CD45RA_naive",
+  "pass": 3,
+  "seed": 20,
+  "models": [
+    "gemini-3.1-pro-preview",
+    "zai-org/GLM-5.3",
+    "deepseek-ai/DeepSeek-V4.1-Flash",
+    "Qwen/Qwen3.8-2.4T-A95B"
+  ],
+  "order": [
+    {
+      "label": "A",
+      "model": "zai-org/GLM-5.3",
+      "picked_run": 2
+    },
+    {
+      "label": "B",
+      "model": "Qwen/Qwen3.8-2.4T-A95B",
+      "picked_run": 1
+    },
+    {
+      "label": "C",
+      "model": "gemini-3.1-pro-preview",
+      "picked_run": 3
+    },
+    {
+      "label": "D",
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "picked_run": 1
+    }
+  ],
+  "judge": {
+    "rationale": "All answers share PTPRC exon-4 splicing as the CD45RA/CD45RO mechanism, and B\u2013D additionally share HNRNPLL, but A instead relies on PTBP1, hnRNP L, SFPQ, PI3K\u2013AKT, and GSK3 while the state-marker sets also diverge, so more than half of the complete molecular content differs and the shared-minority ceiling of 4 applies.",
+    "cross_model_agreement_score": 4
+  },
+  "score": 4
+}

@@ -1,0 +1,20 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "model_slug": "gemini-3.1-pro-preview",
+  "dataset": "CITEseq_CD45RA_naive",
+  "condition": "cond4_context_only_softened",
+  "picked_run": 3,
+  "preamble": "v2",
+  "scores": {
+    "Zone Identification score_zone1": null,
+    "Logic Rigor_zone1": null,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 9,
+    "Biological Plausibility_reason": "The HNRNPLL-mediated exclusion of PTPRC variable exons provides an accurate and coherent mechanism for reducing CD45RA expression. The main limitation is extrapolating HNRNPLL transcript abundance as the dominant determinant across mixed neonatal lineages, where lineage composition, total CD45 expression, and post-transcriptional factors may also contribute.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 8,
+    "Grounded Mechanistic Synthesis_reason": "The response explicitly connects activation-associated HNRNPLL expression to PTPRC exon silencing, CD45 isoform switching, and reduced surface CD45RA. T-cell and progenitor-state differences are mentioned but are not fully incorporated into the causal chain or used to explain lineage-specific regulation. No synthesis ceiling was applied because a clear, biologically defensible focus-feature-to-target mechanism is provided.",
+    "Literature Grounding_zone1": 9
+  },
+  "final_score_5pillar": 39.5
+}

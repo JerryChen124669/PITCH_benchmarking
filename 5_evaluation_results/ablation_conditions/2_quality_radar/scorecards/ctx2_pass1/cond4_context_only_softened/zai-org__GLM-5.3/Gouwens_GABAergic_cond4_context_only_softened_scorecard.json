@@ -1,0 +1,20 @@
+{
+  "model": "zai-org/GLM-5.3",
+  "model_slug": "zai-org__GLM-5.3",
+  "dataset": "Gouwens_GABAergic",
+  "condition": "cond4_context_only_softened",
+  "picked_run": 3,
+  "preamble": "v2",
+  "scores": {
+    "Zone Identification score_zone1": null,
+    "Logic Rigor_zone1": null,
+    "Feature Comprehensiveness_zone1": 9,
+    "Biological Plausibility_zone1": 9,
+    "Biological Plausibility_reason": "Required features: KCNK9/TASK-3 and the PVALB/fast-spiking cell state. TASK-3 is accurately characterized as a resting potassium conductance capable of lowering input resistance, although its proposed prominence in visual-cortical PV interneurons is plausible rather than firmly established here.",
+    "Specificity_zone1": 8,
+    "Grounded Mechanistic Synthesis_zone1": 8,
+    "Grounded Mechanistic Synthesis_reason": "KCNK9 abundance was explicitly linked to membrane TASK-3 density, resting potassium leak conductance, and input resistance, with the PVALB/fast-spiking state used as the predicted cellular context. The PVALB context was not mechanistically developed beyond its association with Kcnk9 and low input resistance. No synthesis ceiling was applied because the focus-feature\u2013target mechanism was explicit and all required contextual features were at least connected.",
+    "Literature Grounding_zone1": 8
+  },
+  "final_score_5pillar": 38.0
+}

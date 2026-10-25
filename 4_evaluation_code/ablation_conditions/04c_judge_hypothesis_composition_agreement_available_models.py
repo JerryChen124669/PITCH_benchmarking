@@ -25,10 +25,10 @@ import judge_core as jc  # noqa: E402
 OUT = ROOT / "4_hypothesis_composition_agreement" / "data_available_models"
 
 
-def groups():
-    """models with a selected (committed) measurement-only answer, per dataset, in the fixed model order"""
+def groups(cond):
+    """models with a selected (committed) answer in condition `cond`, per dataset, in the fixed model order"""
     manifest = json.loads((INPUTS / "single_answers" / "selection_manifest.json").read_text(encoding="utf-8"))
-    have = {(c["model"], c["dataset"]) for c in manifest["cells"] if c["condition"] == "cond2_raw_data" and c["picked_run"] is not None}
+    have = {(c["model"], c["dataset"]) for c in manifest["cells"] if c["condition"] == cond and c["picked_run"] is not None}
     return {d: [m for m in MODELS if (m, d) in have] for d in DATASETS}
 
 
@@ -36,19 +36,27 @@ def main():
     sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--conds", nargs="+", default=["cond2_raw_data"], choices=ALL_CONDS, help="conditions to judge (default: measurement-only)")
+    ap.add_argument("--group-from", default=None, choices=ALL_CONDS, help="judge every condition on the models that have a committed answer in THIS condition (matched comparison); default: each condition on its own committed models")
     ap.add_argument("--passes", type=int, default=3)
     ap.add_argument("--seed", type=int, default=20)
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--overwrite", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
-    grp = groups()
-    cases = {(c, d): load_case(grp[d], c, d) for c in args.conds for d in DATASETS}
-    tasks = [(c, d, k) for k in range(1, args.passes + 1) for c in args.conds for d in DATASETS]
+    base = groups(args.group_from) if args.group_from else None
+    grp = {c: (base or groups(c)) for c in args.conds}                    # per condition: the models with a committed answer in that condition (or in --group-from)
+    todo = [(c, d) for c in args.conds for d in DATASETS if len(grp[c][d]) >= 2]
+    for c in args.conds:
+        for d in DATASETS:
+            if len(grp[c][d]) < 2:
+                print(f"  {c} / {d}: {len(grp[c][d])} committed answer(s) -> agreement cannot be computed (needs at least 2); not judged")
+    cases = {(c, d): load_case(grp[c][d], c, d) for c, d in todo}
+    tasks = [(c, d, k) for k in range(1, args.passes + 1) for c, d in todo]
     if args.dry_run:
         print(f"conditions {args.conds} | rubric sha256 {a04.hashlib.sha256(a04.RUBRIC.encode()).hexdigest()[:16]}... | {len(tasks)} judge calls (NOT made)")
-        for d in DATASETS:
-            print(f"  {d:22s} group = {[m.split('/')[-1] for m in grp[d]]}")
+        for c in args.conds:
+            for d in DATASETS:
+                print(f"  {c:20s} {d:22s} group = {[m.split('/')[-1] for m in grp[c][d]]}")
         for c, d, k in tasks[:9]:
             print(f"  {c:20s} {d:22s} pass{k}: " + " > ".join(f"{m.split('/')[-1].split('-')[0]}(run{r})" for m, r, _ in shuffled(cases[(c, d)], args.seed, c, d, k)))
         return
@@ -65,7 +73,7 @@ def main():
         except Exception as e:  # noqa: BLE001
             print(f"  ERROR {c}/{d}/pass{k}: {type(e).__name__}: {str(e)[:160]}", flush=True)
             return "error"
-        rec = {"condition": c, "dataset": d, "pass": k, "seed": args.seed, "models": grp[d],
+        rec = {"condition": c, "dataset": d, "pass": k, "seed": args.seed, "models": grp[c][d],
                "order": [{"label": LABELS[i], "model": m, "picked_run": r} for i, (m, r, _) in enumerate(order)], "judge": res, "score": res[a04.KEY]}
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(json.dumps(rec, indent=2), encoding="utf-8")
@@ -86,9 +94,10 @@ def main():
                     continue
                 allp = [r["score"] for r in recs if r["condition"] == c and r["dataset"] == d]
                 s = [x for x in allp if x is not None]
-                w.writerow([c, d, "; ".join(m.split("/")[-1] for m in grp[d]), len(grp[d]), len(s), round(st.mean(s), 3) if s else "", round(st.stdev(s), 3) if len(s) > 1 else "", allp])
+                ms = next(r["models"] for r in recs if r["condition"] == c and r["dataset"] == d)
+                w.writerow([c, d, "; ".join(m.split("/")[-1] for m in ms), len(ms), len(s), round(st.mean(s), 3) if s else "", round(st.stdev(s), 3) if len(s) > 1 else "", allp])
     (OUT / "meta.json").write_text(json.dumps({"judge_model": jc.je.JUDGE_MODEL, "rubric_sha256": a04.hashlib.sha256(a04.RUBRIC.encode()).hexdigest(), "passes": args.passes,
-                                               "seed": args.seed, "groups": grp, "n_records": len(recs)}, indent=2), encoding="utf-8")
+                                               "seed": args.seed, "groups": {c: {r["dataset"]: r["models"] for r in recs if r["condition"] == c} for c in ALL_CONDS if any(r["condition"] == c for r in recs)}, "n_records": len(recs)}, indent=2), encoding="utf-8")
     print(f"{len(recs)} judge records -> {OUT}")
 
 

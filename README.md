@@ -10,12 +10,12 @@ Code, prompts, generated answers, similarity and quality evaluation, expert asse
 | `3_answers/` | `<model>/<case>_selected_answer.json`: the 144 canonical evaluated answers (24 models x 6 cases); `selection_provenance/`: raw candidates and selection records; `ablation_conditions/`: ablation answers |
 | `4_evaluation_code/` | rubric judging, pairwise similarity, clustering and selection scripts; `reproduce_figures.sh` regenerates the five evaluation figures (7A-7D, 7F); `ablation_conditions/` holds the ablation scripts |
 | `5_evaluation_results/` | judged scores, pairwise similarity records, result tables and figures; `expert_assessment/` (blinded expert survey, Figure 7E); `ablation_conditions/` |
-| `6_supplementary_figures/` | data tables, plotting scripts and records behind Supplementary Figures S15 (ablation) and S16 (classifier choice, decision-tree settings) |
+| `6_supplementary_figures/` | data tables, plotting scripts and records behind Supplementary Tables S2 and S3 and Figure S15 (ablation of the evidence conditions) and Figure S16 (classifier choice, decision-tree settings) |
 
 ## Reproducing the results
 - **Evaluation figures (7A-7D, 7F):** `bash 4_evaluation_code/reproduce_figures.sh`, run directly from the repository (no staging); it reads the judged data in `5_evaluation_results/` and needs numpy, pandas, scipy, scikit-learn, matplotlib and Pillow, but no API key. See `4_evaluation_code/README.md`.
 - **Expert assessment (Figure 7E):** `python 5_evaluation_results/expert_assessment/aggregate_expert_ratings.py`; checks: `validate_expert_archive.py` in the same folder.
-- **Supplementary figures:** `python plot_FigS15.py` in `6_supplementary_figures/FigS15_ablation/` and `python plot_FigS16.py` in `6_supplementary_figures/FigS16_classifier_and_DT_settings/`; the records behind S15 are in the `ablation_conditions/` folders, those behind S16 in `6_supplementary_figures/FigS16_classifier_and_DT_settings/records/`.
+- **Supplementary tables and figures:** `python make_TableS2.py` (after `python export_TableS2_attempts.py`) in `6_supplementary_figures/TableS2_generation_rate/`, `python make_TableS3.py` in `6_supplementary_figures/TableS3_quality_by_model/`, `python plot_FigS15.py` in `6_supplementary_figures/FigS15_ablation/` and `python plot_FigS16.py` in `6_supplementary_figures/FigS16_classifier_and_DT_settings/`; the records behind S2, S3 and S15 are in the `ablation_conditions/` folders of `2_prompts/`, `3_answers/`, `4_evaluation_code/` and `5_evaluation_results/`, the generation code in `1_generation_code/ablation_conditions/`.
 - **Selection provenance:** `python 3_answers/selection_provenance/validate_selection_provenance.py`.
 - Re-running model generation or the LLM judges needs the original datasets and API keys (read from environment variables; none is stored) and will not reproduce the answers verbatim (see below).
 

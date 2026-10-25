@@ -1,0 +1,20 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "model_slug": "gemini-3.1-pro-preview",
+  "dataset": "CosMx_CancerKi67",
+  "condition": "cond4_context_only_softened",
+  "picked_run": 3,
+  "preamble": "v2",
+  "scores": {
+    "Zone Identification score_zone1": null,
+    "Logic Rigor_zone1": null,
+    "Feature Comprehensiveness_zone1": 10,
+    "Biological Plausibility_zone1": 8,
+    "Biological Plausibility_reason": "The hypoxia\u2013HIF-1\u03b1\u2013p21/p27\u2013cell-cycle arrest mechanism is biologically coherent and broadly supported in tumors. However, HIF-1\u03b1 is chiefly regulated through oxygen-dependent protein stabilization, so HIF1A RNA alone is a weak measure of its activity, and distance from generic stroma is not necessarily distance from functional vasculature.",
+    "Specificity_zone1": 9,
+    "Grounded Mechanistic Synthesis_zone1": 9,
+    "Grounded Mechanistic Synthesis_reason": "The response cohesively integrates distance from vascularized stroma, hypoxia, HIF-1\u03b1 activity, CDKN1A/CDKN1B induction, G0/G1 arrest, and reduced Ki-67. The main insufficiently resolved links are the conflation of stromal and vascular boundaries and the proposed use of HIF1A transcript abundance as a proxy for stabilized HIF-1\u03b1 activity. No synthesis ceiling was applied because an explicit, detailed focus-to-target mechanism integrates all major contextual features.",
+    "Literature Grounding_zone1": 8
+  },
+  "final_score_5pillar": 40.0
+}
